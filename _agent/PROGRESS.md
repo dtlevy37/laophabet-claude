@@ -81,4 +81,10 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 - 79 words (19 verified, 60 unverified) and 158 composed sentences became W001272–W001350. Totals: 1350 words, 2670 sentences. Pipeline 0 errors.
 - Homographs ເຂົາ "horn" and ມັນ "fat" (`--allow-homograph ເຂົາ,ມັນ`).
 - Gap noticed: ຜູ້ is not a word yet; add it in a later batch.
-- Next: c6 transportation + directions, then fruits, vegetables, meat, animals, transportation, directions.
+
+## 2026-10-10 Batch c6 (transport + directions) merged; all listed categories done
+- 74 words (19 verified, 55 unverified; includes ຜູ້) and 140 composed sentences became W001351–W001424. Totals: 1424 words, 2810 sentences. Pipeline 0 errors.
+- Drafter cost c1–c6: about 150–180k tokens per batch on opus (~2.4k tokens per word).
+- **User switched the drafter to `model: sonnet`** (2026-10-10). Next batch is a trial: compare cost and quality.
+- To do: add ຜູ້ (now W0013xx) to components of ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້.
+- Next: wait for the user; then pick new categories (all user-listed ones done) and continue toward the 1500 checkpoint. Earlier list: fruits, vegetables, meat, animals, transportation, directions.

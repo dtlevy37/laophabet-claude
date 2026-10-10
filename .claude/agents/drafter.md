@@ -2,7 +2,7 @@
 name: drafter
 description: Drafts curriculum rows (words, sentences, templates, fillers) as CSV files in _agent/drafts/ for the main agent to check and merge. Give it a batch tag, a word range or topic list, and the output file names.
 tools: Read, Grep, Glob, WebFetch, WebSearch, Write
-model: opus
+model: sonnet
 maxTurns: 80
 omitClaudeMd: true
 ---

@@ -79,3 +79,8 @@ Details: `_agent/research/lao-tones-wiktionary-fsi-kerr.md` §7. The matrix in S
 - Agent spellings or IPA: ສັດຕະວະແພດ "vet"; ປາດຸກ; ແມງງອດ (IPA); ກັດ "bite" (404, surprising); ຂັນ "crow"; ກ້ອຍ; ເລົ້າ "coop"; ນົກຍູງ "peacock"; ປາວານ "whale"; ແຫ "cast net".
 - ໂຕຜູ້ / ໂຕແມ່ drafted as nouns; mostly modifiers. Note: ຜູ້ is not yet a word in the data.
 - Body-part classifiers (ປີກ, ເຂົາ, ຂົນ, ຫາງ, ເລັບ, ເກັດ) are guesses.
+
+## Batch c6 (transport + directions, W001351–W001424): doubtful items
+- Agent spellings or senses: ເພ "broken down" (vs ເສຍ); ລົດເກັງ "sedan"; ຄິວລົດ "terminal"; ລ່າຊ້າ "delayed" (maybe Thai); ຮ່ອມ "lane"; ຈະລາຈອນ (IPA); ຫ້າງ "mall"; ຟາກ, ເຮືອຂ້າມຟາກ; ຢາງ "tyre"; ກາງ "middle" (noun).
+- ແຫ່ງ classifiers on ທາງມ້າລາຍ, ສາມແຍກ, ວົງວຽນ, ປ້າຍລົດເມ are guesses.
+- ຜູ້ now exists; older compounds (ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້) don't list it as a component yet.
