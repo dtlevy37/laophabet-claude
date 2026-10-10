@@ -291,3 +291,15 @@ pron_tips are agent-written guidance.
 ### Next after review
 - Phase 2: words 35–100. Classifiers as items; numbers sprinkled in; ເທົ່າໃດ once sourced; ຫ້ອງນອນ chain extensions; ພາສາລາວ; ເຮືອນ.
 - Study Big Brother Mouse for verified simple sentences.
+
+## 2026-10-10 tone_derive rev 4 (approved by user) + start of phase 5 (601–1000)
+- User asked to fix the latest tone-script issues and build up to 1000 words (hard cap).
+- tone_derive rev 4:
+  - ◌ົວ is now long (10 derivations corrected: ຜົວ ຫົວ ງົວ ຂົວ ຂົ້ວ ຄອບຄົວ ຊົ່ວໂມງ ...).
+  - kw clusters are reported as the initial (ຂວາ ກວ່າ ຄວາມ ແຂວງ); ◌ວ◌ is still read as a vowel (ສວນ ຂວດ ຫ່ວງ).
+  - New `data/tone_exceptions.csv` (lexical tones, with a source required). ຄອມພິວເຕີ syl 3 is listed, gets status LEXICAL, and its derivation ends in `!lexical`.
+  - `--quiet` flag added.
+- Results: selftest 38/38; words.csv 849 syllables, 0 problems; validate 0 errors.
+- build_order still misreads ແຂວງ and ຫ່ວງ (an ERROR line for each, no effect on output). A build_order rev is pending.
+- _agent/DONE moved to _trash/DONE-600 (the run is extended).
+- Next: phase 5. Words 601–1000 by topic, sentences, checkpoints at 800 and 1000.

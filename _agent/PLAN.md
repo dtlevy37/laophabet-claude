@@ -31,3 +31,11 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] Final coverage report: letters, vowels, sentences per word, confidence breakdown (PROGRESS.md, CHECKPOINT 600)
 - [x] `learning_order.csv` and the letters-to-words-to-sentences map (intro_word_id + new_*_ids + sentence_words)
 - [x] CHECKPOINT 600: commit; create `_agent/DONE`
+
+## Phase 5: To 1000 words (user request 2026-10-10; hard cap 1000)
+- [x] tone_derive rev 4: ◌ົວ length, kw clusters, lexical exceptions, --quiet
+- [ ] build_order rev: parse ແຂວງ (lead vowel + kw cluster) and ຫ່ວງ (ຫ + ◌ວ◌)
+- [ ] Words 601–800 by topic (tier `extra`), 2+ sentences each, tones filled
+- [ ] CHECKPOINT 800: commit and continue
+- [ ] Words 801–1000 by topic, 2+ sentences each; templates for topic sentence building
+- [ ] CHECKPOINT 1000: final report; commit; create `_agent/DONE`

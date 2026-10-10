@@ -22,6 +22,18 @@ parse warning that blocks derivation, or self-test failure.
 Revision 2: ◌ອ◌ and ◌ວ◌ count as written vowels (no false "no-written-vowel" warning);
 --fill mode added.
 Revision 3: --fill writes atomically and refuses rows with more fields than the header.
+Revision 4:
+  - ◌ົວ (open ua, e.g. ຕົວ ຫົວ) is a long vowel; rev 3 reported it as short.
+  - Consonant + ວ clusters (ຂວາ ກວ່າ ຄວາມ ແຂວງ) report the initial as the cluster
+    (flag w-cluster). ວ followed directly by a final with no other vowel stays the
+    vowel ◌ວ◌ (ສວນ ຂວດ ຫ່ວງ), and so does ຫວ + final. Tones are unchanged (class
+    comes from the first consonant).
+  - Lexical tone exceptions (loanwords such as ຄອມພິວເຕີ): --exceptions CSV with
+    word_id,syl_index,tone,source,note (default data/tone_exceptions.csv when present).
+    A listed syllable gets status LEXICAL instead of MISMATCH when the recorded tone and
+    IPA agree with the listed tone; --fill writes the listed tone and marks the
+    derivation "→cell!lexical".
+  - --quiet prints only rows that are not ok, so large CSVs don't flood the console.
 """
 import argparse
 import csv
@@ -82,6 +94,18 @@ def consonant_class(ch):
     return None
 
 
+def w_is_cluster(s, w_idx, leading):
+    """ວ right after the initial (no tone mark between) belongs to a kw-type cluster when
+    a vowel sign follows it (ຂວາ ກວ່າ) or a leading vowel carries the vowel (ແຂວງ).
+    Followed directly by a final consonant with no leading vowel, it is the vowel ◌ວ◌."""
+    rest = [c for c in s[w_idx + 1:] if c not in TONE_MARKS]
+    if not rest:
+        return False  # ວ is the last letter: a final (ແກ້ວ) or the initial alone
+    if rest[0] in VOWEL_SIGNS:
+        return True
+    return bool(leading) and rest[0] in CONSONANTS
+
+
 def analyse(syl):
     """Return a dict describing one written syllable's tone derivation."""
     flags = []
@@ -116,12 +140,18 @@ def analyse(syl):
         return res
     c0 = s[i]
     init_end = i + 1
-    if c0 == "ຫ" and init_end < len(s) and s[init_end] in HO_CLUSTER_SECOND:
+    nxt = s[init_end] if init_end < len(s) else ""
+    if nxt == "ວ" and not w_is_cluster(s, init_end, leading):
+        pass  # ວ is the vowel ◌ວ◌ (ສວນ, ຫວ + final), not part of the initial
+    elif c0 == "ຫ" and nxt in HO_CLUSTER_SECOND:
         init_end += 1
         flags.append("ho-cluster")
-    elif init_end < len(s) and s[init_end] == SUBSCRIPT_L:
+    elif nxt == SUBSCRIPT_L:
         init_end += 1
         flags.append("subscript-lo-cluster")
+    elif nxt == "ວ":
+        init_end += 1
+        flags.append("w-cluster")
     res["initial"] = s[i:init_end]
     cls = consonant_class(c0)
     res["class"] = cls
@@ -137,7 +167,10 @@ def analyse(syl):
     base = [c for c in body if c not in TONE_MARKS]
     # ອ inside the body is a vowel carrier (◌ອ◌, ເ◌ືອ); ວ before another letter is the vowel ◌ວ◌ / ◌ົວ.
     has_vowel = bool(leading) or any(c in VOWEL_SIGNS for c in base) or "ອ" in base or "ວ" in base[:-1]
-    short = any(c in SHORT_SIGNS for c in s)
+    # ◌ົວ is long ua; only a following ະ (◌ົວະ) makes it short.
+    unmarked = "".join(c for c in s if c not in TONE_MARKS)
+    short = any(c in SHORT_SIGNS and not (c == "ົ" and unmarked[k + 1:k + 2] == "ວ")
+                for k, c in enumerate(unmarked))
     last = base[-1] if base else ""
 
     special = ("ຳ" in s) or leading in ("ໄ", "ໃ") or (
@@ -245,6 +278,26 @@ SELFTEST = [
 ]
 
 
+# Parser checks (rev 4): (syllable, expected initial, expected vowel length, expected tone).
+# Orthography per _agent/research/lao-script-wikipedia-unicode.md (◌ົວ / ◌ວ◌ vowels, kw clusters).
+PARSE_TESTS = [
+    ("ຕົວ", "ຕ", "long", "low-rising"),
+    ("ຫົວ", "ຫ", "long", "low-rising"),
+    ("ງົວ", "ງ", "long", "high-rising"),
+    ("ຂວາ", "ຂວ", "long", "low-rising"),
+    ("ກວ່າ", "ກວ", "long", "mid"),
+    ("ຄວາມ", "ຄວ", "long", "high-rising"),
+    ("ແຂວງ", "ຂວ", "long", "low-rising"),
+    ("ຫວ່າງ", "ຫວ", "long", "mid"),
+    ("ຫ່ວງ", "ຫ", "long", "mid"),
+    ("ສວນ", "ສ", "long", "low-rising"),
+    ("ຂວດ", "ຂ", "long", "low-falling"),
+    ("ຊ່ວຍ", "ຊ", "long", "mid"),
+    ("ແກ້ວ", "ກ", "long", "high-falling"),
+    ("ເງິນ", "ງ", "short", "high-rising"),
+]
+
+
 def run_selftest():
     fails = 0
     for syl, exp, cell, src in SELFTEST:
@@ -252,8 +305,31 @@ def run_selftest():
         ok = r["tone"] == exp and r["cell"] == str(cell) and not any(f.startswith("WARN") for f in r["flags"])
         fails += not ok
         print(f"{'ok  ' if ok else 'FAIL'} {syl}\texpected {exp} (cell {cell}, {src})\tgot {r['tone']} (cell {r['cell']}) {';'.join(r['flags'])}")
-    print(f"{len(SELFTEST) - fails}/{len(SELFTEST)} passed")
+    for syl, init, length, tone in PARSE_TESTS:
+        r = analyse(syl)
+        ok = (r["initial"], r["vowel_length"], r["tone"]) == (init, length, tone) and not any(
+            f.startswith(("WARN", "ERROR")) for f in r["flags"])
+        fails += not ok
+        print(f"{'ok  ' if ok else 'FAIL'} {syl}\texpected {init}/{length}/{tone}\t"
+              f"got {r['initial']}/{r['vowel_length']}/{r['tone']} {';'.join(r['flags'])}")
+    total = len(SELFTEST) + len(PARSE_TESTS)
+    print(f"{total - fails}/{total} passed")
     return 0 if fails == 0 else 1
+
+
+def load_exceptions(path):
+    """{(word_id, syl_index): tone} from a CSV with word_id,syl_index,tone[,source,note]."""
+    if not path or not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        rows = list(csv.DictReader(f))
+    exc = {}
+    for row in rows:
+        tone = (row.get("tone") or "").strip()
+        if tone not in CHAO:
+            sys.exit(f"{path}: unknown tone {tone!r} for {row.get('word_id')}; use one of {list(CHAO)}")
+        exc[(row["word_id"].strip(), int(row["syl_index"]))] = tone
+    return exc
 
 
 OUT_FIELDS = ["word_id", "syl_index", "syllable", "initial", "class", "tone_mark", "final",
@@ -282,9 +358,14 @@ def check_rows(rows, args):
             r = analyse(syl)
             exp = expected[k] if k < len(expected) else ""
             ipt = ipa_tones[k] if k < len(ipa_tones) else ""
+            lexical = args.exc.get((wid, k + 1))
             status = "ok"
             if any(f.startswith("ERROR") for f in r["flags"]):
                 status = "ERROR"
+            elif lexical:
+                # Listed exception: the recorded tone and IPA must agree with the listed tone.
+                status = "MISMATCH" if (exp and exp != lexical) or (ipt and ipt != lexical) else "LEXICAL"
+                r["flags"].append(f"lexical-exception(rule={r['tone']},listed={lexical})")
             elif (exp and exp != r["tone"]) or (ipt and ipt != r["tone"]):
                 status = "MISMATCH"
             elif any(f.startswith("WARN") for f in r["flags"]):
@@ -310,9 +391,12 @@ def fill_rows(rows, args):
         rs = [analyse(s) for s in sylls]
         if any(any(f.startswith("ERROR") for f in r["flags"]) for r in rs):
             continue
-        row["tone_derivation"] = "|".join(derivation_text(r) for r in rs)
+        wid = row.get(args.id_col, "")
+        lex = [args.exc.get((wid, k + 1)) for k in range(len(rs))]
+        row["tone_derivation"] = "|".join(
+            derivation_text(r) + ("!lexical" if lx else "") for r, lx in zip(rs, lex))
         if not (row.get(args.tone_col) or "").strip():
-            row[args.tone_col] = "|".join(r["tone"] for r in rs)
+            row[args.tone_col] = "|".join(lx or r["tone"] for r, lx in zip(rs, lex))
             filled += 1
     return filled
 
@@ -338,10 +422,14 @@ def main():
     p.add_argument("--syl-col", default="syllables")
     p.add_argument("--tone-col", default="tone_by_syllable")
     p.add_argument("--ipa-col", default="ipa")
+    p.add_argument("--exceptions", default=os.path.join("data", "tone_exceptions.csv"),
+                   help="CSV of lexical tone exceptions (word_id,syl_index,tone,source,note)")
+    p.add_argument("--quiet", action="store_true", help="print only rows that are not ok")
     args = p.parse_args()
 
     if args.selftest:
         sys.exit(run_selftest())
+    args.exc = load_exceptions(args.exceptions)
     cols = []
     if args.syl:
         rows = [{args.id_col: "adhoc", args.syl_col: args.syl}]
@@ -380,7 +468,7 @@ def main():
     elif not args.fill:
         w = csv.DictWriter(sys.stdout, fieldnames=OUT_FIELDS)
         w.writeheader()
-        w.writerows(out)
+        w.writerows(r for r in out if not args.quiet or r.get("status") != "ok")
     counts = {}
     for r in out:
         counts[r.get("status", "")] = counts.get(r.get("status", ""), 0) + 1

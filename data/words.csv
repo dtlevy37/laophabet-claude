@@ -101,10 +101,10 @@ W0099,ນັ່ງ,naŋ˧,nang,ນັ່ງ,mid,low/live/short/mai_ek→6,verb,,
 W0100,ເປັນຫຍັງ,pen˩(˧).ɲaŋ˩(˧),bpen-nyang,ເປັນ|ຫຍັງ,low-rising|low-rising,mid/live/short/none→2|high/live/short/none→1,interrogative,,W0027|W0026,why,100,questions,100,99,,,Literally 'be what'. Two low-rising syllables.,SRC-WIKT:ເປັນຫຍັງ,verified,
 W0101,ແນວໃດ,nɛːw˧˥.daj˩(˧),naew-dai,ແນວ|ໃດ,high-rising|low-rising,low/live/long/none→3|mid/live/special/none→2,adverb (interrogative),,,how,101,questions,100,100,,,naew (rising) + dai (low-rising).,SRC-WIKT:ແນວໃດ,verified,
 W0102,ລໍຖ້າ,lɔː˧˥.tʰaː˧˩,law-taa,ລໍ|ຖ້າ,high-rising|low-falling,low/live/long/none→3|high/live/long/mai_tho→7,verb,,,wait,102,basics,300,101,,,law (rising) + taa (aspirated t; falling).,SRC-TATOEBA:8991656,derived,"Not on Wiktionary (404). Tatoeba 8991656 ...ລໍຖ້າຕຳຫຼວດມາ, 8990251 ລໍຖ້າ. IPA composed by rule"
-W0103,ຜົວ,pʰuːə̯˩(˧),pua,ຜົວ,low-rising,high/live/short/none→1,noun,W0040,,husband,103,people,300,102,,V31,"Aspirated p + 'oo-a', low-rising.",SRC-WIKT:ຜົວ,verified,
+W0103,ຜົວ,pʰuːə̯˩(˧),pua,ຜົວ,low-rising,high/live/long/none→1,noun,W0040,,husband,103,people,300,102,,V31,"Aspirated p + 'oo-a', low-rising.",SRC-WIKT:ຜົວ,verified,
 W0104,ເມຍ,miːə̯˧˥,mia,ເມຍ,high-rising,low/live/long/none→3,noun,W0040,,wife,104,people,300,103,,V26,"'mee-a' in one syllable, rising.",SRC-WIKT:ເມຍ,verified,
-W0105,ຄອບຄົວ,kʰɔːp̚˥˨.kʰuːə̯˧˥,kawp-kua,ຄອບ|ຄົວ,high-falling|high-rising,low/dead/long/none→12|low/live/short/none→3,noun,,,family,105,people,300,104,,,kawp (falling) + kua (rising).,SRC-WIKT:ຄອບຄົວ,verified,
-W0106,ຫົວ,huːə̯˩(˧),hua,ຫົວ,low-rising,high/live/short/none→1,noun; classifier,,,head; classifier for books,106,body,300,105,,,"'hoo-a', low-rising.",SRC-WIKT:ຫົວ,verified,Also counts books (ປຶ້ມສອງຫົວ)
+W0105,ຄອບຄົວ,kʰɔːp̚˥˨.kʰuːə̯˧˥,kawp-kua,ຄອບ|ຄົວ,high-falling|high-rising,low/dead/long/none→12|low/live/long/none→3,noun,,,family,105,people,300,104,,,kawp (falling) + kua (rising).,SRC-WIKT:ຄອບຄົວ,verified,
+W0106,ຫົວ,huːə̯˩(˧),hua,ຫົວ,low-rising,high/live/long/none→1,noun; classifier,,,head; classifier for books,106,body,300,105,,,"'hoo-a', low-rising.",SRC-WIKT:ຫົວ,verified,Also counts books (ປຶ້ມສອງຫົວ)
 W0107,ແລະ,lɛʔ˧,lae,ແລະ,mid,low/dead/short/none→15,conjunction,,,and,107,function,300,106,,V13,"Short 'lae', cut off, level.",SRC-WIKT:ແລະ,verified,
 W0108,ຫຼື,lɯː˩(˧),leu,ຫຼື,low-rising,high/live/long/none→1,conjunction,,,or,108,function,300,107,,,"'leu' (unrounded oo), low-rising.",SRC-WIKT:ຫຼື,verified,
 W0109,ແຕ່,tɛː˧,dtae,ແຕ່,mid,mid/live/long/mai_ek→5,conjunction,,,but,109,function,300,108,,,"Unaspirated t + long 'ae', level.",SRC-WIKT:ແຕ່,verified,
@@ -202,7 +202,7 @@ W0200,ກັບ,kap̚˧˥,gap,ກັບ,high-rising,mid/dead/short/none→14,pre
 W0201,ລ້ຽວ,liːə̯w˥˨,liaw,ລ້ຽວ,high-falling,low/live/long/mai_tho→9,verb,,,turn,201,directions,300,201,,,"'lee-aw', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0202,ພັນ,pʰan˧˥,pan,ພັນ,high-rising,low/live/short/none→3,numeral,,,thousand,202,numbers,300,202,,,"Aspirated p + short 'an', rising.",SRC-WIKT:ພັນ,verified,
 W0203,ໝູ,muː˩(˧),muu,ໝູ,low-rising,high/live/long/none→1,noun,W0097,,pig; pork,203,food,300,203,,,"'moo', low-rising.",SRC-WIKT:ໝູ,verified,
-W0204,ງົວ,ŋuːə̯˧˥,ngua,ງົວ,high-rising,low/live/short/none→3,noun,W0097,,cow; beef,204,food,300,204,,,"ng + 'oo-a', rising.",SRC-WIKT:ງົວ,verified,
+W0204,ງົວ,ŋuːə̯˧˥,ngua,ງົວ,high-rising,low/live/long/none→3,noun,W0097,,cow; beef,204,food,300,204,,,"ng + 'oo-a', rising.",SRC-WIKT:ງົວ,verified,
 W0205,ໄຂ່,kʰaj˧,kai,ໄຂ່,mid,high/live/special/mai_ek→4,noun,,,egg,205,food,300,205,,,"Aspirated k + 'ai', level.",SRC-WIKT:ໄຂ່,verified,
 W0206,ຜັກ,pʰak̚˧˥,pak,ຜັກ,high-rising,high/dead/short/none→13,noun,,,vegetable,206,food,300,206,,,"Aspirated p + short 'ak', rising.",SRC-WIKT:ຜັກ,verified,
 W0207,ເຂົ້າຈີ່,kʰaw˧˩.t͡ɕiː˧,kao-jii,ເຂົ້າ|ຈີ່,low-falling|mid,high/live/special/mai_tho→7|mid/live/long/mai_ek→5,noun,,W0019,bread,207,food,300,207,,,kao + jii (level).,SRC-WIKT:ເຂົ້າຈີ່,verified,
@@ -338,7 +338,7 @@ W0336,ວັນພະຫັດ,ʋan˧˥.pʰa(ʔ˧).hat̚˧˥,wan-pa-hat,ວັ�
 W0337,ວັນສຸກ,ʋan˧˥.suk̚˧˥,wan-suk,ວັນ|ສຸກ,high-rising|high-rising,low/live/short/none→3|high/dead/short/none→13,noun,,W0332,Friday,337,time,600,337,,,wan + suk.,SRC-WIKT:ວັນສຸກ,verified,
 W0338,ວັນເສົາ,ʋan˧˥.saw˩(˧),wan-sao,ວັນ|ເສົາ,high-rising|low-rising,low/live/short/none→3|high/live/special/none→1,noun,,W0332,Saturday,338,time,600,338,,,wan + sao.,SRC-WIKT:ວັນເສົາ,verified,
 W0339,ວັນອາທິດ,ʋan˧˥.ʔaː˩(˧).tʰit̚˧,wan-aa-tit,ວັນ|ອາ|ທິດ,high-rising|low-rising|mid,low/live/short/none→3|mid/live/long/none→2|low/dead/short/none→15,noun,,W0332|W0146,Sunday,339,time,600,339,,,wan + aa-tit (= week).,SRC-WIKT:ວັນອາທິດ,verified,
-W0340,ຊົ່ວໂມງ,suːə̯˧.moːŋ˧˥,sua-moong,ຊົ່ວ|ໂມງ,mid|high-rising,low/live/short/mai_ek→6|low/live/long/none→3,noun,,W0142,hour (duration),340,time,600,340,,,sua + moong.,SRC-WIKT:ຊົ່ວໂມງ,verified,
+W0340,ຊົ່ວໂມງ,suːə̯˧.moːŋ˧˥,sua-moong,ຊົ່ວ|ໂມງ,mid|high-rising,low/live/long/mai_ek→6|low/live/long/none→3,noun,,W0142,hour (duration),340,time,600,340,,,sua + moong.,SRC-WIKT:ຊົ່ວໂມງ,verified,
 W0341,ນາທີ,naː˧˥.tʰiː˧˥,naa-tii,ນາ|ທີ,high-rising|high-rising,low/live/long/none→3|low/live/long/none→3,noun,,,minute,341,time,600,341,,,Two rising syllables.,SRC-WIKT:ນາທີ,verified,
 W0342,ທ່ຽງ,tʰiːə̯ŋ˧,tiang,ທ່ຽງ,mid,low/live/long/mai_ek→6,noun,,,noon,342,time,600,342,,,"'tee-ang', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0343,ຕອນບ່າຍ,tɔːn˩(˧).baːj˧,dtawn-baai,ຕອນ|ບ່າຍ,low-rising|mid,mid/live/long/none→2|mid/live/long/mai_ek→5,noun,,W0138,afternoon,343,time,600,343,,,dtawn + baai (level).,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
@@ -388,7 +388,7 @@ W0386,ຄໍ,kʰɔː˧˥,kaw,ຄໍ,high-rising,low/live/long/none→3,noun,,,ne
 W0387,ທ້ອງ,tʰɔːŋ˥˨,tawng,ທ້ອງ,high-falling,low/live/long/mai_tho→9,noun,,,stomach; belly,387,body,600,387,,,"Aspirated t + 'awng', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0388,ແຂນ,kʰɛːn˩(˧),kaen,ແຂນ,low-rising,high/live/long/none→1,noun,,,arm,388,body,600,388,,,"Aspirated k + 'aen', low-rising.",SRC-WIKT:ແຂນ,verified,
 W0389,ຂາ,kʰaː˩(˧),kaa,ຂາ,low-rising,high/live/long/none→1,noun,,,leg,389,body,600,389,,,"Aspirated k + 'aa', low-rising.",SRC-WIKT:ຂາ,verified,
-W0390,ຫົວໃຈ,huːə̯˩(˧).t͡ɕaj˩(˧),hua-jai,ຫົວ|ໃຈ,low-rising|low-rising,high/live/short/none→1|mid/live/special/none→2,noun,,W0106|W0007,heart (organ),390,body,600,390,,,Head + heart.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA joined from parts
+W0390,ຫົວໃຈ,huːə̯˩(˧).t͡ɕaj˩(˧),hua-jai,ຫົວ|ໃຈ,low-rising|low-rising,high/live/long/none→1|mid/live/special/none→2,noun,,W0106|W0007,heart (organ),390,body,600,390,,,Head + heart.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA joined from parts
 W0391,ໄຂ້,kʰaj˧˩,kai,ໄຂ້,low-falling,high/live/special/mai_tho→7,noun,,,fever,391,health,600,391,,,"Aspirated k + 'ai', falling. Compare ໄຂ່ egg (level).",SRC-WIKT:ໄຂ້,verified,
 W0392,ໄອ,ʔaj˩(˧),ai,ໄອ,low-rising,mid/live/special/none→2,verb,,,cough,392,health,600,392,,,"'ai', low-rising.",SRC-WIKT:ໄອ,verified,
 W0393,ຫວັດ,ʋat̚˧˥,wat,ຫວັດ,high-rising,high/dead/short/none→13,noun,,,(common) cold,393,health,600,393,,,"Short 'wat', rising (silent ຫ).",SRC-WIKT:ຫວັດ,verified,ເປັນຫວັດ = have a cold
@@ -399,13 +399,13 @@ W0397,ປະຕູ,pa(ʔ˧˥).tuː˩(˧),bpa-dtuu,ປະ|ຕູ,high-rising|low-
 W0398,ປ່ອງຢ້ຽມ,pɔːŋ˧.jiːə̯m˥˨,bpawng-yiam,ປ່ອງ|ຢ້ຽມ,mid|high-falling,mid/live/long/mai_ek→5|mid/live/long/mai_tho→8,noun,,,window,398,home,600,398,,,bpawng + yiam.,SRC-WIKT:ປ່ອງຢ້ຽມ,verified,
 W0399,ຕັ່ງ,taŋ˧,dtang,ຕັ່ງ,mid,mid/live/short/mai_ek→5,noun,,,chair; stool,399,home,600,399,,,"Short 'dtang', level.",SRC-WIKT:ຕັ່ງ,verified,
 W0400,ຕຽງ,tiːə̯ŋ˩(˧),dtiang,ຕຽງ,low-rising,mid/live/long/none→2,noun,,,bed,400,home,600,400,,,"'dtee-ang', low-rising.",SRC-WIKT:ຕຽງ,verified,
-W0401,ຫ້ອງຄົວ,hɔːŋ˧˩.kʰuːə̯˧˥,hawng-kua,ຫ້ອງ|ຄົວ,low-falling|high-rising,high/live/long/mai_tho→7|low/live/short/none→3,noun,,W0012,kitchen,401,home,600,401,,,Room + kitchen.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0401,ຫ້ອງຄົວ,hɔːŋ˧˩.kʰuːə̯˧˥,hawng-kua,ຫ້ອງ|ຄົວ,low-falling|high-rising,high/live/long/mai_tho→7|low/live/long/none→3,noun,,W0012,kitchen,401,home,600,401,,,Room + kitchen.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0402,ໄຟ,faj˧˥,fai,ໄຟ,high-rising,low/live/special/none→3,noun,,,fire; light,402,home,600,402,,,"'fai', rising.",SRC-WIKT:ໄຟ,verified,Key word for ຟ in WP Lao script
 W0403,ໄຟຟ້າ,faj˧˥.faː˥˨,fai-faa,ໄຟ|ຟ້າ,high-rising|high-falling,low/live/special/none→3|low/live/long/mai_tho→9,noun,,W0402,electricity,403,home,600,403,,,Fire + sky (= lightning).,SRC-WIKT:ໄຟຟ້າ,verified,
 W0404,ພັດລົມ,pʰat̚˧.lom˧˥,pat-lom,ພັດ|ລົມ,mid|high-rising,low/dead/short/none→15|low/live/short/none→3,noun,,,electric fan,404,home,600,404,,,pat (level) + lom (rising).,SRC-WIKT:ພັດລົມ,verified,
 W0405,ແອ,ʔɛː˩(˧),ae,ແອ,low-rising,mid/live/long/none→2,noun,,,air conditioner,405,home,600,405,,,From English 'air': 'ae'.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0406,ໂທລະທັດ,tʰoː˧˥.la(ʔ˧).tʰat̚˧,too-la-tat,ໂທ|ລະ|ທັດ,high-rising|mid|mid,low/live/long/none→3|low/dead/short/none→15|low/dead/short/none→15,noun,,,television,406,home,600,406,,,too + la + tat.,SRC-WIKT:ໂທລະທັດ,verified,Wiktionary gloss was relayed as 'telescope'; TV sense from Tatoeba 8991658 (ໂທລະທັດ television)
-W0407,ຄອມພິວເຕີ,kʰɔːm˧˥.pʰiw˧˥.tɤː˥˨,kawm-piw-dtoe,ຄອມ|ພິວ|ເຕີ,high-rising|high-rising|high-falling,low/live/long/none→3|low/live/short/none→3|mid/live/long/none→2,noun,,,computer,407,objects,600,407,,,"Loanword: last syllable high falling, not the low-rising the spelling predicts.",SRC-WIKT:ຄອມພິວເຕີ,verified,Loanword with irregular tone on ເຕີ (Wiktionary ˥˨); the rule mismatch is expected
+W0407,ຄອມພິວເຕີ,kʰɔːm˧˥.pʰiw˧˥.tɤː˥˨,kawm-piw-dtoe,ຄອມ|ພິວ|ເຕີ,high-rising|high-rising|high-falling,low/live/long/none→3|low/live/short/none→3|mid/live/long/none→2!lexical,noun,,,computer,407,objects,600,407,,,"Loanword: last syllable high falling, not the low-rising the spelling predicts.",SRC-WIKT:ຄອມພິວເຕີ,verified,Loanword with irregular tone on ເຕີ (Wiktionary ˥˨); the rule mismatch is expected
 W0408,ກະແຈ,ka(ʔ˧˥).t͡ɕɛː˩(˧),ga-jae,ກະ|ແຈ,high-rising|low-rising,mid/dead/short/none→14|mid/live/long/none→2,noun,,,key,408,objects,600,408,,,ga + jae.,SRC-WIKT:ກະແຈ,verified,
 W0409,ກະເປົາ,ka(ʔ˧˥).paw˩(˧),ga-bpao,ກະ|ເປົາ,high-rising|low-rising,mid/dead/short/none→14|mid/live/special/none→2,noun,,,bag,409,objects,600,409,,,ga + bpao.,SRC-WIKT:ກະເປົາ,verified,
 W0410,ບັດ,bat̚˧˥,bat,ບັດ,high-rising,mid/dead/short/none→14,noun,,,card,410,objects,600,410,,,"Short 'bat', rising.",SRC-WIKT:ບັດ,verified,
@@ -446,7 +446,7 @@ W0444,ປ່າ,paː˧,bpaa,ປ່າ,mid,mid/live/long/mai_ek→5,noun,,,forest
 W0445,ນ້ຳຕົກ,nam˥˨.tok̚˧˥,nam-dtok,ນ້ຳ|ຕົກ,high-falling|high-rising,low/live/special/mai_tho→9|mid/dead/short/none→14,noun,,W0011|W0121,waterfall,445,nature,600,445,,,Water + fall.,SRC-WIKT:ນ້ຳຕົກ,verified,
 W0446,ທະເລ,tʰa(ʔ˧).leː˧˥,ta-lee,ທະ|ເລ,mid|high-rising,low/dead/short/none→15|low/live/long/none→3,noun,,,sea,446,nature,600,446,,,ta + lee.,SRC-WIKT:ທະເລ,verified,
 W0447,ເກາະ,kɔʔ˧˥,gaw,ເກາະ,high-rising,mid/dead/short/none→14,noun,,,island,447,nature,600,447,,,"Short clipped 'gaw', rising.",SRC-WIKT:ເກາະ,verified,
-W0448,ຂົວ,kʰuːə̯˩(˧),kua,ຂົວ,low-rising,high/live/short/none→1,noun,,,bridge,448,places,600,448,,,"Aspirated k + 'oo-a', low-rising.",SRC-WIKT:ຂົວ,verified,
+W0448,ຂົວ,kʰuːə̯˩(˧),kua,ຂົວ,low-rising,high/live/long/none→1,noun,,,bridge,448,places,600,448,,,"Aspirated k + 'oo-a', low-rising.",SRC-WIKT:ຂົວ,verified,
 W0449,ນ້ຳຊາ,nam˥˨.saː˧˥,nam-saa,ນ້ຳ|ຊາ,high-falling|high-rising,low/live/special/mai_tho→9|low/live/long/none→3,noun,,W0011|W0081,tea (drink),449,food,600,449,,,Water + tea.,SRC-TATOEBA:8995298,unverified,Not on Wiktionary (404); IPA joined from parts
 W0450,ນ້ຳຕານ,nam˥˨.taːn˩(˧),nam-dtaan,ນ້ຳ|ຕານ,high-falling|low-rising,low/live/special/mai_tho→9|mid/live/long/none→2,noun,,W0011,sugar,450,food,600,450,,,Water + palm sugar.,SRC-WIKT:ນ້ຳຕານ,verified,
 W0451,ເກືອ,kɯːə̯˩(˧),geua,ເກືອ,low-rising,mid/live/long/none→2,noun,,,salt,451,food,600,451,,,"'geu-a', low-rising.",SRC-WIKT:ເກືອ,verified,
@@ -461,7 +461,7 @@ W0459,ເຂົ້າປຽກ,kʰaw˧˩.piːə̯k̚˧˩,kao-bpiak,ເຂົ້�
 W0460,ເຂົ້າປຸ້ນ,kʰaw˧˩.pun˥˨,kao-bpun,ເຂົ້າ|ປຸ້ນ,low-falling|high-falling,high/live/special/mai_tho→7|mid/live/short/mai_tho→8,noun,,W0019,rice noodles,460,food,600,460,,,kao + bpun.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0461,ລາບ,laːp̚˥˨,laap,ລາບ,high-falling,low/dead/long/none→12,noun,,,laap (minced meat salad),461,food,600,461,,,"'laap', high and falling.",SRC-WIKT:ລາບ,verified,
 W0462,ປີ້ງ,piːŋ˥˨,bpiing,ປີ້ງ,high-falling,mid/live/long/mai_tho→8,verb,,,grill,462,food,600,462,,,"Unaspirated p + 'eeng', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
-W0463,ຂົ້ວ,kʰuːə̯˧˩,kua,ຂົ້ວ,low-falling,high/live/short/mai_tho→7,verb,,,stir-fry,463,food,600,463,,,"Aspirated k + 'oo-a', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0463,ຂົ້ວ,kʰuːə̯˧˩,kua,ຂົ້ວ,low-falling,high/live/long/mai_tho→7,verb,,,stir-fry,463,food,600,463,,,"Aspirated k + 'oo-a', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
 W0464,ຕົ້ມ,tom˥˨,dtom,ຕົ້ມ,high-falling,mid/live/short/mai_tho→8,verb,,,boil,464,food,600,464,,,"Short 'dtom', high and falling.",SRC-WIKT:ຕົ້ມ,verified,
 W0465,ແກງ,kɛːŋ˩(˧),gaeng,ແກງ,low-rising,mid/live/long/none→2,noun,,,soup; curry,465,food,600,465,,,"'gaeng', low-rising.",SRC-WIKT:ແກງ,verified,
 W0466,ເຂົ້າໜົມ,kʰaw˧˩.nom˩(˧),kao-nom,ເຂົ້າ|ໜົມ,low-falling|low-rising,high/live/special/mai_tho→7|high/live/short/none→1,noun,,W0019,snack; dessert,466,food,600,466,,,kao + nom (low-rising).,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
