@@ -89,3 +89,32 @@
   - Filled into letters.csv and vowels.csv.
 - Rare items are reading-only. coverage_required set to `reading-only` for C22 ຣ and V14 V20 V25 V28 V30.
 - Next: validate_data.py proposal; verify the first-35 words against Wiktionary (researcher), with the ນອນ→ຫ້ອງນອນ and gradual-numbers adjustments for batch 2.
+
+## 2026-10-09 Wiktionary check of the first 35 words + validate_data.py
+- Proposed `_agent/proposed-scripts/validate_data.py` (stdlib; schema, foreign-key, Lao-text, tone, sentence-segmentation, coverage, 2+ sentences, cap checks). Awaiting approval alongside tone_derive.py.
+- Wiktionary (raw wikitext) confirms the entry and meaning for 30/35, plus ນອນ, ຫ້ອງນອນ, ເຂົ້າໃຈ.
+  - Notable: ກິນ also "drink" (colloquial); ຂ້ອຍ colloquial; ເຈົ້າ polite affirmation confirmed; ລາວ pronoun pronounced as ເລົາ (short vowel), to confirm; ໃສ also "clear"; ບໍ່ has both negative and interrogative senses.
+  - No classifiers are given on any noun page.
+- 404 on Wiktionary: ບໍ, ອັນ, ເທົ່າໃດ, ຢາກ, ແດ່. Possible code-point order issue; second-source search running (Wiktionary search, Tatoeba, SEAsite).
+- The raw wikitext doesn't expand lo-pron (no IPA), so a rendered-page IPA fetch is running.
+- Next: merge results; once the scripts are approved, write words.csv rows for batch 1 with tones derived and cross-checked.
+
+## 2026-10-09 Batch 1 written to data/words.csv (32 words)
+- User direction:
+  - Keep ຢາກ and ເທົ່າໃດ.
+  - ບໍ່ = no + question marker (one word; spelling later).
+  - Drop ອັນ and ແດ່ (low priority; noted in NEEDS_HUMAN).
+- Result: 32 words W0001–W0032.
+  - Tones taken from Wiktionary-rendered IPA (`_agent/research/batch1-wiktionary.md`).
+  - ເທົ່າໃດ and ຢາກ have no IPA or tone yet (not on Wiktionary); the script will derive them.
+  - ລາວ is the pronoun only (short vowel, law˧˥); the noun "Lao" comes later.
+- Filled intro_word_id in letters.csv and vowels.csv:
+  - 21 consonants/marks introduced: incl. T1 T2 and the ຫຍ cluster.
+  - 16 vowel forms introduced.
+  - ອ (C26) counts as introduced at ອາຫານ, because in ຂ້ອຍ it is part of the vowel ◌ອ◌.
+- Classifiers not yet sourced (no noun page gives one).
+- Blocked: approved-scripts/*.py are not in `.claude/approved-scripts.json`, so the guardrail refuses to run them. Asked the user to run `.claude/tools/approve-script.ps1` on both files.
+- Next, once the scripts run:
+  - tone_derive on words.csv; fill tone_derivation; derive the tones of ເທົ່າໃດ and ຢາກ.
+  - validate_data.
+  - Then sentences (Tatoeba first) and templates.

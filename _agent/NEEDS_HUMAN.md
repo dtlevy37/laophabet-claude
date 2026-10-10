@@ -6,6 +6,11 @@
 - Respelling: English-friendly scheme, written in SCHEMA.md. The chat preview wrote ຂ as "kh"; the scheme uses "k", as in the option's description.
 - Rare items (ຣ, ເ◌ັຍ ເ◌ຶອ ◌ົວະ, ແ◌ັ◌ ◌ັອ◌): reading-only.
 
+## To resolve later
+- **ບໍ່ vs ບໍ** (question marker). Wiktionary has only ບໍ່, with both the "no" and the question senses. Tatoeba often writes the question marker without the tone mark (ບໍ). Batch 1 uses ບໍ່ for both (user, 2026-10-09: "resolve the correct spelling later").
+- **Deferred, low priority:** ອັນ (thing / general classifier; only found inside ອັນນີ້ and ອັນໃດ) and ແດ່ (softening "please"; no sourced gloss).
+- **Noun classifiers:** none are given on the Wiktionary pages for the batch-1 nouns. A classifier source is still needed.
+
 ## Awaiting approval
 - `_agent/proposed-scripts/tone_derive.py`: derives tones per syllable and cross-checks against recorded tones and IPA. Run with `--selftest` first.
 
