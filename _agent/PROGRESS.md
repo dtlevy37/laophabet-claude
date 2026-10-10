@@ -392,4 +392,5 @@ pron_tips are agent-written guidance.
 - User asked why 393 words are unverified. Answer: English Wiktionary is the only checking source and has about 60% 404s; "unverified" means no citation, not that the word is doubtful.
 - User suggested https://www.lexilogos.com/english/lao_dictionary.htm as a source. Next: fetch it, identify which linked dictionaries are usable, and propose domains plus a verification pass over the unverified rows.
 - Open decision: add the 10 missing classifier words to reach exactly 1000?
+- **User decision:** don't use sealang.net (outdated SSL certificates) or Enfield's grammar (little Lao script). Continue without them. The user is not worried about crowd-sourced sources (applies to Wiktionary too), so Glosbe remains a possible future second source if wanted.
   Then run tone_derive --fill → build_order → validate.
