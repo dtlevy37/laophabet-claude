@@ -303,3 +303,18 @@ pron_tips are agent-written guidance.
 - build_order still misreads ແຂວງ and ຫ່ວງ (an ERROR line for each, no effect on output). A build_order rev is pending.
 - _agent/DONE moved to _trash/DONE-600 (the run is extended).
 - Next: phase 5. Words 601–1000 by topic, sentences, checkpoints at 800 and 1000.
+
+## 2026-10-10 Phase 5 drafts
+- **Word drafts (scholar subagents):**
+  - `_agent/research/batch5a-words.csv` (W0601–W0800; 94 verified / 106 unverified).
+  - `_agent/tmp/batch5b-words.csv` (W0801–W1000; 98 verified / 102 unverified).
+- **Duplicates between batches:** 12. Two are kept as homographs (ສ້ອມ fork/repair, ຮາກ vomit/root). Drop list (B copies): W0819 W0813 W0825 W0890 W0914 W0922 W0907 W0983 W0934 W0936. Remap W0934=W0601, W0936=W0705. After the merge: 990 words.
+- **Spelling fixes after a researcher check:** ໄມ້ຖູ່, ກະຕິບ, ປ້ຳນ້ຳມັນ, ຫໍພິພິດຕະພັນ, ເວັບໄຊຕ໌. Details in NEEDS_HUMAN.md.
+- **Proposed scripts:**
+  - `merge_words.py`: drop, remap, renumber, and append words, sentences, templates and fillers, with `LAO:` filler resolution.
+  - `build_order.py` rev 3: ວ parsing and the ◌໌ cancellation mark.
+- **Incident:** `git stash` / `stash pop` rewrote approved-scripts/tone_derive.py with CRLF, so the hash check fails. The user must re-approve it. Never use git stash or checkout in this repo; use `git show HEAD:<path>` instead.
+- **Sentence drafts running:** batch5a → S1127–S1599 + TPL15–20; batch5b → S1600–S2199 + TPL21–26.
+- **Merge command (after approval):**
+  `python approved-scripts/merge_words.py _agent/research/batch5a-words.csv _agent/tmp/batch5b-words.csv --drop W0819,W0813,W0825,W0890,W0914,W0922,W0907,W0983,W0934,W0936 --remap W0934=W0601,W0936=W0705,W0819=W0709,W0813=W0740,W0825=W0688,W0890=W0708,W0914=W0665,W0922=W0628,W0907=W0676,W0983=W0767 --allow-homograph ສ້ອມ,ຮາກ --sentences ... --templates ... --fillers ... --check`
+  Then run tone_derive --fill → build_order → validate.

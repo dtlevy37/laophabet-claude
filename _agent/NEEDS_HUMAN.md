@@ -11,6 +11,13 @@
 - **Deferred, low priority:** ອັນ (thing / general classifier; only found inside ອັນນີ້ and ອັນໃດ) and ແດ່ (softening "please"; no sourced gloss).
 - **Noun classifiers:** none are given on the Wiktionary pages for the batch-1 nouns. A classifier source is still needed.
 
+## Phase 5 (words 601–1000) review items, 2026-10-10
+- **Spellings settled from Wiktionary:** ໄມ້ຖູ່ chopsticks (replaces the draft ຕະເກຍບ), ປ້ຳນ້ຳມັນ gas station, ວັນທີ່ date (translation table; ວັນທີ without the mark has no entry), ຫໍພິພິດຕະພັນ museum and ເວັບໄຊຕ໌ website (translation tables only; single source).
+- **Unsourced spellings (agent knowledge):** ກະຕິບ sticky-rice basket (all variants 404), ໂມໂຫ, ຫ້ອງນັ່ງຫຼິ້ນ, ວິນຫົວ, ບັນໄດ, ປະຕິທິນ, ໄວຟາຍ, ບາສີ.
+- **Loanword tones** derived from the spelling and possibly different in speech: ຕຸກຕຸກ, ແທັກຊີ, ຄລີນິກ, ເວັບໄຊຕ໌. Add confirmed irregular tones to data/tone_exceptions.csv.
+- **kw-cluster IPA:** Wiktionary keeps writing ກວ/ຄວ as -uːə̯- (ກວາດ, ຄວາມຮູ້ສຶກ, ຂໍ້ຄວາມ). The project otherwise uses kw-/kʰw-. Tones are unaffected; the IPA style is inconsistent until this is decided.
+- **Classifiers** in the new batch are mostly agent assumptions (noted per row). ຄູ່ (pair, the classifier for ໄມ້ຖູ່) is not a word yet. ມືຖື has none (ໜ່ວຍ or ເຄື່ອງ?).
+
 ## Awaiting approval
 - `_agent/proposed-scripts/tone_derive.py`: derives tones per syllable and cross-checks against recorded tones and IPA. Run with `--selftest` first.
 
