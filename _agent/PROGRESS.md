@@ -52,9 +52,16 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 
 ## Next
 1. **Done:** build_order rev 5 approved. The pipeline ran (0 errors) and created `_agent/vocab.csv` (1015 words). No need to re-run it before the first batch.
-2. **Pending user edits to `.claude/agents/drafter.md`:**
+2. **Done by user** (report still mentions Tatoeba/BBM; drafter told to ignore): edits to `.claude/agents/drafter.md`:
    - Line 14: load the vocabulary from `_agent/vocab.csv`.
    - Remove the Tatoeba/BBM steps in "Sentences": compose directly.
    - Add: "Pick reasonable common words for the category without long deliberation."
    - CLAUDE.md also mentions Tatoeba/BBM in the drafter bullet, Accuracy rules and Sources.
-3. **Phase 7:** one drafter batch per category (~50–100 words each, one after another; tags c1, c2, ...) → check_drafts → tone check → merge → pipeline → commit. Checkpoints at 1500/2000/2500/3000.
+3. **Phase 7 (in progress, see entries below):** one drafter batch per category (~50–100 words each, one after another; tags c1, c2, ...) → check_drafts → tone check → merge → pipeline → commit. Checkpoints at 1500/2000/2500/3000.
+
+## 2026-10-10 Phase 7 batch c1 (restaurants) merged
+- 56 words (21 verified, 35 unverified) and 112 composed sentences became W001016–W001071. Totals: 1071 words, 2144 sentences.
+- check_drafts 0 problems; draft tones 112/112 ok; pipeline 0 errors.
+- New benign warning: W001028 ບ່ອນນັ່ງ uses the noun ບ່ອນ as its classifier (valid usage).
+- Doubtful items added to NEEDS_HUMAN. Drafter cost about 160k tokens.
+- Next: c2 clothes, then gardening, fruits, vegetables, meat, animals, transportation, directions.

@@ -49,3 +49,8 @@ Details: `_agent/research/lao-tones-wiktionary-fsi-kerr.md` §7. The matrix in S
 - **D3, cell 15 (low class, dead, short vowel):** mid per SEAsite (ພັກ, ເຮັດ), Wiktionary and Wikipedia 3.1/7.1.1. Wikipedia 5.3 (generic Lao, not labelled Vientiane) gives ຮັກ "love" as low. Majority used: mid. A native speaker's check of ຮັກ would settle it.
 - **D2, cells 13–14:** Hartmann calls these "mid-rising" where everyone else says high(-rising). Probably the rise starts lower; same category. Possibly worth a pron_tip note.
 - **D5/D6:** exact Chao values differ slightly between sources (e.g. 31 vs 21), and some sources count 6 tones instead of 5 (Kerr, FSI, Levy 1982). Five were chosen, per Wiktionary/Osatananda.
+
+## Batch c1 (restaurants, W001016–W001071): doubtful items
+- Agent-guessed spellings (not on Wiktionary): ເສີບ / ພະນັກງານເສີບ "serve, waiter"; ມັງສະວິລັດ "vegetarian" (modelled on Thai).
+- Meanings or IPA by agent: ນົວ "savoury"; ລະ "each, per"; ຊີ້ນດາດ; ເຂົ້າຊອຍ; ກອບ "crispy"; ຄົວ "kitchen"; ໃສ່ "add (to food)" sense; ຜັກຫອມ "coriander, herbs".
+- Word order ໄກ່ປີ້ງ vs ປີ້ງໄກ່; the sentence ຂ້ອຍກິນມັງສະວິລັດ may be unnatural.
