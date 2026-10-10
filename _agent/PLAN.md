@@ -6,7 +6,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] List the web domains and scripts needed for the next stretch; ask the user to approve them in one sitting
 - [x] `scholar`: Lao alphabet (consonants, vowels, classes) and Vientiane tone rules -> `_agent/research/`
 - [x] Find candidate frequency lists and dictionaries; record in `_agent/research/sources.md`; get domains approved (user: no corpus ranking; usefulness by judgement; tatoeba approved)
-- [ ] Complete inventory of consonants and vowels with counts and sources -> `data/letters.csv`, `data/vowels.csv`
+- [x] Complete inventory of consonants and vowels with counts and sources -> `data/letters.csv`, `data/vowels.csv` (respelling column pending a scheme choice)
 - [x] Choose the tone convention and finalize `_agent/SCHEMA.md`
 - [x] Propose the tone-derivation script to `_agent/proposed-scripts/` for approval (awaiting approval)
 

@@ -1,5 +1,18 @@
 # Candidate sources
 
+## Source IDs (used in the `source` column of every CSV)
+| ID | Source |
+|---|---|
+| SRC-WP-SCRIPT | Wikipedia, "Lao script" (oldid 1365847593, read 2026-10-09). Notes: `lao-script-wikipedia-unicode.md` |
+| SRC-WP-LANG | Wikipedia, "Lao language" (sections 3.1, 5.3, 7.1.1). Same notes file |
+| SRC-SEASITE | SEAsite / Northern Illinois University Lao writing-system lessons and tone chart. Notes: `lao-tones-seasite.md` |
+| SRC-COMPART | compart.com Unicode Lao block U+0E80 (82 assigned; lacks U+0ECE) |
+| SRC-WIKT-GUIDE | Wiktionary, "Lao entry guidelines" (tone table). Notes: `lao-tones-wiktionary-fsi-kerr.md` |
+| SRC-WIKT-MODULE | Wiktionary `Module:lo-pron` (Vientiane tone tables; uncited code) |
+| SRC-KERR | Kerr, *Lao–English Dictionary* (1972/1992), front matter Table III (archive.org CC0 item) |
+| SRC-WIKT:&lt;entry&gt; | A Wiktionary Lao entry, e.g. `SRC-WIKT:ສະບາຍດີ` |
+| SRC-TATOEBA:&lt;id&gt; | A Tatoeba sentence by ID |
+
 Status key: **studied** (notes in `_agent/research/`), **candidate** (not yet studied), **blocked** (unreachable), **rejected**.
 "Trusted for" is what we would rely on the source for. Everything else gets cross-checked.
 

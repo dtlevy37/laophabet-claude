@@ -3,8 +3,22 @@
 All files are UTF-8 CSV in `data/`, one header row, Lao text unmodified (no transliteration substitution), IDs stable once assigned.
 Common columns on every table: `source`, `confidence` (verified | derived | unverified), `notes`.
 
-- **letters.csv**: letter_id, lao, kind (consonant|vowel-symbol|tone-mark|other), name_lao, ipa_initial, ipa_final, consonant_class (high|mid|low), respelling, pron_tip, intro_word_id
-- **vowels.csv**: vowel_id, lao_pattern, length (short|long), ipa, respelling, pron_tip, intro_word_id
+- **letters.csv**: letter_id, lao, unicode, kind (consonant|consonant-cluster|consonant-ligature|tone-mark|other|digit), name_lao, name_gloss_en, ipa_initial, ipa_final, consonant_class (high|mid|low), romanization_bgn, respelling, pron_tip, coverage_required (yes|no), intro_word_id
+  - IDs: C01–C27 single consonants in traditional order; C28–C33 the ຫ-combinations; T1–T4 tone marks; S1–S3 other symbols; D0–D9 digits.
+  - `name_lao` holds the acrophonic key word (e.g. ໄກ່ for ກ), and `name_gloss_en` its meaning.
+  - Vowel signs are not listed here; they are covered by the patterns in vowels.csv.
+- **vowels.csv**: vowel_id, lao_pattern, form (open|closed|both|special), length (short|long|special), sound_group, ipa, romanization_bgn, respelling, pron_tip, coverage_required, intro_word_id
+  - One row per **written form**: a vowel whose shape changes before a final consonant has two rows (◌ະ / ◌ັ◌) sharing a `sound_group`. This lets coverage track each shape a reader must recognise.
+- `pron_tip` (all tables): advice written by the agent from the verified IPA and the SEAsite notes for English speakers. The English comparisons are approximations, and the row's `confidence` refers to the IPA and the class.
+- `respelling`: blank until the learner respelling scheme is chosen. That decision is pending with the user.
+
+### Inventory counts (2026-10-09)
+- **Consonants: 27 single letters** (6 high, 8 mid, 13 low), per SRC-WP-SCRIPT and SRC-SEASITE (they agree), **plus 6 ຫ-combinations** (ຫງ ຫຍ ໜ ໝ ຫຼ ຫວ). That makes SEAsite's "33 consonants".
+  - WP's lead says "7 ligatures" but lists 6. SEAsite once mentions ຫຣ. Neither is counted.
+- **Vowels: 28** (SEAsite: 12 short + 12 long + 4 special, with ໄ and ໃ counted separately; WP tables: 12 + 12 + 3 with ໄ/ໃ combined). That is **36 written forms** once the closed-syllable shapes are included.
+  - WP's lead figure of 33 is unreconciled.
+- **Tone marks: 4**, of which 2 are common.
+- **Unicode Lao block:** 82 assigned (compart) or 83 (WP, with U+0ECE).
 - **words.csv**: word_id, lao, ipa, respelling, syllables, tone_by_syllable, tone_derivation (per syllable: class, syllable type, vowel length, tone mark), pos, classifier_word_id, component_word_ids, gloss_en, freq_rank, topic, tier (30|100|300|600|extra), intro_order, new_letter_ids, new_vowel_ids, pron_tip
   - `syllables`: the written syllables separated by `|`, e.g. `ສະ|ບາຍ|ດີ`.
   - `tone_by_syllable`: tone names separated by `|`, in the same order.

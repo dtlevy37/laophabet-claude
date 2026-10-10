@@ -71,3 +71,13 @@
   - Sprinkle numbers in gradually.
   - Continuation approved.
 - Next: inventory CSVs (letters.csv, vowels.csv) from the notes, plus the validate_data.py proposal; then verify the first-35 words against Wiktionary.
+
+## 2026-10-09 Inventory CSVs
+- `data/letters.csv` (60 rows):
+  - 27 consonants + 6 ຫ-combinations
+  - 4 tone marks, 3 symbols, 10 digits
+- `data/vowels.csv`: 36 written forms of 28 vowels.
+- Counts and conventions are in SCHEMA.md. Source IDs are in sources.md.
+- Respelling is blank pending the user's choice of scheme.
+- Open questions are in NEEDS_HUMAN: the respelling scheme; whether rare items (ຣ, short diphthongs, rare closed forms) are required for coverage.
+- Next: user answers; tone_derive.py approval; write the validate_data.py proposal; verify the first-35 words against Wiktionary.
