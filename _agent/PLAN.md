@@ -34,8 +34,8 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 
 ## Phase 5: To 1000 words (user request 2026-10-10; hard cap 1000)
 - [x] tone_derive rev 4: ◌ົວ length, kw clusters, lexical exceptions, --quiet
-- [ ] build_order rev: parse ແຂວງ (lead vowel + kw cluster) and ຫ່ວງ (ຫ + ◌ວ◌)
-- [ ] Words 601–800 by topic (tier `extra`), 2+ sentences each, tones filled
-- [ ] CHECKPOINT 800: commit and continue
-- [ ] Words 801–1000 by topic, 2+ sentences each; templates for topic sentence building
-- [ ] CHECKPOINT 1000: final report; commit; create `_agent/DONE`
+- [x] build_order rev 3/4: ແຂວງ, ຫ່ວງ, ◌໌, ໄຫວ້, ຄລີ (tone_derive rev 5 in step)
+- [x] Words 601–800 by topic (tier `extra`), 2+ sentences each, tones filled
+- [x] CHECKPOINT 800: commit and continue
+- [x] Words 801–990 by topic, 2+ sentences each; templates TPL15–26 for topic sentence building (990 after dropping 10 duplicates)
+- [x] CHECKPOINT 1000 (final, 990 words): final report; commit; create `_agent/DONE`

@@ -328,4 +328,19 @@ pron_tips are agent-written guidance.
   - ໄຫວ້ (ວ after ໄ, W0962)
 - **Fix proposed:** tone_derive rev 5 and build_order rev 4. tone_derive still needs re-approval (CRLF incident), so the fix rides along.
 - **Pending:** tone_derive --fill for W0601–W0990 → build → validate → CHECKPOINT 800 + 1000. Validate currently warns only about missing tones (not yet filled) and noun classifiers.
+
+## 2026-10-10 CHECKPOINT 800 / FINAL (990 words)
+- User approved tone_derive rev 5 and build_order rev 4.
+- **tone_derive:** selftest 41/41; tones filled for 390 rows; 1590 syllables, 0 mismatches against the IPA (1 LEXICAL: ຄອມພິວເຕີ).
+- **build_order:** 990 words, 0 parser errors, 0 heavy words, 1964/1964 sentences placed, 3048 learning steps.
+- **validate:** 0 errors.
+  - Warnings: 391 nouns without a classifier (180 of them new; deferred per the user's checkpoint-100 decision).
+  - ໃຈ appears only in compounds.
+  - ສ່ວນຫຼຸດ W0647 is introduced before its component ສ່ວນ W0799 (accepted; taught as a whole).
+- **Words:** 990 / cap 1000. Confidence: verified 590 / derived 7 / unverified 393. The 390 new words split 190 verified / 200 unverified.
+- **Sentences:** 1964. Confidence: verified 61 / unverified 1903. All 839 new sentences are agent-composed; no Tatoeba matches were searched in phase 5.
+- **Templates:** 26 (TPL15–26 new, for topic sentence building). Fillers: +87.
+- **Coverage:** unchanged (all required letters and vowels by word 600). The ◌໌ cancellation mark now appears in ເວັບໄຊຕ໌.
+- **Stopped at 990, not 1000:** 10 cross-batch duplicates were dropped and not replaced.
+- **Open for review:** NEEDS_HUMAN.md phase-5 section; all `unverified` rows.
   Then run tone_derive --fill → build_order → validate.

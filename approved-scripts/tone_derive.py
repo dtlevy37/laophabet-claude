@@ -34,6 +34,8 @@ Revision 4:
     IPA agree with the listed tone; --fill writes the listed tone and marks the
     derivation "→cell!lexical".
   - --quiet prints only rows that are not ok, so large CSVs don't flood the console.
+Revision 5: ວ after ໄ/ໃ is part of the initial (ໄຫວ້); loanword ລ/ຣ clusters before a
+  vowel sign (ຄລີນິກ) are part of the initial. Tones are unchanged.
 """
 import argparse
 import csv
@@ -100,7 +102,8 @@ def w_is_cluster(s, w_idx, leading):
     Followed directly by a final consonant with no leading vowel, it is the vowel ◌ວ◌."""
     rest = [c for c in s[w_idx + 1:] if c not in TONE_MARKS]
     if not rest:
-        return False  # ວ is the last letter: a final (ແກ້ວ) or the initial alone
+        # ວ is the last letter: a final (ແກ້ວ), except after ໄ/ໃ, which take no final (ໄຫວ້)
+        return leading in ("ໄ", "ໃ")
     if rest[0] in VOWEL_SIGNS:
         return True
     return bool(leading) and rest[0] in CONSONANTS
@@ -152,6 +155,10 @@ def analyse(syl):
     elif nxt == "ວ":
         init_end += 1
         flags.append("w-cluster")
+    elif nxt in ("ລ", "ຣ") and init_end + 1 < len(s) and s[init_end + 1] in VOWEL_SIGNS:
+        # Loanword cluster (ຄລີນິກ): a vowel sign straight after ລ/ຣ means it is not a final.
+        init_end += 1
+        flags.append("l-cluster(loan)")
     res["initial"] = s[i:init_end]
     cls = consonant_class(c0)
     res["class"] = cls
@@ -295,6 +302,9 @@ PARSE_TESTS = [
     ("ຊ່ວຍ", "ຊ", "long", "mid"),
     ("ແກ້ວ", "ກ", "long", "high-falling"),
     ("ເງິນ", "ງ", "short", "high-rising"),
+    ("ໄຫວ້", "ຫວ", "special", "low-falling"),
+    ("ໄຫວ", "ຫວ", "special", "low-rising"),
+    ("ຄລີ", "ຄລ", "long", "high-rising"),
 ]
 
 
