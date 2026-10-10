@@ -39,3 +39,17 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] CHECKPOINT 800: commit and continue
 - [x] Words 801–990 by topic, 2+ sentences each; templates TPL15–26 for topic sentence building (990 after dropping 10 duplicates)
 - [x] CHECKPOINT 1000 (final, 990 words): final report; commit; create `_agent/DONE`
+- [x] Classifier model (3 columns) + 10 classifier words → exactly 1000
+
+## Phase 6: Tooling for growth (user A–I, 2026-10-10)
+- [x] Wide IDs (W 6 digits, S 9 digits) via rekey_ids; validate enforces the formats
+- [x] check_drafts.py, pipeline.sh, merge_words rev 3 (sentence renumbering, override remap)
+- [x] drafter subagent + guard allowlist; .gitattributes; CLAUDE.md updated by the user (cap 3000)
+- [ ] Drafter test batch (small, ~15 words + sentences); check_drafts → merge → pipeline; review the workflow with the user
+
+## Phase 7: To about 3000 words (hard cap 3000)
+- [ ] Topic batches via drafter (sequential), each checked, merged and piped
+- [ ] CHECKPOINT 1500
+- [ ] CHECKPOINT 2000
+- [ ] CHECKPOINT 2500
+- [ ] CHECKPOINT 3000: final report; commit; create `_agent/DONE`
