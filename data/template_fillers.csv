@@ -128,3 +128,33 @@ TPL26,adjective,W0130,,unverified,ໄວ fast
 TPL26,adjective,W0132,,unverified,ຊ້າ slow
 TPL26,noun2,W0942,,unverified,rabbit (comparison target)
 TPL26,noun2,W0095,,unverified,ໝາ dog (comparison target)
+TPL27,noun,W0095,,unverified,ໝາ (classifier ໂຕ)
+TPL27,noun,W0286,,unverified,ລົດ (classifier ຄັນ)
+TPL27,noun,W0289,,unverified,ປຶ້ມ (classifier ຫົວ)
+TPL27,noun,W0040,,unverified,ຄົນ (self: ຄົນ ສອງ ຄົນ)
+TPL27,number,W0047,,unverified,ສອງ
+TPL27,number,W0061,,unverified,ສາມ
+TPL27,number,W0071,,unverified,ສີ່
+TPL27,classifier,W0097,,unverified,ໂຕ animals
+TPL27,classifier,W0285,,unverified,ຄັນ vehicles
+TPL27,classifier,W0106,,unverified,ຫົວ books
+TPL27,classifier,W0040,,unverified,ຄົນ people
+TPL28,noun,W0095,,unverified,ໝາ
+TPL28,noun,W0286,,unverified,ລົດ
+TPL28,noun,W0289,,unverified,ປຶ້ມ
+TPL28,demonstrative,W0016,,unverified,ນີ້ this
+TPL28,demonstrative,W0050,,unverified,ນັ້ນ that
+TPL28,demonstrative,W0283,,unverified,ໃດ which
+TPL29,noun,W0095,,unverified,ໝາ
+TPL29,noun,W0286,,unverified,ລົດ
+TPL29,adjective,W0089,,unverified,ໃຫຍ່ big
+TPL29,adjective,W0090,,unverified,ນ້ອຍ small
+TPL29,adjective,W0256,,unverified,ໃໝ່ new
+TPL29,adjective,W0257,,unverified,ເກົ່າ old
+TPL30,verb,W0024,,unverified,ໄປ go
+TPL30,verb,W0025,,unverified,ມາ come
+TPL30,verb,W0225,,unverified,ອ່ານ read
+TPL30,number,W0047,,unverified,ສອງ
+TPL30,number,W0061,,unverified,ສາມ
+TPL30,event_counter,W0324,,unverified,ເທື່ອ
+TPL30,event_counter,W0323,,unverified,ຄັ້ງ

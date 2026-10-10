@@ -343,4 +343,23 @@ pron_tips are agent-written guidance.
 - **Coverage:** unchanged (all required letters and vowels by word 600). The ◌໌ cancellation mark now appears in ເວັບໄຊຕ໌.
 - **Stopped at 990, not 1000:** 10 cross-batch duplicates were dropped and not replaced.
 - **Open for review:** NEEDS_HUMAN.md phase-5 section; all `unverified` rows.
+
+## 2026-10-10 Classifier model (user decision)
+- User asked about classifiers and agreed on this design (for app logic and learning):
+  - Keep `classifier_word_id`.
+  - Add `classifier_type` (specific|self|measure|none, nouns only) and `classifier_confidence` (verified|derived|unverified, separate from the row's word confidence).
+  - Templates are used for the cross-POS patterns; the column is not overloaded for verbs or adjectives.
+  - Documented in SCHEMA.md "Classifiers".
+- **Templates TPL27–30 + 12 sentences (S2024–S2035) + 30 fillers merged:**
+  - TPL27: counting.
+  - TPL28: this / that / which.
+  - TPL29: singling one out with an adjective.
+  - TPL30: verb + number + ເທື່ອ/ຄັ້ງ.
+  - Totals: 30 templates, 1976 sentences; validate 0 errors.
+- **Proposed scripts:**
+  - `apply_columns.py`: generic. Sets columns from a mapping CSV keyed by ID, adds missing columns, and merges notes idempotently with a prefix.
+  - `validate_data.py` rev 2: classifier rules and `--quiet` warning groups.
+- **Running:** scholar classifying all nouns → `_agent/research/classifiers.csv`. Pronouns are excluded; a correction was sent mid-run.
+- **Apply command (after approval):**
+  `python approved-scripts/apply_columns.py data/words.csv _agent/research/classifiers.csv --cols classifier_word_id,classifier_type,classifier_confidence --after classifier_word_id --note-col classifier_note --note-prefix "Classifier: " --check`
   Then run tone_derive --fill → build_order → validate.

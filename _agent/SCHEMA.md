@@ -36,10 +36,18 @@ Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syl
   - WP's lead figure of 33 is unreconciled.
 - **Tone marks: 4**, of which 2 are common.
 - **Unicode Lao block:** 82 assigned (compart) or 83 (WP, with U+0ECE).
-- **words.csv**: word_id, lao, ipa, respelling, syllables, tone_by_syllable, tone_derivation (per syllable: class, syllable type, vowel length, tone mark), pos, classifier_word_id, component_word_ids, gloss_en, freq_rank, topic, tier (30|100|300|600|extra), intro_order, new_letter_ids, new_vowel_ids, pron_tip
+- **words.csv**: word_id, lao, ipa, respelling, syllables, tone_by_syllable, tone_derivation (per syllable: class, syllable type, vowel length, tone mark), pos, classifier_word_id, classifier_type, classifier_confidence, component_word_ids, gloss_en, freq_rank, topic, tier (30|100|300|600|extra), intro_order, new_letter_ids, new_vowel_ids, pron_tip
   - `syllables`: the written syllables separated by `|`, e.g. `ສະ|ບາຍ|ດີ`.
   - `tone_by_syllable`: tone names separated by `|`, in the same order.
   - `component_word_ids`: for compounds, the IDs of the parts separated by `|`, in written order (ຫ້ອງນ້ຳ = ຫ້ອງ + ນ້ຳ). Empty for simple words. Approved by the user 2026-10-09.
+  - **Classifiers** (user decision, 2026-10-10; designed for app logic as well as teaching). Lao counts nouns as noun + number + classifier (ໝາ ສອງ ໂຕ). The same classifier is used with demonstratives (ໝາ ໂຕ ນີ້), with ໃດ for "which" (ໂຕ ໃດ), and to single out one item (ລົດ ຄັນ ໃຫຍ່). Events are counted with ເທື່ອ/ຄັ້ງ after the verb; that is a template, not a per-word field.
+    - `classifier_type`: required on every row whose `pos` contains `noun`; empty on all other rows.
+      - `specific`: classifier_word_id is required and points to a separate classifier word.
+      - `self`: the noun is its own classifier (ຄົນ ສອງ ຄົນ, ສອງ ມື້); classifier_word_id = the row's own word_id.
+      - `measure`: a mass noun counted with a container or measure word (ນ້ຳ ສອງ ຈອກ); classifier_word_id = the typical container if one exists, else empty.
+      - `none`: not normally counted (proper nouns, languages, abstract nouns); classifier_word_id is empty.
+    - `classifier_confidence`: verified | derived | unverified, with the same meaning as `confidence` but for the classifier assignment only. Required whenever classifier_type is set. The row's `confidence` keeps describing the word itself (spelling, IPA, tone). Classifier sources and caveats go in `notes`, prefixed `Classifier:`.
+    - App queries: "count N of X" = X + N + classifier(X); "which X?" = classifier(X) + ໃດ; "nouns taught with classifier C" = reverse lookup on classifier_word_id. Templates TPL27–TPL30 teach these patterns.
   - `freq_rank`: a **usefulness rank by judgement**, not corpus frequency (user decision, 2026-10-09). There is no reliable, segmented open Lao frequency list.
 - **sentences.csv**: sentence_id, lao, lao_spaced, ipa, respelling, english, target_word_id, template_id
   - `lao`: standard orthography, written without spaces between words.
