@@ -61,3 +61,9 @@ Details: `_agent/research/lao-tones-wiktionary-fsi-kerr.md` §7. The matrix in S
 - ສາຍແອວ: Wiktionary IPA garbled, IPA copied from ແອວ.
 - ຖົງເທົ້າ (Wiktionary) vs ຖົງຕີນ for "socks": which is commoner in Vientiane?
 - New homograph ຄຳ "gold" (W001099) beside ຄຳ "word" (W000565).
+
+## Batch c3 (gardening, W001133–W001193): doubtful items
+- New homograph ບານ "to bloom" (agent knowledge; Wiktionary has only "ball").
+- Spellings not on Wiktionary: ຫ່ຽວ "wilted"; ກະຖາງ "flowerpot" (maybe Thai); ຈົກ "hoe"; ສຽມ "spade".
+- Senses by agent: ຝຸ່ນ "fertiliser"; ຫົດ "to water" used without ນ້ຳ.
+- Component lists are inconsistent for compounds whose parts have other meanings (ດຳນາ, ຄັນນາ, ຊາວສວນ, ເມັດພັນ list only the matching part; older ຊາວນາ lists ຊາວ "twenty"). Decide one rule.

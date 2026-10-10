@@ -68,4 +68,8 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 ## 2026-10-10 Batch c2 (clothes) merged
 - 61 words (24 verified, 37 unverified) and 109 composed sentences became W001072–W001132. Totals: 1132 words, 2253 sentences.
 - Homograph ຄຳ "gold" added; merge needs `--allow-homograph ຄຳ` (check_drafts too). Pipeline 0 errors; classifier-pos warning now also W001090 ຖົງມື→ຖົງ (benign).
-- Next: c3 gardening, then fruits, vegetables, meat, animals, transportation, directions.
+
+## 2026-10-10 Batch c3 (gardening) merged
+- 61 words (20 verified, 41 unverified) and 115 composed sentences became W001133–W001193. Totals: 1193 words, 2368 sentences.
+- Homograph ບານ "bloom" (`--allow-homograph ບານ`). Pipeline 0 errors; classifier-pos warnings are repeaters (ສວນ etc.), benign.
+- Next: c4 fruits + vegetables (one batch), then fruits, vegetables, meat, animals, transportation, directions.
