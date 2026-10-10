@@ -1,37 +1,37 @@
 vowel_id,lao_pattern,form,length,sound_group,ipa,romanization_bgn,respelling,pron_tip,coverage_required,intro_word_id,source,confidence,notes
-V01,◌ະ,open,short,a,aʔ,a,a,"Short 'a' cut off sharply, as in 'uh-oh'.",yes,W0001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V02,◌ັ◌,closed,short,a,a,a,a,Short 'a' before a final consonant (like 'u' in 'hut').,yes,W0026,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V03,◌າ,both,long,aa,aː,a,aa,Long 'a' as in 'father'.,yes,W0001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V04,◌ິ,both,short,i,i,i,i,Short 'i' as in 'bit' but tenser.,yes,W0018,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V05,◌ີ,both,long,ii,iː,i,ii,Long 'ee' as in 'see'.,yes,W0001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V06,◌ຶ,both,short,ɯ,ɯ,u,eu,No English equivalent: say 'oo' without rounding the lips (lips spread). Short.,yes,W0039,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V07,◌ື,both,long,ɯɯ,ɯː,u,eu,"Long unrounded 'oo' (lips spread), held.",yes,W0021,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V08,◌ຸ,both,short,u,u,ou,u,Short 'oo' as in 'book'.,yes,W0117,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V09,◌ູ,both,long,uu,uː,ou,uu,Long 'oo' as in 'food'.,yes,W0014,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V10,ເ◌ະ,open,short,e,eʔ,é,e,"Short 'e', cut off.",yes,W0303,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V11,ເ◌ັ◌,closed,short,e,e,é,e,Short 'e' as in 'pet' before a final consonant.,yes,W0027,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V12,ເ◌,both,long,ee,eː,é,ee,"Long 'ay' as in 'they', without the glide.",yes,W0080,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V13,ແ◌ະ,open,short,ɛ,ɛʔ,è,ae,"Short 'a' as in 'cat', cut off.",yes,W0107,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V14,ແ◌ັ◌,closed,short,ɛ,ɛ,è,ae,Short 'a' as in 'cat' before a final consonant.,reading-only,W0662,SRC-WP-SCRIPT;SRC-SEASITE,verified,Rare
-V15,ແ◌,both,long,ɛɛ,ɛː,è,ae,"Long 'a' as in 'cat', held.",yes,W0004,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V16,ໂ◌ະ,open,short,o,oʔ,ô,o,"Short 'o', cut off.",yes,W0119,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V17,◌ົ◌,closed,short,o,o,ô,o,Short 'o' before a final consonant (◌ົ sits above the consonant).,yes,W0040,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V18,ໂ◌,both,long,oo,oː,ô,oo,"Long 'o' as in 'go', without the glide.",yes,W0010,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V19,ເ◌າະ,open,short,ɔ,ɔʔ,o,aw,"Short 'aw', cut off.",yes,W0110,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V01,◌ະ,open,short,a,aʔ,a,a,"Short 'a' cut off sharply, as in 'uh-oh'.",yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V02,◌ັ◌,closed,short,a,a,a,a,Short 'a' before a final consonant (like 'u' in 'hut').,yes,W000026,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V03,◌າ,both,long,aa,aː,a,aa,Long 'a' as in 'father'.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V04,◌ິ,both,short,i,i,i,i,Short 'i' as in 'bit' but tenser.,yes,W000018,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V05,◌ີ,both,long,ii,iː,i,ii,Long 'ee' as in 'see'.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V06,◌ຶ,both,short,ɯ,ɯ,u,eu,No English equivalent: say 'oo' without rounding the lips (lips spread). Short.,yes,W000039,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V07,◌ື,both,long,ɯɯ,ɯː,u,eu,"Long unrounded 'oo' (lips spread), held.",yes,W000021,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V08,◌ຸ,both,short,u,u,ou,u,Short 'oo' as in 'book'.,yes,W000117,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V09,◌ູ,both,long,uu,uː,ou,uu,Long 'oo' as in 'food'.,yes,W000014,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V10,ເ◌ະ,open,short,e,eʔ,é,e,"Short 'e', cut off.",yes,W000303,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V11,ເ◌ັ◌,closed,short,e,e,é,e,Short 'e' as in 'pet' before a final consonant.,yes,W000027,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V12,ເ◌,both,long,ee,eː,é,ee,"Long 'ay' as in 'they', without the glide.",yes,W000080,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V13,ແ◌ະ,open,short,ɛ,ɛʔ,è,ae,"Short 'a' as in 'cat', cut off.",yes,W000107,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V14,ແ◌ັ◌,closed,short,ɛ,ɛ,è,ae,Short 'a' as in 'cat' before a final consonant.,reading-only,W000662,SRC-WP-SCRIPT;SRC-SEASITE,verified,Rare
+V15,ແ◌,both,long,ɛɛ,ɛː,è,ae,"Long 'a' as in 'cat', held.",yes,W000004,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V16,ໂ◌ະ,open,short,o,oʔ,ô,o,"Short 'o', cut off.",yes,W000119,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V17,◌ົ◌,closed,short,o,o,ô,o,Short 'o' before a final consonant (◌ົ sits above the consonant).,yes,W000040,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V18,ໂ◌,both,long,oo,oː,ô,oo,"Long 'o' as in 'go', without the glide.",yes,W000010,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V19,ເ◌າະ,open,short,ɔ,ɔʔ,o,aw,"Short 'aw', cut off.",yes,W000110,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V20,◌ັອ◌,closed,short,ɔ,ɔ,o,aw,Short 'aw' before a final consonant.,reading-only,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Rare
-V21,◌ໍ,open,long,ɔɔ,ɔː,o,aw,Long 'aw' as in 'law'.,yes,W0003,SRC-WP-SCRIPT;SRC-SEASITE,verified,U+0ECD niggahita
-V22,◌ອ◌,closed,long,ɔɔ,ɔː,o,aw,"Long 'aw' as in 'law', before a final consonant.",yes,W0006,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V23,ເ◌ິ,both,short,ɤ,ɤ,eu,oe,"Short 'uh' with lips spread, close to the vowel in 'the' (unstressed).",yes,W0054,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP gives only /ɤʔ/; the closed use is attested in SEAsite practice words (ເບິ່ງ)
-V24,ເ◌ີ,both,long,ɤɤ,ɤː,eu,oe,"Long 'uh' with lips spread, like 'ur' in 'fur' without the r.",yes,W0123,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V21,◌ໍ,open,long,ɔɔ,ɔː,o,aw,Long 'aw' as in 'law'.,yes,W000003,SRC-WP-SCRIPT;SRC-SEASITE,verified,U+0ECD niggahita
+V22,◌ອ◌,closed,long,ɔɔ,ɔː,o,aw,"Long 'aw' as in 'law', before a final consonant.",yes,W000006,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V23,ເ◌ິ,both,short,ɤ,ɤ,eu,oe,"Short 'uh' with lips spread, close to the vowel in 'the' (unstressed).",yes,W000054,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP gives only /ɤʔ/; the closed use is attested in SEAsite practice words (ເບິ່ງ)
+V24,ເ◌ີ,both,long,ɤɤ,ɤː,eu,oe,"Long 'uh' with lips spread, like 'ur' in 'fur' without the r.",yes,W000123,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V25,ເ◌ັຍ,open,short,ia,iaʔ,ia,ia,"Short 'ia', cut off.",reading-only,,SRC-WP-SCRIPT,verified,Rare; closed form not given by the source
-V26,ເ◌ຍ,open,long,ia,ia,ia,ia,'ee-a' as in 'Mia'.,yes,W0104,SRC-WP-SCRIPT;SRC-SEASITE,verified,SEAsite uses the older spelling ເ◌ັຽ
-V27,◌ຽ◌,closed,long,ia,ia,ia,ia,'ee-a' before a final consonant.,yes,W0062,SRC-WP-SCRIPT,verified,
+V26,ເ◌ຍ,open,long,ia,ia,ia,ia,'ee-a' as in 'Mia'.,yes,W000104,SRC-WP-SCRIPT;SRC-SEASITE,verified,SEAsite uses the older spelling ເ◌ັຽ
+V27,◌ຽ◌,closed,long,ia,ia,ia,ia,'ee-a' before a final consonant.,yes,W000062,SRC-WP-SCRIPT,verified,
 V28,ເ◌ຶອ,open,short,ɯa,ɯaʔ,ua,eua,"Short unrounded 'oo' gliding to 'a', cut off.",reading-only,,SRC-WP-SCRIPT,verified,Rare; closed form not given by the source
-V29,ເ◌ືອ,both,long,ɯa,ɯa,ua,eua,Unrounded 'oo' (lips spread) gliding to 'a'.,yes,W0048,SRC-WP-SCRIPT;SRC-SEASITE,verified,Closed use attested: ເຮືອນ (SEAsite)
+V29,ເ◌ືອ,both,long,ɯa,ɯa,ua,eua,Unrounded 'oo' (lips spread) gliding to 'a'.,yes,W000048,SRC-WP-SCRIPT;SRC-SEASITE,verified,Closed use attested: ເຮືອນ (SEAsite)
 V30,◌ົວະ,open,short,ua,uaʔ,oua,ua,"Short 'oo-a', cut off.",reading-only,,SRC-WP-SCRIPT,verified,Rare; closed form not given by the source
-V31,◌ົວ,open,long,ua,ua,oua,ua,'oo-a' as in 'Kahlua'.,yes,W0103,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V32,◌ວ◌,closed,long,ua,ua,oua,ua,'oo-a' before a final consonant.,yes,W0127,SRC-WP-SCRIPT,verified,
-V33,ໄ◌,special,special,ai,aj,ai,ai,'ai' as in 'Thai'.,yes,W0024,SRC-WP-SCRIPT;SRC-SEASITE,verified,Same sound as ໃ◌ in Vientiane
-V34,ໃ◌,special,special,ai,aj,ai,ai,'ai' as in 'Thai'.,yes,W0007,SRC-WP-SCRIPT;SRC-SEASITE,verified,Same sound as ໄ◌ in Vientiane (Luang Prabang [aɰ])
-V35,ເ◌ົາ,special,special,ao,aw,ao,ao,'ow' as in 'now'.,yes,W0005,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V36,◌ຳ,special,special,am,am,am,am,'um' as in 'hum'.,yes,W0011,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Precomposed U+0EB3 (WP shows ◌ໍາ = ◌ໍ + ◌າ); store as U+0EB3
+V31,◌ົວ,open,long,ua,ua,oua,ua,'oo-a' as in 'Kahlua'.,yes,W000103,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V32,◌ວ◌,closed,long,ua,ua,oua,ua,'oo-a' before a final consonant.,yes,W000127,SRC-WP-SCRIPT,verified,
+V33,ໄ◌,special,special,ai,aj,ai,ai,'ai' as in 'Thai'.,yes,W000024,SRC-WP-SCRIPT;SRC-SEASITE,verified,Same sound as ໃ◌ in Vientiane
+V34,ໃ◌,special,special,ai,aj,ai,ai,'ai' as in 'Thai'.,yes,W000007,SRC-WP-SCRIPT;SRC-SEASITE,verified,Same sound as ໄ◌ in Vientiane (Luang Prabang [aɰ])
+V35,ເ◌ົາ,special,special,ao,aw,ao,ao,'ow' as in 'now'.,yes,W000005,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V36,◌ຳ,special,special,am,am,am,am,'um' as in 'hum'.,yes,W000011,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Precomposed U+0EB3 (WP shows ◌ໍາ = ◌ໍ + ◌າ); store as U+0EB3

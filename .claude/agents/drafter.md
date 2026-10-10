@@ -35,9 +35,9 @@ You draft rows for a Lao (standard Vientiane, modern) curriculum for English spe
   1. **Tatoeba** (`https://tatoeba.org`): search for the target word; fetch the sentence page to confirm the Lao text and the translation. Source `SRC-TATOEBA:<id>`, confidence `verified`.
   2. **Big Brother Mouse** (Lao children's and easy-reader books, `https://www.bigbrothermouse.com`): use a sentence only when its Lao text is visible on the page. Source `SRC-BBM:<page URL>`, confidence `verified`.
   3. Otherwise compose a short, natural, everyday sentence: source empty, confidence `unverified`, notes `Composed by the agent`.
-- `lao` is standard spelling without spaces between words. `lao_spaced` is the same text with one space between words. Every token in lao_spaced (ignoring final punctuation) must be EXACTLY the spelling of a known word (data, pending drafts, or your batch). If a word you need is not known, rephrase. A real sentence that needs an unknown word can only be used if you also draft that word.
+- `lao` is standard spelling without spaces between words. `lao_spaced` is the same text with one space between words. Every token in lao_spaced (ignoring final punctuation) must be EXACTLY the spelling of a known word (data, pending drafts, or your batch). If a word you need is not known; attempt to make sentence with already known words. A real sentence that needs an unknown word can only be used if you also draft that word.
 - Homographs: when a token's spelling belongs to more than one word, add `word_overrides` `N=<ID>` (N = 1-based token position) to pick the meaning. Your batch's own homographs always need this.
-- Use words already introduced first; the batch is in teaching order. Every word you draft must appear in at least 2 sentences.
+- Use words already introduced first; the batch is in rough teaching order. Every word you draft must appear in at least 2 sentences.
 - Leave ipa, respelling and target_word_id empty unless the brief says otherwise.
 
 ## Templates and fillers (only if the brief asks)
