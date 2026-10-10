@@ -1,8 +1,8 @@
 {
   "weeklyStopPct": 60,
   "weeklyWarnPct": 55,
-  "fiveHourWarnPct": 80,
-  "fiveHourPausePct": 88,
+  "fiveHourWarnPct": 95,
+  "fiveHourPausePct": 100,
   "contextCheckpointPct": 70,
   "pauseBufferSeconds": 120,
   "pauseMaxSeconds": 18000,

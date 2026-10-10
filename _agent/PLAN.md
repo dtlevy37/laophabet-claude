@@ -23,8 +23,8 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] CHECKPOINT 100: commit and continue
 
 ## Phase 3: To 300 words
-- [ ] Next 200 words; keep new-letter introduction gradual
-- [ ] CHECKPOINT 300: commit and continue
+- [x] Next 200 words; keep new-letter introduction gradual (0 heavy words)
+- [x] CHECKPOINT 300: commit and continue
 
 ## Phase 4: To about 600 words
 - [ ] Reach the target (hard cap 1000); every letter and vowel introduced by word 600

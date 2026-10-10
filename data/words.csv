@@ -15,7 +15,7 @@ W0013,ຫ້ອງນ້ຳ,hɔːŋ˧˩.nam˥˨,hawng-nam,ຫ້ອງ|ນ້ຳ
 W0014,ຢູ່,juː˧,yuu,ຢູ່,mid,mid/live/long/mai_ek→5,verb,,,"be at, be located; live, stay",14,places,30,16,C21,V09,"'yoo' as in 'you', long and level.",SRC-WIKT:ຢູ່,verified,
 W0015,ໃສ,saj˩(˧),sai,ໃສ,low-rising,high/live/special/none→1,pronoun (interrogative),,,where,15,questions,30,17,,,"'sai' like 'sigh', starting low and rising. Goes at the end: ຫ້ອງນ້ຳຢູ່ໃສ?",SRC-WIKT:ໃສ,verified,Also adj. 'clear' (Wiktionary)
 W0016,ນີ້,niː˥˨,nii,ນີ້,high-falling,low/live/long/mai_tho→9,pronoun; adverb,,,this; here,16,basics,30,18,,,"'nee', high and falling.",SRC-WIKT:ນີ້,verified,ຢູ່ນີ້ = here
-W0017,ເທົ່າໃດ,tʰaw˧.daj˩˧,tao-dai,ເທົ່າ|ໃດ,mid|low-rising,low/live/special/mai_ek→6|mid/live/special/none→2,interrogative,,,"how much, how many",17,questions,100,,,,"tao (aspirated t, rhymes with 'now') + dai (like 'dye').",SRC-TATOEBA:8986484,unverified,Not in Wiktionary (404). Tatoeba shows ອາຍຸເທົ່າໃດ 'how old'. 'How much/many' sense only seen in Wiktionary search snippets (ຈັກ). Tones derived by tone_derive.py; IPA composed by the agent from the derivation (not sourced). Moved to the 100 tier (2026-10-09): gloss unverified
+W0017,ເທົ່າໃດ,tʰaw˧.daj˩˧,tao-dai,ເທົ່າ|ໃດ,mid|low-rising,low/live/special/mai_ek→6|mid/live/special/none→2,interrogative,,,"how much, how many",17,questions,300,116,,,"tao (aspirated t, rhymes with 'now') + dai (like 'dye').",SRC-TATOEBA:8986484,unverified,Not in Wiktionary (404). Tatoeba shows ອາຍຸເທົ່າໃດ 'how old'. 'How much/many' sense only seen in Wiktionary search snippets (ຈັກ). Tones derived by tone_derive.py; IPA composed by the agent from the derivation (not sourced). Moved to the 100 tier (2026-10-09): gloss unverified
 W0018,ກິນ,kin˩(˧),gin,ກິນ,low-rising,mid/live/short/none→2,verb,,,eat; (colloquial) drink,18,food,30,19,C01,V04,Unaspirated k (sounds like g) + short 'i' as in 'bin'.,SRC-WIKT:ກິນ,verified,Polite: ທານ
 W0019,ເຂົ້າ,kʰaw˧˩,kao,ເຂົ້າ,low-falling,high/live/special/mai_tho→7,noun; verb,,,(cooked) rice; to enter,19,food,30,20,,,"Aspirated k + 'ow' as in 'now', falling. ກິນເຂົ້າ = eat (a meal).",SRC-WIKT:ເຂົ້າ,verified,Two etymologies (rice; enter) share the spelling. 'Meal' sense is via ກິນເຂົ້າ; not glossed directly. Classifier not yet sourced
 W0020,ແລ້ວ,lɛːw˥˨,laew,ແລ້ວ,high-falling,low/live/long/mai_tho→9,auxiliary; adverb; verb,,,"already, done; then",20,basics,30,21,C23|C24,,"'laew': the a of 'cat' held long, then a w glide; high and falling.",SRC-WIKT:ແລ້ວ,verified,ກິນເຂົ້າແລ້ວບໍ່? 'Have you eaten?' is a common greeting
@@ -101,3 +101,201 @@ W0099,ນັ່ງ,naŋ˧,nang,ນັ່ງ,mid,low/live/short/mai_ek→6,verb,,
 W0100,ເປັນຫຍັງ,pen˩(˧).ɲaŋ˩(˧),bpen-nyang,ເປັນ|ຫຍັງ,low-rising|low-rising,mid/live/short/none→2|high/live/short/none→1,interrogative,,W0027|W0026,why,100,questions,100,99,,,Literally 'be what'. Two low-rising syllables.,SRC-WIKT:ເປັນຫຍັງ,verified,
 W0101,ແນວໃດ,nɛːw˧˥.daj˩(˧),naew-dai,ແນວ|ໃດ,high-rising|low-rising,low/live/long/none→3|mid/live/special/none→2,adverb (interrogative),,,how,101,questions,100,100,,,naew (rising) + dai (low-rising).,SRC-WIKT:ແນວໃດ,verified,
 W0102,ລໍຖ້າ,lɔː˧˥.tʰaː˧˩,law-taa,ລໍ|ຖ້າ,high-rising|low-falling,low/live/long/none→3|high/live/long/mai_tho→7,verb,,,wait,102,basics,300,101,,,law (rising) + taa (aspirated t; falling).,SRC-TATOEBA:8991656,derived,"Not on Wiktionary (404). Tatoeba 8991656 ...ລໍຖ້າຕຳຫຼວດມາ, 8990251 ລໍຖ້າ. IPA composed by rule"
+W0103,ຜົວ,pʰuːə̯˩(˧),pua,ຜົວ,low-rising,high/live/short/none→1,noun,W0040,,husband,103,people,300,102,,V31,"Aspirated p + 'oo-a', low-rising.",SRC-WIKT:ຜົວ,verified,
+W0104,ເມຍ,miːə̯˧˥,mia,ເມຍ,high-rising,low/live/long/none→3,noun,W0040,,wife,104,people,300,103,,V26,"'mee-a' in one syllable, rising.",SRC-WIKT:ເມຍ,verified,
+W0105,ຄອບຄົວ,kʰɔːp̚˥˨.kʰuːə̯˧˥,kawp-kua,ຄອບ|ຄົວ,high-falling|high-rising,low/dead/long/none→12|low/live/short/none→3,noun,,,family,105,people,300,104,,,kawp (falling) + kua (rising).,SRC-WIKT:ຄອບຄົວ,verified,
+W0106,ຫົວ,huːə̯˩(˧),hua,ຫົວ,low-rising,high/live/short/none→1,noun; classifier,,,head; classifier for books,106,body,300,105,,,"'hoo-a', low-rising.",SRC-WIKT:ຫົວ,verified,Also counts books (ປຶ້ມສອງຫົວ)
+W0107,ແລະ,lɛʔ˧,lae,ແລະ,mid,low/dead/short/none→15,conjunction,,,and,107,function,300,106,,V13,"Short 'lae', cut off, level.",SRC-WIKT:ແລະ,verified,
+W0108,ຫຼື,lɯː˩(˧),leu,ຫຼື,low-rising,high/live/long/none→1,conjunction,,,or,108,function,300,107,,,"'leu' (unrounded oo), low-rising.",SRC-WIKT:ຫຼື,verified,
+W0109,ແຕ່,tɛː˧,dtae,ແຕ່,mid,mid/live/long/mai_ek→5,conjunction,,,but,109,function,300,108,,,"Unaspirated t + long 'ae', level.",SRC-WIKT:ແຕ່,verified,
+W0110,ເພາະ,pʰɔʔ˧,paw,ເພາະ,mid,low/dead/short/none→15,conjunction,,,because,110,function,300,109,,V19,"Short clipped 'paw', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Tatoeba 8983146 uses ເພາະ
+W0111,ຖ້າ,tʰaː˧˩,taa,ຖ້າ,low-falling,high/live/long/mai_tho→7,conjunction,,,if,111,function,300,110,,,"Aspirated t + long a, falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0112,ຫົກ,hok̚˧˥,hok,ຫົກ,high-rising,high/dead/short/none→13,numeral,,,six,112,numbers,300,111,,,"Short 'hok', rising.",SRC-WIKT:ຫົກ,verified,
+W0113,ໄດ້,daj˥˨,dai,ໄດ້,high-falling,mid/live/special/mai_tho→8,verb; auxiliary,,,can; get; did,113,basics,300,112,,,"'dai', high and falling.",SRC-WIKT:ໄດ້,verified,ໄດ້ບໍ່? = can (you)?
+W0114,ເອົາ,ʔaw˩(˧),ao,ເອົາ,low-rising,mid/live/special/none→2,verb,,,take; want (to have),114,basics,300,113,,,"'ao' as in 'now', low-rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0115,ອັນ,ʔan˩(˧),an,ອັນ,low-rising,mid/live/short/none→2,noun; classifier,,,thing; general classifier,115,classifiers,300,114,,,"Short 'an', low-rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Tatoeba: ອັນນີ້ ອັນນັ້ນ ອັນໃດ
+W0116,ອັນນີ້,ʔan˩(˧).niː˥˨,an-nii,ອັນ|ນີ້,low-rising|high-falling,mid/live/short/none→2|low/live/long/mai_tho→9,pronoun,,W0115|W0016,this (one),116,basics,300,115,,,an + nii.,SRC-WIKT:ອັນນີ້,verified,
+W0117,ຢຸດ,jut̚˧˥,yut,ຢຸດ,high-rising,mid/dead/short/none→14,verb,,,stop,117,basics,300,117,,V08,"Short 'yoot', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0118,ທຸກ,tʰuk̚˧,tuk,ທຸກ,mid,low/dead/short/none→15,determiner,,,every,118,function,300,118,,,"Aspirated t + short 'ook', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Tatoeba ທຸກໆມື້ 'every day'
+W0119,ໂຕະ,toʔ˧˥,dto,ໂຕະ,high-rising,mid/dead/short/none→14,noun,,,table,119,home,300,119,,V16,"Unaspirated t + short clipped o, rising.",SRC-WIKT:ໂຕະ,verified,
+W0120,ຝົນ,fon˩(˧),fon,ຝົນ,low-rising,high/live/short/none→1,noun,,,rain,120,weather,300,120,C17,,"'fon', low-rising.",SRC-WIKT:ຝົນ,verified,ຝົນຕົກ = it rains
+W0121,ຕົກ,tok̚˧˥,dtok,ຕົກ,high-rising,mid/dead/short/none→14,verb,,,fall,121,weather,300,121,,,"Unaspirated t + short 'ok', rising.",SRC-WIKT:ຕົກ,verified,
+W0122,ເຈັດ,t͡ɕet̚˧˥,jet,ເຈັດ,high-rising,mid/dead/short/none→14,numeral,,,seven,122,numbers,300,122,,,"'jet', rising.",SRC-WIKT:ເຈັດ,verified,
+W0123,ເປີດ,pɤːt̚˧˩,bpoet,ເປີດ,low-falling,mid/dead/long/none→11,verb,,,open,123,basics,300,123,,V24,"Unaspirated p + long 'uh' (spread lips) + t, falling.",SRC-WIKT:ເປີດ,verified,
+W0124,ປິດ,pit̚˧˥,bpit,ປິດ,high-rising,mid/dead/short/none→14,verb,,,close,124,basics,300,124,,,"Unaspirated p + short 'it', rising.",SRC-WIKT:ປິດ,verified,
+W0125,ເກີດ,kɤːt̚˧˩,goet,ເກີດ,low-falling,mid/dead/long/none→11,verb,,,be born; happen,125,basics,300,125,,,"Unaspirated k + long 'uh' + t, falling.",SRC-WIKT:ເກີດ,verified,
+W0126,ຫວານ,ʋaːn˩(˧),waan,ຫວານ,low-rising,high/live/long/none→1,adjective,,,sweet,126,food,300,126,C33,,"'waan', low-rising (silent ຫ).",SRC-WIKT:ຫວານ,verified,
+W0127,ສວນ,suːə̯n˩(˧),suan,ສວນ,low-rising,high/live/long/none→1,noun,,,garden,127,home,300,127,,V32,"'soo-an' in one syllable, low-rising.",SRC-WIKT:ສວນ,verified,
+W0128,ມ່ວນ,muːə̯n˧,muan,ມ່ວນ,mid,low/live/long/mai_ek→6,adjective,,,fun,128,feelings,300,128,,,"'moo-an' in one syllable, level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0129,ກ້ວຍ,kuːə̯j˥˨,guay,ກ້ວຍ,high-falling,mid/live/long/mai_tho→8,noun,,,banana,129,food,300,129,,,"Unaspirated k + 'oo-ay', high and falling.",SRC-WIKT:ກ້ວຍ,verified,
+W0130,ໄວ,ʋaj˧˥,wai,ໄວ,high-rising,low/live/special/none→3,adjective,,,fast; early,130,describing,300,130,,,"'wai', rising.",SRC-WIKT:ໄວ,verified,
+W0131,ໄວໆ,ʋaj˧˥(×2),wai-wai,ໄວໆ,high-rising,low/live/special/none→3,adverb,,W0130,quickly,131,describing,300,131,S1,,ໆ means 'say it twice': wai-wai.,SRC-WIKT:ໄວໆ,verified,IPA written once with (×2) so tools count one written syllable
+W0132,ຊ້າ,saː˥˨,saa,ຊ້າ,high-falling,low/live/long/mai_tho→9,adjective,,,slow; late,132,describing,300,132,,,"'saa', high and falling.",SRC-WIKT:ຊ້າ,verified,
+W0133,ຊ້າໆ,saː˥˨(×2),saa-saa,ຊ້າໆ,high-falling,low/live/long/mai_tho→9,adverb,,W0132,slowly,133,describing,300,133,,,Said twice: saa-saa.,SRC-WIKT:ຊ້າໆ,verified,IPA written once with (×2)
+W0134,ແປດ,pɛːt̚˧˩,bpaet,ແປດ,low-falling,mid/dead/long/none→11,numeral,,,eight,134,numbers,300,134,,,"Unaspirated p + long 'ae' + t, falling.",SRC-WIKT:ແປດ,verified,
+W0135,ເຊົ້າ,saw˥˨,sao,ເຊົ້າ,high-falling,low/live/special/mai_tho→9,noun,,,morning,135,time,300,135,,,"'sao', high and falling.",SRC-WIKT:ເຊົ້າ,verified,
+W0136,ແລງ,lɛːŋ˧˥,laeng,ແລງ,high-rising,low/live/long/none→3,noun,,,evening,136,time,300,136,,,"'laeng', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0137,ຄືນ,kʰɯːn˧˥,keun,ຄືນ,high-rising,low/live/long/none→3,noun,,,night,137,time,300,137,,,"Aspirated k + long 'eu' + n, rising.",SRC-WIKT:ຄືນ,verified,
+W0138,ຕອນ,tɔːn˩(˧),dtawn,ຕອນ,low-rising,mid/live/long/none→2,noun,,,period (of the day),138,time,300,138,,,"Unaspirated t + 'awn', low-rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. ຕອນເຊົ້າ = in the morning
+W0139,ຕອນນີ້,tɔːn˩(˧).niː˥˨,dtawn-nii,ຕອນ|ນີ້,low-rising|high-falling,mid/live/long/none→2|low/live/long/mai_tho→9,adverb,,W0138|W0016,now,139,time,300,139,,,dtawn + nii.,SRC-TATOEBA:8991660,unverified,Not on Wiktionary (404); IPA by agent
+W0140,ມື້ວານ,mɯː˥˨.ʋaːn˧˥,meu-waan,ມື້|ວານ,high-falling|high-rising,low/live/long/mai_tho→9|low/live/long/none→3,noun,,W0036,yesterday,140,time,300,140,,,meu + waan (rising).,SRC-TATOEBA:8984944,unverified,Not on Wiktionary (404); IPA by agent
+W0141,ເກົ້າ,kaw˥˨,gao,ເກົ້າ,high-falling,mid/live/special/mai_tho→8,numeral,,,nine,141,numbers,300,141,,,"'gao', high and falling.",SRC-WIKT:ເກົ້າ,verified,
+W0142,ໂມງ,moːŋ˧˥,moong,ໂມງ,high-rising,low/live/long/none→3,noun,,,hour; o'clock,142,time,300,142,,,"'moong', rising.",SRC-WIKT:ໂມງ,verified,
+W0143,ເວລາ,ʋeː˧˥.laː˧˥,wee-laa,ເວ|ລາ,high-rising|high-rising,low/live/long/none→3|low/live/long/none→3,noun,,,time,143,time,300,143,,,Two rising syllables.,SRC-WIKT:ເວລາ,verified,
+W0144,ປີ,piː˩(˧),bpii,ປີ,low-rising,mid/live/long/none→2,noun,,,year,144,time,300,144,,,"Unaspirated p + 'ee', low-rising.",SRC-WIKT:ປີ,verified,
+W0145,ເດືອນ,dɯːə̯n˩(˧),deuan,ເດືອນ,low-rising,mid/live/long/none→2,noun,,,month; moon,145,time,300,145,,,"'deu-an', low-rising.",SRC-WIKT:ເດືອນ,verified,
+W0146,ອາທິດ,ʔaː˩(˧).tʰit̚˧,aa-tit,ອາ|ທິດ,low-rising|mid,mid/live/long/none→2|low/dead/short/none→15,noun,,,week,146,time,300,146,,,aa + tit (level).,SRC-WIKT:ອາທິດ,verified,
+W0147,ສິບ,sip̚˧˥,sip,ສິບ,high-rising,high/dead/short/none→13,numeral,,,ten,147,numbers,300,147,,,"Short 'sip', rising.",SRC-WIKT:ສິບ,verified,
+W0148,ກ່ອນ,kɔːn˧,gawn,ກ່ອນ,mid,mid/live/long/mai_ek→5,adverb; preposition,,,before; first,148,time,300,148,,,"'gawn', level.",SRC-WIKT:ກ່ອນ,verified,
+W0149,ຫຼັງ,laŋ˩(˧),lang,ຫຼັງ,low-rising,high/live/short/none→1,noun; preposition,,,back; behind; after,149,places,300,149,,,"'lang', low-rising.",SRC-WIKT:ຫຼັງ,verified,
+W0150,ເດັກ,dek̚˧˥,dek,ເດັກ,high-rising,mid/dead/short/none→14,noun,W0040,,child,150,people,300,150,,,"Short 'dek', rising.",SRC-WIKT:ເດັກ,verified,ເດັກນ້ອຍ = little child
+W0151,ຜູ້ຊາຍ,pʰuː˧˩.saːj˧˥,puu-saai,ຜູ້|ຊາຍ,low-falling|high-rising,high/live/long/mai_tho→7|low/live/long/none→3,noun,W0040,,man,151,people,300,151,,,puu (falling) + saai (rising).,SRC-WIKT:ຜູ້ຊາຍ,verified,
+W0152,ຜູ້ຍິງ,pʰuː˧˩.ɲiŋ˧˥,puu-nying,ຜູ້|ຍິງ,low-falling|high-rising,high/live/long/mai_tho→7|low/live/short/none→3,noun,W0040,,woman,152,people,300,152,,,puu (falling) + nying (rising).,SRC-WIKT:ຜູ້ຍິງ,verified,
+W0153,ອ້າຍ,ʔaːj˥˨,aai,ອ້າຍ,high-falling,mid/live/long/mai_tho→8,noun,W0040,,older brother,153,people,300,153,,,"'aai', high and falling.",SRC-WIKT:ອ້າຍ,verified,
+W0154,ເອື້ອຍ,ʔɯːə̯j˥˨,euay,ເອື້ອຍ,high-falling,mid/live/long/mai_tho→8,noun,W0040,,older sister,154,people,300,154,,,"'eu-ay', high and falling.",SRC-TATOEBA:8981602,unverified,Not on Wiktionary (404); IPA by agent
+W0155,ນ້ອງ,nɔːŋ˥˨,nawng,ນ້ອງ,high-falling,low/live/long/mai_tho→9,noun,W0040,,younger sibling,155,people,300,155,,,"'nawng', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0156,ຄູ,kʰuː˧˥,kuu,ຄູ,high-rising,low/live/long/none→3,noun,W0040,,teacher,156,people,300,156,,,"Aspirated k + 'oo', rising.",SRC-WIKT:ຄູ,verified,
+W0157,ນັກຮຽນ,nak̚˧.hiːə̯n˧˥,nak-hian,ນັກ|ຮຽນ,mid|high-rising,low/dead/short/none→15|low/live/long/none→3,noun,W0040,W0062,student,157,people,300,157,,,nak (level) + hian (rising).,SRC-TATOEBA:8975815,unverified,Not on Wiktionary (404); IPA by agent
+W0158,ທ່ານ,tʰaːn˧,taan,ທ່ານ,mid,low/live/long/mai_ek→6,pronoun,,,you (formal); sir/madam,158,pronouns,300,158,,,"Aspirated t + 'aan', level.",SRC-WIKT:ທ່ານ,verified,
+W0159,ພວກເຮົາ,pʰuːə̯k̚˥˨.haw˧˥,puak-hao,ພວກ|ເຮົາ,high-falling|high-rising,low/dead/long/none→12|low/live/special/none→3,pronoun,,W0032,we (plural),159,pronouns,300,159,,,puak (falling) + hao (rising).,SRC-WIKT:ພວກເຮົາ,verified,
+W0160,ເຂົາ,kʰaw˩(˧),kao,ເຂົາ,low-rising,high/live/special/none→1,pronoun,,,he; she; they,160,pronouns,300,160,,,"Aspirated k + 'ao', low-rising. Not the same tone as ເຂົ້າ 'rice'.",SRC-WIKT:ເຂົາ,verified,
+W0161,ພວກເຂົາ,pʰuːə̯k̚˥˨.kʰaw˩(˧),puak-kao,ພວກ|ເຂົາ,high-falling|low-rising,low/dead/long/none→12|high/live/special/none→1,pronoun,,W0160,they,161,pronouns,300,161,,,puak + kao.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA joined from ພວກ + ເຂົາ
+W0162,ໝໍ,mɔː˩(˧),maw,ໝໍ,low-rising,high/live/long/none→1,noun,W0040,,doctor,162,health,300,162,,,"'maw', low-rising.",SRC-WIKT:ໝໍ,verified,
+W0163,ຊາວ,saːw˧˥,saao,ຊາວ,high-rising,low/live/long/none→3,numeral,,,twenty,163,numbers,300,163,,,"'saao', rising.",SRC-WIKT:ຊາວ,verified,
+W0164,ຕາ,taː˩(˧),dtaa,ຕາ,low-rising,mid/live/long/none→2,noun,,,eye,164,body,300,164,,,"Unaspirated t + 'aa', low-rising.",SRC-WIKT:ຕາ,verified,
+W0165,ມື,mɯː˧˥,meu,ມື,high-rising,low/live/long/none→3,noun,,,hand,165,body,300,165,,,"'meu', rising. Compare ມື້ 'day' (falling).",SRC-WIKT:ມື,verified,
+W0166,ຕີນ,tiːn˩(˧),dtiin,ຕີນ,low-rising,mid/live/long/none→2,noun,,,foot,166,body,300,166,,,"Unaspirated t + 'een', low-rising.",SRC-WIKT:ຕີນ,verified,
+W0167,ປາກ,paːk̚˧˩,bpaak,ປາກ,low-falling,mid/dead/long/none→11,noun,,,mouth,167,body,300,167,,,"Unaspirated p + 'aak', falling.",SRC-WIKT:ປາກ,verified,
+W0168,ຫູ,huː˩(˧),huu,ຫູ,low-rising,high/live/long/none→1,noun,,,ear,168,body,300,168,,,"'hoo', low-rising.",SRC-WIKT:ຫູ,verified,
+W0169,ເຈັບ,t͡ɕep̚˧˥,jep,ເຈັບ,high-rising,mid/dead/short/none→14,verb; adjective,,,hurt; be sick,169,health,300,169,,,"'jep', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0170,ປ່ວຍ,puːə̯j˧,bpuay,ປ່ວຍ,mid,mid/live/long/mai_ek→5,adjective,,,sick,170,health,300,170,,,"Unaspirated p + 'oo-ay', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0171,ຢາ,jaː˩(˧),yaa,ຢາ,low-rising,mid/live/long/none→2,noun,,,medicine,171,health,300,171,,,"'yaa', low-rising.",SRC-WIKT:ຢາ,verified,
+W0172,ໂຮງໝໍ,hoːŋ˧˥.mɔː˩(˧),hoong-maw,ໂຮງ|ໝໍ,high-rising|low-rising,low/live/long/none→3|high/live/long/none→1,noun,,W0162,hospital,172,places,300,172,,,hoong (rising) + maw.,SRC-WIKT:ໂຮງໝໍ,verified,
+W0173,ເມື່ອຍ,mɯːə̯j˧,meuay,ເມື່ອຍ,mid,low/live/long/mai_ek→6,adjective,,,tired,173,health,300,173,,,"'meu-ay', level.",SRC-WIKT:ເມື່ອຍ,verified,
+W0174,ຮ້ອຍ,hɔːj˥˨,hawy,ຮ້ອຍ,high-falling,low/live/long/mai_tho→9,numeral,,,hundred,174,numbers,300,174,,,"'hawy', high and falling.",SRC-WIKT:ຮ້ອຍ,verified,
+W0175,ໂຮງຮຽນ,hoːŋ˧˥.hiːə̯n˧˥,hoong-hian,ໂຮງ|ຮຽນ,high-rising|high-rising,low/live/long/none→3|low/live/long/none→3,noun,,W0062,school,175,places,300,175,,,Two rising syllables.,SRC-WIKT:ໂຮງຮຽນ,verified,
+W0176,ໂຮງແຮມ,hoːŋ˧˥.hɛːm˧˥,hoong-haem,ໂຮງ|ແຮມ,high-rising|high-rising,low/live/long/none→3|low/live/long/none→3,noun,,,hotel,176,places,300,176,,,Two rising syllables.,SRC-WIKT:ໂຮງແຮມ,verified,
+W0177,ຕະຫຼາດ,ta(ʔ˧˥).laːt̚˧˩,dta-laat,ຕະ|ຫຼາດ,high-rising|low-falling,mid/dead/short/none→14|high/dead/long/none→10,noun,,,market,177,places,300,177,,,dta (short) + laat (falling).,SRC-WIKT:ຕະຫຼາດ,verified,
+W0178,ວັດ,ʋat̚˧,wat,ວັດ,mid,low/dead/short/none→15,noun,,,temple,178,places,300,178,,,"Short 'wat', level.",SRC-WIKT:ວັດ,verified,
+W0179,ເມືອງ,mɯːə̯ŋ˧˥,meuang,ເມືອງ,high-rising,low/live/long/none→3,noun,,,town; district,179,places,300,179,,,"'meu-ang', rising.",SRC-WIKT:ເມືອງ,verified,
+W0180,ປະເທດ,pa(ʔ˧˥).tʰeːt̚˥˨,bpa-teet,ປະ|ເທດ,high-rising|high-falling,mid/dead/short/none→14|low/dead/long/none→12,noun,,,country,180,places,300,180,,,bpa (short) + teet (falling).,SRC-WIKT:ປະເທດ,verified,
+W0181,ວຽງຈັນ,ʋiːə̯ŋ˧˥.t͡ɕan˩(˧),wiang-jan,ວຽງ|ຈັນ,high-rising|low-rising,low/live/long/none→3|mid/live/short/none→2,proper noun,,,Vientiane,181,places,300,181,,,wiang (rising) + jan.,SRC-WIKT:ວຽງຈັນ,verified,
+W0182,ທາງ,tʰaːŋ˧˥,taang,ທາງ,high-rising,low/live/long/none→3,noun,,,way; road,182,places,300,182,,,"'taang', rising.",SRC-WIKT:ທາງ,verified,
+W0183,ຖະໜົນ,tʰa(ʔ˧˥).non˩(˧),ta-non,ຖະ|ໜົນ,high-rising|low-rising,high/dead/short/none→13|high/live/short/none→1,noun,,,road; street,183,places,300,183,,,ta (short) + non.,SRC-WIKT:ຖະໜົນ,verified,
+W0184,ບ່ອນ,bɔːn˧,bawn,ບ່ອນ,mid,mid/live/long/mai_ek→5,noun,,,place,184,places,300,184,,,"'bawn', level.",SRC-WIKT:ບ່ອນ,verified,
+W0185,ຫ້ອງການ,hɔːŋ˧˩.kaːn˩(˧),hawng-gaan,ຫ້ອງ|ການ,low-falling|low-rising,high/live/long/mai_tho→7|mid/live/long/none→2,noun,,W0012,office,185,places,300,185,,,hawng + gaan.,SRC-WIKT:ຫ້ອງການ,verified,
+W0186,ແມ່ນ້ຳ,mɛː˧.nam˥˨,mae-nam,ແມ່|ນ້ຳ,mid|high-falling,low/live/long/mai_ek→6|low/live/special/mai_tho→9,noun,,W0042|W0011,river,186,places,300,186,,,Literally 'mother water'.,SRC-WIKT:ແມ່ນ້ຳ,verified,
+W0187,ນາ,naː˧˥,naa,ນາ,high-rising,low/live/long/none→3,noun,,,rice field,187,places,300,187,,,"'naa', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0188,ພູ,pʰuː˧˥,puu,ພູ,high-rising,low/live/long/none→3,noun,,,mountain,188,places,300,188,,,"Aspirated p + 'oo', rising.",SRC-WIKT:ພູ,verified,
+W0189,ຊ້າຍ,saːj˥˨,saai,ຊ້າຍ,high-falling,low/live/long/mai_tho→9,noun; adjective,,,left,189,directions,300,189,,,"'saai', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0190,ຂວາ,kʰwaː˩(˧),kwaa,ຂວາ,low-rising,high/live/long/none→1,noun; adjective,,,right,190,directions,300,190,,,"kw + long a, low-rising.",SRC-WIKT:ຂວາ,unverified,Wiktionary IPA was relayed as kʰuːə̯˩(˧); the agent reads the ຂວ cluster as kʰw-. Check
+W0191,ຊື່ໆ,sɯː˧(×2),seu-seu,ຊື່ໆ,mid,low/live/long/mai_ek→6,adverb,,W0041,straight (ahead),191,directions,300,191,,,Said twice: seu-seu.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Homograph spelling with ຊື່ 'name'
+W0192,ໃນ,naj˧˥,nai,ໃນ,high-rising,low/live/special/none→3,preposition,,,in,192,directions,300,192,,,"'nai', rising.",SRC-WIKT:ໃນ,verified,
+W0193,ນອກ,nɔːk̚˥˨,nawk,ນອກ,high-falling,low/dead/long/none→12,preposition; noun,,,outside,193,directions,300,193,,,"'nawk', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0194,ເທິງ,tʰɤŋ˧˥,toeng,ເທິງ,high-rising,low/live/short/none→3,preposition,,,on; above,194,directions,300,194,,,"Aspirated t + short 'uh' + ng, rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0195,ລຸ່ມ,lum˧,lum,ລຸ່ມ,mid,low/live/short/mai_ek→6,preposition,,,below; under,195,directions,300,195,,,"Short 'loom', level.",SRC-WIKT:ລຸ່ມ,verified,
+W0196,ໜ້າ,naː˧˩,naa,ໜ້າ,low-falling,high/live/long/mai_tho→7,noun,,,face; front,196,body,300,196,,,"'naa', falling.",SRC-WIKT:ໜ້າ,verified,
+W0197,ຫັ້ນ,han˧˩,han,ຫັ້ນ,low-falling,high/live/short/mai_tho→7,adverb,,,there,197,directions,300,197,,,"Short 'han', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0198,ຮອດ,hɔːt̚˥˨,hawt,ຮອດ,high-falling,low/dead/long/none→12,verb; preposition,,,arrive; until,198,directions,300,198,,,"'hawt', high and falling.",SRC-WIKT:ຮອດ,verified,
+W0199,ຈາກ,t͡ɕaːk̚˧˩,jaak,ຈາກ,low-falling,mid/dead/long/none→11,preposition,,,from,199,directions,300,199,,,"'jaak', falling.",SRC-WIKT:ຈາກ,verified,
+W0200,ກັບ,kap̚˧˥,gap,ກັບ,high-rising,mid/dead/short/none→14,preposition; verb,,,with; return,200,function,300,200,,,"Unaspirated k + short 'ap', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0201,ລ້ຽວ,liːə̯w˥˨,liaw,ລ້ຽວ,high-falling,low/live/long/mai_tho→9,verb,,,turn,201,directions,300,201,,,"'lee-aw', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0202,ພັນ,pʰan˧˥,pan,ພັນ,high-rising,low/live/short/none→3,numeral,,,thousand,202,numbers,300,202,,,"Aspirated p + short 'an', rising.",SRC-WIKT:ພັນ,verified,
+W0203,ໝູ,muː˩(˧),muu,ໝູ,low-rising,high/live/long/none→1,noun,W0097,,pig; pork,203,food,300,203,,,"'moo', low-rising.",SRC-WIKT:ໝູ,verified,
+W0204,ງົວ,ŋuːə̯˧˥,ngua,ງົວ,high-rising,low/live/short/none→3,noun,W0097,,cow; beef,204,food,300,204,,,"ng + 'oo-a', rising.",SRC-WIKT:ງົວ,verified,
+W0205,ໄຂ່,kʰaj˧,kai,ໄຂ່,mid,high/live/special/mai_ek→4,noun,,,egg,205,food,300,205,,,"Aspirated k + 'ai', level.",SRC-WIKT:ໄຂ່,verified,
+W0206,ຜັກ,pʰak̚˧˥,pak,ຜັກ,high-rising,high/dead/short/none→13,noun,,,vegetable,206,food,300,206,,,"Aspirated p + short 'ak', rising.",SRC-WIKT:ຜັກ,verified,
+W0207,ເຂົ້າຈີ່,kʰaw˧˩.t͡ɕiː˧,kao-jii,ເຂົ້າ|ຈີ່,low-falling|mid,high/live/special/mai_tho→7|mid/live/long/mai_ek→5,noun,,W0019,bread,207,food,300,207,,,kao + jii (level).,SRC-WIKT:ເຂົ້າຈີ່,verified,
+W0208,ເຝີ,fɤː˩(˧),foe,ເຝີ,low-rising,high/live/long/none→1,noun,,,pho (noodle soup),208,food,300,208,,,"f + long 'uh', low-rising.",SRC-WIKT:ເຝີ,verified,
+W0209,ນົມ,nom˧˥,nom,ນົມ,high-rising,low/live/short/none→3,noun,,,milk,209,food,300,209,,,"Short 'nom', rising.",SRC-WIKT:ນົມ,verified,
+W0210,ເບຍ,biːə̯˩(˧),bia,ເບຍ,low-rising,mid/live/long/none→2,noun,,,beer,210,food,300,210,,,"'bee-a', low-rising.",SRC-WIKT:ເບຍ,verified,
+W0211,ເຜັດ,pʰet̚˧˥,pet,ເຜັດ,high-rising,high/dead/short/none→13,adjective,,,spicy,211,food,300,211,,,"Aspirated p + short 'et', rising.",SRC-WIKT:ເຜັດ,verified,
+W0212,ສົ້ມ,som˧˩,som,ສົ້ມ,low-falling,high/live/short/mai_tho→7,adjective,,,sour,212,food,300,212,,,"Short 'som', falling.",SRC-WIKT:ສົ້ມ,verified,
+W0213,ເຄັມ,kʰem˧˥,kem,ເຄັມ,high-rising,low/live/short/none→3,adjective,,,salty,213,food,300,213,,,"Aspirated k + short 'em', rising.",SRC-WIKT:ເຄັມ,verified,
+W0214,ໝາກມ່ວງ,maːk̚˧˩.muːə̯ŋ˧,maak-muang,ໝາກ|ມ່ວງ,low-falling|mid,high/dead/long/none→10|low/live/long/mai_ek→6,noun,,,mango,214,food,300,214,,,maak + muang (level).,SRC-TATOEBA:8977020,unverified,Not on Wiktionary (404); IPA by agent
+W0215,ຕຳໝາກຫຸ່ງ,tam˩(˧).maːk̚˧˩.huŋ˧,dtam-maak-hung,ຕຳ|ໝາກ|ຫຸ່ງ,low-rising|low-falling|mid,mid/live/special/none→2|high/dead/long/none→10|high/live/short/mai_ek→4,noun,,,papaya salad,215,food,300,215,,,dtam + maak + hung.,SRC-TATOEBA:8980189,unverified,Not on Wiktionary (404); IPA by agent
+W0216,ອາຫານເຊົ້າ,ʔaː˩(˧).haːn˩(˧).saw˥˨,aa-haan-sao,ອາ|ຫານ|ເຊົ້າ,low-rising|low-rising|high-falling,mid/live/long/none→2|high/live/long/none→1|low/live/special/mai_tho→9,noun,,W0028|W0135,breakfast,216,food,300,216,,,Food + morning.,SRC-WIKT:ອາຫານເຊົ້າ,verified,
+W0217,ເຂົ້າແລງ,kʰaw˧˩.lɛːŋ˧˥,kao-laeng,ເຂົ້າ|ແລງ,low-falling|high-rising,high/live/special/mai_tho→7|low/live/long/none→3,noun,,W0019|W0136,dinner,217,food,300,217,,,Rice + evening.,SRC-TATOEBA:8990246,unverified,Not on Wiktionary (404); IPA joined from parts
+W0218,ແກ້ວ,kɛːw˥˨,gaew,ແກ້ວ,high-falling,mid/live/long/mai_tho→8,noun; classifier,,,glass; bottle,218,food,300,218,,,"Unaspirated k + 'aew', high and falling.",SRC-WIKT:ແກ້ວ,verified,Container classifier (ເບຍສອງແກ້ວ)
+W0219,ຈອກ,t͡ɕɔːk̚˧˩,jawk,ຈອກ,low-falling,mid/dead/long/none→11,noun; classifier,,,cup; glass,219,food,300,219,,,"'jawk', falling.",SRC-WIKT:ຈອກ,verified,Gloss relayed oddly ('sparrow'); cup sense from WP Lao script (ຈອກ glass)
+W0220,ຊ່ວຍ,suːə̯j˧,suay,ຊ່ວຍ,mid,low/live/long/mai_ek→6,verb,,,help,220,basics,300,220,,,"'soo-ay', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0221,ຮູ້ຈັກ,huː˥˨.t͡ɕak̚˧˥,huu-jak,ຮູ້|ຈັກ,high-falling|high-rising,low/live/long/mai_tho→9|mid/dead/short/none→14,verb,,W0060,know (a person or place),221,basics,300,221,,,huu + jak.,SRC-TATOEBA:8975785,unverified,Not on Wiktionary (404); IPA by agent
+W0222,ຄິດ,kʰit̚˧,kit,ຄິດ,mid,low/dead/short/none→15,verb,,,think,222,basics,300,222,,,"Aspirated k + short 'it', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. ຄິດຮອດ = miss (someone)
+W0223,ຈື່,t͡ɕɯː˧,jeu,ຈື່,mid,mid/live/long/mai_ek→5,verb,,,remember,223,basics,300,223,,,"'jeu', level.",SRC-WIKT:ຈື່,verified,
+W0224,ລືມ,lɯːm˧˥,leum,ລືມ,high-rising,low/live/long/none→3,verb,,,forget,224,basics,300,224,,,"'leum', rising.",SRC-WIKT:ລືມ,verified,
+W0225,ອ່ານ,ʔaːn˧,aan,ອ່ານ,mid,mid/live/long/mai_ek→5,verb,,,read,225,language,300,225,,,"'aan', level.",SRC-WIKT:ອ່ານ,verified,
+W0226,ຂຽນ,kʰiːə̯n˩(˧),kian,ຂຽນ,low-rising,high/live/long/none→1,verb,,,write,226,language,300,226,,,"Aspirated k + 'ee-an', low-rising.",SRC-WIKT:ຂຽນ,verified,
+W0227,ຟັງ,faŋ˧˥,fang,ຟັງ,high-rising,low/live/short/none→3,verb,,,listen,227,senses,300,227,,,"Short 'fang', rising.",SRC-WIKT:ຟັງ,verified,
+W0228,ຫຼິ້ນ,lin˧˩,lin,ຫຼິ້ນ,low-falling,high/live/short/mai_tho→7,verb,,,play,228,basics,300,228,,,"Short 'lin', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0229,ອາບນ້ຳ,ʔaːp̚˧˩.nam˥˨,aap-nam,ອາບ|ນ້ຳ,low-falling|high-falling,mid/dead/long/none→11|low/live/special/mai_tho→9,verb,,W0011,"bathe, shower",229,home,300,229,,,aap + nam.,SRC-TATOEBA:8990244,unverified,Not on Wiktionary (404); IPA by agent
+W0230,ຕື່ນ,tɯːn˧,dteun,ຕື່ນ,mid,mid/live/long/mai_ek→5,verb,,,wake up,230,home,300,230,,,"Unaspirated t + 'eun', level.",SRC-WIKT:ຕື່ນ,verified,
+W0231,ອອກ,ʔɔːk̚˧˩,awk,ອອກ,low-falling,mid/dead/long/none→11,verb,,,go out; exit,231,basics,300,231,,,"'awk', falling.",SRC-TATOEBA:13108115,unverified,Not on Wiktionary (404); IPA by agent
+W0232,ເລີ່ມ,lɤːm˧,loem,ເລີ່ມ,mid,low/live/long/mai_ek→6,verb,,,start,232,basics,300,232,,,"'luhm', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0233,ຈ່າຍ,t͡ɕaːj˧,jaai,ຈ່າຍ,mid,mid/live/long/mai_ek→5,verb,,,pay,233,shopping,300,233,,,"'jaai', level.",SRC-WIKT:ຈ່າຍ,verified,
+W0234,ຖາມ,tʰaːm˩(˧),taam,ຖາມ,low-rising,high/live/long/none→1,verb,,,ask,234,language,300,234,,,"Aspirated t + 'aam', low-rising.",SRC-WIKT:ຖາມ,verified,
+W0235,ຕອບ,tɔːp̚˧˩,dtawp,ຕອບ,low-falling,mid/dead/long/none→11,verb,,,answer,235,language,300,235,,,"Unaspirated t + 'awp', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0236,ບອກ,bɔːk̚˧˩,bawk,ບອກ,low-falling,mid/dead/long/none→11,verb,,,tell,236,language,300,236,,,"'bawk', falling.",SRC-WIKT:ບອກ,verified,
+W0237,ສອນ,sɔːn˩(˧),sawn,ສອນ,low-rising,high/live/long/none→1,verb,,,teach,237,language,300,237,,,"'sawn', low-rising.",SRC-WIKT:ສອນ,verified,
+W0238,ໃຊ້,saj˥˨,sai,ໃຊ້,high-falling,low/live/special/mai_tho→9,verb,,,use; spend,238,basics,300,238,,,"'sai', high and falling.",SRC-WIKT:ໃຊ້,verified,
+W0239,ຊອກ,sɔːk̚˥˨,sawk,ຊອກ,high-falling,low/dead/long/none→12,verb,,,look for,239,basics,300,239,,,"'sawk', high and falling.",SRC-WIKT:ຊອກ,verified,
+W0240,ພົບ,pʰop̚˧,pop,ພົບ,mid,low/dead/short/none→15,verb,,,meet; find,240,basics,300,240,,,"Aspirated p + short 'op', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. ພົບກັນໃໝ່ = see you again
+W0241,ແລ່ນ,lɛːn˧,laen,ແລ່ນ,mid,low/live/long/mai_ek→6,verb,,,run,241,basics,300,241,,,"'laen', level.",SRC-WIKT:ແລ່ນ,verified,
+W0242,ລອຍນ້ຳ,lɔːj˧˥.nam˥˨,lawy-nam,ລອຍ|ນ້ຳ,high-rising|high-falling,low/live/long/none→3|low/live/special/mai_tho→9,verb,,W0011,swim,242,basics,300,242,,,lawy (rising) + nam.,SRC-WIKT:ລອຍນ້ຳ,verified,
+W0243,ຂັບ,kʰap̚˧˥,kap,ຂັບ,high-rising,high/dead/short/none→13,verb,,,drive,243,transport,300,243,,,"Aspirated k + short 'ap', rising.",SRC-WIKT:ຂັບ,verified,
+W0244,ຂີ່,kʰiː˧,kii,ຂີ່,mid,high/live/long/mai_ek→4,verb,,,ride,244,transport,300,244,,,"Aspirated k + 'ee', level.",SRC-WIKT:ຂີ່,verified,
+W0245,ສົ່ງ,soŋ˧,song,ສົ່ງ,mid,high/live/short/mai_ek→4,verb,,,send,245,basics,300,245,,,"Short 'song', level.",SRC-WIKT:ສົ່ງ,verified,
+W0246,ໂທ,tʰoː˧˥,too,ໂທ,high-rising,low/live/long/none→3,verb,,,(tele)phone; call,246,basics,300,246,,,"Aspirated t + long o, rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0247,ຕ້ອງ,tɔːŋ˥˨,dtawng,ຕ້ອງ,high-falling,mid/live/long/mai_tho→8,auxiliary,,,must,247,basics,300,247,,,"Unaspirated t + 'awng', high and falling.",SRC-WIKT:ຕ້ອງ,verified,
+W0248,ຄວນ,kʰuːə̯n˧˥,kuan,ຄວນ,high-rising,low/live/long/none→3,auxiliary,,,should,248,basics,300,248,,,"Aspirated k + 'oo-an', rising.",SRC-WIKT:ຄວນ,verified,
+W0249,ຈະ,t͡ɕaʔ˧˥,ja,ຈະ,high-rising,mid/dead/short/none→14,auxiliary,,,will (future),249,basics,300,249,,,"Short clipped 'ja', rising.",SRC-WIKT:ຈະ,verified,
+W0250,ກຳລັງ,kam˩(˧).laŋ˧˥,gam-lang,ກຳ|ລັງ,low-rising|high-rising,mid/live/special/none→2|low/live/short/none→3,auxiliary,,,be (doing) now,250,basics,300,250,,,gam + lang (rising).,SRC-WIKT:ກຳລັງ,verified,
+W0251,ເຄີຍ,kʰɤːj˧˥,koey,ເຄີຍ,high-rising,low/live/long/none→3,auxiliary,,,ever; used to,251,basics,300,251,,,"Aspirated k + long 'uh' + y, rising.",SRC-WIKT:ເຄີຍ,verified,
+W0252,ດີໃຈ,diː˩(˧).t͡ɕaj˩(˧),dii-jai,ດີ|ໃຈ,low-rising|low-rising,mid/live/long/none→2|mid/live/special/none→2,adjective,,W0002|W0007,glad,252,feelings,300,252,,,Literally 'good heart'.,SRC-TATOEBA:1897943,unverified,Not on Wiktionary (404); IPA joined from parts
+W0253,ເສຍໃຈ,siːə̯˩(˧).t͡ɕaj˩(˧),sia-jai,ເສຍ|ໃຈ,low-rising|low-rising,high/live/long/none→1|mid/live/special/none→2,adjective,,W0007,sad; sorry,253,feelings,300,253,,,Literally 'lose heart'.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0254,ຍາກ,ɲaːk̚˥˨,nyaak,ຍາກ,high-falling,low/dead/long/none→12,adjective,,,difficult,254,describing,300,254,,,"'nyaak', high and falling.",SRC-WIKT:ຍາກ,verified,
+W0255,ງ່າຍ,ŋaːj˧,ngaai,ງ່າຍ,mid,low/live/long/mai_ek→6,adjective,,,easy,255,describing,300,255,,,"ng + 'aai', level.",SRC-WIKT:ງ່າຍ,verified,
+W0256,ໃໝ່,maj˧,mai,ໃໝ່,mid,high/live/special/mai_ek→4,adjective,,,new,256,describing,300,256,,,"'mai', level.",SRC-WIKT:ໃໝ່,verified,
+W0257,ເກົ່າ,kaw˧,gao,ເກົ່າ,mid,mid/live/special/mai_ek→5,adjective,,,old (things),257,describing,300,257,,,"'gao', level. Compare ເກົ້າ 'nine' (falling).",SRC-WIKT:ເກົ່າ,verified,
+W0258,ແກ່,kɛː˧,gae,ແກ່,mid,mid/live/long/mai_ek→5,adjective,,,old (people),258,describing,300,258,,,"'gae', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0259,ໜຸ່ມ,num˧,num,ໜຸ່ມ,mid,high/live/short/mai_ek→4,adjective,,,young,259,describing,300,259,,,"Short 'noom', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0260,ສູງ,suːŋ˩(˧),suung,ສູງ,low-rising,high/live/long/none→1,adjective,,,tall; high,260,describing,300,260,,,"'soong', low-rising.",SRC-WIKT:ສູງ,verified,
+W0261,ຍາວ,ɲaːw˧˥,nyaao,ຍາວ,high-rising,low/live/long/none→3,adjective,,,long,261,describing,300,261,,,"'nyaao', rising.",SRC-WIKT:ຍາວ,verified,
+W0262,ສັ້ນ,san˧˩,san,ສັ້ນ,low-falling,high/live/short/mai_tho→7,adjective,,,short,262,describing,300,262,,,"Short 'san', falling.",SRC-WIKT:ສັ້ນ,verified,
+W0263,ໜັກ,nak̚˧˥,nak,ໜັກ,high-rising,high/dead/short/none→13,adjective,,,heavy; hard,263,describing,300,263,,,"Short 'nak', rising.",SRC-WIKT:ໜັກ,verified,
+W0264,ສະອາດ,sa(ʔ˧˥).ʔaːt̚˧˩,sa-aat,ສະ|ອາດ,high-rising|low-falling,high/dead/short/none→13|mid/dead/long/none→11,adjective,,,clean,264,describing,300,264,,,sa + aat (falling).,SRC-WIKT:ສະອາດ,verified,
+W0265,ສວຍ,suːə̯j˩(˧),suay,ສວຍ,low-rising,high/live/long/none→1,adjective,,,pretty,265,describing,300,265,,,"'soo-ay', low-rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0266,ໜ້ອຍ,nɔːj˧˩,nawy,ໜ້ອຍ,low-falling,high/live/long/mai_tho→7,adjective; adverb,,,a little; few,266,describing,300,266,,,"'nawy', falling. Compare ນ້ອຍ 'small' (high falling).",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. ໜ້ອຍໜຶ່ງ = a little
+W0267,ຫວ່າງ,ʋaːŋ˧,waang,ຫວ່າງ,mid,high/live/long/mai_ek→4,adjective,,,free (not busy); empty,267,describing,300,267,,,"'waang', level.",SRC-WIKT:ຫວ່າງ,verified,
+W0268,ຫຍຸ້ງ,ɲuŋ˧˩,nyung,ຫຍຸ້ງ,low-falling,high/live/short/mai_tho→7,adjective,,,busy,268,describing,300,268,,,"Short 'nyoong', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Tatoeba 8995288 ຂ້ອຍຫຍຸ້ງຫຼາຍມື້ນີ້
+W0269,ຜິດ,pʰit̚˧˥,pit,ຜິດ,high-rising,high/dead/short/none→13,adjective,,,wrong,269,describing,300,269,,,"Aspirated p + short 'it', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0270,ພ້ອມ,pʰɔːm˥˨,pawm,ພ້ອມ,high-falling,low/live/long/mai_tho→9,adjective,,,ready; together,270,describing,300,270,,,"'pawm', high and falling.",SRC-WIKT:ພ້ອມ,verified,
+W0271,ອ້ວນ,ʔuːə̯n˥˨,uan,ອ້ວນ,high-falling,mid/live/long/mai_tho→8,adjective,,,fat,271,describing,300,271,,,"'oo-an', high and falling.",SRC-TATOEBA:8975747,unverified,Not on Wiktionary (404); IPA by agent
+W0272,ຈ່ອຍ,t͡ɕɔːj˧,jawy,ຈ່ອຍ,mid,mid/live/long/mai_ek→5,adjective,,,thin,272,describing,300,272,,,"'jawy', level.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0273,ທີ່,tʰiː˧,tii,ທີ່,mid,low/live/long/mai_ek→6,preposition; relative,,,at; that/which,273,function,300,273,,,"Aspirated t + 'ee', level.",SRC-WIKT:ທີ່,verified,
+W0274,ຂອງ,kʰɔːŋ˩(˧),kawng,ຂອງ,low-rising,high/live/long/none→1,preposition; noun,,,of (possession); thing,274,function,300,274,,,"Aspirated k + 'awng', low-rising.",SRC-WIKT:ຂອງ,verified,
+W0275,ອີກ,ʔiːk̚˧˩,iik,ອີກ,low-falling,mid/dead/long/none→11,adverb,,,again; more,275,function,300,275,,,"'eek', falling.",SRC-WIKT:ອີກ,verified,
+W0276,ແທ້,tʰɛː˥˨,tae,ແທ້,high-falling,low/live/long/mai_tho→9,adverb,,,really,276,function,300,276,,,"Aspirated t + 'ae', high and falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0277,ຍັງ,ɲaŋ˧˥,nyang,ຍັງ,high-rising,low/live/short/none→3,adverb,,,still; (not) yet,277,function,300,277,,,"'nyang', rising. Compare ຫຍັງ 'what' (low-rising).",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0278,ນຳ,nam˧˥,nam,ນຳ,high-rising,low/live/special/none→3,preposition; adverb,,,with; along,278,function,300,278,,,"'nam', rising. Compare ນ້ຳ 'water' (falling).",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Tatoeba 8975797 ...ນຳກັນ
+W0279,ກັນ,kan˩(˧),gan,ກັນ,low-rising,mid/live/short/none→2,pronoun; adverb,,,each other; together,279,function,300,279,,,"Unaspirated k + short 'an', low-rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0280,ບາງ,baːŋ˩(˧),baang,ບາງ,low-rising,mid/live/long/none→2,determiner,,,some,280,function,300,280,,,"'baang', low-rising.",SRC-WIKT:ບາງ,verified,
+W0281,ຈັກ,t͡ɕak̚˧˥,jak,ຈັກ,high-rising,mid/dead/short/none→14,interrogative,,,how many,281,questions,300,281,,,"Short 'jak', rising.",SRC-WIKT:ຈັກ,verified,ຈັກໂມງ = what time; ຈັກຄົນ = how many people
+W0282,ເມື່ອໃດ,mɯːə̯˧.daj˩(˧),meua-dai,ເມື່ອ|ໃດ,mid|low-rising,low/live/long/mai_ek→6|mid/live/special/none→2,interrogative,,W0283,when,282,questions,300,283,,,meua (level) + dai.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0283,ໃດ,daj˩(˧),dai,ໃດ,low-rising,mid/live/special/none→2,interrogative,,,which,283,questions,300,282,,,"'dai', low-rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent. Tatoeba ອັນໃດ 'which one'
+W0284,ໜ່ວຍ,nuːə̯j˧,nuay,ໜ່ວຍ,mid,high/live/long/mai_ek→4,classifier,,,"classifier for round things (fruit, eggs)",284,classifiers,300,284,,,"'noo-ay', level.",SRC-WIKT:ໜ່ວຍ,verified,
+W0285,ຄັນ,kʰan˧˥,kan,ຄັນ,high-rising,low/live/short/none→3,classifier,,,classifier for vehicles,285,classifiers,300,285,,,"Aspirated k + short 'an', rising.",SRC-WIKT:ຄັນ,verified,
+W0286,ລົດ,lot̚˧,lot,ລົດ,mid,low/dead/short/none→15,noun,W0285,,car; vehicle,286,transport,300,286,,,"Short 'lot', level.",SRC-WIKT:ລົດ,verified,Gloss relayed as 'taste' (another etymology); vehicle sense from SEAsite (ຣົດ/ລົດ car)
+W0287,ລົດເມ,lot̚˧.meː˧˥,lot-mee,ລົດ|ເມ,mid|high-rising,low/dead/short/none→15|low/live/long/none→3,noun,W0285,W0286,bus,287,transport,300,287,,,lot + mee (rising).,SRC-WIKT:ລົດເມ,verified,
+W0288,ໂທລະສັບ,tʰoː˧˥.la(ʔ˧).sap̚˧˥,too-la-sap,ໂທ|ລະ|ສັບ,high-rising|mid|high-rising,low/live/long/none→3|low/dead/short/none→15|high/dead/short/none→13,noun,,W0246,telephone,288,objects,300,288,,,too + la + sap.,SRC-WIKT:ໂທລະສັບ,verified,
+W0289,ປຶ້ມ,pɯm˥˨,bpeum,ປຶ້ມ,high-falling,mid/live/short/mai_tho→8,noun,W0106,,book,289,objects,300,289,,,"Unaspirated p + short 'eum', high and falling.",SRC-WIKT:ປຶ້ມ,verified,Classifier ຫົວ (Tatoeba 14057539 ປຶ້ມຫົວນີ້)
+W0290,ເສື້ອ,sɯːə̯˧˩,seua,ເສື້ອ,low-falling,high/live/long/mai_tho→7,noun,,,shirt; clothes,290,objects,300,290,,,"'seu-a', falling.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0291,ເກີບ,kɤːp̚˧˩,goep,ເກີບ,low-falling,mid/dead/long/none→11,noun,,,shoe(s),291,objects,300,291,,,"Unaspirated k + long 'uh' + p, falling.",SRC-WIKT:ເກີບ,verified,
+W0292,ເຊີນ,sɤːn˧˥,soen,ເຊີນ,high-rising,low/live/long/none→3,verb,,,please (invitation); invite,292,greetings,300,292,,,"'suhn', rising.",SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0293,ໂຊກດີ,soːk̚˥˨.diː˩(˧),sook-dii,ໂຊກ|ດີ,high-falling|low-rising,low/dead/long/none→12|mid/live/long/none→2,interjection,,W0002,good luck; goodbye,293,greetings,300,293,,,sook (falling) + dii.,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0294,ລາກ່ອນ,laː˧˥.kɔːn˧,laa-gawn,ລາ|ກ່ອນ,high-rising|mid,low/live/long/none→3|mid/live/long/mai_ek→5,interjection,,W0148,goodbye,294,greetings,300,294,,,laa (rising) + gawn (level).,SRC-AGENT:knowledge,unverified,Not on Wiktionary (404); IPA by agent
+W0295,ຍິນດີ,ɲin˧˥.diː˩(˧),nyin-dii,ຍິນ|ດີ,high-rising|low-rising,low/live/short/none→3|mid/live/long/none→2,adjective; interjection,,W0002,glad; you're welcome,295,greetings,300,295,,,nyin (rising) + dii.,SRC-WIKT:ຍິນດີ,verified,
+W0296,ບັນຫາ,ban˩(˧).haː˩(˧),ban-haa,ບັນ|ຫາ,low-rising|low-rising,mid/live/short/none→2|high/live/long/none→1,noun,,,problem,296,basics,300,296,,,ban + haa.,SRC-WIKT:ບັນຫາ,verified,
+W0297,ກີບ,kiːp̚˧˩,giip,ກີບ,low-falling,mid/dead/long/none→11,noun,,,kip (currency),297,shopping,300,297,,,"Unaspirated k + 'eep', falling.",SRC-WIKT:ກີບ,verified,
+W0298,ເຄື່ອງ,kʰɯːə̯ŋ˧,keuang,ເຄື່ອງ,mid,low/live/long/mai_ek→6,noun,,,things; stuff; goods,298,shopping,300,298,,,"Aspirated k + 'eu-ang', level.",SRC-WIKT:ເຄື່ອງ,verified,ຊື້ເຄື່ອງ = go shopping
+W0299,ອາກາດ,ʔaː˩(˧).kaːt̚˧˩,aa-gaat,ອາ|ກາດ,low-rising|low-falling,mid/live/long/none→2|mid/dead/long/none→11,noun,,,weather; air,299,weather,300,299,,,aa + gaat (falling).,SRC-WIKT:ອາກາດ,verified,
+W0300,ໜາວ,naːw˩(˧),naao,ໜາວ,low-rising,high/live/long/none→1,adjective,,,cold (weather),300,weather,300,300,,,"'naao', low-rising.",SRC-WIKT:ໜາວ,verified,

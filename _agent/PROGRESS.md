@@ -235,6 +235,24 @@ pron_tips are agent-written guidance.
 - validate: 0 errors. Warnings: classifier gaps (deferred per user); ໃຈ only via compounds.
 - Next: batch 3 (intro 102–300). Introduce the missing vowels and letters early, numbers 6–10 and up, Lao digits, ໆ.
 
+## 2026-10-09 CHECKPOINT 300
+- Batch 3: W0103–W0300 (intro 102–300), plus ເທົ່າໃດ activated at intro 116.
+  - Chosen from agent knowledge, ordered so the missing vowels and letters come early (◌ົວ ເ◌ຍ ແ◌ະ ເ◌າະ ◌ຸ ໂ◌ະ ຝ ເ◌ີ ຫວ ◌ວ◌ ໆ, all by word 131).
+- Wiktionary IPA for ~140 of 198. The ~58 missing words (404) use agent spelling and IPA, confidence `unverified`.
+  - ຂວາ: Wiktionary relay gave kʰuːə̯; the agent uses kʰwaː (noted).
+  - ໆ words (ໄວໆ ຊ້າໆ ຊື່ໆ) have IPA written once with "(×2)", so the tools count one written syllable.
+- Incident: tone_derive --fill crashed on an unquoted comma in the W0284 gloss and truncated words.csv after W0283. Rows were restored from context.
+  - Mitigation: back up before --fill; script rev with atomic writes proposed.
+- Sentences: 534 total (36 verified: Tatoeba + 1 Wiktionary; 498 composed `unverified`), including 22 new Tatoeba matches.
+- Results:
+  - tone_derive: 370 syllables, 0 mismatches.
+  - build_order: 0 heavy words; coverage at 300 = letters 34/45, vowels 30/31.
+  - Still missing: ຫງ, ເ◌ະ, the 10 Lao digits.
+  - validate: 0 errors.
+- Next:
+  - Propose build_order rev2 (quiet mode, digits via number words, homograph warning summary) and tone_derive rev3 (atomic write).
+  - Batch 4 (301–600): ຫງ (ເຫງົາ), ເ◌ະ (ເຕະ), Lao digits.
+
 ### Next after review
 - Phase 2: words 35–100. Classifiers as items; numbers sprinkled in; ເທົ່າໃດ once sourced; ຫ້ອງນອນ chain extensions; ພາສາລາວ; ເຮືອນ.
 - Study Big Brother Mouse for verified simple sentences.
