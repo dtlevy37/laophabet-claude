@@ -81,3 +81,11 @@
 - Respelling is blank pending the user's choice of scheme.
 - Open questions are in NEEDS_HUMAN: the respelling scheme; whether rare items (ຣ, short diphthongs, rare closed forms) are required for coverage.
 - Next: user answers; tone_derive.py approval; write the validate_data.py proposal; verify the first-35 words against Wiktionary.
+
+## 2026-10-09 Respelling and coverage decisions
+- User chose the English-friendly respelling. Scheme written in SCHEMA.md:
+  - ກ g, ປ bp, ຕ dt, ຈ j; ຂ/ຄ k, ຜ/ພ p, ຖ/ທ t.
+  - Long simple vowels doubled; digraph vowels ae/aw/eu/oe; tone kept separate.
+  - Filled into letters.csv and vowels.csv.
+- Rare items are reading-only. coverage_required set to `reading-only` for C22 ຣ and V14 V20 V25 V28 V30.
+- Next: validate_data.py proposal; verify the first-35 words against Wiktionary (researcher), with the ນອນ→ຫ້ອງນອນ and gradual-numbers adjustments for batch 2.

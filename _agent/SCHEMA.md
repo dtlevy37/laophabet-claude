@@ -10,7 +10,24 @@ Common columns on every table: `source`, `confidence` (verified | derived | unve
 - **vowels.csv**: vowel_id, lao_pattern, form (open|closed|both|special), length (short|long|special), sound_group, ipa, romanization_bgn, respelling, pron_tip, coverage_required, intro_word_id
   - One row per **written form**: a vowel whose shape changes before a final consonant has two rows (◌ະ / ◌ັ◌) sharing a `sound_group`. This lets coverage track each shape a reader must recognise.
 - `pron_tip` (all tables): advice written by the agent from the verified IPA and the SEAsite notes for English speakers. The English comparisons are approximations, and the row's `confidence` refers to the IPA and the class.
-- `respelling`: blank until the learner respelling scheme is chosen. That decision is pending with the user.
+- `respelling`: the learner respelling (scheme below; chosen by the user 2026-10-09).
+- `coverage_required`: `yes` (must be introduced through a vocabulary word by word 600), `reading-only` (rare items, taught with one example as a short reading exercise near the end and not counted among the 600; user decision 2026-10-09), or `no`.
+
+### Learner respelling scheme ("English-friendly")
+Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syllables are joined with `-`.
+- **Initials:**
+  - Unaspirated: ກ g · ປ bp · ຕ dt · ຈ j
+  - Aspirated: ຂ ຄ k · ຜ ພ p · ຖ ທ t
+  - Others: ບ b · ດ d · ສ ຊ s · ຝ ຟ f · ຫ ຮ h · ມ m · ນ n · ງ ng · ຍ ny · ຢ y · ລ l · ຣ r · ວ w
+  - ອ is not written. The ຫ-combinations are written as their sound: ຫງ ng, ຫຍ ny, ໜ n, ໝ m, ຫຼ l, ຫວ w.
+- **Finals:** ກ k · ດ t · ບ p · ງ ng · ນ n · ມ m.
+  - ຍ is `i` after a/aa (baai) and `y` elsewhere (kawy).
+  - ວ is `o` after a/aa (laao) and `w` elsewhere (maew).
+- **Simple vowels** are doubled when long: a/aa · i/ii · u/uu · e/ee · o/oo.
+- **Digraph vowels** are spelled the same whether short or long: ɛ `ae` · ɔ `aw` · ɯ `eu` · ɤ `oe`. Their length shows in the IPA and the pron_tip.
+- **Diphthongs:** ia `ia` · ɯa `eua` · ua `ua`.
+- **Special vowels:** ໄ ໃ `ai` · ເ◌ົາ `ao` · ◌ຳ `am`.
+- Examples: ສະບາຍດີ sa-baai-dii · ໄປ bpai · ຕາ dtaa · ກິນ gin · ຂ້ອຍ kawy · ຫ້ອງນ້ຳ hawng-nam.
 
 ### Inventory counts (2026-10-09)
 - **Consonants: 27 single letters** (6 high, 8 mid, 13 low), per SRC-WP-SCRIPT and SRC-SEASITE (they agree), **plus 6 ຫ-combinations** (ຫງ ຫຍ ໜ ໝ ຫຼ ຫວ). That makes SEAsite's "33 consonants".

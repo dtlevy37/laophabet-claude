@@ -1,37 +1,37 @@
 letter_id,lao,unicode,kind,name_lao,name_gloss_en,ipa_initial,ipa_final,consonant_class,romanization_bgn,respelling,pron_tip,coverage_required,intro_word_id,source,confidence,notes
-C01,ກ,U+0E81,consonant,ໄກ່,chicken,k,k̚,mid,k,,"Unaspirated k with no puff of air, so English ears often hear it as g (as in 'gas'). As a final it is unreleased.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C02,ຂ,U+0E82,consonant,ໄຂ່,egg,kʰ,,high,kh,,Aspirated k as in 'kite'. Same sound as ຄ; the class letter only changes the tone.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
-C03,ຄ,U+0E84,consonant,ຄວາຍ,water buffalo,kʰ,,low,kh,,Aspirated k as in 'kite'. Same sound as ຂ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
-C04,ງ,U+0E87,consonant,ງົວ,ox,ŋ,ŋ,low,ng,,"The 'ng' of 'singer', but it can start a word.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP gives ງົວ ox or ງູ snake as the name word
-C05,ຈ,U+0E88,consonant,ຈອກ,glass,tɕ,,mid,ch,,"Between English j and ch: like the j in 'jaw' but voiceless.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ຈົວ novice as the name word
-C06,ສ,U+0EAA,consonant,ເສືອ,tiger,s,,high,s,,s as in 'saw'. Same sound as ຊ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Out of alphabetical order in the Unicode block (Thai position)
-C07,ຊ,U+0E8A,consonant,ຊ້າງ,elephant,s,,low,x,,s as in 'saw'. Same sound as ສ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,BGN/PCGN romanizes it x
-C08,ຍ,U+0E8D,consonant,ຍຸງ,mosquito,ɲ,j,low,gn/ny,,"At the start it is a nasal 'ny' (Spanish ñ, Russian 'nyet'). At the end of a syllable it is a y glide.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C09,ດ,U+0E94,consonant,ເດັກ,child,d,t̚,mid,d,,"d as in 'deck'. As a final it is an unreleased t.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C10,ຕ,U+0E95,consonant,ຕາ,eye,t,,mid,t,,"Unaspirated t, like the t in 'stay' (no puff of air).",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C11,ຖ,U+0E96,consonant,ຖົງ,bag,tʰ,,high,th,,"Aspirated t as in 'top' (not the 'th' of 'think'). Same sound as ທ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C12,ທ,U+0E97,consonant,ທຸງ,flag,tʰ,,low,th,,"Aspirated t as in 'top' (not the 'th' of 'think'). Same sound as ຖ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C13,ນ,U+0E99,consonant,ນົກ,bird,n,n,low,n,,n as in 'no'.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C14,ບ,U+0E9A,consonant,ແບ້,goat,b,p̚,mid,b,,"b as in 'boy'. As a final it is an unreleased p.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C15,ປ,U+0E9B,consonant,ປາ,fish,p,,mid,p,,"Unaspirated p, like the p in 'spy' (no puff of air).",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C16,ຜ,U+0E9C,consonant,ເຜິ້ງ,bee,pʰ,,high,ph,,"Aspirated p as in 'pie' (not an f). Same sound as ພ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C17,ຝ,U+0E9D,consonant,ຝົນ,rain,f,,high,f,,f as in 'finch'. Same sound as ຟ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name FO TAM is swapped relative to the Lao name (WP; compart confirms)
-C18,ພ,U+0E9E,consonant,ພູ,mountain,pʰ,,low,ph,,"Aspirated p as in 'pie' (not an f). Same sound as ຜ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C19,ຟ,U+0E9F,consonant,ໄຟ,fire,f,,low,f,,f as in 'finch'. Same sound as ຝ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name FO SUNG is swapped relative to the Lao name (WP; compart confirms)
-C20,ມ,U+0EA1,consonant,ແມວ,cat,m,m,low,m,,m as in 'man'.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C21,ຢ,U+0EA2,consonant,ຢາ,medicine,j,,mid,y,,y as in 'young'. Never used as a final.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C22,ຣ,U+0EA3,consonant,,,r,n,low,r,,Usually pronounced like ລ (l).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,"Name word UNCERTAIN (fetches gave ຣົຖ or ລົດ). Used mainly in foreign names and loans. Unicode name LO LING is swapped relative to the Lao name. Coverage within 600 words may be hard: see NEEDS_HUMAN"
-C23,ລ,U+0EA5,consonant,ລີງ,monkey,l,,low,l,,l as in 'law'.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name LO LOOT is swapped relative to the Lao name
-C24,ວ,U+0EA7,consonant,ວີ,fan,w,w,low,v/w,,"At the start, between English w and v. At the end of a syllable it is a w glide (as in 'now').",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP: [ʋ] or [w] depending on dialect
-C25,ຫ,U+0EAB,consonant,ຫ່ານ,goose,h,,high,h,,"h as in 'hang'. Written silent before ງ ຍ ນ ມ ລ ວ, it makes them high class.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C01,ກ,U+0E81,consonant,ໄກ່,chicken,k,k̚,mid,k,g (final k),"Unaspirated k with no puff of air, so English ears often hear it as g (as in 'gas'). As a final it is unreleased.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C02,ຂ,U+0E82,consonant,ໄຂ່,egg,kʰ,,high,kh,k,Aspirated k as in 'kite'. Same sound as ຄ; the class letter only changes the tone.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
+C03,ຄ,U+0E84,consonant,ຄວາຍ,water buffalo,kʰ,,low,kh,k,Aspirated k as in 'kite'. Same sound as ຂ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
+C04,ງ,U+0E87,consonant,ງົວ,ox,ŋ,ŋ,low,ng,ng,"The 'ng' of 'singer', but it can start a word.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP gives ງົວ ox or ງູ snake as the name word
+C05,ຈ,U+0E88,consonant,ຈອກ,glass,tɕ,,mid,ch,j,"Between English j and ch: like the j in 'jaw' but voiceless.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ຈົວ novice as the name word
+C06,ສ,U+0EAA,consonant,ເສືອ,tiger,s,,high,s,s,s as in 'saw'. Same sound as ຊ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Out of alphabetical order in the Unicode block (Thai position)
+C07,ຊ,U+0E8A,consonant,ຊ້າງ,elephant,s,,low,x,s,s as in 'saw'. Same sound as ສ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,BGN/PCGN romanizes it x
+C08,ຍ,U+0E8D,consonant,ຍຸງ,mosquito,ɲ,j,low,gn/ny,ny (final i/y),"At the start it is a nasal 'ny' (Spanish ñ, Russian 'nyet'). At the end of a syllable it is a y glide.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C09,ດ,U+0E94,consonant,ເດັກ,child,d,t̚,mid,d,d (final t),"d as in 'deck'. As a final it is an unreleased t.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C10,ຕ,U+0E95,consonant,ຕາ,eye,t,,mid,t,dt,"Unaspirated t, like the t in 'stay' (no puff of air).",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C11,ຖ,U+0E96,consonant,ຖົງ,bag,tʰ,,high,th,t,"Aspirated t as in 'top' (not the 'th' of 'think'). Same sound as ທ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C12,ທ,U+0E97,consonant,ທຸງ,flag,tʰ,,low,th,t,"Aspirated t as in 'top' (not the 'th' of 'think'). Same sound as ຖ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C13,ນ,U+0E99,consonant,ນົກ,bird,n,n,low,n,n,n as in 'no'.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C14,ບ,U+0E9A,consonant,ແບ້,goat,b,p̚,mid,b,b (final p),"b as in 'boy'. As a final it is an unreleased p.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C15,ປ,U+0E9B,consonant,ປາ,fish,p,,mid,p,bp,"Unaspirated p, like the p in 'spy' (no puff of air).",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C16,ຜ,U+0E9C,consonant,ເຜິ້ງ,bee,pʰ,,high,ph,p,"Aspirated p as in 'pie' (not an f). Same sound as ພ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C17,ຝ,U+0E9D,consonant,ຝົນ,rain,f,,high,f,f,f as in 'finch'. Same sound as ຟ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name FO TAM is swapped relative to the Lao name (WP; compart confirms)
+C18,ພ,U+0E9E,consonant,ພູ,mountain,pʰ,,low,ph,p,"Aspirated p as in 'pie' (not an f). Same sound as ຜ.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C19,ຟ,U+0E9F,consonant,ໄຟ,fire,f,,low,f,f,f as in 'finch'. Same sound as ຝ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name FO SUNG is swapped relative to the Lao name (WP; compart confirms)
+C20,ມ,U+0EA1,consonant,ແມວ,cat,m,m,low,m,m,m as in 'man'.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C21,ຢ,U+0EA2,consonant,ຢາ,medicine,j,,mid,y,y,y as in 'young'. Never used as a final.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C22,ຣ,U+0EA3,consonant,,,r,n,low,r,r,Usually pronounced like ລ (l).,reading-only,,SRC-WP-SCRIPT;SRC-SEASITE,verified,"Name word UNCERTAIN (fetches gave ຣົຖ or ລົດ). Used mainly in foreign names and loans. Unicode name LO LING is swapped relative to the Lao name"
+C23,ລ,U+0EA5,consonant,ລີງ,monkey,l,,low,l,l,l as in 'law'.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name LO LOOT is swapped relative to the Lao name
+C24,ວ,U+0EA7,consonant,ວີ,fan,w,w,low,v/w,w (final o/w),"At the start, between English w and v. At the end of a syllable it is a w glide (as in 'now').",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP: [ʋ] or [w] depending on dialect
+C25,ຫ,U+0EAB,consonant,ຫ່ານ,goose,h,,high,h,h,"h as in 'hang'. Written silent before ງ ຍ ນ ມ ລ ວ, it makes them high class.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C26,ອ,U+0EAD,consonant,ໂອ,bowl,ʔ,,mid,,,"Silent carrier for a vowel at the start of a syllable. Strictly a glottal catch, like the break in 'uh-oh'.",yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ອື່ງ frog as the name word. Also part of the vowel forms ◌ອ◌ ◌ັອ◌ ເ◌ືອ ເ◌ຶອ
-C27,ຮ,U+0EAE,consonant,ເຮືອ,boat,h,,low,h,,h as in 'hang'. Same sound as ຫ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ເຮືອນ house as the name word
-C28,ຫງ,U+0EAB U+0E87,consonant-cluster,ເຫງົາ,lonely,ŋ,,high,ng,,Same sound as ງ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Example word from WP. SEAsite gives ເຫງັນ civet cat
-C29,ຫຍ,U+0EAB U+0E8D,consonant-cluster,ຫຍ້າ,grass,ɲ,,high,ny,,Same sound as initial ຍ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C30,ໜ,U+0EDC,consonant-ligature,ໜູ,rat,n,,high,n,,Same sound as ນ; high class. Also written ຫນ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Unicode LAO HO NO
-C31,ໝ,U+0EDD,consonant-ligature,ໝາ,dog,m,,high,m,,Same sound as ມ; high class. Also written ຫມ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Unicode LAO HO MO
-C32,ຫຼ,U+0EAB U+0EBC,consonant-ligature,ຫຼັງ,back,l,,high,l,,Same sound as ລ; high class. Also written ຫລ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,ຫ + subscript ◌ຼ (U+0EBC); no single code point. SEAsite example ຫຼາ spinner
-C33,ຫວ,U+0EAB U+0EA7,consonant-cluster,ແຫວນ,ring,w,,high,w/v,,Same sound as initial ວ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,SEAsite example ຫວີ comb. ຫຣ sometimes listed as a 7th; not counted (see notes)
+C27,ຮ,U+0EAE,consonant,ເຮືອ,boat,h,,low,h,h,h as in 'hang'. Same sound as ຫ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ເຮືອນ house as the name word
+C28,ຫງ,U+0EAB U+0E87,consonant-cluster,ເຫງົາ,lonely,ŋ,,high,ng,ng,Same sound as ງ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Example word from WP. SEAsite gives ເຫງັນ civet cat
+C29,ຫຍ,U+0EAB U+0E8D,consonant-cluster,ຫຍ້າ,grass,ɲ,,high,ny,ny,Same sound as initial ຍ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C30,ໜ,U+0EDC,consonant-ligature,ໜູ,rat,n,,high,n,n,Same sound as ນ; high class. Also written ຫນ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Unicode LAO HO NO
+C31,ໝ,U+0EDD,consonant-ligature,ໝາ,dog,m,,high,m,m,Same sound as ມ; high class. Also written ຫມ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Unicode LAO HO MO
+C32,ຫຼ,U+0EAB U+0EBC,consonant-ligature,ຫຼັງ,back,l,,high,l,l,Same sound as ລ; high class. Also written ຫລ.,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,ຫ + subscript ◌ຼ (U+0EBC); no single code point. SEAsite example ຫຼາ spinner
+C33,ຫວ,U+0EAB U+0EA7,consonant-cluster,ແຫວນ,ring,w,,high,w/v,w,Same sound as initial ວ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,SEAsite example ຫວີ comb. ຫຣ sometimes listed as a 7th; not counted (see notes)
 T1,◌່,U+0EC8,tone-mark,ໄມ້ເອກ,mai ek,,,,,,Gives the mid tone for every class.,yes,,SRC-WP-SCRIPT;SRC-SEASITE;SRC-WIKT-GUIDE,verified,Lao spelling of the name UNVERIFIED
 T2,◌້,U+0EC9,tone-mark,ໄມ້ໂທ,mai tho,,,,,,"Gives low-falling after high-class letters, high-falling after mid- and low-class letters.",yes,,SRC-WP-SCRIPT;SRC-SEASITE;SRC-WIKT-GUIDE,verified,Lao spelling of the name UNVERIFIED
 T3,◌໊,U+0ECA,tone-mark,,mai ti,,,,,,"Rare: interjections and onomatopoeia, normally with mid-class letters (Kerr).",no,,SRC-WP-SCRIPT;SRC-KERR,verified,Tone value only from uncited Wiktionary code (high-rising): unverified
@@ -39,13 +39,13 @@ T4,◌໋,U+0ECB,tone-mark,,mai catawa,,,,,,"Rare: interjections and onomatopoei
 S1,ໆ,U+0EC6,other,,repetition mark (ko la),,,,,,Repeat the preceding word.,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
 S2,ຯ,U+0EAF,other,,ellipsis,,,,,,Marks omitted or abbreviated words.,no,,SRC-WP-SCRIPT;SRC-COMPART,verified,
 S3,◌໌,U+0ECC,other,,cancellation mark,,,,,,Silences a letter (mostly obsolete).,no,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D0,໐,U+0ED0,digit,ສູນ,zero,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D1,໑,U+0ED1,digit,ໜຶ່ງ,one,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D2,໒,U+0ED2,digit,ສອງ,two,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D3,໓,U+0ED3,digit,ສາມ,three,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D4,໔,U+0ED4,digit,ສີ່,four,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D5,໕,U+0ED5,digit,ຫ້າ,five,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D6,໖,U+0ED6,digit,ຫົກ,six,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D7,໗,U+0ED7,digit,ເຈັດ,seven,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D8,໘,U+0ED8,digit,ແປດ,eight,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D9,໙,U+0ED9,digit,ເກົ້າ,nine,,,,,,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D0,໐,U+0ED0,digit,ສູນ,zero,,,,,suun,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D1,໑,U+0ED1,digit,ໜຶ່ງ,one,,,,,neung,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D2,໒,U+0ED2,digit,ສອງ,two,,,,,sawng,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D3,໓,U+0ED3,digit,ສາມ,three,,,,,saam,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D4,໔,U+0ED4,digit,ສີ່,four,,,,,sii,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D5,໕,U+0ED5,digit,ຫ້າ,five,,,,,haa,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D6,໖,U+0ED6,digit,ຫົກ,six,,,,,hok,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D7,໗,U+0ED7,digit,ເຈັດ,seven,,,,,jet,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D8,໘,U+0ED8,digit,ແປດ,eight,,,,,bpaet,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D9,໙,U+0ED9,digit,ເກົ້າ,nine,,,,,gao,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,

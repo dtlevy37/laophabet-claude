@@ -2,9 +2,12 @@
 
 <!-- Agent adds: scripts to approve (path + purpose), domains/URLs to allow, decisions needed. Human clears handled items. -->
 
-## Decisions pending (asked in chat 2026-10-09)
-- **Learner respelling scheme.** The `respelling` columns are blank until one is chosen.
-- **Coverage of rare items by word 600.** ຣ (mostly foreign names), the rare short diphthongs ເ◌ັຍ ເ◌ຶອ ◌ົວະ, and the rare closed forms ແ◌ັ◌ ◌ັອ◌ are currently marked coverage_required=yes. Do they need a natural word each, or a "reading-only" mention?
+## Decisions (resolved in chat 2026-10-09)
+- Respelling: English-friendly scheme, written in SCHEMA.md. The chat preview wrote ຂ as "kh"; the scheme uses "k", as in the option's description.
+- Rare items (ຣ, ເ◌ັຍ ເ◌ຶອ ◌ົວະ, ແ◌ັ◌ ◌ັອ◌): reading-only.
+
+## Awaiting approval
+- `_agent/proposed-scripts/tone_derive.py`: derives tones per syllable and cross-checks against recorded tones and IPA. Run with `--selftest` first.
 
 ## Source disagreements on tone rules (2026-10-09)
 Details: `_agent/research/lao-tones-wiktionary-fsi-kerr.md` §7. The matrix in SCHEMA.md follows the majority.
