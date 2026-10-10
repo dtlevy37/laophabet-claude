@@ -15,7 +15,11 @@ Steps:
      words.csv: word_id W####, intro_order and freq_rank = that number. References inside
      the batches are rewritten to the new IDs.
   4. Refuse (write nothing) if: the total exceeds the hard cap of 1000; a Lao spelling occurs
-     twice and is not listed in --allow-homograph; a reference points to an unknown ID.
+     twice and is not listed in --allow-homograph; a reference points to an unknown ID; a
+     row points to itself (except classifier_word_id on a classifier_type=self noun).
+
+Revision 2 (2026-10-10): classifier_type=self rows may (and must) point classifier_word_id at
+themselves. An empty value on a self row is filled with the row's own (renumbered) ID.
   5. Unless --check: append to words.csv atomically (temp file + replace) and write the
      old->new ID map to --map-out.
   Optional companions (appended in the same run, each checked first):
@@ -122,14 +126,20 @@ def main():
         old = r["word_id"]
         n = int(new_id[old][1:])
         r["word_id"], r["intro_order"], r["freq_rank"] = new_id[old], str(n), str(n)
+        is_self = (r.get("classifier_type") or "").strip() == "self"
+        if is_self and not (r.get("classifier_word_id") or "").strip():
+            r["classifier_word_id"] = old  # self: the noun is its own classifier (rewritten below)
         for c in REF_COLS:
             refs = [new_id.get(x, x) for x in split_ids(r.get(c))]
             for x in refs:
                 if x not in known:
                     problems.append(f"{r['word_id']} (was {old}): {c} points to unknown {x}")
-                elif x == r["word_id"]:
+                elif x == r["word_id"] and not (c == "classifier_word_id" and is_self):
                     problems.append(f"{r['word_id']} (was {old}): {c} points to itself")
             r[c] = "|".join(refs)
+        if is_self and r["classifier_word_id"] != r["word_id"]:
+            problems.append(f"{r['word_id']} (was {old}): classifier_type self but classifier_word_id "
+                            f"is {r['classifier_word_id']}")
 
     spellings = {}
     for r in words + kept:
