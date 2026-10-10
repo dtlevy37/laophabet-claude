@@ -11,7 +11,7 @@ You draft rows for a Lao (standard Vientiane, modern) curriculum for English spe
 
 ## Before drafting
 1. Read `_agent/SCHEMA.md` sections "words.csv", "Classifiers", "sentences.csv" and the respelling scheme. Copy the exact header line of every target table from `data/<table>.csv`.
-2. Load the vocabulary: column 2 (`lao`) of `data/words.csv`, plus every pending file directly in `_agent/drafts/`. These are other batches not yet merged; skip the `merged/` subfolder. Never draft a spelling that already exists there unless it is a different meaning (a homograph). In that case, say so in `notes` and in your report.
+2. Load the vocabulary from _agent/vocab.csv(word_id, lao, pos, gloss_en, topic, classifier_word_id, sentence_uses); readdata/words.csv only for a few style examples. Also read every pending file directly in `_agent/drafts/`. These are other batches not yet merged; skip the `merged/` subfolder. Never draft a spelling that already exists there unless it is a different meaning (a homograph). In that case, say so in `notes` and in your report.
 3. Look at about 20 existing rows of each table and match their style.
 
 ## Words

@@ -36,7 +36,25 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 - New topic value `hobbies` sits beside the existing `leisure` (7 words). Reconcile when branches are designed.
 - Drafter cost: about 91k tokens for 15 words; fixed overhead dominates small batches.
 
+## User decisions after t1 (2026-10-10)
+- **Skip Tatoeba and Big Brother Mouse.** Drafters compose sentences (`unverified`) and still check words on Wiktionary.
+- **Don't over-optimize word choice.** If reasonable candidates exist for a category, use them confidently; no long deliberation over which words to pick.
+- **Next categories** (some partly covered already; the drafter skips existing words via vocab):
+  - restaurants
+  - clothes
+  - gardening
+  - fruits
+  - vegetables
+  - meat
+  - animals
+  - transportation
+  - directions
+
 ## Next
-1. Proposed (one approval): build_order also writes a compact `data/vocab.csv` (word_id, lao, pos, gloss_en, topic), so drafters don't read all of words.csv.
-2. User to decide: Tatoeba/BBM searching (keep or skip); Sonnet for sentence-only drafting (test against check_drafts).
-3. Then phase 7: topic batches of ~100 words, one after another, with checkpoints at 1500/2000/2500/3000.
+1. **Pending approval:** build_order rev 5 (writes `_agent/vocab.csv`). After approval, run `pipeline.sh` once to create it.
+2. **Pending user edits to `.claude/agents/drafter.md`:**
+   - Line 14: load the vocabulary from `_agent/vocab.csv`.
+   - Remove the Tatoeba/BBM steps in "Sentences": compose directly.
+   - Add: "Pick reasonable common words for the category without long deliberation."
+   - CLAUDE.md also mentions Tatoeba/BBM in the drafter bullet, Accuracy rules and Sources.
+3. **Phase 7:** one drafter batch per category (~50–100 words each, one after another; tags c1, c2, ...) → check_drafts → tone check → merge → pipeline → commit. Checkpoints at 1500/2000/2500/3000.
