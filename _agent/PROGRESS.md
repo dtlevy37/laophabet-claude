@@ -76,4 +76,9 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 ## 2026-10-10 Batch c4 (fruits + vegetables) merged
 - 78 words (13 verified, 65 unverified) and 144 composed sentences became W001194–W001271. Totals: 1271 words, 2512 sentences. Pipeline 0 errors.
 - Components rule given to drafter: list every part whose spelling is a known word.
-- Next: c5 meat + animals, then fruits, vegetables, meat, animals, transportation, directions.
+
+## 2026-10-10 Batch c5 (meat + animals) merged
+- 79 words (19 verified, 60 unverified) and 158 composed sentences became W001272–W001350. Totals: 1350 words, 2670 sentences. Pipeline 0 errors.
+- Homographs ເຂົາ "horn" and ມັນ "fat" (`--allow-homograph ເຂົາ,ມັນ`).
+- Gap noticed: ຜູ້ is not a word yet; add it in a later batch.
+- Next: c6 transportation + directions, then fruits, vegetables, meat, animals, transportation, directions.
