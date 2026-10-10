@@ -6,7 +6,7 @@ Usage (standard library only):
 Checks: required columns; unique IDs; confidence values; Lao-only text fields;
 foreign keys; syllables join back to the word; tone names and counts; spaced
 sentences match unspaced ones and their sentence_words; 2+ sentences per word;
-the 1000-word hard cap; letter/vowel coverage by word 600; noun classifiers.
+the word hard cap (HARD_CAP); letter/vowel coverage by word 600; noun classifiers.
 Missing tables are reported and skipped. Exit code 1 if any ERROR.
 
 Revision 2 (2026-10-10):
@@ -17,7 +17,7 @@ Revision 2 (2026-10-10):
     exists, a single warning replaces the per-noun warnings.
   - --quiet groups warnings by kind and prints a count with up to 5 examples per kind.
 Revision 3 (2026-10-10): ID formats are enforced: word_id W + 6 digits, sentence_id S + 9 digits.
-  The word hard cap stays 1000 until the user raises it (CLAUDE.md + this constant).
+Revision 4 (2026-10-10): word hard cap raised to 3000 (user decision; CLAUDE.md "Targets").
 """
 import argparse
 import csv

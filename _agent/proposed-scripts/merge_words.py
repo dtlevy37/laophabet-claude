@@ -14,7 +14,7 @@ Steps:
   3. Renumber the remaining batch rows in file order from the next free number after
      words.csv: word_id W####, intro_order and freq_rank = that number. References inside
      the batches are rewritten to the new IDs.
-  4. Refuse (write nothing) if: the total exceeds the hard cap of 1000; a Lao spelling occurs
+  4. Refuse (write nothing) if: the total exceeds HARD_CAP (3000); a Lao spelling occurs
      twice and is not listed in --allow-homograph; a reference points to an unknown ID; a
      row points to itself (except classifier_word_id on a classifier_type=self noun).
   5. Unless --check: append to words.csv atomically (temp file + replace) and write the
