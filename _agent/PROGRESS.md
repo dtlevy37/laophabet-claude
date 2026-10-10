@@ -72,4 +72,8 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 ## 2026-10-10 Batch c3 (gardening) merged
 - 61 words (20 verified, 41 unverified) and 115 composed sentences became W001133–W001193. Totals: 1193 words, 2368 sentences.
 - Homograph ບານ "bloom" (`--allow-homograph ບານ`). Pipeline 0 errors; classifier-pos warnings are repeaters (ສວນ etc.), benign.
-- Next: c4 fruits + vegetables (one batch), then fruits, vegetables, meat, animals, transportation, directions.
+
+## 2026-10-10 Batch c4 (fruits + vegetables) merged
+- 78 words (13 verified, 65 unverified) and 144 composed sentences became W001194–W001271. Totals: 1271 words, 2512 sentences. Pipeline 0 errors.
+- Components rule given to drafter: list every part whose spelling is a known word.
+- Next: c5 meat + animals, then fruits, vegetables, meat, animals, transportation, directions.

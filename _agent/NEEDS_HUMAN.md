@@ -66,4 +66,10 @@ Details: `_agent/research/lao-tones-wiktionary-fsi-kerr.md` §7. The matrix in S
 - New homograph ບານ "to bloom" (agent knowledge; Wiktionary has only "ball").
 - Spellings not on Wiktionary: ຫ່ຽວ "wilted"; ກະຖາງ "flowerpot" (maybe Thai); ຈົກ "hoe"; ສຽມ "spade".
 - Senses by agent: ຝຸ່ນ "fertiliser"; ຫົດ "to water" used without ນ້ຳ.
-- Component lists are inconsistent for compounds whose parts have other meanings (ດຳນາ, ຄັນນາ, ຊາວສວນ, ເມັດພັນ list only the matching part; older ຊາວນາ lists ຊາວ "twenty"). Decide one rule.
+- Component lists are inconsistent for compounds whose parts have other meanings (ດຳນາ, ຄັນນາ, ຊາວສວນ, ເມັດພັນ list only the matching part; older ຊາວນາ lists ຊາວ "twenty"). Decide one rule. From c4 on, drafters list every part whose spelling is a known word.
+
+## Batch c4 (fruits + vegetables, W001194–W001271): doubtful items
+- Only 13 of 78 words on Wiktionary; 65 have agent IPA.
+- Spellings by agent: ໂຫລະພາ "basil"; ໝາກຂີ້ຫູດ "kaffir lime"; ເຫັດເຟືອງ; ເຫັດປວກ; ກະລຳປີ "cabbage"; ໝາກໄຟ.
+- Senses by agent: ຫ່າມ "half-ripe"; ຝານ "slice thinly"; ຂີດ "100 g"; ຫົວຜັກກາດ "radish"; ສາລີ alone for "corn"; ຜັກຊີ "dill".
+- Classifiers ດອກ for mushrooms, ຝັກ for corn and tamarind: guesses.
