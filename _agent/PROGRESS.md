@@ -316,5 +316,16 @@ pron_tips are agent-written guidance.
 - **Incident:** `git stash` / `stash pop` rewrote approved-scripts/tone_derive.py with CRLF, so the hash check fails. The user must re-approve it. Never use git stash or checkout in this repo; use `git show HEAD:<path>` instead.
 - **Sentence drafts running:** batch5a → S1127–S1599 + TPL15–20; batch5b → S1600–S2199 + TPL21–26.
 - **Merge command (after approval):**
-  `python approved-scripts/merge_words.py _agent/research/batch5a-words.csv _agent/tmp/batch5b-words.csv --drop W0819,W0813,W0825,W0890,W0914,W0922,W0907,W0983,W0934,W0936 --remap W0934=W0601,W0936=W0705,W0819=W0709,W0813=W0740,W0825=W0688,W0890=W0708,W0914=W0665,W0922=W0628,W0907=W0676,W0983=W0767 --allow-homograph ສ້ອມ,ຮາກ --sentences ... --templates ... --fillers ... --check`
+  `python approved-scripts/merge_words.py _agent/research/batch5a-words.csv _agent/tmp/batch5b-words.csv --drop W0819,W0813,W0825,W0890,W0914,W0922,W0907,W0983,W0934,W0936 --remap W0934=W0601,W0936=W0705,W0819=W0709,W0813=W0740,W0825=W0688,W0890=W0708,W0914=W0665,W0922=W0628,W0907=W0676,W0983=W0767 --allow-homograph ສ້ອມ,ຮາກ --sentences _agent/research/batch5a-sentences.csv _agent/research/batch5b-sentences.csv --templates _agent/research/batch5a-templates.csv _agent/research/batch5b-templates.csv --fillers _agent/research/batch5a-template-fillers.csv _agent/research/batch5b-template-fillers.csv --check`
+- Sentence drafts are done: 415 (S1127–S1541) + 424 (S1600–S2023), all unverified. Checks with awk: every token is in the vocabulary; every new word has 2+ uses; the only lao/lao_spaced differences are clause spaces (allowed, as in existing data). Fixed one ZWSP (S1250) and the template intro_order (TPL21–26 → 21–26).
+
+## 2026-10-10 Phase 5 merged (990 words)
+- User approved build_order rev 3 and merge_words.py.
+- **Merge:** words 600 + 390 = 990 (W0601–W0990); sentences +839 (1964 total); templates +12 (26 total); fillers +87. Backup in `_agent/tmp/data-backup-600/`; ID map in `_agent/tmp/merge_map.csv`.
+- **Homograph overrides:** S1633 and S1634 → W0816 ສ້ອມ "repair"; S1895 and S1896 → W0939 ຮາກ "root".
+- **build_order:** 990 words, 0 heavy, 1964/1964 sentences placed, 3048 steps. Two parser errors:
+  - ຄລີ (loan cluster, W0707)
+  - ໄຫວ້ (ວ after ໄ, W0962)
+- **Fix proposed:** tone_derive rev 5 and build_order rev 4. tone_derive still needs re-approval (CRLF incident), so the fix rides along.
+- **Pending:** tone_derive --fill for W0601–W0990 → build → validate → CHECKPOINT 800 + 1000. Validate currently warns only about missing tones (not yet filled) and noun classifiers.
   Then run tone_derive --fill → build_order → validate.

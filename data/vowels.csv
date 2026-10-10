@@ -12,7 +12,7 @@ V10,ເ◌ະ,open,short,e,eʔ,é,e,"Short 'e', cut off.",yes,W0303,SRC-WP-SCRIP
 V11,ເ◌ັ◌,closed,short,e,e,é,e,Short 'e' as in 'pet' before a final consonant.,yes,W0027,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V12,ເ◌,both,long,ee,eː,é,ee,"Long 'ay' as in 'they', without the glide.",yes,W0080,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V13,ແ◌ະ,open,short,ɛ,ɛʔ,è,ae,"Short 'a' as in 'cat', cut off.",yes,W0107,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V14,ແ◌ັ◌,closed,short,ɛ,ɛ,è,ae,Short 'a' as in 'cat' before a final consonant.,reading-only,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Rare
+V14,ແ◌ັ◌,closed,short,ɛ,ɛ,è,ae,Short 'a' as in 'cat' before a final consonant.,reading-only,W0662,SRC-WP-SCRIPT;SRC-SEASITE,verified,Rare
 V15,ແ◌,both,long,ɛɛ,ɛː,è,ae,"Long 'a' as in 'cat', held.",yes,W0004,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V16,ໂ◌ະ,open,short,o,oʔ,ô,o,"Short 'o', cut off.",yes,W0119,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V17,◌ົ◌,closed,short,o,o,ô,o,Short 'o' before a final consonant (◌ົ sits above the consonant).,yes,W0040,SRC-WP-SCRIPT;SRC-SEASITE,verified,

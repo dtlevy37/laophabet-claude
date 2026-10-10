@@ -16,6 +16,10 @@ Each syllable is parsed into initial consonant (or ຫ-cluster / kw-cluster), vo
 (matched against vowels.csv), final consonant and tone mark. learning_order interleaves:
 new letters/vowels of a word -> the word -> templates whose required words are known ->
 sentences whose words are all known. Exit code 1 if any word or sentence cannot be resolved.
+
+Revision 3 (2026-10-10): kw cluster after a leading vowel (ແຂວງ) and ຫ + ◌ວ◌ (ຫ່ວງ) parse
+correctly; same ວ rule as tone_derive rev 4. The cancellation mark ◌໌ is handled: the
+silenced consonant is skipped and ◌໌ (letters.csv S3) counts as the symbol introduced.
 """
 import argparse
 import csv
@@ -72,9 +76,15 @@ def parse_syllable(syl, letter_id, vowel_id, vowel_form, problems, ctx):
     s = syl.strip()
     has_repeat = REPEAT in s
     s = s.replace(REPEAT, "")
-    if CANCEL in s:
-        problems.append(f"{ctx}: cancellation mark in '{syl}' (not handled; check by hand)")
-        s = s.replace(CANCEL, "")
+    has_cancel = CANCEL in s
+    if has_cancel:
+        # Drop the silenced consonant (plus any sign between it and ◌໌), as tone_derive does;
+        # the mark itself is taught as symbol ◌໌ (e.g. ເວັບໄຊຕ໌).
+        idx = s.index(CANCEL)
+        k = idx - 1
+        while k >= 0 and s[k] not in CONS:
+            k -= 1
+        s = s[:k] + s[idx + 1:] if k >= 0 else s.replace(CANCEL, "")
     marks = [TONE[c] for c in s if c in TONE]
     s = "".join(c for c in s if c not in TONE)
     i, lead = 0, ""
@@ -86,11 +96,15 @@ def parse_syllable(syl, letter_id, vowel_id, vowel_form, problems, ctx):
         return items
     c0, j = s[i], i + 1
     initial, extra_w = c0, False
+    # ວ after the initial is a cluster letter only when a vowel sign follows it (ຂວາ, ຫວ່າງ) or a
+    # leading vowel carries the vowel (ແຂວງ); before a bare final it is the vowel ◌ວ◌ (ສວນ, ຫ່ວງ).
+    w_next = j + 1 < len(s) and s[j] == "ວ" and (
+        s[j + 1] in VOWEL_SIGNS or (bool(lead) and s[j + 1] in CONS))
     if c0 == "ຫ" and j < len(s) and s[j] == SUB_L:
         initial, j = "ຫຼ", j + 1
-    elif c0 == "ຫ" and j < len(s) and s[j] in HO_SECOND:
+    elif c0 == "ຫ" and j < len(s) and s[j] in HO_SECOND and (s[j] != "ວ" or w_next):
         initial, j = ALIASES.get(c0 + s[j], c0 + s[j]), j + 1
-    elif c0 in KW_INITIAL and j + 1 < len(s) and s[j] == "ວ" and s[j + 1] in VOWEL_SIGNS:
+    elif c0 in KW_INITIAL and w_next:
         extra_w, j = True, j + 1
     if initial not in letter_id:
         problems.append(f"{ctx}: initial '{initial}' not in letters.csv ('{syl}')")
@@ -120,6 +134,8 @@ def parse_syllable(syl, letter_id, vowel_id, vowel_form, problems, ctx):
         items.append(("letter", letter_id[final]))
     for m in marks:
         items.append(("letter", m))
+    if has_cancel:
+        items.append(("letter", letter_id.get(PH + CANCEL, "S3")))
     if has_repeat:
         items.append(("letter", letter_id.get(REPEAT, "S1")))
     return items

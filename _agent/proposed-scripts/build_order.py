@@ -20,6 +20,8 @@ sentences whose words are all known. Exit code 1 if any word or sentence cannot 
 Revision 3 (2026-10-10): kw cluster after a leading vowel (ແຂວງ) and ຫ + ◌ວ◌ (ຫ່ວງ) parse
 correctly; same ວ rule as tone_derive rev 4. The cancellation mark ◌໌ is handled: the
 silenced consonant is skipped and ◌໌ (letters.csv S3) counts as the symbol introduced.
+Revision 4: ວ after ໄ/ໃ belongs to the initial (ໄຫວ້); loanword ລ/ຣ clusters before a vowel
+sign (ຄລີນິກ) are parsed. Same rules as tone_derive rev 5.
 """
 import argparse
 import csv
@@ -95,23 +97,29 @@ def parse_syllable(syl, letter_id, vowel_id, vowel_form, problems, ctx):
         problems.append(f"{ctx}: no initial consonant in '{syl}'")
         return items
     c0, j = s[i], i + 1
-    initial, extra_w = c0, False
+    initial, extra_w, extra_l = c0, False, ""
     # ວ after the initial is a cluster letter only when a vowel sign follows it (ຂວາ, ຫວ່າງ) or a
     # leading vowel carries the vowel (ແຂວງ); before a bare final it is the vowel ◌ວ◌ (ສວນ, ຫ່ວງ).
-    w_next = j + 1 < len(s) and s[j] == "ວ" and (
-        s[j + 1] in VOWEL_SIGNS or (bool(lead) and s[j + 1] in CONS))
+    w_next = j < len(s) and s[j] == "ວ" and (
+        (j + 1 < len(s) and (s[j + 1] in VOWEL_SIGNS or (bool(lead) and s[j + 1] in CONS)))
+        or (j + 1 == len(s) and lead in ("ໄ", "ໃ")))  # ໄຫວ້: ໄ/ໃ take no final
+    loan_l = j + 1 < len(s) and s[j] in ("ລ", "ຣ") and s[j + 1] in VOWEL_SIGNS and c0 != "ຫ"
     if c0 == "ຫ" and j < len(s) and s[j] == SUB_L:
         initial, j = "ຫຼ", j + 1
     elif c0 == "ຫ" and j < len(s) and s[j] in HO_SECOND and (s[j] != "ວ" or w_next):
         initial, j = ALIASES.get(c0 + s[j], c0 + s[j]), j + 1
     elif c0 in KW_INITIAL and w_next:
         extra_w, j = True, j + 1
+    elif loan_l:  # loanword cluster such as ຄລີນິກ
+        extra_l, j = s[j], j + 1
     if initial not in letter_id:
         problems.append(f"{ctx}: initial '{initial}' not in letters.csv ('{syl}')")
     else:
         items.append(("letter", letter_id[initial]))
     if extra_w:
         items.append(("letter", letter_id["ວ"]))
+    if extra_l:
+        items.append(("letter", letter_id[extra_l]))
     rest = s[j:]
     open_sk = lead + PH + rest
     vid, final = None, None

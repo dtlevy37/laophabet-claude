@@ -38,7 +38,7 @@ T3,◌໊,U+0ECA,tone-mark,,mai ti,,,,,,"Rare: interjections and onomatopoeia, n
 T4,◌໋,U+0ECB,tone-mark,,mai catawa,,,,,,"Rare: interjections and onomatopoeia, normally with mid-class letters (Kerr).",no,,SRC-WP-SCRIPT;SRC-KERR,verified,Tone value only from uncited Wiktionary code (low-rising): unverified
 S1,ໆ,U+0EC6,other,,repetition mark (ko la),,,,,,Repeat the preceding word.,yes,W0131,SRC-WP-SCRIPT;SRC-COMPART,verified,
 S2,ຯ,U+0EAF,other,,ellipsis,,,,,,Marks omitted or abbreviated words.,no,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-S3,◌໌,U+0ECC,other,,cancellation mark,,,,,,Silences a letter (mostly obsolete).,no,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+S3,◌໌,U+0ECC,other,,cancellation mark,,,,,,Silences a letter (mostly obsolete).,no,W0989,SRC-WP-SCRIPT;SRC-COMPART,verified,
 D0,໐,U+0ED0,digit,,zero (ສູນ),,,,,suun,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
 D1,໑,U+0ED1,digit,,one (ໜຶ່ງ),,,,,neung,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
 D2,໒,U+0ED2,digit,,two (ສອງ),,,,,sawng,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item

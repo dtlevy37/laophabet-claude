@@ -41,3 +41,90 @@ TPL08,place,W0029,,unverified,
 TPL08,place,W0030,,unverified,
 TPL08,place,W0013,,unverified,
 TPL08,place,W0034,,unverified,
+TPL15,pronoun,W0006,,unverified,ຂ້ອຍຢາກສັ່ງ...
+TPL15,pronoun,W0032,,unverified,ເຮົາຢາກສັ່ງ...
+TPL15,dish,W0605,,unverified,ຂ້ອຍຢາກສັ່ງເຂົ້າຜັດ
+TPL15,dish,W0622,,unverified,ເຮົາຢາກສັ່ງເຄື່ອງດື່ມ
+TPL15,dish,W0028,,unverified,ຂ້ອຍຢາກສັ່ງອາຫານ
+TPL15,dish,W0208,,unverified,ຂ້ອຍຢາກສັ່ງເຝີ
+TPL16,item,W0660,,unverified,ຊຸດນີ້ເທົ່າໃດ?
+TPL16,item,W0291,,unverified,ເກີບນີ້ເທົ່າໃດ?
+TPL16,item,W0290,,unverified,ເສື້ອນີ້ເທົ່າໃດ?
+TPL16,item,W0289,,unverified,ປຶ້ມນີ້ເທົ່າໃດ?
+TPL16,item,W0692,,unverified,ປີ້ນີ້ເທົ່າໃດ?
+TPL17,place,W0691,,unverified,ໄປສະຖານີລົດເມແນວໃດ?
+TPL17,place,W0428,,unverified,ໄປສະໜາມບິນແນວໃດ?
+TPL17,place,W0172,,unverified,ໄປໂຮງໝໍແນວໃດ?
+TPL17,place,W0703,,unverified,ໄປຮ້ານຢາແນວໃດ?
+TPL17,place,W0177,,unverified,ໄປຕະຫຼາດແນວໃດ?
+TPL18,pronoun,W0006,,unverified,ຂ້ອຍປວດຫົວ
+TPL18,pronoun,W0031,,unverified,ລາວປວດຫົວ
+TPL18,symptom,W0696,,unverified,ຂ້ອຍປວດຫົວ
+TPL18,symptom,W0697,,unverified,ຂ້ອຍປວດທ້ອງ
+TPL18,symptom,W0698,,unverified,ຂ້ອຍເຈັບຄໍ
+TPL18,symptom,W0701,,unverified,ຂ້ອຍວິນຫົວ
+TPL18,symptom,W0173,,unverified,ຂ້ອຍເມື່ອຍ
+TPL19,time,W0135,,unverified,ຕອນເຊົ້າຂ້ອຍ...
+TPL19,time,W0136,,unverified,ຕອນແລງຂ້ອຍ...
+TPL19,time,W0137,,unverified,ຕອນຄືນຂ້ອຍ...
+TPL19,activity,W0726,,unverified,ຕອນເຊົ້າຂ້ອຍຕື່ນນອນ
+TPL19,activity,W0730,,unverified,ຕອນເຊົ້າຂ້ອຍຖູແຂ້ວ
+TPL19,activity,W0728,,unverified,ຕອນເຊົ້າຂ້ອຍລ້າງໜ້າ
+TPL19,activity,W0229,,unverified,ຕອນແລງຂ້ອຍອາບນ້ຳ
+TPL19,activity,W0727,,unverified,ຕອນຄືນຂ້ອຍເຂົ້ານອນ
+TPL20,number,W0134,,unverified,ວັນທີ່ແປດ...
+TPL20,number,W0784,,unverified,ວັນທີ່ສິບສອງ...
+TPL20,number,W0785,,unverified,ວັນທີ່ຊາວເອັດ...
+TPL20,month,W0770,,unverified,...ເດືອນມັງກອນ
+TPL20,month,W0773,,unverified,...ເດືອນເມສາ
+TPL20,month,W0779,,unverified,...ເດືອນຕຸລາ
+TPL20,month,W0781,,unverified,...ເດືອນທັນວາ
+TPL21,pronoun,W0006,,unverified,ຂ້ອຍຮູ້ສຶກ...
+TPL21,pronoun,W0005,,unverified,ເຈົ້າຮູ້ສຶກ...
+TPL21,pronoun,W0031,,unverified,ລາວຮູ້ສຶກ...
+TPL21,feeling,W0839,,unverified,ຂ້ອຍຮູ້ສຶກເບື່ອ bored
+TPL21,feeling,W0843,,unverified,ຂ້ອຍຮູ້ສຶກເສົ້າ sad
+TPL21,feeling,W0840,,unverified,ຂ້ອຍຮູ້ສຶກຕື່ນເຕັ້ນ excited
+TPL21,feeling,W0841,,unverified,ຂ້ອຍຮູ້ສຶກອາຍ embarrassed
+TPL21,feeling,W0252,,unverified,ຂ້ອຍຮູ້ສຶກດີໃຈ happy
+TPL22,pronoun,W0006,,unverified,ຂ້ອຍເຮັດວຽກເປັນ...
+TPL22,pronoun,W0031,,unverified,ລາວເຮັດວຽກເປັນ...
+TPL22,pronoun,W0042,,unverified,ແມ່ເຮັດວຽກເປັນ...
+TPL22,job,W0708,,unverified,nurse
+TPL22,job,W0888,,unverified,mechanic/technician
+TPL22,job,W0879,,unverified,manager
+TPL22,job,W0890,,unverified,soldier
+TPL22,job,W0156,,unverified,ຄູ teacher
+TPL22,job,W0162,,unverified,ໝໍ doctor
+TPL23,pronoun,W0006,,unverified,ຂ້ອຍຢາກຈອງ...
+TPL23,pronoun,W0032,,unverified,ເຮົາຢາກຈອງ...
+TPL23,thing,W0012,,unverified,ຈອງຫ້ອງ book a room
+TPL23,thing,W0119,,unverified,ຈອງໂຕະ reserve a table
+TPL23,thing,W0692,,unverified,ຈອງປີ້ book a ticket (ປີ້ is a batch 5a word)
+TPL23,thing,W0903,,unverified,ຈອງເຮືອນພັກ book a guesthouse
+TPL24,time,W0037,,unverified,ມື້ນີ້ today
+TPL24,time,W0038,,unverified,ມື້ອື່ນ tomorrow
+TPL24,time,W0140,,unverified,ມື້ວານ yesterday
+TPL24,weather,W0120,,unverified,ຝົນ rain
+TPL24,weather,W0543,,unverified,ແດດ sunshine
+TPL24,weather,W0544,,unverified,ລົມ wind
+TPL24,weather,W0931,,unverified,fog
+TPL24,weather,W0929,,unverified,storm
+TPL24,weather,W0928,,unverified,thunder
+TPL25,verb,W0024,,unverified,ບໍ່ໄປ not going
+TPL25,verb,W0018,,unverified,ບໍ່ກິນ not eating
+TPL25,verb,W0025,,unverified,ບໍ່ມາ not coming
+TPL25,adjective,W0173,,unverified,ເມື່ອຍ tired
+TPL25,adjective,W0268,,unverified,ຫຍຸ້ງ busy
+TPL25,adjective,W0073,,unverified,ອີ່ມ full
+TPL25,adjective,W0839,,unverified,bored
+TPL26,noun1,W0949,,unverified,turtle (subject)
+TPL26,noun1,W0951,,unverified,bear (subject)
+TPL26,noun1,W0286,,unverified,ລົດ car (subject)
+TPL26,adjective,W0087,,unverified,ແພງ expensive
+TPL26,adjective,W0088,,unverified,ຖືກ cheap
+TPL26,adjective,W0089,,unverified,ໃຫຍ່ big
+TPL26,adjective,W0130,,unverified,ໄວ fast
+TPL26,adjective,W0132,,unverified,ຊ້າ slow
+TPL26,noun2,W0942,,unverified,rabbit (comparison target)
+TPL26,noun2,W0095,,unverified,ໝາ dog (comparison target)
