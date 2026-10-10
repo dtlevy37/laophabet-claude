@@ -1,0 +1,7 @@
+template_id,lao_pattern,english_pattern,slot_names,intro_order,requires_word_ids,source,confidence,notes
+TPL15,{pronoun}ຢາກສັ່ງ{dish},{pronoun} would like to order {dish},pronoun|dish,15,W0022,,unverified,"Restaurant ordering. Composed by the agent from ຢາກ + verb (TPL06). Needs ສັ່ງ (batch5a) in the pattern; dish fillers include ເຂົ້າຜັດ ເຄື່ອງດື່ມ (batch5a)"
+TPL16,{item}ນີ້ເທົ່າໃດ?,How much is this {item}?,item,16,W0016|W0017,,unverified,"Shopping/prices. Composed by the agent using ເທົ່າໃດ (W0017) and ນີ້ (W0016). Fillers include ຊຸດ ປີ້ (batch5a)"
+TPL17,ໄປ{place}ແນວໃດ?,How do I get to {place}?,place,17,W0024|W0101,,unverified,"Directions/transport. Composed by the agent from ໄປ + place (TPL08) + ແນວໃດ 'how'. Fillers include ສະຖານີລົດເມ ຮ້ານຢາ (batch5a)"
+TPL18,{pronoun}{symptom},{pronoun} have/has {symptom},pronoun|symptom,18,W0006|W0169,,unverified,"Health/symptoms. Composed by the agent; symptom is a verb phrase such as ປວດຫົວ 'have a headache' (no separate verb 'have' needed). Fillers are from batch5a except ເມື່ອຍ"
+TPL19,ຕອນ{time}ຂ້ອຍ{activity},In the {time} I {activity},time|activity,19,W0138|W0006,,unverified,"Daily routine. Composed by the agent using ຕອນ (W0138) + time of day; activity fillers include ຕື່ນນອນ ຖູແຂ້ວ ລ້າງໜ້າ ເຂົ້ານອນ (batch5a)"
+TPL20,ວັນທີ່{number}ເດືອນ{month},The {number}th of {month},number|month,20,W0145|W0147,,unverified,"Dates. Composed by the agent. Needs ວັນທີ່ (batch5a; spelling ວັນທີ່ vs ວັນທີ to be resolved). Number slot takes a numeral (e.g. ສິບສອງ ຊາວເອັດ); month fillers are batch5a month names"

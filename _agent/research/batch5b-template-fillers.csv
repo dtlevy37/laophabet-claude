@@ -1,0 +1,50 @@
+template_id,slot_name,word_id,source,confidence,notes
+TPL21,pronoun,W0006,,unverified,ຂ້ອຍຮູ້ສຶກ...
+TPL21,pronoun,W0005,,unverified,ເຈົ້າຮູ້ສຶກ...
+TPL21,pronoun,W0031,,unverified,ລາວຮູ້ສຶກ...
+TPL21,feeling,LAO:ເບື່ອ,,unverified,ຂ້ອຍຮູ້ສຶກເບື່ອ bored
+TPL21,feeling,LAO:ເສົ້າ,,unverified,ຂ້ອຍຮູ້ສຶກເສົ້າ sad
+TPL21,feeling,LAO:ຕື່ນເຕັ້ນ,,unverified,ຂ້ອຍຮູ້ສຶກຕື່ນເຕັ້ນ excited
+TPL21,feeling,LAO:ອາຍ,,unverified,ຂ້ອຍຮູ້ສຶກອາຍ embarrassed
+TPL21,feeling,W0252,,unverified,ຂ້ອຍຮູ້ສຶກດີໃຈ happy
+TPL22,pronoun,W0006,,unverified,ຂ້ອຍເຮັດວຽກເປັນ...
+TPL22,pronoun,W0031,,unverified,ລາວເຮັດວຽກເປັນ...
+TPL22,pronoun,W0042,,unverified,ແມ່ເຮັດວຽກເປັນ...
+TPL22,job,LAO:ພະຍາບານ,,unverified,nurse
+TPL22,job,LAO:ຊ່າງ,,unverified,mechanic/technician
+TPL22,job,LAO:ຜູ້ຈັດການ,,unverified,manager
+TPL22,job,LAO:ທະຫານ,,unverified,soldier
+TPL22,job,W0156,,unverified,ຄູ teacher
+TPL22,job,W0162,,unverified,ໝໍ doctor
+TPL23,pronoun,W0006,,unverified,ຂ້ອຍຢາກຈອງ...
+TPL23,pronoun,W0032,,unverified,ເຮົາຢາກຈອງ...
+TPL23,thing,W0012,,unverified,ຈອງຫ້ອງ book a room
+TPL23,thing,W0119,,unverified,ຈອງໂຕະ reserve a table
+TPL23,thing,LAO:ປີ້,,unverified,ຈອງປີ້ book a ticket (ປີ້ is a batch 5a word)
+TPL23,thing,LAO:ເຮືອນພັກ,,unverified,ຈອງເຮືອນພັກ book a guesthouse
+TPL24,time,W0037,,unverified,ມື້ນີ້ today
+TPL24,time,W0038,,unverified,ມື້ອື່ນ tomorrow
+TPL24,time,W0140,,unverified,ມື້ວານ yesterday
+TPL24,weather,W0120,,unverified,ຝົນ rain
+TPL24,weather,W0543,,unverified,ແດດ sunshine
+TPL24,weather,W0544,,unverified,ລົມ wind
+TPL24,weather,LAO:ໝອກ,,unverified,fog
+TPL24,weather,LAO:ພາຍຸ,,unverified,storm
+TPL24,weather,LAO:ຟ້າຮ້ອງ,,unverified,thunder
+TPL25,verb,W0024,,unverified,ບໍ່ໄປ not going
+TPL25,verb,W0018,,unverified,ບໍ່ກິນ not eating
+TPL25,verb,W0025,,unverified,ບໍ່ມາ not coming
+TPL25,adjective,W0173,,unverified,ເມື່ອຍ tired
+TPL25,adjective,W0268,,unverified,ຫຍຸ້ງ busy
+TPL25,adjective,W0073,,unverified,ອີ່ມ full
+TPL25,adjective,LAO:ເບື່ອ,,unverified,bored
+TPL26,noun1,LAO:ເຕົ່າ,,unverified,turtle (subject)
+TPL26,noun1,LAO:ໝີ,,unverified,bear (subject)
+TPL26,noun1,W0286,,unverified,ລົດ car (subject)
+TPL26,adjective,W0087,,unverified,ແພງ expensive
+TPL26,adjective,W0088,,unverified,ຖືກ cheap
+TPL26,adjective,W0089,,unverified,ໃຫຍ່ big
+TPL26,adjective,W0130,,unverified,ໄວ fast
+TPL26,adjective,W0132,,unverified,ຊ້າ slow
+TPL26,noun2,LAO:ກະຕ່າຍ,,unverified,rabbit (comparison target)
+TPL26,noun2,W0095,,unverified,ໝາ dog (comparison target)
