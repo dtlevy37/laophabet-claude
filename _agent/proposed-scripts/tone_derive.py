@@ -1,0 +1,339 @@
+"""Derive Vientiane Lao tones per syllable and cross-check recorded data.
+
+Rules: the 15-cell matrix in _agent/SCHEMA.md ("Tone convention"), sourced from
+SEAsite tonechart.htm, Wiktionary Lao entry guidelines / Module:lo-pron and
+Wikipedia "Lao language" 7.1.1 (see _agent/research/lao-tones-wiktionary-fsi-kerr.md).
+
+Usage (standard library only, reads/writes UTF-8):
+  python approved-scripts/tone_derive.py --selftest
+  python approved-scripts/tone_derive.py --syl "ສະ|ບາຍ|ດີ"
+  python approved-scripts/tone_derive.py data/words.csv [--out _agent/tmp/tone_check.csv]
+      [--id-col word_id] [--syl-col syllables] [--tone-col tone_by_syllable] [--ipa-col ipa]
+
+Input CSV: syllables pipe-separated (ສະ|ບາຍ|ດີ). Optional columns to cross-check:
+  tone_by_syllable  pipe-separated tone names (low-rising|...)
+  ipa               syllables separated by space or '.', each ending in Chao tone letters
+Output: one row per syllable with the full derivation; exit code 1 on any mismatch,
+parse warning that blocks derivation, or self-test failure.
+"""
+import argparse
+import csv
+import os
+import sys
+
+HIGH = set("ຂສຖຜຝຫໜໝ")
+MID = set("ກຈດຕບປຢອ")
+LOW = set("ຄຊທພຟຮງຍນມຣລວ")
+CONSONANTS = HIGH | MID | LOW
+LEADING_VOWELS = set("ເແໂໃໄ")
+TONE_MARKS = {"່": "mai_ek", "້": "mai_tho", "໊": "mai_ti", "໋": "mai_catawa"}
+SHORT_SIGNS = set("ະັິຶຸົ")  # ະ ັ ິ ຶ ຸ ົ
+VOWEL_SIGNS = set("ະັາຳິີຶືຸູົຽໍ")
+SUBSCRIPT_L = "ຼ"
+CANCEL = "໌"
+STOP_FINALS = set("ກດບ")
+SONORANTS = set("ງຍນມວລຣ")
+HO_CLUSTER_SECOND = set("ງຍນມລວຣ")
+
+CHAO = {
+    "low-rising": "˩˧",
+    "high-rising": "˧˥",
+    "mid": "˧",
+    "low-falling": "˧˩",
+    "high-falling": "˥˨",
+}
+
+# (class, case) -> (tone, matrix cell number). case: live | mai_ek | mai_tho | dead_long | dead_short
+MATRIX = {
+    ("high", "live"): ("low-rising", 1),
+    ("mid", "live"): ("low-rising", 2),
+    ("low", "live"): ("high-rising", 3),
+    ("high", "mai_ek"): ("mid", 4),
+    ("mid", "mai_ek"): ("mid", 5),
+    ("low", "mai_ek"): ("mid", 6),
+    ("high", "mai_tho"): ("low-falling", 7),
+    ("mid", "mai_tho"): ("high-falling", 8),
+    ("low", "mai_tho"): ("high-falling", 9),
+    ("high", "dead_long"): ("low-falling", 10),
+    ("mid", "dead_long"): ("low-falling", 11),
+    ("low", "dead_long"): ("high-falling", 12),
+    ("high", "dead_short"): ("high-rising", 13),
+    ("mid", "dead_short"): ("high-rising", 14),
+    ("low", "dead_short"): ("mid", 15),
+}
+# Rare marks: only machine-readable assignment seen is Wiktionary Module:lo-pron (uncited).
+RARE_MARK_TONES = {"mai_ti": "high-rising", "mai_catawa": "low-rising"}
+
+
+def consonant_class(ch):
+    if ch in HIGH:
+        return "high"
+    if ch in MID:
+        return "mid"
+    if ch in LOW:
+        return "low"
+    return None
+
+
+def analyse(syl):
+    """Return a dict describing one written syllable's tone derivation."""
+    flags = []
+    s = syl.strip()
+    if "ໆ" in s:
+        s = s.replace("ໆ", "")
+        flags.append("repetition-mark-stripped")
+    # Drop a consonant silenced by the cancellation mark (consonant + optional vowel sign + ໌).
+    if CANCEL in s:
+        idx = s.index(CANCEL)
+        j = idx - 1
+        while j >= 0 and s[j] not in CONSONANTS:
+            j -= 1
+        if j >= 0:
+            s = s[:j] + s[idx + 1:]
+        else:
+            s = s.replace(CANCEL, "")
+        flags.append("cancelled-letter-removed")
+    res = {"syllable": syl, "initial": "", "class": "", "tone_mark": "none", "final": "",
+           "vowel_length": "", "case": "", "tone": "", "chao": "", "cell": "", "flags": flags}
+    if not s:
+        flags.append("ERROR:empty")
+        return res
+
+    i = 0
+    leading = ""
+    while i < len(s) and s[i] in LEADING_VOWELS:
+        leading += s[i]
+        i += 1
+    if i >= len(s) or s[i] not in CONSONANTS:
+        flags.append("ERROR:no-initial-consonant")
+        return res
+    c0 = s[i]
+    init_end = i + 1
+    if c0 == "ຫ" and init_end < len(s) and s[init_end] in HO_CLUSTER_SECOND:
+        init_end += 1
+        flags.append("ho-cluster")
+    elif init_end < len(s) and s[init_end] == SUBSCRIPT_L:
+        init_end += 1
+        flags.append("subscript-lo-cluster")
+    res["initial"] = s[i:init_end]
+    cls = consonant_class(c0)
+    res["class"] = cls
+
+    marks = [TONE_MARKS[c] for c in s if c in TONE_MARKS]
+    if len(marks) > 1:
+        flags.append("ERROR:multiple-tone-marks")
+        return res
+    mark = marks[0] if marks else "none"
+    res["tone_mark"] = mark
+
+    body = s[init_end:]
+    base = [c for c in body if c not in TONE_MARKS]
+    has_vowel = bool(leading) or any(c in VOWEL_SIGNS for c in base)
+    short = any(c in SHORT_SIGNS for c in s)
+    last = base[-1] if base else ""
+
+    special = ("ຳ" in s) or leading in ("ໄ", "ໃ") or (
+        leading == "ເ" and "ົ" in s and last == "າ")
+    case = None
+    if special:
+        case = "live"
+        res["vowel_length"] = "special"
+        flags.append("special-vowel(am/ai/ao)")
+    elif last in STOP_FINALS:
+        res["final"] = last
+        case = "dead_short" if short else "dead_long"
+        res["vowel_length"] = "short" if short else "long"
+    elif last in SONORANTS or last == "ອ":
+        if leading == "ເ" and "ັ" in s and last == "ຍ":
+            case = "dead_short"
+            res["vowel_length"] = "short"
+            flags.append("short-open-ia(rare-pattern-check)")
+        else:
+            case = "live"
+            res["final"] = last if last in SONORANTS else ""
+            res["vowel_length"] = "short" if short else "long"
+    elif last in CONSONANTS:
+        res["final"] = last
+        case = "dead_short" if short else "dead_long"
+        res["vowel_length"] = "short" if short else "long"
+        flags.append("nonstandard-final(treated-as-stop)")
+    else:
+        # Open syllable: no final consonant.
+        if short:
+            case = "dead_short"
+            res["vowel_length"] = "short"
+            flags.append("open-short(glottal)")
+        else:
+            case = "live"
+            res["vowel_length"] = "long"
+    if not has_vowel:
+        flags.append("WARN:no-written-vowel(check-inherent-vowel)")
+
+    if mark in ("mai_ek", "mai_tho"):
+        tone, cell = MATRIX[(cls, mark)]
+        res["case"] = mark
+    elif mark in RARE_MARK_TONES:
+        tone, cell = RARE_MARK_TONES[mark], ""
+        res["case"] = mark
+        flags.append("WARN:rare-mark(tone-unverified)")
+    else:
+        tone, cell = MATRIX[(cls, case)]
+        res["case"] = case
+    res["syllable_type"] = "dead" if case and case.startswith("dead") else "live"
+    res["tone"] = tone
+    res["chao"] = CHAO[tone]
+    res["cell"] = str(cell)
+    return res
+
+
+def chao_to_tone(chunk):
+    letters = "".join(c for c in chunk if c in "˥˦˧˨˩")
+    if not letters:
+        return None
+    for name, val in CHAO.items():
+        if letters == val:
+            return name
+    alias = {"˩": "low-rising", "˦˥": "high-rising", "˥˧": "high-falling", "˨˩": "low-falling", "˧˧": "mid"}
+    return alias.get(letters, "?" + letters)
+
+
+def split_ipa(ipa):
+    for sep in (".", "-"):
+        ipa = ipa.replace(sep, " ")
+    return [c for c in ipa.split() if c]
+
+
+SELFTEST = [
+    # (syllable, expected tone, matrix cell, source of the example)
+    ("ຂາ", "low-rising", 1, "WP 5.3 / SEAsite"),
+    ("ກາ", "low-rising", 2, "WP 5.3 / SEAsite"),
+    ("ຄາ", "high-rising", 3, "WP 5.3"),
+    ("ມາ", "high-rising", 3, "SEAsite"),
+    ("ຂ່າ", "mid", 4, "WP 5.3"),
+    ("ບໍ່", "mid", 5, "SEAsite"),
+    ("ຄ່າ", "mid", 6, "WP 5.3"),
+    ("ຂ້າ", "low-falling", 7, "WP 5.3"),
+    ("ເຈົ້າ", "high-falling", 8, "SEAsite"),
+    ("ຄ້າ", "high-falling", 9, "WP 5.3"),
+    ("ຫາກ", "low-falling", 10, "WP 5.3 / SEAsite"),
+    ("ປາກ", "low-falling", 11, "SEAsite"),
+    ("ຮາກ", "high-falling", 12, "WP 5.3"),
+    ("ຫັກ", "high-rising", 13, "WP 5.3"),
+    ("ຫົກ", "high-rising", 13, "SEAsite"),
+    ("ຈະ", "high-rising", 14, "SEAsite (short open)"),
+    ("ພັກ", "mid", 15, "SEAsite"),
+    ("ເຮັດ", "mid", 15, "SEAsite"),
+    ("ໄປ", "low-rising", 2, "SEAsite"),
+    ("ເຮືອນ", "high-rising", 3, "SEAsite"),
+    ("ຂ້ອຍ", "low-falling", 7, "SEAsite"),
+    ("ແມ່ນ", "mid", 6, "SEAsite"),
+    ("ແລ້ວ", "high-falling", 9, "SEAsite"),
+]
+
+
+def run_selftest():
+    fails = 0
+    for syl, exp, cell, src in SELFTEST:
+        r = analyse(syl)
+        ok = r["tone"] == exp and r["cell"] == str(cell)
+        fails += not ok
+        print(f"{'ok  ' if ok else 'FAIL'} {syl}\texpected {exp} (cell {cell}, {src})\tgot {r['tone']} (cell {r['cell']}) {';'.join(r['flags'])}")
+    print(f"{len(SELFTEST) - fails}/{len(SELFTEST)} passed")
+    return 0 if fails == 0 else 1
+
+
+OUT_FIELDS = ["word_id", "syl_index", "syllable", "initial", "class", "tone_mark", "final",
+              "vowel_length", "syllable_type", "case", "cell", "tone", "chao",
+              "expected_tone", "ipa_tone", "status", "flags"]
+
+
+def check_rows(rows, args):
+    out, problems = [], 0
+    for row in rows:
+        wid = row.get(args.id_col, "")
+        sylls = [x for x in (row.get(args.syl_col) or "").split("|") if x.strip()]
+        expected = [x.strip() for x in (row.get(args.tone_col) or "").split("|")] if row.get(args.tone_col) else []
+        ipa_tones = [chao_to_tone(c) for c in split_ipa(row.get(args.ipa_col) or "")] if row.get(args.ipa_col) else []
+        if not sylls:
+            out.append({"word_id": wid, "status": "ERROR", "flags": "no-syllables"})
+            problems += 1
+            continue
+        if expected and len(expected) != len(sylls):
+            problems += 1
+            out.append({"word_id": wid, "status": "ERROR", "flags": "tone-count!=syllable-count"})
+        if ipa_tones and len(ipa_tones) != len(sylls):
+            problems += 1
+            out.append({"word_id": wid, "status": "ERROR", "flags": "ipa-syllable-count!=syllable-count"})
+        for k, syl in enumerate(sylls):
+            r = analyse(syl)
+            exp = expected[k] if k < len(expected) else ""
+            ipt = ipa_tones[k] if k < len(ipa_tones) else ""
+            status = "ok"
+            if any(f.startswith("ERROR") for f in r["flags"]):
+                status = "ERROR"
+            elif (exp and exp != r["tone"]) or (ipt and ipt != r["tone"]):
+                status = "MISMATCH"
+            elif any(f.startswith("WARN") for f in r["flags"]):
+                status = "WARN"
+            if status in ("ERROR", "MISMATCH"):
+                problems += 1
+            out.append({"word_id": wid, "syl_index": k + 1, "syllable": syl, "initial": r["initial"],
+                        "class": r["class"], "tone_mark": r["tone_mark"], "final": r["final"],
+                        "vowel_length": r["vowel_length"], "syllable_type": r.get("syllable_type", ""),
+                        "case": r["case"], "cell": r["cell"], "tone": r["tone"], "chao": r["chao"],
+                        "expected_tone": exp, "ipa_tone": ipt or "", "status": status,
+                        "flags": ";".join(r["flags"])})
+    return out, problems
+
+
+def safe_out_path(path):
+    full = os.path.abspath(path)
+    root = os.path.abspath(os.getcwd())
+    if os.path.commonpath([full, root]) != root:
+        sys.exit(f"refusing to write outside the project folder: {path}")
+    return full
+
+
+def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("csv", nargs="?")
+    p.add_argument("--selftest", action="store_true")
+    p.add_argument("--syl", help="pipe-separated syllables to analyse ad hoc")
+    p.add_argument("--out")
+    p.add_argument("--id-col", default="word_id")
+    p.add_argument("--syl-col", default="syllables")
+    p.add_argument("--tone-col", default="tone_by_syllable")
+    p.add_argument("--ipa-col", default="ipa")
+    args = p.parse_args()
+
+    if args.selftest:
+        sys.exit(run_selftest())
+    if args.syl:
+        rows = [{args.id_col: "adhoc", args.syl_col: args.syl}]
+    elif args.csv:
+        with open(args.csv, encoding="utf-8-sig", newline="") as f:
+            rows = list(csv.DictReader(f))
+    else:
+        p.error("give a CSV path, --syl or --selftest")
+
+    out, problems = check_rows(rows, args)
+    if args.out:
+        with open(safe_out_path(args.out), "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=OUT_FIELDS)
+            w.writeheader()
+            w.writerows(out)
+    else:
+        w = csv.DictWriter(sys.stdout, fieldnames=OUT_FIELDS)
+        w.writeheader()
+        w.writerows(out)
+    counts = {}
+    for r in out:
+        counts[r.get("status", "")] = counts.get(r.get("status", ""), 0) + 1
+    print(f"syllable rows: {len(out)}; status counts: {counts}; problems: {problems}", file=sys.stderr)
+    sys.exit(1 if problems else 0)
+
+
+if __name__ == "__main__":
+    main()
