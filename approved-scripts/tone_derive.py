@@ -9,12 +9,18 @@ Usage (standard library only, reads/writes UTF-8):
   python approved-scripts/tone_derive.py --syl "ສະ|ບາຍ|ດີ"
   python approved-scripts/tone_derive.py data/words.csv [--out _agent/tmp/tone_check.csv]
       [--id-col word_id] [--syl-col syllables] [--tone-col tone_by_syllable] [--ipa-col ipa]
+  python approved-scripts/tone_derive.py data/words.csv --fill
+      writes tone_derivation for every row, and tone_by_syllable where it is empty,
+      back into the same CSV (existing tones are never overwritten; mismatches are reported)
 
 Input CSV: syllables pipe-separated (ສະ|ບາຍ|ດີ). Optional columns to cross-check:
   tone_by_syllable  pipe-separated tone names (low-rising|...)
   ipa               syllables separated by space or '.', each ending in Chao tone letters
 Output: one row per syllable with the full derivation; exit code 1 on any mismatch,
 parse warning that blocks derivation, or self-test failure.
+
+Revision 2: ◌ອ◌ and ◌ວ◌ count as written vowels (no false "no-written-vowel" warning);
+--fill mode added.
 """
 import argparse
 import csv
@@ -128,7 +134,8 @@ def analyse(syl):
 
     body = s[init_end:]
     base = [c for c in body if c not in TONE_MARKS]
-    has_vowel = bool(leading) or any(c in VOWEL_SIGNS for c in base)
+    # ອ inside the body is a vowel carrier (◌ອ◌, ເ◌ືອ); ວ before another letter is the vowel ◌ວ◌ / ◌ົວ.
+    has_vowel = bool(leading) or any(c in VOWEL_SIGNS for c in base) or "ອ" in base or "ວ" in base[:-1]
     short = any(c in SHORT_SIGNS for c in s)
     last = base[-1] if base else ""
 
@@ -186,6 +193,11 @@ def analyse(syl):
     return res
 
 
+def derivation_text(r):
+    """class/type/length/mark→cell, the format documented in SCHEMA.md."""
+    return f"{r['class']}/{r.get('syllable_type', '')}/{r['vowel_length']}/{r['tone_mark']}→{r['cell']}"
+
+
 def chao_to_tone(chunk):
     letters = "".join(c for c in chunk if c in "˥˦˧˨˩")
     if not letters:
@@ -228,6 +240,7 @@ SELFTEST = [
     ("ຂ້ອຍ", "low-falling", 7, "SEAsite"),
     ("ແມ່ນ", "mid", 6, "SEAsite"),
     ("ແລ້ວ", "high-falling", 9, "SEAsite"),
+    ("ພວກ", "high-falling", 12, "SEAsite (◌ວ◌ closed ua)"),
 ]
 
 
@@ -235,7 +248,7 @@ def run_selftest():
     fails = 0
     for syl, exp, cell, src in SELFTEST:
         r = analyse(syl)
-        ok = r["tone"] == exp and r["cell"] == str(cell)
+        ok = r["tone"] == exp and r["cell"] == str(cell) and not any(f.startswith("WARN") for f in r["flags"])
         fails += not ok
         print(f"{'ok  ' if ok else 'FAIL'} {syl}\texpected {exp} (cell {cell}, {src})\tgot {r['tone']} (cell {r['cell']}) {';'.join(r['flags'])}")
     print(f"{len(SELFTEST) - fails}/{len(SELFTEST)} passed")
@@ -286,6 +299,23 @@ def check_rows(rows, args):
     return out, problems
 
 
+def fill_rows(rows, args):
+    """Write derivations (always) and tones (only where empty) into the rows."""
+    filled = 0
+    for row in rows:
+        sylls = [x for x in (row.get(args.syl_col) or "").split("|") if x.strip()]
+        if not sylls:
+            continue
+        rs = [analyse(s) for s in sylls]
+        if any(any(f.startswith("ERROR") for f in r["flags"]) for r in rs):
+            continue
+        row["tone_derivation"] = "|".join(derivation_text(r) for r in rs)
+        if not (row.get(args.tone_col) or "").strip():
+            row[args.tone_col] = "|".join(r["tone"] for r in rs)
+            filled += 1
+    return filled
+
+
 def safe_out_path(path):
     full = os.path.abspath(path)
     root = os.path.abspath(os.getcwd())
@@ -302,6 +332,7 @@ def main():
     p.add_argument("--selftest", action="store_true")
     p.add_argument("--syl", help="pipe-separated syllables to analyse ad hoc")
     p.add_argument("--out")
+    p.add_argument("--fill", action="store_true", help="write tone_derivation / empty tone_by_syllable back into the CSV")
     p.add_argument("--id-col", default="word_id")
     p.add_argument("--syl-col", default="syllables")
     p.add_argument("--tone-col", default="tone_by_syllable")
@@ -310,13 +341,29 @@ def main():
 
     if args.selftest:
         sys.exit(run_selftest())
+    cols = []
     if args.syl:
         rows = [{args.id_col: "adhoc", args.syl_col: args.syl}]
     elif args.csv:
         with open(args.csv, encoding="utf-8-sig", newline="") as f:
-            rows = list(csv.DictReader(f))
+            reader = csv.DictReader(f)
+            rows = list(reader)
+            cols = list(reader.fieldnames or [])
     else:
         p.error("give a CSV path, --syl or --selftest")
+
+    if args.fill:
+        if not args.csv:
+            p.error("--fill needs a CSV path")
+        filled = fill_rows(rows, args)
+        for c in (args.tone_col, "tone_derivation"):
+            if c not in cols:
+                cols.append(c)
+        with open(safe_out_path(args.csv), "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        print(f"filled tones for {filled} row(s); derivations written for all parsable rows", file=sys.stderr)
 
     out, problems = check_rows(rows, args)
     if args.out:
@@ -324,13 +371,17 @@ def main():
             w = csv.DictWriter(f, fieldnames=OUT_FIELDS)
             w.writeheader()
             w.writerows(out)
-    else:
+    elif not args.fill:
         w = csv.DictWriter(sys.stdout, fieldnames=OUT_FIELDS)
         w.writeheader()
         w.writerows(out)
     counts = {}
     for r in out:
         counts[r.get("status", "")] = counts.get(r.get("status", ""), 0) + 1
+    for r in out:
+        if r.get("status") in ("ERROR", "MISMATCH"):
+            print(f"{r.get('status')} {r.get('word_id')} {r.get('syllable', '')} derived={r.get('tone', '')} "
+                  f"recorded={r.get('expected_tone', '')} ipa={r.get('ipa_tone', '')} {r.get('flags', '')}", file=sys.stderr)
     print(f"syllable rows: {len(out)}; status counts: {counts}; problems: {problems}", file=sys.stderr)
     sys.exit(1 if problems else 0)
 

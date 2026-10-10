@@ -208,6 +208,33 @@ pron_tips are agent-written guidance.
 - U. Iowa CLCL Lao resources list.
 - Both in sources.md, not yet studied.
 
+### User review guidance (2026-10-09)
+- Early stages: don't derive or chase gaps. Pick common, well-attested words that are great to learn early in any language. If a word isn't readily sourced, swap it for another common word.
+- Deeper work (classifier research, rare details, derivations) waits until much later.
+- The tone script stays as a silent cross-check only.
+- Writing my own example sentences is explicitly OK (marked `unverified`).
+
+## 2026-10-09 CHECKPOINT 100
+- User cleared checkpoint 30. Direction:
+  - Pick common words from the agent's own knowledge; light checks only.
+  - Review the first 100 for gradual letter/vowel increase.
+  - Then continue to 300 and 600+.
+- New approved scripts:
+  - build_order.py: generates the derived tables plus a reading-load report.
+  - tone_derive.py rev 2: `--fill`; ◌ອ◌/◌ວ◌ warning fixed.
+  - Pipeline written in SCHEMA.md.
+- Batch 2: W0036–W0102 (intro 35–101).
+  - Wiktionary-checked: 62 of 66 have entries and IPA.
+  - ມື້ອື່ນ, ເຮັດວຽກ, ຕ້ອງການ, ລໍຖ້າ are Tatoeba-attested; IPA joined or by rule (`derived`).
+  - Added ວຽກ as a component and ລາວ (noun) as a homograph of the pronoun.
+  - Classifiers filled where obvious: ຄົນ for people nouns, ໂຕ for animals.
+- Review of the first 100: after ສະບາຍດີ (7, built syllable by syllable), no word adds more than 3 new symbols; 60/101 words add none.
+  - Coverage at 100: letters 31/45, vowels 22/31.
+  - Missing: ຝ ຫງ ຫວ ໆ, digits; ◌ຸ ເ◌ະ ແ◌ະ ໂ◌ະ ເ◌າະ ເ◌ີ ເ◌ຍ ◌ົວ ◌ວ◌. Target them early in batch 3.
+- Sentences: 176 total (15 verified from Tatoeba/Wiktionary, 161 composed `unverified`). 14 templates. learning_order: 345 steps.
+- validate: 0 errors. Warnings: classifier gaps (deferred per user); ໃຈ only via compounds.
+- Next: batch 3 (intro 102–300). Introduce the missing vowels and letters early, numbers 6–10 and up, Lao digits, ໆ.
+
 ### Next after review
 - Phase 2: words 35–100. Classifiers as items; numbers sprinkled in; ເທົ່າໃດ once sourced; ຫ້ອງນອນ chain extensions; ພາສາລາວ; ເຮືອນ.
 - Study Big Brother Mouse for verified simple sentences.

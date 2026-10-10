@@ -18,9 +18,9 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] **CHECKPOINT 30**: summary, commit, create `_agent/BLOCKED` for user review
 
 ## Phase 2: To 100 words
-- [ ] Next 70 words; track letter and vowel coverage
-- [ ] Sentences and templates
-- [ ] CHECKPOINT 100: commit and continue
+- [x] Next 70 words; track letter and vowel coverage (67 words; reading-load report via build_order.py)
+- [x] Sentences and templates (176 sentences, 14 templates)
+- [x] CHECKPOINT 100: commit and continue
 
 ## Phase 3: To 300 words
 - [ ] Next 200 words; keep new-letter introduction gradual
