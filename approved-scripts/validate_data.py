@@ -1,14 +1,23 @@
 """Validate the curriculum CSVs in data/ against _agent/SCHEMA.md and report coverage.
 
 Usage (standard library only):
-  python approved-scripts/validate_data.py [data_dir]      (default: data)
+  python approved-scripts/validate_data.py [data_dir] [--quiet]     (default: data)
 
 Checks: required columns; unique IDs; confidence values; Lao-only text fields;
 foreign keys; syllables join back to the word; tone names and counts; spaced
 sentences match unspaced ones and their sentence_words; 2+ sentences per word;
-the 1000-word hard cap; letter/vowel coverage by word 600.
+the 1000-word hard cap; letter/vowel coverage by word 600; noun classifiers.
 Missing tables are reported and skipped. Exit code 1 if any ERROR.
+
+Revision 2 (2026-10-10):
+  - Classifier columns (SCHEMA.md "Classifiers"): classifier_type specific|self|measure|none is
+    required on nouns and forbidden on other rows; classifier_confidence is required with it;
+    self must point to the row itself, none must have no classifier word, specific needs one
+    (warning while the classifier word is still missing from words.csv). Before the column
+    exists, a single warning replaces the per-noun warnings.
+  - --quiet groups warnings by kind and prints a count with up to 5 examples per kind.
 """
+import argparse
 import csv
 import os
 import re
@@ -30,6 +39,7 @@ TABLES = {
 CONFIDENCE = {"verified", "derived", "unverified"}
 TONES = {"low-rising", "high-rising", "mid", "low-falling", "high-falling"}
 TIERS = {"30", "100", "300", "600", "extra"}
+CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}
 LAO_RE = re.compile(r"^[຀-໿\s|?!.,()«»\"'\-◌_…]*$")
 PUNCT_RE = re.compile(r"[?!.,()«»\"'…]")
 HARD_CAP, TARGET = 1000, 600
@@ -41,15 +51,15 @@ def err(msg):
     errors.append(msg)
 
 
-def warn(msg):
-    warnings.append(msg)
+def warn(msg, kind=None):
+    warnings.append((kind or msg, msg))
 
 
 def load(data_dir, name):
     path = os.path.join(data_dir, name + ".csv")
     if not os.path.exists(path):
         warn(f"{name}.csv missing (skipped)")
-        return None
+        return None, []
     with open(path, encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
@@ -72,7 +82,7 @@ def load(data_dir, name):
             err(f"{name}.csv line {i}: confidence '{r.get('confidence', '')}' not in {sorted(CONFIDENCE)}")
         if not r.get("source", "") and r.get("confidence") != "unverified":
             err(f"{name}.csv line {i}: no source but confidence is {r.get('confidence')}")
-    return rows
+    return rows, list(cols)
 
 
 def ids(rows, col):
@@ -92,11 +102,57 @@ def check_lao(name, rows, cols):
                 err(f"{name}.csv line {i}: {c} has non-Lao characters {bad}")
 
 
+def is_noun(r):
+    return any(p.strip().startswith("noun") or p.strip() == "proper noun"
+               for p in (r.get("pos") or "").split(";"))
+
+
+def check_classifiers(words, words_by_id, has_cols):
+    """Classifier rules from SCHEMA.md 'Classifiers'."""
+    nouns = [r for r in words if is_noun(r)]
+    if not has_cols:
+        warn(f"words.csv has no classifier_type/classifier_confidence columns yet ({len(nouns)} nouns to classify)")
+        return
+    for r in words:
+        wid, ct = r["word_id"], (r.get("classifier_type") or "").strip()
+        cw = (r.get("classifier_word_id") or "").strip()
+        cc = (r.get("classifier_confidence") or "").strip()
+        if not is_noun(r):
+            if ct or cc:
+                err(f"words {wid}: classifier_type/confidence set on a non-noun (pos '{r.get('pos')}')")
+            continue
+        if not ct:
+            err(f"words {wid}: noun without classifier_type")
+            continue
+        if ct not in CLASSIFIER_TYPES:
+            err(f"words {wid}: classifier_type '{ct}' not in {sorted(CLASSIFIER_TYPES)}")
+            continue
+        if cc not in CONFIDENCE:
+            err(f"words {wid}: classifier_confidence '{cc}' not in {sorted(CONFIDENCE)}")
+        if ct == "self" and cw != wid:
+            err(f"words {wid}: classifier_type self but classifier_word_id is '{cw}' (must be {wid})")
+        elif ct == "none" and cw:
+            err(f"words {wid}: classifier_type none but classifier_word_id is {cw}")
+        elif ct == "specific":
+            if not cw:
+                warn(f"words {wid}: specific classifier not yet a word in words.csv", "specific classifier missing")
+            elif cw == wid:
+                err(f"words {wid}: classifier_type specific points to itself (use self)")
+            elif "classifier" not in (words_by_id.get(cw, {}).get("pos") or ""):
+                warn(f"words {wid}: classifier {cw} does not have pos 'classifier'", "classifier word pos")
+        if cc == "verified" and "Classifier:" not in (r.get("notes") or ""):
+            warn(f"words {wid}: verified classifier without a 'Classifier:' source note", "classifier source note")
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    data_dir = sys.argv[1] if len(sys.argv) > 1 else "data"
-    t = {n: load(data_dir, n) for n in TABLES}
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("data_dir", nargs="?", default="data")
+    ap.add_argument("--quiet", action="store_true", help="group warnings by kind (count + 5 examples)")
+    a = ap.parse_args()
+    loaded = {n: load(a.data_dir, n) for n in TABLES}
+    t = {n: v[0] for n, v in loaded.items()}
     letters, vowels, words = t["letters"], t["vowels"], t["words"]
     sentences, sw, templates, tf = t["sentences"], t["sentence_words"], t["templates"], t["template_fillers"]
     word_ids = ids(words, "word_id")
@@ -127,7 +183,7 @@ def main():
                     if tn not in TONES:
                         err(f"words {wid}: unknown tone '{tn}'")
             else:
-                warn(f"words {wid}: no tone_by_syllable")
+                warn(f"words {wid}: no tone_by_syllable", "no tone_by_syllable")
             if r.get("tier") and r["tier"] not in TIERS:
                 err(f"words {wid}: tier '{r['tier']}' not in {sorted(TIERS)}")
             if r.get("classifier_word_id") and r["classifier_word_id"] not in word_ids:
@@ -136,18 +192,18 @@ def main():
                 if c not in word_ids:
                     err(f"words {wid}: component {c} not in words")
                 elif int(words_by_id[c].get("intro_order") or 0) > int(r.get("intro_order") or 0):
-                    warn(f"words {wid}: component {c} is introduced after the compound")
+                    warn(f"words {wid}: component {c} is introduced after the compound", "component after compound")
             for c in split_ids(r.get("new_letter_ids")):
                 if c not in letter_ids:
                     err(f"words {wid}: new_letter_id {c} not in letters")
             for c in split_ids(r.get("new_vowel_ids")):
                 if c not in vowel_ids:
                     err(f"words {wid}: new_vowel_id {c} not in vowels")
-            if (r.get("pos") or "").startswith("noun") and not r.get("classifier_word_id"):
-                warn(f"words {wid}: noun without classifier_word_id")
         orders = [r.get("intro_order") for r in words if r.get("intro_order")]
         if len(orders) != len(set(orders)):
             err("words.csv: duplicate intro_order values")
+        wcols = loaded["words"][1]
+        check_classifiers(words, words_by_id, "classifier_type" in wcols and "classifier_confidence" in wcols)
 
     if sentences is not None:
         sw_by_sentence = {}
@@ -230,11 +286,16 @@ def main():
             done = [r for r in need if r.get("intro_word_id")]
             print(f"{name} coverage (required=yes): {len(done)}/{len(need)} introduced")
     if words is not None:
-        conf, tiers = {}, {}
+        conf, tiers, ctypes, cconf = {}, {}, {}, {}
         for r in words:
             conf[r["confidence"]] = conf.get(r["confidence"], 0) + 1
             tiers[r.get("tier", "")] = tiers.get(r.get("tier", ""), 0) + 1
+            if is_noun(r):
+                ct, cc = r.get("classifier_type", ""), r.get("classifier_confidence", "")
+                ctypes[ct] = ctypes.get(ct, 0) + 1
+                cconf[cc] = cconf.get(cc, 0) + 1
         print(f"words: {len(words)} (cap {HARD_CAP}) | confidence {conf} | tiers {tiers}")
+        print(f"nouns: {sum(ctypes.values())} | classifier_type {ctypes} | classifier_confidence {cconf}")
     if sentences is not None:
         conf = {}
         for r in sentences:
@@ -244,8 +305,18 @@ def main():
     for e in errors:
         print("ERROR", e)
     print(f"\n== {len(warnings)} WARNING(S) ==")
-    for w in warnings:
-        print("WARN ", w)
+    if a.quiet:
+        groups = {}
+        for kind, msg in warnings:
+            groups.setdefault(kind, []).append(msg)
+        for kind, msgs in groups.items():
+            if len(msgs) == 1:
+                print("WARN ", msgs[0])
+            else:
+                print(f"WARN  {kind}: {len(msgs)} (e.g. {'; '.join(msgs[:5])})")
+    else:
+        for _, msg in warnings:
+            print("WARN ", msg)
     sys.exit(1 if errors else 0)
 
 

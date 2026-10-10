@@ -362,4 +362,29 @@ pron_tips are agent-written guidance.
 - **Running:** scholar classifying all nouns → `_agent/research/classifiers.csv`. Pronouns are excluded; a correction was sent mid-run.
 - **Apply command (after approval):**
   `python approved-scripts/apply_columns.py data/words.csv _agent/research/classifiers.csv --cols classifier_word_id,classifier_type,classifier_confidence --after classifier_word_id --note-col classifier_note --note-prefix "Classifier: " --check`
+
+## 2026-10-10 Classifiers applied
+- User approved apply_columns.py and validate_data rev 2.
+- **Applied** `_agent/research/classifiers.csv` to words.csv (now 23 columns). 534 nouns:
+  - by type: specific 246 / self 87 / measure 43 / none 158
+  - by classifier_confidence: verified 10 (Wiktionary) / derived 71 / unverified 453
+  - One existing value changed: W0745 ໝອນ goes from ອັນ to ໃບ (agent knowledge).
+- **pos += classifier** for 9 nouns that act as classifiers: ຫ້ອງ, ຮ້ານ, ລູກ, ຫຼັງ, ເຄື່ອງ, ຂ້າງ, ວັນ, ເສັ້ນ, ງານ (mapping in `_agent/tmp/classifier-pos.csv`).
+- **validate:** 0 errors. Remaining warnings: 23 specific nouns whose classifier is not yet a word. There are 10 missing classifier words:
+
+  | Word | Used for | Nouns |
+  |---|---|---|
+  | ຜືນ | cloth | 5 |
+  | ກ້ອນ | lump | 4 |
+  | ດວງ | stars, sun, heart; ມີດ per Wiktionary | 4 |
+  | ສາຍ | rivers | 2 |
+  | ອົງ | monks | 2 |
+  | ແຜ່ນ | sheets | 2 |
+  | ດ້າມ | pens | 1 |
+  | ບົດ | lessons | 1 |
+  | ເຫຼັ້ມ | booklets | 1 |
+  | ສະບັບ | newspapers | 1 |
+
+- **Doubtful assignments** (agent's list): ຕຽງ, ຕູ້ເຢັນ, ແວ່ນຕາ, ມີດ (Wiktionary ດວງ vs ດ້າມ), ວຽກ, ແຂ້ວ, ເລກ, ກະແຈ, and paired body parts → ຂ້າງ. Added to NEEDS_HUMAN.
+- **tone_derive:** 0 problems; build_order OK.
   Then run tone_derive --fill → build_order → validate.

@@ -1,0 +1,535 @@
+word_id,lao,gloss_en,classifier_type,classifier_word_id,classifier_confidence,classifier_note
+W0007,ໃຈ,"heart, mind",none,,unverified,abstract/figurative; not counted
+W0011,ນ້ຳ,water; liquid,measure,W0218,unverified,own knowledge; mass noun counted by glass (ແກ້ວ) or bottle (ຂວດ W0425)
+W0012,ຫ້ອງ,room,self,W0012,unverified,own knowledge; ຫ້ອງ ສອງ ຫ້ອງ
+W0013,ຫ້ອງນ້ຳ,"bathroom, toilet",specific,W0012,unverified,own knowledge; counted by head noun ຫ້ອງ
+W0019,ເຂົ້າ,(cooked) rice; to enter,measure,W0419,unverified,own knowledge; rice counted by bowl (ຖ້ວຍ) or plate (ຈານ W0629)
+W0028,ອາຫານ,food,measure,W0629,unverified,own knowledge; food counted by dish/plate (ຈານ)
+W0029,ຮ້ານ,"shop, store; stall",self,W0029,unverified,own knowledge; ຮ້ານ ສອງ ຮ້ານ
+W0030,ຮ້ານອາຫານ,restaurant,specific,W0029,unverified,own knowledge; counted by head noun ຮ້ານ
+W0034,ຫ້ອງນອນ,bedroom,specific,W0012,unverified,own knowledge; counted by head noun ຫ້ອງ
+W0036,ມື້,day,self,W0036,unverified,own knowledge; time unit counted directly (ສອງ ມື້)
+W0037,ມື້ນີ້,today,none,,unverified,deictic time word; not counted
+W0038,ມື້ອື່ນ,tomorrow,none,,unverified,deictic time word; not counted
+W0040,ຄົນ,person,self,W0040,derived,classifier word itself used as self (ຄົນ ສອງ ຄົນ)
+W0041,ຊື່,name,self,W0041,unverified,own knowledge; ຊື່ ສອງ ຊື່
+W0042,ແມ່,mother,specific,W0040,derived,persons take ຄົນ (W0040)
+W0043,ພໍ່,father,specific,W0040,derived,persons take ຄົນ (W0040)
+W0044,ລູກ,child (son or daughter),specific,W0040,derived,persons take ຄົນ (W0040); ລູກ is also used as CL for mountains and round objects (own knowledge)
+W0045,ໝູ່,friend,specific,W0040,derived,persons take ຄົນ (W0040)
+W0048,ເຮືອນ,house,specific,W0149,verified,SRC-WIKT:ເຮືອນ headword (classifier ຫຼັງ); ຫຼັງ exists as W0149 (noun back/behind) in words.csv
+W0049,ບ້ານ,home; village,self,W0049,unverified,own knowledge; village ບ້ານ ສອງ ບ້ານ; a house/home as building is ຫຼັງ W0149
+W0057,ພາສາ,language,self,W0057,unverified,own knowledge; ພາສາ ສອງ ພາສາ
+W0058,ລາວ,Laos; Lao (language/person),none,,unverified,proper noun
+W0059,ພາສາລາວ,Lao language,none,,unverified,language name; not counted
+W0065,ວຽກ,"work, job",self,W0065,unverified,own knowledge; low confidence; may be uncountable in practice
+W0075,ປາ,fish,specific,W0097,verified,SRC-WIKT:ປາ headword classifier ໂຕ
+W0076,ໄກ່,chicken,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0077,ຊີ້ນ,meat,measure,W0661,unverified,own knowledge; meat by weight (ກິໂລ)
+W0078,ເຂົ້າໜຽວ,sticky rice,measure,W0632,unverified,own knowledge; counted by serving basket (ກະຕິບ) or weight (ກິໂລ W0661)
+W0079,ໝາກໄມ້,fruit,specific,W0284,unverified,own knowledge; individual fruits ໜ່ວຍ; by weight ກິໂລ
+W0080,ກາເຟ,coffee,measure,W0219,unverified,own knowledge; coffee by cup (ຈອກ)
+W0081,ຊາ,tea,measure,W0219,unverified,own knowledge; tea by cup (ຈອກ)
+W0085,ລາຄາ,price,none,,unverified,abstract noun
+W0086,ເງິນ,money; silver,measure,W0297,unverified,own knowledge; money counted via currency unit (ກີບ)
+W0095,ໝາ,dog,specific,W0097,verified,SRC-WIKT:ໝາ headword classifier ໂຕ
+W0096,ແມວ,cat,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0103,ຜົວ,husband,specific,W0040,derived,persons take ຄົນ (W0040)
+W0104,ເມຍ,wife,specific,W0040,derived,persons take ຄົນ (W0040)
+W0105,ຄອບຄົວ,family,self,W0105,unverified,own knowledge; ຄອບຄົວ ສອງ ຄອບຄົວ
+W0106,ຫົວ,head; classifier for books,self,W0106,derived,classifier word itself used as self
+W0115,ອັນ,thing; general classifier,self,W0115,derived,classifier word itself used as self
+W0119,ໂຕະ,table,specific,W0284,verified,SRC-WIKT:ໂຕະ headword classifier ໜ່ວຍ
+W0120,ຝົນ,rain,none,,unverified,weather phenomenon; not counted
+W0127,ສວນ,garden,self,W0127,unverified,own knowledge
+W0129,ກ້ວຍ,banana,specific,W0284,unverified,own knowledge; individual fruit ໜ່ວຍ
+W0135,ເຊົ້າ,morning,none,,unverified,time-of-day word
+W0136,ແລງ,evening,none,,unverified,time-of-day word
+W0137,ຄືນ,night,self,W0137,unverified,own knowledge; ສອງ ຄືນ (nights)
+W0138,ຕອນ,period (of the day),self,W0138,unverified,own knowledge; low confidence
+W0140,ມື້ວານ,yesterday,none,,unverified,deictic time word
+W0142,ໂມງ,hour; o'clock,self,W0142,unverified,own knowledge; ສອງ ໂມງ
+W0143,ເວລາ,time,none,,unverified,abstract noun
+W0144,ປີ,year,self,W0144,unverified,own knowledge; time unit counted directly
+W0145,ເດືອນ,month; moon,self,W0145,unverified,own knowledge; time unit counted directly
+W0146,ອາທິດ,week,self,W0146,unverified,own knowledge; time unit counted directly
+W0149,ຫຼັງ,back; behind; after,none,,unverified,this sense (back/behind) is not counted; the same word ຫຼັງ is the classifier for houses (used for W0048)
+W0150,ເດັກ,child,specific,W0040,derived,persons take ຄົນ (W0040)
+W0151,ຜູ້ຊາຍ,man,specific,W0040,derived,persons take ຄົນ (W0040)
+W0152,ຜູ້ຍິງ,woman,specific,W0040,derived,persons take ຄົນ (W0040)
+W0153,ອ້າຍ,older brother,specific,W0040,derived,persons take ຄົນ (W0040)
+W0154,ເອື້ອຍ,older sister,specific,W0040,derived,persons take ຄົນ (W0040)
+W0155,ນ້ອງ,younger sibling,specific,W0040,derived,persons take ຄົນ (W0040)
+W0156,ຄູ,teacher,specific,W0040,derived,persons take ຄົນ (W0040)
+W0157,ນັກຮຽນ,student,specific,W0040,derived,persons take ຄົນ (W0040)
+W0162,ໝໍ,doctor,specific,W0040,derived,persons take ຄົນ (W0040)
+W0164,ຕາ,eye,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ (side); SRC-WIKT:ຕາ states no classifier
+W0165,ມື,hand,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0166,ຕີນ,foot,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0167,ປາກ,mouth,self,W0167,unverified,own knowledge; low confidence
+W0168,ຫູ,ear,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0171,ຢາ,medicine,measure,W0705,unverified,own knowledge; pills (ເມັດ)
+W0172,ໂຮງໝໍ,hospital,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0175,ໂຮງຮຽນ,school,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0176,ໂຮງແຮມ,hotel,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0177,ຕະຫຼາດ,market,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0178,ວັດ,temple,self,W0178,unverified,own knowledge; ວັດ ສອງ ວັດ
+W0179,ເມືອງ,town; district,self,W0179,unverified,own knowledge
+W0180,ປະເທດ,country,self,W0180,unverified,own knowledge
+W0181,ວຽງຈັນ,Vientiane,none,,unverified,proper noun
+W0182,ທາງ,way; road,specific,W0613,unverified,own knowledge; roads counted by ເສັ້ນ (line); abstract 'way' not counted
+W0183,ຖະໜົນ,road; street,specific,W0613,unverified,own knowledge; roads counted by ເສັ້ນ
+W0184,ບ່ອນ,place,self,W0184,unverified,own knowledge
+W0185,ຫ້ອງການ,office,specific,W0012,unverified,own knowledge; head noun ຫ້ອງ; could also be ແຫ່ງ
+W0186,ແມ່ນ້ຳ,river,specific,,unverified,missing classifier word: ສາຍ (strand/stream; used for rivers)
+W0187,ນາ,rice field,self,W0187,unverified,own knowledge; low confidence
+W0188,ພູ,mountain,specific,W0044,unverified,own knowledge; ລູກ (W0044 child) is the CL for mountains/hills
+W0189,ຊ້າຍ,left,none,,unverified,direction word
+W0190,ຂວາ,right,none,,unverified,direction word
+W0193,ນອກ,outside,none,,unverified,location word
+W0196,ໜ້າ,face; front,none,,unverified,location/face; ໜ້າ also counts pages (not in this sense)
+W0203,ໝູ,pig; pork,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0204,ງົວ,cow; beef,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0205,ໄຂ່,egg,specific,W0284,unverified,own knowledge; SRC-WIKT:ໄຂ່ states no classifier
+W0206,ຜັກ,vegetable,measure,W0664,unverified,own knowledge; greens sold by bundle (ມັດ) or ກິໂລ W0661
+W0207,ເຂົ້າຈີ່,bread,specific,,unverified,missing classifier word: ກ້ອນ (lump/loaf)
+W0208,ເຝີ,pho (noodle soup),measure,W0419,unverified,own knowledge; by bowl (ຖ້ວຍ)
+W0209,ນົມ,milk,measure,W0218,unverified,own knowledge; by glass (ແກ້ວ)
+W0210,ເບຍ,beer,measure,W0425,unverified,own knowledge; by bottle (ຂວດ)
+W0214,ໝາກມ່ວງ,mango,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0215,ຕຳໝາກຫຸ່ງ,papaya salad,measure,W0629,unverified,own knowledge; by plate (ຈານ)
+W0216,ອາຫານເຊົ້າ,breakfast,none,,unverified,meal name; not counted
+W0217,ເຂົ້າແລງ,dinner,none,,unverified,meal name; not counted
+W0218,ແກ້ວ,glass; bottle,self,W0218,derived,classifier word itself used as self
+W0219,ຈອກ,cup; glass,self,W0219,derived,classifier word itself used as self
+W0274,ຂອງ,of (possession); thing,specific,W0115,unverified,own knowledge; 'thing' sense takes general ອັນ
+W0286,ລົດ,car; vehicle,specific,W0285,verified,SRC-WIKT:ລົດ vehicle noun entry classifier ຄັນ (a separate noun entry means taste)
+W0287,ລົດເມ,bus,specific,W0285,derived,compound of ລົດ (classifier ຄັນ verified at SRC-WIKT:ລົດ)
+W0288,ໂທລະສັບ,telephone,specific,W0298,unverified,own knowledge; machines/devices ເຄື່ອງ; SRC-WIKT:ໂທລະສັບ states no classifier
+W0289,ປຶ້ມ,book,specific,W0106,verified,SRC-WIKT:ປຶ້ມ headword (classifier ຫົວ or ເຫຼັ້ມ); ເຫຼັ້ມ is not in words.csv
+W0290,ເສື້ອ,shirt; clothes,specific,W0097,unverified,own knowledge; garments take ໂຕ
+W0291,ເກີບ,shoe(s),specific,W0659,unverified,own knowledge; shoes counted by pair (ຄູ່); SRC-WIKT:ເກີບ states no classifier
+W0296,ບັນຫາ,problem,specific,W0115,unverified,own knowledge; low confidence (general ອັນ)
+W0297,ກີບ,kip (currency),self,W0297,unverified,own knowledge; currency unit counted directly
+W0298,ເຄື່ອງ,things; stuff; goods,self,W0298,unverified,own knowledge; ເຄື່ອງ is also the CL for machines
+W0299,ອາກາດ,weather; air,none,,unverified,mass/abstract
+W0319,ຂ້າງ,side; beside,self,W0319,unverified,own knowledge; ສອງ ຂ້າງ (two sides)
+W0321,ແບບ,style; type; way,self,W0321,unverified,own knowledge
+W0325,ເຄິ່ງ,half,none,,unverified,fraction word
+W0332,ວັນ,day (formal); date,self,W0332,unverified,own knowledge; time unit counted directly
+W0333,ວັນຈັນ,Monday,none,,unverified,day name
+W0334,ວັນອັງຄານ,Tuesday,none,,unverified,day name
+W0335,ວັນພຸດ,Wednesday,none,,unverified,day name
+W0336,ວັນພະຫັດ,Thursday,none,,unverified,day name
+W0337,ວັນສຸກ,Friday,none,,unverified,day name
+W0338,ວັນເສົາ,Saturday,none,,unverified,day name
+W0339,ວັນອາທິດ,Sunday,none,,unverified,day name
+W0340,ຊົ່ວໂມງ,hour (duration),self,W0340,unverified,own knowledge; time unit counted directly
+W0341,ນາທີ,minute,self,W0341,unverified,own knowledge; time unit counted directly
+W0342,ທ່ຽງ,noon,none,,unverified,time-of-day word
+W0343,ຕອນບ່າຍ,afternoon,none,,unverified,time-of-day word
+W0344,ກາງຄືນ,night(time),none,,unverified,time-of-day word
+W0345,ກາງເວັນ,daytime,none,,unverified,time-of-day word
+W0346,ມື້ຊືນ,the day after tomorrow,none,,unverified,deictic time word
+W0347,ອາທິດໜ້າ,next week,none,,unverified,deictic time phrase
+W0348,ປີໜ້າ,next year,none,,unverified,deictic time phrase
+W0349,ປີກາຍ,last year,none,,unverified,deictic time phrase
+W0356,ພໍ່ແມ່,parents,specific,W0040,derived,persons take ຄົນ (W0040)
+W0357,ພີ່,older sibling,specific,W0040,derived,persons take ຄົນ (W0040)
+W0358,ພີ່ນ້ອງ,siblings; relatives,specific,W0040,derived,persons take ຄົນ (W0040)
+W0359,ປູ່,grandfather (father's side),specific,W0040,derived,persons take ຄົນ (W0040)
+W0360,ຍ່າ,grandmother (father's side),specific,W0040,derived,persons take ຄົນ (W0040)
+W0361,ຍາຍ,grandmother (mother's side),specific,W0040,derived,persons take ຄົນ (W0040)
+W0362,ລຸງ,uncle (older),specific,W0040,derived,persons take ຄົນ (W0040)
+W0363,ປ້າ,aunt (older),specific,W0040,derived,persons take ຄົນ (W0040)
+W0364,ຫຼານ,grandchild; niece/nephew,specific,W0040,derived,persons take ຄົນ (W0040)
+W0365,ລູກຊາຍ,son,specific,W0040,derived,compound with ລູກ; persons take ຄົນ (W0040)
+W0366,ລູກສາວ,daughter,specific,W0040,derived,compound with ລູກ; persons take ຄົນ (W0040)
+W0367,ແຟນ,boyfriend; girlfriend,specific,W0040,derived,persons take ຄົນ (W0040)
+W0368,ເພື່ອນ,friend,specific,W0040,derived,persons take ຄົນ (W0040)
+W0369,ຄົນລາວ,Lao person,specific,W0040,derived,compound with ຄົນ; persons take ຄົນ (W0040)
+W0370,ຕ່າງປະເທດ,abroad; foreign country,none,,unverified,place/adverbial; not counted
+W0371,ຄົນຕ່າງປະເທດ,foreigner,specific,W0040,derived,compound with ຄົນ; persons take ຄົນ (W0040)
+W0372,ໝູ່ເພື່ອນ,friends,specific,W0040,derived,persons take ຄົນ (W0040)
+W0374,ນັກທ່ອງທ່ຽວ,tourist,specific,W0040,derived,persons take ຄົນ (W0040)
+W0375,ພະ,monk,specific,,unverified,missing classifier word: ອົງ (for monks and revered persons)
+W0376,ເຈົ້າຂອງ,owner,specific,W0040,derived,persons take ຄົນ (W0040)
+W0377,ພະນັກງານ,employee; staff,specific,W0040,derived,persons take ຄົນ (W0040)
+W0378,ຕຳຫຼວດ,police,specific,W0040,derived,persons take ຄົນ (W0040)
+W0379,ແມ່ຄ້າ,(female) vendor,specific,W0040,derived,persons take ຄົນ (W0040)
+W0380,ອາຈານ,teacher; professor,specific,W0040,derived,persons take ຄົນ (W0040)
+W0381,ນັກສຶກສາ,university student,specific,W0040,derived,persons take ຄົນ (W0040)
+W0382,ອາຍຸ,age,none,,unverified,abstract noun (years counted with ປີ)
+W0383,ຜົມ,hair (on the head),measure,W0613,unverified,own knowledge; strands (ເສັ້ນ)
+W0384,ແຂ້ວ,tooth,self,W0384,unverified,own knowledge; low confidence
+W0385,ດັງ,nose; loud,self,W0385,unverified,own knowledge; low confidence
+W0386,ຄໍ,neck; throat,self,W0386,unverified,own knowledge; low confidence
+W0387,ທ້ອງ,stomach; belly,none,,unverified,own knowledge; single body part not normally counted
+W0388,ແຂນ,arm,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0389,ຂາ,leg,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0390,ຫົວໃຈ,heart (organ),specific,,unverified,missing classifier word: ດວງ (used for heart/star/sun); low confidence
+W0391,ໄຂ້,fever,none,,unverified,illness; not counted
+W0393,ຫວັດ,(common) cold,none,,unverified,illness; not counted
+W0397,ປະຕູ,door,self,W0397,unverified,own knowledge; SRC-WIKT:ປະຕູ states no classifier
+W0398,ປ່ອງຢ້ຽມ,window,self,W0398,unverified,own knowledge; low confidence
+W0399,ຕັ່ງ,chair; stool,specific,W0284,verified,SRC-WIKT:ຕັ່ງ classifier ໜ່ວຍ
+W0400,ຕຽງ,bed,specific,W0115,unverified,own knowledge; general ອັນ; SRC-WIKT:ຕຽງ states no classifier; ຫຼັງ also possible
+W0401,ຫ້ອງຄົວ,kitchen,specific,W0012,unverified,own knowledge; head noun ຫ້ອງ
+W0402,ໄຟ,fire; light,none,,unverified,fire/light mass; lamps may take ດວງ
+W0403,ໄຟຟ້າ,electricity,none,,unverified,mass noun
+W0404,ພັດລົມ,electric fan,specific,W0298,unverified,own knowledge; machines ເຄື່ອງ
+W0405,ແອ,air conditioner,specific,W0298,unverified,own knowledge; machines ເຄື່ອງ
+W0406,ໂທລະທັດ,television,specific,W0298,unverified,own knowledge; machines ເຄື່ອງ
+W0407,ຄອມພິວເຕີ,computer,specific,W0298,unverified,own knowledge; machines ເຄື່ອງ; SRC-WIKT:ຄອມພິວເຕີ states no classifier
+W0408,ກະແຈ,key,specific,W0927,unverified,own knowledge; keys take ດອກ (as in Thai)
+W0409,ກະເປົາ,bag,specific,W0601,unverified,own knowledge; SRC-WIKT:ກະເປົາ states no classifier
+W0410,ບັດ,card,specific,W0601,unverified,own knowledge
+W0411,ເຈ້ຍ,paper,specific,,unverified,missing classifier word: ແຜ່ນ (sheet)
+W0412,ປາກກາ,pen,specific,,unverified,missing classifier word: ດ້າມ (pen/handle-shaped); SRC-WIKT:ປາກກາ states no classifier
+W0413,ແວ່ນຕາ,glasses,specific,W0115,unverified,own knowledge; low confidence (ອັນ or ຄູ່ W0659)
+W0414,ໝວກ,hat,specific,W0601,unverified,own knowledge
+W0415,ໂສ້ງ,trousers,specific,W0097,unverified,own knowledge; garments take ໂຕ
+W0416,ສິ້ນ,sinh (Lao skirt),specific,,unverified,missing classifier word: ຜືນ (piece of cloth/garment)
+W0417,ຜ້າ,cloth,specific,,unverified,missing classifier word: ຜືນ (piece of cloth)
+W0418,ສະບູ,soap,specific,,unverified,missing classifier word: ກ້ອນ (bar/lump)
+W0419,ຖ້ວຍ,bowl; cup,self,W0419,derived,classifier word itself used as self
+W0420,ບ່ວງ,spoon,specific,W0115,unverified,own knowledge; general ອັນ
+W0421,ມີດ,knife,specific,,verified,SRC-WIKT:ມີດ headword classifier ດວງ; missing classifier word: ດວງ (star/round things; ດ້າມ may be more usual for knives - own knowledge)
+W0422,ໝໍ້,pot,specific,W0601,unverified,own knowledge; hollow container ໃບ
+W0423,ຕູ້ເຢັນ,refrigerator,specific,W0115,unverified,own knowledge; low confidence (ອັນ or ຫຼັງ)
+W0424,ນ້ຳກ້ອນ,ice,measure,,unverified,own knowledge; counted by ກ້ອນ (lump) which is not in words.csv
+W0425,ຂວດ,bottle,self,W0425,derived,classifier word itself used as self
+W0426,ຖົງ,bag (plastic/paper),self,W0426,unverified,own knowledge; ຖົງ also functions as a container measure
+W0427,ກ່ອງ,box,self,W0427,unverified,own knowledge; ກ່ອງ also functions as a container measure
+W0428,ສະໜາມບິນ,airport,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0429,ທະນາຄານ,bank,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0430,ຮ້ານຄ້າ,store,specific,W0029,unverified,own knowledge; head noun ຮ້ານ
+W0431,ໄປສະນີ,post office; mail,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises (office sense)
+W0432,ສະຖານີ,station,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0433,ແຂວງ,province,self,W0433,unverified,own knowledge
+W0434,ນະຄອນ,city,self,W0434,unverified,own knowledge
+W0435,ຫຼວງພະບາງ,Luang Prabang,none,,unverified,proper noun
+W0436,ປາກເຊ,Pakse,none,,unverified,proper noun
+W0437,ໄທ,Thai; Thailand,none,,unverified,proper noun
+W0438,ຈີນ,China; Chinese,none,,unverified,proper noun
+W0439,ຫວຽດນາມ,Vietnam,none,,unverified,proper noun
+W0440,ອາເມລິກາ,America,none,,unverified,proper noun
+W0441,ຍີ່ປຸ່ນ,Japan,none,,unverified,proper noun
+W0442,ອັງກິດ,English; England,none,,unverified,proper noun
+W0443,ພາສາອັງກິດ,English (language),none,,unverified,language name; not counted
+W0444,ປ່າ,forest; jungle,self,W0444,unverified,own knowledge; low confidence
+W0445,ນ້ຳຕົກ,waterfall,specific,W0838,unverified,own knowledge; low confidence (ແຫ່ງ for sites)
+W0446,ທະເລ,sea,none,,unverified,not normally counted
+W0447,ເກາະ,island,self,W0447,unverified,own knowledge
+W0448,ຂົວ,bridge,self,W0448,unverified,own knowledge
+W0449,ນ້ຳຊາ,tea (drink),measure,W0219,unverified,own knowledge; by cup (ຈອກ)
+W0450,ນ້ຳຕານ,sugar,measure,W0661,unverified,own knowledge; by weight (ກິໂລ)
+W0451,ເກືອ,salt,measure,W0661,unverified,own knowledge; by weight (ກິໂລ)
+W0452,ນ້ຳປາ,fish sauce,measure,W0425,unverified,own knowledge; by bottle (ຂວດ)
+W0453,ໝາກເຜັດ,chili,specific,W0284,unverified,own knowledge; ໝາກ-fruits take ໜ່ວຍ; ເມັດ also possible
+W0454,ຫອມ,fragrant; onion,specific,W0106,unverified,own knowledge; onions are counted by head/bulb (ຫົວ)
+W0455,ໝາກນາວ,lime,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0456,ໝາກພ້າວ,coconut,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0457,ໝາກໂມ,watermelon,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0458,ໝາກກ້ຽງ,orange (fruit),specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0459,ເຂົ້າປຽກ,rice soup,measure,W0419,unverified,own knowledge; by bowl (ຖ້ວຍ)
+W0460,ເຂົ້າປຸ້ນ,rice noodles,measure,W0419,unverified,own knowledge; by bowl (ຖ້ວຍ)
+W0461,ລາບ,laap (minced meat salad),measure,W0629,unverified,own knowledge; by plate (ຈານ)
+W0465,ແກງ,soup; curry,measure,W0419,unverified,own knowledge; by bowl (ຖ້ວຍ)
+W0466,ເຂົ້າໜົມ,snack; dessert,specific,W0115,unverified,own knowledge; low confidence (general ອັນ)
+W0467,ເຫຼົ້າ,liquor; alcohol,measure,W0425,unverified,own knowledge; by bottle (ຂວດ)
+W0468,ນ້ຳດື່ມ,drinking water,measure,W0425,unverified,own knowledge; by bottle (ຂວດ)
+W0469,ອາຫານທ່ຽງ,lunch,none,,unverified,meal name; not counted
+W0479,ເພງ,song,self,W0479,unverified,own knowledge
+W0501,ຝັນ,dream,none,,unverified,low confidence
+W0507,ສັນຍາ,promise,none,,unverified,abstract noun
+W0523,ອັນຕະລາຍ,dangerous; danger,none,,unverified,abstract noun
+W0536,ສີ,colour,self,W0536,unverified,own knowledge; ສອງ ສີ
+W0541,ຟ້າ,sky; blue,none,,unverified,not counted
+W0543,ແດດ,sunshine,none,,unverified,mass noun
+W0544,ລົມ,wind; chat,none,,unverified,mass noun
+W0545,ເມກ,cloud,specific,,unverified,missing classifier word: ກ້ອນ (lump/mass); low confidence
+W0546,ດາວ,star,specific,,unverified,missing classifier word: ດວງ (stars/sun/moon)
+W0547,ຕາເວັນ,sun,specific,,unverified,missing classifier word: ດວງ (stars/sun/moon); normally just one sun
+W0548,ຕົ້ນໄມ້,tree,specific,W0926,unverified,own knowledge; trees/plants ຕົ້ນ
+W0549,ດອກໄມ້,flower,specific,W0927,unverified,own knowledge; flowers ດອກ
+W0550,ດິນ,earth; soil; land,none,,unverified,mass noun
+W0551,ລະດູ,season,self,W0551,unverified,own knowledge
+W0552,ລະດູຝົນ,rainy season,none,,unverified,named season
+W0553,ລະດູແລ້ງ,dry season,none,,unverified,named season
+W0554,ນົກ,bird,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0555,ຊ້າງ,elephant,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0556,ເສືອ,tiger,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0557,ລີງ,monkey,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0558,ງູ,snake,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0559,ຍຸງ,mosquito,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0560,ເປັດ,duck,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0561,ຄວາຍ,water buffalo,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0562,ມ້າ,horse,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0563,ເບີໂທ,phone number,none,,unverified,identifier; not counted
+W0564,ທີ່ຢູ່,address,none,,unverified,abstract noun
+W0565,ຄຳ,word,self,W0565,unverified,own knowledge; ສອງ ຄຳ
+W0566,ປະໂຫຍກ,sentence,self,W0566,unverified,own knowledge
+W0567,ຄວາມ,-ness (turns words into nouns); matter,none,,unverified,nominalising prefix
+W0568,ຄວາມໝາຍ,meaning,none,,unverified,abstract noun
+W0570,ຄວາມຮັກ,love (noun),none,,unverified,abstract noun
+W0571,ຄວາມສຸກ,happiness,none,,unverified,abstract noun
+W0576,ຂ້າງໃນ,inside,none,,unverified,location word
+W0577,ຂ້າງນອກ,outside,none,,unverified,location word
+W0582,ບໍລິການ,service; serve,none,,unverified,abstract noun
+W0583,ລູກຄ້າ,customer,specific,W0040,derived,persons take ຄົນ (W0040)
+W0584,ເງິນສົດ,cash,none,,unverified,mass noun
+W0595,ອຸບັດຕິເຫດ,accident,specific,W0323,unverified,own knowledge; occurrences counted by ຄັ້ງ; low confidence
+W0596,ໂຮງໜັງ,cinema,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0597,ຮູບ,picture; photo,self,W0597,unverified,own knowledge; ຮູບ ສອງ ຮູບ
+W0599,ກິລາ,sport,none,,unverified,abstract/activity noun
+W0600,ບານເຕະ,football (soccer),none,,unverified,sport name
+W0601,ໃບ,leaf; classifier for flat or hollow things,self,W0601,derived,classifier word itself used as self
+W0603,ເມນູ,menu,specific,W0601,unverified,own knowledge; sheet ໃບ
+W0604,ເຂົ້າຈ້າວ,plain rice (non-sticky),measure,W0419,unverified,own knowledge; by bowl (ຖ້ວຍ)
+W0605,ເຂົ້າຜັດ,fried rice,measure,W0629,unverified,own knowledge; by plate (ຈານ)
+W0606,ເຂົ້າຕົ້ມ,rice soup; boiled-rice porridge,measure,W0419,unverified,own knowledge; by bowl (ຖ້ວຍ)
+W0607,ຊີ້ນງົວ,beef,measure,W0661,unverified,own knowledge; by weight (ກິໂລ)
+W0608,ຊີ້ນໝູ,pork,measure,W0661,unverified,own knowledge; by weight (ກິໂລ)
+W0609,ຊີ້ນໄກ່,chicken (meat),measure,W0661,unverified,own knowledge; by weight (ກິໂລ)
+W0610,ກຸ້ງ,shrimp; prawn,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0611,ປາແດກ,padaek (fermented fish sauce); salted fish,measure,W0425,unverified,own knowledge; by bottle/jar (ຂວດ)
+W0612,ໄສ້ກອກ,sausage,specific,W0613,unverified,own knowledge; link/strand ເສັ້ນ; low confidence
+W0613,ເສັ້ນ,line; strand (also noodles),self,W0613,derived,classifier word itself used as self
+W0614,ແຈ່ວ,jeow (spicy dipping paste or sauce),measure,W0419,unverified,own knowledge; by small bowl (ຖ້ວຍ)
+W0615,ນ້ຳມັນ,oil (cooking or petroleum); gasoline,measure,W0425,unverified,own knowledge; by bottle (ຂວດ); fuel by litre ລິດ W0663
+W0622,ເຄື່ອງດື່ມ,drink; beverage,measure,W0218,unverified,own knowledge; by glass (ແກ້ວ)
+W0623,ນ້ຳອັດລົມ,soft drink; soda (fizzy),measure,W0425,unverified,own knowledge; by bottle (ຂວດ)
+W0625,ອາຫານລາວ,Lao food,none,,unverified,cuisine name
+W0626,ອາຫານທະເລ,seafood,none,,unverified,mass noun
+W0627,ອາຫານຄ່ຳ,dinner; evening meal,none,,unverified,meal name; not counted
+W0628,ຮ້ານກາເຟ,coffee shop; cafe,specific,W0029,unverified,own knowledge; head noun ຮ້ານ
+W0629,ຈານ,plate; dish,specific,W0601,verified,SRC-WIKT:ຈານ headword classifier ໃບ
+W0630,ສ້ອມ,fork,specific,W0115,unverified,own knowledge; general ອັນ
+W0631,ໄມ້ຖູ່,chopsticks,specific,W0659,unverified,own knowledge; chopsticks by pair (ຄູ່)
+W0632,ກະຕິບ,sticky-rice basket (for serving),specific,W0601,unverified,own knowledge; container ໃບ
+W0633,ກະທຽມ,garlic,specific,W0106,unverified,own knowledge; bulb ຫົວ
+W0634,ຜັກບົ່ວ,spring onion; onion,specific,W0926,unverified,own knowledge; plant ຕົ້ນ
+W0635,ໝາກເລັ່ນ,tomato,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0636,ໝາກແຕງ,cucumber,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0637,ໝາກຫຸ່ງ,papaya,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0638,ມັນຝະລັ່ງ,potato,specific,W0106,unverified,own knowledge; tuber ຫົວ
+W0639,ໝາກນັດ,pineapple,specific,W0284,unverified,own knowledge; fruit ໜ່ວຍ
+W0640,ຂີງ,ginger,specific,W0106,unverified,own knowledge; rhizome ຫົວ; or by weight ກິໂລ
+W0642,ເງິນທອນ,change (money returned),none,,unverified,mass/abstract
+W0643,ຄ່າ,cost; fee; value,none,,unverified,abstract noun
+W0647,ສ່ວນຫຼຸດ,discount,none,,unverified,abstract noun
+W0648,ເງິນກີບ,Lao kip (money),measure,W0297,unverified,own knowledge; counted via unit ກີບ
+W0649,ເງິນບາດ,Thai baht (money),measure,,unverified,own knowledge; counted via unit ບາດ (baht) which is only in words.csv as part of this word
+W0650,ໂດລາ,dollar,self,W0650,unverified,own knowledge; currency unit counted directly
+W0653,ກະເປົາເງິນ,wallet,specific,W0601,unverified,own knowledge; container ໃບ
+W0654,ສິນຄ້າ,goods; merchandise,none,,unverified,mass noun
+W0655,ຕະຫຼາດເຊົ້າ,morning market,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0657,ເຄື່ອງນຸ່ງ,clothes; clothing,measure,W0660,unverified,own knowledge; by set/outfit (ຊຸດ)
+W0658,ຂະໜາດ,size,none,,unverified,abstract noun
+W0659,ຄູ່,pair; couple; classifier for pairs,self,W0659,derived,classifier word itself used as self
+W0660,ຊຸດ,set; suit; outfit,self,W0660,derived,classifier word itself used as self
+W0661,ກິໂລ,kilo; kilogram; kilometre,self,W0661,unverified,own knowledge; unit counted directly
+W0662,ແມັດ,metre,self,W0662,unverified,own knowledge; unit counted directly
+W0663,ລິດ,litre,self,W0663,unverified,own knowledge; unit counted directly
+W0664,ມັດ,to tie; bundle,self,W0664,unverified,own knowledge; bundle noun counted directly
+W0665,ຂອງຝາກ,gift; souvenir (brought for others),specific,W0115,unverified,own knowledge; general ອັນ
+W0666,ລຳ,classifier for boats and aircraft,self,W0666,derived,classifier word itself used as self
+W0667,ລົດຈັກ,motorcycle; motorbike,specific,W0285,derived,compound of ລົດ (classifier ຄັນ verified at SRC-WIKT:ລົດ)
+W0668,ລົດຖີບ,bicycle,specific,W0285,derived,compound of ລົດ (classifier ຄັນ verified at SRC-WIKT:ລົດ)
+W0669,ຕຸກຕຸກ,tuk-tuk (three-wheeled taxi),specific,W0285,unverified,own knowledge; vehicles ຄັນ
+W0670,ແທັກຊີ,taxi,specific,W0285,unverified,own knowledge; vehicles ຄັນ
+W0671,ລົດໄຟ,train,specific,W0285,derived,compound of ລົດ (classifier ຄັນ verified at SRC-WIKT:ລົດ); trains may also be counted by carriage/set
+W0672,ລົດຕູ້,van; minivan,specific,W0285,derived,compound of ລົດ (classifier ຄັນ verified at SRC-WIKT:ລົດ)
+W0673,ເຮືອ,boat,specific,W0666,verified,SRC-WIKT:ເຮືອ headword classifier ລຳ
+W0675,ເຮືອບິນ,airplane,specific,W0666,derived,compound of ເຮືອ (classifier ລຳ verified at SRC-WIKT:ເຮືອ)
+W0676,ແຜນທີ່,map,specific,,unverified,missing classifier word: ແຜ່ນ (sheet); low confidence
+W0677,ເໜືອ,north,none,,unverified,direction word
+W0678,ໃຕ້,south; under; below,none,,unverified,direction word
+W0679,ຕາເວັນອອກ,east; sunrise,none,,unverified,direction word
+W0680,ຕາເວັນຕົກ,west; sunset,none,,unverified,direction word
+W0681,ສີ່ແຍກ,intersection; crossroads,specific,W0838,unverified,own knowledge; low confidence (ແຫ່ງ for sites)
+W0682,ໄຟແດງ,red light; traffic light,none,,unverified,named signal; not counted
+W0684,ບ່ອນຈອດລົດ,parking lot; parking place,specific,W0838,unverified,own knowledge; low confidence (ແຫ່ງ for sites)
+W0685,ປ້ຳນ້ຳມັນ,gas station; petrol pump,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0687,ປ້າຍ,sign; signboard,specific,W0115,unverified,own knowledge; general ອັນ
+W0690,ລົດຕິດ,traffic jam; the traffic is jammed,none,,unverified,state/event; not counted
+W0691,ສະຖານີລົດເມ,bus station; bus stop,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0692,ປີ້,ticket,specific,W0601,unverified,own knowledge; ticket ໃບ (matches ໃບ gloss in words.csv)
+W0694,ທາງຫຼວງ,highway; main road,specific,W0613,unverified,own knowledge; roads ເສັ້ນ
+W0699,ຖອກທ້ອງ,diarrhea,none,,unverified,illness; not counted
+W0700,ຮາກ,to vomit; vomit,none,,unverified,noun sense (vomit) is mass
+W0703,ຮ້ານຢາ,pharmacy,specific,W0029,unverified,own knowledge; head noun ຮ້ານ
+W0704,ຢາແກ້ປວດ,painkiller,measure,W0705,unverified,own knowledge; pills (ເມັດ)
+W0705,ເມັດ,seed; grain; pill; classifier for small round things,self,W0705,derived,classifier word itself used as self
+W0706,ຢາເມັດ,pill; tablet,specific,W0705,unverified,own knowledge; head noun ເມັດ
+W0707,ຄລີນິກ,clinic,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0708,ພະຍາບານ,nurse,specific,W0040,derived,persons take ຄົນ (W0040)
+W0712,ເຂັມ,needle; pin,specific,W0115,unverified,own knowledge; general ອັນ (kept existing)
+W0713,ສຸຂະພາບ,health,none,,unverified,abstract noun
+W0714,ຮ່າງກາຍ,body,none,,unverified,mass/abstract
+W0715,ເລືອດ,blood,measure,,unverified,own knowledge; by drop (ຢອດ) not in words.csv; mass noun
+W0716,ບາດແຜ,wound,self,W0716,unverified,own knowledge; low confidence
+W0718,ເຫື່ອ,sweat,none,,unverified,mass noun
+W0719,ກະດູກ,bone,specific,W0115,unverified,own knowledge; low confidence (ອັນ)
+W0720,ຜິວ,skin,none,,unverified,mass noun
+W0721,ນິ້ວ,finger; toe,self,W0721,unverified,own knowledge; ສອງ ນິ້ວ
+W0722,ບ່າ,shoulder,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0723,ແອວ,waist,none,,unverified,single body part; not normally counted
+W0724,ເຂົ່າ,knee,specific,W0319,unverified,own knowledge; paired body part counted by ຂ້າງ
+W0725,ລີ້ນ,tongue,none,,unverified,single body part; not normally counted
+W0731,ແປງຖູແຂ້ວ,toothbrush,specific,W0115,unverified,own knowledge; general ອັນ
+W0735,ຜ້າເຊັດໂຕ,towel,specific,,unverified,missing classifier word: ຜືນ (piece of cloth)
+W0741,ຂີ້ເຫຍື້ອ,rubbish; trash; garbage,measure,W0426,unverified,own knowledge; by bag (ຖົງ)
+W0745,ໝອນ,pillow; cushion,specific,W0601,unverified,CHANGED from W0115: ໃບ (W0601) is the usual CL for pillows (own knowledge); ອັນ remains acceptable
+W0746,ຜ້າຫົ່ມ,blanket,specific,,unverified,missing classifier word: ຜືນ (piece of cloth)
+W0747,ຕູ້,cabinet; cupboard; booth,specific,W0115,unverified,own knowledge; general ອັນ (kept existing)
+W0748,ຝາ,wall; lid,self,W0748,unverified,own knowledge; low confidence
+W0749,ພື້ນ,floor,none,,unverified,surface; not counted
+W0750,ຊັ້ນ,floor (storey); layer; shelf; class,self,W0750,unverified,own knowledge; ສອງ ຊັ້ນ
+W0751,ບັນໄດ,stairs; staircase,specific,W0115,unverified,own knowledge; low confidence
+W0752,ຫຼັງຄາ,roof,specific,W0115,unverified,own knowledge; low confidence
+W0753,ຮົ້ວ,fence; hedge,self,W0753,unverified,own knowledge; low confidence
+W0754,ນ້ຳປະປາ,tap water; running water,none,,unverified,mass noun
+W0755,ກະຈົກ,mirror,specific,W0115,unverified,own knowledge; low confidence (ອັນ)
+W0756,ຫວີ,comb; to comb,specific,W0115,unverified,own knowledge; general ອັນ
+W0758,ຜ້າມ່ານ,curtain,specific,,unverified,missing classifier word: ຜືນ (piece of cloth)
+W0759,ເຄື່ອງຊັກຜ້າ,washing machine,specific,W0298,unverified,own knowledge; machines ເຄື່ອງ
+W0760,ຫ້ອງນັ່ງຫຼິ້ນ,living room,specific,W0012,unverified,own knowledge; head noun ຫ້ອງ
+W0761,ວັນທີ່,date (day of the month),none,,unverified,date; not counted
+W0762,ເດືອນນີ້,this month,none,,unverified,deictic time phrase
+W0763,ເດືອນໜ້າ,next month,none,,unverified,deictic time phrase
+W0764,ອາທິດນີ້,this week,none,,unverified,deictic time phrase
+W0765,ປີນີ້,this year,none,,unverified,deictic time phrase
+W0766,ທ້າຍອາທິດ,weekend,none,,unverified,named period
+W0767,ວັນພັກ,holiday; day off,specific,W0332,unverified,own knowledge; counted by ວັນ (days)
+W0768,ວັນເກີດ,birthday,none,,unverified,named day
+W0769,ປະຕິທິນ,calendar,specific,W0115,unverified,own knowledge; low confidence
+W0770,ມັງກອນ,January,none,,unverified,proper noun (month name)
+W0771,ກຸມພາ,February,none,,unverified,proper noun (month name)
+W0772,ມີນາ,March,none,,unverified,proper noun (month name)
+W0773,ເມສາ,April,none,,unverified,proper noun (month name)
+W0774,ພຶດສະພາ,May,none,,unverified,proper noun (month name)
+W0775,ມິຖຸນາ,June,none,,unverified,proper noun (month name)
+W0776,ກໍລະກົດ,July,none,,unverified,proper noun (month name)
+W0777,ສິງຫາ,August,none,,unverified,proper noun (month name)
+W0778,ກັນຍາ,September,none,,unverified,proper noun (month name)
+W0779,ຕຸລາ,October,none,,unverified,proper noun (month name)
+W0780,ພະຈິກ,November,none,,unverified,proper noun (month name)
+W0781,ທັນວາ,December,none,,unverified,proper noun (month name)
+W0793,ເລກ,number; numeral; digit,specific,W0097,unverified,own knowledge; digits are ໂຕເລກ (ໂຕ); low confidence
+W0798,ເຄິ່ງໜຶ່ງ,one half,none,,unverified,fraction word
+W0799,ສ່ວນ,part; portion; share,self,W0799,derived,classifier word itself used as self
+W0841,ອາຍ,feel shy; feel embarrassed; (noun) steam,none,,unverified,noun sense (steam) is mass
+W0853,ຄວາມຮູ້ສຶກ,feeling; sensation,none,,unverified,abstract noun
+W0872,ການ,work; affairs; prefix that turns a verb into a noun,none,,unverified,nominalising prefix/abstract
+W0873,ງານ,work; task; event; celebration,self,W0873,unverified,own knowledge; ງານ ສອງ ງານ
+W0874,ຄົນງານ,worker; labourer,specific,W0040,derived,compound with ຄົນ; persons take ຄົນ (W0040)
+W0875,ອາຊີບ,profession; occupation,self,W0875,unverified,own knowledge
+W0876,ບໍລິສັດ,company; firm,specific,W0838,unverified,own knowledge; low confidence (ແຫ່ງ for institutions)
+W0877,ເງິນເດືອນ,salary; monthly pay,none,,unverified,mass noun
+W0878,ຫົວໜ້າ,boss; chief; head (of a group),specific,W0040,derived,persons take ຄົນ (W0040)
+W0879,ຜູ້ຈັດການ,manager,specific,W0040,derived,persons take ຄົນ (W0040)
+W0880,ໜ້າທີ່,duty; responsibility; role,none,,unverified,abstract noun
+W0881,ເຈົ້າໜ້າທີ່,official; officer,specific,W0040,derived,persons take ຄົນ (W0040)
+W0883,ກອງປະຊຸມ,meeting; conference,specific,W0323,unverified,own knowledge; occurrences by ຄັ້ງ; low confidence
+W0885,ທຸລະກິດ,business,none,,unverified,abstract noun
+W0886,ໂຮງງານ,factory,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0887,ວິສະວະກອນ,engineer,specific,W0040,derived,persons take ຄົນ (W0040)
+W0888,ຊ່າງ,technician; mechanic; craftsman,specific,W0040,derived,persons take ຄົນ (W0040)
+W0889,ຊາວນາ,farmer,specific,W0040,derived,persons take ຄົນ (W0040)
+W0890,ທະຫານ,soldier,specific,W0040,derived,persons take ຄົນ (W0040)
+W0891,ປະສົບການ,experience,none,,unverified,abstract noun
+W0892,ວິຊາ,subject; field of study,self,W0892,unverified,own knowledge; ສອງ ວິຊາ
+W0893,ບົດຮຽນ,lesson,specific,,unverified,missing classifier word: ບົດ (lesson/chapter)
+W0894,ຫ້ອງຮຽນ,classroom,specific,W0012,unverified,own knowledge; head noun ຫ້ອງ
+W0895,ວຽກບ້ານ,homework,none,,unverified,mass noun
+W0896,ສອບເສັງ,take an exam; exam,none,,unverified,low confidence; event noun
+W0897,ຄະແນນ,score; mark; grade; vote,self,W0897,unverified,own knowledge; ສອງ ຄະແນນ
+W0898,ຄະນິດສາດ,mathematics,none,,unverified,school subject name
+W0899,ມະຫາວິທະຍາໄລ,university,specific,W0838,unverified,own knowledge; ແຫ່ງ for institutions
+W0901,ວີຊາ,visa,specific,W0601,unverified,own knowledge; document sheet ໃບ; low confidence
+W0902,ໜັງສືຜ່ານແດນ,passport,specific,,unverified,missing classifier word: ເຫຼັ້ມ (booklet); ຫົວ W0106 may also be used
+W0903,ເຮືອນພັກ,guesthouse; lodging,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0904,ຫ້ອງຫວ່າງ,vacant room; room available,specific,W0012,unverified,own knowledge; head noun ຫ້ອງ
+W0905,ການເດີນທາງ,journey; trip; travel,none,,unverified,abstract noun
+W0906,ສະຖານທີ່,place; location; venue,specific,W0838,unverified,own knowledge; ແຫ່ງ for places (kept existing)
+W0907,ທິວທັດ,scenery; view; landscape,none,,unverified,mass noun
+W0909,ສະໜາມ,field; ground; court,specific,W0838,unverified,own knowledge; ແຫ່ງ for sites
+W0910,ສະໜາມກິລາ,stadium,specific,W0838,unverified,own knowledge; ແຫ່ງ for sites
+W0911,ສວນສາທາລະນະ,public park,specific,W0838,unverified,own knowledge; ແຫ່ງ for sites
+W0912,ສວນສັດ,zoo,specific,W0838,unverified,own knowledge; ແຫ່ງ for sites (kept existing)
+W0913,ຫໍ,tower; hall; high building,specific,W0838,unverified,own knowledge; low confidence
+W0914,ຫໍສະໝຸດ,library,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0915,ຫໍພິພິດຕະພັນ,museum,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0916,ສຳນັກງານ,office; headquarters,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0917,ສະຖານທູດ,embassy,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0918,ສະຖານີຕຳຫຼວດ,police station,specific,W0838,unverified,own knowledge; ແຫ່ງ for premises
+W0919,ປະຕູໄຊ,Patuxai (Victory Gate monument in Vientiane),none,,unverified,proper noun
+W0920,ທາດຫຼວງ,That Luang (the great stupa in Vientiane),none,,unverified,proper noun
+W0921,ແມ່ນ້ຳຂອງ,Mekong River,none,,unverified,proper noun
+W0922,ແຄມ,bank; edge; shore,none,,unverified,location word
+W0923,ຊາຍແດນ,border; frontier,none,,unverified,not normally counted
+W0924,ດ່ານ,checkpoint; border crossing; pass,specific,W0838,unverified,own knowledge; low confidence
+W0925,ໃຈກາງເມືອງ,city centre; downtown,none,,unverified,location noun
+W0926,ຕົ້ນ,trunk; stem; classifier for trees and plants,self,W0926,derived,classifier word itself used as self
+W0927,ດອກ,flower; classifier for flowers,self,W0927,derived,classifier word itself used as self
+W0928,ຟ້າຮ້ອງ,thunder,none,,unverified,weather phenomenon
+W0929,ພາຍຸ,storm,self,W0929,unverified,own knowledge; low confidence
+W0930,ນ້ຳຖ້ວມ,flood,none,,unverified,event; not counted
+W0931,ໝອກ,fog; mist,none,,unverified,mass noun
+W0932,ຫີນ,rock; stone,specific,,unverified,missing classifier word: ກ້ອນ (lump/stone)
+W0933,ຊາຍ,sand,none,,unverified,mass noun
+W0934,ໜອງ,pond; lake; swamp,self,W0934,unverified,own knowledge
+W0935,ຫ້ວຍ,stream; creek,specific,,unverified,missing classifier word: ສາຍ (strand/stream)
+W0936,ຖ້ຳ,cave,self,W0936,unverified,own knowledge
+W0937,ຫຍ້າ,grass; weed,none,,unverified,mass noun
+W0938,ໃບໄມ້,leaf (of a tree),specific,W0601,derived,head noun ໃບ is itself the classifier word (W0601)
+W0939,ຮາກ,root (of a plant),self,W0939,unverified,own knowledge; low confidence
+W0940,ໄຜ່,bamboo,specific,W0926,unverified,own knowledge; plants ຕົ້ນ
+W0941,ໜູ,mouse; rat,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0942,ກະຕ່າຍ,rabbit; hare,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0943,ແບ້,goat,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0944,ແກະ,sheep; to peel; to engrave,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0945,ແມງ,insect; bug,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0946,ແມງວັນ,fly (insect),specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0947,ມົດ,ant,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0948,ກົບ,frog,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0949,ເຕົ່າ,turtle; tortoise,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0950,ຜີເສື້ອ,butterfly,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0951,ໝີ,bear,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0952,ກວາງ,deer,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0953,ປູ,crab,specific,W0097,unverified,own knowledge; animals take ໂຕ
+W0954,ຄື້ນ,wave,self,W0954,unverified,own knowledge; low confidence
+W0955,ບຸນ,festival; religious celebration; merit,self,W0955,unverified,own knowledge; low confidence
+W0956,ບາສີ,baci ceremony (tying white strings on the wrist for good luck),none,,unverified,ceremony name; not counted
+W0958,ຕັກບາດ,give alms to monks (morning alms),none,,unverified,activity noun
+W0959,ສາສະໜາ,religion,none,,unverified,abstract noun
+W0960,ພຸດທະສາສະໜາ,Buddhism,none,,unverified,proper noun
+W0961,ພະສົງ,Buddhist monk; monks,specific,,unverified,missing classifier word: ອົງ (for monks)
+W0963,ຂວັນ,spirit of the body; guardian spirit; morale,none,,unverified,abstract noun
+W0964,ປະເພນີ,tradition; custom,self,W0964,unverified,own knowledge
+W0965,ວັດທະນະທຳ,culture,none,,unverified,abstract noun
+W0966,ແຕ່ງງານ,get married; wedding,specific,W0873,unverified,own knowledge; wedding as event ງານ; low confidence
+W0968,ປີໃໝ່,New Year,none,,unverified,named holiday
+W0969,ບຸນບັ້ງໄຟ,rocket festival,none,,unverified,named festival
+W0970,ແຄນ,khene (Lao bamboo mouth organ),specific,W0115,unverified,own knowledge; low confidence (ອັນ; ເຄື່ອງ for instruments)
+W0972,ດົນຕີ,music,none,,unverified,mass noun
+W0973,ຜີ,spirit; ghost,specific,W0097,unverified,own knowledge; spirits take ໂຕ; low confidence
+W0974,ວັນຊາດ,national day,none,,unverified,named holiday
+W0975,ອິນເຕີເນັດ,internet,none,,unverified,mass noun
+W0976,ມືຖື,mobile phone,specific,W0298,unverified,own knowledge; devices ເຄື່ອງ
+W0977,ຂ່າວ,news,self,W0977,unverified,own knowledge; ຂ່າວ ສອງ ຂ່າວ (news items); low confidence
+W0978,ຂໍ້ຄວາມ,message; text,self,W0978,unverified,own knowledge; low confidence
+W0979,ອີເມວ,email,self,W0979,unverified,own knowledge; ສະບັບ also possible (not in words.csv); low confidence
+W0980,ໜັງສື,book; letter (character); document,specific,W0106,unverified,own knowledge; books ຫົວ (see ປຶ້ມ); documents/letters differ
+W0981,ໜັງສືພິມ,newspaper,specific,,unverified,missing classifier word: ສະບັບ (issue/copy)
+W0982,ວິທະຍຸ,radio,specific,W0298,unverified,own knowledge; devices ເຄື່ອງ
+W0983,ສັນຍານ,signal,none,,unverified,abstract noun
+W0984,ລະຫັດຜ່ານ,password,none,,unverified,identifier; not counted
+W0985,ຂໍ້ມູນ,information; data,none,,unverified,mass noun
+W0986,ວິດີໂອ,video,self,W0986,unverified,own knowledge; low confidence
+W0987,ໄວຟາຍ,wifi,none,,unverified,mass noun
+W0988,ກ້ອງ,camera; lens; tube,specific,W0298,unverified,own knowledge; devices ເຄື່ອງ; low confidence
+W0989,ເວັບໄຊຕ໌,website,specific,W0838,unverified,own knowledge; low confidence
+W0990,ເຄືອຂ່າຍ,network,none,,unverified,abstract noun

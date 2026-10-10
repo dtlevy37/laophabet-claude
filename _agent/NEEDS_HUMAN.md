@@ -18,6 +18,21 @@
 - **kw-cluster IPA:** Wiktionary keeps writing ກວ/ຄວ as -uːə̯- (ກວາດ, ຄວາມຮູ້ສຶກ, ຂໍ້ຄວາມ). The project otherwise uses kw-/kʰw-. Tones are unaffected; the IPA style is inconsistent until this is decided.
 - **Classifiers** in the new batch are mostly agent assumptions (noted per row). ຄູ່ (pair, the classifier for ໄມ້ຖູ່) is not a word yet. ມືຖື has none (ໜ່ວຍ or ເຄື່ອງ?).
 
+## Classifiers (2026-10-10)
+- 453 of 534 noun classifier assignments are agent knowledge (`classifier_confidence=unverified`); only 10 were confirmed on Wiktionary.
+- Doubtful assignments:
+  - ຕຽງ: ອັນ or ຫຼັງ?
+  - ຕູ້ເຢັນ: ອັນ or ຫຼັງ?
+  - ແວ່ນຕາ: ອັນ or ຄູ່?
+  - ມີດ: Wiktionary says ດວງ; is ດ້າມ more usual?
+  - ວຽກ: self, or not counted?
+  - ແຂ້ວ: self?
+  - ເລກ: ໂຕ?
+  - ກະແຈ: ດອກ?
+  - Paired body parts (ຕາ ມື ຕີນ ຫູ ຂາ ແຂນ ບ່າ ເຂົ່າ): ຂ້າງ?
+- Changed: ໝອນ from ອັນ to ໃບ.
+- 10 classifier words are missing from words.csv: ຜືນ ກ້ອນ ດວງ ສາຍ ອົງ ແຜ່ນ ດ້າມ ບົດ ເຫຼັ້ມ ສະບັບ. 23 nouns wait on them.
+
 ## Awaiting approval
 - `_agent/proposed-scripts/tone_derive.py`: derives tones per syllable and cross-checks against recorded tones and IPA. Run with `--selftest` first.
 
