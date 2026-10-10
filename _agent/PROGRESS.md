@@ -394,7 +394,7 @@ pron_tips are agent-written guidance.
 - Open decision: add the 10 missing classifier words to reach exactly 1000?
 - **User decision:** don't use sealang.net (outdated SSL certificates) or Enfield's grammar (little Lao script). Continue without them. The user is not worried about crowd-sourced sources (applies to Wiktionary too), so Glosbe remains a possible future second source if wanted.
 - **User decision:** add the 10 missing classifier words (W0991–W1000, topic `classifiers`) to reach exactly 1000.
-- **User design direction ("trunk and branches"):** the first ~100–200 words are the solid trunk, a fixed baseline progression. After that, learning branches by the learner's interest and direction (topics) rather than following one official path. Implication for app logic: the words' `topic` acts as the branch key, and learning_order beyond the trunk is a default suggestion, not a requirement. User follow-up: do NOT add a core/trunk field. Position in intro_order (the first ~100–200) already puts a word in the trunk. Branch categories such as school, work and hobbies may come much later.
+- **User design direction ("trunk and branches"):** the first ~100–200 words are the solid trunk, a fixed baseline progression. After that, learning branches by the learner's interest and direction (topics) rather than following one official path. Implication for app logic: the words' `topic` acts as the branch key, and learning_order beyond the trunk is a default suggestion, not a requirement. User follow-up (see the retrospective entry below): do NOT add a core/trunk field. Position in intro_order (the first ~100–200) already puts a word in the trunk. Branch categories such as school, work and hobbies may come much later.
 
 ## 2026-10-10 FINAL: 1000 words
 - **Added 10 classifier words W0991–W1000:** ຜືນ ກ້ອນ ດວງ ສາຍ ອົງ ແຜ່ນ ດ້າມ ບົດ ເຫຼັ້ມ ສະບັບ.
@@ -414,3 +414,19 @@ pron_tips are agent-written guidance.
 - **merge_words limitation:** it refuses self-referencing classifier_word_id. Workaround used: merge with the field empty, then set it with apply_columns. Fix in a future rev.
 - **Review:** ມີດ uses ດວງ (from Wiktionary's ມີດ page), but Wiktionary's ເຫຼັ້ມ ("pointed objects") suggests ເຫຼັ້ມ. Added to NEEDS_HUMAN.
   Then run tone_derive --fill → build_order → validate.
+- merge_words rev 2 (self classifier references) approved and tested, positive and negative.
+
+## 2026-10-10 Retrospective decisions + tooling round (user A–I)
+- **A. IDs:** words W + 6 digits, sentences S + 9 digits. `rekey_ids.py` migrates all data once (idempotent). CLAUDE.md is updated at the end, by the user. The word cap stays 1000 until then.
+- **B. Drafter agent and checker:**
+  - Drafter: `_agent/proposed-config/agents/drafter.md` (uses Tatoeba and Big Brother Mouse for real sentences; writes to `_agent/drafts/`; placeholder IDs).
+  - Guard: `_agent/proposed-config/guard-config.json` adds `drafter` to allowedSubagents. `.claude/` is protected, so the user copies both.
+  - Checker: `check_drafts.py` (no writes).
+- **C. Meanings:** one row per spelling+meaning. Postgres groups on `lao`. Sentences pick the meaning with word_overrides.
+- **D. Review hook:** `confidence` / `classifier_confidence` plus stable IDs are enough; nothing added.
+- **E. Order:** linear and loose; fine.
+- **F. Pipeline:** `pipeline.sh` (tone fill → build → validate --quiet).
+- **G. Duplicates:** handled by check_drafts (spelling clashes across drafts and data) and by the drafter reading pending drafts.
+- **H.** `.gitattributes`: LF everywhere, CRLF for .ps1. approved-scripts and proposed-scripts are `-text` (byte-exact for the hash check).
+- **I. Approvals:** grouped. This round's group: rekey_ids.py, check_drafts.py, pipeline.sh, merge_words.py rev 3 (6-digit IDs, sentence renumbering, override remap), validate_data.py rev 3 (ID format checks).
+- **After approval:** rekey_ids --check → rekey_ids → pipeline.sh → commit. Then test check_drafts on a small drafter batch.
