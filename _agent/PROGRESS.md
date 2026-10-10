@@ -430,3 +430,12 @@ pron_tips are agent-written guidance.
 - **H.** `.gitattributes`: LF everywhere, CRLF for .ps1. approved-scripts and proposed-scripts are `-text` (byte-exact for the hash check).
 - **I. Approvals:** grouped. This round's group: rekey_ids.py, check_drafts.py, pipeline.sh, merge_words.py rev 3 (6-digit IDs, sentence renumbering, override remap), validate_data.py rev 3 (ID format checks).
 - **After approval:** rekey_ids --check → rekey_ids → pipeline.sh → commit. Then test check_drafts on a small drafter batch.
+
+## 2026-10-10 STOPPED: 5-hour limit reached (user request)
+- **Resume point:** waiting on the user for:
+  1. Approval of the 5-script group: rekey_ids.py, check_drafts.py, pipeline.sh, merge_words.py rev 3, validate_data.py rev 3.
+  2. Copying `_agent/proposed-config/agents/drafter.md` to `.claude/agents/`.
+  3. Adding "drafter" to `allowedSubagents` in `.claude/guard-config.json`.
+- **Not started:** ID migration. Data still uses 4-digit IDs. validate_data rev 3, once approved, will report errors until `rekey_ids.py` has run, so run rekey first.
+- **paused.json:** the user edited `.claude/state/paused.json` by hand. At stop it was valid JSON {since 1791647210, until 1791647520, five 95}, a ~5-minute window that expires by itself. `.claude/` is protected, so the agent can't edit it. If the guard misbehaves on resume, the user should check this file.
+- **Later:** the user updates CLAUDE.md (word cap, drafter, pipeline, ID formats) after the tooling is in place.
