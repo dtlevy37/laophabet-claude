@@ -87,4 +87,21 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 - Drafter cost c1–c6: about 150–180k tokens per batch on opus (~2.4k tokens per word).
 - **User switched the drafter to `model: sonnet`** (2026-10-10). Next batch is a trial: compare cost and quality.
 - To do: add ຜູ້ (now W0013xx) to components of ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້.
-- Next: wait for the user; then pick new categories (all user-listed ones done) and continue toward the 1500 checkpoint. Earlier list: fruits, vegetables, meat, animals, transportation, directions.
+- All user-listed categories are done.
+
+## 2026-10-10 Batch c7 (weather, family, body): drafted on sonnet, NOT yet checked or merged
+- 74 words and 148 sentences in per-word files `_agent/drafts/c7-001-words.csv` / `c7-001-sentences.csv` … `c7-074-*`. Words: 15 verified, 59 unverified. Cost about 147k tokens and 189 tool calls (barely below opus).
+- Homograph ຕາ "maternal grandfather" (c7-W042), so use `--allow-homograph ຕາ`.
+- Hand fix needed: c7-067 ຕາເວັນຂຶ້ນ gloss "sunrise; east" → "sunrise".
+- **Resume here:** check_drafts on `c7-*-words.csv` / `c7-*-sentences.csv` → tone_derive on the drafts → merge_words (accepts several batch files) → pipeline → move to merged/ → commit. That reaches about 1498 words, so the 1500 checkpoint is next.
+- To do: add ຜູ້ to the components of ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້.
+
+## TODO: more efficient drafter (next run)
+The cost is in growing context: every tool call re-sends the whole transcript, so 190 calls × a growing context is the bill. Writing one word at a time inside one long agent run does not fix this.
+1. **Main agent picks the word list** (lao + gloss) up front with one cheap grep against vocab.csv. The drafter does no candidate search.
+2. **Short drafter runs:** about 10–15 words per call, many calls in sequence. Each run starts with a small context. Fixed overhead stays small once the next point is in place.
+3. **Tiny brief, no big reads:** paste the words.csv/sentences.csv headers, 2 example rows and the classifier rules into the brief, so the drafter skips reading SCHEMA.md and data files. Grep vocab only for sentence tokens.
+4. **Skip Wiktionary for compounds** of known words (they 404); take IPA from the components. Fetch only roots, and ask the fetch for only IPA, pos and classifier.
+5. **Fewer writes:** one words file and one sentences file per run (not per word).
+6. **Measure** tokens per word for each run and compare with about 2k per word for c1–c7.
+- The user must update `.claude/agents/drafter.md` to match (the agent cannot edit `.claude/`). Its report section still mentions Tatoeba/BBM.
