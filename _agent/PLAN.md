@@ -11,11 +11,11 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] Propose the tone-derivation script to `_agent/proposed-scripts/` for approval (awaiting approval)
 
 ## Phase 1: First 30 words
-- [ ] Draft the top 30 words by frequency/usefulness, seeded by the user's list (eat, drink, need, want, have, ...)
-- [ ] Fill all word fields; derive and cross-check tones
-- [ ] 2+ example sentences per word, using introduced words as priority, using upcoming words 2nd priority
-- [ ] First sentence templates
-- [ ] **CHECKPOINT 30**: summary, commit, create `_agent/BLOCKED` for user review
+- [x] Draft the top 30 words by frequency/usefulness, seeded by the user's list (eat, drink, need, want, have, ...) (34 words)
+- [x] Fill all word fields; derive and cross-check tones (classifiers not sourced yet)
+- [x] 2+ example sentences per word, using introduced words as priority, using upcoming words 2nd priority (53 sentences; ໃຈ only via compounds)
+- [x] First sentence templates (8) + learning_order.csv (132 steps)
+- [x] **CHECKPOINT 30**: summary, commit, create `_agent/BLOCKED` for user review
 
 ## Phase 2: To 100 words
 - [ ] Next 70 words; track letter and vowel coverage

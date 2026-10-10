@@ -1,0 +1,43 @@
+template_id,slot_name,word_id,source,confidence,notes
+TPL01,statement,W0001,SRC-WIKT:ບໍ່,unverified,ສະບາຍດີບໍ່? How are you?
+TPL01,statement,W0002,SRC-WIKT:ບໍ່,verified,ດີບໍ່? Is it good? (Wiktionary example)
+TPL02,predicate,W0002,SRC-WIKT:ບໍ່,unverified,ບໍ່ດີ not good
+TPL02,predicate,W0004,SRC-WIKT:ບໍ່,unverified,ບໍ່ແມ່ນ that's not right / no
+TPL02,predicate,W0022,SRC-WIKT:ບໍ່,unverified,ບໍ່ຢາກ don't want to
+TPL02,predicate,W0023,SRC-WIKT:ບໍ່,unverified,ບໍ່ມີ don't have / there isn't
+TPL03,noun,W0011,SRC-WIKT:ຂໍ,unverified,ຂໍນ້ຳ
+TPL03,noun,W0019,SRC-WIKT:ຂໍ,unverified,ຂໍເຂົ້າ
+TPL03,noun,W0028,SRC-WIKT:ຂໍ,unverified,ຂໍອາຫານ
+TPL04,place,W0013,,unverified,ຫ້ອງນ້ຳຢູ່ໃສ?
+TPL04,place,W0034,,unverified,ຫ້ອງນອນຢູ່ໃສ?
+TPL04,place,W0012,,unverified,ຫ້ອງຢູ່ໃສ?
+TPL04,place,W0029,,unverified,ຮ້ານຢູ່ໃສ?
+TPL04,place,W0030,,unverified,ຮ້ານອາຫານຢູ່ໃສ?
+TPL05,verb,W0018,,unverified,ກິນແລ້ວບໍ່? (fuller: ກິນເຂົ້າແລ້ວບໍ່?)
+TPL05,verb,W0021,,unverified,ດື່ມແລ້ວບໍ່?
+TPL05,verb,W0033,,unverified,ນອນແລ້ວບໍ່?
+TPL05,verb,W0025,,unverified,ມາແລ້ວບໍ່?
+TPL06,pronoun,W0006,SRC-TATOEBA:8670347,verified,ຂ້ອຍຢາກ...
+TPL06,pronoun,W0005,,unverified,ເຈົ້າຢາກ...
+TPL06,pronoun,W0031,,unverified,ລາວຢາກ...
+TPL06,pronoun,W0032,,unverified,ເຮົາຢາກ...
+TPL06,verb,W0018,SRC-TATOEBA:8670347,verified,...ຢາກກິນ
+TPL06,verb,W0021,,unverified,...ຢາກດື່ມ
+TPL06,verb,W0024,,unverified,...ຢາກໄປ
+TPL06,verb,W0033,,unverified,...ຢາກນອນ
+TPL06,verb,W0025,,unverified,...ຢາກມາ
+TPL07,pronoun,W0006,,unverified,
+TPL07,pronoun,W0005,,unverified,
+TPL07,pronoun,W0031,,unverified,
+TPL07,pronoun,W0032,,unverified,
+TPL07,noun,W0011,,unverified,
+TPL07,noun,W0019,,unverified,
+TPL07,noun,W0028,,unverified,
+TPL08,pronoun,W0006,,unverified,
+TPL08,pronoun,W0005,,unverified,
+TPL08,pronoun,W0031,,unverified,
+TPL08,pronoun,W0032,,unverified,
+TPL08,place,W0029,,unverified,
+TPL08,place,W0030,,unverified,
+TPL08,place,W0013,,unverified,
+TPL08,place,W0034,,unverified,

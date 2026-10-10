@@ -1,0 +1,54 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes
+S0001,ສະບາຍດີ,ສະບາຍດີ,sa(ʔ˧˥).baːj˩(˧).diː˩(˧),sa-baai-dii,Hello.,W0001,,SRC-TATOEBA:8670346,verified,Code points checked 2026-10-09 (no final period in source)
+S0002,ດີບໍ່?,ດີ ບໍ່?,diː˩(˧) bɔː˧,dii baw?,Is it good?,W0003,TPL01,SRC-WIKT:ບໍ່,verified,Usage example on the Wiktionary ບໍ່ page
+S0003,ສະບາຍດີບໍ່?,ສະບາຍດີ ບໍ່?,sa(ʔ˧˥).baːj˩(˧).diː˩(˧) bɔː˧,sa-baai-dii baw?,How are you? (Are you well?),W0003,TPL01,,unverified,Composed by the agent
+S0004,ບໍ່ດີ.,ບໍ່ ດີ.,bɔː˧ diː˩(˧),baw dii.,(It's) not good.,W0003,TPL02,,unverified,Composed by the agent
+S0005,ແມ່ນບໍ່?,ແມ່ນ ບໍ່?,mɛːn˧ bɔː˧,maen baw?,"Is that right? / Right?",W0004,TPL01,,unverified,"Composed by the agent. Tag question also seen in Tatoeba 8986492 (..., ແມ່ນບໍ?)"
+S0006,ບໍ່ແມ່ນ.,ບໍ່ ແມ່ນ.,bɔː˧ mɛːn˧,baw maen.,"No, that's not right.",W0004,TPL02,,unverified,Composed by the agent
+S0007,ເຈົ້າສະບາຍດີບໍ່?,ເຈົ້າ ສະບາຍດີ ບໍ່?,t͡ɕaw˥˨ sa(ʔ˧˥).baːj˩(˧).diː˩(˧) bɔː˧,jao sa-baai-dii baw?,How are you?,W0005,TPL01,,unverified,Composed by the agent
+S0008,ຂ້ອຍສະບາຍດີ.,ຂ້ອຍ ສະບາຍດີ.,kʰɔːj˧˩ sa(ʔ˧˥).baːj˩(˧).diː˩(˧),kawy sa-baai-dii.,I'm well.,W0006,,,unverified,Composed by the agent
+S0009,ຂອບໃຈ!,ຂອບໃຈ!,kʰɔːp̚˧˩.t͡ɕaj˩(˧),kawp-jai!,Thank you!,W0008,,SRC-TATOEBA:1897951,verified,Code points checked 2026-10-09 (U+0E82 U+0EAD U+0E9A U+0EC3 U+0E88 !)
+S0010,ຂ້ອຍສະບາຍດີ ຂອບໃຈ.,ຂ້ອຍ ສະບາຍດີ ຂອບໃຈ.,kʰɔːj˧˩ sa(ʔ˧˥).baːj˩(˧).diː˩(˧) kʰɔːp̚˧˩.t͡ɕaj˩(˧),kawy sa-baai-dii kawp-jai.,"I'm well, thank you.",W0008,,,unverified,Composed by the agent. Standard Lao separates the two clauses with a space
+S0011,ຂໍໂທດ.,ຂໍໂທດ.,kʰɔː˩(˧).tʰoːt̚˥˨,kaw-toot.,Excuse me. / Sorry.,W0010,,SRC-TATOEBA:8975789,verified,Code points checked 2026-10-09
+S0012,ຂໍນ້ຳ.,ຂໍ ນ້ຳ.,kʰɔː˩(˧) nam˥˨,kaw nam.,"Water, please.",W0011,TPL03,,unverified,Composed by the agent
+S0013,ຫ້ອງນ້ຳຢູ່ໃສ?,ຫ້ອງນ້ຳ ຢູ່ ໃສ?,hɔːŋ˧˩.nam˥˨ juː˧ saj˩(˧),hawng-nam yuu sai?,Where is the bathroom?,W0015,TPL04,,unverified,"Composed by the agent; pattern matches Tatoeba 8975845 ເຮືອນເຈົ້າຢູ່ໃສ? and 8975843"
+S0014,ຂໍໂທດ ຫ້ອງນ້ຳຢູ່ໃສ?,ຂໍໂທດ ຫ້ອງນ້ຳ ຢູ່ ໃສ?,kʰɔː˩(˧).tʰoːt̚˥˨ hɔːŋ˧˩.nam˥˨ juː˧ saj˩(˧),kaw-toot hawng-nam yuu sai?,"Excuse me, where is the bathroom?",W0015,TPL04,,unverified,"Composed by the agent; compare Tatoeba 8975790 ຂໍໂທດ, ເຈົ້າຊື່ຫຍັງ?"
+S0015,ຫ້ອງນອນຢູ່ໃສ?,ຫ້ອງນອນ ຢູ່ ໃສ?,hɔːŋ˧˩.nɔːn˧˥ juː˧ saj˩(˧),hawng-nawn yuu sai?,Where is the bedroom?,W0015,TPL04,,unverified,Composed by the agent
+S0016,ເຈົ້າຢູ່ໃສ?,ເຈົ້າ ຢູ່ ໃສ?,t͡ɕaw˥˨ juː˧ saj˩(˧),jao yuu sai?,Where are you?,W0015,,,unverified,Composed by the agent; Tatoeba 8977015 has ດຽວນີ້ເຈົ້າຢູ່ໃສ? 'Where are you now?'
+S0053,ຫ້ອງເຈົ້າຢູ່ໃສ?,ຫ້ອງ ເຈົ້າ ຢູ່ ໃສ?,hɔːŋ˧˩ t͡ɕaw˥˨ juː˧ saj˩(˧),hawng jao yuu sai?,Where is your room?,W0012,TPL04,,unverified,"Composed by the agent on the pattern of Tatoeba 8975845 ເຮືອນເຈົ້າຢູ່ໃສ? 'Where is your house?' (possessor follows the noun)"
+S0017,ຫ້ອງນ້ຳຢູ່ນີ້.,ຫ້ອງນ້ຳ ຢູ່ ນີ້.,hɔːŋ˧˩.nam˥˨ juː˧ niː˥˨,hawng-nam yuu nii.,The bathroom is here.,W0016,,,unverified,Composed by the agent
+S0018,ຫ້ອງນອນຢູ່ນີ້.,ຫ້ອງນອນ ຢູ່ ນີ້.,hɔːŋ˧˩.nɔːn˧˥ juː˧ niː˥˨,hawng-nawn yuu nii.,The bedroom is here.,W0016,,,unverified,Composed by the agent
+S0019,ຫ້ອງນີ້ດີ.,ຫ້ອງ ນີ້ ດີ.,hɔːŋ˧˩ niː˥˨ diː˩(˧),hawng nii dii.,This room is good.,W0016,,,unverified,"Composed by the agent; noun + ນີ້ + adjective as in Tatoeba 8981608 ໂຮງແຮມນີ້ແພງ"
+S0020,ຂ້ອຍຢູ່ນີ້.,ຂ້ອຍ ຢູ່ ນີ້.,kʰɔːj˧˩ juː˧ niː˥˨,kawy yuu nii.,I'm here.,W0016,,,unverified,Composed by the agent
+S0021,ຂ້ອຍກິນເຂົ້າ.,ຂ້ອຍ ກິນ ເຂົ້າ.,kʰɔːj˧˩ kin˩(˧) kʰaw˧˩,kawy gin kao.,I'm eating. (I eat rice / a meal.),W0019,,,unverified,"Composed by the agent; ກິນເຂົ້າ also in Tatoeba 8977012, 8990242"
+S0022,ຂໍເຂົ້າ.,ຂໍ ເຂົ້າ.,kʰɔː˩(˧) kʰaw˧˩,kaw kao.,"Rice, please.",W0019,TPL03,,unverified,Composed by the agent
+S0023,ກິນເຂົ້າແລ້ວບໍ່?,ກິນ ເຂົ້າ ແລ້ວ ບໍ່?,kin˩(˧) kʰaw˧˩ lɛːw˥˨ bɔː˧,gin kao laew baw?,Have you eaten yet?,W0020,TPL05,,unverified,Composed by the agent. A common everyday greeting
+S0024,ກິນແລ້ວ.,ກິນ ແລ້ວ.,kin˩(˧) lɛːw˥˨,gin laew.,"I've eaten (already).",W0020,,,unverified,Composed by the agent. Reply to S0023
+S0025,ເຈົ້ານອນແລ້ວບໍ່?,ເຈົ້າ ນອນ ແລ້ວ ບໍ່?,t͡ɕaw˥˨ nɔːn˧˥ lɛːw˥˨ bɔː˧,jao nawn laew baw?,Have you slept? / Are you going to bed?,W0020,TPL05,,unverified,Composed by the agent; English nuance to confirm
+S0026,ຂ້ອຍດື່ມນ້ຳ.,ຂ້ອຍ ດື່ມ ນ້ຳ.,kʰɔːj˧˩ dɯːm˧ nam˥˨,kawy deum nam.,I drink water.,W0021,,,unverified,Composed by the agent
+S0027,ເຈົ້າດື່ມນ້ຳບໍ່?,ເຈົ້າ ດື່ມ ນ້ຳ ບໍ່?,t͡ɕaw˥˨ dɯːm˧ nam˥˨ bɔː˧,jao deum nam baw?,Do you (want to) drink water?,W0021,TPL01,,unverified,Composed by the agent
+S0028,ຂ້ອຍຢາກກິນ,ຂ້ອຍ ຢາກ ກິນ,kʰɔːj˧˩ jaːk̚˧˩ kin˩(˧),kawy yaak gin,I want to eat.,W0022,TPL06,SRC-TATOEBA:8670347,verified,Code points checked 2026-10-09. No final punctuation in the source
+S0029,ຂ້ອຍຢາກດື່ມນ້ຳ.,ຂ້ອຍ ຢາກ ດື່ມ ນ້ຳ.,kʰɔːj˧˩ jaːk̚˧˩ dɯːm˧ nam˥˨,kawy yaak deum nam.,I want to drink water.,W0022,TPL06,,unverified,Composed by the agent
+S0030,ຂ້ອຍຢາກນອນ.,ຂ້ອຍ ຢາກ ນອນ.,kʰɔːj˧˩ jaːk̚˧˩ nɔːn˧˥,kawy yaak nawn.,I want to sleep.,W0022,TPL06,,unverified,Composed by the agent
+S0031,ເຈົ້າມີນ້ຳບໍ່?,ເຈົ້າ ມີ ນ້ຳ ບໍ່?,t͡ɕaw˥˨ miː˧˥ nam˥˨ bɔː˧,jao mii nam baw?,Do you have water?,W0023,TPL07,,unverified,Composed by the agent
+S0032,ບໍ່ມີ.,ບໍ່ ມີ.,bɔː˧ miː˧˥,baw mii.,"No, there isn't. / I don't have any.",W0023,TPL02,,unverified,Composed by the agent. Reply to S0031
+S0033,ເຈົ້າໄປໃສ?,ເຈົ້າ ໄປ ໃສ?,t͡ɕaw˥˨ paj˩(˧) saj˩(˧),jao bpai sai?,Where are you going?,W0024,,,unverified,"Composed by the agent; compare Tatoeba 8975841 ມື້ນີ້ເຈົ້າຊິໄປໃສ? and untranslated 13108121 ເຈົ້າໄປໃສມາ"
+S0034,ຂ້ອຍໄປຫ້ອງນ້ຳ.,ຂ້ອຍ ໄປ ຫ້ອງນ້ຳ.,kʰɔːj˧˩ paj˩(˧) hɔːŋ˧˩.nam˥˨,kawy bpai hawng-nam.,I'm going to the bathroom.,W0024,TPL08,,unverified,"Composed by the agent; ໄປ + place as in Tatoeba 8975794 ຂ້ອຍໄປປະເທດລາວ"
+S0035,ມານີ້.,ມາ ນີ້.,maː˧˥ niː˥˨,maa nii.,Come here.,W0025,,,unverified,Composed by the agent
+S0036,ນີ້ແມ່ນຫຍັງ?,ນີ້ ແມ່ນ ຫຍັງ?,niː˥˨ mɛːn˧ ɲaŋ˩(˧),nii maen nyang?,What is this?,W0026,,,unverified,"Composed by the agent; Tatoeba 8977019 has ອັນນີ້ແມ່ນຫຍັງ? (uses deferred ອັນ)"
+S0037,ເຈົ້າກິນຫຍັງ?,ເຈົ້າ ກິນ ຫຍັງ?,t͡ɕaw˥˨ kin˩(˧) ɲaŋ˩(˧),jao gin nyang?,What are you eating?,W0026,,,unverified,Composed by the agent
+S0038,ບໍ່ເປັນຫຍັງ.,ບໍ່ ເປັນ ຫຍັງ.,bɔː˧ pen˩(˧) ɲaŋ˩(˧),baw bpen nyang.,"It's OK. / No problem. / Never mind.",W0027,,,unverified,Composed by the agent; very common set phrase (not yet sourced)
+S0039,ຂ້ອຍບໍ່ເປັນຫຍັງ.,ຂ້ອຍ ບໍ່ ເປັນ ຫຍັງ.,kʰɔːj˧˩ bɔː˧ pen˩(˧) ɲaŋ˩(˧),kawy baw bpen nyang.,I'm OK. (Nothing's wrong with me.),W0027,,,unverified,Composed by the agent
+S0040,ອາຫານນີ້ດີ.,ອາຫານ ນີ້ ດີ.,ʔaː˩(˧).haːn˩(˧) niː˥˨ diː˩(˧),aa-haan nii dii.,This food is good.,W0028,,,unverified,Composed by the agent
+S0041,ເຈົ້າມີອາຫານບໍ່?,ເຈົ້າ ມີ ອາຫານ ບໍ່?,t͡ɕaw˥˨ miː˧˥ ʔaː˩(˧).haːn˩(˧) bɔː˧,jao mii aa-haan baw?,Do you have food?,W0028,TPL07,,unverified,Composed by the agent
+S0042,ຮ້ານຢູ່ໃສ?,ຮ້ານ ຢູ່ ໃສ?,haːn˥˨ juː˧ saj˩(˧),haan yuu sai?,Where is the shop?,W0029,TPL04,,unverified,Composed by the agent
+S0043,ຮ້ານນີ້ດີ.,ຮ້ານ ນີ້ ດີ.,haːn˥˨ niː˥˨ diː˩(˧),haan nii dii.,This shop is good.,W0029,,,unverified,Composed by the agent
+S0044,ຮ້ານອາຫານຢູ່ໃສ?,ຮ້ານອາຫານ ຢູ່ ໃສ?,haːn˥˨.ʔaː˩(˧).haːn˩(˧) juː˧ saj˩(˧),haan-aa-haan yuu sai?,Where is the restaurant?,W0030,TPL04,,unverified,Composed by the agent
+S0045,ລາວຢູ່ໃສ?,ລາວ ຢູ່ ໃສ?,law˧˥ juː˧ saj˩(˧),lao yuu sai?,Where is he/she?,W0031,,,unverified,Composed by the agent
+S0046,ລາວໄປຮ້ານ.,ລາວ ໄປ ຮ້ານ.,law˧˥ paj˩(˧) haːn˥˨,lao bpai haan.,He/She is going to the shop.,W0031,TPL08,,unverified,Composed by the agent
+S0047,ລາວມາແລ້ວ.,ລາວ ມາ ແລ້ວ.,law˧˥ maː˧˥ lɛːw˥˨,lao maa laew.,He/She has arrived.,W0031,,,unverified,Composed by the agent
+S0048,ເຮົາໄປຮ້ານອາຫານ.,ເຮົາ ໄປ ຮ້ານອາຫານ.,haw˧˥ paj˩(˧) haːn˥˨.ʔaː˩(˧).haːn˩(˧),hao bpai haan-aa-haan.,We're going to the restaurant. / Let's go to the restaurant.,W0032,TPL08,,unverified,Composed by the agent
+S0049,ເຮົາກິນເຂົ້າແລ້ວ.,ເຮົາ ກິນ ເຂົ້າ ແລ້ວ.,haw˧˥ kin˩(˧) kʰaw˧˩ lɛːw˥˨,hao gin kao laew.,We have eaten.,W0032,,,unverified,Composed by the agent
+S0050,ບໍ່ເຂົ້າໃຈ.,ບໍ່ ເຂົ້າໃຈ.,bɔː˧ kʰaw˧˩.t͡ɕaj˩(˧),baw kao-jai.,I don't understand.,W0035,TPL02,SRC-TATOEBA:1897946,verified,Code points checked 2026-10-09. Also the Wiktionary example on ເຂົ້າໃຈ
+S0051,ຂ້ອຍບໍ່ເຂົ້າໃຈ.,ຂ້ອຍ ບໍ່ ເຂົ້າໃຈ.,kʰɔːj˧˩ bɔː˧ kʰaw˧˩.t͡ɕaj˩(˧),kawy baw kao-jai.,I don't understand.,W0035,TPL02,,unverified,Composed by the agent
+S0052,ເຈົ້າເຂົ້າໃຈບໍ່?,ເຈົ້າ ເຂົ້າໃຈ ບໍ່?,t͡ɕaw˥˨ kʰaw˧˩.t͡ɕaj˩(˧) bɔː˧,jao kao-jai baw?,Do you understand?,W0035,TPL01,,unverified,Composed by the agent

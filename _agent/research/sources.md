@@ -47,6 +47,12 @@ Status key: **studied** (notes in `_agent/research/`), **candidate** (not yet st
 | FLORES+ | huggingface.co/datasets/openlanguagedata/flores_plus | candidate (fetch denied) | Professional lao_Laoo↔eng translations, but encyclopedic register; few beginner sentences. |
 | OPUS | opus.nlpl.eu | candidate | lo–en parallel corpora; size unknown, noisy. |
 
+## User-supplied resources (2026-10-09; banked, not yet studied)
+| Source | URL | Status | Possible use |
+|---|---|---|---|
+| Big Brother Mouse: downloadable Lao books | https://www.bigbrothermouse.com/laos/dlbooks.html | candidate (user-supplied) | Authentic modern Lao children's / beginner reading material, so a likely source of `verified` simple sentences and of natural word frequency for early readers |
+| Univ. of Iowa CLCL: Lao language and culture resources | https://clcl.uiowa.edu/language-resources/lao-language-and-culture-resources | candidate (user-supplied) | Curated link list. May lead to dictionaries, classifier references and course materials |
+
 ## Per-word lookup (IPA, tone, POS, classifier)
 
 | Source | URL | Status | Notes |

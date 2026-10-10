@@ -1,0 +1,9 @@
+template_id,lao_pattern,english_pattern,slot_names,intro_order,source,confidence,notes
+TPL01,{statement}ບໍ່?,{statement}? (yes/no question),statement,1,SRC-WIKT:ບໍ່,verified,"Wiktionary ບໍ່ (interrogative): example ດີບໍ່? 'Is it good?'. Questions keep statement word order and add ບໍ່ at the end. Available after W0003"
+TPL02,ບໍ່{predicate},not {predicate},predicate,2,SRC-WIKT:ບໍ່,verified,"Negation goes before the verb or adjective (Wiktionary ບໍ່: 'no, not'). Available after W0003"
+TPL03,ຂໍ{noun},May I have {noun}? / {noun} please,noun,3,SRC-WIKT:ຂໍ,unverified,"Wiktionary glosses ຂໍ 'to ask for, request' but gives no ຂໍ + noun example; pattern composed by the agent. Available after W0011"
+TPL04,{place}ຢູ່ໃສ?,Where is {place}?,place,4,SRC-WIKT:ໃສ;SRC-WIKT:ຢູ່,unverified,"Built from the verified glosses ຢູ່ 'be located' and ໃສ 'where (interrogative)'; the pattern itself is composed by the agent. Available after W0015"
+TPL05,{verb}ແລ້ວບໍ່?,Have you {verb} yet?,verb,5,SRC-WIKT:ແລ້ວ,unverified,"ແລ້ວ = completed-action auxiliary (Wiktionary). Pattern composed by the agent. Available after W0020"
+TPL06,{pronoun}ຢາກ{verb},{pronoun} want(s) to {verb},pronoun|verb,6,SRC-TATOEBA:8670347,verified,"Tatoeba 8670347 ຂ້ອຍຢາກກິນ 'I want to eat'; 8978757. Available after W0022"
+TPL07,{pronoun}ມີ{noun},{pronoun} has/have {noun},pronoun|noun,7,SRC-WIKT:ມີ,unverified,"Built from the verified gloss ມີ 'to have'; pattern composed by the agent. Available after W0023"
+TPL08,{pronoun}ໄປ{place},{pronoun} go(es) to {place},pronoun|place,8,SRC-WIKT:ໄປ,unverified,"Destination follows ໄປ with no preposition (agent's knowledge; to be confirmed against a source sentence). Available after W0024"
