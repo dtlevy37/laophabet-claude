@@ -64,4 +64,8 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 - check_drafts 0 problems; draft tones 112/112 ok; pipeline 0 errors.
 - New benign warning: W001028 ບ່ອນນັ່ງ uses the noun ບ່ອນ as its classifier (valid usage).
 - Doubtful items added to NEEDS_HUMAN. Drafter cost about 160k tokens.
-- Next: c2 clothes, then gardening, fruits, vegetables, meat, animals, transportation, directions.
+
+## 2026-10-10 Batch c2 (clothes) merged
+- 61 words (24 verified, 37 unverified) and 109 composed sentences became W001072–W001132. Totals: 1132 words, 2253 sentences.
+- Homograph ຄຳ "gold" added; merge needs `--allow-homograph ຄຳ` (check_drafts too). Pipeline 0 errors; classifier-pos warning now also W001090 ຖົງມື→ຖົງ (benign).
+- Next: c3 gardening, then fruits, vegetables, meat, animals, transportation, directions.

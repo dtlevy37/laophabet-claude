@@ -54,3 +54,10 @@ Details: `_agent/research/lao-tones-wiktionary-fsi-kerr.md` §7. The matrix in S
 - Agent-guessed spellings (not on Wiktionary): ເສີບ / ພະນັກງານເສີບ "serve, waiter"; ມັງສະວິລັດ "vegetarian" (modelled on Thai).
 - Meanings or IPA by agent: ນົວ "savoury"; ລະ "each, per"; ຊີ້ນດາດ; ເຂົ້າຊອຍ; ກອບ "crispy"; ຄົວ "kitchen"; ໃສ່ "add (to food)" sense; ຜັກຫອມ "coriander, herbs".
 - Word order ໄກ່ປີ້ງ vs ປີ້ງໄກ່; the sentence ຂ້ອຍກິນມັງສະວິລັດ may be unnatural.
+
+## Batch c2 (clothes, W001072–W001132): doubtful items
+- Spellings not on Wiktionary: ຜ້າບ່ຽງ "shoulder sash"; ຕ່ຳ "weave"; ໂສ້ງຢີນ "jeans"; ຊິບ "zip"; ສ້ອຍຄໍ, ສ້ອຍແຂນ "necklace, bracelet"; ວົງ (classifier for rings); ຜົງຊັກຟອກ.
+- Senses by agent: ຕີນສິ້ນ "woven hem"; ເບີ "size"; ຄັບ "tight"; ເງິນ "silver".
+- ສາຍແອວ: Wiktionary IPA garbled, IPA copied from ແອວ.
+- ຖົງເທົ້າ (Wiktionary) vs ຖົງຕີນ for "socks": which is commoner in Vientiane?
+- New homograph ຄຳ "gold" (W001099) beside ຄຳ "word" (W000565).
