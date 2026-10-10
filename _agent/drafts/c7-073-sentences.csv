@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S145,ປີນີ້ບໍ່ແຫ້ງແລ້ງ.,ປີນີ້ ບໍ່ ແຫ້ງແລ້ງ.,,,This year there is no drought.,,,,unverified,Composed by the agent,
+c7-S146,ປີນີ້ແຫ້ງແລ້ງຫຼາຍ.,ປີນີ້ ແຫ້ງແລ້ງ ຫຼາຍ.,,,This year there is a bad drought.,,,,unverified,Composed by the agent,

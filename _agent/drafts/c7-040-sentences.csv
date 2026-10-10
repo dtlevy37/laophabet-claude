@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S079,ຫຼານຊາຍຂອງຂ້ອຍນ້ອຍ.,ຫຼານຊາຍ ຂອງ ຂ້ອຍ ນ້ອຍ.,,,My grandson is small.,,,,unverified,Composed by the agent,
+c7-S080,ຂ້ອຍຮັກຫຼານຊາຍ.,ຂ້ອຍ ຮັກ ຫຼານຊາຍ.,,,I love my grandson.,,,,unverified,Composed by the agent,

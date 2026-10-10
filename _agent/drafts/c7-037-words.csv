@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W037,ເດັກນ້ອຍ,dek̚˧˥.nɔːj˥˨,dek-nawy,ເດັກ|ນ້ອຍ,,,noun,W000040,specific,derived,W000150|W000090,small child; kid,,people,extra,,,,dek is short and rises; nawy starts high and falls.,SRC-AGENT:knowledge,unverified,Compound of known words; IPA from components | Classifier: persons take ຄົນ (W000040)

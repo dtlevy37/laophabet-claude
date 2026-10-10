@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S147,ຂ້ອຍເຫັນຟ້າແລບ.,ຂ້ອຍ ເຫັນ ຟ້າແລບ.,,,I see lightning.,,,,unverified,Composed by the agent,
+c7-S148,ຝົນຕົກແລະມີຟ້າແລບ.,ຝົນ ຕົກ ແລະ ມີ ຟ້າແລບ.,,,It rains and there is lightning.,,,,unverified,Composed by the agent,

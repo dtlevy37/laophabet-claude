@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W029,ຄົນແກ່,kʰon˧˥.kɛː˧,kon-gae,ຄົນ|ແກ່,,,noun,W000040,specific,derived,W000040|W000258,old person,,people,extra,,,,kon rises; gae is level.,SRC-AGENT:knowledge,unverified,Compound of known words; IPA from components | Classifier: persons take ຄົນ (W000040)

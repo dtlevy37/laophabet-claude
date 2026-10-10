@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S039,ໜ້າເອິກຂອງເຂົາໃຫຍ່.,ໜ້າເອິກ ຂອງ ເຂົາ ໃຫຍ່.,,,His chest is big.,,,,unverified,Composed by the agent,
+c7-S040,ຂ້ອຍເຈັບໜ້າເອິກ.,ຂ້ອຍ ເຈັບ ໜ້າເອິກ.,,,My chest hurts.,,,,unverified,Composed by the agent,

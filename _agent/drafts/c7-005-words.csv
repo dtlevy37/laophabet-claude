@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W005,ຄິ້ວ,kʰiw˥˨,kiw,ຄິ້ວ,,,noun,W000319,specific,unverified,,eyebrow,,body,extra,,,,Aspirated k + 'iw'; high and falling.,SRC-WIKT:ຄິ້ວ,verified,Classifier: own knowledge; paired body part counted by ຂ້າງ; SRC-WIKT states no classifier

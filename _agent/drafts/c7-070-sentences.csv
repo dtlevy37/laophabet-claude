@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S139,ເມກຝົນມາແລ້ວ.,ເມກຝົນ ມາ ແລ້ວ.,,,The rain clouds have come.,,,,unverified,Composed by the agent,
+c7-S140,ຂ້ອຍເຫັນເມກຝົນ.,ຂ້ອຍ ເຫັນ ເມກຝົນ.,,,I see rain clouds.,,,,unverified,Composed by the agent,

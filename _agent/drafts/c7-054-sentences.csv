@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S107,ມີແສງຫຼາຍ.,ມີ ແສງ ຫຼາຍ.,,,There is a lot of light.,,,,unverified,Composed by the agent,
+c7-S108,ເຮືອນຂອງຂ້ອຍມີແສງດີ.,ເຮືອນ ຂອງ ຂ້ອຍ ມີ ແສງ ດີ.,,,My house has good light.,,,,unverified,Composed by the agent,

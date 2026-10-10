@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S119,ແສງດາວງາມຫຼາຍ.,ແສງດາວ ງາມ ຫຼາຍ.,,,The starlight is very beautiful.,,,,unverified,Composed by the agent,
+c7-S120,ຂ້ອຍເບິ່ງແສງດາວ.,ຂ້ອຍ ເບິ່ງ ແສງດາວ.,,,I look at the starlight.,,,,unverified,Composed by the agent,

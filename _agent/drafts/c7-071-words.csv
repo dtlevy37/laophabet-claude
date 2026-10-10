@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W071,ລົມແຮງ,lom˧˥.hɛːŋ˧˥,lom-haeng,ລົມ|ແຮງ,,,noun,,none,unverified,W000544,strong wind,,weather,extra,,,,Both syllables rise.,SRC-AGENT:knowledge,unverified,Not on Wiktionary; IPA by agent; ແຮງ alone is not a known word | Classifier: own knowledge; weather phenomenon not counted

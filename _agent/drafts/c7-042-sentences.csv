@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S083,ຕາຂອງຂ້ອຍເຖົ້າແລ້ວ.,ຕາ ຂອງ ຂ້ອຍ ເຖົ້າ ແລ້ວ.,,,My grandfather is old now.,,,,unverified,Composed by the agent,1=c7-W042
+c7-S084,ຂ້ອຍຮັກຕາ.,ຂ້ອຍ ຮັກ ຕາ.,,,I love my grandfather.,,,,unverified,Composed by the agent,3=c7-W042

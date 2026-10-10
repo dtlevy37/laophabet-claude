@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S005,ຄາງຂອງເຂົາສັ້ນ.,ຄາງ ຂອງ ເຂົາ ສັ້ນ.,,,His chin is short.,,,,unverified,Composed by the agent,
+c7-S006,ຂ້ອຍເຈັບຄາງ.,ຂ້ອຍ ເຈັບ ຄາງ.,,,My chin hurts.,,,,unverified,Composed by the agent,

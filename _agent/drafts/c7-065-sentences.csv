@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S129,ເຊົ້ານີ້ມີນ້ຳຄ້າງຫຼາຍ.,ເຊົ້າ ນີ້ ມີ ນ້ຳຄ້າງ ຫຼາຍ.,,,This morning there is a lot of dew.,,,,unverified,Composed by the agent,
+c7-S130,ນ້ຳຄ້າງເຢັນ.,ນ້ຳຄ້າງ ເຢັນ.,,,The dew is cold.,,,,unverified,Composed by the agent,

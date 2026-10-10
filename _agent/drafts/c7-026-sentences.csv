@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S051,ເຂົາມີນ້ອງແຝດ.,ເຂົາ ມີ ນ້ອງ ແຝດ.,,,He has a twin younger sibling.,,,,unverified,Composed by the agent,
+c7-S052,ເຂົາສອງຄົນເປັນແຝດ.,ເຂົາ ສອງ ຄົນ ເປັນ ແຝດ.,,,The two of them are twins.,,,,unverified,Composed by the agent,

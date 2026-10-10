@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S135,ຂ້ອຍບໍ່ມັກຄວາມໜາວ.,ຂ້ອຍ ບໍ່ ມັກ ຄວາມໜາວ.,,,I do not like the cold.,,,,unverified,Composed by the agent,
+c7-S136,ຄວາມໜາວມາແລ້ວ.,ຄວາມໜາວ ມາ ແລ້ວ.,,,The cold has come.,,,,unverified,Composed by the agent,

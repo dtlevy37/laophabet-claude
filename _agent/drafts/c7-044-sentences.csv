@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S087,ພໍ່ແມ່ເປັນຜູ້ໃຫຍ່.,ພໍ່ແມ່ ເປັນ ຜູ້ໃຫຍ່.,,,Parents are adults.,,,,unverified,Composed by the agent,
+c7-S088,ເຂົາເປັນຜູ້ໃຫຍ່ແລ້ວ.,ເຂົາ ເປັນ ຜູ້ໃຫຍ່ ແລ້ວ.,,,He is an adult now.,,,,unverified,Composed by the agent,

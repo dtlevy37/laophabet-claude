@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S097,ພໍ່ລ້ຽງຂອງຂ້ອຍດີ.,ພໍ່ລ້ຽງ ຂອງ ຂ້ອຍ ດີ.,,,My stepfather is good.,,,,unverified,Composed by the agent,
+c7-S098,ເຂົາເປັນພໍ່ລ້ຽງຂອງຂ້ອຍ.,ເຂົາ ເປັນ ພໍ່ລ້ຽງ ຂອງ ຂ້ອຍ.,,,He is my stepfather.,,,,unverified,Composed by the agent,

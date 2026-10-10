@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S103,ຫິມະເຢັນ.,ຫິມະ ເຢັນ.,,,Snow is cold.,,,,unverified,Composed by the agent,
+c7-S104,ຫິມະຕົກຫຼາຍ.,ຫິມະ ຕົກ ຫຼາຍ.,,,A lot of snow falls.,,,,unverified,Composed by the agent,

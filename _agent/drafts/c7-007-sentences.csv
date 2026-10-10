@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S013,ເຂົາມີໜວດ.,ເຂົາ ມີ ໜວດ.,,,He has a beard.,,,,unverified,Composed by the agent,
+c7-S014,ໜວດຂອງເຂົາຍາວຫຼາຍ.,ໜວດ ຂອງ ເຂົາ ຍາວ ຫຼາຍ.,,,His beard is very long.,,,,unverified,Composed by the agent,

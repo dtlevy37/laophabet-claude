@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W010,ນິ້ວມື,niw˥˨.mɯː˧˥,niw-meu,ນິ້ວ|ມື,,,noun,W000721,specific,unverified,W000721|W000165,finger,,body,extra,,,,niw falls from high; meu rises.,SRC-AGENT:knowledge,unverified,Compound of known words; IPA from components | Classifier: own knowledge; fingers counted with ນິ້ວ

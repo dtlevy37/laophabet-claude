@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S071,ເຂົາສອງຄົນເປັນຜົວເມຍ.,ເຂົາ ສອງ ຄົນ ເປັນ ຜົວເມຍ.,,,The two of them are husband and wife.,,,,unverified,Composed by the agent,
+c7-S072,ຜົວເມຍຢູ່ເຮືອນນີ້.,ຜົວເມຍ ຢູ່ ເຮືອນ ນີ້.,,,The couple lives in this house.,,,,unverified,Composed by the agent,

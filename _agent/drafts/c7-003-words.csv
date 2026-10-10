@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W003,ຄາງ,kʰaːŋ˧˥,kaang,ຄາງ,,,noun,,none,unverified,,chin,,body,extra,,,,Aspirated k + long 'aang'; rising.,SRC-WIKT:ຄາງ,verified,Wiktionary also lists a verb 'to moan' (not drafted) | Classifier: own knowledge; single body part not normally counted; SRC-WIKT states no classifier

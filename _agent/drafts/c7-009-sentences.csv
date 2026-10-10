@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S017,ຂ້ອຍເຈັບກະເພາະ.,ຂ້ອຍ ເຈັບ ກະເພາະ.,,,My stomach hurts.,,,,unverified,Composed by the agent,
+c7-S018,ກະເພາະຂອງເຂົາໃຫຍ່.,ກະເພາະ ຂອງ ເຂົາ ໃຫຍ່.,,,His stomach is big.,,,,unverified,Composed by the agent,

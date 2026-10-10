@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S141,ມື້ນີ້ມີລົມແຮງ.,ມື້ນີ້ ມີ ລົມແຮງ.,,,There is a strong wind today.,,,,unverified,Composed by the agent,
+c7-S142,ລົມແຮງມາແລ້ວ.,ລົມແຮງ ມາ ແລ້ວ.,,,The strong wind has come.,,,,unverified,Composed by the agent,

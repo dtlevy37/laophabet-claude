@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S007,ຂ້ອຍເຈັບສອກ.,ຂ້ອຍ ເຈັບ ສອກ.,,,My elbow hurts.,,,,unverified,Composed by the agent,
+c7-S008,ສອກຂອງເຂົາເຈັບຫຼາຍ.,ສອກ ຂອງ ເຂົາ ເຈັບ ຫຼາຍ.,,,His elbow hurts a lot.,,,,unverified,Composed by the agent,

@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S143,ລົມເຢັນມາແລ້ວ.,ລົມເຢັນ ມາ ແລ້ວ.,,,The cool breeze has come.,,,,unverified,Composed by the agent,
+c7-S144,ຂ້ອຍມັກລົມເຢັນ.,ຂ້ອຍ ມັກ ລົມເຢັນ.,,,I like the cool breeze.,,,,unverified,Composed by the agent,

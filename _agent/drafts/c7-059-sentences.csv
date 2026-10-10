@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S117,ແສງເດືອນງາມ.,ແສງເດືອນ ງາມ.,,,The moonlight is beautiful.,,,,unverified,Composed by the agent,
+c7-S118,ຂ້ອຍເຫັນແສງເດືອນ.,ຂ້ອຍ ເຫັນ ແສງເດືອນ.,,,I see the moonlight.,,,,unverified,Composed by the agent,

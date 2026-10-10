@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S009,ຄິ້ວຂອງເຈົ້າງາມຫຼາຍ.,ຄິ້ວ ຂອງ ເຈົ້າ ງາມ ຫຼາຍ.,,,Your eyebrows are very beautiful.,,,,unverified,Composed by the agent,
+c7-S010,ເຂົາມີຄິ້ວໃຫຍ່.,ເຂົາ ມີ ຄິ້ວ ໃຫຍ່.,,,He has big eyebrows.,,,,unverified,Composed by the agent,

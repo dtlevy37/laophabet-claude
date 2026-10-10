@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S105,ຮຸ້ງງາມຫຼາຍ.,ຮຸ້ງ ງາມ ຫຼາຍ.,,,The rainbow is very beautiful.,,,,unverified,Composed by the agent,
+c7-S106,ຝົນຕົກແລ້ວມີຮຸ້ງ.,ຝົນ ຕົກ ແລ້ວ ມີ ຮຸ້ງ.,,,The rain has fallen and there is a rainbow.,,,,unverified,Composed by the agent,

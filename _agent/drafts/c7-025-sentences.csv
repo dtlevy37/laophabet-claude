@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S049,ນ້າຂອງຂ້ອຍຢູ່ເຮືອນ.,ນ້າ ຂອງ ຂ້ອຍ ຢູ່ ເຮືອນ.,,,My aunt (mother's younger sibling) is at home.,,,,unverified,Composed by the agent,
+c7-S050,ຂ້ອຍຮັກນ້າ.,ຂ້ອຍ ຮັກ ນ້າ.,,,I love my aunt (mother's younger sibling).,,,,unverified,Composed by the agent,

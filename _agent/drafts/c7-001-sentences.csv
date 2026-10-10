@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S001,ແກ້ມຂອງເຈົ້າສວຍຫຼາຍ.,ແກ້ມ ຂອງ ເຈົ້າ ສວຍ ຫຼາຍ.,,,Your cheeks are very pretty.,,,,unverified,Composed by the agent,
+c7-S002,ເຂົາເຈັບແກ້ມ.,ເຂົາ ເຈັບ ແກ້ມ.,,,His cheek hurts.,,,,unverified,Composed by the agent,

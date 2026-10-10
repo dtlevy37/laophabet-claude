@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S127,ມື້ນີ້ອົບເອົ້າຫຼາຍ.,ມື້ນີ້ ອົບເອົ້າ ຫຼາຍ.,,,Today is very muggy.,,,,unverified,Composed by the agent,
+c7-S128,ເຮືອນຂອງຂ້ອຍອົບເອົ້າ.,ເຮືອນ ຂອງ ຂ້ອຍ ອົບເອົ້າ.,,,My house is stuffy.,,,,unverified,Composed by the agent,

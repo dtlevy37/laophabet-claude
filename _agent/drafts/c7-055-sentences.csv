@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S109,ອຸນຫະພູມມື້ນີ້ສູງ.,ອຸນຫະພູມ ມື້ນີ້ ສູງ.,,,Today's temperature is high.,,,,unverified,Composed by the agent,
+c7-S110,ອຸນຫະພູມມື້ນີ້ຮ້ອນຫຼາຍ.,ອຸນຫະພູມ ມື້ນີ້ ຮ້ອນ ຫຼາຍ.,,,Today's temperature is very hot.,,,,unverified,Composed by the agent,

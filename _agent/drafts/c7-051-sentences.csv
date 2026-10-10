@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S101,ຂ້ອຍມີຍາດພີ່ນ້ອງຫຼາຍ.,ຂ້ອຍ ມີ ຍາດພີ່ນ້ອງ ຫຼາຍ.,,,I have many relatives.,,,,unverified,Composed by the agent,
+c7-S102,ຍາດພີ່ນ້ອງມາເຮືອນຂອງຂ້ອຍ.,ຍາດພີ່ນ້ອງ ມາ ເຮືອນ ຂອງ ຂ້ອຍ.,,,My relatives come to my house.,,,,unverified,Composed by the agent,

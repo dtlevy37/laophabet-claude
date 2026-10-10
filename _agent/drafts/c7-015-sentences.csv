@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S029,ຫົວເຂົ່າຂອງຂ້ອຍເຈັບ.,ຫົວເຂົ່າ ຂອງ ຂ້ອຍ ເຈັບ.,,,My knee hurts.,,,,unverified,Composed by the agent,
+c7-S030,ເຂົາເຈັບຫົວເຂົ່າຫຼາຍ.,ເຂົາ ເຈັບ ຫົວເຂົ່າ ຫຼາຍ.,,,His knee hurts a lot.,,,,unverified,Composed by the agent,

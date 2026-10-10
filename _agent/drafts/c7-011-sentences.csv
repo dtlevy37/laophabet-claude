@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S021,ນິ້ວຕີນຂອງຂ້ອຍນ້ອຍ.,ນິ້ວຕີນ ຂອງ ຂ້ອຍ ນ້ອຍ.,,,My toes are small.,,,,unverified,Composed by the agent,
+c7-S022,ເຂົາເຈັບນິ້ວຕີນ.,ເຂົາ ເຈັບ ນິ້ວຕີນ.,,,His toe hurts.,,,,unverified,Composed by the agent,

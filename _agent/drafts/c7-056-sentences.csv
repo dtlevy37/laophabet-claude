@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S111,ລະດູໜາວເຢັນຫຼາຍ.,ລະດູໜາວ ເຢັນ ຫຼາຍ.,,,The cold season is very cold.,,,,unverified,Composed by the agent,
+c7-S112,ຂ້ອຍມັກລະດູໜາວ.,ຂ້ອຍ ມັກ ລະດູໜາວ.,,,I like the cold season.,,,,unverified,Composed by the agent,

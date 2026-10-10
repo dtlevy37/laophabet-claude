@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S115,ແສງແດດຮ້ອນຫຼາຍ.,ແສງແດດ ຮ້ອນ ຫຼາຍ.,,,The sunlight is very hot.,,,,unverified,Composed by the agent,
+c7-S116,ຂ້ອຍມັກແສງແດດ.,ຂ້ອຍ ມັກ ແສງແດດ.,,,I like sunlight.,,,,unverified,Composed by the agent,

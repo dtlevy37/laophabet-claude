@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S061,ພໍ່ເຖົ້າຂອງຂ້ອຍຢູ່ເຮືອນ.,ພໍ່ເຖົ້າ ຂອງ ຂ້ອຍ ຢູ່ ເຮືອນ.,,,My father-in-law is at home.,,,,unverified,Composed by the agent,
+c7-S062,ຂ້ອຍຮັກພໍ່ເຖົ້າ.,ຂ້ອຍ ຮັກ ພໍ່ເຖົ້າ.,,,I love my father-in-law.,,,,unverified,Composed by the agent,

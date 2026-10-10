@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+c7-W065,ນ້ຳຄ້າງ,nam˥˨.kʰaːŋ˥˨,nam-kaang,ນ້ຳ|ຄ້າງ,,,noun,,none,unverified,W000011,dew,,weather,extra,,,,Both syllables start high and fall.,SRC-AGENT:knowledge,unverified,Not on Wiktionary; IPA by agent; ຄ້າງ is not a known word | Classifier: own knowledge; mass noun not counted

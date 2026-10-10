@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S031,ສົ້ນຕີນຂອງຂ້ອຍເຈັບ.,ສົ້ນຕີນ ຂອງ ຂ້ອຍ ເຈັບ.,,,My heel hurts.,,,,unverified,Composed by the agent,
+c7-S032,ເຈົ້າເຈັບສົ້ນຕີນບໍ່?,ເຈົ້າ ເຈັບ ສົ້ນຕີນ ບໍ່?,,,Does your heel hurt?,,,,unverified,Composed by the agent,

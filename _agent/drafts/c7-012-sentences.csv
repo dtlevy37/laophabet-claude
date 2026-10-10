@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S023,ຂ້ອຍເຈັບຂໍ້ມື.,ຂ້ອຍ ເຈັບ ຂໍ້ມື.,,,My wrist hurts.,,,,unverified,Composed by the agent,
+c7-S024,ຂໍ້ມືຂອງເຂົາເຈັບຫຼາຍ.,ຂໍ້ມື ຂອງ ເຂົາ ເຈັບ ຫຼາຍ.,,,His wrist hurts a lot.,,,,unverified,Composed by the agent,

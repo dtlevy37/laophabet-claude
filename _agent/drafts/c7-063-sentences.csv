@@ -1,0 +1,3 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+c7-S125,ມື້ນີ້ຄວາມຊຸ່ມຫຼາຍ.,ມື້ນີ້ ຄວາມຊຸ່ມ ຫຼາຍ.,,,Today there is a lot of humidity.,,,,unverified,Composed by the agent,
+c7-S126,ຂ້ອຍບໍ່ມັກຄວາມຊຸ່ມ.,ຂ້ອຍ ບໍ່ ມັກ ຄວາມຊຸ່ມ.,,,I do not like humidity.,,,,unverified,Composed by the agent,
