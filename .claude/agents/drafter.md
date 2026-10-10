@@ -16,6 +16,7 @@ You draft rows for a Lao (standard Vientiane, modern) curriculum for English spe
 
 ## Words
 - Use placeholder IDs `<tag>-W001`, `<tag>-W002`, ... (the tag comes from your brief). The merge assigns real IDs. Inside your batch, refer to your own words by these placeholders (classifier_word_id, component_word_ids). Refer to existing words by their real IDs.
+- Pick reasonable common words for this category without long deliberation.
 - Look up every word on English Wiktionary: `https://en.wiktionary.org/wiki/<lao>`. Ask WebFetch for the Lao section's Vientiane IPA (with Chao tone letters), part of speech, definitions and any classifier.
   - Entry found: source `SRC-WIKT:<lao>`, confidence `verified`, IPA as given.
   - No entry: source `SRC-AGENT:knowledge`, confidence `unverified`, your own IPA, notes `Not on Wiktionary; IPA by agent`.
@@ -31,10 +32,7 @@ You draft rows for a Lao (standard Vientiane, modern) curriculum for English spe
 
 ## Sentences
 - Use placeholder IDs `<tag>-S001`, ...; the merge renumbers them.
-- Prefer real sentences:
-  1. **Tatoeba** (`https://tatoeba.org`): search for the target word; fetch the sentence page to confirm the Lao text and the translation. Source `SRC-TATOEBA:<id>`, confidence `verified`.
-  2. **Big Brother Mouse** (Lao children's and easy-reader books, `https://www.bigbrothermouse.com`): use a sentence only when its Lao text is visible on the page. Source `SRC-BBM:<page URL>`, confidence `verified`.
-  3. Otherwise compose a short, natural, everyday sentence: source empty, confidence `unverified`, notes `Composed by the agent`.
+- Prefer real sentences: Otherwise compose a short, natural, everyday sentence: source empty, confidence `unverified`, notes `Composed by the agent`.
 - `lao` is standard spelling without spaces between words. `lao_spaced` is the same text with one space between words. Every token in lao_spaced (ignoring final punctuation) must be EXACTLY the spelling of a known word (data, pending drafts, or your batch). If a word you need is not known; attempt to make sentence with already known words. A real sentence that needs an unknown word can only be used if you also draft that word.
 - Homographs: when a token's spelling belongs to more than one word, add `word_overrides` `N=<ID>` (N = 1-based token position) to pick the meaning. Your batch's own homographs always need this.
 - Use words already introduced first; the batch is in rough teaching order. Every word you draft must appear in at least 2 sentences.

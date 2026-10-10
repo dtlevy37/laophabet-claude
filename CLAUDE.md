@@ -47,7 +47,7 @@ The SessionStart notice says whether autorun is ON or OFF.
   - **`researcher` (haiku; fast, cheap):** quick lookups. One precise question, compact cited answer. Use it for most questions.
   - **`scholar` (sonnet; thorough, costlier):** studies an important source end to end and saves complete notes to `_agent/research/<topic>.md`, returning the path and a short abstract. Use it for expert sources the work will depend on, ideally once per source. Check `_agent/research/` for existing notes before commissioning a new study. Do not use it for drafting.
   - **`drafter` (opus; most capable, costliest):** drafts new curriculum rows (words, sentences, templates, fillers) as CSV batches in `_agent/drafts/`, using the data headers and placeholder IDs.
-    - Checks words on Wiktionary, and takes real sentences from Tatoeba and Big Brother Mouse before composing its own.
+    - Checks words on Wiktionary.
     - Reads pending drafts so it never repeats a word.
     - Brief it with a batch tag, a topic list or word count, and the output file names.
     - Then run `check_drafts.py`. Send fixes back to the same drafter (SendMessage) or make them by hand.
@@ -99,10 +99,10 @@ Plan a Lao language-learning curriculum for English speakers: letters, then vowe
 - Lao is lower-resource and easy to get confidently wrong. Never invent a word, tone, reading or sentence without marking it.
 - Every row carries `source` and `confidence`: `verified` (taken from a cited source), `derived` (computed by rule from verified facts), or `unverified` (the agent's own construction, needs human review).
 - Where sources disagree, record both and add a note to `_agent/NEEDS_HUMAN.md`.
-- Sentences you compose are `unverified` unless a source provides them. Prefer real sentences (Tatoeba, Big Brother Mouse) over composed ones.
+- Sentences you compose are `unverified` unless a source provides them. 
 
 ### Sources
-- Approved and in use: English Wiktionary (words, IPA, some classifiers), Tatoeba (sentences), SEAsite and Wikipedia (tone rules). Big Brother Mouse (easy-reader sentences) is planned for the drafter.
+- Approved and in use: English Wiktionary (words, IPA, some classifiers), SEAsite and Wikipedia (tone rules).
 - Declined by the user: sealang.net (outdated SSL certificates) and Enfield's grammar (little Lao script). Glosbe is acceptable as a crowd-sourced second source if needed.
 - Record candidates and what each is trusted for in `_agent/research/sources.md`.
 

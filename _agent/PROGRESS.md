@@ -51,7 +51,7 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
   - directions
 
 ## Next
-1. **Pending approval:** build_order rev 5 (writes `_agent/vocab.csv`). After approval, run `pipeline.sh` once to create it.
+1. **Done:** build_order rev 5 approved. The pipeline ran (0 errors) and created `_agent/vocab.csv` (1015 words). No need to re-run it before the first batch.
 2. **Pending user edits to `.claude/agents/drafter.md`:**
    - Line 14: load the vocabulary from `_agent/vocab.csv`.
    - Remove the Tatoeba/BBM steps in "Sentences": compose directly.
