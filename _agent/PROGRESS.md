@@ -387,4 +387,9 @@ pron_tips are agent-written guidance.
 
 - **Doubtful assignments** (agent's list): ຕຽງ, ຕູ້ເຢັນ, ແວ່ນຕາ, ມີດ (Wiktionary ດວງ vs ດ້າມ), ວຽກ, ແຂ້ວ, ເລກ, ກະແຈ, and paired body parts → ຂ້າງ. Added to NEEDS_HUMAN.
 - **tone_derive:** 0 problems; build_order OK.
+
+## 2026-10-10 Verification source discussion (5h window at 90%)
+- User asked why 393 words are unverified. Answer: English Wiktionary is the only checking source and has about 60% 404s; "unverified" means no citation, not that the word is doubtful.
+- User suggested https://www.lexilogos.com/english/lao_dictionary.htm as a source. Next: fetch it, identify which linked dictionaries are usable, and propose domains plus a verification pass over the unverified rows.
+- Open decision: add the 10 missing classifier words to reach exactly 1000?
   Then run tone_derive --fill → build_order → validate.
