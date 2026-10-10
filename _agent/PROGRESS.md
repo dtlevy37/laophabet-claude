@@ -118,3 +118,29 @@
   - tone_derive on words.csv; fill tone_derivation; derive the tones of ເທົ່າໃດ and ຢາກ.
   - validate_data.
   - Then sentences (Tatoeba first) and templates.
+
+## 2026-10-09 Scripts registered; batch 1 tones done
+- The user registered both scripts with `.claude/tools/approve-script.ps1` (it needs forward slashes when run from `!`).
+- tone_derive `--selftest`: 23/23 pass.
+- tone_derive on words.csv: 41 syllables; 37 match the Wiktionary tones, 0 mismatches.
+  - 4 warnings are a known false positive: ◌ອ◌ is not counted as a written vowel. Fix in the next script revision; it needs re-approval.
+- tone_derivation filled for all 32 words.
+  - ເທົ່າໃດ = mid|low-rising.
+  - ຢາກ = low-falling (cell 11, disputed D1).
+  - IPA for those two was composed from the derivation and noted as not sourced.
+- validate_data: 0 errors.
+  - Warnings: missing tables; 8 nouns without classifiers.
+  - Coverage: letters 21/45 required, vowels 16/31.
+- Minor: the vowels.csv `sound_group` values are not consistently paired (24 groups); tidy later.
+- Running: scholar collecting all Tatoeba Lao sentences -> `_agent/research/tatoeba-lao.md`; researcher on classifiers for the batch-1 nouns.
+- Next: sentences.csv / sentence_words.csv / templates (Tatoeba first, then composed `unverified` ones), then CHECKPOINT 30.
+
+## 2026-10-09 Batch 1 adjusted; learning-path model
+- User model: the app opens on a LETTER. The path is letter(s) → word → letter → word → sentence once its words are known, and so on. `words.intro_order` = word priority; learning_order.csv = the final interleaved path (item_type `sentence` added in SCHEMA).
+- Best-judgement changes (user delegated):
+  - Questions stay: Lao questions are statement + final word, so they're easy. ຫຍັງ stays (combines known ຫ+ຍ; unlocks ບໍ່ເປັນຫຍັງ).
+  - ເທົ່າໃດ moved to tier 100 (gloss unverified).
+  - Added W0033 ນອນ and W0034 ຫ້ອງນອນ (verified, no new letters) at intro_order 14–15, right after ຫ້ອງນ້ຳ.
+- Batch 1 = 33 words; validate 0 errors; tones 0 mismatches.
+- Classifiers: none sourced. Candidate: the tci-thaijo paper "Classifiers in Lao language" (PDF unreadable through fetch). Deferred to the 100 tier.
+- Next: once the Tatoeba corpus is in, build sentences.csv, sentence_words.csv, templates and learning_order.csv for batch 1; then CHECKPOINT 30.

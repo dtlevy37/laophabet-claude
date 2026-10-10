@@ -47,7 +47,9 @@ Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syl
 - **sentence_words.csv**: sentence_id, position, word_id
 - **templates.csv**: template_id, lao_pattern, english_pattern, slot_names, intro_order
 - **template_fillers.csv**: template_id, slot_name, word_id
-- **learning_order.csv**: step, item_type (letter|vowel|word|template), item_id, why
+- **learning_order.csv**: step, item_type (letter|vowel|word|sentence|template), item_id, why
+  - This is the final app sequence, interleaving everything (user, 2026-10-09). The app opens on a **letter**, not a word: each syllable of a word is built from its letters and vowels, then the word follows, then a sentence as soon as its words are known. Rinse, repeat. Example opening: ສ → ◌ະ → ບ → ◌າ → ຍ → ດ → ◌ີ → ສະບາຍດີ → ດີ → ◌່ → ◌ໍ → ບໍ່ → sentence ສະບາຍດີບໍ່?
+  - `words.intro_order` is the word-target priority order only. learning_order.csv is derived from it plus letters, vowels, sentences and templates.
 
 ## Tone convention
 
