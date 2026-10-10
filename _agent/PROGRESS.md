@@ -253,6 +253,15 @@ pron_tips are agent-written guidance.
   - Propose build_order rev2 (quiet mode, digits via number words, homograph warning summary) and tone_derive rev3 (atomic write).
   - Batch 4 (301–600): ຫງ (ເຫງົາ), ເ◌ະ (ເຕະ), Lao digits.
 
+## 2026-10-09 Batch 4 words written (in progress toward CHECKPOINT 600)
+- W0301–W0600 written to words.csv (list and rationale in `_agent/tmp/batch4-list.md`).
+  - Wiktionary IPA where available (~55%); the rest is agent IPA, `unverified`.
+  - Cluster readings: Wiktionary relays give ກວ/ຂວ/ຄວ as -uːə̯-. The agent uses kw-/kʰw- for ຂວາ ກວ່າ ກວ້າງ ຄວາຍ ຄວາມ; Wiktionary itself gives kʷʰ for ແຂວງ. Noted per row.
+  - ຄອມພິວເຕີ has an irregular loanword tone (tone recorded from Wiktionary; the rule mismatch is expected).
+- Pending:
+  - User approval of build_order rev2 (quiet output, digits, homograph summary, atomic write) and tone_derive rev3 (atomic write, extra-field guard).
+  - tone fill; batch-4 sentences; build; validate; CHECKPOINT 600.
+
 ### Next after review
 - Phase 2: words 35–100. Classifiers as items; numbers sprinkled in; ເທົ່າໃດ once sourced; ຫ້ອງນອນ chain extensions; ພາສາລາວ; ເຮືອນ.
 - Study Big Brother Mouse for verified simple sentences.

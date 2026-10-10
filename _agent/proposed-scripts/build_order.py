@@ -40,15 +40,22 @@ CHECKPOINTS = (30, 100, 300, 600)
 def read(path):
     with open(path, encoding="utf-8-sig", newline="") as f:
         r = csv.DictReader(f)
-        return list(r), list(r.fieldnames or [])
+        rows = list(r)
+        bad = [i for i, row in enumerate(rows, 2) if None in row]
+        if bad:
+            sys.exit(f"{path}: rows with more fields than the header (unquoted comma?) at lines {bad[:10]}; nothing written")
+        return rows, list(r.fieldnames or [])
 
 
 def write(path, cols, rows):
-    with open(path, "w", encoding="utf-8", newline="") as f:
+    """Write to a temporary file, then replace, so a failure never truncates the data."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
         for r in rows:
             w.writerow({c: r.get(c, "") for c in cols})
+    os.replace(tmp, path)
 
 
 def ensure_col(cols, name, after=None):
@@ -125,6 +132,7 @@ def main():
     ap.add_argument("--data", default="data")
     ap.add_argument("--check", action="store_true", help="report only; do not write files")
     ap.add_argument("--max-new", type=int, default=3, help="flag words introducing more than this many new symbols")
+    ap.add_argument("--verbose", action="store_true", help="print the per-word table and every homograph choice")
     a = ap.parse_args()
     root = os.path.abspath(os.getcwd())
     d = os.path.abspath(a.data)
@@ -151,7 +159,9 @@ def main():
     if len(orders) != len(set(orders)):
         problems.append("duplicate intro_order values in words.csv")
 
-    known, intro_of, new_items = set(), {}, {}
+    # Lao digits are introduced right after the number word whose spelling equals the digit's name_lao.
+    digit_by_name = {r.get("name_lao", ""): r["letter_id"] for r in letters if r.get("kind") == "digit"}
+    known, intro_of, new_items, post_items = set(), {}, {}, {}
     for w in ordered:
         seq = []
         syls = [x for x in (w.get("syllables") or "").split("|") if x.strip()]
@@ -167,7 +177,14 @@ def main():
         for it in new:
             intro_of[it] = w["word_id"]
         new_items[w["word_id"]] = new
-        w["new_letter_ids"] = "|".join(i for k, i in new if k == "letter")
+        post = []
+        dig = digit_by_name.get(w.get("lao", ""))
+        if dig and ("letter", dig) not in known:
+            post.append(("letter", dig))
+            known.add(("letter", dig))
+            intro_of[("letter", dig)] = w["word_id"]
+        post_items[w["word_id"]] = post
+        w["new_letter_ids"] = "|".join([i for k, i in new if k == "letter"] + [i for k, i in post])
         w["new_vowel_ids"] = "|".join(i for k, i in new if k == "vowel")
     for w in words:
         if w not in ordered:
@@ -184,7 +201,7 @@ def main():
         by_lao.setdefault(w["lao"], []).append(w["word_id"])
     for k in by_lao:
         by_lao[k].sort(key=lambda i: rank.get(i, 10 ** 9))
-    sent_ids, sw_rows = {}, []
+    sent_ids, sw_rows, homograph_defaults = {}, [], {}
     word_by_id = {w["word_id"]: w for w in words}
     for s in sentences:
         sid = s["sentence_id"]
@@ -205,7 +222,9 @@ def main():
                 problems.append(f"{sid}: token '{t}' is not a word in words.csv")
                 continue
             if len(by_lao.get(t, [])) > 1 and n not in over:
-                warnings.append(f"{sid}: '{t}' matches {by_lao[t]}; chose {wid} (add word_overrides to change)")
+                homograph_defaults[t] = homograph_defaults.get(t, 0) + 1
+                if a.verbose:
+                    warnings.append(f"{sid}: '{t}' matches {by_lao[t]}; chose {wid} (add word_overrides to change)")
             ids.append(wid)
             sw_rows.append({"sentence_id": sid, "position": n, "word_id": wid,
                             "source": "SRC-AGENT:segmentation", "confidence": "derived", "notes": ""})
@@ -231,6 +250,8 @@ def main():
             steps.append((kind, i, f"{sym_lao(kind, i)}: new in {w['lao']}"))
         n_new = len(new_items[wid])
         steps.append(("word", wid, f"{w['lao']} {gloss[wid]} (word {w['intro_order']}; {n_new} new symbol{'s' if n_new != 1 else ''})"))
+        for kind, i in post_items[wid]:
+            steps.append((kind, i, f"{sym_lao(kind, i)}: Lao digit for {w['lao']}"))
         known_words.add(wid)
         for t in tpl_sorted:
             req = [x for x in (t.get("requires_word_ids") or "").split("|") if x]
@@ -250,15 +271,19 @@ def main():
             warnings.append(f"{t['template_id']} never placed (requires_word_ids missing or not introduced)")
 
     # Report
-    print("== Reading load per word ==")
+    print("== Reading load per word ==" + ("" if a.verbose else " (only words with new symbols; --verbose for all)"))
     heavy = 0
     for w in ordered:
-        new = new_items[w["word_id"]]
+        new = new_items[w["word_id"]] + post_items[w["word_id"]]
         flag = ""
-        if len(new) > a.max_new and w is not ordered[0]:
+        if len(new_items[w["word_id"]]) > a.max_new and w is not ordered[0]:
             flag = "  <-- HEAVY"
             heavy += 1
-        print(f"{w['intro_order']:>4} {w['word_id']} {w['lao']:<12} new={len(new)} {' '.join(sym_lao(k, i) for k, i in new)}{flag}")
+        if a.verbose or new:
+            print(f"{w['intro_order']:>4} {w['word_id']} {w['lao']:<12} new={len(new)} {' '.join(sym_lao(k, i) for k, i in new)}{flag}")
+    if homograph_defaults:
+        print("homographs resolved to the earliest word (add word_overrides where wrong):",
+              ", ".join(f"{t}×{n}" for t, n in sorted(homograph_defaults.items())))
     req_l = [r for r in letters if r.get("coverage_required") == "yes"]
     req_v = [r for r in vowels if r.get("coverage_required") == "yes"]
     pos = {w["word_id"]: int(w["intro_order"]) for w in ordered}

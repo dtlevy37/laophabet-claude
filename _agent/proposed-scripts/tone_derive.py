@@ -21,6 +21,7 @@ parse warning that blocks derivation, or self-test failure.
 
 Revision 2: ◌ອ◌ and ◌ວ◌ count as written vowels (no false "no-written-vowel" warning);
 --fill mode added.
+Revision 3: --fill writes atomically and refuses rows with more fields than the header.
 """
 import argparse
 import csv
@@ -349,6 +350,9 @@ def main():
             reader = csv.DictReader(f)
             rows = list(reader)
             cols = list(reader.fieldnames or [])
+        bad = [i for i, row in enumerate(rows, 2) if None in row]
+        if bad:
+            sys.exit(f"{args.csv}: rows with more fields than the header (unquoted comma?) at lines {bad[:10]}; nothing written")
     else:
         p.error("give a CSV path, --syl or --selftest")
 
@@ -359,10 +363,12 @@ def main():
         for c in (args.tone_col, "tone_derivation"):
             if c not in cols:
                 cols.append(c)
-        with open(safe_out_path(args.csv), "w", encoding="utf-8", newline="") as f:
+        target = safe_out_path(args.csv)
+        with open(target + ".tmp", "w", encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
             w.writeheader()
             w.writerows(rows)
+        os.replace(target + ".tmp", target)  # atomic: a failure never truncates the CSV
         print(f"filled tones for {filled} row(s); derivations written for all parsable rows", file=sys.stderr)
 
     out, problems = check_rows(rows, args)
