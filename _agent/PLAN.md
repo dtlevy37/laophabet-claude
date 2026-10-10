@@ -27,7 +27,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] CHECKPOINT 300: commit and continue
 
 ## Phase 4: To about 600 words
-- [ ] Reach the target (hard cap 1000); every letter and vowel introduced by word 600
-- [ ] Final coverage report: letters, vowels, sentences per word, confidence breakdown
-- [ ] `learning_order.csv` and the letters-to-words-to-sentences map
-- [ ] CHECKPOINT 600: commit; create `_agent/DONE`
+- [x] Reach the target (hard cap 1000); every letter and vowel introduced by word 600 (600 words; 35/35 letters, 31/31 vowels)
+- [x] Final coverage report: letters, vowels, sentences per word, confidence breakdown (PROGRESS.md, CHECKPOINT 600)
+- [x] `learning_order.csv` and the letters-to-words-to-sentences map (intro_word_id + new_*_ids + sentence_words)
+- [x] CHECKPOINT 600: commit; create `_agent/DONE`

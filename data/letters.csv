@@ -26,7 +26,7 @@ C24,ວ,U+0EA7,consonant,ວີ,fan,w,w,low,v/w,w (final o/w),"At the start, bet
 C25,ຫ,U+0EAB,consonant,ຫ່ານ,goose,h,,high,h,h,"h as in 'hang'. Written silent before ງ ຍ ນ ມ ລ ວ, it makes them high class.",yes,W0012,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C26,ອ,U+0EAD,consonant,ໂອ,bowl,ʔ,,mid,,,"Silent carrier for a vowel at the start of a syllable. Strictly a glottal catch, like the break in 'uh-oh'.",yes,W0028,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ອື່ງ frog as the name word. Also part of the vowel forms ◌ອ◌ ◌ັອ◌ ເ◌ືອ ເ◌ຶອ
 C27,ຮ,U+0EAE,consonant,ເຮືອ,boat,h,,low,h,h,h as in 'hang'. Same sound as ຫ.,yes,W0029,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ເຮືອນ house as the name word
-C28,ຫງ,U+0EAB U+0E87,consonant-cluster,ເຫງົາ,lonely,ŋ,,high,ng,ng,Same sound as ງ; high class (silent ຫ).,yes,,SRC-WP-SCRIPT;SRC-SEASITE,verified,Example word from WP. SEAsite gives ເຫງັນ civet cat
+C28,ຫງ,U+0EAB U+0E87,consonant-cluster,ເຫງົາ,lonely,ŋ,,high,ng,ng,Same sound as ງ; high class (silent ຫ).,yes,W0302,SRC-WP-SCRIPT;SRC-SEASITE,verified,Example word from WP. SEAsite gives ເຫງັນ civet cat
 C29,ຫຍ,U+0EAB U+0E8D,consonant-cluster,ຫຍ້າ,grass,ɲ,,high,ny,ny,Same sound as initial ຍ; high class (silent ຫ).,yes,W0026,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C30,ໜ,U+0EDC,consonant-ligature,ໜູ,rat,n,,high,n,n,Same sound as ນ; high class. Also written ຫນ.,yes,W0039,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Unicode LAO HO NO
 C31,ໝ,U+0EDD,consonant-ligature,ໝາ,dog,m,,high,m,m,Same sound as ມ; high class. Also written ຫມ.,yes,W0045,SRC-WP-SCRIPT;SRC-SEASITE;SRC-COMPART,verified,Unicode LAO HO MO
@@ -39,13 +39,13 @@ T4,◌໋,U+0ECB,tone-mark,,mai catawa,,,,,,"Rare: interjections and onomatopoei
 S1,ໆ,U+0EC6,other,,repetition mark (ko la),,,,,,Repeat the preceding word.,yes,W0131,SRC-WP-SCRIPT;SRC-COMPART,verified,
 S2,ຯ,U+0EAF,other,,ellipsis,,,,,,Marks omitted or abbreviated words.,no,,SRC-WP-SCRIPT;SRC-COMPART,verified,
 S3,◌໌,U+0ECC,other,,cancellation mark,,,,,,Silences a letter (mostly obsolete).,no,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D0,໐,U+0ED0,digit,ສູນ,zero,,,,,suun,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D1,໑,U+0ED1,digit,ໜຶ່ງ,one,,,,,neung,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D2,໒,U+0ED2,digit,ສອງ,two,,,,,sawng,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D3,໓,U+0ED3,digit,ສາມ,three,,,,,saam,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D4,໔,U+0ED4,digit,ສີ່,four,,,,,sii,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D5,໕,U+0ED5,digit,ຫ້າ,five,,,,,haa,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D6,໖,U+0ED6,digit,ຫົກ,six,,,,,hok,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D7,໗,U+0ED7,digit,ເຈັດ,seven,,,,,jet,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D8,໘,U+0ED8,digit,ແປດ,eight,,,,,bpaet,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
-D9,໙,U+0ED9,digit,ເກົ້າ,nine,,,,,gao,,yes,,SRC-WP-SCRIPT;SRC-COMPART,verified,
+D0,໐,U+0ED0,digit,,zero (ສູນ),,,,,suun,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D1,໑,U+0ED1,digit,,one (ໜຶ່ງ),,,,,neung,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D2,໒,U+0ED2,digit,,two (ສອງ),,,,,sawng,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D3,໓,U+0ED3,digit,,three (ສາມ),,,,,saam,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D4,໔,U+0ED4,digit,,four (ສີ່),,,,,sii,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D5,໕,U+0ED5,digit,,five (ຫ້າ),,,,,haa,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D6,໖,U+0ED6,digit,,six (ຫົກ),,,,,hok,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D7,໗,U+0ED7,digit,,seven (ເຈັດ),,,,,jet,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D8,໘,U+0ED8,digit,,eight (ແປດ),,,,,bpaet,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
+D9,໙,U+0ED9,digit,,nine (ເກົ້າ),,,,,gao,,reading-only,,SRC-WP-SCRIPT;SRC-COMPART,verified,Everyday Lao mostly uses Western digits (user 2026-10-10); Lao digits are a short reading-only item
