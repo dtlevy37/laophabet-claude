@@ -393,4 +393,24 @@ pron_tips are agent-written guidance.
 - User suggested https://www.lexilogos.com/english/lao_dictionary.htm as a source. Next: fetch it, identify which linked dictionaries are usable, and propose domains plus a verification pass over the unverified rows.
 - Open decision: add the 10 missing classifier words to reach exactly 1000?
 - **User decision:** don't use sealang.net (outdated SSL certificates) or Enfield's grammar (little Lao script). Continue without them. The user is not worried about crowd-sourced sources (applies to Wiktionary too), so Glosbe remains a possible future second source if wanted.
+- **User decision:** add the 10 missing classifier words (W0991–W1000, topic `classifiers`) to reach exactly 1000.
+- **User design direction ("trunk and branches"):** the first ~100–200 words are the solid trunk, a fixed baseline progression. After that, learning branches by the learner's interest and direction (topics) rather than following one official path. Implication for app logic: the words' `topic` acts as the branch key, and learning_order beyond the trunk is a default suggestion, not a requirement. Not yet modelled in the data; propose a trunk/branch field later.
+
+## 2026-10-10 FINAL: 1000 words
+- **Added 10 classifier words W0991–W1000:** ຜືນ ກ້ອນ ດວງ ສາຍ ອົງ ແຜ່ນ ດ້າມ ບົດ ເຫຼັ້ມ ສະບັບ.
+  - 5 have Wiktionary entries (ສາຍ ອົງ ແຜ່ນ ບົດ ເຫຼັ້ມ), but their classifier senses are mostly agent knowledge.
+  - 5 are 404s with agent IPA: ຜືນ ກ້ອນ ດວງ ດ້າມ ສະບັບ.
+  - +20 sentences (S2036–S2055).
+- **Links:** the 23 waiting nouns now point to the new classifiers. ສາຍ, ແຜ່ນ and ບົດ are self; ອົງ (as a noun) is none.
+- **Results:**
+  - tone_derive: 1601 syllables, 0 problems.
+  - build: 1000 words, 1996/1996 sentences, 3094 steps.
+  - validate: 0 errors. Only warnings left: ໃຈ appears only in compounds; ສ່ວນຫຼຸດ comes before ສ່ວນ.
+- **Totals:**
+  - words 1000: verified 595 / derived 7 / unverified 398
+  - nouns 538: specific 246 / self 90 / measure 43 / none 159
+  - sentences 1996: verified 61
+  - templates 30
+- **merge_words limitation:** it refuses self-referencing classifier_word_id. Workaround used: merge with the field empty, then set it with apply_columns. Fix in a future rev.
+- **Review:** ມີດ uses ດວງ (from Wiktionary's ມີດ page), but Wiktionary's ເຫຼັ້ມ ("pointed objects") suggests ເຫຼັ້ມ. Added to NEEDS_HUMAN.
   Then run tone_derive --fill → build_order → validate.

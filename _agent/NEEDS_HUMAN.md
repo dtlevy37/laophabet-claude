@@ -31,7 +31,8 @@
   - ກະແຈ: ດອກ?
   - Paired body parts (ຕາ ມື ຕີນ ຫູ ຂາ ແຂນ ບ່າ ເຂົ່າ): ຂ້າງ?
 - Changed: ໝອນ from ອັນ to ໃບ.
-- 10 classifier words are missing from words.csv: ຜືນ ກ້ອນ ດວງ ສາຍ ອົງ ແຜ່ນ ດ້າມ ບົດ ເຫຼັ້ມ ສະບັບ. 23 nouns wait on them.
+- The 10 missing classifier words were added as W0991–W1000 (resolved 2026-10-10). Five have no Wiktionary entry (ຜືນ ກ້ອນ ດວງ ດ້າມ ສະບັບ), so their IPA is by the agent.
+- ມີດ (knife): the classifier is ດວງ per Wiktionary's ມີດ page. Wiktionary's ເຫຼັ້ມ page says "pointed objects", and ດ້າມ is also plausible. Which is usual in Vientiane?
 
 ## Awaiting approval
 - `_agent/proposed-scripts/tone_derive.py`: derives tones per syllable and cross-checks against recorded tones and IPA. Run with `--selftest` first.
