@@ -394,7 +394,7 @@ pron_tips are agent-written guidance.
 - Open decision: add the 10 missing classifier words to reach exactly 1000?
 - **User decision:** don't use sealang.net (outdated SSL certificates) or Enfield's grammar (little Lao script). Continue without them. The user is not worried about crowd-sourced sources (applies to Wiktionary too), so Glosbe remains a possible future second source if wanted.
 - **User decision:** add the 10 missing classifier words (W0991–W1000, topic `classifiers`) to reach exactly 1000.
-- **User design direction ("trunk and branches"):** the first ~100–200 words are the solid trunk, a fixed baseline progression. After that, learning branches by the learner's interest and direction (topics) rather than following one official path. Implication for app logic: the words' `topic` acts as the branch key, and learning_order beyond the trunk is a default suggestion, not a requirement. Not yet modelled in the data; propose a trunk/branch field later.
+- **User design direction ("trunk and branches"):** the first ~100–200 words are the solid trunk, a fixed baseline progression. After that, learning branches by the learner's interest and direction (topics) rather than following one official path. Implication for app logic: the words' `topic` acts as the branch key, and learning_order beyond the trunk is a default suggestion, not a requirement. User follow-up: do NOT add a core/trunk field. Position in intro_order (the first ~100–200) already puts a word in the trunk. Branch categories such as school, work and hobbies may come much later.
 
 ## 2026-10-10 FINAL: 1000 words
 - **Added 10 classifier words W0991–W1000:** ຜືນ ກ້ອນ ດວງ ສາຍ ອົງ ແຜ່ນ ດ້າມ ບົດ ເຫຼັ້ມ ສະບັບ.
