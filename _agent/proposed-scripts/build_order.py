@@ -22,6 +22,8 @@ correctly; same ວ rule as tone_derive rev 4. The cancellation mark ◌໌ is h
 silenced consonant is skipped and ◌໌ (letters.csv S3) counts as the symbol introduced.
 Revision 4: ວ after ໄ/ໃ belongs to the initial (ໄຫວ້); loanword ລ/ຣ clusters before a vowel
 sign (ຄລີນິກ) are parsed. Same rules as tone_derive rev 5.
+Revision 5: also writes _agent/vocab.csv (word_id, lao, pos, gloss_en, topic,
+classifier_word_id, sentence_uses): a compact vocabulary for drafters, not app data.
 """
 import argparse
 import csv
@@ -336,7 +338,16 @@ def main():
         lo = [{"step": n, "item_type": k, "item_id": i, "why": why, "source": "SRC-AGENT:sequencing",
                "confidence": "derived", "notes": ""} for n, (k, i, why) in enumerate(steps, 1)]
         write(p("learning_order"), ["step", "item_type", "item_id", "why", "source", "confidence", "notes"], lo)
-        print("written: words, letters, vowels, sentences, sentence_words, learning_order")
+        vcount = {}
+        for r in sw_rows:
+            vcount[r["word_id"]] = vcount.get(r["word_id"], 0) + 1
+        vocab = [{"word_id": w["word_id"], "lao": w["lao"], "pos": w.get("pos", ""),
+                  "gloss_en": w.get("gloss_en", ""), "topic": w.get("topic", ""),
+                  "classifier_word_id": w.get("classifier_word_id", ""), "sentence_uses": vcount.get(w["word_id"], 0)}
+                 for w in words]
+        write(os.path.join(root, "_agent", "vocab.csv"),
+              ["word_id", "lao", "pos", "gloss_en", "topic", "classifier_word_id", "sentence_uses"], vocab)
+        print("written: words, letters, vowels, sentences, sentence_words, learning_order, _agent/vocab.csv")
     sys.exit(1 if problems else 0)
 
 
