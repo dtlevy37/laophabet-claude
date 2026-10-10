@@ -40,7 +40,7 @@ import os
 import re
 import sys
 
-HARD_CAP = 1000
+HARD_CAP = 3000  # user decision 2026-10-10 (CLAUDE.md "Targets")
 REF_COLS = ("classifier_word_id", "component_word_ids")
 
 

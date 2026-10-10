@@ -45,7 +45,7 @@ CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}
 ID_FORMATS = {"words": re.compile(r"^W\d{6}$"), "sentences": re.compile(r"^S\d{9}$")}
 LAO_RE = re.compile(r"^[຀-໿\s|?!.,()«»\"'\-◌_…]*$")
 PUNCT_RE = re.compile(r"[?!.,()«»\"'…]")
-HARD_CAP, TARGET = 1000, 600
+HARD_CAP, TARGET = 3000, 600  # cap: user decision 2026-10-10; TARGET = letter/vowel coverage word
 
 errors, warnings = [], []
 
