@@ -90,6 +90,19 @@ Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syl
 
 **Lexical tone exceptions** (tone_derive rev 4). Loanwords and other words whose sourced tone breaks the spelling rule go in `data/tone_exceptions.csv` (word_id, syl_index, tone, source, note). The derivation keeps the rule result and gets the suffix `!lexical`, e.g. `mid/live/long/none→2!lexical`. tone_by_syllable holds the sourced tone. A source is required for every exception.
 
+## ID formats (user decision, 2026-10-10)
+- Words `W` + 6 digits (W000001–W999999). Sentences `S` + 9 digits (S000000001–S999999999). Enforced by validate_data rev 3. Migrated once by `rekey_ids.py`.
+- Letters, vowels, templates and sources keep their short IDs (C06, V01, S1, TPL27, SRC-WIKT:...).
+- The word-count hard cap (1000) is separate from the ID range. It changes only when the user raises it (CLAUDE.md + script constants).
+
+## Drafting workflow (2026-10-10)
+1. The `drafter` subagent writes batch CSVs to `_agent/drafts/<tag>-<table>.csv`, using placeholder IDs (`<tag>-W001`, `<tag>-S001`) and the exact data headers.
+2. `check_drafts.py --words ... --sentences ... [--templates ... --fillers ...]` must report 0 problems. Fixes go back to the drafter, or are made by hand.
+3. `merge_words.py <word drafts> --sentences ... [--templates ... --fillers ...] --check`, then the same without `--check`. Real IDs are assigned and references remapped.
+4. `bash approved-scripts/pipeline.sh` (tone fill → build → validate).
+5. Move merged drafts to `_agent/drafts/merged/`, then commit.
+- Homographs: one row per spelling+meaning. Sentences pick the meaning with `word_overrides` (`N=ID`); without one, the first word with that spelling is used. Postgres can derive a meanings relation by grouping on `lao`.
+
 ## Generated vs hand-maintained (2026-10-09)
 - **Hand-maintained:**
   - words.csv (lao, syllables, ipa, respelling, gloss, intro_order, ...)

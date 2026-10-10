@@ -1,0 +1,15 @@
+# Line endings: store and check out text as LF everywhere (the scripts write LF).
+* text=auto eol=lf
+
+*.csv  text eol=lf
+*.md   text eol=lf
+*.py   text eol=lf
+*.js   text eol=lf
+*.sh   text eol=lf
+*.json text eol=lf
+# Windows PowerShell 5.1 tooling stays CRLF.
+*.ps1  text eol=crlf
+
+# Approved scripts are verified by SHA256 of their exact bytes: git must never convert them.
+approved-scripts/** -text
+_agent/proposed-scripts/** -text

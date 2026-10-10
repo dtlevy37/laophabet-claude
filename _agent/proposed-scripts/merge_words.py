@@ -17,17 +17,22 @@ Steps:
   4. Refuse (write nothing) if: the total exceeds the hard cap of 1000; a Lao spelling occurs
      twice and is not listed in --allow-homograph; a reference points to an unknown ID; a
      row points to itself (except classifier_word_id on a classifier_type=self noun).
-
-Revision 2 (2026-10-10): classifier_type=self rows may (and must) point classifier_word_id at
-themselves. An empty value on a self row is filled with the row's own (renumbered) ID.
   5. Unless --check: append to words.csv atomically (temp file + replace) and write the
      old->new ID map to --map-out.
   Optional companions (appended in the same run, each checked first):
-     --sentences F.csv ...  appended to data/sentences.csv (same header, no duplicate sentence_id)
+     --sentences F.csv ...  appended to data/sentences.csv (same header). Sentence IDs are
+                            renumbered from the next free S#########, and batch word IDs in
+                            target_word_id and word_overrides ("4=W000058") are remapped, so
+                            drafts may use any placeholder IDs.
      --templates F.csv ...  appended to data/templates.csv (same header, no duplicate template_id)
      --fillers F.csv ...    appended to data/template_fillers.csv; word_id values written as
                             LAO:<spelling> are resolved to the merged word_id (refused if the
                             spelling is unknown or a homograph), old batch IDs are remapped.
+
+Revision 2 (2026-10-10): classifier_type=self rows may (and must) point classifier_word_id at
+themselves. An empty value on a self row is filled with the row's own (renumbered) ID.
+Revision 3 (2026-10-10): wide IDs (words W + 6 digits, sentences S + 9 digits); sentences are
+renumbered and their word references remapped (see --sentences).
 """
 import argparse
 import csv
@@ -118,7 +123,7 @@ def main():
 
     new_id = dict(remap)
     for k, r in enumerate(kept):
-        new_id[r["word_id"]] = f"W{nxt + k:04d}"
+        new_id[r["word_id"]] = f"W{nxt + k:06d}"
     known = {r["word_id"] for r in words} | {new_id[r["word_id"]] for r in kept}
 
     problems = []
@@ -168,6 +173,24 @@ def main():
                 problems.append(f"{fpath}: header differs from {path}")
                 continue
             new.extend(rows)
+        if name == "sentences":
+            snums = [int(m.group(1)) for r in existing for m in [re.fullmatch(r"S(\d+)", r["sentence_id"])] if m]
+            snext = max(snums) + 1 if snums else 1
+            for k, r in enumerate(new):
+                r["sentence_id"] = f"S{snext + k:09d}"
+                if r.get("target_word_id"):
+                    r["target_word_id"] = new_id.get(r["target_word_id"].strip(), r["target_word_id"].strip())
+                    if r["target_word_id"] not in known:
+                        problems.append(f"{r['sentence_id']}: target_word_id {r['target_word_id']} unknown")
+                ovs = []
+                for ov in [x.strip() for x in (r.get("word_overrides") or "").split(";") if x.strip()]:
+                    pos_, _, wid = ov.partition("=")
+                    wid = new_id.get(wid.strip(), wid.strip())
+                    if wid not in known:
+                        problems.append(f"{r['sentence_id']}: word_overrides {ov} points to unknown {wid}")
+                    ovs.append(f"{pos_.strip()}={wid}")
+                if "word_overrides" in r:
+                    r["word_overrides"] = ";".join(ovs)
         if id_col:
             ids = [r[id_col] for r in existing + new]
             dups = sorted({i for i in ids if ids.count(i) > 1})
@@ -191,7 +214,7 @@ def main():
     for msg in problems:
         print("PROBLEM", msg, file=sys.stderr)
     print(f"words.csv {len(words)} + kept {len(kept)} (dropped {len(drop)}) = {total}; "
-          f"new IDs W{nxt:04d}-W{nxt + len(kept) - 1:04d}; "
+          f"new IDs W{nxt:06d}-W{nxt + len(kept) - 1:06d}; "
           + "".join(f"{os.path.basename(c[0])} +{len(c[3])}; " for c in companions)
           + f"problems: {len(problems)}", file=sys.stderr)
     if problems:

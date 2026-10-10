@@ -16,6 +16,8 @@ Revision 2 (2026-10-10):
     (warning while the classifier word is still missing from words.csv). Before the column
     exists, a single warning replaces the per-noun warnings.
   - --quiet groups warnings by kind and prints a count with up to 5 examples per kind.
+Revision 3 (2026-10-10): ID formats are enforced: word_id W + 6 digits, sentence_id S + 9 digits.
+  The word hard cap stays 1000 until the user raises it (CLAUDE.md + this constant).
 """
 import argparse
 import csv
@@ -40,6 +42,7 @@ CONFIDENCE = {"verified", "derived", "unverified"}
 TONES = {"low-rising", "high-rising", "mid", "low-falling", "high-falling"}
 TIERS = {"30", "100", "300", "600", "extra"}
 CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}
+ID_FORMATS = {"words": re.compile(r"^W\d{6}$"), "sentences": re.compile(r"^S\d{9}$")}
 LAO_RE = re.compile(r"^[຀-໿\s|?!.,()«»\"'\-◌_…]*$")
 PUNCT_RE = re.compile(r"[?!.,()«»\"'…]")
 HARD_CAP, TARGET = 1000, 600
@@ -76,6 +79,8 @@ def load(data_dir, name):
                 err(f"{name}.csv line {i}: empty {id_col}")
             elif v in seen:
                 err(f"{name}.csv line {i}: duplicate {id_col} {v}")
+            elif name in ID_FORMATS and not ID_FORMATS[name].match(v):
+                err(f"{name}.csv line {i}: {id_col} '{v}' does not match {ID_FORMATS[name].pattern}")
             seen.add(v)
     for i, r in enumerate(rows, 2):
         if r.get("confidence", "") not in CONFIDENCE:
