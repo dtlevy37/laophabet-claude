@@ -114,6 +114,9 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - Exclusion list confirmed. `common_list.py` (seed/merge/report) and `letter_map.py` (signatures, union-closure search, best sets, nested chain) written to `_agent/proposed-scripts/`; both import `parse_syllable` from approved build_order.py. Not yet run (cannot run unapproved scripts).
 - 2026-10-19 scripts approved. Judged words.csv: 72 not common (`_agent/letter_map/not_common_ids.txt`), 1352 seeded into common_words.csv.
 - v0 map: only 431 of 1352 are searchable (most need ດ/ບ/ວ/ຍ/ອ/ຫ or > 5 units). Best: k=3 ກ ປ ◌າ 3 words; k=4 ກ ງ ນ ◌າ 5; k=5 ກ ຕ ປ ◌າ ◌ີ 9. Chain ປ◌າ → +ກ → +◌ີ → +ຕ (ປາ ປາກ ປາກກາ ປີ ປີກ ຕາ ຕີ ຕາກ ກີຕາ). Too thin: the list lacks short everyday words.
+- 7-unit run (rev 1): 1.54M candidate sets; k=6 13 words ກ ງ ປ ◌້ ◌າ ◌ີ; k=7 18 words ກ ງ ນ ປ ◌້ ◌າ ◌ີ. Saved as `_agent/letter_map/v1-map7-reference.txt`.
+- letter_map rev 2 proposed (bitmasks, branch-and-bound DFS with live signatures, beam chain adding 1–2 units per step; default --max-k 7). After approval, check that its best-set counts match the rev 1 reference.
+- enum_spellings.py proposed, awaiting approval.
 - Next: gap fill with short words from allowed units (propose `enum_spellings.py`, then judge enumerated spellings).
 - (old) once approved, judge words.csv for commonness → seed_ids.txt → `common_list.py seed` → `letter_map.py` v0 → category gap lists → drafter list batches → `common_list.py merge`.
 - Weekly usage 55% at this point (stop at 60%).
