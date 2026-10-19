@@ -2,7 +2,7 @@
 
 Goal: choose the FIRST units a learner learns. For each small set of units (consonants, vowel patterns,
 tone marks), find which common words it can spell. Answer: which 3-, 4- and 5-unit sets spell the most
-common words. Stop at 5 units for now. Keep early learning simple: no unit that follows more than one rule.
+common words. Search up to 7 units (user, 2026-10-19; was 5): run letter_map.py with --max-k 7. Keep early learning simple: no unit that follows more than one rule.
 
 ## Decisions (user, 2026-10-19)
 1. Glyphs with several roles or sounds are **excluded completely** from the first set (not split into variants).
@@ -71,5 +71,6 @@ sets look thin.
    (lao, gloss, topic as category, confidence). `merge` adds proposal batches (NFC normalize, dedupe, link word_id).
    Both print counts by category and confidence.
 2. `letter_map.py`: units and exclusions, signatures, search, reports (with the optional toggles).
-3. `enum_spellings.py`: only if Step 3 is needed.
+3. `enum_spellings.py`: needed (v0 map too thin). Proposed 2026-10-19: every legal monosyllable from allowed units,
+   round-trip checked with parse_syllable, split into batches for judging.
 Domains: en.wiktionary.org (already approved). Nothing else expected.
