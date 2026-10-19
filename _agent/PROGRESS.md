@@ -109,5 +109,6 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 ## 2026-10-19 Pivot: letter-set to word map (planning only)
 - User asked for a map from learned unit sets to readable common words; best 3/4/5-unit sets; vowels are units; avoid multi-sound glyphs.
 - Plan written to `_agent/LETTER_MAP_PLAN.md`; Phase 8 added to PLAN.md. c7 drafts remain unmerged (Phase 7 paused).
-- **Resume here:** get the 3 open decisions from the user, then write the two proposed scripts for approval.
+- User decisions (rev 2 of the plan): multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; build a closed common-word list first, then the map is set math.
+- **Resume here:** user confirms the exclusion list in LETTER_MAP_PLAN.md, then write `common_list.py` and `letter_map.py` to proposed-scripts for approval.
 - Weekly usage 55% at this point (stop at 60%).
