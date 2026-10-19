@@ -110,5 +110,6 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - User asked for a map from learned unit sets to readable common words; best 3/4/5-unit sets; vowels are units; avoid multi-sound glyphs.
 - Plan written to `_agent/LETTER_MAP_PLAN.md`; Phase 8 added to PLAN.md. c7 drafts remain unmerged (Phase 7 paused).
 - User decisions (rev 2 of the plan): multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; build a closed common-word list first, then the map is set math.
+- Rev 3: commonness is the model's judgement (no source needed, sources don't imply common); Lao spelling keeps a confidence column; list has no cap (expect 1000–2000); no proposed/accepted status.
 - **Resume here:** user confirms the exclusion list in LETTER_MAP_PLAN.md, then write `common_list.py` and `letter_map.py` to proposed-scripts for approval.
 - Weekly usage 55% at this point (stop at 60%).

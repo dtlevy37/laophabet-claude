@@ -58,7 +58,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] User decisions: multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; closed common list first
 - [ ] User confirms the exclusion list
 - [ ] Propose `common_list.py` and `letter_map.py`; get approval
-- [ ] Common list: judge existing words.csv; Wiktionary topical categories; subagent proposals per category; review
+- [ ] Common list: mark common words in words.csv by judgement; concept lists per category; drafter gives the Lao; review
 - [ ] Map: signatures, best 3/4/5 sets, nested chain
 - [ ] (Optional) gap fill with `enum_spellings.py`
 - [ ] Report best sets per k and recommend the first units to learn
