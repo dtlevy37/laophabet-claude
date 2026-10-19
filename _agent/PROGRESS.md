@@ -117,6 +117,9 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - 7-unit run (rev 1): 1.54M candidate sets; k=6 13 words ກ ງ ປ ◌້ ◌າ ◌ີ; k=7 18 words ກ ງ ນ ປ ◌້ ◌າ ◌ີ. Saved as `_agent/letter_map/v1-map7-reference.txt`.
 - letter_map rev 2 proposed (bitmasks, branch-and-bound DFS with live signatures, beam chain adding 1–2 units per step; default --max-k 7). After approval, check that its best-set counts match the rev 1 reference.
 - enum_spellings.py proposed, awaiting approval.
-- Next: gap fill with short words from allowed units (propose `enum_spellings.py`, then judge enumerated spellings).
+- 2026-10-19 gap fill done: enum_spellings → 19 batches (5624 spellings) judged by drafter (sonnet, ~24k tokens each), reviewed by main agent (dropped Thai forms/spellings such as ຄ່ະ ຕຽມ ຖູກ ເພັງ ລິງ ເລັກ ເລ່ນ ໄໜ, non-standard ມູ່ ມຶກ ປື້ມ ໜໍ້), merged. Common list 1575 (861 unverified). 738 searchable.
+- Map (k ≤ 7, 106 s): k=3 ງ ນ ◌າ 5; k=4 ກ ງ ນ ◌າ 8; k=5 +ຈ 11; k=6 ກ ງ ນ ລ ◌້ ◌າ 17; k=7 ກ ຄ ງ ນ ◌້ ◌າ ◌ົ◌ 24. Chain ນ◌າ → ງ → ກ → ◌້ → ຄ → ◌ົ◌ (score 66).
+- Next: Wiktionary check of the words in the top sets; consider two-syllable compounds from top-set units.
+- (old) gap fill with short words from allowed units (propose `enum_spellings.py`, then judge enumerated spellings).
 - (old) once approved, judge words.csv for commonness → seed_ids.txt → `common_list.py seed` → `letter_map.py` v0 → category gap lists → drafter list batches → `common_list.py merge`.
 - Weekly usage 55% at this point (stop at 60%).
