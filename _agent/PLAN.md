@@ -53,3 +53,10 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [ ] CHECKPOINT 2000
 - [ ] CHECKPOINT 2500
 - [ ] CHECKPOINT 3000: final report; commit; create `_agent/DONE`
+
+## Phase 8: Letter-set to word map (user pivot 2026-10-19; Phase 7 paused). See `_agent/LETTER_MAP_PLAN.md`
+- [ ] User decisions: multi-role glyphs, tone marks, multi-syllable words
+- [ ] Propose `letter_map.py` and `enum_spellings.py`; get approval
+- [ ] v0 map from existing words.csv (signatures, best 3/4/5 sets, nested chain)
+- [ ] Gap fill: enumerate spellings for top sets, researcher classifies, Wiktionary check, recompute until stable
+- [ ] Report best sets per k and recommend a learning order for the first units

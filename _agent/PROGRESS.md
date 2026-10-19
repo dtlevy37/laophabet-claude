@@ -105,3 +105,9 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 5. **Fewer writes:** one words file and one sentences file per run (not per word).
 6. **Measure** tokens per word for each run and compare with about 2k per word for c1–c7.
 - The user must update `.claude/agents/drafter.md` to match (the agent cannot edit `.claude/`). Its report section still mentions Tatoeba/BBM.
+
+## 2026-10-19 Pivot: letter-set to word map (planning only)
+- User asked for a map from learned unit sets to readable common words; best 3/4/5-unit sets; vowels are units; avoid multi-sound glyphs.
+- Plan written to `_agent/LETTER_MAP_PLAN.md`; Phase 8 added to PLAN.md. c7 drafts remain unmerged (Phase 7 paused).
+- **Resume here:** get the 3 open decisions from the user, then write the two proposed scripts for approval.
+- Weekly usage 55% at this point (stop at 60%).
