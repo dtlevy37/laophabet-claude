@@ -1,7 +1,7 @@
 """Map learned unit sets to the common words they can spell; find the best first sets.
 
 Usage (standard library only, UTF-8):
-  python approved-scripts/letter_map.py                       # k = 2..5, top 20, write reports
+  python approved-scripts/letter_map.py                       # k = 2..7, top 20, write reports
   python approved-scripts/letter_map.py --max-k 5 --top 20 --beam 50
   python approved-scripts/letter_map.py --one-class           # consonants of one class only
   python approved-scripts/letter_map.py --no-shared-glyphs    # no two vowel patterns share a glyph
@@ -28,14 +28,22 @@ Excluded units (one sound, one rule for the first set; user 2026-10-19), derived
   - ◌໊ ◌໋, ໆ ຯ ◌໌ and digits are never in scope
 Words that need an excluded unit stay in signatures.csv with the reason and are not searched.
 
-Search (exact): words are bucketed by signature. Every best set is a union of signatures
-(an unused unit adds no words), so candidates are the closure of signature unions of size
-≤ max-k, built bottom-up. count(S) = sum of bucket sizes over the subsets of S (≤ 2^5).
+Revision 2 (2026-10-19): faster search for larger k.
+  - Signatures are bitmasks (one bit per unit); "readable" is sig & ~S == 0.
+  - Best sets: depth-first search adding units in a fixed order (most-used first). Each node
+    carries its "live" signatures (not yet readable but still reachable with the units left), so
+    adding a unit only touches those; a unit that is in no live signature is skipped (it would
+    only pad the set). Branch and bound: a branch stops when even reading every live signature
+    that fits in the remaining slots cannot reach the current top N for any k. Exact up to ties
+    at the cut-off rank. Only sets in which every unit is used by a readable word are reported.
+  - Chain: beam search over sets, each step keeps the set or adds one or two units; new words are
+    counted from a unit → signature index. Score = sum of counts along the chain.
 """
 import argparse
 import csv
 import os
 import sys
+import time
 import unicodedata
 from itertools import combinations
 
@@ -96,18 +104,8 @@ def excluded_units(letters, vowels):
     return out
 
 
-def count(s, buckets):
-    s = tuple(sorted(s))
-    return sum(len(buckets.get(frozenset(sub), ())) for n in range(1, len(s) + 1) for sub in combinations(s, n))
-
-
-def words_in(s, buckets):
-    s = tuple(sorted(s))
-    found = []
-    for n in range(1, len(s) + 1):
-        for sub in combinations(s, n):
-            found += buckets.get(frozenset(sub), [])
-    return found
+def popcount(x):
+    return bin(x).count("1")
 
 
 def main():
@@ -117,7 +115,7 @@ def main():
     ap.add_argument("--data", default="data")
     ap.add_argument("--common", default="_agent/letter_map/common_words.csv")
     ap.add_argument("--out", default="_agent/letter_map")
-    ap.add_argument("--max-k", type=int, default=5)
+    ap.add_argument("--max-k", type=int, default=7)
     ap.add_argument("--top", type=int, default=20)
     ap.add_argument("--beam", type=int, default=50)
     ap.add_argument("--one-class", action="store_true", help="all consonants in a set share one class")
@@ -126,6 +124,8 @@ def main():
     a = ap.parse_args()
     root = os.path.abspath(os.getcwd())
     d, out = inside(a.data, root), inside(a.out, root)
+    K = a.max_k
+    t0 = time.time()
 
     letters = read(os.path.join(d, "letters.csv"))
     vowels = read(os.path.join(d, "vowels.csv"))
@@ -135,7 +135,7 @@ def main():
     vowel_form = {r["lao_pattern"]: r["form"] for r in vowels}
     lao_of = {r["letter_id"]: r["lao"] for r in letters} | {r["vowel_id"]: r["lao_pattern"] for r in vowels}
     cls = {r["letter_id"]: r.get("consonant_class", "") for r in letters if r.get("kind", "").startswith("consonant")}
-    glyphs = {r["vowel_id"]: set(r["lao_pattern"]) - {PH} for r in vowels}
+    glyphs = {r["vowel_id"]: frozenset(set(r["lao_pattern"]) - {PH}) for r in vowels}
     excl = excluded_units(letters, vowels)
 
     print("== Excluded units ==")
@@ -181,7 +181,7 @@ def main():
             bad = sorted(u for u in sig if u in excl)
             if bad:
                 reason = "excluded: " + " ".join(lao_of.get(u, u) for u in bad)
-            elif len(sig) > a.max_k:
+            elif len(sig) > K:
                 reason = f"needs {len(sig)} units"
             elif not allowed(sig):
                 reason = "toggle constraint"
@@ -192,58 +192,154 @@ def main():
                          "n_units": len(sig), "searched": "no" if reason else "yes", "excluded_reason": reason})
     word_lao = {w["cw_id"]: unicodedata.normalize("NFC", w["lao"]) for w in common}
     n_in = sum(len(v) for v in buckets.values())
-    print(f"\ncommon words: {len(common)} | searched (≤ {a.max_k} units, no excluded unit): {n_in} | distinct signatures: {len(buckets)}")
+    print(f"\ncommon words: {len(common)} | searched (≤ {K} units, no excluded unit): {n_in} | distinct signatures: {len(buckets)}")
 
-    # Closure of signature unions with size ≤ max-k
-    sigs = list(buckets)
-    closure, frontier = set(sigs), list(sigs)
-    while frontier:
-        nxt = []
-        for s in frontier:
-            for b in sigs:
-                u = s | b
-                if len(u) <= a.max_k and u not in closure and allowed(u):
-                    closure.add(u)
-                    nxt.append(u)
-        frontier = nxt
-    scored = {s: count(s, buckets) for s in closure}
-    print(f"candidate sets: {len(closure)}")
+    # Bitmasks: units ordered by how many signatures use them (most first) for early good bounds.
+    use = {}
+    for s in buckets:
+        for u in s:
+            use[u] = use.get(u, 0) + 1
+    units = sorted(use, key=lambda u: (-use[u], u))
+    bit = {u: 1 << i for i, u in enumerate(units)}
+    to_mask = lambda s: sum(bit[u] for u in s)
+    to_ids = lambda m: sorted(u for u in units if m & bit[u])
+    sigs = [(to_mask(s), len(ids), ids) for s, ids in buckets.items()]
+    by_unit = {i: [j for j, (m, _, _) in enumerate(sigs) if m & (1 << i)] for i in range(len(units))}
+    future = [0] * (len(units) + 1)
+    for i in range(len(units) - 1, -1, -1):
+        future[i] = future[i + 1] | (1 << i)
+    u_cls = [cls.get(u) for u in units]
+    u_gly = [glyphs.get(u, frozenset()) for u in units]
 
-    fmt = lambda s: " ".join(lao_of.get(u, u) for u in sorted(s))
+    def ok_add(i, cls_now, gly_now):
+        if a.one_class and u_cls[i] and cls_now and u_cls[i] != cls_now:
+            return False
+        if a.no_shared_glyphs and u_gly[i] & gly_now:
+            return False
+        return True
+
+    # Best sets: branch and bound
+    cap = max(a.top, a.beam)
+    rec = {k: [] for k in range(1, K + 1)}
+    thr = {k: -1 for k in rec}
+    rank_key = lambda e: (-e[0], e[1], to_ids(e[2]))
+
+    def trim(k, n):
+        rec[k].sort(key=rank_key)
+        del rec[k][n:]
+        if len(rec[k]) >= cap:
+            thr[k] = rec[k][-1][0]
+
+    def record(cnt, size, S):
+        for k in range(size, K + 1):
+            if len(rec[k]) < cap or cnt > thr[k]:
+                rec[k].append((cnt, size, S))
+                if len(rec[k]) > 4 * cap:
+                    trim(k, cap)
+
+    nodes = 0
+
+    def dfs(S, size, cnt, used, live, start, cls_now, gly_now):
+        nonlocal nodes
+        nodes += 1
+        if size and used == S:
+            record(cnt, size, S)
+        if size == K or not live:
+            return
+        hist = [0] * (K + 1)
+        cand = 0
+        for m, n, miss in live:
+            hist[popcount(miss)] += n
+            cand |= miss
+        acc, bound = cnt, {}
+        for r in range(1, K - size + 1):
+            acc += hist[r]
+            bound[size + r] = acc
+        if all(len(rec[k]) >= cap and bound[k] <= thr[k] for k in bound):
+            return
+        for i in range(start, len(units)):
+            b = 1 << i
+            if not cand & b or not ok_add(i, cls_now, gly_now):
+                continue
+            S2, room, fut = S | b, K - size - 1, future[i + 1]
+            cnt2, used2, live2 = cnt, used, []
+            for m, n, miss in live:
+                if miss & b:
+                    miss = miss & ~b
+                    if not miss:
+                        cnt2 += n
+                        used2 |= m
+                        continue
+                if miss & ~fut == 0 and popcount(miss) <= room:
+                    live2.append((m, n, miss))
+            dfs(S2, size + 1, cnt2, used2, live2, i + 1,
+                cls_now or u_cls[i], gly_now | u_gly[i])
+
+    dfs(0, 0, 0, 0, [(m, n, m) for m, n, _ in sigs], 0, None, frozenset())
+    for k in rec:
+        trim(k, cap)
+    print(f"search nodes: {nodes} | {time.time() - t0:.1f}s")
+
+    fmt = lambda m: " ".join(lao_of.get(u, u) for u in to_ids(m))
+    words_of = lambda S: [i for m, _, ids in sigs if m & ~S == 0 for i in ids]
     best_rows = []
     print("\n== Best sets of at most k units ==")
-    for k in range(2, a.max_k + 1):
-        ranked = sorted((s for s in closure if len(s) <= k), key=lambda s: (-scored[s], len(s), sorted(s)))[:a.top]
-        for rank, s in enumerate(ranked, 1):
-            ws = words_in(s, buckets)
-            best_rows.append({"k": k, "rank": rank, "size": len(s), "unit_ids": "|".join(sorted(s)), "units_lao": fmt(s),
-                              "word_count": scored[s], "words": " ".join(word_lao[i] for i in ws), "cw_ids": "|".join(ws)})
-        if ranked:
-            print(f"k={k}: {scored[ranked[0]]:>4} words  {fmt(ranked[0])}")
+    for k in range(2, K + 1):
+        for rank, (cnt, size, S) in enumerate(rec[k][:a.top], 1):
+            ws = words_of(S)
+            best_rows.append({"k": k, "rank": rank, "size": size, "unit_ids": "|".join(to_ids(S)), "units_lao": fmt(S),
+                              "word_count": cnt, "words": " ".join(word_lao[i] for i in ws), "cw_ids": "|".join(ws)})
+        if rec[k]:
+            print(f"k={k}: {rec[k][0][0]:>4} words  {fmt(rec[k][0][2])}")
 
-    # Nested chain by beam search; score = sum of counts along the chain (rewards early payoff)
-    beams = [((s,), scored[s]) for s in closure if len(s) <= 2] or [((frozenset(),), 0)]
-    beams = sorted(beams, key=lambda b: -b[1])[:a.beam]
-    for k in range(3, a.max_k + 1):
+    # Nested chain: beam over sets; each step keeps the set or adds one or two units.
+    def gain(S2, added):
+        seen, g = set(), 0
+        for i in added:
+            for j in by_unit[i]:
+                if j not in seen and sigs[j][0] & ~S2 == 0:
+                    seen.add(j)
+                    g += sigs[j][1]
+        return g
+
+    def ok_set(S):
+        ids = to_ids(S)
+        return allowed(set(ids))
+
+    beams = {S: (cnt, cnt, (S,)) for cnt, size, S in rec[2] if size <= 2} or {0: (0, 0, (0,))}
+    beams = dict(sorted(beams.items(), key=lambda b: -b[1][0])[:a.beam])
+    for k in range(3, K + 1):
         nxt = {}
-        for chain, total in beams:
-            last = chain[-1]
-            succ = [s for s in closure if len(s) <= k and last <= s] or [last]
-            for s in succ:
-                key = chain + (s,)
-                nxt[key] = total + scored.get(s, 0)
-        beams = sorted(nxt.items(), key=lambda b: -b[1])[:a.beam]
+        for S, (score, cnt, chain) in beams.items():
+            size = popcount(S)
+            free = [i for i in range(len(units)) if not S & (1 << i)]
+            opts = [((), S)]
+            if size + 1 <= k:
+                opts += [((i,), S | (1 << i)) for i in free]
+            if size + 2 <= k:
+                opts += [((i, j), S | (1 << i) | (1 << j)) for i, j in combinations(free, 2)]
+            for added, S2 in opts:
+                if added and (a.one_class or a.no_shared_glyphs) and not ok_set(S2):
+                    continue
+                c2 = cnt + gain(S2, added)
+                s2 = score + c2
+                if S2 not in nxt or s2 > nxt[S2][0]:
+                    nxt[S2] = (s2, c2, chain + (S2,))
+        beams = dict(sorted(nxt.items(), key=lambda b: (-b[1][0], -b[1][1]))[:a.beam])
     chain_rows = []
     if beams:
-        chain, total = beams[0]
+        total, _, chain = max(beams.values(), key=lambda v: (v[0], v[1]))
         print(f"\n== Best nested chain (score {total}) ==")
-        prev = frozenset()
-        for k, s in enumerate(chain, 2):
-            new_ws = [i for i in words_in(s, buckets) if i not in set(words_in(prev, buckets))]
-            chain_rows.append({"k": k, "added": fmt(s - prev), "unit_ids": "|".join(sorted(s)), "units_lao": fmt(s),
-                               "word_count": scored.get(s, 0), "new_words": " ".join(word_lao[i] for i in new_ws)})
-            print(f"k={k}: +{fmt(s - prev):<10} {scored.get(s, 0):>4} words  new: {' '.join(word_lao[i] for i in new_ws)}")
-            prev = s
+        prev = 0
+        for k, S in enumerate(chain, 2):
+            before = set(words_of(prev))
+            new_ws = [i for i in words_of(S) if i not in before]
+            cnt = sum(n for m, n, _ in sigs if m & ~S == 0)
+            chain_rows.append({"k": k, "added": fmt(S & ~prev), "unit_ids": "|".join(to_ids(S)), "units_lao": fmt(S),
+                               "word_count": cnt, "new_words": " ".join(word_lao[i] for i in new_ws)})
+            print(f"k={k}: +{fmt(S & ~prev):<10} {cnt:>4} words  new: {' '.join(word_lao[i] for i in new_ws)}")
+            prev = S
+    print(f"total time: {time.time() - t0:.1f}s")
     for p in problems:
         print("ERROR", p)
 

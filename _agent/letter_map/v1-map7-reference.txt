@@ -1,0 +1,27 @@
+== Excluded units ==
+final sound differs (ɲ / j): ຍ
+final sound differs (d / t): ດ
+final sound differs (b / p): ບ
+final sound differs (r / n): ຣ
+glyph with a second role: ວ ຫ ອ ຫງ ຫຍ ຫຼ ຫວ
+rare tone mark: ◌໊ ◌໋
+vowel pattern contains ອ, ວ or ຍ: ◌ັອ◌ ◌ອ◌ ເ◌ັຍ ເ◌ຍ ເ◌ຶອ ເ◌ືອ ◌ົວະ ◌ົວ ◌ວ◌
+
+common words: 1352 | searched (≤ 7 units, no excluded unit): 515 | distinct signatures: 513
+candidate sets: 1540170
+
+== Best sets of at most k units ==
+k=2:    1 words  ກ ແ◌ະ
+k=3:    3 words  ກ ປ ◌າ
+k=4:    5 words  ກ ງ ນ ◌າ
+k=5:    9 words  ກ ຕ ປ ◌າ ◌ີ
+k=6:   13 words  ກ ງ ປ ◌້ ◌າ ◌ີ
+k=7:   18 words  ກ ງ ນ ປ ◌້ ◌າ ◌ີ
+
+== Best nested chain (score 48) ==
+k=2: +ປ ◌າ          1 words  new: ປາ
+k=3: +ກ             3 words  new: ປາກ ປາກກາ
+k=4: +◌້            5 words  new: ກ້າ ປ້າ
+k=5: +ງ             8 words  new: ງາ ກາງ ກ້າງ
+k=6: +◌ີ           13 words  new: ປີ ປີກ ປີ້ ປີ້ງ ປາປີ້ງ
+k=7: +ນ            18 words  new: ນາ ການ ງານ ນີ້ ປີນີ້
