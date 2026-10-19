@@ -56,8 +56,8 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 
 ## Phase 8: Letter-set to word map (user pivot 2026-10-19; Phase 7 paused). See `_agent/LETTER_MAP_PLAN.md`
 - [x] User decisions: multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; closed common list first
-- [ ] User confirms the exclusion list
-- [ ] Propose `common_list.py` and `letter_map.py`; get approval
+- [x] User confirms the exclusion list
+- [ ] Propose `common_list.py` and `letter_map.py`; get approval (written to proposed-scripts 2026-10-19)
 - [ ] Common list: mark common words in words.csv by judgement; concept lists per category; drafter gives the Lao; review
 - [ ] Map: signatures, best 3/4/5 sets, nested chain
 - [ ] (Optional) gap fill with `enum_spellings.py`

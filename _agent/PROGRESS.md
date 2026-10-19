@@ -111,5 +111,6 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - Plan written to `_agent/LETTER_MAP_PLAN.md`; Phase 8 added to PLAN.md. c7 drafts remain unmerged (Phase 7 paused).
 - User decisions (rev 2 of the plan): multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; build a closed common-word list first, then the map is set math.
 - Rev 3: commonness is the model's judgement (no source needed, sources don't imply common); Lao spelling keeps a confidence column; list has no cap (expect 1000–2000); no proposed/accepted status.
-- **Resume here:** user confirms the exclusion list in LETTER_MAP_PLAN.md, then write `common_list.py` and `letter_map.py` to proposed-scripts for approval.
+- Exclusion list confirmed. `common_list.py` (seed/merge/report) and `letter_map.py` (signatures, union-closure search, best sets, nested chain) written to `_agent/proposed-scripts/`; both import `parse_syllable` from approved build_order.py. Not yet run (cannot run unapproved scripts).
+- **Resume here:** once approved, judge words.csv for commonness → seed_ids.txt → `common_list.py seed` → `letter_map.py` v0 → category gap lists → drafter list batches → `common_list.py merge`.
 - Weekly usage 55% at this point (stop at 60%).

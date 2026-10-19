@@ -13,7 +13,8 @@ common words. Stop at 5 units for now. Keep early learning simple: no unit that 
 ## Units
 - Consonants from `data/letters.csv`, vowel patterns from `data/vowels.csv`, tone marks ◌່ ◌້.
   Never in scope: ◌໊ ◌໋, ໆ ຯ ◌໌, digits.
-- **Excluded from the first set (draft; user to confirm):**
+- **Excluded from the first set (user confirmed 2026-10-19; 27 of 36 vowel patterns remain):**
+  - Also every letters.csv cluster row containing ຫ or ວ (ຫງ ຫຍ ຫວ ຫຼ). Ligatures ໜ ໝ are single glyphs with one sound and stay.
   - Different sound as a final: ດ (d / t), ບ (b / p), ຍ (ɲ / j), ຣ (r / n). ກ (k / unreleased k) is kept as one sound.
   - Second role: ອ (silent carrier and vowel part), ວ (consonant and vowel part), ຫ (h and silent tone leader).
   - Vowel patterns that contain those glyphs: ◌ັອ◌ ◌ອ◌ ເ◌ັຍ ເ◌ຍ ເ◌ຶອ ເ◌ືອ ◌ົວະ ◌ົວ ◌ວ◌.
@@ -25,7 +26,8 @@ common words. Stop at 5 units for now. Keep early learning simple: no unit that 
 
 ## Step 1: the common-word list
 File `_agent/letter_map/common_words.csv`:
-`cw_id, lao, gloss_en, category, word_id (if in data/words.csv), confidence, source, notes`
+`cw_id, lao, syllables, gloss_en, category, word_id (if in data/words.csv), confidence, source, notes`
+(syllables pipe-separated as in words.csv; the map parses them)
 - **Commonness is a judgement call, made by the model** (user, 2026-10-19). "Common" = every grade-schooler knows it,
   or it is heard in everyday conversation ("sad" yes, "melancholy" no). No source is needed for commonness, and
   being in a source does not make a word common. Being in the list means accepted; there is no status workflow.
