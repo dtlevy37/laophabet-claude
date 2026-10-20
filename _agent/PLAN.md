@@ -61,7 +61,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] Common list: words.csv judged (1352 seeded), enum gap fill (+223), Zipf top-300 check (+42) → 1617
 - [x] Map: signatures, best sets, nested chain (k ≤ 7)
 - [x] Gap fill with `enum_spellings.py`
-- [ ] k ≤ 10 run (`_agent/letter_map/k10/`); report best sets as the reference for early unit order
+- [x] k ≤ 10 run: stopped by the user after 45 min with no output (search grows too fast; old exclusions now superseded by role-units and lesson_tool brief). k ≤ 7 results remain the reference.
 
 ## Phase 9: Lessons (user, 2026-10-19). See `_agent/LESSON_PLAN.md`
 - [x] Lesson decisions recorded; notes updated (LESSON_PLAN, PLAN, PROGRESS, SCHEMA)

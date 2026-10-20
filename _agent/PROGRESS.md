@@ -140,3 +140,5 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - `_agent/APP_DESIGN.md`: show first, test later (levels unseen → introduced → recognised → recalled → in use), activity table (v1: teach card, spot it, matching, multiple choice, flashcards, fill in the blank, build the sentence, tone drill; v2: build the word, listening, dialogues, self-graded speaking; no ASR or Lao typing), and "What a lesson must contain".
 - CLAUDE.md is edit-protected: the old version is archived at `_agent/archive/CLAUDE-wordlist-phase.md`; the new one is at `_agent/proposed-config/CLAUDE.md` for the user to copy.
 - **Next:** user approves the three files and installs CLAUDE.md → build lesson 1 interactively → runner test with -Count 1.
+- Later the same day: brief made size-bounded (counts + last 3 lessons + capped lists; new `lookup` and `can-read` modes). Distractors: lessons 1–5 may draw from lessons 1–5; from lesson 6 only taught items. No level demotion; every item has an info icon opening its teach card.
+- k ≤ 10 map run stopped by the user (45 min, no output). Not needed: lesson_tool brief replaces it.
