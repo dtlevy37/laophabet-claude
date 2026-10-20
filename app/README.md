@@ -6,7 +6,7 @@ One app for two kinds of user, chosen at sign-up and stored in `profiles.role`:
 
 ```
 app/
-  backend/    Supabase: migrations, generated seeds, seed generator
+  backend/    Supabase: migrations, generated seeds (generator: approved-scripts/db_sql.py)
   frontend/   plain HTML + CSS + ES modules (Netlify)
 ```
 
@@ -18,8 +18,24 @@ app/
 | `supabase/migrations/..0100_feedback_tables.sql` | `profiles`, `reviewer_trust` (yours, private), `sentence_claims`, `sentence_reviews`, `sentence_recordings`. |
 | `supabase/migrations/..0300_profile_demographics.sql` | Adds gender, age range, Lao locale and self-reported English level to `profiles`. |
 | `supabase/migrations/..0200_review_functions.sql` | RPCs `claim_next_sentence`, `submit_review`, `skip_sentence`; RLS policies; private `recordings` storage bucket. |
-| `scripts/generate_seed.py` | Validates the CSVs (headers, keys, types, foreign keys) and writes `supabase/seeds/NN_<table>.sql` as idempotent upserts. |
-| `supabase/seeds/` | Generated output (2,810 sentences, 1,424 words at time of writing). |
+| `supabase/migrations/..0700_lesson_tables.sql` | `lessons`, `units`, `rules`, `lesson_items`; `updated_at` + `retired_at` on every content table; `lesson_locked` view + `is_lesson_locked()`; RPC `get_lesson(lesson_id)`. |
+| `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `approved-scripts/db_sql.py` (never by hand). Listed in `_agent/PENDING_MIGRATIONS.md` until you apply them. |
+| `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
+
+### The DB is the source of truth for content (Phase 2)
+- Every content change is a migration file you review and apply (`supabase db push`). Scripts never connect to the DB. The hosted project is the master; a local Supabase (`supabase db reset`) is hosted + pending migrations, for testing them.
+- `data/*.csv` is the agent's working copy (hosted + pending migrations), so the repo can always rebuild the content.
+- `python approved-scripts/db_sql.py` modes (run from the project root):
+  - `check`: the CSVs match the DB spec (run as step 4 of `pipeline.sh`).
+  - `seed`: initial import, `on conflict do nothing`, so re-running never overwrites a row.
+  - `lesson L0001`: everything one lesson uses, upserted. `lesson_tool.py merge` writes it automatically.
+  - `change --name <name> <ids>`: upsert named rows (hand fixes, feedback decisions), lesson rows included.
+  - `refresh`: bulk pool refresh; upserts changed rows, retires rows missing from the CSVs, and never touches a row a lesson uses (left out of the file and guarded by `is_lesson_locked()`).
+- Rows are retired (`retired_at`), never deleted; readers filter `retired_at is null`. `updated_at` is set by trigger.
+- On `supabase db reset` migrations run before seeds, so lesson migrations are self-contained (they upsert every row they reference) and the seed's `do nothing` leaves them alone.
+
+### `get_lesson(lesson_id)` (signed-in users)
+Returns `{lesson, items, distractors}` or null. `items` are in teaching order, each `{position, item_type, item_id, role, detail}`; `detail` is a unit (teach text + letter/vowel IPA, respelling, pron tip, class), rule, word (gloss, respelling, IPA, syllables, tones, pron tip, classifier) or sentence (lao, lao_spaced, english, words with positions). `distractors` = units and words introduced up to lesson `max(order, 5)` (APP_DESIGN). The client never reads the content tables.
 
 ### How work is handed out
 `claim_next_sentence()` returns the user's open claim if they have one (survives page refresh). Otherwise it claims the sentence with the fewest submitted reviews plus live claims, that this user has not reviewed or skipped, until a sentence has 3 reviews (`p_target`). Ties break by `sentence_id`, so the earliest curriculum sentences go first. Claims expire after 30 minutes. The RPC returns only `sentence_id, lao, lao_spaced, english`, so reviewers never see IPA, confidence, source or notes (avoids anchoring them).
@@ -28,7 +44,7 @@ app/
 ```bash
 cd backend
 supabase link --project-ref <ref>
-supabase db push                       # applies the 3 migrations
+supabase db push                       # applies the migrations
 ```
 Load the data (either):
 ```bash
@@ -38,11 +54,7 @@ for f in supabase/seeds/*.sql; do psql "$DB_URL" -f "$f"; done
 ```
 Local dev: `supabase start && supabase db reset` applies migrations and seeds.
 
-Regenerate seeds after the CSVs change (safe to re-apply; reviews are untouched):
-```bash
-python backend/scripts/generate_seed.py      # from native/, or any cwd
-```
-It aborts without writing if the CSV headers or keys no longer match the script's `TABLES` spec; update `TABLES` and the migration together when you add a column.
+Seeds are for the first import only (`python approved-scripts/db_sql.py seed`; re-applying never overwrites rows). Later pool changes go through `db_sql.py refresh` or `change` migrations. The script aborts without writing if the CSV headers or keys no longer match its `TABLES` spec; update `TABLES` and add a migration together when you add a column.
 
 ### Auth settings (Supabase dashboard)
 - Email confirmations are on in `config.toml`; for hosted projects set it under Authentication > Providers > Email.

@@ -15,6 +15,7 @@ Task: create exactly ONE new lesson (the next one), merge it, and stop.
    Fix the draft until it reports 0 errors. Warnings about unverified rows are expected.
 
 5. Run: python approved-scripts/lesson_tool.py merge
+   Merge also writes the lesson's SQL migration (app/backend/supabase/migrations/<stamp>_lesson_<id>.sql) for the owner to review. Never edit, apply or delete migration files, and never connect to a database.
 
 6. Append a 3-5 line entry to _agent/PROGRESS.md: lesson id and title, new units/rules, new words, recycled items, sentences used or composed, anything doubtful. Do not commit; the runner commits. Do not edit _agent/PLAN.md.
 

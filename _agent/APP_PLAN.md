@@ -56,21 +56,30 @@ Starting notes for a fresh session:
 - No lessons exist yet (`data/lessons.csv` absent), so the new tables start empty.
 - Shell: no `cd` chaining, no `git -C`; use absolute paths or Read/Grep.
 
-Work:
-- [ ] Migration: new tables `units`, `rules`, `lessons`, `lesson_items`; content tables gain `updated_at`
-      (+ trigger) and `retired_at` (retire, never delete)
-- [ ] Seed generator → initial import uses `on conflict do nothing`; later pool refreshes are generated as a
-      migration that skips lesson-referenced rows
-- [ ] Lesson merge emits a migration: `lesson_tool.py merge` writes the CSV working copy **and**
-      `app/backend/supabase/migrations/<timestamp>_lesson_<id>.sql` (lesson, items, units, rules, plus every
-      word/sentence/sentence_words row it uses, upserted), from one script so the two cannot drift.
-      `next_lesson.ps1` leaves the migration for owner review; the runner never applies it.
-- [ ] Track pending vs applied: `_agent/lessons/PENDING_MIGRATIONS.md` (the runner appends; the owner ticks
-      after `db push`), so lesson N+1 can be planned while lesson N awaits approval
-- [ ] Feedback decisions (Phase 4) also become migration files
-- [ ] `get_lesson(lesson_id)` RPC → JSON bundle (items in order, unit/rule teach text, word
-      gloss/respelling/IPA/tones/pron tip, sentences with word links, allowed distractor pool). The client never
+Work (2026-10-19; written, scripts awaiting approval, nothing run against a DB yet):
+- [x] Migration `..0700_lesson_tables.sql`: new tables `units`, `rules`, `lessons`, `lesson_items` (item
+      references checked by trigger); every content table gains `updated_at` (+ trigger) and `retired_at`
+      (retire, never delete); view `lesson_locked` + `is_lesson_locked(kind, id)`
+- [x] Seed generator replaced by `approved-scripts/db_sql.py` (old `generate_seed.py` → `_trash/`):
+      `seed` = initial import with `on conflict do nothing`; `refresh` = pool migration via staging tables that
+      upserts changed rows, retires missing ones, and skips lesson-referenced rows (in Python and in SQL)
+- [x] Lesson merge emits a migration: `lesson_tool.py merge` validates data/ (`db_sql.load`), writes the CSV
+      working copy, then `db_sql.lesson_migration` writes `<stamp>_lesson_<id>.sql` from those CSVs (lesson,
+      items, units + their letter/vowel rows, rules, words, sentences, sentence_words, target words,
+      templates, tone exceptions; changed rows only; self-contained). `next_lesson.ps1` stops if the file is
+      missing and commits it for review; the runner never applies it.
+- [x] Track pending vs applied: `_agent/PENDING_MIGRATIONS.md` (moved up from `_agent/lessons/` because change
+      and refresh migrations are listed too); every db_sql migration appends a line, the owner ticks after
+      `db push`
+- [x] Feedback decisions (Phase 4) also become migration files: `db_sql.py change --name <n> <ids>`
+- [x] `get_lesson(lesson_id)` RPC → JSON bundle (items in order with unit/rule/word/sentence detail via
+      `unit_json` … `sentence_json`, distractor pool through lesson `max(order, 5)`). The client never
       assembles a lesson from raw tables.
+- [ ] User: approve the script group (db_sql.py new; lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md,
+      pipeline.sh changed), then the agent runs `db_sql.py check` and `seed` (seeds are still the old
+      do-update ones)
+- [ ] User: `supabase db reset` locally (migrations + seeds), then after lesson 1: apply its migration and try
+      `select get_lesson('L0001')` as a signed-in user
 
 ## Phase 3: Native feedback on lesson content
 - [ ] Review RPCs require `role = 'native'` (today any signed-in user could call them)

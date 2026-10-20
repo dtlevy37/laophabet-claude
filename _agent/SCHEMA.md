@@ -69,6 +69,10 @@ All four are written by `lesson_tool.py merge`, one lesson at a time.
 - Teaching texts are agent-written: `source` SRC-AGENT:lesson, `confidence` unverified.
 - **dialogues.csv**: dialogue_id (D + 4 digits), topic, title_en, intro_lesson_id. **dialogue_lines.csv**: dialogue_id, line_no, speaker (A|B|...), sentence_id.
 - Learner progress (spaced repetition state per learner and item) lives only in Postgres, not in CSV.
+- **In the DB** (migration `..0700`, 2026-10-19): the same columns plus `updated_at` (trigger) and `retired_at`
+  on every content table; rows are retired, never deleted. Allowed values of kind/role/item_type are CHECK
+  constraints there, so changing them needs a migration. The DB is the master; these CSVs are the working copy,
+  and every change reaches the DB as a migration written by `approved-scripts/db_sql.py` (APP_PLAN Phase 2).
 
 ## Tone convention
 
