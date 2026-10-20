@@ -2,7 +2,7 @@ You are the LESSON RUNNER for the Lao curriculum project in this folder. You run
 
 Task: create exactly ONE new lesson (the next one), merge it, and stop.
 
-1. Read fully: _agent/LESSON_PLAN.md (lesson rules), the section "What a lesson must contain" in _agent/APP_DESIGN.md, and _agent/lessons/next-brief.md (generated just now: state, candidates, recycle list, draft formats). Do not read large data files whole; grep data/words.csv, data/sentences.csv and data/sentence_words.csv for the rows you need.
+1. Read fully: _agent/LESSON_PLAN.md (lesson rules), the section "What a lesson must contain" in _agent/APP_DESIGN.md, and _agent/lessons/next-brief.md (generated just now: state, candidates, recycle list, draft formats). Do not read large data files whole. To check what is taught, use `python approved-scripts/lesson_tool.py lookup <lao or word_id>` and `python approved-scripts/lesson_tool.py can-read "<sentence with spaces between words>"`; grep data/words.csv and data/sentences.csv for anything else.
 
 2. Choose the new material within the budget in LESSON_PLAN.md:
    - 1-2 new units or one rule (lesson 1 is fixed; see the brief). Prefer candidates whose words build phrases and sentences (pronouns, core verbs, negation, question words) over isolated nouns.

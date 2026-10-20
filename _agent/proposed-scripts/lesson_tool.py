@@ -5,6 +5,8 @@ Usage (standard library only, UTF-8, run from the project root):
   python approved-scripts/lesson_tool.py brief [--out _agent/lessons/next-brief.md] [--top 12]
   python approved-scripts/lesson_tool.py check [_agent/lessons/drafts/next]
   python approved-scripts/lesson_tool.py merge [_agent/lessons/drafts/next]
+  python approved-scripts/lesson_tool.py lookup ລາວ W000059 ...      # known? introduced where? readable now?
+  python approved-scripts/lesson_tool.py can-read "ເຈົ້າ ໄປ ໃສ"        # status of each word in a sentence
 Budget options (check/merge): --max-units 2 --max-words 3 --max-weight 5.5 --min-recycle 3
 
 Units are role-units, derived from build_order.parse_syllable:
@@ -25,7 +27,9 @@ Draft folder (default _agent/lessons/drafts/next/):
   units.csv   unit_id, teach_en, notes            (one row per new unit; required)
   rules.csv   rule_id, name_en, teach_en, notes   (one row per new rule; required)
 
-status: counts so far. brief: state plus candidates for the next lesson (markdown, for the runner).
+status: counts so far. brief: state plus candidates for the next lesson (markdown, for the runner); its size
+does not grow with the number of lessons (lists are capped by --top; the full state stays in data/).
+lookup / can-read: answer single questions about the taught state without reading the tables.
 check: validates the draft; exit 1 on any error. merge: check, then append to data/, assign the next
 lesson_id (L + 4 digits) and move the draft folder to _agent/lessons/merged/<lesson_id>/.
 Words in a lesson must have a data/words.csv row (word_id); sentences must be in data/sentences.csv.
@@ -257,15 +261,21 @@ def brief(world, top):
                  f"({', '.join(world.show(u) for u in sorted(FIRST_UNITS))}); word rows: "
                  + ", ".join(f"{w} '{world.words[w]['gloss_en']}'" for w in ids)
                  + ". Both meanings may be taught as new words (same spelling). No recycling yet.\n")
+    # The brief stays about the same size however many lessons exist: the full state lives in data/
+    # (lessons.csv, lesson_items.csv, units.csv, rules.csv); look things up with `lookup` / `can-read`.
     L.append("## State\n")
-    L.append(f"- Lessons so far: {world.n_lessons}")
+    L.append(f"- Lessons: {world.n_lessons} | units: {len(world.known_units)} | rules: {len(world.known_rules)} | "
+             f"words: {len(world.known_words)} | sentences used: {len(world.used_sents)}")
     for r in sorted(world.lessons, key=lambda r: int(r["lesson_order"]))[-3:]:
-        L.append(f"  - {r['lesson_id']}: {r['title_en']} ({r['kind']})")
-    L.append(f"- Known units ({len(world.known_units)}): " + " ".join(world.show(u) for u in sorted(world.known_units)))
+        new = [f"{world.show(it['item_id']) if it['item_type'] in ('unit', 'rule') else world.words.get(it['item_id'], {}).get('lao', it['item_id'])}"
+               for it in world.items if it["lesson_id"] == r["lesson_id"] and it["role"] == "new"]
+        L.append(f"  - {r['lesson_id']}: {r['title_en']} ({r['kind']}); new: {', '.join(new)}")
+    L.append(f"- Known units: " + (" ".join(world.show(u) for u in sorted(world.known_units)) or "none"))
     L.append(f"- Known rules: " + (" ".join(world.show(r) for r in sorted(world.known_rules)) or "none"))
-    kw = sorted(world.known_words, key=lambda w: world.last_shown.get(w, 0))
-    L.append(f"- Known words ({len(kw)}): " + ", ".join(f"{w} {world.words[w]['lao']} '{world.words[w]['gloss_en']}'" for w in kw if w in world.words))
-    L.append(f"- New in the previous lesson: " + (" ".join(world.show(i) for _, i in sorted(world.prev_new)) or "none") + "\n")
+    L.append(f"- New in the previous lesson: " + (" ".join(world.show(i) for _, i in sorted(world.prev_new)) or "none"))
+    L.append("- Look-ups (do not read the data tables whole):\n"
+             "  - `python approved-scripts/lesson_tool.py lookup <lao or word_id> ...`: known? which lesson? readable now? missing units\n"
+             "  - `python approved-scripts/lesson_tool.py can-read \"<sentence with spaces between words>\"`: status of every word\n")
 
     # candidates: single units and pairs
     P = [(r, *cw_sig(world, r)) for r in pool(world)]
@@ -508,12 +518,69 @@ def merge(world, draft, path, root, new_units, new_rules):
     print(f"merged {lid}: {les['title_en'].strip()} (draft moved to {os.path.relpath(dest, root)})")
 
 
+def intro_lesson(world, wid):
+    return next((it["lesson_id"] for it in world.items
+                 if it["item_type"] == "word" and it["item_id"] == wid and it["role"] == "new"), "")
+
+
+def word_status(world, wid, have):
+    sig, prob = world.word_sig(wid)
+    w = world.words[wid]
+    head = f"{wid} {w['lao']} '{w['gloss_en']}'"
+    if prob:
+        return f"{head}: parse problem: {prob}"
+    if wid in world.known_words:
+        return f"{head}: known (introduced {intro_lesson(world, wid)})"
+    miss = sig - have
+    if not miss:
+        return f"{head}: not taught yet, readable now"
+    return f"{head}: not taught yet, needs {' '.join(world.show(u) for u in sorted(miss))}"
+
+
+def lookup(world, terms):
+    have = world.known_units | world.known_rules
+    by_lao = {}
+    for wid, w in world.words.items():
+        by_lao.setdefault(nfc(w["lao"]), []).append(wid)
+    for t in terms:
+        t = nfc(t.strip())
+        ids = [t] if t in world.words else by_lao.get(t, [])
+        if not ids:
+            cw = [c for c in world.common if nfc(c["lao"]) == t]
+            print(f"{t}: no words.csv row" + (f" (common list {cw[0]['cw_id']} '{cw[0]['gloss_en']}')" if cw else ""))
+        for wid in ids:
+            print(word_status(world, wid, have))
+
+
+def can_read(world, text):
+    """Each space-separated token of a sentence: known / readable / needs units / unknown word."""
+    have = world.known_units | world.known_rules
+    by_lao = {}
+    for wid, w in world.words.items():
+        by_lao.setdefault(nfc(w["lao"]), []).append(wid)
+    ok = True
+    for tok in nfc(text).replace("?", " ").replace(".", " ").split():
+        ids = by_lao.get(tok, [])
+        if not ids:
+            print(f"{tok}: not in words.csv (draft it, or split it into known words)")
+            ok = False
+            continue
+        known = [w for w in ids if w in world.known_words]
+        if known:
+            print(f"{tok}: known ({', '.join(known)})")
+        else:
+            print(f"{tok}: " + "; ".join(word_status(world, w, have) for w in ids))
+            ok = False
+    print("readable with taught words only" if ok else "not yet readable with taught words only")
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("mode", choices=["status", "brief", "check", "merge"])
-    ap.add_argument("draft", nargs="?", default="_agent/lessons/drafts/next")
+    ap.add_argument("mode", choices=["status", "brief", "check", "merge", "lookup", "can-read"])
+    ap.add_argument("draft", nargs="*", help="check/merge: draft folder (default _agent/lessons/drafts/next); "
+                    "lookup: lao spellings or word_ids; can-read: the sentence, words separated by spaces")
     ap.add_argument("--data", default="data")
     ap.add_argument("--common", default="_agent/letter_map/common_words.csv")
     ap.add_argument("--out", default="_agent/lessons/next-brief.md")
@@ -537,7 +604,13 @@ def main():
             f.write(brief(world, a.top))
         print(f"wrote {os.path.relpath(out, root)} (next lesson L{world.n_lessons + 1:04d})")
         return
-    path = inside(a.draft, root)
+    if a.mode == "lookup":
+        lookup(world, a.draft)
+        return
+    if a.mode == "can-read":
+        can_read(world, " ".join(a.draft))
+        return
+    path = inside(a.draft[0] if a.draft else "_agent/lessons/drafts/next", root)
     draft = load_draft(path)
     err, warn, nu, nr, nw = check(world, draft, a)
     report(err, warn)

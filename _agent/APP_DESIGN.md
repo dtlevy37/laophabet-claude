@@ -10,18 +10,26 @@ climbs a ladder per learner, and an activity may only use items at or above the 
 | Level | Name | How the item reaches it | Activities allowed |
 |---|---|---|---|
 | 0 | unseen | — | none |
-| 1 | introduced | a teach card was shown (glyph or word, sound, meaning, explanation, example) | the teach card itself, then a "spot it" check with the answer still visible |
+| 1 | introduced | a teach card was shown (glyph or word, sound, meaning, explanation, example); it stays reachable through the info icon | the teach card itself, then a "spot it" check with the answer still visible |
 | 2 | recognised | answered correctly in a recognition activity | Lao → meaning or sound: matching, multiple choice, flashcards (front = Lao) |
 | 3 | recalled | answered correctly in a recall activity | meaning → Lao: multiple choice with close distractors, fill in the blank, build the word, build the sentence, flashcards (front = English) |
 | 4 | in use | read correctly inside phrases, sentences and dialogues over several days | dialogues, longer reading, spaced reviews only |
 
 - A lesson first teaches its new items (level 0 → 1), then practises them right away at level 2, mixed with
   recycled items at levels 2–3. Recall activities for a new item normally start in a later session.
-- Distractors in multiple choice and matching come only from items the learner has at least seen (level ≥ 1),
-  so a wrong option is never something brand new.
+- **Distractors** (wrong options in multiple choice and matching): the *tested* item must always have been
+  taught, but wrong options may also come from nearby lessons, because early on the learner knows too few items
+  to fill four options. In lessons 1–5, distractors may come from any of lessons 1–5 (user, 2026-10-19). Rule for
+  later lessons: see open question 4.
+- **Info icon instead of demotion** (user, 2026-10-19): items never drop a level. Every item, everywhere it
+  appears (activities, feedback after a wrong answer, sentences, flashcards), has a small info icon that opens
+  its original teach card: glyph or word, sound, meaning, explanation, example words, and the lesson it came from.
+  After a wrong answer, the feedback screen shows the correct answer with the info icon. No new data needed: the card
+  is built from units.teach_en / rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, and the
+  intro lesson in lesson_items.csv.
 - Spaced repetition (FSRS-style, per learner and item) decides what comes back and when. Each answer updates the
-  item's memory state. Recall answers count for more than recognition answers. Items that keep failing drop a
-  level and get a teach card again. This is how the app learns which words stick for which learner.
+  item's memory state, and recall answers count for more than recognition answers. A failed item simply comes
+  back sooner. This is how the app learns which words stick for which learner.
 
 ## Activities
 
@@ -64,3 +72,5 @@ A lesson is content, not a script of screens: the app turns it into activities b
    Needed for teach cards, listening and tone drills.
 2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, later.
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
+4. Distractors after lesson 5: (a) only taught items from then on, or (b) blocks of 5 lessons (lessons 6–10 may use
+   distractors from anything up to lesson 10, and so on).
