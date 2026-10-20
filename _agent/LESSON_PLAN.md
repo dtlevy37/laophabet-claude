@@ -53,14 +53,18 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
 ## Build steps (Phase 9 in PLAN.md)
 1. Notes updated (this file, PLAN, PROGRESS, SCHEMA).
 2. Finish the k ≤ 10 letter-map run (`_agent/letter_map/k10/`) and keep it as the reference for early unit order.
-3. **Units table:** `data/units.csv` with role-units (letter or vowel + role) and `data/rules.csv`. Small, hand-made.
-4. **Propose `lesson_plan.py`:** role-unit signatures, lesson 1 fixed, budget and weights above, readable-word and
-   readable-sentence checks, recycling lists. Output drafts to `_agent/lessons/` (lessons.csv, lesson_items.csv,
-   plus a readable report). User approves the script.
-5. **Review the first ~20 lessons with the user** and tune budget and weights.
-6. **Fill gaps for the planned lessons only:** lesson words with no words.csv row get full rows (IPA, tones,
-   sentences) through the drafter, in small batches (see the efficient-drafter TODO in PROGRESS.md).
-7. **Sentences per lesson:** pick readable sentences; compose phrases and Q&A pairs where missing; add dialogues.
+3. **One lesson at a time** (revised 2026-10-19; replaces a whole-course planner). Scripts proposed together:
+   - `lesson_tool.py`: `brief` (state + ranked candidates for the next lesson), `check` (budget, readability,
+     teach texts, recycling, lesson 1 fixed), `merge` (appends to data/lessons.csv, lesson_items.csv, units.csv,
+     rules.csv), `status`. Role-unit IDs are derived from parse_syllable, so no hand-made units table is needed.
+   - `next_lesson.ps1` + `next_lesson_prompt.md`: the user runs it; per lesson it writes the brief, starts a fresh
+     `claude -p` session that drafts, checks and merges one lesson, then runs the pipeline and commits.
+     `-Count N` builds N lessons in a row; it stops at the first failure or if `_agent/BLOCKED` exists.
+4. **Build lesson 1 (ລາວ) interactively** with the user present, as the reference for the runner.
+5. **Review the first ~10–20 lessons with the user** and tune budget, weights and the runner prompt.
+6. **Gaps are filled per lesson:** a lesson word with no words.csv row is drafted in that lesson's run (drafting
+   workflow), as are new phrases and sentences.
+7. **Dialogues:** add the tables and a `dialogue` item type once Q&A pairs exist.
 8. **Postgres:** schema and import for all data tables, lessons and the app-side learner tables.
 9. Later: grow vocabulary and lessons from the database (Phase 7 resumes as needed).
 

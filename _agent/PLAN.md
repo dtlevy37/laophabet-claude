@@ -65,9 +65,10 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 
 ## Phase 9: Lessons (user, 2026-10-19). See `_agent/LESSON_PLAN.md`
 - [x] Lesson decisions recorded; notes updated (LESSON_PLAN, PLAN, PROGRESS, SCHEMA)
-- [ ] `data/units.csv` (role-units) and `data/rules.csv`
-- [ ] Propose `lesson_plan.py`; user approves
-- [ ] Draft lessons to `_agent/lessons/`; review the first ~20 with the user; tune budget and weights
-- [ ] Fill full word rows for planned lesson words that lack them (drafter, small batches)
-- [ ] Sentences per lesson: readable existing sentences; phrases, Q&A pairs, dialogues where missing
+- [x] App activities and presentation drafted (`_agent/APP_DESIGN.md`)
+- [x] CLAUDE.md archived (`_agent/archive/CLAUDE-wordlist-phase.md`); new version proposed (`_agent/proposed-config/CLAUDE.md`)
+- [ ] User approves `lesson_tool.py`, `next_lesson.ps1`, `next_lesson_prompt.md` and installs the new CLAUDE.md
+- [ ] Lesson 1 (ລາວ) built interactively as the reference
+- [ ] Runner test: `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
+- [ ] Dialogues: tables and item type once Q&A pairs exist
 - [ ] Postgres schema and import (data tables, lessons, app-side learner tables)

@@ -1,0 +1,66 @@
+# App design: activities and presentation (draft, 2026-10-19)
+
+Scope: what the learner does in the app and what data each activity needs. The data project (this folder)
+supplies the content; the app chooses activities per learner. See `_agent/LESSON_PLAN.md` for lesson rules.
+
+## Core principle: show first, test later (user, 2026-10-19)
+Never test an item the learner has not been shown and had explained. Each item (unit, rule, word, sentence)
+climbs a ladder per learner, and an activity may only use items at or above the level it needs:
+
+| Level | Name | How the item reaches it | Activities allowed |
+|---|---|---|---|
+| 0 | unseen | — | none |
+| 1 | introduced | a teach card was shown (glyph or word, sound, meaning, explanation, example) | the teach card itself, then a "spot it" check with the answer still visible |
+| 2 | recognised | answered correctly in a recognition activity | Lao → meaning or sound: matching, multiple choice, flashcards (front = Lao) |
+| 3 | recalled | answered correctly in a recall activity | meaning → Lao: multiple choice with close distractors, fill in the blank, build the word, build the sentence, flashcards (front = English) |
+| 4 | in use | read correctly inside phrases, sentences and dialogues over several days | dialogues, longer reading, spaced reviews only |
+
+- A lesson first teaches its new items (level 0 → 1), then practises them right away at level 2, mixed with
+  recycled items at levels 2–3. Recall activities for a new item normally start in a later session.
+- Distractors in multiple choice and matching come only from items the learner has at least seen (level ≥ 1),
+  so a wrong option is never something brand new.
+- Spaced repetition (FSRS-style, per learner and item) decides what comes back and when. Each answer updates the
+  item's memory state. Recall answers count for more than recognition answers. Items that keep failing drop a
+  level and get a teach card again. This is how the app learns which words stick for which learner.
+
+## Activities
+
+| Activity | What it looks like | Tests | Data it needs | When |
+|---|---|---|---|---|
+| Teach card | glyph or word, respelling, audio, meaning, 1–3 lines of explanation, example words | nothing (show) | units.teach_en, rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, audio | v1 |
+| Spot it | "Which of these is ລ?" with the card still visible | level 1 | same | v1 |
+| Matching | tap pairs: Lao ↔ English, Lao ↔ respelling, letter ↔ sound | recognition | words, units | v1 |
+| Multiple choice | Lao → pick meaning; meaning → pick Lao; sound → pick letter | recognition or recall | words, units, confusable sets | v1 |
+| Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 |
+| Fill in the blank | sentence with one gap; pick the word from tiles | recall in context | sentences, sentence_words | v1 |
+| Build the sentence | put word tiles in order to match the English | recall, word order | sentences (lao_spaced), sentence_words | v1 |
+| Tone drill | see a syllable, pick its tone; later, apply the rule (class + live/dead + mark) | rules | words.tone_by_syllable, tone_derivation, rules | v1 |
+| Build the word | tap letter and vowel pieces into place (shows where vowels sit) | spelling recognition | units, syllable parse | v2 |
+| Listen and choose | hear audio, pick the word | listening | audio per word and sentence | v2 (needs audio) |
+| Dialogue reader | line by line, tap for translation, then comprehension questions | reading in context | dialogues, dialogue_lines, sentences | v2 |
+| Say it | hear, record yourself, play both back, grade yourself | speaking (self-graded) | audio | v2 |
+| Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
+| Typing Lao | keyboard input in Lao script | writing | Lao keyboard | out of scope (writing is out of scope) |
+
+## Presentation
+- Lao script is always the main text. Respelling and IPA can be toggled; respelling fades as the learner advances
+  (a setting, default on for the first lessons).
+- Sentences show `lao_spaced` (spaces between words) as a reading aid, with the standard form on tap.
+- Tone shown from `tone_by_syllable` (colour or a small contour icon per syllable); one convention throughout.
+- In new words, the letters just taught are highlighted.
+- Homographs (ລາວ "Lao" / ລາວ "he, she") are shown on one card with both meanings.
+
+## What a lesson must contain (for the lesson runner)
+A lesson is content, not a script of screens: the app turns it into activities by the ladder above.
+- **New items** (role `new`): units and rules, each with `teach_en`; 1–3 words, each readable with what has been
+  taught, each using something new from this or the previous lesson.
+- **Recycled items** (role `recycle`): at least 3 earlier words, so old material stays fresh.
+- **Phrases or sentences** (item_type `sentence`): 1–3 that are readable at this point, once any exist. They are
+  used for fill in the blank, build the sentence and reading.
+- Order in items.csv = teaching order: each new unit, then the words that use it, then sentences.
+
+## Open questions
+1. **Audio:** native recordings (best, needs a speaker) or Lao text-to-speech (availability and quality to check).
+   Needed for teach cards, listening and tone drills.
+2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, later.
+3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
