@@ -32,21 +32,30 @@ Ground rules that cut across phases:
 - [ ] Netlify deploy of `app/frontend`
 
 ## Phase 2: DB becomes the source of truth (do before lesson 1 is merged: no lessons exist yet)
-Model: **pull → work on files → push**, like a checkout. The existing file tools (lesson_tool, check_drafts,
-merge_words, tone fill, validate) keep working on CSVs; only the ends change.
-- [ ] Migration: content tables gain `updated_at` (+ trigger) and `retired_at`; new tables `units`, `rules`,
-      `lessons`, `lesson_items`; a `content_changes` log (who/what/when per push) for history now that git no
-      longer holds the master
-- [ ] One-time import of the current CSVs (the seed generator already does this; extend it to the new tables)
-- [ ] `db_sync.py` (approved script, stdlib only, Supabase REST with a key from an environment variable):
-  - `pull`: DB → `data/*.csv` working copy + `data/.pulled.json` (per-row `updated_at` at pull time)
-  - `diff`: what changed locally since the pull
-  - `push`: upsert changed rows by ID; **refuses rows changed in the DB since the pull** (someone accepted
-    feedback meanwhile), so nothing is silently overwritten; logs to `content_changes`
-- [ ] `lesson_tool.py merge` / `next_lesson.ps1`: pull before the brief, push after the merge + pipeline
-- [ ] Which tables the DB owns vs. file-only staging (templates, fillers, learning_order, common list, letter
-      map stay file-only) and whether the unused sentence pool is owned too: **user decision pending**
-- [ ] Key handling for scripts: **user decision pending** (see the end of this file)
+Decided (user, 2026-10-19):
+- The schema holds **everything** (all content tables, lessons, units, rules; dialogues later), and everything
+  is imported. Content that a lesson plans is DB-master from that moment. Unplanned pool rows may still be
+  bulk-refreshed from the CSVs until the CSVs are retired; **a bulk refresh never touches a row that a lesson
+  uses** (the generated SQL skips rows referenced by `lesson_items`).
+- **Every content change is a SQL migration file the owner reviews and applies** (`supabase db push`). Scripts
+  and the unattended runner never connect to the DB. The hosted project is the true master; a local Supabase
+  is hosted + pending proposals, used to test them (`supabase db reset`).
+- Because every change passes through a file in the repo, the repo can always rebuild the content, and the
+  CSVs in `data/` stay the agent's **read model** (working copy = hosted + pending migrations). No pull/push
+  over the network.
+
+Work:
+- [ ] Migration: new tables `units`, `rules`, `lessons`, `lesson_items`; content tables gain `updated_at`
+      (+ trigger) and `retired_at` (retire, never delete)
+- [ ] Seed generator → initial import uses `on conflict do nothing`; later pool refreshes are generated as a
+      migration that skips lesson-referenced rows
+- [ ] Lesson merge emits a migration: `lesson_tool.py merge` writes the CSV working copy **and**
+      `app/backend/supabase/migrations/<timestamp>_lesson_<id>.sql` (lesson, items, units, rules, plus every
+      word/sentence/sentence_words row it uses, upserted), from one script so the two cannot drift.
+      `next_lesson.ps1` leaves the migration for owner review; the runner never applies it.
+- [ ] Track pending vs applied: `_agent/lessons/PENDING_MIGRATIONS.md` (the runner appends; the owner ticks
+      after `db push`), so lesson N+1 can be planned while lesson N awaits approval
+- [ ] Feedback decisions (Phase 4) also become migration files
 - [ ] `get_lesson(lesson_id)` RPC → JSON bundle (items in order, unit/rule teach text, word
       gloss/respelling/IPA/tones/pron tip, sentences with word links, allowed distractor pool). The client never
       assembles a lesson from raw tables.
@@ -60,11 +69,12 @@ merge_words, tone fill, validate) keep working on CSVs; only the ends change.
 - [ ] Owner views: all feedback per item, side by side, verified reviewers marked
 
 ## Phase 4: Feedback review subroutine (owner runs it with the agent)
-- [ ] Approved script `feedback.py`: export pending feedback for one lesson (or item list) to
-      `_agent/feedback/<lesson>.md` / CSV, verified reviewers flagged
-- [ ] The agent reviews it and writes decisions (accept correction / keep / needs owner) to a decisions file;
-      the owner approves; `feedback.py apply` writes accepted changes to the DB (same conflict check as push),
-      sets confidence/source (`native review <reviewer ids>`), and marks the feedback resolved
+- [ ] Getting feedback out: the owner runs a saved SQL query (or `supabase` CLI export) that writes pending
+      feedback for one lesson to a file in `_agent/feedback/`, verified reviewers flagged (scripts never
+      connect to the DB)
+- [ ] The agent reviews it and writes decisions (accept correction / keep / needs owner); an approved script
+      turns accepted decisions into a migration that updates the rows, sets confidence/source
+      (`native review <reviewer ids>`), and marks the feedback resolved; the owner reviews and applies it
 - [ ] Audio: an accepted recording becomes lesson audio: `item_audio(item_type, item_id, recording_id,
       approved_at)`, copied from the private `recordings` bucket to a learner-readable `audio` bucket. Only
       recordings from verified natives can be accepted.
@@ -105,10 +115,6 @@ merge_words, tone fill, validate) keep working on CSVs; only the ends change.
 ## Later
 Admin role and in-app owner tools, dialogues, PWA/offline, analytics on drop-off and difficulty, trust scores.
 
-## Open decisions (user)
-1. Sentence pool: does the DB own all ~2,800 sentences (one rule for all; natives can still review the
-   pool), or only sentences a lesson uses, with the rest staying in CSV and promoted when a lesson picks one?
-2. How scripts reach the DB: service-role key in an environment variable (fast, full access), a restricted
-   key/role limited to content tables, or SQL files the owner applies by hand (slowest, safest). Also whether
-   the unattended lesson runner may push, or pushes wait for the owner.
-3. One Supabase project (production) or local Supabase as the working DB with pushes to production.
+## Decisions log
+- 2026-10-19: everything goes in the DB; lesson content is DB-master once planned; all content changes are
+  SQL migrations the owner applies; hosted Supabase is the master, local = hosted + proposals.
