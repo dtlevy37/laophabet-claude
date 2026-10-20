@@ -128,3 +128,9 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - English list: Wiktionary "Frequency lists/TV/2006" ranks 1–300, folded into 186 base words (inflections and contractions merged; articles, fillers and names dropped). Lao candidates in `_agent/tmp/zipf300.tsv`, results in `_agent/tmp/zipf300-check.tsv`.
 - 173/186 matched. 13 missing: life, guess, idea, honey, hell, oh, bad, never, nothing, everything, together, better, best. About 25 more matched only a weaker sense, with the main Lao word absent (ອື່ນ, ຫາ, ເດັກນ້ອຍ, ເຂົາເຈົ້າ, ຍ້ອນ, ດ້ວຍ, ສາມາດ, ກະລຸນາ …). Likely cause: the enum gap fill never generated ອ/ຫ-initial spellings.
 - Merged 42 rows from `_agent/letter_map/proposals/zipf300.csv` (spelling unverified). Common list now 1617. Map not yet rerun.
+
+## 2026-10-19 Pivot to lessons (Phase 9)
+- k ≤ 10 map run started in the background → `_agent/letter_map/k10/` (k ≤ 7 outputs left in place). Not finished at this entry.
+- User decisions, recorded in `_agent/LESSON_PLAN.md`: 5–10 minute lessons, about 3–4 new items each; vowels, tone marks and rules count as items; no review lessons (lessons recycle earlier material, and the app has flashcards); app-side spaced repetition per learner and item; lesson 1 = ລາວ (ລ ◌າ final-ວ); ດ/ບ as initials from the start, ອ early, ຍ ວ ຫ by lessons 8–12; sentences early, then Q&A, then dialogues; there is enough material to start, and gaps are filled after lessons are mapped.
+- Design: role-units (glyph + role) replace the exclusion list. Planned tables in SCHEMA.md (units, rules, lessons, lesson_items, dialogues).
+- **Next:** read the k10 results → write units.csv / rules.csv → propose `lesson_plan.py` → draft and review the first ~20 lessons.

@@ -57,8 +57,17 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 ## Phase 8: Letter-set to word map (user pivot 2026-10-19; Phase 7 paused). See `_agent/LETTER_MAP_PLAN.md`
 - [x] User decisions: multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; closed common list first
 - [x] User confirms the exclusion list
-- [ ] Propose `common_list.py` and `letter_map.py`; get approval (written to proposed-scripts 2026-10-19)
-- [ ] Common list: mark common words in words.csv by judgement; concept lists per category; drafter gives the Lao; review
-- [ ] Map: signatures, best 3/4/5 sets, nested chain
-- [ ] (Optional) gap fill with `enum_spellings.py`
-- [ ] Report best sets per k and recommend the first units to learn
+- [x] Propose `common_list.py` and `letter_map.py`; get approval
+- [x] Common list: words.csv judged (1352 seeded), enum gap fill (+223), Zipf top-300 check (+42) → 1617
+- [x] Map: signatures, best sets, nested chain (k ≤ 7)
+- [x] Gap fill with `enum_spellings.py`
+- [ ] k ≤ 10 run (`_agent/letter_map/k10/`); report best sets as the reference for early unit order
+
+## Phase 9: Lessons (user, 2026-10-19). See `_agent/LESSON_PLAN.md`
+- [x] Lesson decisions recorded; notes updated (LESSON_PLAN, PLAN, PROGRESS, SCHEMA)
+- [ ] `data/units.csv` (role-units) and `data/rules.csv`
+- [ ] Propose `lesson_plan.py`; user approves
+- [ ] Draft lessons to `_agent/lessons/`; review the first ~20 with the user; tune budget and weights
+- [ ] Fill full word rows for planned lesson words that lack them (drafter, small batches)
+- [ ] Sentences per lesson: readable existing sentences; phrases, Q&A pairs, dialogues where missing
+- [ ] Postgres schema and import (data tables, lessons, app-side learner tables)
