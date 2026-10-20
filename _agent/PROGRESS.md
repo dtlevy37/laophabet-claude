@@ -123,3 +123,8 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - (old) gap fill with short words from allowed units (propose `enum_spellings.py`, then judge enumerated spellings).
 - (old) once approved, judge words.csv for commonness → seed_ids.txt → `common_list.py seed` → `letter_map.py` v0 → category gap lists → drafter list batches → `common_list.py merge`.
 - Weekly usage 55% at this point (stop at 60%).
+
+## 2026-10-19 Zipf top-300 coverage check
+- English list: Wiktionary "Frequency lists/TV/2006" ranks 1–300, folded into 186 base words (inflections and contractions merged; articles, fillers and names dropped). Lao candidates in `_agent/tmp/zipf300.tsv`, results in `_agent/tmp/zipf300-check.tsv`.
+- 173/186 matched. 13 missing: life, guess, idea, honey, hell, oh, bad, never, nothing, everything, together, better, best. About 25 more matched only a weaker sense, with the main Lao word absent (ອື່ນ, ຫາ, ເດັກນ້ອຍ, ເຂົາເຈົ້າ, ຍ້ອນ, ດ້ວຍ, ສາມາດ, ກະລຸນາ …). Likely cause: the enum gap fill never generated ອ/ຫ-initial spellings.
+- Merged 42 rows from `_agent/letter_map/proposals/zipf300.csv` (spelling unverified). Common list now 1617. Map not yet rerun.
