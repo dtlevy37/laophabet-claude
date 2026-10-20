@@ -19,8 +19,8 @@ climbs a ladder per learner, and an activity may only use items at or above the 
   recycled items at levels 2–3. Recall activities for a new item normally start in a later session.
 - **Distractors** (wrong options in multiple choice and matching): the *tested* item must always have been
   taught, but wrong options may also come from nearby lessons, because early on the learner knows too few items
-  to fill four options. In lessons 1–5, distractors may come from any of lessons 1–5 (user, 2026-10-19). Rule for
-  later lessons: see open question 4.
+  to fill four options. In lessons 1–5, distractors may come from any of lessons 1–5. From lesson 6 on, distractors
+  come only from items already taught (user, 2026-10-19).
 - **Info icon instead of demotion** (user, 2026-10-19): items never drop a level. Every item, everywhere it
   appears (activities, feedback after a wrong answer, sentences, flashcards), has a small info icon that opens
   its original teach card: glyph or word, sound, meaning, explanation, example words, and the lesson it came from.
@@ -72,5 +72,3 @@ A lesson is content, not a script of screens: the app turns it into activities b
    Needed for teach cards, listening and tone drills.
 2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, later.
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
-4. Distractors after lesson 5: (a) only taught items from then on, or (b) blocks of 5 lessons (lessons 6–10 may use
-   distractors from anything up to lesson 10, and so on).
