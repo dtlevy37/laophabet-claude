@@ -149,3 +149,10 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - Migration `..0500_roles.sql`: `profiles.role` learner|native from sign-up metadata; old profiles → native.
 - Frontend split: app.js (routing by role), auth.js (role-first sign-up, language toggle, role choice), onboarding.js, learn.js (placeholder). Not yet run in a browser.
 - **Next:** user tests both sign-ups against Supabase; then password reset + Netlify (phase 1 rest), then phase 2.
+
+## 2026-10-19 DB as source of truth (APP_PLAN rev 2)
+- User: DB becomes the source of truth for units, the full word list and lesson words/sentences; native feedback attaches to DB rows; later an owner-run subroutine reviews feedback per lesson (e.g. recordings → lesson audio). Natives self-declare, feedback unverified until the owner verifies them in SQL; natives may try the learner view.
+- Done: migration `..0600_native_verification.sql` (reviewer_trust.native_verified_at, is_verified_native(), owner view sentence_feedback); learner-view switch for natives (app.js, strings view_as_learner / view_back_to_review).
+- APP_PLAN rev 2: Phase 2 = pull → work on files → push (`db_sync.py`, conflict check on updated_at); Phase 3 native feedback on lesson content; Phase 4 feedback subroutine (`feedback.py`, item_audio). Three open decisions listed at the end of APP_PLAN.
+- Working rule from the user: never chain `cd` in shell commands; use absolute paths or Read/Grep (the memory folder is outside the guard's folder, so it is recorded here).
+- **Next:** user answers the open decisions → write the Phase 2 migration and propose `db_sync.py`.

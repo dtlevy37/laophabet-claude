@@ -34,6 +34,14 @@
     "lo": "ປ່ຽນ",
     "en": "Change"
   },
+  "view_as_learner": {
+    "lo": "ລອງໃຊ້ແບບຜູ້ຮຽນ",
+    "en": "Try the learner view"
+  },
+  "view_back_to_review": {
+    "lo": "ກັບໄປກວດປະໂຫຍກ",
+    "en": "Back to checking sentences"
+  },
   "learn_welcome": {
     "en": "Welcome"
   },

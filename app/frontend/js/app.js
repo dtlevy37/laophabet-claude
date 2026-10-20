@@ -1,5 +1,5 @@
 import { supabase, configured } from './supabase.js'
-import { loadStrings, setLang, t } from './i18n.js'
+import { loadStrings, setLang, t, tIn } from './i18n.js'
 import { h } from './dom.js'
 import { showAuth, showRoleChoice } from './auth.js'
 import { showNativeOnboarding } from './onboarding.js'
@@ -33,7 +33,24 @@ async function refresh() {
   render()
 }
 
-function showTopbar(title) {
+// Natives may try the learner view; remembered per browser, the role is unchanged.
+const VIEW_KEY = 'laophabet.view'
+function viewingAsLearner() {
+  try {
+    return localStorage.getItem(VIEW_KEY) === 'learner'
+  } catch {
+    return false
+  }
+}
+function setViewAsLearner(on) {
+  try {
+    if (on) localStorage.setItem(VIEW_KEY, 'learner')
+    else localStorage.removeItem(VIEW_KEY)
+  } catch {}
+  render()
+}
+
+function showTopbar(title, extra = null) {
   topbar.replaceChildren(
     h(
       'header',
@@ -42,6 +59,8 @@ function showTopbar(title) {
       h(
         'span',
         null,
+        extra,
+        extra ? ' · ' : null,
         profile.display_name || session.user.email,
         ' ',
         h('button', { class: 'link', onclick: () => supabase.auth.signOut() }, t('sign_out')),
@@ -51,22 +70,28 @@ function showTopbar(title) {
 }
 
 // One place decides which view a person sees: signed out → auth; no role yet →
-// role choice; native → onboarding, then review; learner → learner home.
+// role choice; native → onboarding, then review (or the learner view if they
+// chose to try it); learner → learner home.
 function render() {
   topbar.replaceChildren()
   if (!session) return showAuth(app)
   if (!profile) return app.replaceChildren(card(t('loading')))
   if (!profile.role) return showRoleChoice(app, { userId: session.user.id, onDone: refresh })
 
-  if (profile.role === 'native') {
+  const native = profile.role === 'native'
+  if (native && !viewingAsLearner()) {
     setLang('lo', { remember: false })
     if (!profile.onboarded_at) return showNativeOnboarding(app, { profile, onDone: refresh })
-    showTopbar(t('app_name'))
+    showTopbar(t('app_name'), h('button', { class: 'link', onclick: () => setViewAsLearner(true) }, t('view_as_learner')))
     return showReview(app, { userId: session.user.id, profile })
   }
 
   setLang('en', { remember: false })
-  showTopbar(t('brand'))
+  // The way back stays in Lao: the person reading it is a native speaker.
+  const back = native
+    ? h('button', { class: 'link', lang: 'lo', onclick: () => setViewAsLearner(false) }, tIn('lo', 'view_back_to_review'))
+    : null
+  showTopbar(t('brand'), back)
   showLearnerHome(app, { profile })
 }
 

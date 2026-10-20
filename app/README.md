@@ -55,7 +55,16 @@ It aborts without writing if the CSV headers or keys no longer match the script'
 Birth date replaces age range; every question is optional (the all-answered check is dropped, so a review row can be empty); register gains `vulgar`; reviews gain `is_slang`, `multiple_meanings`, `meanings_notes`; `submit_review` has a new signature. The accent question already offers free text when the person is not from Vientiane (stored in `profiles.region`).
 
 ### Roles (migration `..0500`)
-`profiles.role` is `learner` or `native`. The sign-up form sends it as user metadata and `handle_new_user` copies it; accounts without one are asked after login. Profiles from before roles became `native`. The role is self-declared (users can update their own profile), so anything privileged needs its own table.
+`profiles.role` is `learner` or `native`. The sign-up form sends it as user metadata and `handle_new_user` copies it; accounts without one are asked after login. Profiles from before roles became `native`. The role is self-declared (users can update their own profile), so anything privileged needs its own table. Natives can switch to the learner view from the top bar (remembered per browser; the role does not change).
+
+### Native verification (migration `..0600`)
+Feedback is unverified until you confirm the reviewer is a native speaker. Run in the SQL editor:
+```sql
+insert into public.reviewer_trust (user_id, native_verified_at, notes)
+values ('<user uuid>', now(), 'how I checked')
+on conflict (user_id) do update set native_verified_at = now(), notes = excluded.notes, updated_at = now();
+```
+The view `sentence_feedback` (not visible to app users) lists every review with `verified_native`.
 
 ## Interface languages
 Every on-screen string lives in `frontend/js/strings.json` as `{lo, en}`. Natives see `lo`, learners see `en`; the login screen has a ພາສາລາວ / English toggle, and the sign-up role cards are labelled in both. Strings with no `lo` are learner-only. **The Lao is AI-invented and unreviewed.** Run `python frontend/scripts/export_lao_review.py` to produce `frontend/LAO_UI_REVIEW.md`, a table to hand to a native reviewer; apply corrections in `strings.json`. Technical errors are logged to the browser console and shown to users only as a generic message.
