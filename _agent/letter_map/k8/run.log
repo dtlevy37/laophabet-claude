@@ -1,0 +1,32 @@
+== Excluded units ==
+final sound differs (ɲ / j): ຍ
+final sound differs (d / t): ດ
+final sound differs (b / p): ບ
+final sound differs (r / n): ຣ
+glyph with a second role: ວ ຫ ອ ຫງ ຫຍ ຫຼ ຫວ
+rare tone mark: ◌໊ ◌໋
+vowel pattern contains ອ, ວ or ຍ: ◌ັອ◌ ◌ອ◌ ເ◌ັຍ ເ◌ຍ ເ◌ຶອ ເ◌ືອ ◌ົວະ ◌ົວ ◌ວ◌
+
+common words: 1617 | searched (≤ 8 units, no excluded unit): 760 | distinct signatures: 755
+search nodes: 20145173 | 513.3s
+
+== Best sets of at most k units ==
+k=2:    2 words  ນ ◌າ
+k=3:    5 words  ງ ນ ◌າ
+k=4:    8 words  ກ ງ ນ ◌າ
+k=5:   11 words  ກ ງ ຈ ນ ◌າ
+k=6:   17 words  ກ ງ ນ ລ ◌້ ◌າ
+k=7:   24 words  ກ ຄ ງ ນ ◌້ ◌າ ◌ົ◌
+k=8:   32 words  ກ ຄ ງ ນ ລ ◌້ ◌າ ◌ົ◌
+
+== Best nested chain (score 98) ==
+k=2: +ນ ◌າ          2 words  new: ນາ ນານ
+k=3: +ງ             5 words  new: ງານ ນາງ ງາ
+k=4: +ກ             8 words  new: ການ ກາງ ກາ
+k=5: +◌້           11 words  new: ກ້າ ກ້າງ ນ້າ
+k=6: +ຄ            16 words  new: ຄ້າ ຄ້າງ ຄ້ານ ຄາງ ຄາ
+k=7: +◌ົ◌          24 words  new: ຄົນ ນົກ ຄົນງານ ກົງ ກົ້ນ ຄົງ ຄົ້ນ ງົງ
+k=8: +ລ            32 words  new: ລາຄາ ລ້ານ ລ້າງ ລົງ ລາ ລ້າ ລາກ ລານ
+total time: 513.5s
+
+written: signatures.csv, best_sets.csv, chain.csv in _agent\letter_map\k8

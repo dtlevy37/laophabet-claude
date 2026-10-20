@@ -163,6 +163,6 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - New `_agent/proposed-scripts/db_sql.py` replaces app/backend/scripts/generate_seed.py (moved to `_trash/app-scripts/`): modes check / seed (do nothing) / refresh (staging tables, upsert changed, retire missing, skip lesson rows in Python and SQL) / lesson Lnnnn / change --name. Migrations named `<UTC stamp>_<name>.sql` after the latest; each is listed in `_agent/PENDING_MIGRATIONS.md` (moved up from _agent/lessons/ since change/refresh migrations are listed too).
 - Changed (same approval group): lesson_tool.py (merge validates data/ via db_sql.load, then writes the lesson migration from the CSVs it just wrote), next_lesson.ps1 (stops if the migration is missing; commit message names it), next_lesson_prompt.md (never edit/apply migrations), pipeline.sh (step 4 db_sql check).
 - Docs: app/README.md, config.toml comment, APP_PLAN Phase 2 ticked, SCHEMA.md note.
-- Letter map k ≤ 8 started in the background → `_agent/letter_map/k8/` (run.log).
+- Letter map k ≤ 8 done (513 s, 760 searchable of 1617) → `_agent/letter_map/k8/`. k ≤ 7 results unchanged; k=8 best: ກ ຄ ງ ນ ລ ◌້ ◌າ ◌ົ◌, 32 words. Chain ນ◌າ → ງ → ກ → ◌້ → ຄ → ◌ົ◌ → ລ (score 98).
 - Guard note: a heredoc mentioning a .sql path in a Bash command is blocked as "script not approved"; append with Edit instead.
 - **Next:** user approves the group → run `db_sql.py check` and `seed` (current seeds are the old do-update ones) → user tests `supabase db reset` → lesson 1.

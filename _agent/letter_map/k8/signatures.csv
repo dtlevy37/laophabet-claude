@@ -1,0 +1,1618 @@
+cw_id,lao,gloss_en,unit_ids,units_lao,n_units,searched,excluded_reason
+CW00001,ສະບາຍດີ,hello; to be well,C06|C08|C09|C14|V01|V03|V05,ສ ຍ ດ ບ ◌ະ ◌າ ◌ີ,7,no,excluded: ຍ ດ ບ
+CW00002,ດີ,good,C09|V05,ດ ◌ີ,2,no,excluded: ດ
+CW00003,ບໍ່,no; not; yes/no question marker,C14|T1|V21,ບ ◌່ ◌ໍ,3,no,excluded: ບ
+CW00004,ແມ່ນ,"yes, that's right; to be",C13|C20|T1|V15,ນ ມ ◌່ ແ◌,4,yes,
+CW00005,ເຈົ້າ,you (polite); yes (polite),C05|T2|V35,ຈ ◌້ ເ◌ົາ,3,yes,
+CW00006,ຂ້ອຍ,"I, me",C02|C08|T2|V22,ຂ ຍ ◌້ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW00007,ໃຈ,"heart, mind",C05|V34,ຈ ໃ◌,2,yes,
+CW00008,ຂອບໃຈ,thank you; to thank,C02|C05|C14|V22|V34,ຂ ຈ ບ ◌ອ◌ ໃ◌,5,no,excluded: ບ ◌ອ◌
+CW00009,ຂໍ,"ask for, request; may I have",C02|V21,ຂ ◌ໍ,2,yes,
+CW00010,ຂໍໂທດ,"sorry, excuse me",C02|C09|C12|V18|V21,ຂ ດ ທ ໂ◌ ◌ໍ,5,no,excluded: ດ
+CW00011,ນ້ຳ,water; liquid,C13|T2|V36,ນ ◌້ ◌ຳ,3,yes,
+CW00012,ຫ້ອງ,room,C04|C25|T2|V22,ງ ຫ ◌້ ◌ອ◌,4,no,excluded: ຫ ◌ອ◌
+CW00013,ຫ້ອງນ້ຳ,"bathroom, toilet",C04|C13|C25|T2|V22|V36,ງ ນ ຫ ◌້ ◌ອ◌ ◌ຳ,6,no,excluded: ຫ ◌ອ◌
+CW00014,ຢູ່,"be at, be located; live, stay",C21|T1|V09,ຢ ◌່ ◌ູ,3,yes,
+CW00015,ໃສ,where,C06|V34,ສ ໃ◌,2,yes,
+CW00016,ນີ້,this; here,C13|T2|V05,ນ ◌້ ◌ີ,3,yes,
+CW00017,ເທົ່າໃດ,"how much, how many",C09|C12|T1|V34|V35,ດ ທ ◌່ ໃ◌ ເ◌ົາ,5,no,excluded: ດ
+CW00018,ກິນ,eat; (colloquial) drink,C01|C13|V04,ກ ນ ◌ິ,3,yes,
+CW00019,ເຂົ້າ,(cooked) rice; to enter,C02|T2|V35,ຂ ◌້ ເ◌ົາ,3,yes,
+CW00020,ແລ້ວ,"already, done; then",C23|C24|T2|V15,ລ ວ ◌້ ແ◌,4,no,excluded: ວ
+CW00021,ດື່ມ,drink,C09|C20|T1|V07,ດ ມ ◌່ ◌ື,4,no,excluded: ດ
+CW00022,ຢາກ,want (to),C01|C21|V03,ກ ຢ ◌າ,3,yes,
+CW00023,ມີ,have; there is/are,C20|V05,ມ ◌ີ,2,yes,
+CW00024,ໄປ,go,C15|V33,ປ ໄ◌,2,yes,
+CW00025,ມາ,come,C20|V03,ມ ◌າ,2,yes,
+CW00026,ຫຍັງ,what; something,C04|C29|V02,ງ ຫຍ ◌ັ◌,3,no,excluded: ຫຍ
+CW00027,ເປັນ,"be, become; be ill",C13|C15|V11,ນ ປ ເ◌ັ◌,3,yes,
+CW00028,ອາຫານ,food,C13|C25|C26|V03,ນ ຫ ອ ◌າ,4,no,excluded: ຫ ອ
+CW00029,ຮ້ານ,"shop, store; stall",C13|C27|T2|V03,ນ ຮ ◌້ ◌າ,4,yes,
+CW00030,ຮ້ານອາຫານ,restaurant,C13|C25|C26|C27|T2|V03,ນ ຫ ອ ຮ ◌້ ◌າ,6,no,excluded: ຫ ອ
+CW00031,ລາວ,"he, she",C23|C24|V03,ລ ວ ◌າ,3,no,excluded: ວ
+CW00032,ເຮົາ,we; (casual) I,C27|V35,ຮ ເ◌ົາ,2,yes,
+CW00033,ນອນ,sleep; lie down,C13|V22,ນ ◌ອ◌,2,no,excluded: ◌ອ◌
+CW00034,ຫ້ອງນອນ,bedroom,C04|C13|C25|T2|V22,ງ ນ ຫ ◌້ ◌ອ◌,5,no,excluded: ຫ ◌ອ◌
+CW00035,ເຂົ້າໃຈ,understand,C02|C05|T2|V34|V35,ຂ ຈ ◌້ ໃ◌ ເ◌ົາ,5,yes,
+CW00036,ມື້,day,C20|T2|V07,ມ ◌້ ◌ື,3,yes,
+CW00037,ມື້ນີ້,today,C13|C20|T2|V05|V07,ນ ມ ◌້ ◌ີ ◌ື,5,yes,
+CW00038,ມື້ອື່ນ,tomorrow,C13|C20|C26|T1|T2|V07,ນ ມ ອ ◌່ ◌້ ◌ື,6,no,excluded: ອ
+CW00039,ໜຶ່ງ,one,C04|C30|T1|V06,ງ ໜ ◌່ ◌ຶ,4,yes,
+CW00040,ຄົນ,person; classifier for people,C03|C13|V17,ຄ ນ ◌ົ◌,3,yes,
+CW00041,ຊື່,name,C07|T1|V07,ຊ ◌່ ◌ື,3,yes,
+CW00042,ແມ່,mother,C20|T1|V15,ມ ◌່ ແ◌,3,yes,
+CW00043,ພໍ່,father,C18|T1|V21,ພ ◌່ ◌ໍ,3,yes,
+CW00044,ລູກ,child (son or daughter),C01|C23|V09,ກ ລ ◌ູ,3,yes,
+CW00045,ໝູ່,friend,C31|T1|V09,ໝ ◌່ ◌ູ,3,yes,
+CW00046,ໃຜ,who,C16|V34,ຜ ໃ◌,2,yes,
+CW00047,ສອງ,two,C04|C06|V22,ງ ສ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00048,ເຮືອນ,house,C13|C27|V29,ນ ຮ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00049,ບ້ານ,home; village,C13|C14|T2|V03,ນ ບ ◌້ ◌າ,4,no,excluded: ບ
+CW00050,ນັ້ນ,that,C13|T2|V02,ນ ◌້ ◌ັ◌,3,yes,
+CW00051,ໃກ້,near,C01|T2|V34,ກ ◌້ ໃ◌,3,yes,
+CW00052,ໄກ,far,C01|V33,ກ ໄ◌,2,yes,
+CW00053,ເຫັນ,see; think,C13|C25|V11,ນ ຫ ເ◌ັ◌,3,no,excluded: ຫ
+CW00054,ເບິ່ງ,"look at, watch",C04|C14|T1|V23,ງ ບ ◌່ ເ◌ິ,4,no,excluded: ບ
+CW00055,ໄດ້ຍິນ,hear,C08|C09|C13|T2|V04|V33,ຍ ດ ນ ◌້ ◌ິ ໄ◌,6,no,excluded: ຍ ດ
+CW00056,ເວົ້າ,"speak, say",C24|T2|V35,ວ ◌້ ເ◌ົາ,3,no,excluded: ວ
+CW00057,ພາສາ,language,C06|C18|V03,ສ ພ ◌າ,3,yes,
+CW00058,ລາວ,Laos; Lao (language/person),,,0,no,same spelling as CW00031 (counted once)
+CW00059,ພາສາລາວ,Lao language,C06|C18|C23|C24|V03,ສ ພ ລ ວ ◌າ,5,no,excluded: ວ
+CW00060,ຮູ້,know,C27|T2|V09,ຮ ◌້ ◌ູ,3,yes,
+CW00061,ສາມ,three,C06|C20|V03,ສ ມ ◌າ,3,yes,
+CW00062,ຮຽນ,"study, learn",C13|C27|V27,ນ ຮ ◌ຽ◌,3,yes,
+CW00063,ດຽວນີ້,now,C09|C13|C24|T2|V05|V27,ດ ນ ວ ◌້ ◌ີ ◌ຽ◌,6,no,excluded: ດ ວ
+CW00064,ເຮັດ,"do, make",C09|C27|V11,ດ ຮ ເ◌ັ◌,3,no,excluded: ດ
+CW00065,ວຽກ,"work, job",C01|C24|V27,ກ ວ ◌ຽ◌,3,no,excluded: ວ
+CW00066,ເຮັດວຽກ,to work,C01|C09|C24|C27|V11|V27,ກ ດ ວ ຮ ເ◌ັ◌ ◌ຽ◌,6,no,excluded: ດ ວ
+CW00067,ຕ້ອງການ,need; want,C01|C04|C10|C13|T2|V03|V22,ກ ງ ຕ ນ ◌້ ◌າ ◌ອ◌,7,no,excluded: ◌ອ◌
+CW00068,ໃຫ້,give; to/for,C25|T2|V34,ຫ ◌້ ໃ◌,3,no,excluded: ຫ
+CW00069,ມັກ,like,C01|C20|V02,ກ ມ ◌ັ◌,3,yes,
+CW00070,ຮັກ,love,C01|C27|V02,ກ ຮ ◌ັ◌,3,yes,
+CW00071,ສີ່,four,C06|T1|V05,ສ ◌່ ◌ີ,3,yes,
+CW00072,ຫິວ,hungry,C24|C25|V04,ວ ຫ ◌ິ,3,no,excluded: ວ ຫ
+CW00073,ອີ່ມ,full (after eating),C20|C26|T1|V05,ມ ອ ◌່ ◌ີ,4,no,excluded: ອ
+CW00074,ແຊບ,delicious,C07|C14|V15,ຊ ບ ແ◌,3,no,excluded: ບ
+CW00075,ປາ,fish,C15|V03,ປ ◌າ,2,yes,
+CW00076,ໄກ່,chicken,C01|T1|V33,ກ ◌່ ໄ◌,3,yes,
+CW00077,ຊີ້ນ,meat,C07|C13|T2|V05,ຊ ນ ◌້ ◌ີ,4,yes,
+CW00078,ເຂົ້າໜຽວ,sticky rice,C02|C24|C30|T2|V27|V35,ຂ ວ ໜ ◌້ ◌ຽ◌ ເ◌ົາ,6,no,excluded: ວ
+CW00079,ໝາກໄມ້,fruit,C01|C20|C31|T2|V03|V33,ກ ມ ໝ ◌້ ◌າ ໄ◌,6,yes,
+CW00080,ກາເຟ,coffee,C01|C19|V03|V12,ກ ຟ ◌າ ເ◌,4,yes,
+CW00081,ຊາ,tea,C07|V03,ຊ ◌າ,2,yes,
+CW00082,ຫ້າ,five,C25|T2|V03,ຫ ◌້ ◌າ,3,no,excluded: ຫ
+CW00083,ຊື້,buy,C07|T2|V07,ຊ ◌້ ◌ື,3,yes,
+CW00084,ຂາຍ,sell,C02|C08|V03,ຂ ຍ ◌າ,3,no,excluded: ຍ
+CW00085,ລາຄາ,price,C03|C23|V03,ຄ ລ ◌າ,3,yes,
+CW00086,ເງິນ,money; silver,C04|C13|V23,ງ ນ ເ◌ິ,3,yes,
+CW00087,ແພງ,expensive,C04|C18|V15,ງ ພ ແ◌,3,yes,
+CW00088,ຖືກ,cheap; correct,C01|C11|V07,ກ ຖ ◌ື,3,yes,
+CW00089,ໃຫຍ່,big,C29|T1|V34,ຫຍ ◌່ ໃ◌,3,no,excluded: ຫຍ
+CW00090,ນ້ອຍ,"small, little",C08|C13|T2|V22,ຍ ນ ◌້ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW00091,ຫຼາຍ,"very; many, much",C08|C32|V03,ຍ ຫຼ ◌າ,3,no,excluded: ຍ ຫຼ
+CW00092,ຮ້ອນ,hot,C13|C27|T2|V22,ນ ຮ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00093,ເຢັນ,cold; cool,C13|C21|V11,ນ ຢ ເ◌ັ◌,3,yes,
+CW00094,ງາມ,beautiful,C04|C20|V03,ງ ມ ◌າ,3,yes,
+CW00095,ໝາ,dog,C31|V03,ໝ ◌າ,2,yes,
+CW00096,ແມວ,cat,C20|C24|V15,ມ ວ ແ◌,3,no,excluded: ວ
+CW00097,ໂຕ,classifier for animals (and some objects),C10|V18,ຕ ໂ◌,2,yes,
+CW00098,ຍ່າງ,walk,C04|C08|T1|V03,ງ ຍ ◌່ ◌າ,4,no,excluded: ຍ
+CW00099,ນັ່ງ,sit,C04|C13|T1|V02,ງ ນ ◌່ ◌ັ◌,4,yes,
+CW00100,ເປັນຫຍັງ,why,C04|C13|C15|C29|V02|V11,ງ ນ ປ ຫຍ ◌ັ◌ ເ◌ັ◌,6,no,excluded: ຫຍ
+CW00101,ແນວໃດ,how,C09|C13|C24|V15|V34,ດ ນ ວ ແ◌ ໃ◌,5,no,excluded: ດ ວ
+CW00102,ລໍຖ້າ,wait,C11|C23|T2|V03|V21,ຖ ລ ◌້ ◌າ ◌ໍ,5,yes,
+CW00103,ຜົວ,husband,C16|V31,ຜ ◌ົວ,2,no,excluded: ◌ົວ
+CW00104,ເມຍ,wife,C20|V26,ມ ເ◌ຍ,2,no,excluded: ເ◌ຍ
+CW00105,ຄອບຄົວ,family,C03|C14|V22|V31,ຄ ບ ◌ອ◌ ◌ົວ,4,no,excluded: ບ ◌ອ◌ ◌ົວ
+CW00106,ຫົວ,head; classifier for books,C25|V31,ຫ ◌ົວ,2,no,excluded: ຫ ◌ົວ
+CW00107,ແລະ,and,C23|V13,ລ ແ◌ະ,2,yes,
+CW00108,ຫຼື,or,C32|V07,ຫຼ ◌ື,2,no,excluded: ຫຼ
+CW00109,ແຕ່,but,C10|T1|V15,ຕ ◌່ ແ◌,3,yes,
+CW00110,ເພາະ,because,C18|V19,ພ ເ◌າະ,2,yes,
+CW00111,ຖ້າ,if,C11|T2|V03,ຖ ◌້ ◌າ,3,yes,
+CW00112,ຫົກ,six,C01|C25|V17,ກ ຫ ◌ົ◌,3,no,excluded: ຫ
+CW00113,ໄດ້,can; get; did,C09|T2|V33,ດ ◌້ ໄ◌,3,no,excluded: ດ
+CW00114,ເອົາ,take; want (to have),C26|V35,ອ ເ◌ົາ,2,no,excluded: ອ
+CW00115,ອັນ,thing; general classifier,C13|C26|V02,ນ ອ ◌ັ◌,3,no,excluded: ອ
+CW00116,ອັນນີ້,this (one),C13|C26|T2|V02|V05,ນ ອ ◌້ ◌ັ◌ ◌ີ,5,no,excluded: ອ
+CW00117,ຢຸດ,stop,C09|C21|V08,ດ ຢ ◌ຸ,3,no,excluded: ດ
+CW00118,ທຸກ,every,C01|C12|V08,ກ ທ ◌ຸ,3,yes,
+CW00119,ໂຕະ,table,C10|V16,ຕ ໂ◌ະ,2,yes,
+CW00120,ຝົນ,rain,C13|C17|V17,ນ ຝ ◌ົ◌,3,yes,
+CW00121,ຕົກ,fall,C01|C10|V17,ກ ຕ ◌ົ◌,3,yes,
+CW00122,ເຈັດ,seven,C05|C09|V11,ຈ ດ ເ◌ັ◌,3,no,excluded: ດ
+CW00123,ເປີດ,open,C09|C15|V24,ດ ປ ເ◌ີ,3,no,excluded: ດ
+CW00124,ປິດ,close,C09|C15|V04,ດ ປ ◌ິ,3,no,excluded: ດ
+CW00125,ເກີດ,be born; happen,C01|C09|V24,ກ ດ ເ◌ີ,3,no,excluded: ດ
+CW00126,ຫວານ,sweet,C13|C33|V03,ນ ຫວ ◌າ,3,no,excluded: ຫວ
+CW00127,ສວນ,garden,C06|C13|V32,ສ ນ ◌ວ◌,3,no,excluded: ◌ວ◌
+CW00128,ມ່ວນ,fun,C13|C20|T1|V32,ນ ມ ◌່ ◌ວ◌,4,no,excluded: ◌ວ◌
+CW00129,ກ້ວຍ,banana,C01|C08|T2|V32,ກ ຍ ◌້ ◌ວ◌,4,no,excluded: ຍ ◌ວ◌
+CW00130,ໄວ,fast; early,C24|V33,ວ ໄ◌,2,no,excluded: ວ
+CW00131,ໄວໆ,quickly,C24|S1|V33,ວ ໆ ໄ◌,3,no,excluded: ວ ໆ
+CW00132,ຊ້າ,slow; late,C07|T2|V03,ຊ ◌້ ◌າ,3,yes,
+CW00133,ຊ້າໆ,slowly,C07|S1|T2|V03,ຊ ໆ ◌້ ◌າ,4,no,excluded: ໆ
+CW00134,ແປດ,eight,C09|C15|V15,ດ ປ ແ◌,3,no,excluded: ດ
+CW00135,ເຊົ້າ,morning,C07|T2|V35,ຊ ◌້ ເ◌ົາ,3,yes,
+CW00136,ແລງ,evening,C04|C23|V15,ງ ລ ແ◌,3,yes,
+CW00137,ຄືນ,night,C03|C13|V07,ຄ ນ ◌ື,3,yes,
+CW00138,ຕອນ,period (of the day),C10|C13|V22,ຕ ນ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00139,ຕອນນີ້,now,C10|C13|T2|V05|V22,ຕ ນ ◌້ ◌ີ ◌ອ◌,5,no,excluded: ◌ອ◌
+CW00140,ມື້ວານ,yesterday,C13|C20|C24|T2|V03|V07,ນ ມ ວ ◌້ ◌າ ◌ື,6,no,excluded: ວ
+CW00141,ເກົ້າ,nine,C01|T2|V35,ກ ◌້ ເ◌ົາ,3,yes,
+CW00142,ໂມງ,hour; o'clock,C04|C20|V18,ງ ມ ໂ◌,3,yes,
+CW00143,ເວລາ,time,C23|C24|V03|V12,ລ ວ ◌າ ເ◌,4,no,excluded: ວ
+CW00144,ປີ,year,C15|V05,ປ ◌ີ,2,yes,
+CW00145,ເດືອນ,month; moon,C09|C13|V29,ດ ນ ເ◌ືອ,3,no,excluded: ດ ເ◌ືອ
+CW00146,ອາທິດ,week,C09|C12|C26|V03|V04,ດ ທ ອ ◌າ ◌ິ,5,no,excluded: ດ ອ
+CW00147,ສິບ,ten,C06|C14|V04,ສ ບ ◌ິ,3,no,excluded: ບ
+CW00148,ກ່ອນ,before; first,C01|C13|T1|V22,ກ ນ ◌່ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00149,ຫຼັງ,back; behind; after,C04|C32|V02,ງ ຫຼ ◌ັ◌,3,no,excluded: ຫຼ
+CW00150,ເດັກ,child,C01|C09|V11,ກ ດ ເ◌ັ◌,3,no,excluded: ດ
+CW00151,ຜູ້ຊາຍ,man,C07|C08|C16|T2|V03|V09,ຊ ຍ ຜ ◌້ ◌າ ◌ູ,6,no,excluded: ຍ
+CW00152,ຜູ້ຍິງ,woman,C04|C08|C16|T2|V04|V09,ງ ຍ ຜ ◌້ ◌ິ ◌ູ,6,no,excluded: ຍ
+CW00153,ອ້າຍ,older brother,C08|C26|T2|V03,ຍ ອ ◌້ ◌າ,4,no,excluded: ຍ ອ
+CW00154,ເອື້ອຍ,older sister,C08|C26|T2|V29,ຍ ອ ◌້ ເ◌ືອ,4,no,excluded: ຍ ອ ເ◌ືອ
+CW00155,ນ້ອງ,younger sibling,C04|C13|T2|V22,ງ ນ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00156,ຄູ,teacher,C03|V09,ຄ ◌ູ,2,yes,
+CW00157,ນັກຮຽນ,student,C01|C13|C27|V02|V27,ກ ນ ຮ ◌ັ◌ ◌ຽ◌,5,yes,
+CW00158,ທ່ານ,you (formal); sir/madam,C12|C13|T1|V03,ທ ນ ◌່ ◌າ,4,yes,
+CW00159,ພວກເຮົາ,we (plural),C01|C18|C27|V32|V35,ກ ພ ຮ ◌ວ◌ ເ◌ົາ,5,no,excluded: ◌ວ◌
+CW00160,ເຂົາ,he; she; they,C02|V35,ຂ ເ◌ົາ,2,yes,
+CW00161,ພວກເຂົາ,they,C01|C02|C18|V32|V35,ກ ຂ ພ ◌ວ◌ ເ◌ົາ,5,no,excluded: ◌ວ◌
+CW00162,ໝໍ,doctor,C31|V21,ໝ ◌ໍ,2,yes,
+CW00163,ຊາວ,twenty,C07|C24|V03,ຊ ວ ◌າ,3,no,excluded: ວ
+CW00164,ຕາ,eye,C10|V03,ຕ ◌າ,2,yes,
+CW00165,ມື,hand,C20|V07,ມ ◌ື,2,yes,
+CW00166,ຕີນ,foot,C10|C13|V05,ຕ ນ ◌ີ,3,yes,
+CW00167,ປາກ,mouth,C01|C15|V03,ກ ປ ◌າ,3,yes,
+CW00168,ຫູ,ear,C25|V09,ຫ ◌ູ,2,no,excluded: ຫ
+CW00169,ເຈັບ,hurt; be sick,C05|C14|V11,ຈ ບ ເ◌ັ◌,3,no,excluded: ບ
+CW00170,ປ່ວຍ,sick,C08|C15|T1|V32,ຍ ປ ◌່ ◌ວ◌,4,no,excluded: ຍ ◌ວ◌
+CW00171,ຢາ,medicine,C21|V03,ຢ ◌າ,2,yes,
+CW00172,ໂຮງໝໍ,hospital,C04|C27|C31|V18|V21,ງ ຮ ໝ ໂ◌ ◌ໍ,5,yes,
+CW00173,ເມື່ອຍ,tired,C08|C20|T1|V29,ຍ ມ ◌່ ເ◌ືອ,4,no,excluded: ຍ ເ◌ືອ
+CW00174,ຮ້ອຍ,hundred,C08|C27|T2|V22,ຍ ຮ ◌້ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW00175,ໂຮງຮຽນ,school,C04|C13|C27|V18|V27,ງ ນ ຮ ໂ◌ ◌ຽ◌,5,yes,
+CW00176,ໂຮງແຮມ,hotel,C04|C20|C27|V15|V18,ງ ມ ຮ ແ◌ ໂ◌,5,yes,
+CW00177,ຕະຫຼາດ,market,C09|C10|C32|V01|V03,ດ ຕ ຫຼ ◌ະ ◌າ,5,no,excluded: ດ ຫຼ
+CW00178,ວັດ,temple,C09|C24|V02,ດ ວ ◌ັ◌,3,no,excluded: ດ ວ
+CW00179,ເມືອງ,town; district,C04|C20|V29,ງ ມ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00180,ປະເທດ,country,C09|C12|C15|V01|V12,ດ ທ ປ ◌ະ ເ◌,5,no,excluded: ດ
+CW00181,ວຽງຈັນ,Vientiane,C04|C05|C13|C24|V02|V27,ງ ຈ ນ ວ ◌ັ◌ ◌ຽ◌,6,no,excluded: ວ
+CW00182,ທາງ,way; road,C04|C12|V03,ງ ທ ◌າ,3,yes,
+CW00183,ຖະໜົນ,road; street,C11|C13|C30|V01|V17,ຖ ນ ໜ ◌ະ ◌ົ◌,5,yes,
+CW00184,ບ່ອນ,place,C13|C14|T1|V22,ນ ບ ◌່ ◌ອ◌,4,no,excluded: ບ ◌ອ◌
+CW00185,ຫ້ອງການ,office,C01|C04|C13|C25|T2|V03|V22,ກ ງ ນ ຫ ◌້ ◌າ ◌ອ◌,7,no,excluded: ຫ ◌ອ◌
+CW00186,ແມ່ນ້ຳ,river,C13|C20|T1|T2|V15|V36,ນ ມ ◌່ ◌້ ແ◌ ◌ຳ,6,yes,
+CW00187,ນາ,rice field,C13|V03,ນ ◌າ,2,yes,
+CW00188,ພູ,mountain,C18|V09,ພ ◌ູ,2,yes,
+CW00189,ຊ້າຍ,left,C07|C08|T2|V03,ຊ ຍ ◌້ ◌າ,4,no,excluded: ຍ
+CW00190,ຂວາ,right,C02|C24|V03,ຂ ວ ◌າ,3,no,excluded: ວ
+CW00191,ຊື່ໆ,straight (ahead),C07|S1|T1|V07,ຊ ໆ ◌່ ◌ື,4,no,excluded: ໆ
+CW00192,ໃນ,in,C13|V34,ນ ໃ◌,2,yes,
+CW00193,ນອກ,outside,C01|C13|V22,ກ ນ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00194,ເທິງ,on; above,C04|C12|V23,ງ ທ ເ◌ິ,3,yes,
+CW00195,ລຸ່ມ,below; under,C20|C23|T1|V08,ມ ລ ◌່ ◌ຸ,4,yes,
+CW00196,ໜ້າ,face; front,C30|T2|V03,ໜ ◌້ ◌າ,3,yes,
+CW00197,ຫັ້ນ,there,C13|C25|T2|V02,ນ ຫ ◌້ ◌ັ◌,4,no,excluded: ຫ
+CW00198,ຮອດ,arrive; until,C09|C27|V22,ດ ຮ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW00199,ຈາກ,from,C01|C05|V03,ກ ຈ ◌າ,3,yes,
+CW00200,ກັບ,with; return,C01|C14|V02,ກ ບ ◌ັ◌,3,no,excluded: ບ
+CW00201,ລ້ຽວ,turn,C23|C24|T2|V27,ລ ວ ◌້ ◌ຽ◌,4,no,excluded: ວ
+CW00202,ພັນ,thousand,C13|C18|V02,ນ ພ ◌ັ◌,3,yes,
+CW00203,ໝູ,pig; pork,C31|V09,ໝ ◌ູ,2,yes,
+CW00204,ງົວ,cow; beef,C04|V31,ງ ◌ົວ,2,no,excluded: ◌ົວ
+CW00205,ໄຂ່,egg,C02|T1|V33,ຂ ◌່ ໄ◌,3,yes,
+CW00206,ຜັກ,vegetable,C01|C16|V02,ກ ຜ ◌ັ◌,3,yes,
+CW00207,ເຂົ້າຈີ່,bread,C02|C05|T1|T2|V05|V35,ຂ ຈ ◌່ ◌້ ◌ີ ເ◌ົາ,6,yes,
+CW00208,ເຝີ,pho (noodle soup),C17|V24,ຝ ເ◌ີ,2,yes,
+CW00209,ນົມ,milk,C13|C20|V17,ນ ມ ◌ົ◌,3,yes,
+CW00210,ເບຍ,beer,C14|V26,ບ ເ◌ຍ,2,no,excluded: ບ ເ◌ຍ
+CW00211,ເຜັດ,spicy,C09|C16|V11,ດ ຜ ເ◌ັ◌,3,no,excluded: ດ
+CW00212,ສົ້ມ,sour,C06|C20|T2|V17,ສ ມ ◌້ ◌ົ◌,4,yes,
+CW00213,ເຄັມ,salty,C03|C20|V11,ຄ ມ ເ◌ັ◌,3,yes,
+CW00214,ໝາກມ່ວງ,mango,C01|C04|C20|C31|T1|V03|V32,ກ ງ ມ ໝ ◌່ ◌າ ◌ວ◌,7,no,excluded: ◌ວ◌
+CW00215,ຕຳໝາກຫຸ່ງ,papaya salad,C01|C04|C10|C25|C31|T1|V03|V08|V36,ກ ງ ຕ ຫ ໝ ◌່ ◌າ ◌ຸ ◌ຳ,9,no,excluded: ຫ
+CW00216,ອາຫານເຊົ້າ,breakfast,C07|C13|C25|C26|T2|V03|V35,ຊ ນ ຫ ອ ◌້ ◌າ ເ◌ົາ,7,no,excluded: ຫ ອ
+CW00217,ເຂົ້າແລງ,dinner,C02|C04|C23|T2|V15|V35,ຂ ງ ລ ◌້ ແ◌ ເ◌ົາ,6,yes,
+CW00218,ແກ້ວ,glass; bottle,C01|C24|T2|V15,ກ ວ ◌້ ແ◌,4,no,excluded: ວ
+CW00219,ຈອກ,cup; glass,C01|C05|V22,ກ ຈ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00220,ຊ່ວຍ,help,C07|C08|T1|V32,ຊ ຍ ◌່ ◌ວ◌,4,no,excluded: ຍ ◌ວ◌
+CW00221,ຮູ້ຈັກ,know (a person or place),C01|C05|C27|T2|V02|V09,ກ ຈ ຮ ◌້ ◌ັ◌ ◌ູ,6,yes,
+CW00222,ຄິດ,think,C03|C09|V04,ຄ ດ ◌ິ,3,no,excluded: ດ
+CW00223,ຈື່,remember,C05|T1|V07,ຈ ◌່ ◌ື,3,yes,
+CW00224,ລືມ,forget,C20|C23|V07,ມ ລ ◌ື,3,yes,
+CW00225,ອ່ານ,read,C13|C26|T1|V03,ນ ອ ◌່ ◌າ,4,no,excluded: ອ
+CW00226,ຂຽນ,write,C02|C13|V27,ຂ ນ ◌ຽ◌,3,yes,
+CW00227,ຟັງ,listen,C04|C19|V02,ງ ຟ ◌ັ◌,3,yes,
+CW00228,ຫຼິ້ນ,play,C13|C32|T2|V04,ນ ຫຼ ◌້ ◌ິ,4,no,excluded: ຫຼ
+CW00229,ອາບນ້ຳ,"bathe, shower",C13|C14|C26|T2|V03|V36,ນ ບ ອ ◌້ ◌າ ◌ຳ,6,no,excluded: ບ ອ
+CW00230,ຕື່ນ,wake up,C10|C13|T1|V07,ຕ ນ ◌່ ◌ື,4,yes,
+CW00231,ອອກ,go out; exit,C01|C26|V22,ກ ອ ◌ອ◌,3,no,excluded: ອ ◌ອ◌
+CW00232,ເລີ່ມ,start,C20|C23|T1|V24,ມ ລ ◌່ ເ◌ີ,4,yes,
+CW00233,ຈ່າຍ,pay,C05|C08|T1|V03,ຈ ຍ ◌່ ◌າ,4,no,excluded: ຍ
+CW00234,ຖາມ,ask,C11|C20|V03,ຖ ມ ◌າ,3,yes,
+CW00235,ຕອບ,answer,C10|C14|V22,ຕ ບ ◌ອ◌,3,no,excluded: ບ ◌ອ◌
+CW00236,ບອກ,tell,C01|C14|V22,ກ ບ ◌ອ◌,3,no,excluded: ບ ◌ອ◌
+CW00237,ສອນ,teach,C06|C13|V22,ສ ນ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00238,ໃຊ້,use; spend,C07|T2|V34,ຊ ◌້ ໃ◌,3,yes,
+CW00239,ຊອກ,look for,C01|C07|V22,ກ ຊ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00240,ພົບ,meet; find,C14|C18|V17,ບ ພ ◌ົ◌,3,no,excluded: ບ
+CW00241,ແລ່ນ,run,C13|C23|T1|V15,ນ ລ ◌່ ແ◌,4,yes,
+CW00242,ລອຍນ້ຳ,swim,C08|C13|C23|T2|V22|V36,ຍ ນ ລ ◌້ ◌ອ◌ ◌ຳ,6,no,excluded: ຍ ◌ອ◌
+CW00243,ຂັບ,drive,C02|C14|V02,ຂ ບ ◌ັ◌,3,no,excluded: ບ
+CW00244,ຂີ່,ride,C02|T1|V05,ຂ ◌່ ◌ີ,3,yes,
+CW00245,ສົ່ງ,send,C04|C06|T1|V17,ງ ສ ◌່ ◌ົ◌,4,yes,
+CW00246,ໂທ,(tele)phone; call,C12|V18,ທ ໂ◌,2,yes,
+CW00247,ຕ້ອງ,must,C04|C10|T2|V22,ງ ຕ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00248,ຄວນ,should,C03|C13|V32,ຄ ນ ◌ວ◌,3,no,excluded: ◌ວ◌
+CW00249,ຈະ,will (future),C05|V01,ຈ ◌ະ,2,yes,
+CW00250,ກຳລັງ,be (doing) now,C01|C04|C23|V02|V36,ກ ງ ລ ◌ັ◌ ◌ຳ,5,yes,
+CW00251,ເຄີຍ,ever; used to,C03|C08|V24,ຄ ຍ ເ◌ີ,3,no,excluded: ຍ
+CW00252,ດີໃຈ,glad,C05|C09|V05|V34,ຈ ດ ◌ີ ໃ◌,4,no,excluded: ດ
+CW00253,ເສຍໃຈ,sad; sorry,C05|C06|V26|V34,ຈ ສ ເ◌ຍ ໃ◌,4,no,excluded: ເ◌ຍ
+CW00254,ຍາກ,difficult,C01|C08|V03,ກ ຍ ◌າ,3,no,excluded: ຍ
+CW00255,ງ່າຍ,easy,C04|C08|T1|V03,ງ ຍ ◌່ ◌າ,4,no,excluded: ຍ
+CW00256,ໃໝ່,new,C31|T1|V34,ໝ ◌່ ໃ◌,3,yes,
+CW00257,ເກົ່າ,old (things),C01|T1|V35,ກ ◌່ ເ◌ົາ,3,yes,
+CW00258,ແກ່,old (people),C01|T1|V15,ກ ◌່ ແ◌,3,yes,
+CW00259,ໜຸ່ມ,young,C20|C30|T1|V08,ມ ໜ ◌່ ◌ຸ,4,yes,
+CW00260,ສູງ,tall; high,C04|C06|V09,ງ ສ ◌ູ,3,yes,
+CW00261,ຍາວ,long,C08|C24|V03,ຍ ວ ◌າ,3,no,excluded: ຍ ວ
+CW00262,ສັ້ນ,short,C06|C13|T2|V02,ສ ນ ◌້ ◌ັ◌,4,yes,
+CW00263,ໜັກ,heavy; hard,C01|C30|V02,ກ ໜ ◌ັ◌,3,yes,
+CW00264,ສະອາດ,clean,C06|C09|C26|V01|V03,ສ ດ ອ ◌ະ ◌າ,5,no,excluded: ດ ອ
+CW00265,ສວຍ,pretty,C06|C08|V32,ສ ຍ ◌ວ◌,3,no,excluded: ຍ ◌ວ◌
+CW00266,ໜ້ອຍ,a little; few,C08|C30|T2|V22,ຍ ໜ ◌້ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW00267,ຫວ່າງ,free (not busy); empty,C04|C33|T1|V03,ງ ຫວ ◌່ ◌າ,4,no,excluded: ຫວ
+CW00268,ຫຍຸ້ງ,busy,C04|C29|T2|V08,ງ ຫຍ ◌້ ◌ຸ,4,no,excluded: ຫຍ
+CW00269,ຜິດ,wrong,C09|C16|V04,ດ ຜ ◌ິ,3,no,excluded: ດ
+CW00270,ພ້ອມ,ready; together,C18|C20|T2|V22,ພ ມ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00271,ອ້ວນ,fat,C13|C26|T2|V32,ນ ອ ◌້ ◌ວ◌,4,no,excluded: ອ ◌ວ◌
+CW00272,ຈ່ອຍ,thin,C05|C08|T1|V22,ຈ ຍ ◌່ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW00273,ທີ່,at; that/which,C12|T1|V05,ທ ◌່ ◌ີ,3,yes,
+CW00274,ຂອງ,of (possession); thing,C02|C04|V22,ຂ ງ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00275,ອີກ,again; more,C01|C26|V05,ກ ອ ◌ີ,3,no,excluded: ອ
+CW00276,ແທ້,really,C12|T2|V15,ທ ◌້ ແ◌,3,yes,
+CW00277,ຍັງ,still; (not) yet,C04|C08|V02,ງ ຍ ◌ັ◌,3,no,excluded: ຍ
+CW00278,ນຳ,with; along,C13|V36,ນ ◌ຳ,2,yes,
+CW00279,ກັນ,each other; together,C01|C13|V02,ກ ນ ◌ັ◌,3,yes,
+CW00280,ບາງ,some,C04|C14|V03,ງ ບ ◌າ,3,no,excluded: ບ
+CW00281,ຈັກ,how many,C01|C05|V02,ກ ຈ ◌ັ◌,3,yes,
+CW00282,ເມື່ອໃດ,when,C09|C20|T1|V29|V34,ດ ມ ◌່ ເ◌ືອ ໃ◌,5,no,excluded: ດ ເ◌ືອ
+CW00283,ໃດ,which,C09|V34,ດ ໃ◌,2,no,excluded: ດ
+CW00284,ໜ່ວຍ,"classifier for round things (fruit, eggs)",C08|C30|T1|V32,ຍ ໜ ◌່ ◌ວ◌,4,no,excluded: ຍ ◌ວ◌
+CW00285,ຄັນ,classifier for vehicles,C03|C13|V02,ຄ ນ ◌ັ◌,3,yes,
+CW00286,ລົດ,car; vehicle,C09|C23|V17,ດ ລ ◌ົ◌,3,no,excluded: ດ
+CW00287,ລົດເມ,bus,C09|C20|C23|V12|V17,ດ ມ ລ ເ◌ ◌ົ◌,5,no,excluded: ດ
+CW00288,ໂທລະສັບ,telephone,C06|C12|C14|C23|V01|V02|V18,ສ ທ ບ ລ ◌ະ ◌ັ◌ ໂ◌,7,no,excluded: ບ
+CW00289,ປຶ້ມ,book,C15|C20|T2|V06,ປ ມ ◌້ ◌ຶ,4,yes,
+CW00290,ເສື້ອ,shirt; clothes,C06|T2|V29,ສ ◌້ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00291,ເກີບ,shoe(s),C01|C14|V24,ກ ບ ເ◌ີ,3,no,excluded: ບ
+CW00292,ເຊີນ,please (invitation); invite,C07|C13|V24,ຊ ນ ເ◌ີ,3,yes,
+CW00293,ໂຊກດີ,good luck; goodbye,C01|C07|C09|V05|V18,ກ ຊ ດ ◌ີ ໂ◌,5,no,excluded: ດ
+CW00294,ລາກ່ອນ,goodbye,C01|C13|C23|T1|V03|V22,ກ ນ ລ ◌່ ◌າ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00295,ຍິນດີ,glad; you're welcome,C08|C09|C13|V04|V05,ຍ ດ ນ ◌ິ ◌ີ,5,no,excluded: ຍ ດ
+CW00296,ບັນຫາ,problem,C13|C14|C25|V02|V03,ນ ບ ຫ ◌ັ◌ ◌າ,5,no,excluded: ບ ຫ
+CW00297,ກີບ,kip (currency),C01|C14|V05,ກ ບ ◌ີ,3,no,excluded: ບ
+CW00298,ເຄື່ອງ,things; stuff; goods,C03|C04|T1|V29,ຄ ງ ◌່ ເ◌ືອ,4,no,excluded: ເ◌ືອ
+CW00299,ອາກາດ,weather; air,C01|C09|C26|V03,ກ ດ ອ ◌າ,4,no,excluded: ດ ອ
+CW00300,ໜາວ,cold (weather),C24|C30|V03,ວ ໜ ◌າ,3,no,excluded: ວ
+CW00301,ສູນ,zero,C06|C13|V09,ສ ນ ◌ູ,3,yes,
+CW00302,ເຫງົາ,lonely,C28|V35,ຫງ ເ◌ົາ,2,no,excluded: ຫງ
+CW00303,ເຕະ,kick,C10|V10,ຕ ເ◌ະ,2,yes,
+CW00304,ວ່າ,that (reporting); say,C24|T1|V03,ວ ◌່ ◌າ,3,no,excluded: ວ
+CW00305,ກໍ່,also; then,C01|T1|V21,ກ ◌່ ◌ໍ,3,yes,
+CW00306,ເດີ,"softening particle (…, OK?)",C09|V24,ດ ເ◌ີ,2,no,excluded: ດ
+CW00307,ເນາະ,"isn't it?, right?",C13|V19,ນ ເ◌າະ,2,yes,
+CW00308,ແດ່,please (softens a request),C09|T1|V15,ດ ◌່ ແ◌,3,no,excluded: ດ
+CW00309,ສຳລັບ,for,C06|C14|C23|V02|V36,ສ ບ ລ ◌ັ◌ ◌ຳ,5,no,excluded: ບ
+CW00310,ເພື່ອ,in order to; for,C18|T1|V29,ພ ◌່ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00311,ຄື,be (= is); like,C03|V07,ຄ ◌ື,2,yes,
+CW00312,ຄືກັນ,the same; too,C01|C03|C13|V02|V07,ກ ຄ ນ ◌ັ◌ ◌ື,5,yes,
+CW00313,ກວ່າ,more than; -er,C01|C24|T1|V03,ກ ວ ◌່ ◌າ,4,no,excluded: ວ
+CW00314,ທີ່ສຸດ,the most,C06|C09|C12|T1|V05|V08,ສ ດ ທ ◌່ ◌ີ ◌ຸ,6,no,excluded: ດ
+CW00315,ມັນ,it,C13|C20|V02,ນ ມ ◌ັ◌,3,yes,
+CW00316,ເຖິງ,to; reach; about,C04|C11|V23,ງ ຖ ເ◌ິ,3,yes,
+CW00317,ຕັ້ງແຕ່,since,C04|C10|T1|T2|V02|V15,ງ ຕ ◌່ ◌້ ◌ັ◌ ແ◌,6,yes,
+CW00318,ຈົນ,until,C05|C13|V17,ຈ ນ ◌ົ◌,3,yes,
+CW00319,ຂ້າງ,side; beside,C02|C04|T2|V03,ຂ ງ ◌້ ◌າ,4,yes,
+CW00320,ລະຫວ່າງ,between; during,C04|C23|C33|T1|V01|V03,ງ ລ ຫວ ◌່ ◌ະ ◌າ,6,no,excluded: ຫວ
+CW00321,ແບບ,style; type; way,C14|V15,ບ ແ◌,2,no,excluded: ບ
+CW00322,ແບບນີ້,like this,C13|C14|T2|V05|V15,ນ ບ ◌້ ◌ີ ແ◌,5,no,excluded: ບ
+CW00323,ຄັ້ງ,time(s) (occasion),C03|C04|T2|V02,ຄ ງ ◌້ ◌ັ◌,4,yes,
+CW00324,ເທື່ອ,time(s) (occasion),C12|T1|V29,ທ ◌່ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00325,ເຄິ່ງ,half,C03|C04|T1|V23,ຄ ງ ◌່ ເ◌ິ,4,yes,
+CW00326,ລ້ານ,million,C13|C23|T2|V03,ນ ລ ◌້ ◌າ,4,yes,
+CW00327,ປະມານ,about; approximately,C13|C15|C20|V01|V03,ນ ປ ມ ◌ະ ◌າ,5,yes,
+CW00328,ພຽງແຕ່,only,C04|C10|C18|T1|V15|V27,ງ ຕ ພ ◌່ ແ◌ ◌ຽ◌,6,yes,
+CW00329,ທັງໝົດ,all; altogether,C04|C09|C12|C31|V02|V17,ງ ດ ທ ໝ ◌ັ◌ ◌ົ◌,6,no,excluded: ດ
+CW00330,ທຳອິດ,first,C09|C12|C26|V04|V36,ດ ທ ອ ◌ິ ◌ຳ,5,no,excluded: ດ ອ
+CW00331,ສຸດທ້າຍ,last,C06|C08|C09|C12|T2|V03|V08,ສ ຍ ດ ທ ◌້ ◌າ ◌ຸ,7,no,excluded: ຍ ດ
+CW00332,ວັນ,day (formal); date,C13|C24|V02,ນ ວ ◌ັ◌,3,no,excluded: ວ
+CW00333,ວັນຈັນ,Monday,C05|C13|C24|V02,ຈ ນ ວ ◌ັ◌,4,no,excluded: ວ
+CW00334,ວັນອັງຄານ,Tuesday,C03|C04|C13|C24|C26|V02|V03,ຄ ງ ນ ວ ອ ◌ັ◌ ◌າ,7,no,excluded: ວ ອ
+CW00335,ວັນພຸດ,Wednesday,C09|C13|C18|C24|V02|V08,ດ ນ ພ ວ ◌ັ◌ ◌ຸ,6,no,excluded: ດ ວ
+CW00336,ວັນພະຫັດ,Thursday,C09|C13|C18|C24|C25|V01|V02,ດ ນ ພ ວ ຫ ◌ະ ◌ັ◌,7,no,excluded: ດ ວ ຫ
+CW00337,ວັນສຸກ,Friday,C01|C06|C13|C24|V02|V08,ກ ສ ນ ວ ◌ັ◌ ◌ຸ,6,no,excluded: ວ
+CW00338,ວັນເສົາ,Saturday,C06|C13|C24|V02|V35,ສ ນ ວ ◌ັ◌ ເ◌ົາ,5,no,excluded: ວ
+CW00339,ວັນອາທິດ,Sunday,C09|C12|C13|C24|C26|V02|V03|V04,ດ ທ ນ ວ ອ ◌ັ◌ ◌າ ◌ິ,8,no,excluded: ດ ວ ອ
+CW00340,ຊົ່ວໂມງ,hour (duration),C04|C07|C20|T1|V18|V31,ງ ຊ ມ ◌່ ໂ◌ ◌ົວ,6,no,excluded: ◌ົວ
+CW00341,ນາທີ,minute,C12|C13|V03|V05,ທ ນ ◌າ ◌ີ,4,yes,
+CW00342,ທ່ຽງ,noon,C04|C12|T1|V27,ງ ທ ◌່ ◌ຽ◌,4,yes,
+CW00343,ຕອນບ່າຍ,afternoon,C08|C10|C13|C14|T1|V03|V22,ຍ ຕ ນ ບ ◌່ ◌າ ◌ອ◌,7,no,excluded: ຍ ບ ◌ອ◌
+CW00344,ກາງຄືນ,night(time),C01|C03|C04|C13|V03|V07,ກ ຄ ງ ນ ◌າ ◌ື,6,yes,
+CW00345,ກາງເວັນ,daytime,C01|C04|C13|C24|V03|V11,ກ ງ ນ ວ ◌າ ເ◌ັ◌,6,no,excluded: ວ
+CW00346,ມື້ຊືນ,the day after tomorrow,C07|C13|C20|T2|V07,ຊ ນ ມ ◌້ ◌ື,5,yes,
+CW00347,ອາທິດໜ້າ,next week,C09|C12|C26|C30|T2|V03|V04,ດ ທ ອ ໜ ◌້ ◌າ ◌ິ,7,no,excluded: ດ ອ
+CW00348,ປີໜ້າ,next year,C15|C30|T2|V03|V05,ປ ໜ ◌້ ◌າ ◌ີ,5,yes,
+CW00349,ປີກາຍ,last year,C01|C08|C15|V03|V05,ກ ຍ ປ ◌າ ◌ີ,5,no,excluded: ຍ
+CW00350,ສະເໝີ,always,C06|C31|V01|V24,ສ ໝ ◌ະ ເ◌ີ,4,yes,
+CW00351,ບາງເທື່ອ,sometimes,C04|C12|C14|T1|V03|V29,ງ ທ ບ ◌່ ◌າ ເ◌ືອ,6,no,excluded: ບ ເ◌ືອ
+CW00352,ເລື້ອຍໆ,often,C08|C23|S1|T2|V29,ຍ ລ ໆ ◌້ ເ◌ືອ,5,no,excluded: ຍ ໆ ເ◌ືອ
+CW00353,ດົນ,long (time),C09|C13|V17,ດ ນ ◌ົ◌,3,no,excluded: ດ
+CW00354,ທັນທີ,immediately,C12|C13|V02|V05,ທ ນ ◌ັ◌ ◌ີ,4,yes,
+CW00355,ຫາກໍ່,just (now),C01|C25|T1|V03|V21,ກ ຫ ◌່ ◌າ ◌ໍ,5,no,excluded: ຫ
+CW00356,ພໍ່ແມ່,parents,C18|C20|T1|V15|V21,ພ ມ ◌່ ແ◌ ◌ໍ,5,yes,
+CW00357,ພີ່,older sibling,C18|T1|V05,ພ ◌່ ◌ີ,3,yes,
+CW00358,ພີ່ນ້ອງ,siblings; relatives,C04|C13|C18|T1|T2|V05|V22,ງ ນ ພ ◌່ ◌້ ◌ີ ◌ອ◌,7,no,excluded: ◌ອ◌
+CW00359,ປູ່,grandfather (father's side),C15|T1|V09,ປ ◌່ ◌ູ,3,yes,
+CW00360,ຍ່າ,grandmother (father's side),C08|T1|V03,ຍ ◌່ ◌າ,3,no,excluded: ຍ
+CW00361,ຍາຍ,grandmother (mother's side),C08|V03,ຍ ◌າ,2,no,excluded: ຍ
+CW00362,ລຸງ,uncle (older),C04|C23|V08,ງ ລ ◌ຸ,3,yes,
+CW00363,ປ້າ,aunt (older),C15|T2|V03,ປ ◌້ ◌າ,3,yes,
+CW00364,ຫຼານ,grandchild; niece/nephew,C13|C32|V03,ນ ຫຼ ◌າ,3,no,excluded: ຫຼ
+CW00365,ລູກຊາຍ,son,C01|C07|C08|C23|V03|V09,ກ ຊ ຍ ລ ◌າ ◌ູ,6,no,excluded: ຍ
+CW00366,ລູກສາວ,daughter,C01|C06|C23|C24|V03|V09,ກ ສ ລ ວ ◌າ ◌ູ,6,no,excluded: ວ
+CW00367,ແຟນ,boyfriend; girlfriend,C13|C19|V15,ນ ຟ ແ◌,3,yes,
+CW00368,ເພື່ອນ,friend,C13|C18|T1|V29,ນ ພ ◌່ ເ◌ືອ,4,no,excluded: ເ◌ືອ
+CW00369,ຄົນລາວ,Lao person,C03|C13|C23|C24|V03|V17,ຄ ນ ລ ວ ◌າ ◌ົ◌,6,no,excluded: ວ
+CW00370,ຕ່າງປະເທດ,abroad; foreign country,C04|C09|C10|C12|C15|T1|V01|V03|V12,ງ ດ ຕ ທ ປ ◌່ ◌ະ ◌າ ເ◌,9,no,excluded: ດ
+CW00371,ຄົນຕ່າງປະເທດ,foreigner,C03|C04|C09|C10|C12|C13|C15|T1|V01|V03|V12|V17,ຄ ງ ດ ຕ ທ ນ ປ ◌່ ◌ະ ◌າ ເ◌ ◌ົ◌,12,no,excluded: ດ
+CW00372,ໝູ່ເພື່ອນ,friends,C13|C18|C31|T1|V09|V29,ນ ພ ໝ ◌່ ◌ູ ເ◌ືອ,6,no,excluded: ເ◌ືອ
+CW00373,ທ່ອງທ່ຽວ,travel; go sightseeing,C04|C12|C24|T1|V22|V27,ງ ທ ວ ◌່ ◌ອ◌ ◌ຽ◌,6,no,excluded: ວ ◌ອ◌
+CW00374,ນັກທ່ອງທ່ຽວ,tourist,C01|C04|C12|C13|C24|T1|V02|V22|V27,ກ ງ ທ ນ ວ ◌່ ◌ັ◌ ◌ອ◌ ◌ຽ◌,9,no,excluded: ວ ◌ອ◌
+CW00375,ພະ,monk,C18|V01,ພ ◌ະ,2,yes,
+CW00376,ເຈົ້າຂອງ,owner,C02|C04|C05|T2|V22|V35,ຂ ງ ຈ ◌້ ◌ອ◌ ເ◌ົາ,6,no,excluded: ◌ອ◌
+CW00377,ພະນັກງານ,employee; staff,C01|C04|C13|C18|V01|V02|V03,ກ ງ ນ ພ ◌ະ ◌ັ◌ ◌າ,7,yes,
+CW00378,ຕຳຫຼວດ,police,C09|C10|C32|V32|V36,ດ ຕ ຫຼ ◌ວ◌ ◌ຳ,5,no,excluded: ດ ຫຼ ◌ວ◌
+CW00379,ແມ່ຄ້າ,(female) vendor,C03|C20|T1|T2|V03|V15,ຄ ມ ◌່ ◌້ ◌າ ແ◌,6,yes,
+CW00380,ອາຈານ,teacher; professor,C05|C13|C26|V03,ຈ ນ ອ ◌າ,4,no,excluded: ອ
+CW00381,ນັກສຶກສາ,university student,C01|C06|C13|V02|V03|V06,ກ ສ ນ ◌ັ◌ ◌າ ◌ຶ,6,yes,
+CW00382,ອາຍຸ,age,C08|C26|V03|V08,ຍ ອ ◌າ ◌ຸ,4,no,excluded: ຍ ອ
+CW00383,ຜົມ,hair (on the head),C16|C20|V17,ຜ ມ ◌ົ◌,3,yes,
+CW00384,ແຂ້ວ,tooth,C02|C24|T2|V15,ຂ ວ ◌້ ແ◌,4,no,excluded: ວ
+CW00385,ດັງ,nose; loud,C04|C09|V02,ງ ດ ◌ັ◌,3,no,excluded: ດ
+CW00386,ຄໍ,neck; throat,C03|V21,ຄ ◌ໍ,2,yes,
+CW00387,ທ້ອງ,stomach; belly,C04|C12|T2|V22,ງ ທ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00388,ແຂນ,arm,C02|C13|V15,ຂ ນ ແ◌,3,yes,
+CW00389,ຂາ,leg,C02|V03,ຂ ◌າ,2,yes,
+CW00390,ຫົວໃຈ,heart (organ),C05|C25|V31|V34,ຈ ຫ ◌ົວ ໃ◌,4,no,excluded: ຫ ◌ົວ
+CW00391,ໄຂ້,fever,C02|T2|V33,ຂ ◌້ ໄ◌,3,yes,
+CW00392,ໄອ,cough,C26|V33,ອ ໄ◌,2,no,excluded: ອ
+CW00393,ຫວັດ,(common) cold,C09|C33|V02,ດ ຫວ ◌ັ◌,3,no,excluded: ດ ຫວ
+CW00394,ປວດ,ache,C09|C15|V32,ດ ປ ◌ວ◌,3,no,excluded: ດ ◌ວ◌
+CW00395,ແຂງແຮງ,strong; healthy,C02|C04|C27|V15,ຂ ງ ຮ ແ◌,4,yes,
+CW00396,ຫຼັບ,(be) asleep,C14|C32|V02,ບ ຫຼ ◌ັ◌,3,no,excluded: ບ ຫຼ
+CW00397,ປະຕູ,door,C10|C15|V01|V09,ຕ ປ ◌ະ ◌ູ,4,yes,
+CW00398,ປ່ອງຢ້ຽມ,window,C04|C15|C20|C21|T1|T2|V22|V27,ງ ປ ມ ຢ ◌່ ◌້ ◌ອ◌ ◌ຽ◌,8,no,excluded: ◌ອ◌
+CW00399,ຕັ່ງ,chair; stool,C04|C10|T1|V02,ງ ຕ ◌່ ◌ັ◌,4,yes,
+CW00400,ຕຽງ,bed,C04|C10|V27,ງ ຕ ◌ຽ◌,3,yes,
+CW00401,ຫ້ອງຄົວ,kitchen,C03|C04|C25|T2|V22|V31,ຄ ງ ຫ ◌້ ◌ອ◌ ◌ົວ,6,no,excluded: ຫ ◌ອ◌ ◌ົວ
+CW00402,ໄຟ,fire; light,C19|V33,ຟ ໄ◌,2,yes,
+CW00403,ໄຟຟ້າ,electricity,C19|T2|V03|V33,ຟ ◌້ ◌າ ໄ◌,4,yes,
+CW00404,ພັດລົມ,electric fan,C09|C18|C20|C23|V02|V17,ດ ພ ມ ລ ◌ັ◌ ◌ົ◌,6,no,excluded: ດ
+CW00405,ແອ,air conditioner,C26|V15,ອ ແ◌,2,no,excluded: ອ
+CW00406,ໂທລະທັດ,television,C09|C12|C23|V01|V02|V18,ດ ທ ລ ◌ະ ◌ັ◌ ໂ◌,6,no,excluded: ດ
+CW00407,ຄອມພິວເຕີ,computer,C03|C10|C18|C20|C24|V04|V22|V24,ຄ ຕ ພ ມ ວ ◌ິ ◌ອ◌ ເ◌ີ,8,no,excluded: ວ ◌ອ◌
+CW00408,ກະແຈ,key,C01|C05|V01|V15,ກ ຈ ◌ະ ແ◌,4,yes,
+CW00409,ກະເປົາ,bag,C01|C15|V01|V35,ກ ປ ◌ະ ເ◌ົາ,4,yes,
+CW00410,ບັດ,card,C09|C14|V02,ດ ບ ◌ັ◌,3,no,excluded: ດ ບ
+CW00411,ເຈ້ຍ,paper,C05|T2|V26,ຈ ◌້ ເ◌ຍ,3,no,excluded: ເ◌ຍ
+CW00412,ປາກກາ,pen,C01|C15|V03,ກ ປ ◌າ,3,yes,
+CW00413,ແວ່ນຕາ,glasses,C10|C13|C24|T1|V03|V15,ຕ ນ ວ ◌່ ◌າ ແ◌,6,no,excluded: ວ
+CW00414,ໝວກ,hat,C01|C31|V32,ກ ໝ ◌ວ◌,3,no,excluded: ◌ວ◌
+CW00415,ໂສ້ງ,trousers,C04|C06|T2|V18,ງ ສ ◌້ ໂ◌,4,yes,
+CW00416,ສິ້ນ,sinh (Lao skirt),C06|C13|T2|V04,ສ ນ ◌້ ◌ິ,4,yes,
+CW00417,ຜ້າ,cloth,C16|T2|V03,ຜ ◌້ ◌າ,3,yes,
+CW00418,ສະບູ,soap,C06|C14|V01|V09,ສ ບ ◌ະ ◌ູ,4,no,excluded: ບ
+CW00419,ຖ້ວຍ,bowl; cup,C08|C11|T2|V32,ຍ ຖ ◌້ ◌ວ◌,4,no,excluded: ຍ ◌ວ◌
+CW00420,ບ່ວງ,spoon,C04|C14|T1|V32,ງ ບ ◌່ ◌ວ◌,4,no,excluded: ບ ◌ວ◌
+CW00421,ມີດ,knife,C09|C20|V05,ດ ມ ◌ີ,3,no,excluded: ດ
+CW00422,ໝໍ້,pot,C31|T2|V21,ໝ ◌້ ◌ໍ,3,yes,
+CW00423,ຕູ້ເຢັນ,refrigerator,C10|C13|C21|T2|V09|V11,ຕ ນ ຢ ◌້ ◌ູ ເ◌ັ◌,6,yes,
+CW00424,ນ້ຳກ້ອນ,ice,C01|C13|T2|V22|V36,ກ ນ ◌້ ◌ອ◌ ◌ຳ,5,no,excluded: ◌ອ◌
+CW00425,ຂວດ,bottle,C02|C09|V32,ຂ ດ ◌ວ◌,3,no,excluded: ດ ◌ວ◌
+CW00426,ຖົງ,bag (plastic/paper),C04|C11|V17,ງ ຖ ◌ົ◌,3,yes,
+CW00427,ກ່ອງ,box,C01|C04|T1|V22,ກ ງ ◌່ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00428,ສະໜາມບິນ,airport,C06|C13|C14|C20|C30|V01|V03|V04,ສ ນ ບ ມ ໜ ◌ະ ◌າ ◌ິ,8,no,excluded: ບ
+CW00429,ທະນາຄານ,bank,C03|C12|C13|V01|V03,ຄ ທ ນ ◌ະ ◌າ,5,yes,
+CW00430,ຮ້ານຄ້າ,store,C03|C13|C27|T2|V03,ຄ ນ ຮ ◌້ ◌າ,5,yes,
+CW00431,ໄປສະນີ,post office; mail,C06|C13|C15|V01|V05|V33,ສ ນ ປ ◌ະ ◌ີ ໄ◌,6,yes,
+CW00432,ສະຖານີ,station,C06|C11|C13|V01|V03|V05,ສ ຖ ນ ◌ະ ◌າ ◌ີ,6,yes,
+CW00433,ແຂວງ,province,C02|C04|C24|V15,ຂ ງ ວ ແ◌,4,no,excluded: ວ
+CW00434,ນະຄອນ,city,C03|C13|V01|V22,ຄ ນ ◌ະ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00435,ໄທ,Thai; Thailand,C12|V33,ທ ໄ◌,2,yes,
+CW00436,ຈີນ,China; Chinese,C05|C13|V05,ຈ ນ ◌ີ,3,yes,
+CW00437,ຫວຽດນາມ,Vietnam,C09|C13|C20|C33|V03|V27,ດ ນ ມ ຫວ ◌າ ◌ຽ◌,6,no,excluded: ດ ຫວ
+CW00438,ອາເມລິກາ,America,C01|C20|C23|C26|V03|V04|V12,ກ ມ ລ ອ ◌າ ◌ິ ເ◌,7,no,excluded: ອ
+CW00439,ຍີ່ປຸ່ນ,Japan,C08|C13|C15|T1|V05|V08,ຍ ນ ປ ◌່ ◌ີ ◌ຸ,6,no,excluded: ຍ
+CW00440,ອັງກິດ,English; England,C01|C04|C09|C26|V02|V04,ກ ງ ດ ອ ◌ັ◌ ◌ິ,6,no,excluded: ດ ອ
+CW00441,ພາສາອັງກິດ,English (language),C01|C04|C06|C09|C18|C26|V02|V03|V04,ກ ງ ສ ດ ພ ອ ◌ັ◌ ◌າ ◌ິ,9,no,excluded: ດ ອ
+CW00442,ປ່າ,forest; jungle,C15|T1|V03,ປ ◌່ ◌າ,3,yes,
+CW00443,ນ້ຳຕົກ,waterfall,C01|C10|C13|T2|V17|V36,ກ ຕ ນ ◌້ ◌ົ◌ ◌ຳ,6,yes,
+CW00444,ທະເລ,sea,C12|C23|V01|V12,ທ ລ ◌ະ ເ◌,4,yes,
+CW00445,ເກາະ,island,C01|V19,ກ ເ◌າະ,2,yes,
+CW00446,ຂົວ,bridge,C02|V31,ຂ ◌ົວ,2,no,excluded: ◌ົວ
+CW00447,ນ້ຳຊາ,tea (drink),C07|C13|T2|V03|V36,ຊ ນ ◌້ ◌າ ◌ຳ,5,yes,
+CW00448,ນ້ຳຕານ,sugar,C10|C13|T2|V03|V36,ຕ ນ ◌້ ◌າ ◌ຳ,5,yes,
+CW00449,ເກືອ,salt,C01|V29,ກ ເ◌ືອ,2,no,excluded: ເ◌ືອ
+CW00450,ນ້ຳປາ,fish sauce,C13|C15|T2|V03|V36,ນ ປ ◌້ ◌າ ◌ຳ,5,yes,
+CW00451,ໝາກເຜັດ,chili,C01|C09|C16|C31|V03|V11,ກ ດ ຜ ໝ ◌າ ເ◌ັ◌,6,no,excluded: ດ
+CW00452,ຫອມ,fragrant; onion,C20|C25|V22,ມ ຫ ◌ອ◌,3,no,excluded: ຫ ◌ອ◌
+CW00453,ໝາກນາວ,lime,C01|C13|C24|C31|V03,ກ ນ ວ ໝ ◌າ,5,no,excluded: ວ
+CW00454,ໝາກພ້າວ,coconut,C01|C18|C24|C31|T2|V03,ກ ພ ວ ໝ ◌້ ◌າ,6,no,excluded: ວ
+CW00455,ໝາກໂມ,watermelon,C01|C20|C31|V03|V18,ກ ມ ໝ ◌າ ໂ◌,5,yes,
+CW00456,ໝາກກ້ຽງ,orange (fruit),C01|C04|C31|T2|V03|V27,ກ ງ ໝ ◌້ ◌າ ◌ຽ◌,6,yes,
+CW00457,ເຂົ້າປຽກ,rice soup,C01|C02|C15|T2|V27|V35,ກ ຂ ປ ◌້ ◌ຽ◌ ເ◌ົາ,6,yes,
+CW00458,ເຂົ້າປຸ້ນ,rice noodles,C02|C13|C15|T2|V08|V35,ຂ ນ ປ ◌້ ◌ຸ ເ◌ົາ,6,yes,
+CW00459,ລາບ,laap (minced meat salad),C14|C23|V03,ບ ລ ◌າ,3,no,excluded: ບ
+CW00460,ປີ້ງ,grill,C04|C15|T2|V05,ງ ປ ◌້ ◌ີ,4,yes,
+CW00461,ຂົ້ວ,stir-fry,C02|T2|V31,ຂ ◌້ ◌ົວ,3,no,excluded: ◌ົວ
+CW00462,ຕົ້ມ,boil,C10|C20|T2|V17,ຕ ມ ◌້ ◌ົ◌,4,yes,
+CW00463,ແກງ,soup; curry,C01|C04|V15,ກ ງ ແ◌,3,yes,
+CW00464,ເຂົ້າໜົມ,snack; dessert,C02|C20|C30|T2|V17|V35,ຂ ມ ໜ ◌້ ◌ົ◌ ເ◌ົາ,6,yes,
+CW00465,ເຫຼົ້າ,liquor; alcohol,C32|T2|V35,ຫຼ ◌້ ເ◌ົາ,3,no,excluded: ຫຼ
+CW00466,ນ້ຳດື່ມ,drinking water,C09|C13|C20|T1|T2|V07|V36,ດ ນ ມ ◌່ ◌້ ◌ື ◌ຳ,7,no,excluded: ດ
+CW00467,ອາຫານທ່ຽງ,lunch,C04|C12|C13|C25|C26|T1|V03|V27,ງ ທ ນ ຫ ອ ◌່ ◌າ ◌ຽ◌,8,no,excluded: ຫ ອ
+CW00468,ແຕ່ງກິນ,cook,C01|C04|C10|C13|T1|V04|V15,ກ ງ ຕ ນ ◌່ ◌ິ ແ◌,7,yes,
+CW00469,ລ້າງ,wash,C04|C23|T2|V03,ງ ລ ◌້ ◌າ,4,yes,
+CW00470,ຊັກ,wash (clothes),C01|C07|V02,ກ ຊ ◌ັ◌,3,yes,
+CW00471,ເປັນຫ່ວງ,worry,C04|C13|C15|C25|T1|V11|V32,ງ ນ ປ ຫ ◌່ ເ◌ັ◌ ◌ວ◌,7,no,excluded: ຫ ◌ວ◌
+CW00472,ຢ້ານ,be afraid,C13|C21|T2|V03,ນ ຢ ◌້ ◌າ,4,yes,
+CW00473,ຄຽດ,angry; stressed,C03|C09|V27,ຄ ດ ◌ຽ◌,3,no,excluded: ດ
+CW00474,ຍິ້ມ,smile,C08|C20|T2|V04,ຍ ມ ◌້ ◌ິ,4,no,excluded: ຍ
+CW00475,ໄຫ້,cry,C25|T2|V33,ຫ ◌້ ໄ◌,3,no,excluded: ຫ
+CW00476,ຮ້ອງ,shout; call out; sing,C04|C27|T2|V22,ງ ຮ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00477,ເພງ,song,C04|C18|V12,ງ ພ ເ◌,3,yes,
+CW00478,ຮ້ອງເພງ,sing,C04|C18|C27|T2|V12|V22,ງ ພ ຮ ◌້ ເ◌ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00479,ເຕັ້ນ,dance,C10|C13|T2|V11,ຕ ນ ◌້ ເ◌ັ◌,4,yes,
+CW00480,ເດີນທາງ,travel (a journey),C04|C09|C12|C13|V03|V24,ງ ດ ທ ນ ◌າ ເ◌ີ,6,no,excluded: ດ
+CW00481,ທ່ຽວ,go out; visit; travel,C12|C24|T1|V27,ທ ວ ◌່ ◌ຽ◌,4,no,excluded: ວ
+CW00482,ພັກ,rest; stay (overnight),C01|C18|V02,ກ ພ ◌ັ◌,3,yes,
+CW00483,ພັກຜ່ອນ,relax; take a break,C01|C13|C16|C18|T1|V02|V22,ກ ນ ຜ ພ ◌່ ◌ັ◌ ◌ອ◌,7,no,excluded: ◌ອ◌
+CW00484,ເອີ້ນ,call (someone),C13|C26|T2|V24,ນ ອ ◌້ ເ◌ີ,4,no,excluded: ອ
+CW00485,ຕີ,hit,C10|V05,ຕ ◌ີ,2,yes,
+CW00486,ຈັບ,catch; hold; touch,C05|C14|V02,ຈ ບ ◌ັ◌,3,no,excluded: ບ
+CW00487,ຖື,hold; carry,C11|V07,ຖ ◌ື,2,yes,
+CW00488,ວາງ,put; place,C04|C24|V03,ງ ວ ◌າ,3,no,excluded: ວ
+CW00489,ເກັບ,keep; collect; tidy,C01|C14|V11,ກ ບ ເ◌ັ◌,3,no,excluded: ບ
+CW00490,ຮັບ,receive,C14|C27|V02,ບ ຮ ◌ັ◌,3,no,excluded: ບ
+CW00491,ຢືມ,borrow,C20|C21|V07,ມ ຢ ◌ື,3,yes,
+CW00492,ເຊົ່າ,rent,C07|T1|V35,ຊ ◌່ ເ◌ົາ,3,yes,
+CW00493,ປ່ຽນ,change,C13|C15|T1|V27,ນ ປ ◌່ ◌ຽ◌,4,yes,
+CW00494,ລອງ,try,C04|C23|V22,ງ ລ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00495,ເລືອກ,choose,C01|C23|V29,ກ ລ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00496,ຮູ້ສຶກ,feel,C01|C06|C27|T2|V06|V09,ກ ສ ຮ ◌້ ◌ຶ ◌ູ,6,yes,
+CW00497,ເຊື່ອ,believe,C07|T1|V29,ຊ ◌່ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00498,ຫວັງ,hope,C04|C33|V02,ງ ຫວ ◌ັ◌,3,no,excluded: ຫວ
+CW00499,ຝັນ,dream,C13|C17|V02,ນ ຝ ◌ັ◌,3,yes,
+CW00500,ຂຶ້ນ,go up; get on,C02|C13|T2|V06,ຂ ນ ◌້ ◌ຶ,4,yes,
+CW00501,ລົງ,go down; get off,C04|C23|V17,ງ ລ ◌ົ◌,3,yes,
+CW00502,ຂ້າມ,cross,C02|C20|T2|V03,ຂ ມ ◌້ ◌າ,4,yes,
+CW00503,ຕິດຕໍ່,contact,C09|C10|T1|V04|V21,ດ ຕ ◌່ ◌ິ ◌ໍ,5,no,excluded: ດ
+CW00504,ຕົກລົງ,agree,C01|C04|C10|C23|V17,ກ ງ ຕ ລ ◌ົ◌,5,yes,
+CW00505,ສັນຍາ,promise,C06|C08|C13|V02|V03,ສ ຍ ນ ◌ັ◌ ◌າ,5,no,excluded: ຍ
+CW00506,ກັບຄືນ,return; go back,C01|C03|C13|C14|V02|V07,ກ ຄ ນ ບ ◌ັ◌ ◌ື,6,no,excluded: ບ
+CW00507,ແນະນຳ,introduce; recommend,C13|V13|V36,ນ ແ◌ະ ◌ຳ,3,yes,
+CW00508,ຕ້ອນຮັບ,welcome; receive (guests),C10|C13|C14|C27|T2|V02|V22,ຕ ນ ບ ຮ ◌້ ◌ັ◌ ◌ອ◌,7,no,excluded: ບ ◌ອ◌
+CW00509,ຍິນດີຕ້ອນຮັບ,welcome!,C08|C09|C10|C13|C14|C27|T2|V02|V04|V05|V22,ຍ ດ ຕ ນ ບ ຮ ◌້ ◌ັ◌ ◌ິ ◌ີ ◌ອ◌,11,no,excluded: ຍ ດ ບ ◌ອ◌
+CW00510,ສະບາຍ,comfortable; well,C06|C08|C14|V01|V03,ສ ຍ ບ ◌ະ ◌າ,5,no,excluded: ຍ ບ
+CW00511,ສຸກ,ripe; cooked; happy,C01|C06|V08,ກ ສ ◌ຸ,3,yes,
+CW00512,ດິບ,raw; unripe,C09|C14|V04,ດ ບ ◌ິ,3,no,excluded: ດ ບ
+CW00513,ສົດ,fresh,C06|C09|V17,ສ ດ ◌ົ◌,3,no,excluded: ດ
+CW00514,ງຽບ,quiet,C04|C14|V27,ງ ບ ◌ຽ◌,3,no,excluded: ບ
+CW00515,ມືດ,dark,C09|C20|V07,ດ ມ ◌ື,3,no,excluded: ດ
+CW00516,ແຈ້ງ,bright; clear,C04|C05|T2|V15,ງ ຈ ◌້ ແ◌,4,yes,
+CW00517,ກວ້າງ,wide,C01|C04|C24|T2|V03,ກ ງ ວ ◌້ ◌າ,5,no,excluded: ວ
+CW00518,ແຄບ,narrow,C03|C14|V15,ຄ ບ ແ◌,3,no,excluded: ບ
+CW00519,ເລິກ,deep,C01|C23|V23,ກ ລ ເ◌ິ,3,yes,
+CW00520,ອຸ່ນ,warm,C13|C26|T1|V08,ນ ອ ◌່ ◌ຸ,4,no,excluded: ອ
+CW00521,ອັນຕະລາຍ,dangerous; danger,C08|C10|C13|C23|C26|V01|V02|V03,ຍ ຕ ນ ລ ອ ◌ະ ◌ັ◌ ◌າ,8,no,excluded: ຍ ອ
+CW00522,ປອດໄພ,safe,C09|C15|C18|V22|V33,ດ ປ ພ ◌ອ◌ ໄ◌,5,no,excluded: ດ ◌ອ◌
+CW00523,ສຳຄັນ,important,C03|C06|C13|V02|V36,ຄ ສ ນ ◌ັ◌ ◌ຳ,5,yes,
+CW00524,ຈິງ,true; real,C04|C05|V04,ງ ຈ ◌ິ,3,yes,
+CW00525,ໜ້າຮັກ,cute,C01|C27|C30|T2|V02|V03,ກ ຮ ໜ ◌້ ◌ັ◌ ◌າ,6,yes,
+CW00526,ເກັ່ງ,skilled; good at,C01|C04|T1|V11,ກ ງ ◌່ ເ◌ັ◌,4,yes,
+CW00527,ຂີ້ຄ້ານ,lazy,C02|C03|C13|T2|V03|V05,ຂ ຄ ນ ◌້ ◌າ ◌ີ,6,yes,
+CW00528,ໃຈດີ,kind,C05|C09|V05|V34,ຈ ດ ◌ີ ໃ◌,4,no,excluded: ດ
+CW00529,ໃຈຮ້າຍ,angry,C05|C08|C27|T2|V03|V34,ຈ ຍ ຮ ◌້ ◌າ ໃ◌,6,no,excluded: ຍ
+CW00530,ຕ່າງກັນ,different,C01|C04|C10|C13|T1|V02|V03,ກ ງ ຕ ນ ◌່ ◌ັ◌ ◌າ,7,yes,
+CW00531,ພິເສດ,special,C06|C09|C18|V04|V12,ສ ດ ພ ◌ິ ເ◌,5,no,excluded: ດ
+CW00532,ທຳມະດາ,ordinary; normal,C09|C12|C20|V01|V03|V36,ດ ທ ມ ◌ະ ◌າ ◌ຳ,6,no,excluded: ດ
+CW00533,ເຕັມ,full,C10|C20|V11,ຕ ມ ເ◌ັ◌,3,yes,
+CW00534,ສີ,colour,C06|V05,ສ ◌ີ,2,yes,
+CW00535,ແດງ,red,C04|C09|V15,ງ ດ ແ◌,3,no,excluded: ດ
+CW00536,ຂາວ,white,C02|C24|V03,ຂ ວ ◌າ,3,no,excluded: ວ
+CW00537,ດຳ,black,C09|V36,ດ ◌ຳ,2,no,excluded: ດ
+CW00538,ຂຽວ,green,C02|C24|V27,ຂ ວ ◌ຽ◌,3,no,excluded: ວ
+CW00539,ຟ້າ,sky; blue,C19|T2|V03,ຟ ◌້ ◌າ,3,yes,
+CW00540,ເຫຼືອງ,yellow,C04|C32|V29,ງ ຫຼ ເ◌ືອ,3,no,excluded: ຫຼ ເ◌ືອ
+CW00541,ແດດ,sunshine,C09|V15,ດ ແ◌,2,no,excluded: ດ
+CW00542,ລົມ,wind; chat,C20|C23|V17,ມ ລ ◌ົ◌,3,yes,
+CW00543,ເມກ,cloud,C01|C20|V12,ກ ມ ເ◌,3,yes,
+CW00544,ດາວ,star,C09|C24|V03,ດ ວ ◌າ,3,no,excluded: ດ ວ
+CW00545,ຕາເວັນ,sun,C10|C13|C24|V03|V11,ຕ ນ ວ ◌າ ເ◌ັ◌,5,no,excluded: ວ
+CW00546,ຕົ້ນໄມ້,tree,C10|C13|C20|T2|V17|V33,ຕ ນ ມ ◌້ ◌ົ◌ ໄ◌,6,yes,
+CW00547,ດອກໄມ້,flower,C01|C09|C20|T2|V22|V33,ກ ດ ມ ◌້ ◌ອ◌ ໄ◌,6,no,excluded: ດ ◌ອ◌
+CW00548,ດິນ,earth; soil; land,C09|C13|V04,ດ ນ ◌ິ,3,no,excluded: ດ
+CW00549,ລະດູ,season,C09|C23|V01|V09,ດ ລ ◌ະ ◌ູ,4,no,excluded: ດ
+CW00550,ລະດູຝົນ,rainy season,C09|C13|C17|C23|V01|V09|V17,ດ ນ ຝ ລ ◌ະ ◌ູ ◌ົ◌,7,no,excluded: ດ
+CW00551,ລະດູແລ້ງ,dry season,C04|C09|C23|T2|V01|V09|V15,ງ ດ ລ ◌້ ◌ະ ◌ູ ແ◌,7,no,excluded: ດ
+CW00552,ນົກ,bird,C01|C13|V17,ກ ນ ◌ົ◌,3,yes,
+CW00553,ຊ້າງ,elephant,C04|C07|T2|V03,ງ ຊ ◌້ ◌າ,4,yes,
+CW00554,ເສືອ,tiger,C06|V29,ສ ເ◌ືອ,2,no,excluded: ເ◌ືອ
+CW00555,ລີງ,monkey,C04|C23|V05,ງ ລ ◌ີ,3,yes,
+CW00556,ງູ,snake,C04|V09,ງ ◌ູ,2,yes,
+CW00557,ຍຸງ,mosquito,C04|C08|V08,ງ ຍ ◌ຸ,3,no,excluded: ຍ
+CW00558,ເປັດ,duck,C09|C15|V11,ດ ປ ເ◌ັ◌,3,no,excluded: ດ
+CW00559,ຄວາຍ,water buffalo,C03|C08|C24|V03,ຄ ຍ ວ ◌າ,4,no,excluded: ຍ ວ
+CW00560,ມ້າ,horse,C20|T2|V03,ມ ◌້ ◌າ,3,yes,
+CW00561,ເບີໂທ,phone number,C12|C14|V18|V24,ທ ບ ໂ◌ ເ◌ີ,4,no,excluded: ບ
+CW00562,ທີ່ຢູ່,address,C12|C21|T1|V05|V09,ທ ຢ ◌່ ◌ີ ◌ູ,5,yes,
+CW00563,ຄຳ,word,C03|V36,ຄ ◌ຳ,2,yes,
+CW00564,ປະໂຫຍກ,sentence,C01|C15|C29|V01|V18,ກ ປ ຫຍ ◌ະ ໂ◌,5,no,excluded: ຫຍ
+CW00565,ຄວາມ,-ness (turns words into nouns); matter,C03|C20|C24|V03,ຄ ມ ວ ◌າ,4,no,excluded: ວ
+CW00566,ຄວາມໝາຍ,meaning,C03|C08|C20|C24|C31|V03,ຄ ຍ ມ ວ ໝ ◌າ,6,no,excluded: ຍ ວ
+CW00567,ໝາຍຄວາມວ່າ,mean (= means that),C03|C08|C20|C24|C31|T1|V03,ຄ ຍ ມ ວ ໝ ◌່ ◌າ,7,no,excluded: ຍ ວ
+CW00568,ຄວາມຮັກ,love (noun),C01|C03|C20|C24|C27|V02|V03,ກ ຄ ມ ວ ຮ ◌ັ◌ ◌າ,7,no,excluded: ວ
+CW00569,ຄວາມສຸກ,happiness,C01|C03|C06|C20|C24|V03|V08,ກ ຄ ສ ມ ວ ◌າ ◌ຸ,7,no,excluded: ວ
+CW00570,ໂດຍ,by; via,C08|C09|V18,ຍ ດ ໂ◌,3,no,excluded: ຍ ດ
+CW00571,ກ່ຽວກັບ,about; concerning,C01|C14|C24|T1|V02|V27,ກ ບ ວ ◌່ ◌ັ◌ ◌ຽ◌,6,no,excluded: ບ ວ
+CW00572,ຄືກັບ,like; similar to,C01|C03|C14|V02|V07,ກ ຄ ບ ◌ັ◌ ◌ື,5,no,excluded: ບ
+CW00573,ແນວນີ້,like this; this way,C13|C24|T2|V05|V15,ນ ວ ◌້ ◌ີ ແ◌,5,no,excluded: ວ
+CW00574,ຂ້າງໃນ,inside,C02|C04|C13|T2|V03|V34,ຂ ງ ນ ◌້ ◌າ ໃ◌,6,yes,
+CW00575,ຂ້າງນອກ,outside,C01|C02|C04|C13|T2|V03|V22,ກ ຂ ງ ນ ◌້ ◌າ ◌ອ◌,7,no,excluded: ◌ອ◌
+CW00576,ເອງ,(one)self; on one's own,C04|C26|V12,ງ ອ ເ◌,3,no,excluded: ອ
+CW00577,ໂຕເອງ,oneself,C04|C10|C26|V12|V18,ງ ຕ ອ ເ◌ ໂ◌,5,no,excluded: ອ
+CW00578,ແຕ່ວ່າ,but,C10|C24|T1|V03|V15,ຕ ວ ◌່ ◌າ ແ◌,5,no,excluded: ວ
+CW00579,ຫຼືບໍ່,or not?,C14|C32|T1|V07|V21,ບ ຫຼ ◌່ ◌ື ◌ໍ,5,no,excluded: ບ ຫຼ
+CW00580,ບໍລິການ,service; serve,C01|C13|C14|C23|V03|V04|V21,ກ ນ ບ ລ ◌າ ◌ິ ◌ໍ,7,no,excluded: ບ
+CW00581,ລູກຄ້າ,customer,C01|C03|C23|T2|V03|V09,ກ ຄ ລ ◌້ ◌າ ◌ູ,6,yes,
+CW00582,ເງິນສົດ,cash,C04|C06|C09|C13|V17|V23,ງ ສ ດ ນ ◌ົ◌ ເ◌ິ,6,no,excluded: ດ
+CW00583,ຫຼຸດ,reduce; give a discount,C09|C32|V08,ດ ຫຼ ◌ຸ,3,no,excluded: ດ ຫຼ
+CW00584,ແລກ,exchange; swap,C01|C23|V15,ກ ລ ແ◌,3,yes,
+CW00585,ໝົດ,run out; finished; all,C09|C31|V17,ດ ໝ ◌ົ◌,3,no,excluded: ດ
+CW00586,ພໍ,enough,C18|V21,ພ ◌ໍ,2,yes,
+CW00587,ເກີນ,too (much); exceed,C01|C13|V24,ກ ນ ເ◌ີ,3,yes,
+CW00588,ໂພດ,too (excessively),C09|C18|V18,ດ ພ ໂ◌,3,no,excluded: ດ
+CW00589,ແທນ,instead of; replace,C12|C13|V15,ທ ນ ແ◌,3,yes,
+CW00590,ສືບຕໍ່,continue,C06|C10|C14|T1|V07|V21,ສ ຕ ບ ◌່ ◌ື ◌ໍ,6,no,excluded: ບ
+CW00591,ຮີບ,hurry,C14|C27|V05,ບ ຮ ◌ີ,3,no,excluded: ບ
+CW00592,ຊ່ວຍເຫຼືອ,help (formal); assist,C07|C08|C32|T1|V29|V32,ຊ ຍ ຫຼ ◌່ ເ◌ືອ ◌ວ◌,6,no,excluded: ຍ ຫຼ ເ◌ືອ ◌ວ◌
+CW00593,ອຸບັດຕິເຫດ,accident,C09|C10|C14|C25|C26|V02|V04|V08|V12,ດ ຕ ບ ຫ ອ ◌ັ◌ ◌ິ ◌ຸ ເ◌,9,no,excluded: ດ ບ ຫ ອ
+CW00594,ໂຮງໜັງ,cinema,C04|C27|C30|V02|V18,ງ ຮ ໜ ◌ັ◌ ໂ◌,5,yes,
+CW00595,ຮູບ,picture; photo,C14|C27|V09,ບ ຮ ◌ູ,3,no,excluded: ບ
+CW00596,ຖ່າຍຮູບ,take a photo,C08|C11|C14|C27|T1|V03|V09,ຍ ຖ ບ ຮ ◌່ ◌າ ◌ູ,7,no,excluded: ຍ ບ
+CW00597,ກິລາ,sport,C01|C23|V03|V04,ກ ລ ◌າ ◌ິ,4,yes,
+CW00598,ບານເຕະ,football (soccer),C10|C13|C14|V03|V10,ຕ ນ ບ ◌າ ເ◌ະ,5,no,excluded: ບ
+CW00599,ໃບ,"leaf; classifier for flat or hollow things (plate, bag, ticket)",C14|V34,ບ ໃ◌,2,no,excluded: ບ
+CW00600,ສັ່ງ,order (food); command,C04|C06|T1|V02,ງ ສ ◌່ ◌ັ◌,4,yes,
+CW00601,ເມນູ,menu,C13|C20|V09|V12,ນ ມ ◌ູ ເ◌,4,yes,
+CW00602,ເຂົ້າຈ້າວ,plain rice (non-sticky),C02|C05|C24|T2|V03|V35,ຂ ຈ ວ ◌້ ◌າ ເ◌ົາ,6,no,excluded: ວ
+CW00603,ເຂົ້າຜັດ,fried rice,C02|C09|C16|T2|V02|V35,ຂ ດ ຜ ◌້ ◌ັ◌ ເ◌ົາ,6,no,excluded: ດ
+CW00604,ເຂົ້າຕົ້ມ,rice soup; boiled-rice porridge,C02|C10|C20|T2|V17|V35,ຂ ຕ ມ ◌້ ◌ົ◌ ເ◌ົາ,6,yes,
+CW00605,ຊີ້ນງົວ,beef,C04|C07|C13|T2|V05|V31,ງ ຊ ນ ◌້ ◌ີ ◌ົວ,6,no,excluded: ◌ົວ
+CW00606,ຊີ້ນໝູ,pork,C07|C13|C31|T2|V05|V09,ຊ ນ ໝ ◌້ ◌ີ ◌ູ,6,yes,
+CW00607,ຊີ້ນໄກ່,chicken (meat),C01|C07|C13|T1|T2|V05|V33,ກ ຊ ນ ◌່ ◌້ ◌ີ ໄ◌,7,yes,
+CW00608,ກຸ້ງ,shrimp; prawn,C01|C04|T2|V08,ກ ງ ◌້ ◌ຸ,4,yes,
+CW00609,ປາແດກ,padaek (fermented fish sauce); salted fish,C01|C09|C15|V03|V15,ກ ດ ປ ◌າ ແ◌,5,no,excluded: ດ
+CW00610,ໄສ້ກອກ,sausage,C01|C06|T2|V22|V33,ກ ສ ◌້ ◌ອ◌ ໄ◌,5,no,excluded: ◌ອ◌
+CW00611,ເສັ້ນ,line; strand (also noodles),C06|C13|T2|V11,ສ ນ ◌້ ເ◌ັ◌,4,yes,
+CW00612,ແຈ່ວ,jeow (spicy dipping paste or sauce),C05|C24|T1|V15,ຈ ວ ◌່ ແ◌,4,no,excluded: ວ
+CW00613,ນ້ຳມັນ,oil (cooking or petroleum); gasoline,C13|C20|T2|V02|V36,ນ ມ ◌້ ◌ັ◌ ◌ຳ,5,yes,
+CW00614,ຈືດ,bland; tasteless (not salty enough),C05|C09|V07,ຈ ດ ◌ື,3,no,excluded: ດ
+CW00615,ຂົມ,bitter,C02|C20|V17,ຂ ມ ◌ົ◌,3,yes,
+CW00616,ທອດ,to fry (deep-fry),C09|C12|V22,ດ ທ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW00617,ຕຳ,to pound; hit,C10|V36,ຕ ◌ຳ,2,yes,
+CW00618,ປຸງ,to season; to cook (prepare food),C04|C15|V08,ງ ປ ◌ຸ,3,yes,
+CW00619,ຫິວນ້ຳ,be thirsty,C13|C24|C25|T2|V04|V36,ນ ວ ຫ ◌້ ◌ິ ◌ຳ,6,no,excluded: ວ ຫ
+CW00620,ເຄື່ອງດື່ມ,drink; beverage,C03|C04|C09|C20|T1|V07|V29,ຄ ງ ດ ມ ◌່ ◌ື ເ◌ືອ,7,no,excluded: ດ ເ◌ືອ
+CW00621,ນ້ຳອັດລົມ,soft drink; soda (fizzy),C09|C13|C20|C23|C26|T2|V02|V17|V36,ດ ນ ມ ລ ອ ◌້ ◌ັ◌ ◌ົ◌ ◌ຳ,9,no,excluded: ດ ອ
+CW00622,ເກັບເງິນ,collect money; ask for the bill,C01|C04|C13|C14|V11|V23,ກ ງ ນ ບ ເ◌ັ◌ ເ◌ິ,6,no,excluded: ບ
+CW00623,ອາຫານລາວ,Lao food,C13|C23|C24|C25|C26|V03,ນ ລ ວ ຫ ອ ◌າ,6,no,excluded: ວ ຫ ອ
+CW00624,ອາຫານທະເລ,seafood,C12|C13|C23|C25|C26|V01|V03|V12,ທ ນ ລ ຫ ອ ◌ະ ◌າ ເ◌,8,no,excluded: ຫ ອ
+CW00625,ອາຫານຄ່ຳ,dinner; evening meal,C03|C13|C25|C26|T1|V03|V36,ຄ ນ ຫ ອ ◌່ ◌າ ◌ຳ,7,no,excluded: ຫ ອ
+CW00626,ຮ້ານກາເຟ,coffee shop; cafe,C01|C13|C19|C27|T2|V03|V12,ກ ນ ຟ ຮ ◌້ ◌າ ເ◌,7,yes,
+CW00627,ຈານ,plate; dish,C05|C13|V03,ຈ ນ ◌າ,3,yes,
+CW00628,ສ້ອມ,fork,C06|C20|T2|V22,ສ ມ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00629,ໄມ້ຖູ່,chopsticks,C11|C20|T1|T2|V09|V33,ຖ ມ ◌່ ◌້ ◌ູ ໄ◌,6,yes,
+CW00630,ກະຕິບ,sticky-rice basket (for serving),C01|C10|C14|V01|V04,ກ ຕ ບ ◌ະ ◌ິ,5,no,excluded: ບ
+CW00631,ກະທຽມ,garlic,C01|C12|C20|V01|V27,ກ ທ ມ ◌ະ ◌ຽ◌,5,yes,
+CW00632,ຜັກບົ່ວ,spring onion; onion,C01|C14|C16|T1|V02|V31,ກ ບ ຜ ◌່ ◌ັ◌ ◌ົວ,6,no,excluded: ບ ◌ົວ
+CW00633,ໝາກເລັ່ນ,tomato,C01|C13|C23|C31|T1|V03|V11,ກ ນ ລ ໝ ◌່ ◌າ ເ◌ັ◌,7,yes,
+CW00634,ໝາກແຕງ,cucumber,C01|C04|C10|C31|V03|V15,ກ ງ ຕ ໝ ◌າ ແ◌,6,yes,
+CW00635,ໝາກຫຸ່ງ,papaya,C01|C04|C25|C31|T1|V03|V08,ກ ງ ຫ ໝ ◌່ ◌າ ◌ຸ,7,no,excluded: ຫ
+CW00636,ມັນຝະລັ່ງ,potato,C04|C13|C17|C20|C23|T1|V01|V02,ງ ນ ຝ ມ ລ ◌່ ◌ະ ◌ັ◌,8,yes,
+CW00637,ໝາກນັດ,pineapple,C01|C09|C13|C31|V02|V03,ກ ດ ນ ໝ ◌ັ◌ ◌າ,6,no,excluded: ດ
+CW00638,ຂີງ,ginger,C02|C04|V05,ຂ ງ ◌ີ,3,yes,
+CW00639,ທອນ,to give change; to reduce,C12|C13|V22,ທ ນ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00640,ເງິນທອນ,change (money returned),C04|C12|C13|V22|V23,ງ ທ ນ ◌ອ◌ ເ◌ິ,5,no,excluded: ◌ອ◌
+CW00641,ຄ່າ,cost; fee; value,C03|T1|V03,ຄ ◌່ ◌າ,3,yes,
+CW00642,ຄິດເງິນ,work out the bill; charge,C03|C04|C09|C13|V04|V23,ຄ ງ ດ ນ ◌ິ ເ◌ິ,6,no,excluded: ດ
+CW00643,ຕໍ່ລອງ,bargain; haggle,C04|C10|C23|T1|V21|V22,ງ ຕ ລ ◌່ ◌ໍ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00644,ຫຼຸດລາຄາ,reduce the price; give a discount,C03|C09|C23|C32|V03|V08,ຄ ດ ລ ຫຼ ◌າ ◌ຸ,6,no,excluded: ດ ຫຼ
+CW00645,ສ່ວນຫຼຸດ,discount,C06|C09|C13|C32|T1|V08|V32,ສ ດ ນ ຫຼ ◌່ ◌ຸ ◌ວ◌,7,no,excluded: ດ ຫຼ ◌ວ◌
+CW00646,ເງິນກີບ,Lao kip (money),C01|C04|C13|C14|V05|V23,ກ ງ ນ ບ ◌ີ ເ◌ິ,6,no,excluded: ບ
+CW00647,ເງິນບາດ,Thai baht (money),C04|C09|C13|C14|V03|V23,ງ ດ ນ ບ ◌າ ເ◌ິ,6,no,excluded: ດ ບ
+CW00648,ໂດລາ,dollar,C09|C23|V03|V18,ດ ລ ◌າ ໂ◌,4,no,excluded: ດ
+CW00649,ກະເປົາເງິນ,wallet,C01|C04|C13|C15|V01|V23|V35,ກ ງ ນ ປ ◌ະ ເ◌ິ ເ◌ົາ,7,yes,
+CW00650,ຕະຫຼາດເຊົ້າ,morning market,C07|C09|C10|C32|T2|V01|V03|V35,ຊ ດ ຕ ຫຼ ◌້ ◌ະ ◌າ ເ◌ົາ,8,no,excluded: ດ ຫຼ
+CW00651,ນຸ່ງ,wear (clothes); dress in,C04|C13|T1|V08,ງ ນ ◌່ ◌ຸ,4,yes,
+CW00652,ເຄື່ອງນຸ່ງ,clothes; clothing,C03|C04|C13|T1|V08|V29,ຄ ງ ນ ◌່ ◌ຸ ເ◌ືອ,6,no,excluded: ເ◌ືອ
+CW00653,ຂະໜາດ,size,C02|C09|C30|V01|V03,ຂ ດ ໜ ◌ະ ◌າ,5,no,excluded: ດ
+CW00654,ຄູ່,pair; couple; classifier for pairs,C03|T1|V09,ຄ ◌່ ◌ູ,3,yes,
+CW00655,ຊຸດ,set; suit; outfit,C07|C09|V08,ຊ ດ ◌ຸ,3,no,excluded: ດ
+CW00656,ກິໂລ,kilo; kilogram; kilometre,C01|C23|V04|V18,ກ ລ ◌ິ ໂ◌,4,yes,
+CW00657,ແມັດ,metre,C09|C20|V14,ດ ມ ແ◌ັ◌,3,no,excluded: ດ
+CW00658,ລິດ,litre,C09|C23|V04,ດ ລ ◌ິ,3,no,excluded: ດ
+CW00659,ມັດ,to tie; bundle,C09|C20|V02,ດ ມ ◌ັ◌,3,no,excluded: ດ
+CW00660,ຂອງຝາກ,gift; souvenir (brought for others),C01|C02|C04|C17|V03|V22,ກ ຂ ງ ຝ ◌າ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00661,ລຳ,classifier for boats and aircraft,C23|V36,ລ ◌ຳ,2,yes,
+CW00662,ລົດຈັກ,motorcycle; motorbike,C01|C05|C09|C23|V02|V17,ກ ຈ ດ ລ ◌ັ◌ ◌ົ◌,6,no,excluded: ດ
+CW00663,ລົດຖີບ,bicycle,C09|C11|C14|C23|V05|V17,ດ ຖ ບ ລ ◌ີ ◌ົ◌,6,no,excluded: ດ ບ
+CW00664,ຕຸກຕຸກ,tuk-tuk (three-wheeled taxi),C01|C10|V08,ກ ຕ ◌ຸ,3,yes,
+CW00665,ແທັກຊີ,taxi,C01|C07|C12|V05|V14,ກ ຊ ທ ◌ີ ແ◌ັ◌,5,yes,
+CW00666,ລົດໄຟ,train,C09|C19|C23|V17|V33,ດ ຟ ລ ◌ົ◌ ໄ◌,5,no,excluded: ດ
+CW00667,ລົດຕູ້,van; minivan,C09|C10|C23|T2|V09|V17,ດ ຕ ລ ◌້ ◌ູ ◌ົ◌,6,no,excluded: ດ
+CW00668,ເຮືອ,boat,C27|V29,ຮ ເ◌ືອ,2,no,excluded: ເ◌ືອ
+CW00669,ບິນ,to fly,C13|C14|V04,ນ ບ ◌ິ,3,no,excluded: ບ
+CW00670,ເຮືອບິນ,airplane,C13|C14|C27|V04|V29,ນ ບ ຮ ◌ິ ເ◌ືອ,5,no,excluded: ບ ເ◌ືອ
+CW00671,ແຜນທີ່,map,C12|C13|C16|T1|V05|V15,ທ ນ ຜ ◌່ ◌ີ ແ◌,6,yes,
+CW00672,ເໜືອ,north,C30|V29,ໜ ເ◌ືອ,2,no,excluded: ເ◌ືອ
+CW00673,ໃຕ້,south; under; below,C10|T2|V34,ຕ ◌້ ໃ◌,3,yes,
+CW00674,ຕາເວັນອອກ,east; sunrise,C01|C10|C13|C24|C26|V03|V11|V22,ກ ຕ ນ ວ ອ ◌າ ເ◌ັ◌ ◌ອ◌,8,no,excluded: ວ ອ ◌ອ◌
+CW00675,ຕາເວັນຕົກ,west; sunset,C01|C10|C13|C24|V03|V11|V17,ກ ຕ ນ ວ ◌າ ເ◌ັ◌ ◌ົ◌,7,no,excluded: ວ
+CW00676,ສີ່ແຍກ,intersection; crossroads,C01|C06|C08|T1|V05|V15,ກ ສ ຍ ◌່ ◌ີ ແ◌,6,no,excluded: ຍ
+CW00677,ໄຟແດງ,red light; traffic light,C04|C09|C19|V15|V33,ງ ດ ຟ ແ◌ ໄ◌,5,no,excluded: ດ
+CW00678,ຈອດ,to park; to stop (a vehicle),C05|C09|V22,ຈ ດ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW00679,ບ່ອນຈອດລົດ,parking lot; parking place,C05|C09|C13|C14|C23|T1|V17|V22,ຈ ດ ນ ບ ລ ◌່ ◌ົ◌ ◌ອ◌,8,no,excluded: ດ ບ ◌ອ◌
+CW00680,ປ້ຳນ້ຳມັນ,gas station; petrol pump,C13|C15|C20|T2|V02|V36,ນ ປ ມ ◌້ ◌ັ◌ ◌ຳ,6,yes,
+CW00681,ຫຼົງທາງ,get lost; lose one's way,C04|C12|C32|V03|V17,ງ ທ ຫຼ ◌າ ◌ົ◌,5,no,excluded: ຫຼ
+CW00682,ປ້າຍ,sign; signboard,C08|C15|T2|V03,ຍ ປ ◌້ ◌າ,4,no,excluded: ຍ
+CW00683,ຜ່ານ,to pass; to go through,C13|C16|T1|V03,ນ ຜ ◌່ ◌າ,4,yes,
+CW00684,ຕິດ,to be stuck; to stick; to be jammed,C09|C10|V04,ດ ຕ ◌ິ,3,no,excluded: ດ
+CW00685,ລົດຕິດ,traffic jam; the traffic is jammed,C09|C10|C23|V04|V17,ດ ຕ ລ ◌ິ ◌ົ◌,5,no,excluded: ດ
+CW00686,ສະຖານີລົດເມ,bus station; bus stop,C06|C09|C11|C13|C20|C23|V01|V03|V05|V12|V17,ສ ດ ຖ ນ ມ ລ ◌ະ ◌າ ◌ີ ເ◌ ◌ົ◌,11,no,excluded: ດ
+CW00687,ປີ້,ticket,C15|T2|V05,ປ ◌້ ◌ີ,3,yes,
+CW00688,ໃຊ້ເວລາ,take time; spend time,C07|C23|C24|T2|V03|V12|V34,ຊ ລ ວ ◌້ ◌າ ເ◌ ໃ◌,7,no,excluded: ວ
+CW00689,ທາງຫຼວງ,highway; main road,C04|C12|C32|V03|V32,ງ ທ ຫຼ ◌າ ◌ວ◌,5,no,excluded: ຫຼ ◌ວ◌
+CW00690,ຂັບລົດ,drive (a car),C02|C09|C14|C23|V02|V17,ຂ ດ ບ ລ ◌ັ◌ ◌ົ◌,6,no,excluded: ດ ບ
+CW00691,ປວດຫົວ,have a headache,C09|C15|C25|V31|V32,ດ ປ ຫ ◌ົວ ◌ວ◌,5,no,excluded: ດ ຫ ◌ົວ ◌ວ◌
+CW00692,ປວດທ້ອງ,have a stomachache,C04|C09|C12|C15|T2|V22|V32,ງ ດ ທ ປ ◌້ ◌ອ◌ ◌ວ◌,7,no,excluded: ດ ◌ອ◌ ◌ວ◌
+CW00693,ເຈັບຄໍ,have a sore throat,C03|C05|C14|V11|V21,ຄ ຈ ບ ເ◌ັ◌ ◌ໍ,5,no,excluded: ບ
+CW00694,ຖອກທ້ອງ,diarrhea,C01|C04|C11|C12|T2|V22,ກ ງ ຖ ທ ◌້ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00695,ຮາກ,to vomit; vomit,C01|C27|V03,ກ ຮ ◌າ,3,yes,
+CW00696,ວິນຫົວ,feel dizzy,C13|C24|C25|V04|V31,ນ ວ ຫ ◌ິ ◌ົວ,5,no,excluded: ວ ຫ ◌ົວ
+CW00697,ແພ້,be allergic (to); lose (be defeated),C18|T2|V15,ພ ◌້ ແ◌,3,yes,
+CW00698,ຮ້ານຢາ,pharmacy,C13|C21|C27|T2|V03,ນ ຢ ຮ ◌້ ◌າ,5,yes,
+CW00699,ຢາແກ້ປວດ,painkiller,C01|C09|C15|C21|T2|V03|V15|V32,ກ ດ ປ ຢ ◌້ ◌າ ແ◌ ◌ວ◌,8,no,excluded: ດ ◌ວ◌
+CW00700,ເມັດ,seed; grain; pill; classifier for small round things,C09|C20|V11,ດ ມ ເ◌ັ◌,3,no,excluded: ດ
+CW00701,ຢາເມັດ,pill; tablet,C09|C20|C21|V03|V11,ດ ມ ຢ ◌າ ເ◌ັ◌,5,no,excluded: ດ
+CW00702,ຄລີນິກ,clinic,C01|C03|C13|C23|V04|V05,ກ ຄ ນ ລ ◌ິ ◌ີ,6,yes,
+CW00703,ພະຍາບານ,nurse,C08|C13|C14|C18|V01|V03,ຍ ນ ບ ພ ◌ະ ◌າ,6,no,excluded: ຍ ບ
+CW00704,ກວດ,to examine; to check,C01|C09|V32,ກ ດ ◌ວ◌,3,no,excluded: ດ ◌ວ◌
+CW00705,ປົວ,to treat (an illness); to cure,C15|V31,ປ ◌ົວ,2,no,excluded: ◌ົວ
+CW00706,ສັກຢາ,give or get an injection,C01|C06|C21|V02|V03,ກ ສ ຢ ◌ັ◌ ◌າ,5,yes,
+CW00707,ເຂັມ,needle; pin,C02|C20|V11,ຂ ມ ເ◌ັ◌,3,yes,
+CW00708,ສຸຂະພາບ,health,C02|C06|C14|C18|V01|V03|V08,ຂ ສ ບ ພ ◌ະ ◌າ ◌ຸ,7,no,excluded: ບ
+CW00709,ຮ່າງກາຍ,body,C01|C04|C08|C27|T1|V03,ກ ງ ຍ ຮ ◌່ ◌າ,6,no,excluded: ຍ
+CW00710,ເລືອດ,blood,C09|C23|V29,ດ ລ ເ◌ືອ,3,no,excluded: ດ ເ◌ືອ
+CW00711,ບາດແຜ,wound,C09|C14|C16|V03|V15,ດ ບ ຜ ◌າ ແ◌,5,no,excluded: ດ ບ
+CW00712,ຫາຍໃຈ,to breathe,C05|C08|C25|V03|V34,ຈ ຍ ຫ ◌າ ໃ◌,5,no,excluded: ຍ ຫ
+CW00713,ເຫື່ອ,sweat,C25|T1|V29,ຫ ◌່ ເ◌ືອ,3,no,excluded: ຫ ເ◌ືອ
+CW00714,ກະດູກ,bone,C01|C09|V01|V09,ກ ດ ◌ະ ◌ູ,4,no,excluded: ດ
+CW00715,ຜິວ,skin,C16|C24|V04,ຜ ວ ◌ິ,3,no,excluded: ວ
+CW00716,ນິ້ວ,finger; toe,C13|C24|T2|V04,ນ ວ ◌້ ◌ິ,4,no,excluded: ວ
+CW00717,ບ່າ,shoulder,C14|T1|V03,ບ ◌່ ◌າ,3,no,excluded: ບ
+CW00718,ແອວ,waist,C24|C26|V15,ວ ອ ແ◌,3,no,excluded: ວ ອ
+CW00719,ເຂົ່າ,knee,C02|T1|V35,ຂ ◌່ ເ◌ົາ,3,yes,
+CW00720,ລີ້ນ,tongue,C13|C23|T2|V05,ນ ລ ◌້ ◌ີ,4,yes,
+CW00721,ຕື່ນນອນ,wake up (get up),C10|C13|T1|V07|V22,ຕ ນ ◌່ ◌ື ◌ອ◌,5,no,excluded: ◌ອ◌
+CW00722,ເຂົ້ານອນ,go to bed,C02|C13|T2|V22|V35,ຂ ນ ◌້ ◌ອ◌ ເ◌ົາ,5,no,excluded: ◌ອ◌
+CW00723,ລ້າງໜ້າ,wash one's face,C04|C23|C30|T2|V03,ງ ລ ໜ ◌້ ◌າ,5,yes,
+CW00724,ລ້າງມື,wash one's hands,C04|C20|C23|T2|V03|V07,ງ ມ ລ ◌້ ◌າ ◌ື,6,yes,
+CW00725,ຖູແຂ້ວ,brush one's teeth,C02|C11|C24|T2|V09|V15,ຂ ຖ ວ ◌້ ◌ູ ແ◌,6,no,excluded: ວ
+CW00726,ແປງຖູແຂ້ວ,toothbrush,C02|C04|C11|C15|C24|T2|V09|V15,ຂ ງ ຖ ປ ວ ◌້ ◌ູ ແ◌,8,no,excluded: ວ
+CW00727,ສະຜົມ,wash one's hair; shampoo,C06|C16|C20|V01|V17,ສ ຜ ມ ◌ະ ◌ົ◌,5,yes,
+CW00728,ແຕ່ງໂຕ,get dressed; dress up,C04|C10|T1|V15|V18,ງ ຕ ◌່ ແ◌ ໂ◌,5,yes,
+CW00729,ເຊັດ,to wipe; to rub,C07|C09|V11,ຊ ດ ເ◌ັ◌,3,no,excluded: ດ
+CW00730,ຜ້າເຊັດໂຕ,towel,C07|C09|C10|C16|T2|V03|V11|V18,ຊ ດ ຕ ຜ ◌້ ◌າ ເ◌ັ◌ ໂ◌,8,no,excluded: ດ
+CW00731,ເປີດໄຟ,turn on the light,C09|C15|C19|V24|V33,ດ ປ ຟ ເ◌ີ ໄ◌,5,no,excluded: ດ
+CW00732,ປິດໄຟ,turn off the light,C09|C15|C19|V04|V33,ດ ປ ຟ ◌ິ ໄ◌,5,no,excluded: ດ
+CW00733,ຫຸງເຂົ້າ,cook rice (steam rice),C02|C04|C25|T2|V08|V35,ຂ ງ ຫ ◌້ ◌ຸ ເ◌ົາ,6,no,excluded: ຫ
+CW00734,ກວາດ,to sweep,C01|C09|C24|V03,ກ ດ ວ ◌າ,4,no,excluded: ດ ວ
+CW00735,ຖິ້ມ,to throw away; to discard,C11|C20|T2|V04,ຖ ມ ◌້ ◌ິ,4,yes,
+CW00736,ຂີ້ເຫຍື້ອ,rubbish; trash; garbage,C02|C29|T2|V05|V29,ຂ ຫຍ ◌້ ◌ີ ເ◌ືອ,5,no,excluded: ຫຍ ເ◌ືອ
+CW00737,ເຮັດຄວາມສະອາດ,clean (do the cleaning),C03|C06|C09|C20|C24|C26|C27|V01|V03|V11,ຄ ສ ດ ມ ວ ອ ຮ ◌ະ ◌າ ເ◌ັ◌,10,no,excluded: ດ ວ ອ
+CW00738,ຕາກ,to dry in the sun; to hang out to dry,C01|C10|V03,ກ ຕ ◌າ,3,yes,
+CW00739,ຮີດ,to iron (clothes); to press; to wring,C09|C27|V05,ດ ຮ ◌ີ,3,no,excluded: ດ
+CW00740,ໝອນ,pillow; cushion,C13|C31|V22,ນ ໝ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00741,ຜ້າຫົ່ມ,blanket,C16|C20|C25|T1|T2|V03|V17,ຜ ມ ຫ ◌່ ◌້ ◌າ ◌ົ◌,7,no,excluded: ຫ
+CW00742,ຕູ້,cabinet; cupboard; booth,C10|T2|V09,ຕ ◌້ ◌ູ,3,yes,
+CW00743,ຝາ,wall; lid,C17|V03,ຝ ◌າ,2,yes,
+CW00744,ພື້ນ,floor,C13|C18|T2|V07,ນ ພ ◌້ ◌ື,4,yes,
+CW00745,ຊັ້ນ,floor (storey); layer; shelf; class,C07|C13|T2|V02,ຊ ນ ◌້ ◌ັ◌,4,yes,
+CW00746,ບັນໄດ,stairs; staircase,C09|C13|C14|V02|V33,ດ ນ ບ ◌ັ◌ ໄ◌,5,no,excluded: ດ ບ
+CW00747,ຫຼັງຄາ,roof,C03|C04|C32|V02|V03,ຄ ງ ຫຼ ◌ັ◌ ◌າ,5,no,excluded: ຫຼ
+CW00748,ຮົ້ວ,fence; hedge,C27|T2|V31,ຮ ◌້ ◌ົວ,3,no,excluded: ◌ົວ
+CW00749,ນ້ຳປະປາ,tap water; running water,C13|C15|T2|V01|V03|V36,ນ ປ ◌້ ◌ະ ◌າ ◌ຳ,6,yes,
+CW00750,ກະຈົກ,mirror,C01|C05|V01|V17,ກ ຈ ◌ະ ◌ົ◌,4,yes,
+CW00751,ຫວີ,comb; to comb,C33|V05,ຫວ ◌ີ,2,no,excluded: ຫວ
+CW00752,ໂກນ,to shave,C01|C13|V18,ກ ນ ໂ◌,3,yes,
+CW00753,ຜ້າມ່ານ,curtain,C13|C16|C20|T1|T2|V03,ນ ຜ ມ ◌່ ◌້ ◌າ,6,yes,
+CW00754,ເຄື່ອງຊັກຜ້າ,washing machine,C01|C03|C04|C07|C16|T1|T2|V02|V03|V29,ກ ຄ ງ ຊ ຜ ◌່ ◌້ ◌ັ◌ ◌າ ເ◌ືອ,10,no,excluded: ເ◌ືອ
+CW00755,ຫ້ອງນັ່ງຫຼິ້ນ,living room,C04|C13|C25|C32|T1|T2|V02|V04|V22,ງ ນ ຫ ຫຼ ◌່ ◌້ ◌ັ◌ ◌ິ ◌ອ◌,9,no,excluded: ຫ ຫຼ ◌ອ◌
+CW00756,ວັນທີ່,date (day of the month),C12|C13|C24|T1|V02|V05,ທ ນ ວ ◌່ ◌ັ◌ ◌ີ,6,no,excluded: ວ
+CW00757,ເດືອນນີ້,this month,C09|C13|T2|V05|V29,ດ ນ ◌້ ◌ີ ເ◌ືອ,5,no,excluded: ດ ເ◌ືອ
+CW00758,ເດືອນໜ້າ,next month,C09|C13|C30|T2|V03|V29,ດ ນ ໜ ◌້ ◌າ ເ◌ືອ,6,no,excluded: ດ ເ◌ືອ
+CW00759,ອາທິດນີ້,this week,C09|C12|C13|C26|T2|V03|V04|V05,ດ ທ ນ ອ ◌້ ◌າ ◌ິ ◌ີ,8,no,excluded: ດ ອ
+CW00760,ປີນີ້,this year,C13|C15|T2|V05,ນ ປ ◌້ ◌ີ,4,yes,
+CW00761,ທ້າຍອາທິດ,weekend,C08|C09|C12|C26|T2|V03|V04,ຍ ດ ທ ອ ◌້ ◌າ ◌ິ,7,no,excluded: ຍ ດ ອ
+CW00762,ວັນພັກ,holiday; day off,C01|C13|C18|C24|V02,ກ ນ ພ ວ ◌ັ◌,5,no,excluded: ວ
+CW00763,ວັນເກີດ,birthday,C01|C09|C13|C24|V02|V24,ກ ດ ນ ວ ◌ັ◌ ເ◌ີ,6,no,excluded: ດ ວ
+CW00764,ປະຕິທິນ,calendar,C10|C12|C13|C15|V01|V04,ຕ ທ ນ ປ ◌ະ ◌ິ,6,yes,
+CW00765,ມັງກອນ,January,C01|C04|C13|C20|V02|V22,ກ ງ ນ ມ ◌ັ◌ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00766,ກຸມພາ,February,C01|C18|C20|V03|V08,ກ ພ ມ ◌າ ◌ຸ,5,yes,
+CW00767,ມີນາ,March,C13|C20|V03|V05,ນ ມ ◌າ ◌ີ,4,yes,
+CW00768,ເມສາ,April,C06|C20|V03|V12,ສ ມ ◌າ ເ◌,4,yes,
+CW00769,ພຶດສະພາ,May,C06|C09|C18|V01|V03|V06,ສ ດ ພ ◌ະ ◌າ ◌ຶ,6,no,excluded: ດ
+CW00770,ມິຖຸນາ,June,C11|C13|C20|V03|V04|V08,ຖ ນ ມ ◌າ ◌ິ ◌ຸ,6,yes,
+CW00771,ກໍລະກົດ,July,C01|C09|C23|V01|V17|V21,ກ ດ ລ ◌ະ ◌ົ◌ ◌ໍ,6,no,excluded: ດ
+CW00772,ສິງຫາ,August,C04|C06|C25|V03|V04,ງ ສ ຫ ◌າ ◌ິ,5,no,excluded: ຫ
+CW00773,ກັນຍາ,September,C01|C08|C13|V02|V03,ກ ຍ ນ ◌ັ◌ ◌າ,5,no,excluded: ຍ
+CW00774,ຕຸລາ,October,C10|C23|V03|V08,ຕ ລ ◌າ ◌ຸ,4,yes,
+CW00775,ພະຈິກ,November,C01|C05|C18|V01|V04,ກ ຈ ພ ◌ະ ◌ິ,5,yes,
+CW00776,ທັນວາ,December,C12|C13|C24|V02|V03,ທ ນ ວ ◌ັ◌ ◌າ,5,no,excluded: ວ
+CW00777,ເອັດ,"one (in compound numbers such as 11, 21, 31)",C09|C26|V11,ດ ອ ເ◌ັ◌,3,no,excluded: ດ ອ
+CW00778,ສິບເອັດ,eleven,C06|C09|C14|C26|V04|V11,ສ ດ ບ ອ ◌ິ ເ◌ັ◌,6,no,excluded: ດ ບ ອ
+CW00779,ສິບສອງ,twelve,C04|C06|C14|V04|V22,ງ ສ ບ ◌ິ ◌ອ◌,5,no,excluded: ບ ◌ອ◌
+CW00780,ຊາວເອັດ,twenty-one,C07|C09|C24|C26|V03|V11,ຊ ດ ວ ອ ◌າ ເ◌ັ◌,6,no,excluded: ດ ວ ອ
+CW00781,ສາມສິບ,thirty,C06|C14|C20|V03|V04,ສ ບ ມ ◌າ ◌ິ,5,no,excluded: ບ
+CW00782,ຫ້າສິບ,fifty,C06|C14|C25|T2|V03|V04,ສ ບ ຫ ◌້ ◌າ ◌ິ,6,no,excluded: ບ ຫ
+CW00783,ສອງຮ້ອຍ,two hundred,C04|C06|C08|C27|T2|V22,ງ ສ ຍ ຮ ◌້ ◌ອ◌,6,no,excluded: ຍ ◌ອ◌
+CW00784,ຫ້າຮ້ອຍ,five hundred,C08|C25|C27|T2|V03|V22,ຍ ຫ ຮ ◌້ ◌າ ◌ອ◌,6,no,excluded: ຍ ຫ ◌ອ◌
+CW00785,ໜຶ່ງພັນ,one thousand,C04|C13|C18|C30|T1|V02|V06,ງ ນ ພ ໜ ◌່ ◌ັ◌ ◌ຶ,7,yes,
+CW00786,ໝື່ນ,ten thousand,C13|C31|T1|V07,ນ ໝ ◌່ ◌ື,4,yes,
+CW00787,ແສນ,hundred thousand,C06|C13|V15,ສ ນ ແ◌,3,yes,
+CW00788,ເລກ,number; numeral; digit,C01|C23|V12,ກ ລ ເ◌,3,yes,
+CW00789,ນັບ,to count,C13|C14|V02,ນ ບ ◌ັ◌,3,no,excluded: ບ
+CW00790,ທີ່ໜຶ່ງ,first,C04|C12|C30|T1|V05|V06,ງ ທ ໜ ◌່ ◌ີ ◌ຶ,6,yes,
+CW00791,ທີ່ສອງ,second,C04|C06|C12|T1|V05|V22,ງ ສ ທ ◌່ ◌ີ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00792,ທີ່ສາມ,third,C06|C12|C20|T1|V03|V05,ສ ທ ມ ◌່ ◌າ ◌ີ,6,yes,
+CW00793,ເຄິ່ງໜຶ່ງ,one half,C03|C04|C30|T1|V06|V23,ຄ ງ ໜ ◌່ ◌ຶ ເ◌ິ,6,yes,
+CW00794,ສ່ວນ,part; portion; share,C06|C13|T1|V32,ສ ນ ◌່ ◌ວ◌,4,no,excluded: ◌ວ◌
+CW00795,ເທົ່າ,equal; as much as,C12|T1|V35,ທ ◌່ ເ◌ົາ,3,yes,
+CW00796,ເຮັດໃຫ້,to cause; to make (someone or something do or be),C09|C25|C27|T2|V11|V34,ດ ຫ ຮ ◌້ ເ◌ັ◌ ໃ◌,6,no,excluded: ດ ຫ
+CW00797,ສົນໃຈ,be interested in; take an interest in,C05|C06|C13|V17|V34,ຈ ສ ນ ◌ົ◌ ໃ◌,5,yes,
+CW00798,ເກີດຂຶ້ນ,happen; occur; arise,C01|C02|C09|C13|T2|V06|V24,ກ ຂ ດ ນ ◌້ ◌ຶ ເ◌ີ,7,no,excluded: ດ
+CW00799,ຢືນ,stand; stand up,C13|C21|V07,ນ ຢ ◌ື,3,yes,
+CW00800,ຍ້າຍ,move (house or position); relocate,C08|T2|V03,ຍ ◌້ ◌າ,3,no,excluded: ຍ
+CW00801,ເຊົາ,stop; quit (a habit); recover from an illness,C07|V35,ຊ ເ◌ົາ,2,yes,
+CW00802,ຕາຍ,die; be dead,C08|C10|V03,ຍ ຕ ◌າ,3,no,excluded: ຍ
+CW00803,ປ່ອຍ,let go; release; leave alone,C08|C15|T1|V22,ຍ ປ ◌່ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW00804,ດຶງ,pull; drag,C04|C09|V06,ງ ດ ◌ຶ,3,no,excluded: ດ
+CW00805,ຍູ້,push,C08|T2|V09,ຍ ◌້ ◌ູ,3,no,excluded: ຍ
+CW00806,ຍົກ,lift; raise,C01|C08|V17,ກ ຍ ◌ົ◌,3,no,excluded: ຍ
+CW00807,ຕັດ,cut; cut off,C09|C10|V02,ດ ຕ ◌ັ◌,3,no,excluded: ດ
+CW00808,ເຕີມ,fill (up); top up; add,C10|C20|V24,ຕ ມ ເ◌ີ,3,yes,
+CW00809,ສ້າງ,build; create,C04|C06|T2|V03,ງ ສ ◌້ ◌າ,4,yes,
+CW00810,ແກ້,fix; solve; untie,C01|T2|V15,ກ ◌້ ແ◌,3,yes,
+CW00811,ສ້ອມ,repair; mend,,,0,no,same spelling as CW00628 (counted once)
+CW00812,ແບ່ງ,divide; share out,C04|C14|T1|V15,ງ ບ ◌່ ແ◌,4,no,excluded: ບ
+CW00813,ກະກຽມ,prepare; get ready,C01|C20|V01|V27,ກ ມ ◌ະ ◌ຽ◌,4,yes,
+CW00814,ພະຍາຍາມ,try; make an effort,C08|C18|C20|V01|V03,ຍ ພ ມ ◌ະ ◌າ,5,no,excluded: ຍ
+CW00815,ຕັດສິນໃຈ,decide; make up one's mind,C05|C06|C09|C10|C13|V02|V04|V34,ຈ ສ ດ ຕ ນ ◌ັ◌ ◌ິ ໃ◌,8,no,excluded: ດ
+CW00816,ອະທິບາຍ,explain,C08|C12|C14|C26|V01|V03|V04,ຍ ທ ບ ອ ◌ະ ◌າ ◌ິ,7,no,excluded: ຍ ບ ອ
+CW00817,ສະແດງ,show; display; perform,C04|C06|C09|V01|V15,ງ ສ ດ ◌ະ ແ◌,5,no,excluded: ດ
+CW00818,ບໍ່ມີ,not have; there is no,C14|C20|T1|V05|V21,ບ ມ ◌່ ◌ີ ◌ໍ,5,no,excluded: ບ
+CW00819,ບໍ່ໄດ້,cannot; did not; not allowed,C09|C14|T1|T2|V21|V33,ດ ບ ◌່ ◌້ ◌ໍ ໄ◌,6,no,excluded: ດ ບ
+CW00820,ຍັງບໍ່,not yet; (question) yet?,C04|C08|C14|T1|V02|V21,ງ ຍ ບ ◌່ ◌ັ◌ ◌ໍ,6,no,excluded: ຍ ບ
+CW00821,ເພາະວ່າ,because,C18|C24|T1|V03|V19,ພ ວ ◌່ ◌າ ເ◌າະ,5,no,excluded: ວ
+CW00822,ດັ່ງນັ້ນ,therefore; so; thus,C04|C09|C13|T1|T2|V02,ງ ດ ນ ◌່ ◌້ ◌ັ◌,6,no,excluded: ດ
+CW00823,ແນ່ນອນ,certainly; of course,C13|T1|V15|V22,ນ ◌່ ແ◌ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00824,ບາງທີ,maybe; perhaps,C04|C12|C14|V03|V05,ງ ທ ບ ◌າ ◌ີ,5,no,excluded: ບ
+CW00825,ອາດຈະ,might; may; probably,C05|C09|C26|V01|V03,ຈ ດ ອ ◌ະ ◌າ,5,no,excluded: ດ ອ
+CW00826,ເກືອບ,almost; nearly,C01|C14|V29,ກ ບ ເ◌ືອ,3,no,excluded: ບ ເ◌ືອ
+CW00827,ເມື່ອ,when (at a past time); at the time that,C20|T1|V29,ມ ◌່ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW00828,ຫຼັງຈາກ,after,C01|C04|C05|C32|V02|V03,ກ ງ ຈ ຫຼ ◌ັ◌ ◌າ,6,no,excluded: ຫຼ
+CW00829,ດຽວ,in a moment; just a moment; (single),C09|C24|V27,ດ ວ ◌ຽ◌,3,no,excluded: ດ ວ
+CW00830,ເທົ່ານັ້ນ,only; that is all,C12|C13|T1|T2|V02|V35,ທ ນ ◌່ ◌້ ◌ັ◌ ເ◌ົາ,6,yes,
+CW00831,ຄ່ອນຂ້າງ,rather; fairly; quite,C02|C03|C04|C13|T1|T2|V03|V22,ຂ ຄ ງ ນ ◌່ ◌້ ◌າ ◌ອ◌,8,no,excluded: ◌ອ◌
+CW00832,ປານໃດ,how much; to what extent,C09|C13|C15|V03|V34,ດ ນ ປ ◌າ ໃ◌,5,no,excluded: ດ
+CW00833,ແຫ່ງ,classifier for places and premises; of,C28|T1|V15,ຫງ ◌່ ແ◌,3,no,excluded: ຫງ
+CW00834,ເບື່ອ,be bored; be fed up,C14|T1|V29,ບ ◌່ ເ◌ືອ,3,no,excluded: ບ ເ◌ືອ
+CW00835,ຕື່ນເຕັ້ນ,be excited; be thrilled; be agitated,C10|C13|T1|T2|V07|V11,ຕ ນ ◌່ ◌້ ◌ື ເ◌ັ◌,6,yes,
+CW00836,ອາຍ,feel shy; feel embarrassed; (noun) steam,C08|C26|V03,ຍ ອ ◌າ,3,no,excluded: ຍ ອ
+CW00837,ຂີ້ອາຍ,shy; timid,C02|C08|C26|T2|V03|V05,ຂ ຍ ອ ◌້ ◌າ ◌ີ,6,no,excluded: ຍ ອ
+CW00838,ເສົ້າ,sad; unhappy; to grieve,C06|T2|V35,ສ ◌້ ເ◌ົາ,3,yes,
+CW00839,ໂມໂຫ,angry; furious,C20|C25|V18,ມ ຫ ໂ◌,3,no,excluded: ຫ
+CW00840,ຕົກໃຈ,be startled; be shocked; be frightened,C01|C05|C10|V17|V34,ກ ຈ ຕ ◌ົ◌ ໃ◌,5,yes,
+CW00841,ພູມໃຈ,be proud; proud,C05|C18|C20|V09|V34,ຈ ພ ມ ◌ູ ໃ◌,5,yes,
+CW00842,ສົງສານ,pity; feel sorry for,C04|C06|C13|V03|V17,ງ ສ ນ ◌າ ◌ົ◌,5,yes,
+CW00843,ອິດສາ,be jealous; envious,C06|C09|C26|V03|V04,ສ ດ ອ ◌າ ◌ິ,5,no,excluded: ດ ອ
+CW00844,ພໍໃຈ,be satisfied; content,C05|C18|V21|V34,ຈ ພ ◌ໍ ໃ◌,4,yes,
+CW00845,ຜິດຫວັງ,be disappointed,C04|C09|C16|C33|V02|V04,ງ ດ ຜ ຫວ ◌ັ◌ ◌ິ,6,no,excluded: ດ ຫວ
+CW00846,ກັງວົນ,be worried; anxious,C01|C04|C13|C24|V02|V17,ກ ງ ນ ວ ◌ັ◌ ◌ົ◌,6,no,excluded: ວ
+CW00847,ຄິດຮອດ,miss (someone); think of,C03|C09|C27|V04|V22,ຄ ດ ຮ ◌ິ ◌ອ◌,5,no,excluded: ດ ◌ອ◌
+CW00848,ຄວາມຮູ້ສຶກ,feeling; sensation,C01|C03|C06|C20|C24|C27|T2|V03|V06|V09,ກ ຄ ສ ມ ວ ຮ ◌້ ◌າ ◌ຶ ◌ູ,10,no,excluded: ວ
+CW00849,ສະຫຼາດ,clever; smart,C06|C09|C32|V01|V03,ສ ດ ຫຼ ◌ະ ◌າ,5,no,excluded: ດ ຫຼ
+CW00850,ໂງ່,stupid; foolish,C04|T1|V18,ງ ◌່ ໂ◌,3,yes,
+CW00851,ກ້າຫານ,brave; courageous,C01|C13|C25|T2|V03,ກ ນ ຫ ◌້ ◌າ,5,no,excluded: ຫ
+CW00852,ຂະຍັນ,diligent; hard-working,C02|C08|C13|V01|V02,ຂ ຍ ນ ◌ະ ◌ັ◌,5,no,excluded: ຍ
+CW00853,ສຸພາບ,polite; courteous,C06|C14|C18|V03|V08,ສ ບ ພ ◌າ ◌ຸ,5,no,excluded: ບ
+CW00854,ຊື່ສັດ,honest; loyal,C06|C07|C09|T1|V02|V07,ສ ຊ ດ ◌່ ◌ັ◌ ◌ື,6,no,excluded: ດ
+CW00855,ໃຈກວ້າງ,generous; open-hearted; tolerant,C01|C04|C05|C24|T2|V03|V34,ກ ງ ຈ ວ ◌້ ◌າ ໃ◌,7,no,excluded: ວ
+CW00856,ອົດທົນ,endure; be patient,C09|C12|C13|C26|V17,ດ ທ ນ ອ ◌ົ◌,5,no,excluded: ດ ອ
+CW00857,ຈິງຈັງ,serious; earnest,C04|C05|V02|V04,ງ ຈ ◌ັ◌ ◌ິ,4,yes,
+CW00858,ຕະຫຼົກ,to joke; funny,C01|C10|C32|V01|V17,ກ ຕ ຫຼ ◌ະ ◌ົ◌,5,no,excluded: ຫຼ
+CW00859,ເຫັນແກ່ຕົວ,selfish,C01|C10|C13|C25|T1|V11|V15|V31,ກ ຕ ນ ຫ ◌່ ເ◌ັ◌ ແ◌ ◌ົວ,8,no,excluded: ຫ ◌ົວ
+CW00860,ໜ້າສົນໃຈ,interesting,C05|C06|C13|C30|T2|V03|V17|V34,ຈ ສ ນ ໜ ◌້ ◌າ ◌ົ◌ ໃ◌,8,yes,
+CW00861,ໜ້າເບື່ອ,boring,C14|C30|T1|T2|V03|V29,ບ ໜ ◌່ ◌້ ◌າ ເ◌ືອ,6,no,excluded: ບ ເ◌ືອ
+CW00862,ໜ້າຢ້ານ,scary; frightening,C13|C21|C30|T2|V03,ນ ຢ ໜ ◌້ ◌າ,5,yes,
+CW00863,ສະບາຍໃຈ,relieved; at ease; comfortable in mind,C05|C06|C08|C14|V01|V03|V34,ຈ ສ ຍ ບ ◌ະ ◌າ ໃ◌,7,no,excluded: ຍ ບ
+CW00864,ອ່ອນ,soft; frail; young (of plants),C13|C26|T1|V22,ນ ອ ◌່ ◌ອ◌,4,no,excluded: ອ ◌ອ◌
+CW00865,ແຂງ,hard; firm; strong,C02|C04|V15,ຂ ງ ແ◌,3,yes,
+CW00866,ໃຈເຢັນ,calm; cool-headed,C05|C13|C21|V11|V34,ຈ ນ ຢ ເ◌ັ◌ ໃ◌,5,yes,
+CW00867,ການ,work; affairs; prefix that turns a verb into a noun,C01|C13|V03,ກ ນ ◌າ,3,yes,
+CW00868,ງານ,work; task; event; celebration,C04|C13|V03,ງ ນ ◌າ,3,yes,
+CW00869,ຄົນງານ,worker; labourer,C03|C04|C13|V03|V17,ຄ ງ ນ ◌າ ◌ົ◌,5,yes,
+CW00870,ອາຊີບ,profession; occupation,C07|C14|C26|V03|V05,ຊ ບ ອ ◌າ ◌ີ,5,no,excluded: ບ ອ
+CW00871,ບໍລິສັດ,company; firm,C06|C09|C14|C23|V02|V04|V21,ສ ດ ບ ລ ◌ັ◌ ◌ິ ◌ໍ,7,no,excluded: ດ ບ
+CW00872,ເງິນເດືອນ,salary; monthly pay,C04|C09|C13|V23|V29,ງ ດ ນ ເ◌ິ ເ◌ືອ,5,no,excluded: ດ ເ◌ືອ
+CW00873,ຫົວໜ້າ,boss; chief; head (of a group),C25|C30|T2|V03|V31,ຫ ໜ ◌້ ◌າ ◌ົວ,5,no,excluded: ຫ ◌ົວ
+CW00874,ຜູ້ຈັດການ,manager,C01|C05|C09|C13|C16|T2|V02|V03|V09,ກ ຈ ດ ນ ຜ ◌້ ◌ັ◌ ◌າ ◌ູ,9,no,excluded: ດ
+CW00875,ໜ້າທີ່,duty; responsibility; role,C12|C30|T1|T2|V03|V05,ທ ໜ ◌່ ◌້ ◌າ ◌ີ,6,yes,
+CW00876,ປະຊຸມ,hold a meeting; meet; assemble,C07|C15|C20|V01|V08,ຊ ປ ມ ◌ະ ◌ຸ,5,yes,
+CW00877,ກອງປະຊຸມ,meeting; conference,C01|C04|C07|C15|C20|V01|V08|V22,ກ ງ ຊ ປ ມ ◌ະ ◌ຸ ◌ອ◌,8,no,excluded: ◌ອ◌
+CW00878,ທຸລະກິດ,business,C01|C09|C12|C23|V01|V04|V08,ກ ດ ທ ລ ◌ະ ◌ິ ◌ຸ,7,no,excluded: ດ
+CW00879,ໂຮງງານ,factory,C04|C13|C27|V03|V18,ງ ນ ຮ ◌າ ໂ◌,5,yes,
+CW00880,ວິສະວະກອນ,engineer,C01|C06|C13|C24|V01|V04|V22,ກ ສ ນ ວ ◌ະ ◌ິ ◌ອ◌,7,no,excluded: ວ ◌ອ◌
+CW00881,ຊ່າງ,technician; mechanic; craftsman,C04|C07|T1|V03,ງ ຊ ◌່ ◌າ,4,yes,
+CW00882,ຊາວນາ,farmer,C07|C13|C24|V03,ຊ ນ ວ ◌າ,4,no,excluded: ວ
+CW00883,ທະຫານ,soldier,C12|C13|C25|V01|V03,ທ ນ ຫ ◌ະ ◌າ,5,no,excluded: ຫ
+CW00884,ປະສົບການ,experience,C01|C06|C13|C14|C15|V01|V03|V17,ກ ສ ນ ບ ປ ◌ະ ◌າ ◌ົ◌,8,no,excluded: ບ
+CW00885,ວິຊາ,subject; field of study,C07|C24|V03|V04,ຊ ວ ◌າ ◌ິ,4,no,excluded: ວ
+CW00886,ບົດຮຽນ,lesson,C09|C13|C14|C27|V17|V27,ດ ນ ບ ຮ ◌ົ◌ ◌ຽ◌,6,no,excluded: ດ ບ
+CW00887,ຫ້ອງຮຽນ,classroom,C04|C13|C25|C27|T2|V22|V27,ງ ນ ຫ ຮ ◌້ ◌ອ◌ ◌ຽ◌,7,no,excluded: ຫ ◌ອ◌
+CW00888,ວຽກບ້ານ,homework,C01|C13|C14|C24|T2|V03|V27,ກ ນ ບ ວ ◌້ ◌າ ◌ຽ◌,7,no,excluded: ບ ວ
+CW00889,ສອບເສັງ,take an exam; exam,C04|C06|C14|V11|V22,ງ ສ ບ ເ◌ັ◌ ◌ອ◌,5,no,excluded: ບ ◌ອ◌
+CW00890,ຄະແນນ,score; mark; grade; vote,C03|C13|V01|V15,ຄ ນ ◌ະ ແ◌,4,yes,
+CW00891,ຄະນິດສາດ,mathematics,C03|C06|C09|C13|V01|V03|V04,ຄ ສ ດ ນ ◌ະ ◌າ ◌ິ,7,no,excluded: ດ
+CW00892,ມະຫາວິທະຍາໄລ,university,C08|C12|C20|C23|C24|C25|V01|V03|V04|V33,ຍ ທ ມ ລ ວ ຫ ◌ະ ◌າ ◌ິ ໄ◌,10,no,excluded: ຍ ວ ຫ
+CW00893,ຈອງ,reserve; book,C04|C05|V22,ງ ຈ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00894,ເຮືອນພັກ,guesthouse; lodging,C01|C13|C18|C27|V02|V29,ກ ນ ພ ຮ ◌ັ◌ ເ◌ືອ,6,no,excluded: ເ◌ືອ
+CW00895,ການເດີນທາງ,journey; trip; travel,C01|C04|C09|C12|C13|V03|V24,ກ ງ ດ ທ ນ ◌າ ເ◌ີ,7,no,excluded: ດ
+CW00896,ສະຖານທີ່,place; location; venue,C06|C11|C12|C13|T1|V01|V03|V05,ສ ຖ ທ ນ ◌່ ◌ະ ◌າ ◌ີ,8,yes,
+CW00897,ທິວທັດ,scenery; view; landscape,C09|C12|C24|V02|V04,ດ ທ ວ ◌ັ◌ ◌ິ,5,no,excluded: ດ ວ
+CW00898,ສະໜາມ,field; ground; court,C06|C20|C30|V01|V03,ສ ມ ໜ ◌ະ ◌າ,5,yes,
+CW00899,ສະໜາມກິລາ,stadium,C01|C06|C20|C23|C30|V01|V03|V04,ກ ສ ມ ລ ໜ ◌ະ ◌າ ◌ິ,8,yes,
+CW00900,ສວນສາທາລະນະ,public park,C06|C12|C13|C23|V01|V03|V32,ສ ທ ນ ລ ◌ະ ◌າ ◌ວ◌,7,no,excluded: ◌ວ◌
+CW00901,ສວນສັດ,zoo,C06|C09|C13|V02|V32,ສ ດ ນ ◌ັ◌ ◌ວ◌,5,no,excluded: ດ ◌ວ◌
+CW00902,ຫໍ,tower; hall; high building,C25|V21,ຫ ◌ໍ,2,no,excluded: ຫ
+CW00903,ຫໍສະໝຸດ,library,C06|C09|C25|C31|V01|V08|V21,ສ ດ ຫ ໝ ◌ະ ◌ຸ ◌ໍ,7,no,excluded: ດ ຫ
+CW00904,ຫໍພິພິດຕະພັນ,museum,C09|C10|C13|C18|C25|V01|V02|V04|V21,ດ ຕ ນ ພ ຫ ◌ະ ◌ັ◌ ◌ິ ◌ໍ,9,no,excluded: ດ ຫ
+CW00905,ສະຖານີຕຳຫຼວດ,police station,C06|C09|C10|C11|C13|C32|V01|V03|V05|V32|V36,ສ ດ ຕ ຖ ນ ຫຼ ◌ະ ◌າ ◌ີ ◌ວ◌ ◌ຳ,11,no,excluded: ດ ຫຼ ◌ວ◌
+CW00906,ແມ່ນ້ຳຂອງ,Mekong River,C02|C04|C13|C20|T1|T2|V15|V22|V36,ຂ ງ ນ ມ ◌່ ◌້ ແ◌ ◌ອ◌ ◌ຳ,9,no,excluded: ◌ອ◌
+CW00907,ແຄມ,bank; edge; shore,C03|C20|V15,ຄ ມ ແ◌,3,yes,
+CW00908,ຊາຍແດນ,border; frontier,C07|C08|C09|C13|V03|V15,ຊ ຍ ດ ນ ◌າ ແ◌,6,no,excluded: ຍ ດ
+CW00909,ໃຈກາງເມືອງ,city centre; downtown,C01|C04|C05|C20|V03|V29|V34,ກ ງ ຈ ມ ◌າ ເ◌ືອ ໃ◌,7,no,excluded: ເ◌ືອ
+CW00910,ຕົ້ນ,trunk; stem; classifier for trees and plants,C10|C13|T2|V17,ຕ ນ ◌້ ◌ົ◌,4,yes,
+CW00911,ດອກ,flower; classifier for flowers,C01|C09|V22,ກ ດ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW00912,ຟ້າຮ້ອງ,thunder,C04|C19|C27|T2|V03|V22,ງ ຟ ຮ ◌້ ◌າ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW00913,ພາຍຸ,storm,C08|C18|V03|V08,ຍ ພ ◌າ ◌ຸ,4,no,excluded: ຍ
+CW00914,ນ້ຳຖ້ວມ,flood,C11|C13|C20|T2|V32|V36,ຖ ນ ມ ◌້ ◌ວ◌ ◌ຳ,6,no,excluded: ◌ວ◌
+CW00915,ໝອກ,fog; mist,C01|C31|V22,ກ ໝ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00916,ຫີນ,rock; stone,C13|C25|V05,ນ ຫ ◌ີ,3,no,excluded: ຫ
+CW00917,ຊາຍ,sand,C07|C08|V03,ຊ ຍ ◌າ,3,no,excluded: ຍ
+CW00918,ໜອງ,pond; lake; swamp,C04|C30|V22,ງ ໜ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW00919,ຫ້ວຍ,stream; creek,C08|C25|T2|V32,ຍ ຫ ◌້ ◌ວ◌,4,no,excluded: ຍ ຫ ◌ວ◌
+CW00920,ຖ້ຳ,cave,C11|T2|V36,ຖ ◌້ ◌ຳ,3,yes,
+CW00921,ຫຍ້າ,grass; weed,C29|T2|V03,ຫຍ ◌້ ◌າ,3,no,excluded: ຫຍ
+CW00922,ໃບໄມ້,leaf (of a tree),C14|C20|T2|V33|V34,ບ ມ ◌້ ໄ◌ ໃ◌,5,no,excluded: ບ
+CW00923,ຮາກ,root (of a plant),,,0,no,same spelling as CW00695 (counted once)
+CW00924,ໄຜ່,bamboo,C16|T1|V33,ຜ ◌່ ໄ◌,3,yes,
+CW00925,ໜູ,mouse; rat,C30|V09,ໜ ◌ູ,2,yes,
+CW00926,ກະຕ່າຍ,rabbit; hare,C01|C08|C10|T1|V01|V03,ກ ຍ ຕ ◌່ ◌ະ ◌າ,6,no,excluded: ຍ
+CW00927,ແບ້,goat,C14|T2|V15,ບ ◌້ ແ◌,3,no,excluded: ບ
+CW00928,ແກະ,sheep; to peel; to engrave,C01|V13,ກ ແ◌ະ,2,yes,
+CW00929,ແມງ,insect; bug,C04|C20|V15,ງ ມ ແ◌,3,yes,
+CW00930,ແມງວັນ,fly (insect),C04|C13|C20|C24|V02|V15,ງ ນ ມ ວ ◌ັ◌ ແ◌,6,no,excluded: ວ
+CW00931,ມົດ,ant,C09|C20|V17,ດ ມ ◌ົ◌,3,no,excluded: ດ
+CW00932,ກົບ,frog,C01|C14|V17,ກ ບ ◌ົ◌,3,no,excluded: ບ
+CW00933,ເຕົ່າ,turtle; tortoise,C10|T1|V35,ຕ ◌່ ເ◌ົາ,3,yes,
+CW00934,ຜີເສື້ອ,butterfly,C06|C16|T2|V05|V29,ສ ຜ ◌້ ◌ີ ເ◌ືອ,5,no,excluded: ເ◌ືອ
+CW00935,ໝີ,bear,C31|V05,ໝ ◌ີ,2,yes,
+CW00936,ກວາງ,deer,C01|C04|C24|V03,ກ ງ ວ ◌າ,4,no,excluded: ວ
+CW00937,ປູ,crab,C15|V09,ປ ◌ູ,2,yes,
+CW00938,ຄື້ນ,wave,C03|C13|T2|V07,ຄ ນ ◌້ ◌ື,4,yes,
+CW00939,ບຸນ,festival; religious celebration; merit,C13|C14|V08,ນ ບ ◌ຸ,3,no,excluded: ບ
+CW00940,ບາສີ,baci ceremony (tying white strings on the wrist for good luck),C06|C14|V03|V05,ສ ບ ◌າ ◌ີ,4,no,excluded: ບ
+CW00941,ທຳບຸນ,make merit,C12|C13|C14|V08|V36,ທ ນ ບ ◌ຸ ◌ຳ,5,no,excluded: ບ
+CW00942,ຕັກບາດ,give alms to monks (morning alms),C01|C09|C10|C14|V02|V03,ກ ດ ຕ ບ ◌ັ◌ ◌າ,6,no,excluded: ດ ບ
+CW00943,ສາສະໜາ,religion,C06|C30|V01|V03,ສ ໜ ◌ະ ◌າ,4,yes,
+CW00944,ພຸດທະສາສະໜາ,Buddhism,C06|C09|C12|C18|C30|V01|V03|V08,ສ ດ ທ ພ ໜ ◌ະ ◌າ ◌ຸ,8,no,excluded: ດ
+CW00945,ພະສົງ,Buddhist monk; monks,C04|C06|C18|V01|V17,ງ ສ ພ ◌ະ ◌ົ◌,5,yes,
+CW00946,ໄຫວ້,pay respects with palms together; worship,C33|T2|V33,ຫວ ◌້ ໄ◌,3,no,excluded: ຫວ
+CW00947,ຂວັນ,spirit of the body; guardian spirit; morale,C02|C13|C24|V02,ຂ ນ ວ ◌ັ◌,4,no,excluded: ວ
+CW00948,ປະເພນີ,tradition; custom,C13|C15|C18|V01|V05|V12,ນ ປ ພ ◌ະ ◌ີ ເ◌,6,yes,
+CW00949,ວັດທະນະທຳ,culture,C09|C12|C13|C24|V01|V02|V36,ດ ທ ນ ວ ◌ະ ◌ັ◌ ◌ຳ,7,no,excluded: ດ ວ
+CW00950,ແຕ່ງງານ,get married; wedding,C04|C10|C13|T1|V03|V15,ງ ຕ ນ ◌່ ◌າ ແ◌,6,yes,
+CW00951,ສະຫຼອງ,celebrate,C04|C06|C32|V01|V22,ງ ສ ຫຼ ◌ະ ◌ອ◌,5,no,excluded: ຫຼ ◌ອ◌
+CW00952,ປີໃໝ່,New Year,C15|C31|T1|V05|V34,ປ ໝ ◌່ ◌ີ ໃ◌,5,yes,
+CW00953,ແຄນ,khene (Lao bamboo mouth organ),C03|C13|V15,ຄ ນ ແ◌,3,yes,
+CW00954,ຟ້ອນ,dance (traditional Lao dance),C13|C19|T2|V22,ນ ຟ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00955,ດົນຕີ,music,C09|C10|C13|V05|V17,ດ ຕ ນ ◌ີ ◌ົ◌,5,no,excluded: ດ
+CW00956,ຜີ,spirit; ghost,C16|V05,ຜ ◌ີ,2,yes,
+CW00957,ອິນເຕີເນັດ,internet,C09|C10|C13|C26|V04|V11|V24,ດ ຕ ນ ອ ◌ິ ເ◌ັ◌ ເ◌ີ,7,no,excluded: ດ ອ
+CW00958,ມືຖື,mobile phone,C11|C20|V07,ຖ ມ ◌ື,3,yes,
+CW00959,ຂ່າວ,news,C02|C24|T1|V03,ຂ ວ ◌່ ◌າ,4,no,excluded: ວ
+CW00960,ຂໍ້ຄວາມ,message; text,C02|C03|C20|C24|T2|V03|V21,ຂ ຄ ມ ວ ◌້ ◌າ ◌ໍ,7,no,excluded: ວ
+CW00961,ອີເມວ,email,C20|C24|C26|V05|V12,ມ ວ ອ ◌ີ ເ◌,5,no,excluded: ວ ອ
+CW00962,ໜັງສື,book; letter (character); document,C04|C06|C30|V02|V07,ງ ສ ໜ ◌ັ◌ ◌ື,5,yes,
+CW00963,ໜັງສືພິມ,newspaper,C04|C06|C18|C20|C30|V02|V04|V07,ງ ສ ພ ມ ໜ ◌ັ◌ ◌ິ ◌ື,8,yes,
+CW00964,ວິທະຍຸ,radio,C08|C12|C24|V01|V04|V08,ຍ ທ ວ ◌ະ ◌ິ ◌ຸ,6,no,excluded: ຍ ວ
+CW00965,ສັນຍານ,signal,C06|C08|C13|V02|V03,ສ ຍ ນ ◌ັ◌ ◌າ,5,no,excluded: ຍ
+CW00966,ລະຫັດຜ່ານ,password,C09|C13|C16|C23|C25|T1|V01|V02|V03,ດ ນ ຜ ລ ຫ ◌່ ◌ະ ◌ັ◌ ◌າ,9,no,excluded: ດ ຫ
+CW00967,ຂໍ້ມູນ,information; data,C02|C13|C20|T2|V09|V21,ຂ ນ ມ ◌້ ◌ູ ◌ໍ,6,yes,
+CW00968,ວິດີໂອ,video,C09|C24|C26|V04|V05|V18,ດ ວ ອ ◌ິ ◌ີ ໂ◌,6,no,excluded: ດ ວ ອ
+CW00969,ໄວຟາຍ,wifi,C08|C19|C24|V03|V33,ຍ ຟ ວ ◌າ ໄ◌,5,no,excluded: ຍ ວ
+CW00970,ກ້ອງ,camera; lens; tube,C01|C04|T2|V22,ກ ງ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00971,ເວັບໄຊຕ໌,website,C07|C14|C24|S3|V11|V33,ຊ ບ ວ ◌໌ ເ◌ັ◌ ໄ◌,6,no,excluded: ບ ວ ◌໌
+CW00972,ຜືນ,classifier for cloth and sheets of fabric (sinh skirts; towels; blankets; curtains),C13|C16|V07,ນ ຜ ◌ື,3,yes,
+CW00973,ກ້ອນ,classifier for lumps and chunks (bread loaves; soap bars; stones; clouds),C01|C13|T2|V22,ກ ນ ◌້ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW00974,ດວງ,classifier for round shining things (stars; sun; heart; also knives per Wiktionary's ມີດ entry),C04|C09|V32,ງ ດ ◌ວ◌,3,no,excluded: ດ ◌ວ◌
+CW00975,ສາຍ,wire; line; classifier for rivers and long flowing things,C06|C08|V03,ສ ຍ ◌າ,3,no,excluded: ຍ
+CW00976,ອົງ,body (formal); classifier for monks; Buddha images and gods,C04|C26|V17,ງ ອ ◌ົ◌,3,no,excluded: ອ
+CW00977,ແຜ່ນ,sheet; plate; classifier for flat sheets (paper; maps),C13|C16|T1|V15,ນ ຜ ◌່ ແ◌,4,yes,
+CW00978,ດ້າມ,handle; classifier for pens and handled tools,C09|C20|T2|V03,ດ ມ ◌້ ◌າ,4,no,excluded: ດ
+CW00979,ບົດ,chapter; lesson; classifier for lessons; songs and poems,C09|C14|V17,ດ ບ ◌ົ◌,3,no,excluded: ດ ບ
+CW00980,ເຫຼັ້ມ,classifier for pointed objects and bound volumes (booklets; passports; also books and knives),C20|C32|T2|V11,ມ ຫຼ ◌້ ເ◌ັ◌,4,no,excluded: ຫຼ
+CW00981,ສະບັບ,classifier for copies and issues (newspapers; documents; letters),C06|C14|V01|V02,ສ ບ ◌ະ ◌ັ◌,4,no,excluded: ບ
+CW00982,ໜັງ,"movie, film; skin, leather",C04|C30|V02,ງ ໜ ◌ັ◌,3,yes,
+CW00983,ເກມ,game (video game or played game),C01|C20|V12,ກ ມ ເ◌,3,yes,
+CW00984,ເລື່ອງ,"story, tale; matter, topic; classifier for stories and films",C04|C23|T1|V29,ງ ລ ◌່ ເ◌ືອ,4,no,excluded: ເ◌ືອ
+CW00985,ອອກກຳລັງກາຍ,"to exercise, work out",C01|C04|C08|C23|C26|V02|V03|V22|V36,ກ ງ ຍ ລ ອ ◌ັ◌ ◌າ ◌ອ◌ ◌ຳ,9,no,excluded: ຍ ອ ◌ອ◌
+CW00986,ງານອະດິເລກ,hobby,C01|C04|C09|C13|C23|C26|V01|V03|V04|V12,ກ ງ ດ ນ ລ ອ ◌ະ ◌າ ◌ິ ເ◌,10,no,excluded: ດ ອ
+CW00987,ບານ,ball,C13|C14|V03,ນ ບ ◌າ,3,no,excluded: ບ
+CW00988,ແຕ້ມ,to draw; to write,C10|C20|T2|V15,ຕ ມ ◌້ ແ◌,4,yes,
+CW00989,ຕົກປາ,to fish (with hook and line),C01|C10|C15|V03|V17,ກ ຕ ປ ◌າ ◌ົ◌,5,yes,
+CW00990,ກີຕາ,guitar,C01|C10|V03|V05,ກ ຕ ◌າ ◌ີ,4,yes,
+CW00991,ດີດ,"to pluck, play (a stringed instrument); to flick",C09|V05,ດ ◌ີ,2,no,excluded: ດ
+CW00992,ບານບ້ວງ,basketball,C04|C13|C14|T2|V03|V32,ງ ນ ບ ◌້ ◌າ ◌ວ◌,6,no,excluded: ບ ◌ວ◌
+CW00993,ເປຕັງ,pétanque (boules),C04|C10|C15|V02|V12,ງ ຕ ປ ◌ັ◌ ເ◌,5,yes,
+CW00994,ໄພ່,playing cards; card game,C18|T1|V33,ພ ◌່ ໄ◌,3,yes,
+CW00995,ເປົ່າ,to blow; to play (a wind instrument),C15|T1|V35,ປ ◌່ ເ◌ົາ,3,yes,
+CW00996,ນິຍາຍ,"story, tale (fable, myth); novel",C08|C13|V03|V04,ຍ ນ ◌າ ◌ິ,4,no,excluded: ຍ
+CW00997,ລາຍການ,list; menu; item (on a list or menu),C01|C08|C13|C23|V03,ກ ຍ ນ ລ ◌າ,5,no,excluded: ຍ
+CW00998,ລົດຊາດ,taste; flavour,C07|C09|C23|V03|V17,ຊ ດ ລ ◌າ ◌ົ◌,5,no,excluded: ດ
+CW00999,ຊີມ,to taste; to sample (food),C07|C20|V05,ຊ ມ ◌ີ,3,yes,
+CW01000,ນົວ,savoury; rich in flavour (umami),C13|V31,ນ ◌ົວ,2,no,excluded: ◌ົວ
+CW01001,ກອບ,crispy; crunchy,C01|C14|V22,ກ ບ ◌ອ◌,3,no,excluded: ບ ◌ອ◌
+CW01002,ໃສ່,put in; add; wear; put on,C06|T1|V34,ສ ◌່ ໃ◌,3,yes,
+CW01003,ຫໍ່,wrap; pack (food to take away),C25|T1|V21,ຫ ◌່ ◌ໍ,3,no,excluded: ຫ
+CW01004,ເສີບ,serve (food or drinks),C06|C14|V24,ສ ບ ເ◌ີ,3,no,excluded: ບ
+CW01005,ພະນັກງານເສີບ,waiter; waitress,C01|C04|C06|C13|C14|C18|V01|V02|V03|V24,ກ ງ ສ ນ ບ ພ ◌ະ ◌ັ◌ ◌າ ເ◌ີ,10,no,excluded: ບ
+CW01006,ຄົວ,kitchen; cooking,C03|V31,ຄ ◌ົວ,2,no,excluded: ◌ົວ
+CW01007,ພໍ່ຄົວ,cook; chef (male),C03|C18|T1|V21|V31,ຄ ພ ◌່ ◌ໍ ◌ົວ,5,no,excluded: ◌ົວ
+CW01008,ແມ່ຄົວ,cook (female),C03|C20|T1|V15|V31,ຄ ມ ◌່ ແ◌ ◌ົວ,5,no,excluded: ◌ົວ
+CW01009,ບ່ອນນັ່ງ,seat,C04|C13|C14|T1|V02|V22,ງ ນ ບ ◌່ ◌ັ◌ ◌ອ◌,6,no,excluded: ບ ◌ອ◌
+CW01010,ໃບບິນ,bill; check (in a restaurant or shop),C13|C14|V04|V34,ນ ບ ◌ິ ໃ◌,4,no,excluded: ບ
+CW01011,ຈ່າຍເງິນ,pay (money),C04|C05|C08|C13|T1|V03|V23,ງ ຈ ຍ ນ ◌່ ◌າ ເ◌ິ,7,no,excluded: ຍ
+CW01012,ລ້ຽງ,treat (pay for someone's meal); feed; raise,C04|C23|T2|V27,ງ ລ ◌້ ◌ຽ◌,4,yes,
+CW01013,ແຍກ,separate; split (e.g. pay separately),C01|C08|V15,ກ ຍ ແ◌,3,no,excluded: ຍ
+CW01014,ລວມ,combine; include; in total,C20|C23|V32,ມ ລ ◌ວ◌,3,no,excluded: ◌ວ◌
+CW01015,ລະ,each; per (after a classifier: ຄົນລະ 'per person'),C23|V01,ລ ◌ະ,2,yes,
+CW01016,ຫຼອດ,drinking straw; tube,C09|C32|V22,ດ ຫຼ ◌ອ◌,3,no,excluded: ດ ຫຼ ◌ອ◌
+CW01017,ຖາດ,tray; platter,C09|C11|V03,ດ ຖ ◌າ,3,no,excluded: ດ
+CW01018,ເຄື່ອງປຸງ,seasonings; condiments,C03|C04|C15|T1|V08|V29,ຄ ງ ປ ◌່ ◌ຸ ເ◌ືອ,6,no,excluded: ເ◌ືອ
+CW01019,ນ້ຳສົ້ມ,vinegar,C06|C13|C20|T2|V17|V36,ສ ນ ມ ◌້ ◌ົ◌ ◌ຳ,6,yes,
+CW01020,ພິກໄທ,black pepper,C01|C12|C18|V04|V33,ກ ທ ພ ◌ິ ໄ◌,5,yes,
+CW01021,ຜັກຫອມ,coriander (cilantro); fresh herbs,C01|C16|C20|C25|V02|V22,ກ ຜ ມ ຫ ◌ັ◌ ◌ອ◌,6,no,excluded: ຫ ◌ອ◌
+CW01022,ຈິ້ມ,dip (food into a sauce),C05|C20|T2|V04,ຈ ມ ◌້ ◌ິ,4,yes,
+CW01023,ນ້ຳຈິ້ມ,dipping sauce,C05|C13|C20|T2|V04|V36,ຈ ນ ມ ◌້ ◌ິ ◌ຳ,6,yes,
+CW01024,ໝີ່,thin noodles; noodle soup,C31|T1|V05,ໝ ◌່ ◌ີ,3,yes,
+CW01025,ເຂົ້າປຽກເສັ້ນ,khao piak sen (Lao rice-noodle soup),C01|C02|C06|C13|C15|T2|V11|V27|V35,ກ ຂ ສ ນ ປ ◌້ ເ◌ັ◌ ◌ຽ◌ ເ◌ົາ,9,no,needs 9 units
+CW01026,ເຂົ້າຊອຍ,khao soi (noodle soup with a minced pork and tomato topping),C02|C07|C08|T2|V22|V35,ຂ ຊ ຍ ◌້ ◌ອ◌ ເ◌ົາ,6,no,excluded: ຍ ◌ອ◌
+CW01027,ຮ້ານເຝີ,pho shop; noodle-soup restaurant,C13|C17|C27|T2|V03|V24,ນ ຝ ຮ ◌້ ◌າ ເ◌ີ,6,yes,
+CW01028,ໄກ່ປີ້ງ,grilled chicken,C01|C04|C15|T1|T2|V05|V33,ກ ງ ປ ◌່ ◌້ ◌ີ ໄ◌,7,yes,
+CW01029,ປາປີ້ງ,grilled fish,C04|C15|T2|V03|V05,ງ ປ ◌້ ◌າ ◌ີ,5,yes,
+CW01030,ຊີ້ນດາດ,sindad (Lao tabletop barbecue and hotpot),C07|C09|C13|T2|V03|V05,ຊ ດ ນ ◌້ ◌າ ◌ີ,6,no,excluded: ດ
+CW01031,ໄສ້ອົ່ວ,sai oua (Lao herb sausage),C06|C26|T1|T2|V31|V33,ສ ອ ◌່ ◌້ ◌ົວ ໄ◌,6,no,excluded: ອ ◌ົວ
+CW01032,ຈືນ,fry (in oil),C05|C13|V07,ຈ ນ ◌ື,3,yes,
+CW01033,ໄຂ່ຈືນ,omelette,C02|C05|C13|T1|V07|V33,ຂ ຈ ນ ◌່ ◌ື ໄ◌,6,yes,
+CW01034,ໄຂ່ດາວ,fried egg (sunny side up),C02|C09|C24|T1|V03|V33,ຂ ດ ວ ◌່ ◌າ ໄ◌,6,no,excluded: ດ ວ
+CW01035,ສະຫຼັດ,salad,C06|C09|C32|V01|V02,ສ ດ ຫຼ ◌ະ ◌ັ◌,5,no,excluded: ດ ຫຼ
+CW01036,ມັງສະວິລັດ,vegetarian,C04|C06|C09|C20|C23|C24|V01|V02|V04,ງ ສ ດ ມ ລ ວ ◌ະ ◌ັ◌ ◌ິ,9,no,excluded: ດ ວ
+CW01037,ອາຫານມັງສະວິລັດ,vegetarian food,C04|C06|C09|C13|C20|C23|C24|C25|C26|V01|V02|V03|V04,ງ ສ ດ ນ ມ ລ ວ ຫ ອ ◌ະ ◌ັ◌ ◌າ ◌ິ,13,no,excluded: ດ ວ ຫ ອ
+CW01038,ນ້ຳໝາກໄມ້,fruit juice,C01|C13|C20|C31|T2|V03|V33|V36,ກ ນ ມ ໝ ◌້ ◌າ ໄ◌ ◌ຳ,8,yes,
+CW01039,ປັ່ນ,blend (in a blender); spin,C13|C15|T1|V02,ນ ປ ◌່ ◌ັ◌,4,yes,
+CW01040,ນ້ຳປັ່ນ,fruit shake; smoothie,C13|C15|T1|T2|V02|V36,ນ ປ ◌່ ◌້ ◌ັ◌ ◌ຳ,6,yes,
+CW01041,ນ້ຳໝາກພ້າວ,coconut water,C01|C13|C18|C24|C31|T2|V03|V36,ກ ນ ພ ວ ໝ ◌້ ◌າ ◌ຳ,8,no,excluded: ວ
+CW01042,ກາເຟນົມ,coffee with milk,C01|C13|C19|C20|V03|V12|V17,ກ ນ ຟ ມ ◌າ ເ◌ ◌ົ◌,7,yes,
+CW01043,ກາເຟດຳ,black coffee,C01|C09|C19|V03|V12|V36,ກ ດ ຟ ◌າ ເ◌ ◌ຳ,6,no,excluded: ດ
+CW01044,ກາເຟເຢັນ,iced coffee,C01|C13|C19|C21|V03|V11|V12,ກ ນ ຟ ຢ ◌າ ເ◌ັ◌ ເ◌,7,yes,
+CW01045,ຊາເຢັນ,iced tea,C07|C13|C21|V03|V11,ຊ ນ ຢ ◌າ ເ◌ັ◌,5,yes,
+CW01046,ກະທິ,coconut milk,C01|C12|V01|V04,ກ ທ ◌ະ ◌ິ,4,yes,
+CW01047,ຂອງຫວານ,dessert; sweets,C02|C04|C13|C33|V03|V22,ຂ ງ ນ ຫວ ◌າ ◌ອ◌,6,no,excluded: ຫວ ◌ອ◌
+CW01048,ກະແລັມ,ice cream,C01|C20|C23|V01|V14,ກ ມ ລ ◌ະ ແ◌ັ◌,5,yes,
+CW01049,ໂຊໂກລາ,chocolate,C01|C07|C23|V03|V18,ກ ຊ ລ ◌າ ໂ◌,5,yes,
+CW01050,ເນີຍແຂງ,cheese,C02|C04|C08|C13|V15|V24,ຂ ງ ຍ ນ ແ◌ ເ◌ີ,6,no,excluded: ຍ
+CW01051,ເສື້ອຜ້າ,clothes; clothing,C06|C16|T2|V03|V29,ສ ຜ ◌້ ◌າ ເ◌ືອ,5,no,excluded: ເ◌ືອ
+CW01052,ຮ້ານເສື້ອຜ້າ,clothes shop,C06|C13|C16|C27|T2|V03|V29,ສ ນ ຜ ຮ ◌້ ◌າ ເ◌ືອ,7,no,excluded: ເ◌ືອ
+CW01053,ເສື້ອຍືດ,T-shirt,C06|C08|C09|T2|V07|V29,ສ ຍ ດ ◌້ ◌ື ເ◌ືອ,6,no,excluded: ຍ ດ ເ◌ືອ
+CW01054,ໂສ້ງຂາສັ້ນ,shorts,C02|C04|C06|C13|T2|V02|V03|V18,ຂ ງ ສ ນ ◌້ ◌ັ◌ ◌າ ໂ◌,8,yes,
+CW01055,ໂສ້ງຂາຍາວ,long trousers,C02|C04|C06|C08|C24|T2|V03|V18,ຂ ງ ສ ຍ ວ ◌້ ◌າ ໂ◌,8,no,excluded: ຍ ວ
+CW01056,ໂສ້ງຢີນ,jeans,C04|C06|C13|C21|T2|V05|V18,ງ ສ ນ ຢ ◌້ ◌ີ ໂ◌,7,yes,
+CW01057,ກະໂປ່ງ,skirt (Western style),C01|C04|C15|T1|V01|V18,ກ ງ ປ ◌່ ◌ະ ໂ◌,6,yes,
+CW01058,ເສື້ອກັນໜາວ,sweater; jacket (warm outer garment),C01|C06|C13|C24|C30|T2|V02|V03|V29,ກ ສ ນ ວ ໜ ◌້ ◌ັ◌ ◌າ ເ◌ືອ,9,no,excluded: ວ ເ◌ືອ
+CW01059,ເສື້ອກັນຝົນ,raincoat,C01|C06|C13|C17|T2|V02|V17|V29,ກ ສ ນ ຝ ◌້ ◌ັ◌ ◌ົ◌ ເ◌ືອ,8,no,excluded: ເ◌ືອ
+CW01060,ຖອດ,take off (clothes; shoes; hat); remove,C09|C11|V22,ດ ຖ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW01061,ເບີ,number; size (of shoes or clothes),C14|V24,ບ ເ◌ີ,2,no,excluded: ບ
+CW01062,ພໍດີ,fit well; just right; exactly,C09|C18|V05|V21,ດ ພ ◌ີ ◌ໍ,4,no,excluded: ດ
+CW01063,ຫຼວມ,loose; baggy (of clothes),C20|C32|V32,ມ ຫຼ ◌ວ◌,3,no,excluded: ຫຼ ◌ວ◌
+CW01064,ຄັບ,tight (of clothes or shoes); narrow,C03|C14|V02,ຄ ບ ◌ັ◌,3,no,excluded: ບ
+CW01065,ເກີບແຕະ,sandals; flip-flops,C01|C10|C14|V13|V24,ກ ຕ ບ ແ◌ະ ເ◌ີ,5,no,excluded: ບ
+CW01066,ເກີບກິລາ,sports shoes; sneakers,C01|C14|C23|V03|V04|V24,ກ ບ ລ ◌າ ◌ິ ເ◌ີ,6,no,excluded: ບ
+CW01067,ເກີບສົ້ນສູງ,high heels,C01|C04|C06|C13|C14|T2|V09|V17|V24,ກ ງ ສ ນ ບ ◌້ ◌ູ ◌ົ◌ ເ◌ີ,9,no,excluded: ບ
+CW01068,ຖົງເທົ້າ,socks,C04|C11|C12|T2|V17|V35,ງ ຖ ທ ◌້ ◌ົ◌ ເ◌ົາ,6,yes,
+CW01069,ຖົງມື,gloves,C04|C11|C20|V07|V17,ງ ຖ ມ ◌ື ◌ົ◌,5,yes,
+CW01070,ສາຍແອວ,belt,C06|C08|C24|C26|V03|V15,ສ ຍ ວ ອ ◌າ ແ◌,6,no,excluded: ຍ ວ ອ
+CW01071,ຄັນຮົ່ມ,umbrella,C03|C13|C20|C27|T1|V02|V17,ຄ ນ ມ ຮ ◌່ ◌ັ◌ ◌ົ◌,7,yes,
+CW01072,ໝວກກັນກະທົບ,helmet (motorbike or safety),C01|C12|C13|C14|C31|V01|V02|V17|V32,ກ ທ ນ ບ ໝ ◌ະ ◌ັ◌ ◌ົ◌ ◌ວ◌,9,no,excluded: ບ ◌ວ◌
+CW01073,ສີບົວ,pink,C06|C14|V05|V31,ສ ບ ◌ີ ◌ົວ,4,no,excluded: ບ ◌ົວ
+CW01074,ສີມ່ວງ,purple,C04|C06|C20|T1|V05|V32,ງ ສ ມ ◌່ ◌ີ ◌ວ◌,6,no,excluded: ◌ວ◌
+CW01075,ສີສົ້ມ,orange (colour),C06|C20|T2|V05|V17,ສ ມ ◌້ ◌ີ ◌ົ◌,5,yes,
+CW01076,ສີນ້ຳຕານ,brown,C06|C10|C13|T2|V03|V05|V36,ສ ຕ ນ ◌້ ◌າ ◌ີ ◌ຳ,7,yes,
+CW01077,ສີເທົາ,grey,C06|C12|V05|V35,ສ ທ ◌ີ ເ◌ົາ,4,yes,
+CW01078,ຄຳ,gold,,,0,no,same spelling as CW00563 (counted once)
+CW01079,ສີຄຳ,gold (colour); golden,C03|C06|V05|V36,ຄ ສ ◌ີ ◌ຳ,4,yes,
+CW01080,ແຫວນ,ring (jewellery),C13|C33|V15,ນ ຫວ ແ◌,3,no,excluded: ຫວ
+CW01081,ວົງ,circle; ring shape; classifier for rings and circles,C04|C24|V17,ງ ວ ◌ົ◌,3,no,excluded: ວ
+CW01082,ສ້ອຍຄໍ,necklace,C03|C06|C08|T2|V21|V22,ຄ ສ ຍ ◌້ ◌ໍ ◌ອ◌,6,no,excluded: ຍ ◌ອ◌
+CW01083,ສ້ອຍແຂນ,bracelet,C02|C06|C08|C13|T2|V15|V22,ຂ ສ ຍ ນ ◌້ ແ◌ ◌ອ◌,7,no,excluded: ຍ ◌ອ◌
+CW01084,ຕຸ້ມຫູ,earrings,C10|C20|C25|T2|V08|V09,ຕ ມ ຫ ◌້ ◌ຸ ◌ູ,6,no,excluded: ຫ
+CW01085,ເຄື່ອງປະດັບ,jewellery; accessories,C03|C04|C09|C14|C15|T1|V01|V02|V29,ຄ ງ ດ ບ ປ ◌່ ◌ະ ◌ັ◌ ເ◌ືອ,9,no,excluded: ດ ບ ເ◌ືອ
+CW01086,ກະດຸມ,button (on clothes),C01|C09|C20|V01|V08,ກ ດ ມ ◌ະ ◌ຸ,5,no,excluded: ດ
+CW01087,ຫຍິບ,sew,C14|C29|V04,ບ ຫຍ ◌ິ,3,no,excluded: ບ ຫຍ
+CW01088,ຊິບ,zip; zipper,C07|C14|V04,ຊ ບ ◌ິ,3,no,excluded: ບ
+CW01089,ຂາດ,be torn; be missing; lack,C02|C09|V03,ຂ ດ ◌າ,3,no,excluded: ດ
+CW01090,ເປື້ອນ,dirty; stained,C13|C15|T2|V29,ນ ປ ◌້ ເ◌ືອ,4,no,excluded: ເ◌ືອ
+CW01091,ຜົງຊັກຟອກ,washing powder; detergent,C01|C04|C07|C16|C19|V02|V17|V22,ກ ງ ຊ ຜ ຟ ◌ັ◌ ◌ົ◌ ◌ອ◌,8,no,excluded: ◌ອ◌
+CW01092,ປຽກ,wet,C01|C15|V27,ກ ປ ◌ຽ◌,3,yes,
+CW01093,ແຫ້ງ,dry; dried,C28|T2|V15,ຫງ ◌້ ແ◌,3,no,excluded: ຫງ
+CW01094,ເຕົາຮີດ,iron (for clothes),C09|C10|C27|V05|V35,ດ ຕ ຮ ◌ີ ເ◌ົາ,5,no,excluded: ດ
+CW01095,ພັບ,fold,C14|C18|V02,ບ ພ ◌ັ◌,3,no,excluded: ບ
+CW01096,ຕູ້ເສື້ອ,wardrobe; closet,C06|C10|T2|V09|V29,ສ ຕ ◌້ ◌ູ ເ◌ືອ,5,no,excluded: ເ◌ືອ
+CW01097,ແຂວນ,hang (up),C02|C13|C24|V15,ຂ ນ ວ ແ◌,4,no,excluded: ວ
+CW01098,ໄມ້ແຂວນເສື້ອ,coat hanger,C02|C06|C13|C20|C24|T2|V15|V29|V33,ຂ ສ ນ ມ ວ ◌້ ແ◌ ເ◌ືອ ໄ◌,9,no,excluded: ວ ເ◌ືອ
+CW01099,ໄໝ,silk; silk thread; silkworm,C31|V33,ໝ ໄ◌,2,yes,
+CW01100,ຝ້າຍ,cotton,C08|C17|T2|V03,ຍ ຝ ◌້ ◌າ,4,no,excluded: ຍ
+CW01101,ຕ່ຳ,weave (cloth),C10|T1|V36,ຕ ◌່ ◌ຳ,3,yes,
+CW01102,ຜ້າພັນຄໍ,scarf,C03|C13|C16|C18|T2|V02|V03|V21,ຄ ນ ຜ ພ ◌້ ◌ັ◌ ◌າ ◌ໍ,8,yes,
+CW01103,ກາລະວັດ,necktie,C01|C09|C23|C24|V01|V02|V03,ກ ດ ລ ວ ◌ະ ◌ັ◌ ◌າ,7,no,excluded: ດ ວ
+CW01104,ລາຍ,pattern; stripe; design; patterned,C08|C23|V03,ຍ ລ ◌າ,3,no,excluded: ຍ
+CW01105,ເຄື່ອງແບບ,uniform (clothes),C03|C04|C14|T1|V15|V29,ຄ ງ ບ ◌່ ແ◌ ເ◌ືອ,6,no,excluded: ບ ເ◌ືອ
+CW01106,ເສື້ອຊ້ອນໃນ,underwear; undershirt,C06|C07|C13|T2|V22|V29|V34,ສ ຊ ນ ◌້ ◌ອ◌ ເ◌ືອ ໃ◌,7,no,excluded: ◌ອ◌ ເ◌ືອ
+CW01107,ຊຸດນອນ,pyjamas; nightclothes,C07|C09|C13|V08|V22,ຊ ດ ນ ◌ຸ ◌ອ◌,5,no,excluded: ດ ◌ອ◌
+CW01108,ຊຸດລອຍນ້ຳ,swimsuit,C07|C08|C09|C13|C23|T2|V08|V22|V36,ຊ ຍ ດ ນ ລ ◌້ ◌ຸ ◌ອ◌ ◌ຳ,9,no,excluded: ຍ ດ ◌ອ◌
+CW01109,ໄມ້,wood; timber; tree; plant,C20|T2|V33,ມ ◌້ ໄ◌,3,yes,
+CW01110,ປູກ,to plant; to grow (crops),C01|C15|V09,ກ ປ ◌ູ,3,yes,
+CW01111,ພືດ,plant(s); crop(s) (general term),C09|C18|V07,ດ ພ ◌ື,3,no,excluded: ດ
+CW01112,ຫົດ,to water (plants); to sprinkle or pour water on,C09|C25|V17,ດ ຫ ◌ົ◌,3,no,excluded: ດ ຫ
+CW01113,ຫົດນ້ຳ,to water (plants),C09|C13|C25|T2|V17|V36,ດ ນ ຫ ◌້ ◌ົ◌ ◌ຳ,6,no,excluded: ດ ຫ
+CW01114,ຂຸດ,to dig,C02|C09|V08,ຂ ດ ◌ຸ,3,no,excluded: ດ
+CW01115,ຝຸ່ນ,fertiliser; powder; dust,C13|C17|T1|V08,ນ ຝ ◌່ ◌ຸ,4,yes,
+CW01116,ເມັດພັນ,seed(s) (for planting),C09|C13|C18|C20|V02|V11,ດ ນ ພ ມ ◌ັ◌ ເ◌ັ◌,6,no,excluded: ດ
+CW01117,ຫວ່ານ,to sow (seed); to scatter,C13|C33|T1|V03,ນ ຫວ ◌່ ◌າ,4,no,excluded: ຫວ
+CW01118,ງອກ,to sprout; to germinate,C01|C04|V22,ກ ງ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW01119,ເຕີບໂຕ,to grow; to develop; grown up,C10|C14|V18|V24,ຕ ບ ໂ◌ ເ◌ີ,4,no,excluded: ບ
+CW01120,ກິ່ງ,branch; twig; bough,C01|C04|T1|V04,ກ ງ ◌່ ◌ິ,4,yes,
+CW01121,ລຳຕົ້ນ,trunk; stem (of a plant),C10|C13|C23|T2|V17|V36,ຕ ນ ລ ◌້ ◌ົ◌ ◌ຳ,6,yes,
+CW01122,ເປືອກ,bark; peel; husk; shell,C01|C15|V29,ກ ປ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW01123,ໜາມ,thorn; spine,C20|C30|V03,ມ ໜ ◌າ,3,yes,
+CW01124,ເຄືອ,vine; creeper,C03|V29,ຄ ເ◌ືອ,2,no,excluded: ເ◌ືອ
+CW01125,ໝາກ,fruit (of a plant); nut,C01|C31|V03,ກ ໝ ◌າ,3,yes,
+CW01126,ແກ່ນ,seed; stone (of a fruit); core,C01|C13|T1|V15,ກ ນ ◌່ ແ◌,4,yes,
+CW01127,ກ້າ,seedling (especially rice); to dare; brave,C01|T2|V03,ກ ◌້ ◌າ,3,yes,
+CW01128,ບົວ,lotus; water lily; pink,C14|V31,ບ ◌ົວ,2,no,excluded: ບ ◌ົວ
+CW01129,ຈຳປາ,frangipani (plumeria; the Lao national flower),C05|C15|V03|V36,ຈ ປ ◌າ ◌ຳ,4,yes,
+CW01130,ກຸຫຼາບ,rose,C01|C14|C32|V03|V08,ກ ບ ຫຼ ◌າ ◌ຸ,5,no,excluded: ບ ຫຼ
+CW01131,ກ້ວຍໄມ້,orchid,C01|C08|C20|T2|V32|V33,ກ ຍ ມ ◌້ ◌ວ◌ ໄ◌,6,no,excluded: ຍ ◌ວ◌
+CW01132,ບານ,to bloom; to open (of flowers),,,0,no,same spelling as CW00987 (counted once)
+CW01133,ຫ່ຽວ,wilted; withered; to wilt,C24|C25|T1|V27,ວ ຫ ◌່ ◌ຽ◌,4,no,excluded: ວ ຫ
+CW01134,ຮົ່ມ,shade,C20|C27|T1|V17,ມ ຮ ◌່ ◌ົ◌,4,yes,
+CW01135,ສຽມ,spade; shovel,C06|C20|V27,ສ ມ ◌ຽ◌,3,yes,
+CW01136,ຈົກ,hoe; to hoe; to dig,C01|C05|V17,ກ ຈ ◌ົ◌,3,yes,
+CW01137,ພ້າ,machete; jungle knife,C18|T2|V03,ພ ◌້ ◌າ,3,yes,
+CW01138,ຖັງ,bucket; tank; bin,C04|C11|V02,ງ ຖ ◌ັ◌,3,yes,
+CW01139,ໄຖ,to plough; plough,C11|V33,ຖ ໄ◌,2,yes,
+CW01140,ຖອນ,to pull out; to uproot; to withdraw,C11|C13|V22,ຖ ນ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW01141,ຖອນຫຍ້າ,to pull weeds; to weed,C11|C13|C29|T2|V03|V22,ຖ ນ ຫຍ ◌້ ◌າ ◌ອ◌,6,no,excluded: ຫຍ ◌ອ◌
+CW01142,ຕັດຫຍ້າ,to cut the grass; to mow,C09|C10|C29|T2|V02|V03,ດ ຕ ຫຍ ◌້ ◌ັ◌ ◌າ,6,no,excluded: ດ ຫຍ
+CW01143,ແມງໄມ້,insect(s),C04|C20|T2|V15|V33,ງ ມ ◌້ ແ◌ ໄ◌,5,yes,
+CW01144,ໜອນ,worm; caterpillar; larva,C13|C30|V22,ນ ໜ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW01145,ໄສ້ເດືອນ,earthworm,C06|C09|C13|T2|V29|V33,ສ ດ ນ ◌້ ເ◌ືອ ໄ◌,6,no,excluded: ດ ເ◌ືອ
+CW01146,ຂ້າ,to kill; to destroy,C02|T2|V03,ຂ ◌້ ◌າ,3,yes,
+CW01147,ສວນຜັກ,vegetable garden,C01|C06|C13|C16|V02|V32,ກ ສ ນ ຜ ◌ັ◌ ◌ວ◌,6,no,excluded: ◌ວ◌
+CW01148,ສວນດອກໄມ້,flower garden,C01|C06|C09|C13|C20|T2|V22|V32|V33,ກ ສ ດ ນ ມ ◌້ ◌ອ◌ ◌ວ◌ ໄ◌,9,no,excluded: ດ ◌ອ◌ ◌ວ◌
+CW01149,ຊາວສວນ,gardener; orchard or market-garden farmer,C06|C07|C13|C24|V03|V32,ສ ຊ ນ ວ ◌າ ◌ວ◌,6,no,excluded: ວ ◌ວ◌
+CW01150,ເຮັດນາ,to farm rice; to work the rice fields,C09|C13|C27|V03|V11,ດ ນ ຮ ◌າ ເ◌ັ◌,5,no,excluded: ດ
+CW01151,ຕົ້ນເຂົ້າ,rice plant,C02|C10|C13|T2|V17|V35,ຂ ຕ ນ ◌້ ◌ົ◌ ເ◌ົາ,6,yes,
+CW01152,ເຂົ້າເປືອກ,paddy; unhusked rice,C01|C02|C15|T2|V29|V35,ກ ຂ ປ ◌້ ເ◌ືອ ເ◌ົາ,6,no,excluded: ເ◌ືອ
+CW01153,ເຂົ້າສານ,milled rice (husked; uncooked),C02|C06|C13|T2|V03|V35,ຂ ສ ນ ◌້ ◌າ ເ◌ົາ,6,yes,
+CW01154,ກ່ຽວ,to reap; to cut with a sickle; sickle,C01|C24|T1|V27,ກ ວ ◌່ ◌ຽ◌,4,no,excluded: ວ
+CW01155,ເກັບກ່ຽວ,to harvest,C01|C14|C24|T1|V11|V27,ກ ບ ວ ◌່ ເ◌ັ◌ ◌ຽ◌,6,no,excluded: ບ ວ
+CW01156,ທົ່ງ,field; plain; meadow,C04|C12|T1|V17,ງ ທ ◌່ ◌ົ◌,4,yes,
+CW01157,ຕົມ,mud; dirt,C10|C20|V17,ຕ ມ ◌ົ◌,3,yes,
+CW01158,ແລ້ງ,dry (without rain); in drought,C04|C23|T2|V15,ງ ລ ◌້ ແ◌,4,yes,
+CW01159,ຊຸ່ມ,moist; damp,C07|C20|T1|V08,ຊ ມ ◌່ ◌ຸ,4,yes,
+CW01160,ກະຖາງ,flowerpot; plant pot,C01|C04|C11|V01|V03,ກ ງ ຖ ◌ະ ◌າ,5,yes,
+CW01161,ຖົ່ວ,bean; pea; nut (legume),C11|T1|V31,ຖ ◌່ ◌ົວ,3,no,excluded: ◌ົວ
+CW01162,ໝາກຖົ່ວ,beans (in the pod); yard-long beans,C01|C11|C31|T1|V03|V31,ກ ຖ ໝ ◌່ ◌າ ◌ົວ,6,no,excluded: ◌ົວ
+CW01163,ຖົ່ວດິນ,peanut,C09|C11|C13|T1|V04|V31,ດ ຖ ນ ◌່ ◌ິ ◌ົວ,6,no,excluded: ດ ◌ົວ
+CW01164,ຖົ່ວເຫຼືອງ,soybean,C04|C11|C32|T1|V29|V31,ງ ຖ ຫຼ ◌່ ເ◌ືອ ◌ົວ,6,no,excluded: ຫຼ ເ◌ືອ ◌ົວ
+CW01165,ຖົ່ວງອກ,bean sprouts,C01|C04|C11|T1|V22|V31,ກ ງ ຖ ◌່ ◌ອ◌ ◌ົວ,6,no,excluded: ◌ອ◌ ◌ົວ
+CW01166,ເຫັດ,mushroom,C09|C25|V11,ດ ຫ ເ◌ັ◌,3,no,excluded: ດ ຫ
+CW01167,ໜໍ່,shoot; sprout (esp. bamboo shoot); classifier for shoots,C30|T1|V21,ໜ ◌່ ◌ໍ,3,yes,
+CW01168,ໜໍ່ໄມ້,bamboo shoot,C20|C30|T1|T2|V21|V33,ມ ໜ ◌່ ◌້ ◌ໍ ໄ◌,6,yes,
+CW01169,ສາລີ,corn; maize,C06|C23|V03|V05,ສ ລ ◌າ ◌ີ,4,yes,
+CW01170,ໝາກເຂືອ,eggplant; aubergine,C01|C02|C31|V03|V29,ກ ຂ ໝ ◌າ ເ◌ືອ,5,no,excluded: ເ◌ືອ
+CW01171,ໝາກອຶ,pumpkin,C01|C26|C31|V03|V06,ກ ອ ໝ ◌າ ◌ຶ,5,no,excluded: ອ
+CW01172,ຜັກກາດ,mustard greens; leafy greens of the cabbage family,C01|C09|C16|V02|V03,ກ ດ ຜ ◌ັ◌ ◌າ,5,no,excluded: ດ
+CW01173,ຜັກກາດຂາວ,Chinese cabbage; napa cabbage,C01|C02|C09|C16|C24|V02|V03,ກ ຂ ດ ຜ ວ ◌ັ◌ ◌າ,7,no,excluded: ດ ວ
+CW01174,ກະລຳປີ,cabbage,C01|C15|C23|V01|V05|V36,ກ ປ ລ ◌ະ ◌ີ ◌ຳ,6,yes,
+CW01175,ຜັກບົ້ງ,morning glory; water spinach,C01|C04|C14|C16|T2|V02|V17,ກ ງ ບ ຜ ◌້ ◌ັ◌ ◌ົ◌,7,no,excluded: ບ
+CW01176,ຜັກຊີ,dill,C01|C07|C16|V02|V05,ກ ຊ ຜ ◌ັ◌ ◌ີ,5,yes,
+CW01177,ກາລົດ,carrot,C01|C09|C23|V03|V17,ກ ດ ລ ◌າ ◌ົ◌,5,no,excluded: ດ
+CW01178,ຫົວຜັກກາດ,radish; daikon,C01|C09|C16|C25|V02|V03|V31,ກ ດ ຜ ຫ ◌ັ◌ ◌າ ◌ົວ,7,no,excluded: ດ ຫ ◌ົວ
+CW01179,ມັນຕົ້ນ,cassava,C10|C13|C20|T2|V02|V17,ຕ ນ ມ ◌້ ◌ັ◌ ◌ົ◌,6,yes,
+CW01180,ມັນດ້າງ,sweet potato,C04|C09|C13|C20|T2|V02|V03,ງ ດ ນ ມ ◌້ ◌ັ◌ ◌າ,7,no,excluded: ດ
+CW01181,ເຜືອກ,taro,C01|C16|V29,ກ ຜ ເ◌ືອ,3,no,excluded: ເ◌ືອ
+CW01182,ສີໄຄ,lemongrass,C03|C06|V05|V33,ຄ ສ ◌ີ ໄ◌,4,yes,
+CW01183,ຂ່າ,galangal,C02|T1|V03,ຂ ◌່ ◌າ,3,yes,
+CW01184,ໂຫລະພາ,Thai basil; sweet basil,C18|C23|C25|V01|V03|V18,ພ ລ ຫ ◌ະ ◌າ ໂ◌,6,no,excluded: ຫ
+CW01185,ຫອມແດງ,shallot,C04|C09|C20|C25|V15|V22,ງ ດ ມ ຫ ແ◌ ◌ອ◌,6,no,excluded: ດ ຫ ◌ອ◌
+CW01186,ງາ,sesame,C04|V03,ງ ◌າ,2,yes,
+CW01187,ໝາກຂາມ,tamarind,C01|C02|C20|C31|V03,ກ ຂ ມ ໝ ◌າ,5,yes,
+CW01188,ໝາກລຳໄຍ,longan,C01|C08|C23|C31|V03|V33|V36,ກ ຍ ລ ໝ ◌າ ໄ◌ ◌ຳ,7,no,excluded: ຍ
+CW01189,ໝາກລິ້ນຈີ່,lychee,C01|C05|C13|C23|C31|T1|T2|V03|V04|V05,ກ ຈ ນ ລ ໝ ◌່ ◌້ ◌າ ◌ິ ◌ີ,10,no,needs 10 units
+CW01190,ໝາກເງາະ,rambutan,C01|C04|C31|V03|V19,ກ ງ ໝ ◌າ ເ◌າະ,5,yes,
+CW01191,ໝາກມັງຄຸດ,mangosteen,C01|C03|C04|C09|C20|C31|V02|V03|V08,ກ ຄ ງ ດ ມ ໝ ◌ັ◌ ◌າ ◌ຸ,9,no,excluded: ດ
+CW01192,ໝາກທຸລຽນ,durian,C01|C12|C13|C23|C31|V03|V08|V27,ກ ທ ນ ລ ໝ ◌າ ◌ຸ ◌ຽ◌,8,yes,
+CW01193,ໝາກມີ້,jackfruit,C01|C20|C31|T2|V03|V05,ກ ມ ໝ ◌້ ◌າ ◌ີ,6,yes,
+CW01194,ໝາກຂຽບ,custard apple; sugar apple,C01|C02|C14|C31|V03|V27,ກ ຂ ບ ໝ ◌າ ◌ຽ◌,6,no,excluded: ບ
+CW01195,ໝາກສີດາ,guava,C01|C06|C09|C31|V03|V05,ກ ສ ດ ໝ ◌າ ◌ີ,6,no,excluded: ດ
+CW01196,ໝາກມັງກອນ,dragon fruit,C01|C04|C13|C20|C31|V02|V03|V22,ກ ງ ນ ມ ໝ ◌ັ◌ ◌າ ◌ອ◌,8,no,excluded: ◌ອ◌
+CW01197,ໝາກອະງຸ່ນ,grapes,C01|C04|C13|C26|C31|T1|V01|V03|V08,ກ ງ ນ ອ ໝ ◌່ ◌ະ ◌າ ◌ຸ,9,no,excluded: ອ
+CW01198,ໝາກໂປມ,apple,C01|C15|C20|C31|V03|V18,ກ ປ ມ ໝ ◌າ ໂ◌,6,yes,
+CW01199,ໝາກສົ້ມໂອ,pomelo,C01|C06|C20|C26|C31|T2|V03|V17|V18,ກ ສ ມ ອ ໝ ◌້ ◌າ ◌ົ◌ ໂ◌,9,no,excluded: ອ
+CW01200,ໝາກຂີ້ຫູດ,kaffir lime (makrut lime),C01|C02|C09|C25|C31|T2|V03|V05|V09,ກ ຂ ດ ຫ ໝ ◌້ ◌າ ◌ີ ◌ູ,9,no,excluded: ດ ຫ
+CW01201,ອ້ອຍ,sugarcane,C08|C26|T2|V22,ຍ ອ ◌້ ◌ອ◌,4,no,excluded: ຍ ອ ◌ອ◌
+CW01202,ສວນໝາກໄມ້,orchard; fruit garden,C01|C06|C13|C20|C31|T2|V03|V32|V33,ກ ສ ນ ມ ໝ ◌້ ◌າ ◌ວ◌ ໄ◌,9,no,excluded: ◌ວ◌
+CW01203,ພວງ,bunch; cluster; classifier for bunches (grapes; longans; flowers),C04|C18|V32,ງ ພ ◌ວ◌,3,no,excluded: ◌ວ◌
+CW01204,ປອກ,to peel (fruit or vegetables),C01|C15|V22,ກ ປ ◌ອ◌,3,no,excluded: ◌ອ◌
+CW01205,ຜ່າ,to split; to cut open; to cut in half,C16|T1|V03,ຜ ◌່ ◌າ,3,yes,
+CW01206,ຫັ່ນ,to cut into pieces; to slice,C13|C25|T1|V02,ນ ຫ ◌່ ◌ັ◌,4,no,excluded: ຫ
+CW01207,ສັບ,to chop; to mince,C06|C14|V02,ສ ບ ◌ັ◌,3,no,excluded: ບ
+CW01208,ບີບ,to squeeze; to press,C14|V05,ບ ◌ີ,2,no,excluded: ບ
+CW01209,ຂູດ,to scrape; to grate (coconut or carrot),C02|C09|V09,ຂ ດ ◌ູ,3,no,excluded: ດ
+CW01210,ແຊ່,to soak; to steep,C07|T1|V15,ຊ ◌່ ແ◌,3,yes,
+CW01211,ດອງ,to pickle; to preserve (in brine or vinegar),C04|C09|V22,ງ ດ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW01212,ຜັກດອງ,pickled vegetables,C01|C04|C09|C16|V02|V22,ກ ງ ດ ຜ ◌ັ◌ ◌ອ◌,6,no,excluded: ດ ◌ອ◌
+CW01213,ເດັດ,to pick; to pluck; to snap off (fruit; leaves; flowers),C09|V11,ດ ເ◌ັ◌,2,no,excluded: ດ
+CW01214,ຊັ່ງ,to weigh (on a scale),C04|C07|T1|V02,ງ ຊ ◌່ ◌ັ◌,4,yes,
+CW01215,ຂີດ,100 grams (market weight unit); line; mark,C02|C09|V05,ຂ ດ ◌ີ,3,no,excluded: ດ
+CW01216,ເນົ່າ,rotten; to rot,C13|T1|V35,ນ ◌່ ເ◌ົາ,3,yes,
+CW01217,ກິ່ນ,smell; scent; odour,C01|C13|T1|V04,ກ ນ ◌່ ◌ິ,4,yes,
+CW01218,ສັດ,animal,C06|C09|V02,ສ ດ ◌ັ◌,3,no,excluded: ດ
+CW01219,ສັດລ້ຽງ,pet; domestic animal,C04|C06|C09|C23|T2|V02|V27,ງ ສ ດ ລ ◌້ ◌ັ◌ ◌ຽ◌,7,no,excluded: ດ
+CW01220,ສັດປ່າ,wild animal,C06|C09|C15|T1|V02|V03,ສ ດ ປ ◌່ ◌ັ◌ ◌າ,6,no,excluded: ດ
+CW01221,ລູກໝາ,puppy,C01|C23|C31|V03|V09,ກ ລ ໝ ◌າ ◌ູ,5,yes,
+CW01222,ລູກແມວ,kitten,C01|C20|C23|C24|V09|V15,ກ ມ ລ ວ ◌ູ ແ◌,6,no,excluded: ວ
+CW01223,ລູກໄກ່,chick,C01|C23|T1|V09|V33,ກ ລ ◌່ ◌ູ ໄ◌,5,yes,
+CW01224,ແມ່ໄກ່,hen,C01|C20|T1|V15|V33,ກ ມ ◌່ ແ◌ ໄ◌,5,yes,
+CW01225,ໄກ່ຜູ້,rooster; cock,C01|C16|T1|T2|V09|V33,ກ ຜ ◌່ ◌້ ◌ູ ໄ◌,6,yes,
+CW01226,ໂຕຜູ້,male (animal),C10|C16|T2|V09|V18,ຕ ຜ ◌້ ◌ູ ໂ◌,5,yes,
+CW01227,ໂຕແມ່,female (animal),C10|C20|T1|V15|V18,ຕ ມ ◌່ ແ◌ ໂ◌,5,yes,
+CW01228,ເຫົ່າ,to bark (of a dog),C25|T1|V35,ຫ ◌່ ເ◌ົາ,3,no,excluded: ຫ
+CW01229,ກັດ,to bite; (of insects) to sting,C01|C09|V02,ກ ດ ◌ັ◌,3,no,excluded: ດ
+CW01230,ຫາງ,tail,C04|C25|V03,ງ ຫ ◌າ,3,no,excluded: ຫ
+CW01231,ຂົນ,feather; fur; body hair,C02|C13|V17,ຂ ນ ◌ົ◌,3,yes,
+CW01232,ປີກ,wing,C01|C15|V05,ກ ປ ◌ີ,3,yes,
+CW01233,ເຂົາ,horn; antler,,,0,no,same spelling as CW00160 (counted once)
+CW01234,ເລັບ,nail (finger or toe); claw; talon,C14|C23|V11,ບ ລ ເ◌ັ◌,3,no,excluded: ບ
+CW01235,ຮັງ,nest,C04|C27|V02,ງ ຮ ◌ັ◌,3,yes,
+CW01236,ຂັນ,to crow (of a rooster),C02|C13|V02,ຂ ນ ◌ັ◌,3,yes,
+CW01237,ອອກໄຂ່,to lay eggs,C01|C02|C26|T1|V22|V33,ກ ຂ ອ ◌່ ◌ອ◌ ໄ◌,6,no,excluded: ອ ◌ອ◌
+CW01238,ລ້ຽງສັດ,to raise animals; to keep livestock,C04|C06|C09|C23|T2|V02|V27,ງ ສ ດ ລ ◌້ ◌ັ◌ ◌ຽ◌,7,no,excluded: ດ
+CW01239,ຟາມ,farm (livestock or poultry),C19|C20|V03,ຟ ມ ◌າ,3,yes,
+CW01240,ສັດຕະວະແພດ,veterinarian; vet,C06|C09|C10|C18|C24|V01|V02|V15,ສ ດ ຕ ພ ວ ◌ະ ◌ັ◌ ແ◌,8,no,excluded: ດ ວ
+CW01241,ເລຍ,to lick,C23|V26,ລ ເ◌ຍ,2,no,excluded: ເ◌ຍ
+CW01242,ໄລ່,to chase; to drive away,C23|T1|V33,ລ ◌່ ໄ◌,3,yes,
+CW01243,ຕອດ,to sting; to peck; to nip,C09|C10|V22,ດ ຕ ◌ອ◌,3,no,excluded: ດ ◌ອ◌
+CW01244,ລ່າ,to hunt,C23|T1|V03,ລ ◌່ ◌າ,3,yes,
+CW01245,ລ່າສັດ,to hunt (animals); to go hunting,C06|C09|C23|T1|V02|V03,ສ ດ ລ ◌່ ◌ັ◌ ◌າ,6,no,excluded: ດ
+CW01246,ຫ່ານ,goose,C13|C25|T1|V03,ນ ຫ ◌່ ◌າ,4,no,excluded: ຫ
+CW01247,ນົກແກ້ວ,parrot,C01|C13|C24|T2|V15|V17,ກ ນ ວ ◌້ ແ◌ ◌ົ◌,6,no,excluded: ວ
+CW01248,ນົກຍູງ,peacock; peafowl,C01|C04|C08|C13|V09|V17,ກ ງ ຍ ນ ◌ູ ◌ົ◌,6,no,excluded: ຍ
+CW01249,ແຂ້,crocodile,C02|T2|V15,ຂ ◌້ ແ◌,3,yes,
+CW01250,ກະຮອກ,squirrel,C01|C27|V01|V22,ກ ຮ ◌ະ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW01251,ສິງໂຕ,lion,C04|C06|C10|V04|V18,ງ ສ ຕ ◌ິ ໂ◌,5,yes,
+CW01252,ໝູປ່າ,wild boar,C15|C31|T1|V03|V09,ປ ໝ ◌່ ◌າ ◌ູ,5,yes,
+CW01253,ມ້າລາຍ,zebra,C08|C20|C23|T2|V03,ຍ ມ ລ ◌້ ◌າ,5,no,excluded: ຍ
+CW01254,ຜຶ້ງ,bee,C04|C16|T2|V06,ງ ຜ ◌້ ◌ຶ,4,yes,
+CW01255,ແມງມຸມ,spider,C04|C20|V08|V15,ງ ມ ◌ຸ ແ◌,4,yes,
+CW01256,ແມງສາບ,cockroach,C04|C06|C14|C20|V03|V15,ງ ສ ບ ມ ◌າ ແ◌,6,no,excluded: ບ
+CW01257,ຕັກແຕນ,grasshopper; locust,C01|C10|C13|V02|V15,ກ ຕ ນ ◌ັ◌ ແ◌,5,yes,
+CW01258,ຕຸກແກ,tokay gecko,C01|C10|V08|V15,ກ ຕ ◌ຸ ແ◌,4,yes,
+CW01259,ແມງງອດ,scorpion,C04|C09|C20|V15|V22,ງ ດ ມ ແ◌ ◌ອ◌,5,no,excluded: ດ ◌ອ◌
+CW01260,ປາດຸກ,catfish (walking catfish),C01|C09|C15|V03|V08,ກ ດ ປ ◌າ ◌ຸ,5,no,excluded: ດ
+CW01261,ປານິນ,tilapia,C13|C15|V03|V04,ນ ປ ◌າ ◌ິ,4,yes,
+CW01262,ປາຄໍ່,snakehead fish,C03|C15|T1|V03|V21,ຄ ປ ◌່ ◌າ ◌ໍ,5,yes,
+CW01263,ປາວານ,whale,C13|C15|C24|V03,ນ ປ ວ ◌າ,4,no,excluded: ວ
+CW01264,ເກັດ,scale (of a fish),C01|C09|V11,ກ ດ ເ◌ັ◌,3,no,excluded: ດ
+CW01265,ກ້າງ,fish bone,C01|C04|T2|V03,ກ ງ ◌້ ◌າ,4,yes,
+CW01266,ເບັດ,fish hook,C09|C14|V11,ດ ບ ເ◌ັ◌,3,no,excluded: ດ ບ
+CW01267,ແຫ,cast net (fishing net),C25|V15,ຫ ແ◌,2,no,excluded: ຫ
+CW01268,ຊີ້ນຄວາຍ,buffalo meat,C03|C07|C08|C13|C24|T2|V03|V05,ຄ ຊ ຍ ນ ວ ◌້ ◌າ ◌ີ,8,no,excluded: ຍ ວ
+CW01269,ຊີ້ນເປັດ,duck meat,C07|C09|C13|C15|T2|V05|V11,ຊ ດ ນ ປ ◌້ ◌ີ ເ◌ັ◌,7,no,excluded: ດ
+CW01270,ຊີ້ນສັບ,minced meat; ground meat,C06|C07|C13|C14|T2|V02|V05,ສ ຊ ນ ບ ◌້ ◌ັ◌ ◌ີ,7,no,excluded: ບ
+CW01271,ຊີ້ນແຫ້ງ,dried meat; jerky,C07|C13|C28|T2|V05|V15,ຊ ນ ຫງ ◌້ ◌ີ ແ◌,6,no,excluded: ຫງ
+CW01272,ຊີ້ນປີ້ງ,grilled meat,C04|C07|C13|C15|T2|V05,ງ ຊ ນ ປ ◌້ ◌ີ,6,yes,
+CW01273,ລູກຊີ້ນ,meatball,C01|C07|C13|C23|T2|V05|V09,ກ ຊ ນ ລ ◌້ ◌ີ ◌ູ,7,yes,
+CW01274,ໝູປີ້ງ,grilled pork,C04|C15|C31|T2|V05|V09,ງ ປ ໝ ◌້ ◌ີ ◌ູ,6,yes,
+CW01275,ສົ້ມໝູ,som moo (sour fermented pork),C06|C20|C31|T2|V09|V17,ສ ມ ໝ ◌້ ◌ູ ◌ົ◌,6,yes,
+CW01276,ໄສ້,intestine(s); tripe (as food),C06|T2|V33,ສ ◌້ ໄ◌,3,yes,
+CW01277,ຕັບ,liver,C10|C14|V02,ຕ ບ ◌ັ◌,3,no,excluded: ບ
+CW01278,ມັນ,fat; grease (of meat),,,0,no,same spelling as CW00315 (counted once)
+CW01279,ປີກໄກ່,chicken wing(s),C01|C15|T1|V05|V33,ກ ປ ◌່ ◌ີ ໄ◌,5,yes,
+CW01280,ໄຂ່ໄກ່,chicken egg,C01|C02|T1|V33,ກ ຂ ◌່ ໄ◌,4,yes,
+CW01281,ໄຂ່ເປັດ,duck egg,C02|C09|C15|T1|V11|V33,ຂ ດ ປ ◌່ ເ◌ັ◌ ໄ◌,6,no,excluded: ດ
+CW01282,ໄຂ່ຕົ້ມ,boiled egg,C02|C10|C20|T1|T2|V17|V33,ຂ ຕ ມ ◌່ ◌້ ◌ົ◌ ໄ◌,7,yes,
+CW01283,ໄຂ່ແດງ,egg yolk,C02|C04|C09|T1|V15|V33,ຂ ງ ດ ◌່ ແ◌ ໄ◌,6,no,excluded: ດ
+CW01284,ໄຂ່ຂາວ,egg white,C02|C24|T1|V03|V33,ຂ ວ ◌່ ◌າ ໄ◌,5,no,excluded: ວ
+CW01285,ປາໝຶກ,squid,C01|C15|C31|V03|V06,ກ ປ ໝ ◌າ ◌ຶ,5,yes,
+CW01286,ຫອຍ,snail; shellfish (clams; mussels),C08|C25|V22,ຍ ຫ ◌ອ◌,3,no,excluded: ຍ ຫ ◌ອ◌
+CW01287,ປາແຫ້ງ,dried fish,C15|C28|T2|V03|V15,ປ ຫງ ◌້ ◌າ ແ◌,5,no,excluded: ຫງ
+CW01288,ໜຶ້ງ,to steam (food),C04|C30|T2|V06,ງ ໜ ◌້ ◌ຶ,4,yes,
+CW01289,ອົບ,to bake; to roast (in an oven),C14|C26|V17,ບ ອ ◌ົ◌,3,no,excluded: ບ ອ
+CW01290,ໝັກ,to marinate; to ferment,C01|C31|V02,ກ ໝ ◌ັ◌,3,yes,
+CW01291,ຜູ້,person (who); one who (forms nouns for people); male (of animals),C16|T2|V09,ຜ ◌້ ◌ູ,3,yes,
+CW01292,ຜູ້ໂດຍສານ,passenger,C06|C08|C09|C13|C16|T2|V03|V09|V18,ສ ຍ ດ ນ ຜ ◌້ ◌າ ◌ູ ໂ◌,9,no,excluded: ຍ ດ
+CW01293,ຄົນຂັບລົດ,driver,C02|C03|C09|C13|C14|C23|V02|V17,ຂ ຄ ດ ນ ບ ລ ◌ັ◌ ◌ົ◌,8,no,excluded: ດ ບ
+CW01294,ໃບຂັບຂີ່,driving licence,C02|C14|T1|V02|V05|V34,ຂ ບ ◌່ ◌ັ◌ ◌ີ ໃ◌,6,no,excluded: ບ
+CW01295,ຄ່າໂດຍສານ,fare (passenger fare),C03|C06|C08|C09|C13|T1|V03|V18,ຄ ສ ຍ ດ ນ ◌່ ◌າ ໂ◌,8,no,excluded: ຍ ດ
+CW01296,ເຕີມນ້ຳມັນ,refuel; fill up with petrol,C10|C13|C20|T2|V02|V24|V36,ຕ ນ ມ ◌້ ◌ັ◌ ເ◌ີ ◌ຳ,7,yes,
+CW01297,ລໍ້,wheel,C23|T2|V21,ລ ◌້ ◌ໍ,3,yes,
+CW01298,ຢາງ,rubber; tyre,C04|C21|V03,ງ ຢ ◌າ,3,yes,
+CW01299,ແຕກ,break; burst; crack (of glass or a tyre),C01|C10|V15,ກ ຕ ແ◌,3,yes,
+CW01300,ເພ,be broken; break down (of machines and vehicles),C18|V12,ພ ເ◌,2,yes,
+CW01301,ຮ້ານສ້ອມລົດ,car repair shop; garage,C06|C09|C13|C20|C23|C27|T2|V03|V17|V22,ສ ດ ນ ມ ລ ຮ ◌້ ◌າ ◌ົ◌ ◌ອ◌,10,no,excluded: ດ ◌ອ◌
+CW01302,ເຄື່ອງຈັກ,engine; machine,C01|C03|C04|C05|T1|V02|V29,ກ ຄ ງ ຈ ◌່ ◌ັ◌ ເ◌ືອ,7,no,excluded: ເ◌ືອ
+CW01303,ຄວາມໄວ,speed,C03|C20|C24|V03|V33,ຄ ມ ວ ◌າ ໄ◌,5,no,excluded: ວ
+CW01304,ຈະລາຈອນ,traffic,C05|C13|C23|V01|V03|V22,ຈ ນ ລ ◌ະ ◌າ ◌ອ◌,6,no,excluded: ◌ອ◌
+CW01305,ໄຟຂຽວ,green light (traffic signal),C02|C19|C24|V27|V33,ຂ ຟ ວ ◌ຽ◌ ໄ◌,5,no,excluded: ວ
+CW01306,ທາງຍ່າງ,sidewalk; footpath; walkway,C04|C08|C12|T1|V03,ງ ຍ ທ ◌່ ◌າ,5,no,excluded: ຍ
+CW01307,ວົງວຽນ,roundabout; traffic circle,C04|C13|C24|V17|V27,ງ ນ ວ ◌ົ◌ ◌ຽ◌,5,no,excluded: ວ
+CW01308,ແຈ,corner (of a street or room),C05|V15,ຈ ແ◌,2,yes,
+CW01309,ກົງກັນຂ້າມ,opposite; across from,C01|C02|C04|C13|C20|T2|V02|V03|V17,ກ ຂ ງ ນ ມ ◌້ ◌ັ◌ ◌າ ◌ົ◌,9,no,needs 9 units
+CW01310,ຕິດກັບ,next to; adjacent to,C01|C09|C10|C14|V02|V04,ກ ດ ຕ ບ ◌ັ◌ ◌ິ,6,no,excluded: ດ ບ
+CW01311,ຂ້າງໜ້າ,in front; ahead,C02|C04|C30|T2|V03,ຂ ງ ໜ ◌້ ◌າ,5,yes,
+CW01312,ຂ້າງຫຼັງ,behind; at the back,C02|C04|C32|T2|V02|V03,ຂ ງ ຫຼ ◌້ ◌ັ◌ ◌າ,6,no,excluded: ຫຼ
+CW01313,ຂວາມື,right-hand side; on the right,C02|C20|C24|V03|V07,ຂ ມ ວ ◌າ ◌ື,5,no,excluded: ວ
+CW01314,ຊ້າຍມື,left-hand side; on the left,C07|C08|C20|T2|V03|V07,ຊ ຍ ມ ◌້ ◌າ ◌ື,6,no,excluded: ຍ
+CW01315,ກາງ,middle; centre; central,C01|C04|V03,ກ ງ ◌າ,3,yes,
+CW01316,ທິດ,direction; point of the compass,C09|C12|V04,ດ ທ ◌ິ,3,no,excluded: ດ
+CW01317,ທິດທາງ,direction; way,C04|C09|C12|V03|V04,ງ ດ ທ ◌າ ◌ິ,5,no,excluded: ດ
+CW01318,ຕຶກ,building (brick or concrete),C01|C10|V06,ກ ຕ ◌ຶ,3,yes,
+CW01319,ຫ້າງ,department store; shopping mall,C04|C25|T2|V03,ງ ຫ ◌້ ◌າ,4,no,excluded: ຫ
+CW01320,ປ້າຍລົດເມ,bus stop,C08|C09|C15|C20|C23|T2|V03|V12|V17,ຍ ດ ປ ມ ລ ◌້ ◌າ ເ◌ ◌ົ◌,9,no,excluded: ຍ ດ
+CW01321,ຄິວ,queue; turn; (vehicle) departure slot,C03|C24|V04,ຄ ວ ◌ິ,3,no,excluded: ວ
+CW01322,ຖ້ຽວ,trip; run (of a bus or flight); time,C11|C24|T2|V27,ຖ ວ ◌້ ◌ຽ◌,4,no,excluded: ວ
+CW01323,ຖ້ຽວບິນ,flight,C11|C13|C14|C24|T2|V04|V27,ຖ ນ ບ ວ ◌້ ◌ິ ◌ຽ◌,7,no,excluded: ບ ວ
+CW01324,ລ່າຊ້າ,delayed; late,C07|C23|T1|T2|V03,ຊ ລ ◌່ ◌້ ◌າ,5,yes,
+CW01325,ຂົນສົ່ງ,transport; carry (goods); transportation,C02|C04|C06|C13|T1|V17,ຂ ງ ສ ນ ◌່ ◌ົ◌,6,yes,
+CW01326,ລົດບັນທຸກ,truck; lorry,C01|C09|C12|C13|C14|C23|V02|V08|V17,ກ ດ ທ ນ ບ ລ ◌ັ◌ ◌ຸ ◌ົ◌,9,no,excluded: ດ ບ
+CW01327,ເສັ້ນທາງ,route; way; road,C04|C06|C12|C13|T2|V03|V11,ງ ສ ທ ນ ◌້ ◌າ ເ◌ັ◌,7,yes,
+CW01328,ກິໂລແມັດ,kilometre,C01|C09|C20|C23|V04|V14|V18,ກ ດ ມ ລ ◌ິ ແ◌ັ◌ ໂ◌,7,no,excluded: ດ
+CW01329,ໄລຍະທາງ,distance,C04|C08|C12|C23|V01|V03|V33,ງ ຍ ທ ລ ◌ະ ◌າ ໄ◌,7,no,excluded: ຍ
+CW01330,ທາງລັດ,shortcut,C04|C09|C12|C23|V02|V03,ງ ດ ທ ລ ◌ັ◌ ◌າ,6,no,excluded: ດ
+CW01331,ຖອຍ,reverse; back up; move back,C08|C11|V22,ຍ ຖ ◌ອ◌,3,no,excluded: ຍ ◌ອ◌
+CW01332,ແຊງ,overtake; pass (another vehicle),C04|C07|V15,ງ ຊ ແ◌,3,yes,
+CW01333,ຊົນ,collide; crash into; bump,C07|C13|V17,ຊ ນ ◌ົ◌,3,yes,
+CW01334,ແຖວ,row; line; queue; area (around a place),C11|C24|V15,ຖ ວ ແ◌,3,no,excluded: ວ
+CW01335,ລົດສອງແຖວ,songthaew (pickup truck with two benches used as a shared taxi),C04|C06|C09|C11|C23|C24|V15|V17|V22,ງ ສ ດ ຖ ລ ວ ແ◌ ◌ົ◌ ◌ອ◌,9,no,excluded: ດ ວ ◌ອ◌
+CW01336,ສະຖານີລົດໄຟ,train station; railway station,C06|C09|C11|C13|C19|C23|V01|V03|V05|V17|V33,ສ ດ ຖ ນ ຟ ລ ◌ະ ◌າ ◌ີ ◌ົ◌ ໄ◌,11,no,excluded: ດ
+CW01337,ທ່າເຮືອ,port; pier; boat landing,C12|C27|T1|V03|V29,ທ ຮ ◌່ ◌າ ເ◌ືອ,5,no,excluded: ເ◌ືອ
+CW01338,ຟາກ,side (of a river or road); bank; the other side,C01|C19|V03,ກ ຟ ◌າ,3,yes,
+CW01339,ເຮືອຂ້າມຟາກ,ferry,C01|C02|C19|C20|C27|T2|V03|V29,ກ ຂ ຟ ມ ຮ ◌້ ◌າ ເ◌ືອ,8,no,excluded: ເ◌ືອ
+CW01340,ຂຶ້ນລົດ,get on or into a vehicle,C02|C09|C13|C23|T2|V06|V17,ຂ ດ ນ ລ ◌້ ◌ຶ ◌ົ◌,7,no,excluded: ດ
+CW01341,ລົງລົດ,get off or out of a vehicle,C04|C09|C23|V17,ງ ດ ລ ◌ົ◌,4,no,excluded: ດ
+CW01342,ກະເປົາເດີນທາງ,suitcase; travel bag,C01|C04|C09|C12|C13|C15|V01|V03|V24|V35,ກ ງ ດ ທ ນ ປ ◌ະ ◌າ ເ◌ີ ເ◌ົາ,10,no,excluded: ດ
+CW01343,ເມົາ,be drunk; be dizzy,C20|V35,ມ ເ◌ົາ,2,yes,
+CW01344,ເມົາລົດ,be carsick; get travel sickness,C09|C20|C23|V17|V35,ດ ມ ລ ◌ົ◌ ເ◌ົາ,5,no,excluded: ດ
+CW01345,ທາງອອກ,exit; way out,C01|C04|C12|C26|V03|V22,ກ ງ ທ ອ ◌າ ◌ອ◌,6,no,excluded: ອ ◌ອ◌
+CW01346,ທາງເຂົ້າ,entrance; way in,C02|C04|C12|T2|V03|V35,ຂ ງ ທ ◌້ ◌າ ເ◌ົາ,6,yes,
+CW01347,ຮ່ອມ,lane; alley; side street,C20|C27|T1|V22,ມ ຮ ◌່ ◌ອ◌,4,no,excluded: ◌ອ◌
+CW01348,ຕາມ,follow; along; according to,C10|C20|V03,ຕ ມ ◌າ,3,yes,
+CW01349,ເລີຍ,go past; go beyond; (after a verb) straight away; at all,C08|C23|V24,ຍ ລ ເ◌ີ,3,no,excluded: ຍ
+CW01350,ຖາມທາງ,ask the way; ask for directions,C04|C11|C12|C20|V03,ງ ຖ ທ ມ ◌າ,5,yes,
+CW01351,ບອກທາງ,give directions; show the way,C01|C04|C12|C14|V03|V22,ກ ງ ທ ບ ◌າ ◌ອ◌,6,no,excluded: ບ ◌ອ◌
+CW01352,ສູບ,pump (air or water); smoke (a cigarette),C06|C14|V09,ສ ບ ◌ູ,3,no,excluded: ບ
+CW01353,ກາ,crow; kettle,C01|V03,ກ ◌າ,2,yes,
+CW01354,ກົງ,straight; direct,C01|C04|V17,ກ ງ ◌ົ◌,3,yes,
+CW01355,ກົມ,department; round,C01|C20|V17,ກ ມ ◌ົ◌,3,yes,
+CW01356,ກູ,I (rude/intimate),C01|V09,ກ ◌ູ,2,yes,
+CW01357,ກໍ,also; then; so,C01|V21,ກ ◌ໍ,2,yes,
+CW01358,ກຸ່ມ,group,C01|C20|T1|V08,ກ ມ ◌່ ◌ຸ,4,yes,
+CW01359,ແກ້ມ,cheek,C01|C20|T2|V15,ກ ມ ◌້ ແ◌,4,yes,
+CW01360,ກຽມ,prepare; get ready,C01|C20|V27,ກ ມ ◌ຽ◌,3,yes,
+CW01361,ຂີ້,dirt; feces; prefix for habitual/lazy,C02|T2|V05,ຂ ◌້ ◌ີ,3,yes,
+CW01362,ຂາມ,tamarind,C02|C20|V03,ຂ ມ ◌າ,3,yes,
+CW01363,ຂັ້ນ,step; level; stage,C02|C13|T2|V02,ຂ ນ ◌້ ◌ັ◌,4,yes,
+CW01364,ກຳ,fist; to grip,C01|V36,ກ ◌ຳ,2,yes,
+CW01365,ກົ້ນ,buttocks; bottom,C01|C13|T2|V17,ກ ນ ◌້ ◌ົ◌,4,yes,
+CW01366,ເກົາ,to scratch (an itch),C01|V35,ກ ເ◌ົາ,2,yes,
+CW01367,ກິ້ງ,to roll,C01|C04|T2|V04,ກ ງ ◌້ ◌ິ,4,yes,
+CW01368,ກ້າມ,muscle,C01|C20|T2|V03,ກ ມ ◌້ ◌າ,4,yes,
+CW01369,ເຂັ້ມ,strong; dark (of colour); intense,C02|C20|T2|V11,ຂ ມ ◌້ ເ◌ັ◌,4,yes,
+CW01370,ແຂກ,guest; visitor,C01|C02|V15,ກ ຂ ແ◌,3,yes,
+CW01371,ແຂ່ງ,to compete; to race,C02|C04|T1|V15,ຂ ງ ◌່ ແ◌,4,yes,
+CW01372,ຂໍ້,item; clause; joint (of body),C02|T2|V21,ຂ ◌້ ◌ໍ,3,yes,
+CW01373,ໄຂ,to open; to unlock,C02|V33,ຂ ໄ◌,2,yes,
+CW01374,ຄັກ,great; cool; excellent,C01|C03|V02,ກ ຄ ◌ັ◌,3,yes,
+CW01375,ຄ້າ,to trade; to sell,C03|T2|V03,ຄ ◌້ ◌າ,3,yes,
+CW01376,ຄ້າງ,to remain; to be overdue; to stay overnight,C03|C04|T2|V03,ຄ ງ ◌້ ◌າ,4,yes,
+CW01377,ຄ້ານ,lazy,C03|C13|T2|V03,ຄ ນ ◌້ ◌າ,4,yes,
+CW01378,ຄາງ,jaw; cheek,C03|C04|V03,ຄ ງ ◌າ,3,yes,
+CW01379,ຄຸກ,prison; to kneel,C01|C03|V08,ກ ຄ ◌ຸ,3,yes,
+CW01380,ຄຸນ,virtue; benefit; kindness,C03|C13|V08,ຄ ນ ◌ຸ,3,yes,
+CW01381,ຄູນ,to multiply,C03|C13|V09,ຄ ນ ◌ູ,3,yes,
+CW01382,ເຄັກ,cake,C01|C03|V11,ກ ຄ ເ◌ັ◌,3,yes,
+CW01383,ຄົງ,probably; remain; stable,C03|C04|V17,ຄ ງ ◌ົ◌,3,yes,
+CW01384,ຄົມ,sharp,C03|C20|V17,ຄ ມ ◌ົ◌,3,yes,
+CW01385,ຄົ້ນ,search; look for; dig,C03|C13|T2|V17,ຄ ນ ◌້ ◌ົ◌,4,yes,
+CW01386,ເຄາະ,knock; tap,C03|V19,ຄ ເ◌າະ,2,yes,
+CW01387,ໂຄ້ງ,curved; bent,C03|C04|T2|V18,ຄ ງ ◌້ ໂ◌,4,yes,
+CW01388,ຄ່ຳ,evening; night,C03|T1|V36,ຄ ◌່ ◌ຳ,3,yes,
+CW01389,ໂຄມ,lamp; lantern,C03|C20|V18,ຄ ມ ໂ◌,3,yes,
+CW01390,ຄາ,stuck; caught (on something),C03|V03,ຄ ◌າ,2,yes,
+CW01391,ເງົາ,shadow,C04|V35,ງ ເ◌ົາ,2,yes,
+CW01392,ງົງ,confused; puzzled,C04|V17,ງ ◌ົ◌,2,yes,
+CW01393,ງໍ,bent; curved,C04|V21,ງ ◌ໍ,2,yes,
+CW01394,ຈັນ,moon; Monday (in ວັນຈັນ),C05|C13|V02,ຈ ນ ◌ັ◌,3,yes,
+CW01395,ຈ້າ,yes (friendly particle),C05|T2|V03,ຈ ◌້ ◌າ,3,yes,
+CW01396,ຈ້າງ,to hire; employ,C04|C05|T2|V03,ງ ຈ ◌້ ◌າ,4,yes,
+CW01397,ຈາງ,faint; weak; diluted,C04|C05|V03,ງ ຈ ◌າ,3,yes,
+CW01398,ຈາມ,to sneeze,C05|C20|V03,ຈ ມ ◌າ,3,yes,
+CW01399,ຈີກ,to tear; rip,C01|C05|V05,ກ ຈ ◌ີ,3,yes,
+CW01400,ຈຶ່ງ,therefore; so; then,C04|C05|T1|V06,ງ ຈ ◌່ ◌ຶ,4,yes,
+CW01401,ຈຸກ,stuffed; blocked; bloated,C01|C05|V08,ກ ຈ ◌ຸ,3,yes,
+CW01402,ຈຸ່ມ,to dip; soak,C05|C20|T1|V08,ຈ ມ ◌່ ◌ຸ,4,yes,
+CW01403,ຈູງ,to lead by the hand,C04|C05|V09,ງ ຈ ◌ູ,3,yes,
+CW01404,ຈໍ,screen; monitor,C05|V21,ຈ ◌ໍ,2,yes,
+CW01405,ແຈກ,to distribute; hand out,C01|C05|V15,ກ ຈ ແ◌,3,yes,
+CW01406,ແຈ່ມ,clear; bright (as in ແຈ່ມໃສ),C05|C20|T1|V15,ຈ ມ ◌່ ແ◌,4,yes,
+CW01407,ຈົ່ມ,to complain; grumble,C05|C20|T1|V17,ຈ ມ ◌່ ◌ົ◌,4,yes,
+CW01408,ຈົມ,to sink; drown,C05|C20|V17,ຈ ມ ◌ົ◌,3,yes,
+CW01409,ໂຈນ,thief; robber,C05|C13|V18,ຈ ນ ໂ◌,3,yes,
+CW01410,ເຈາະ,to drill; to pierce; to bore,C05|V19,ຈ ເ◌າະ,2,yes,
+CW01411,ຈຳ,to remember; to memorize,C05|V36,ຈ ◌ຳ,2,yes,
+CW01412,ສັກ,to inject; to tattoo; about (approximately one),C01|C06|V02,ກ ສ ◌ັ◌,3,yes,
+CW01413,ສັ່ນ,to shake; to tremble,C06|C13|T1|V02,ສ ນ ◌່ ◌ັ◌,4,yes,
+CW01414,ສາງ,warehouse; storeroom,C04|C06|V03,ງ ສ ◌າ,3,yes,
+CW01415,ສານ,court (of law),C06|C13|V03,ສ ນ ◌າ,3,yes,
+CW01416,ສິ,particle: will; softening command,C06|V04,ສ ◌ິ,2,yes,
+CW01417,ສິ່ງ,thing; object,C04|C06|T1|V04,ງ ສ ◌່ ◌ິ,4,yes,
+CW01418,ສື່,media; to communicate,C06|T1|V07,ສ ◌່ ◌ື,3,yes,
+CW01419,ສູ້,to fight; to struggle,C06|T2|V09,ສ ◌້ ◌ູ,3,yes,
+CW01420,ເສັງ,to take an exam,C04|C06|V11,ງ ສ ເ◌ັ◌,3,yes,
+CW01421,ເສ້ນ,line; strand; noodle; vein,C06|C13|T2|V12,ສ ນ ◌້ ເ◌,4,yes,
+CW01422,ແສງ,light; ray,C04|C06|V15,ງ ສ ແ◌,3,yes,
+CW01423,ໂສກ,sad; sorrowful,C01|C06|V18,ກ ສ ໂ◌,3,yes,
+CW01424,ສົ້ນ,heel; end,C06|C13|T2|V17,ສ ນ ◌້ ◌ົ◌,4,yes,
+CW01425,ສໍ,pencil; crayon,C06|V21,ສ ◌ໍ,2,yes,
+CW01426,ເສິກ,war,C01|C06|V23,ກ ສ ເ◌ິ,3,yes,
+CW01427,ສຽງ,sound; voice,C04|C06|V27,ງ ສ ◌ຽ◌,3,yes,
+CW01428,ເສົາ,post; pillar; Saturday (in ວັນເສົາ),C06|V35,ສ ເ◌ົາ,2,yes,
+CW01429,ຊິ,will (future marker),C07|V04,ຊ ◌ິ,2,yes,
+CW01430,ຊິ້ນ,piece; slab (of meat),C07|C13|T2|V04,ຊ ນ ◌້ ◌ິ,4,yes,
+CW01431,ຊີ້,to point,C07|T2|V05,ຊ ◌້ ◌ີ,3,yes,
+CW01432,ເຊິ່ງ,which; that (relative word),C04|C07|T1|V23,ງ ຊ ◌່ ເ◌ິ,4,yes,
+CW01433,ໂຊກ,luck; fortune,C01|C07|V18,ກ ຊ ໂ◌,3,yes,
+CW01434,ເຊັ່ນ,such as; for example,C07|C13|T1|V11,ຊ ນ ◌່ ເ◌ັ◌,4,yes,
+CW01435,ຕັກ,to scoop; to ladle,C01|C10|V02,ກ ຕ ◌ັ◌,3,yes,
+CW01436,ຕັ້ງ,to set up; to place; to start,C04|C10|T2|V02,ງ ຕ ◌້ ◌ັ◌,4,yes,
+CW01437,ຕ່າງ,different; various,C04|C10|T1|V03,ງ ຕ ◌່ ◌າ,4,yes,
+CW01438,ຕິ,to scold; to criticize,C10|V04,ຕ ◌ິ,2,yes,
+CW01439,ເຊັນ,to sign,C07|C13|V11,ຊ ນ ເ◌ັ◌,3,yes,
+CW01440,ຕົນ,self; oneself; body,C10|C13|V17,ຕ ນ ◌ົ◌,3,yes,
+CW01441,ເຕົາ,stove; oven,C10|V35,ຕ ເ◌ົາ,2,yes,
+CW01442,ຕໍ່,to connect; to continue; next; to (towards),C10|T1|V21,ຕ ◌່ ◌ໍ,3,yes,
+CW01443,ຕື້ນ,shallow,C10|C13|T2|V07,ຕ ນ ◌້ ◌ື,4,yes,
+CW01444,ຕື່ມ,to add; more; additional,C10|C20|T1|V07,ຕ ມ ◌່ ◌ື,4,yes,
+CW01445,ແຕະ,to touch; to tap,C10|V13,ຕ ແ◌ະ,2,yes,
+CW01446,ແຕງ,cucumber; melon,C04|C10|V15,ງ ຕ ແ◌,3,yes,
+CW01447,ແຕ່ງ,to dress up; to decorate; to compose; to cook (a dish),C04|C10|T1|V15,ງ ຕ ◌່ ແ◌,4,yes,
+CW01448,ແຕນ,wasp,C10|C13|V15,ຕ ນ ແ◌,3,yes,
+CW01449,ຖ່ານ,charcoal,C11|C13|T1|V03,ຖ ນ ◌່ ◌າ,4,yes,
+CW01450,ຖີ່,frequent; close together,C11|T1|V05,ຖ ◌່ ◌ີ,3,yes,
+CW01451,ຊັງ,to hate,C04|C07|V02,ງ ຊ ◌ັ◌,3,yes,
+CW01452,ຕັນ,blocked; clogged; ton,C10|C13|V02,ຕ ນ ◌ັ◌,3,yes,
+CW01453,ຖູ,to rub; to scrub,C11|V09,ຖ ◌ູ,2,yes,
+CW01454,ຖຽງ,to argue; to dispute,C04|C11|V27,ງ ຖ ◌ຽ◌,3,yes,
+CW01455,ເຖົ້າ,old (of a person); elderly,C11|T2|V35,ຖ ◌້ ເ◌ົາ,3,yes,
+CW01456,ແຖມ,to give extra; to add as a bonus,C11|C20|V15,ຖ ມ ແ◌,3,yes,
+CW01457,ທັກ,to greet; to remark,C01|C12|V02,ກ ທ ◌ັ◌,3,yes,
+CW01458,ທັງ,all; both; entire,C04|C12|V02,ງ ທ ◌ັ◌,3,yes,
+CW01459,ທັນ,in time; to keep up with,C12|C13|V02,ທ ນ ◌ັ◌,3,yes,
+CW01460,ທາ,to apply; to paint; to smear,C12|V03,ທ ◌າ,2,yes,
+CW01461,ທ່າ,posture; manner; pier,C12|T1|V03,ທ ◌່ ◌າ,3,yes,
+CW01462,ທ້າ,to challenge; to dare,C12|T2|V03,ທ ◌້ ◌າ,3,yes,
+CW01463,ທານ,alms; to give alms; to eat (polite),C12|C13|V03,ທ ນ ◌າ,3,yes,
+CW01464,ທີມ,team,C12|C20|V05,ທ ມ ◌ີ,3,yes,
+CW01465,ທຶນ,capital; funds; investment,C12|C13|V06,ທ ນ ◌ຶ,3,yes,
+CW01466,ທຸງ,flag,C04|C12|V08,ງ ທ ◌ຸ,3,yes,
+CW01467,ເທ,pour,C12|V12,ທ ເ◌,2,yes,
+CW01468,ເທົາ,grey; ash,C12|V35,ທ ເ◌ົາ,2,yes,
+CW01469,ແທງ,stab; pierce,C04|C12|V15,ງ ທ ແ◌,3,yes,
+CW01470,ແທ່ງ,bar; stick (classifier),C04|C12|T1|V15,ງ ທ ◌່ ແ◌,4,yes,
+CW01471,ທົນ,endure; tolerate,C12|C13|V17,ທ ນ ◌ົ◌,3,yes,
+CW01472,ທໍ,weave,C12|V21,ທ ◌ໍ,2,yes,
+CW01473,ທໍ່,pipe; tube,C12|T1|V21,ທ ◌່ ◌ໍ,3,yes,
+CW01474,ທຽນ,candle,C12|C13|V27,ທ ນ ◌ຽ◌,3,yes,
+CW01475,ແທກ,to measure,C01|C12|V15,ກ ທ ແ◌,3,yes,
+CW01476,ທຳ,do; make,C12|V36,ທ ◌ຳ,2,yes,
+CW01477,ນະ,particle softening a statement or request,C13|V01,ນ ◌ະ,2,yes,
+CW01478,ນັກ,person who does (prefix: -er; -ist); student of,C01|C13|V02,ກ ນ ◌ັ◌,3,yes,
+CW01479,ນ່າ,worth; -able (as in nice to look at),C13|T1|V03,ນ ◌່ ◌າ,3,yes,
+CW01480,ນ້າ,aunt or uncle (mother's younger sibling),C13|T2|V03,ນ ◌້ ◌າ,3,yes,
+CW01481,ນາງ,Miss; Ms; woman,C04|C13|V03,ງ ນ ◌າ,3,yes,
+CW01482,ນານ,long (time),C13|V03,ນ ◌າ,2,yes,
+CW01483,ນຶກ,think; imagine; recall,C01|C13|V06,ກ ນ ◌ຶ,3,yes,
+CW01484,ນິ່ງ,still; quiet; silent,C04|C13|T1|V04,ງ ນ ◌່ ◌ິ,4,yes,
+CW01485,ນຸ່ມ,soft; tender,C13|C20|T1|V08,ນ ມ ◌່ ◌ຸ,4,yes,
+CW01486,ເນັ້ນ,emphasize; stress,C13|T2|V11,ນ ◌້ ເ◌ັ◌,3,yes,
+CW01487,ແນ່,sure; certain,C13|T1|V15,ນ ◌່ ແ◌,3,yes,
+CW01488,ປະ,to abandon; to leave behind,C15|V01,ປ ◌ະ,2,yes,
+CW01489,ປັກ,to stick in; to plant; to embroider,C01|C15|V02,ກ ປ ◌ັ◌,3,yes,
+CW01490,ປິ້ງ,to grill; to roast,C04|C15|T2|V04,ງ ປ ◌້ ◌ິ,4,yes,
+CW01491,ປີນ,to climb,C13|C15|V05,ນ ປ ◌ີ,3,yes,
+CW01492,ປືນ,gun,C13|C15|V07,ນ ປ ◌ື,3,yes,
+CW01493,ປັ້ນ,to mold; to shape (clay; rice balls),C13|C15|T2|V02,ນ ປ ◌້ ◌ັ◌,4,yes,
+CW01494,ປົກ,to cover; cover (of a book),C01|C15|V17,ກ ປ ◌ົ◌,3,yes,
+CW01495,ປຸກ,to wake someone up; to build; to plant,C01|C15|V08,ກ ປ ◌ຸ,3,yes,
+CW01496,ປຸ່ມ,button,C15|C20|T1|V08,ປ ມ ◌່ ◌ຸ,4,yes,
+CW01497,ແປກ,strange; unusual,C01|C15|V15,ກ ປ ແ◌,3,yes,
+CW01498,ແປງ,to make; to repair; brush,C04|C15|V15,ງ ປ ແ◌,3,yes,
+CW01499,ແປ້ງ,flour; powder,C04|C15|T2|V15,ງ ປ ◌້ ແ◌,4,yes,
+CW01500,ປົນ,to mix; mixed,C13|C15|V17,ນ ປ ◌ົ◌,3,yes,
+CW01501,ຜູກ,to tie; to bind,C01|C16|V09,ກ ຜ ◌ູ,3,yes,
+CW01502,ຜົນ,result; outcome; effect,C13|C16|V17,ນ ຜ ◌ົ◌,3,yes,
+CW01503,ຜົງ,powder,C04|C16|V17,ງ ຜ ◌ົ◌,3,yes,
+CW01504,ເຜິ້ງ,bee,C04|C16|T2|V23,ງ ຜ ◌້ ເ◌ິ,4,yes,
+CW01505,ເຜົາ,to burn,C16|V35,ຜ ເ◌ົາ,2,yes,
+CW01506,ເຜົ່າ,ethnic group; tribe,C16|T1|V35,ຜ ◌່ ເ◌ົາ,3,yes,
+CW01507,ໄຜ,who,C16|V33,ຜ ໄ◌,2,yes,
+CW01508,ແຜນ,plan,C13|C16|V15,ນ ຜ ແ◌,3,yes,
+CW01509,ຝາກ,to deposit; to entrust; to leave with,C01|C17|V03,ກ ຝ ◌າ,3,yes,
+CW01510,ຝານ,to slice; to cut into pieces,C13|C17|V03,ນ ຝ ◌າ,3,yes,
+CW01511,ຝັງ,to bury,C04|C17|V02,ງ ຝ ◌ັ◌,3,yes,
+CW01512,ຝັ່ງ,shore; bank,C04|C17|T1|V02,ງ ຝ ◌່ ◌ັ◌,4,yes,
+CW01513,ຝີ,boil; abscess,C17|V05,ຝ ◌ີ,2,yes,
+CW01514,ຝຶກ,to practice; to train,C01|C17|V06,ກ ຝ ◌ຶ,3,yes,
+CW01515,ຝູງ,herd; flock; group of animals,C04|C17|V09,ງ ຝ ◌ູ,3,yes,
+CW01516,ເຝົ້າ,to watch over; to guard,C17|T2|V35,ຝ ◌້ ເ◌ົາ,3,yes,
+CW01517,ພາ,to take along; to lead,C18|V03,ພ ◌າ,2,yes,
+CW01518,ພາກ,region; part; section,C01|C18|V03,ກ ພ ◌າ,3,yes,
+CW01519,ພັງ,to collapse; broken down,C04|C18|V02,ງ ພ ◌ັ◌,3,yes,
+CW01520,ພິມ,to print; to type,C18|C20|V04,ພ ມ ◌ິ,3,yes,
+CW01521,ເພີ່ມ,to add; to increase,C18|C20|T1|V24,ພ ມ ◌່ ເ◌ີ,4,yes,
+CW01522,ເພິ່ນ,he; she; they (respectful),C13|C18|T1|V23,ນ ພ ◌່ ເ◌ິ,4,yes,
+CW01523,ເພິ່ງ,just (now); to rely on,C04|C18|T1|V23,ງ ພ ◌່ ເ◌ິ,4,yes,
+CW01524,ພຽງ,only; just; merely,C04|C18|V27,ງ ພ ◌ຽ◌,3,yes,
+CW01525,ໄພ,danger; harm; disaster,C18|V33,ພ ໄ◌,2,yes,
+CW01526,ພົມ,carpet; rug,C18|C20|V17,ພ ມ ◌ົ◌,3,yes,
+CW01527,ແພ,raft,C18|V15,ພ ແ◌,2,yes,
+CW01528,ຟັກ,pumpkin; gourd,C01|C19|V02,ກ ຟ ◌ັ◌,3,yes,
+CW01529,ຟັນ,to chop; to slash,C13|C19|V02,ນ ຟ ◌ັ◌,3,yes,
+CW01530,ຟາງ,straw,C04|C19|V03,ງ ຟ ◌າ,3,yes,
+CW01531,ຟືນ,firewood,C13|C19|V07,ນ ຟ ◌ື,3,yes,
+CW01532,ຟື້ນ,to recover; to revive,C13|C19|T2|V07,ນ ຟ ◌້ ◌ື,4,yes,
+CW01533,ມຸງ,to roof; to cover,C04|C20|V08,ງ ມ ◌ຸ,3,yes,
+CW01534,ມຸ້ງ,mosquito net,C04|C20|T2|V08,ງ ມ ◌້ ◌ຸ,4,yes,
+CW01535,ມຶງ,you (rude or very intimate),C04|C20|V06,ງ ມ ◌ຶ,3,yes,
+CW01536,ມຸກ,pearl; joke,C01|C20|V08,ກ ມ ◌ຸ,3,yes,
+CW01537,ມ່ານ,curtain,C13|C20|T1|V03,ນ ມ ◌່ ◌າ,4,yes,
+CW01538,ແຟ້ມ,file; folder,C19|C20|T2|V15,ຟ ມ ◌້ ແ◌,4,yes,
+CW01539,ຢ່າ,don't (prohibition),C21|T1|V03,ຢ ◌່ ◌າ,3,yes,
+CW01540,ຢ່າງ,kind; way; manner,C04|C21|T1|V03,ງ ຢ ◌່ ◌າ,4,yes,
+CW01541,ຢາມ,to visit,C20|C21|V03,ມ ຢ ◌າ,3,yes,
+CW01542,ລັກ,steal,C01|C23|V02,ກ ລ ◌ັ◌,3,yes,
+CW01543,ລັງ,box; crate; case,C04|C23|V02,ງ ລ ◌ັ◌,3,yes,
+CW01544,ລາ,to take leave; say goodbye,C23|V03,ລ ◌າ,2,yes,
+CW01545,ລ້າ,lagging behind; worn out,C23|T2|V03,ລ ◌້ ◌າ,3,yes,
+CW01546,ລາກ,drag; pull,C01|C23|V03,ກ ລ ◌າ,3,yes,
+CW01547,ລ່າງ,lower; below; bottom,C04|C23|T1|V03,ງ ລ ◌່ ◌າ,4,yes,
+CW01548,ລ່າມ,interpreter,C20|C23|T1|V03,ມ ລ ◌່ ◌າ,4,yes,
+CW01549,ລານ,yard; courtyard,C13|C23|V03,ນ ລ ◌າ,3,yes,
+CW01550,ລີ້,hide,C23|T2|V05,ລ ◌້ ◌ີ,3,yes,
+CW01551,ລຸກ,get up; stand up,C01|C23|V08,ກ ລ ◌ຸ,3,yes,
+CW01552,ລຸ້ນ,generation; model; batch,C13|C23|T2|V08,ນ ລ ◌້ ◌ຸ,4,yes,
+CW01553,ໂລກ,world; earth,C01|C23|V18,ກ ລ ໂ◌,3,yes,
+CW01554,ລົ້ມ,fall down; collapse,C20|C23|T2|V17,ມ ລ ◌້ ◌ົ◌,4,yes,
+CW01555,ລໍ,wait,C23|V21,ລ ◌ໍ,2,yes,
+CW01556,ເລີກ,stop; quit; finish (of work or school),C01|C23|V24,ກ ລ ເ◌ີ,3,yes,
+CW01557,ລຽງ,arrange; line up; put in order,C04|C23|V27,ງ ລ ◌ຽ◌,3,yes,
+CW01558,ເລົ່າ,tell; narrate (a story),C23|T1|V35,ລ ◌່ ເ◌ົາ,3,yes,
+CW01559,ຮຸ້ງ,rainbow,C04|C27|T2|V08,ງ ຮ ◌້ ◌ຸ,4,yes,
+CW01560,ຮຸ່ງ,dawn; bright; prosperous,C04|C27|T1|V08,ງ ຮ ◌່ ◌ຸ,4,yes,
+CW01561,ຮ້າງ,abandoned; deserted; divorced,C04|C27|T2|V03,ງ ຮ ◌້ ◌າ,4,yes,
+CW01562,ຮູ,hole,C27|V09,ຮ ◌ູ,2,yes,
+CW01563,ໂຮງ,building; hall; shed (as in school or hospital),C04|C27|V18,ງ ຮ ໂ◌,3,yes,
+CW01564,ແຮງ,strength; strong; force,C04|C27|V15,ງ ຮ ແ◌,3,yes,
+CW01565,ແຮກ,first,C01|C27|V15,ກ ຮ ແ◌,3,yes,
+CW01566,ໄຮ່,upland field; farm,C27|T1|V33,ຮ ◌່ ໄ◌,3,yes,
+CW01567,ຮຽກ,call; summon,C01|C27|V27,ກ ຮ ◌ຽ◌,3,yes,
+CW01568,ຮຳ,dance (traditional); to dance,C27|V36,ຮ ◌ຳ,2,yes,
+CW01569,ໜາ,thick; dense,C30|V03,ໜ ◌າ,2,yes,
+CW01570,ໜີ,flee; run away; escape,C30|V05,ໜ ◌ີ,2,yes,
+CW01571,ໜີ້,debt,C30|T2|V05,ໜ ◌້ ◌ີ,3,yes,
+CW01572,ແໜ້ນ,tight; firm; packed,C13|C30|T2|V15,ນ ໜ ◌້ ແ◌,4,yes,
+CW01573,ໝັ້ນ,firm; certain; steadfast,C13|C31|T2|V02,ນ ໝ ◌້ ◌ັ◌,4,yes,
+CW01574,ໝຸນ,turn; spin; rotate,C13|C31|V08,ນ ໝ ◌ຸ,3,yes,
+CW01575,ເໝາະ,suitable; fitting,C31|V19,ໝ ເ◌າະ,2,yes,
+CW01576,ຊີວິດ,life,C07|C09|C24|V04|V05,ຊ ດ ວ ◌ິ ◌ີ,5,no,excluded: ດ ວ
+CW01577,ເດົາ,guess,C09|V35,ດ ເ◌ົາ,2,no,excluded: ດ
+CW01578,ຄວາມຄິດ,idea; thought,C03|C09|C20|C24|V03|V04,ຄ ດ ມ ວ ◌າ ◌ິ,6,no,excluded: ດ ວ
+CW01579,ນ້ຳເຜີ້ງ,honey,C04|C13|C16|T2|V24|V36,ງ ນ ຜ ◌້ ເ◌ີ ◌ຳ,6,yes,
+CW01580,ທີ່ຮັກ,darling; dear,C01|C12|C27|T1|V02|V05,ກ ທ ຮ ◌່ ◌ັ◌ ◌ີ,6,yes,
+CW01581,ນະລົກ,hell,C01|C13|C23|V01|V17,ກ ນ ລ ◌ະ ◌ົ◌,5,yes,
+CW01582,ໂອ້,oh (interjection),C26|T2|V18,ອ ◌້ ໂ◌,3,no,excluded: ອ
+CW01583,ຮ້າຍ,bad; fierce; wicked,C08|C27|T2|V03,ຍ ຮ ◌້ ◌າ,4,no,excluded: ຍ
+CW01584,ບໍ່ເຄີຍ,never,C03|C08|C14|T1|V21|V24,ຄ ຍ ບ ◌່ ◌ໍ ເ◌ີ,6,no,excluded: ຍ ບ
+CW01585,ບໍ່ມີຫຍັງ,nothing; it's nothing,C04|C14|C20|C29|T1|V02|V05|V21,ງ ບ ມ ຫຍ ◌່ ◌ັ◌ ◌ີ ◌ໍ,8,no,excluded: ບ ຫຍ
+CW01586,ທຸກຢ່າງ,everything,C01|C04|C12|C21|T1|V03|V08,ກ ງ ທ ຢ ◌່ ◌າ ◌ຸ,7,yes,
+CW01587,ນຳກັນ,together,C01|C13|V02|V36,ກ ນ ◌ັ◌ ◌ຳ,4,yes,
+CW01588,ດີກວ່າ,better,C01|C09|C24|T1|V03|V05,ກ ດ ວ ◌່ ◌າ ◌ີ,6,no,excluded: ດ ວ
+CW01589,ດີທີ່ສຸດ,best,C06|C09|C12|T1|V05|V08,ສ ດ ທ ◌່ ◌ີ ◌ຸ,6,no,excluded: ດ
+CW01590,ອື່ນ,other; else,C13|C26|T1|V07,ນ ອ ◌່ ◌ື,4,no,excluded: ອ
+CW01591,ຫາ,to (toward a person); to look for,C25|V03,ຫ ◌າ,2,no,excluded: ຫ
+CW01592,ຊອກຫາ,search for; look for,C01|C07|C25|V03|V22,ກ ຊ ຫ ◌າ ◌ອ◌,5,no,excluded: ຫ ◌ອ◌
+CW01593,ເດັກນ້ອຍ,child; baby,C01|C08|C09|C13|T2|V11|V22,ກ ຍ ດ ນ ◌້ ເ◌ັ◌ ◌ອ◌,7,no,excluded: ຍ ດ ◌ອ◌
+CW01594,ເຂົາເຈົ້າ,they; them,C02|C05|T2|V35,ຂ ຈ ◌້ ເ◌ົາ,4,yes,
+CW01595,ຂ້າພະເຈົ້າ,I (formal),C02|C05|C18|T2|V01|V03|V35,ຂ ຈ ພ ◌້ ◌ະ ◌າ ເ◌ົາ,7,yes,
+CW01596,ຍ້ອນ,because; due to,C08|C13|T2|V22,ຍ ນ ◌້ ◌ອ◌,4,no,excluded: ຍ ◌ອ◌
+CW01597,ດ້ວຍ,with; also; by means of,C08|C09|T2|V32,ຍ ດ ◌້ ◌ວ◌,4,no,excluded: ຍ ດ ◌ວ◌
+CW01598,ສະນັ້ນ,so; therefore,C06|C13|T2|V01|V02,ສ ນ ◌້ ◌ະ ◌ັ◌,5,yes,
+CW01599,ກະລຸນາ,please (formal),C01|C13|C23|V01|V03|V08,ກ ນ ລ ◌ະ ◌າ ◌ຸ,6,yes,
+CW01600,ສາມາດ,can; be able to,C06|C09|C20|V03,ສ ດ ມ ◌າ,4,no,excluded: ດ
+CW01601,ພະເຈົ້າ,God; king,C05|C18|T2|V01|V35,ຈ ພ ◌້ ◌ະ ເ◌ົາ,5,yes,
+CW01602,ຕົນເອງ,oneself; own,C04|C10|C13|C26|V12|V17,ງ ຕ ນ ອ ເ◌ ◌ົ◌,6,no,excluded: ອ
+CW01603,ຕໍ່ໄປ,next; continue,C10|C15|T1|V21|V33,ຕ ປ ◌່ ◌ໍ ໄ◌,5,yes,
+CW01604,ດູແລ,take care of; look after,C09|C23|V09|V15,ດ ລ ◌ູ ແ◌,4,no,excluded: ດ
+CW01605,ຮັກສາ,keep; maintain; treat (illness),C01|C06|C27|V02|V03,ກ ສ ຮ ◌ັ◌ ◌າ,5,yes,
+CW01606,ຕະຫຼອດ,always; throughout,C09|C10|C32|V01|V22,ດ ຕ ຫຼ ◌ະ ◌ອ◌,5,no,excluded: ດ ຫຼ ◌ອ◌
+CW01607,ວິທີ,way; method,C12|C24|V04|V05,ທ ວ ◌ິ ◌ີ,4,no,excluded: ວ
+CW01608,ຮອບ,around; round; lap,C14|C27|V22,ບ ຮ ◌ອ◌,3,no,excluded: ບ ◌ອ◌
+CW01609,ຈົບ,finish; end; be over,C05|C14|V17,ຈ ບ ◌ົ◌,3,no,excluded: ບ
+CW01610,ແມ່ຍິງ,woman,C04|C08|C20|T1|V04|V15,ງ ຍ ມ ◌່ ◌ິ ແ◌,6,no,excluded: ຍ
+CW01611,ສາວ,young woman; girl,C06|C24|V03,ສ ວ ◌າ,3,no,excluded: ວ
+CW01612,ກາຍ,last (past); pass by,C01|C08|V03,ກ ຍ ◌າ,3,no,excluded: ຍ
+CW01613,ຊະນິດ,kind; type,C07|C09|C13|V01|V04,ຊ ດ ນ ◌ະ ◌ິ,5,no,excluded: ດ
+CW01614,ດຽວກັນ,the same,C01|C09|C13|C24|V02|V27,ກ ດ ນ ວ ◌ັ◌ ◌ຽ◌,6,no,excluded: ດ ວ
+CW01615,ໄດ້ຮັບ,receive; get,C09|C14|C27|T2|V02|V33,ດ ບ ຮ ◌້ ◌ັ◌ ໄ◌,6,no,excluded: ດ ບ
+CW01616,ຖືກຕ້ອງ,correct; right,C01|C04|C10|C11|T2|V07|V22,ກ ງ ຕ ຖ ◌້ ◌ື ◌ອ◌,7,no,excluded: ◌ອ◌
+CW01617,ປະຊາຊົນ,people; the public,C07|C13|C15|V01|V03|V17,ຊ ນ ປ ◌ະ ◌າ ◌ົ◌,6,yes,
