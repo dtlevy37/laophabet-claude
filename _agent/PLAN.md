@@ -76,4 +76,4 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 ## Phase 10: App (user, 2026-10-19). Phases and checklists in `_agent/APP_PLAN.md`
 - [x] App phases drafted; `native/` moved to `app/`
 - [ ] App phase 1: accounts and roles (code done incl. native verification + learner-view switch; user to test)
-- [ ] App phase 2: DB as source of truth (open decisions in APP_PLAN; before lesson 1 is merged)
+- [ ] App phase 2: DB as source of truth (decided; spec and starting notes in APP_PLAN "Phase 2"; before lesson 1 is merged)

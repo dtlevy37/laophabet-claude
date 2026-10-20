@@ -44,6 +44,18 @@ Decided (user, 2026-10-19):
   CSVs in `data/` stay the agent's **read model** (working copy = hosted + pending migrations). No pull/push
   over the network.
 
+Starting notes for a fresh session:
+- Read first: this section, `_agent/SCHEMA.md` (column specs for units, rules, lessons, lesson_items),
+  the docstring of `approved-scripts/lesson_tool.py` (what merge writes today), `app/README.md`.
+- Existing migrations: `app/backend/supabase/migrations/` (`..0000_curriculum_tables.sql` defines the content
+  tables; latest is `..0600`). Name new ones `YYYYMMDDhhmmss_<name>.sql`, after the latest.
+- Seed generator: `app/backend/scripts/generate_seed.py` (`TABLES` spec must match the migration). It is not
+  an approved script, so the agent edits it but the user runs it.
+- `lesson_tool.py` and `next_lesson.ps1` are approved scripts: write changed versions to
+  `_agent/proposed-scripts/` and ask for approval of the whole group at once (CLAUDE.md).
+- No lessons exist yet (`data/lessons.csv` absent), so the new tables start empty.
+- Shell: no `cd` chaining, no `git -C`; use absolute paths or Read/Grep.
+
 Work:
 - [ ] Migration: new tables `units`, `rules`, `lessons`, `lesson_items`; content tables gain `updated_at`
       (+ trigger) and `retired_at` (retire, never delete)
