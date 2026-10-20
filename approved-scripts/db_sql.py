@@ -1,0 +1,489 @@
+"""Turn the curriculum CSVs into SQL for Supabase (Phase 2: the DB is the source of truth).
+
+Usage (standard library only, UTF-8, run from the project root):
+  python approved-scripts/db_sql.py check                         # validate data/*.csv against the DB spec
+  python approved-scripts/db_sql.py seed                          # initial import -> app/backend/supabase/seeds/
+  python approved-scripts/db_sql.py refresh [--name pool_refresh] # migration: bulk refresh of the pool
+  python approved-scripts/db_sql.py lesson L0001                  # migration: one lesson (merge does this)
+  python approved-scripts/db_sql.py change --name fix_tone W000012 S000000034 units:C23 letters:C23
+Options: --data data  --migrations app/backend/supabase/migrations  --seeds app/backend/supabase/seeds
+
+Every content change reaches the DB as a migration file that the owner reviews and applies
+(`supabase db push`). This script never connects to a database. data/*.csv is the agent's working copy:
+hosted DB + pending migrations. Each migration written is listed in _agent/PENDING_MIGRATIONS.md
+(the owner ticks it once applied).
+
+Modes:
+  check    Headers, primary keys, integers, not-null and foreign keys of every table (lesson tables only
+           if their files exist), plus lesson_items references. Exit 1 on any problem. Nothing written.
+  seed     Pool tables only (not lessons/units/rules/lesson_items), INSERT ... ON CONFLICT DO NOTHING:
+           a fresh DB gets everything; re-running never overwrites a row (lesson rows come from their
+           migrations, which run before seeds on `supabase db reset`). Overwrites seeds/NN_<table>.sql.
+  refresh  Pool tables into staging tables, then upsert changed rows and retire rows missing from the
+           CSVs. Rows a lesson uses (view lesson_locked; same rule in locked() below) are left out of the
+           file and also guarded in SQL with is_lesson_locked(), so a refresh never touches lesson content.
+  lesson   Everything lesson <id> needs, upserted (changed rows only, retired rows revived): its lessons
+           row, items, units (+ their letters/vowels rows), rules, words, sentences, sentence_words,
+           target words, templates, tone_exceptions. Stale sentence_words positions of its sentences and
+           stale items of the lesson are retired. Self-contained: it applies on an empty DB.
+  change   Upsert the named rows (for hand fixes and Phase 4 feedback decisions; lesson rows included).
+           IDs route by shape: W###### words, S######### sentences (+ their sentence_words), L#### lessons
+           (+ their items), R## rules, V## vowels, TPL* templates, C/T/S#/D letters. Prefix a table to be
+           explicit: units:C23, letters:C23, tone_exceptions:W000012 (all exceptions of that word).
+Migration files: app/backend/supabase/migrations/<UTC yyyymmddhhmmss>_<name>.sql, always after the latest.
+Imported by lesson_tool.py (merge writes the lesson migration from the CSVs it has just written).
+"""
+import argparse
+import csv
+import os
+import re
+import sys
+from datetime import datetime, timezone
+
+BATCH = 500
+MIGRATIONS = os.path.join("app", "backend", "supabase", "migrations")
+SEEDS = os.path.join("app", "backend", "supabase", "seeds")
+PENDING = os.path.join("_agent", "PENDING_MIGRATIONS.md")
+
+
+def spec(cols, ints=()):
+    return {c: ("int" if c in ints else "text") for c in cols.split(",")}
+
+
+# name -> (primary key, {column: type}). Column order = CSV header = migration columns (without
+# updated_at / retired_at, which exist only in the DB). Dict order = load order (dependencies first).
+TABLES = {
+    "templates": (["template_id"], spec(
+        "template_id,lao_pattern,english_pattern,slot_names,intro_order,requires_word_ids,source,confidence,notes",
+        ints=["intro_order"])),
+    "words": (["word_id"], spec(
+        "word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,"
+        "classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,"
+        "pron_tip,source,confidence,notes", ints=["freq_rank", "intro_order"])),
+    "letters": (["letter_id"], spec(
+        "letter_id,lao,unicode,kind,name_lao,name_gloss_en,ipa_initial,ipa_final,consonant_class,romanization_bgn,"
+        "respelling,pron_tip,coverage_required,intro_word_id,source,confidence,notes")),
+    "vowels": (["vowel_id"], spec(
+        "vowel_id,lao_pattern,form,length,sound_group,ipa,romanization_bgn,respelling,pron_tip,coverage_required,"
+        "intro_word_id,source,confidence,notes")),
+    "sentences": (["sentence_id"], spec(
+        "sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides")),
+    "sentence_words": (["sentence_id", "position"], spec(
+        "sentence_id,position,word_id,source,confidence,notes", ints=["position"])),
+    "template_fillers": (["template_id", "slot_name", "word_id"], spec(
+        "template_id,slot_name,word_id,source,confidence,notes")),
+    "tone_exceptions": (["word_id", "syl_index"], spec(
+        "word_id,syl_index,tone,source,note", ints=["syl_index"])),
+    "learning_order": (["step"], spec(
+        "step,item_type,item_id,why,source,confidence,notes", ints=["step"])),
+    "lessons": (["lesson_id"], spec(
+        "lesson_id,lesson_order,title_en,kind,summary_en,source,confidence,notes", ints=["lesson_order"])),
+    "units": (["unit_id"], spec(
+        "unit_id,kind,role,base_id,lao,teach_en,intro_lesson_id,source,confidence,notes")),
+    "rules": (["rule_id"], spec(
+        "rule_id,name_en,teach_en,intro_lesson_id,source,confidence,notes")),
+    "lesson_items": (["lesson_id", "position"], spec(
+        "lesson_id,position,item_type,item_id,role,notes", ints=["position"])),
+}
+LESSON_TABLES = ["lessons", "units", "rules", "lesson_items"]   # optional files; never seeded or refreshed
+POOL = [t for t in TABLES if t not in LESSON_TABLES]
+
+# (table, column, referenced table, referenced column)
+FOREIGN_KEYS = [
+    ("sentences", "target_word_id", "words", "word_id"),
+    ("sentences", "template_id", "templates", "template_id"),
+    ("sentence_words", "sentence_id", "sentences", "sentence_id"),
+    ("sentence_words", "word_id", "words", "word_id"),
+    ("template_fillers", "template_id", "templates", "template_id"),
+    ("template_fillers", "word_id", "words", "word_id"),
+    ("tone_exceptions", "word_id", "words", "word_id"),
+    ("units", "intro_lesson_id", "lessons", "lesson_id"),
+    ("rules", "intro_lesson_id", "lessons", "lesson_id"),
+    ("lesson_items", "lesson_id", "lessons", "lesson_id"),
+]
+NOT_NULL = {"words": ["lao"], "letters": ["lao"], "vowels": ["lao_pattern"], "sentences": ["lao"],
+            "learning_order": ["item_type", "item_id"], "lessons": ["lesson_order", "title_en", "kind"],
+            "units": ["kind", "role", "base_id"], "lesson_items": ["item_type", "item_id", "role"]}
+ITEM_TABLE = {"unit": ("units", "unit_id"), "rule": ("rules", "rule_id"),
+              "word": ("words", "word_id"), "sentence": ("sentences", "sentence_id")}
+# Pool table -> (lock kind, column) for is_lesson_locked(); learning_order is never locked.
+LOCK = {"templates": ("template", "template_id"), "words": ("word", "word_id"), "letters": ("letter", "letter_id"),
+        "vowels": ("vowel", "vowel_id"), "sentences": ("sentence", "sentence_id"),
+        "sentence_words": ("sentence", "sentence_id"), "template_fillers": ("template", "template_id"),
+        "tone_exceptions": ("word", "word_id")}
+
+
+# --- load and validate -------------------------------------------------------
+def convert(value, typ, where, errors):
+    if typ == "int":
+        value = value.strip()
+    if value == "":
+        return None
+    if typ == "text":
+        return value
+    try:
+        return int(value)
+    except ValueError:
+        errors.append(f"{where}: not an integer: {value!r}")
+        return None
+
+
+def load(data_dir):
+    """All tables as {name: [row dicts with typed values]}, and a list of problems."""
+    errors, tables = [], {}
+    for name, (pk, cols) in TABLES.items():
+        path = os.path.join(data_dir, f"{name}.csv")
+        if not os.path.exists(path):
+            if name not in LESSON_TABLES:
+                errors.append(f"missing file {path}")
+            tables[name] = []
+            continue
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            reader = csv.reader(f)
+            header = next(reader, None)
+            if header != list(cols):
+                errors.append(f"{name}.csv header mismatch.\n  expected {list(cols)}\n  found    {header}")
+                tables[name] = []
+                continue
+            rows, seen = [], set()
+            for lineno, raw in enumerate(reader, start=2):
+                if not any(c.strip() for c in raw):
+                    continue
+                if len(raw) != len(cols):
+                    errors.append(f"{name}.csv:{lineno}: {len(raw)} fields, expected {len(cols)}")
+                    continue
+                row = {c: convert(v, t, f"{name}.csv:{lineno} {c}", errors) for (c, t), v in zip(cols.items(), raw)}
+                key = tuple(row[k] for k in pk)
+                if any(k is None for k in key):
+                    errors.append(f"{name}.csv:{lineno}: empty primary key {pk}")
+                elif key in seen:
+                    errors.append(f"{name}.csv:{lineno}: duplicate primary key {key}")
+                seen.add(key)
+                for c in NOT_NULL.get(name, []):
+                    if row[c] is None:
+                        errors.append(f"{name}.csv:{lineno}: {c} is empty")
+                rows.append(row)
+            tables[name] = rows
+    for t, col, rt, rcol in FOREIGN_KEYS:
+        valid = {r[rcol] for r in tables[rt]}
+        bad = [r[col] for r in tables[t] if r[col] is not None and r[col] not in valid]
+        if bad:
+            errors.append(f"{t}.{col} -> {rt}.{rcol}: {len(bad)} unresolved, e.g. {sorted(set(bad))[:5]}")
+    ids = {it: {r[col] for r in tables[t]} for it, (t, col) in ITEM_TABLE.items()}
+    for r in tables["lesson_items"]:
+        if r["item_type"] not in ids:
+            errors.append(f"lesson_items {r['lesson_id']}/{r['position']}: unknown item_type {r['item_type']!r}")
+        elif r["item_id"] not in ids[r["item_type"]]:
+            errors.append(f"lesson_items {r['lesson_id']}/{r['position']}: {r['item_type']} {r['item_id']} not found")
+    bases = {r["letter_id"] for r in tables["letters"]} | {r["vowel_id"] for r in tables["vowels"]}
+    for r in tables["units"]:
+        if r["base_id"] not in bases:
+            errors.append(f"units {r['unit_id']}: base_id {r['base_id']} is not a letter or vowel")
+    return tables, errors
+
+
+def load_or_exit(data_dir):
+    tables, errors = load(data_dir)
+    if errors:
+        print(f"{len(errors)} problem(s); nothing written:", file=sys.stderr)
+        for e in errors[:50]:
+            print("  -", e, file=sys.stderr)
+        if len(errors) > 50:
+            print(f"  ... and {len(errors) - 50} more", file=sys.stderr)
+        sys.exit(1)
+    return tables
+
+
+def lesson_refs(t, lesson_ids=None):
+    """Rows used by the given lessons (all lessons if None), as {kind: set of ids}. Mirrors view lesson_locked."""
+    items = [r for r in t["lesson_items"] if lesson_ids is None or r["lesson_id"] in lesson_ids]
+    pick = lambda typ: {r["item_id"] for r in items if r["item_type"] == typ}
+    sents, words = pick("sentence"), pick("word")
+    words |= {r["word_id"] for r in t["sentence_words"] if r["sentence_id"] in sents}
+    templates = set()
+    for r in t["sentences"]:
+        if r["sentence_id"] in sents:
+            if r["target_word_id"]:
+                words.add(r["target_word_id"])
+            if r["template_id"]:
+                templates.add(r["template_id"])
+    units = pick("unit") if lesson_ids is not None else {r["unit_id"] for r in t["units"]}
+    bases = {r["base_id"] for r in t["units"] if r["unit_id"] in units}
+    return {"sentence": sents, "word": words, "template": templates, "letter": bases, "vowel": bases,
+            "unit": units, "rule": pick("rule")}
+
+
+def locked(t):
+    return lesson_refs(t)
+
+
+# --- SQL ---------------------------------------------------------------------
+def lit(v):
+    if v is None:
+        return "null"
+    if isinstance(v, int):
+        return str(v)
+    return "'" + v.replace("'", "''") + "'"
+
+
+def key_of(name, row):
+    return tuple(row[k] for k in TABLES[name][0])
+
+
+def values_inserts(name, rows, target):
+    names = list(TABLES[name][1])
+    out = []
+    for i in range(0, len(rows), BATCH):
+        vals = ",\n".join("  (" + ", ".join(lit(r[c]) for c in names) + ")" for r in rows[i:i + BATCH])
+        out.append(f"insert into {target} ({', '.join(names)}) values\n{vals}")
+    return out
+
+
+def conflict_update(name, guard=True):
+    """ON CONFLICT clause: update changed (or retired) rows only, revive retired rows; optional lesson lock guard."""
+    pk, cols = TABLES[name]
+    non_pk = [c for c in cols if c not in pk]
+    sets = ", ".join(f"{c} = excluded.{c}" for c in non_pk) + ", retired_at = null"
+    cond = (f"(t.retired_at is not null or ({', '.join('t.' + c for c in non_pk)}) "
+            f"is distinct from ({', '.join('excluded.' + c for c in non_pk)}))")
+    if guard and name in LOCK:
+        kind, col = LOCK[name]
+        cond += f"\n  and not public.is_lesson_locked('{kind}', t.{col})"
+    return f"on conflict ({', '.join(pk)}) do update set {sets}\nwhere {cond}"
+
+
+def upsert(name, rows):
+    """Lesson / change migrations: write these rows, whatever the lock."""
+    if not rows:
+        return []
+    return [f"{s}\n{conflict_update(name, guard=False)};" for s in values_inserts(name, rows, f"public.{name} as t")]
+
+
+def retire_missing(name, scope_col, scope_ids, rows):
+    """Retire rows of `name` whose scope_col is in scope_ids but whose key is not among rows."""
+    if not scope_ids:
+        return []
+    pk = TABLES[name][0]
+    scope = ", ".join(lit(x) for x in sorted(scope_ids))
+    keep = ", ".join("(" + ", ".join(lit(v) for v in key_of(name, r)) + ")" for r in rows)
+    cond = f"and ({', '.join('t.' + k for k in pk)}) not in ({keep})" if keep else ""
+    return [f"update public.{name} t set retired_at = now()\nwhere t.retired_at is null "
+            f"and t.{scope_col} in ({scope}) {cond};"]
+
+
+def refresh_table(name, rows):
+    pk, cols = TABLES[name]
+    names = ", ".join(cols)
+    stage = f"_in_{name}"
+    out = [f"-- {name}: {len(rows)} rows",
+           f"create temp table {stage} (like public.{name} including defaults);"]
+    out += [s + ";" for s in values_inserts(name, rows, stage)]
+    out.append(f"insert into public.{name} as t ({names})\nselect {names} from {stage}\n{conflict_update(name)};")
+    guard = ""
+    if name in LOCK:
+        kind, col = LOCK[name]
+        guard = f"\n  and not public.is_lesson_locked('{kind}', t.{col})"
+    match = " and ".join(f"s.{k} = t.{k}" for k in pk)
+    out.append(f"update public.{name} t set retired_at = now()\nwhere t.retired_at is null{guard}\n"
+               f"  and not exists (select 1 from {stage} s where {match});")
+    out.append(f"drop table {stage};\n")
+    return out
+
+
+# --- files -------------------------------------------------------------------
+def inside(path, root):
+    p = os.path.abspath(path)
+    if os.path.commonpath([p, root]) != root:
+        sys.exit(f"{path}: must be inside the project")
+    return p
+
+
+def next_stamp(mig_dir):
+    now = int(datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S"))
+    last = max((int(f[:14]) for f in os.listdir(mig_dir) if f[:14].isdigit()), default=0)
+    return str(max(now, last + 1))
+
+
+def write_migration(root, mig_dir, name, header, body, what):
+    """Write <stamp>_<name>.sql and list it in PENDING_MIGRATIONS.md. Returns the path."""
+    name = re.sub(r"[^A-Za-z0-9_]+", "_", name).strip("_").lower() or "change"
+    path = os.path.join(mig_dir, f"{next_stamp(mig_dir)}_{name}.sql")
+    text = "\n".join([f"-- {line}" if line else "--" for line in header] + ["", *body]) + "\n"
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(text)
+    pending = os.path.join(root, PENDING)
+    new = not os.path.exists(pending)
+    with open(pending, "a", encoding="utf-8", newline="\n") as f:
+        if new:
+            f.write("# Pending migrations\n\nWritten by approved-scripts/db_sql.py. The owner reviews each file, "
+                    "applies it with `supabase db push`, then ticks it here.\n\n")
+        f.write(f"- [ ] {os.path.basename(path)}: {what}\n")
+    return path
+
+
+def counts(parts):
+    return ", ".join(f"{len(rows)} {name}" for name, rows in parts if rows)
+
+
+def lesson_parts(t, lesson_id):
+    """[(table, rows)] in load order for one lesson; raises KeyError if the lesson is unknown."""
+    les = [r for r in t["lessons"] if r["lesson_id"] == lesson_id]
+    if not les:
+        raise KeyError(lesson_id)
+    ref = lesson_refs(t, {lesson_id})
+    sel = {"templates": ("template_id", ref["template"]), "words": ("word_id", ref["word"]),
+           "letters": ("letter_id", ref["letter"]), "vowels": ("vowel_id", ref["vowel"]),
+           "sentences": ("sentence_id", ref["sentence"]), "sentence_words": ("sentence_id", ref["sentence"]),
+           "tone_exceptions": ("word_id", ref["word"]), "units": ("unit_id", ref["unit"]),
+           "rules": ("rule_id", ref["rule"]), "lesson_items": ("lesson_id", {lesson_id})}
+    parts = []
+    for name in TABLES:
+        if name == "lessons":
+            parts.append((name, les))
+        elif name in sel:
+            col, ids = sel[name]
+            parts.append((name, [r for r in t[name] if r[col] in ids]))
+    return parts, ref
+
+
+def lesson_migration(root, data_dir, mig_dir, lesson_id, tables=None):
+    t = tables or load_or_exit(data_dir)
+    parts, ref = lesson_parts(t, lesson_id)
+    les = parts[[n for n, _ in parts].index("lessons")][1][0]
+    body = []
+    for name, rows in parts:
+        body += upsert(name, rows)
+        if name == "sentence_words":
+            body += retire_missing(name, "sentence_id", ref["sentence"], rows)
+        if name == "lesson_items":
+            body += retire_missing(name, "lesson_id", {lesson_id}, rows)
+    header = [f"Lesson {lesson_id}: {les['title_en']} ({les['kind']}).",
+              "Generated by approved-scripts/db_sql.py lesson (called by lesson_tool.py merge) from data/*.csv.",
+              "Do not edit by hand; regenerate instead. Upserts change only rows that differ; it applies on an",
+              f"empty DB as well. Rows: {counts(parts)}."]
+    return write_migration(root, mig_dir, f"lesson_{lesson_id}", header, body,
+                           f"lesson {lesson_id} \"{les['title_en']}\"")
+
+
+def change_parts(t, ids):
+    want = {name: set() for name in TABLES}
+    shapes = [(r"W\d{6}", "words"), (r"S\d{9}", "sentences"), (r"L\d{4}", "lessons"), (r"R\d{2}", "rules"),
+              (r"V\d+", "vowels"), (r"TPL\w+", "templates"), (r"(C\d+|T\d|S\d|D\d)", "letters")]
+    for raw in ids:
+        name, _, iid = raw.rpartition(":")
+        if not name:
+            name = next((n for pat, n in shapes if re.fullmatch(pat, iid)), "")
+        if name not in TABLES:
+            sys.exit(f"{raw}: cannot tell which table; prefix it (e.g. units:{iid})")
+        want[name].add(iid)
+    want["sentence_words"] |= want["sentences"]
+    want["lesson_items"] |= want["lessons"]
+    first_col = {n: TABLES[n][0][0] for n in TABLES}
+    parts, missing = [], []
+    for name in TABLES:
+        rows = [r for r in t[name] if r[first_col[name]] in want[name]]
+        found = {r[first_col[name]] for r in rows}
+        missing += [f"{name}:{i}" for i in want[name] - found
+                    if name not in ("sentence_words", "lesson_items")]
+        parts.append((name, rows))
+    if missing:
+        sys.exit("not in the CSVs: " + " ".join(sorted(missing)))
+    return parts, want
+
+
+def change_migration(root, data_dir, mig_dir, name, ids, note=""):
+    t = load_or_exit(data_dir)
+    parts, want = change_parts(t, ids)
+    body = []
+    for tn, rows in parts:
+        body += upsert(tn, rows)
+        if tn == "sentence_words":
+            body += retire_missing(tn, "sentence_id", want["sentences"], rows)
+        if tn == "lesson_items":
+            body += retire_missing(tn, "lesson_id", want["lessons"], rows)
+    header = [f"Change '{name}'" + (f": {note}" if note else "."),
+              "Generated by approved-scripts/db_sql.py change from data/*.csv. Upserts change only rows that differ,",
+              f"including rows lessons use. Rows: {counts(parts)}.", "IDs: " + " ".join(ids)]
+    return write_migration(root, mig_dir, name, header, body, f"change '{name}' ({counts(parts)})")
+
+
+def refresh_migration(root, data_dir, mig_dir, name):
+    t = load_or_exit(data_dir)
+    lock = locked(t)
+    body, skipped = [], {}
+    for tn in POOL:
+        rows = t[tn]
+        if tn in LOCK:
+            kind, col = LOCK[tn]
+            keep = [r for r in rows if r[col] not in lock[kind]]
+            if len(keep) != len(rows):
+                skipped[tn] = len(rows) - len(keep)
+            rows = keep
+        body += refresh_table(tn, rows)
+    note = ", ".join(f"{n} {tn}" for tn, n in skipped.items()) or "none"
+    header = ["Pool refresh from data/*.csv. Generated by approved-scripts/db_sql.py refresh.",
+              "Upserts changed rows and retires rows missing from the CSVs. Rows that a lesson uses are left out",
+              "here and guarded by is_lesson_locked() in SQL: change them with `db_sql.py change`.",
+              f"Lesson rows left out: {note}."]
+    path = write_migration(root, mig_dir, name, header, body, f"pool refresh (lesson rows left out: {note})")
+    return path, skipped
+
+
+def write_seeds(data_dir, out_dir):
+    t = load_or_exit(data_dir)
+    os.makedirs(out_dir, exist_ok=True)
+    for i, name in enumerate(POOL, start=1):
+        pk = TABLES[name][0]
+        lines = [f"-- Generated by approved-scripts/db_sql.py seed from data/{name}.csv. Do not edit.",
+                 f"-- {len(t[name])} rows. Initial import only: existing rows are never overwritten.", "begin;"]
+        lines += [f"{s}\non conflict ({', '.join(pk)}) do nothing;" for s in values_inserts(name, t[name], f"public.{name}")]
+        lines.append("commit;\n")
+        path = os.path.join(out_dir, f"{i:02d}_{name}.sql")
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write("\n".join(lines))
+        print(f"{os.path.basename(path)}: {len(t[name])} rows")
+
+
+def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("mode", choices=["check", "seed", "refresh", "lesson", "change"])
+    ap.add_argument("ids", nargs="*", help="lesson: the lesson id; change: row ids")
+    ap.add_argument("--name", help="migration name (refresh: default pool_refresh; change: required)")
+    ap.add_argument("--note", default="", help="change: one line for the migration header")
+    ap.add_argument("--data", default="data")
+    ap.add_argument("--migrations", default=MIGRATIONS)
+    ap.add_argument("--seeds", default=SEEDS)
+    a = ap.parse_args()
+    root = os.path.abspath(os.getcwd())
+    data, mig = inside(a.data, root), inside(a.migrations, root)
+
+    if a.mode == "check":
+        t = load_or_exit(data)
+        lock = locked(t)
+        print("OK: " + ", ".join(f"{len(rows)} {n}" for n, rows in t.items()))
+        print("used by lessons: " + ", ".join(f"{len(v)} {k}s" for k, v in lock.items() if k != "vowel")
+              + " (letter = letter/vowel base ids of units)")
+    elif a.mode == "seed":
+        write_seeds(data, inside(a.seeds, root))
+    elif a.mode == "refresh":
+        path, skipped = refresh_migration(root, data, mig, a.name or "pool_refresh")
+        print(f"wrote {os.path.relpath(path, root)}; lesson rows left out: {skipped or 'none'}")
+    elif a.mode == "lesson":
+        if len(a.ids) != 1:
+            sys.exit("lesson: give exactly one lesson id")
+        try:
+            path = lesson_migration(root, data, mig, a.ids[0])
+        except KeyError:
+            sys.exit(f"{a.ids[0]}: not in data/lessons.csv")
+        print(f"wrote {os.path.relpath(path, root)}")
+    elif a.mode == "change":
+        if not a.name or not a.ids:
+            sys.exit("change: --name and at least one id are required")
+        path = change_migration(root, data, mig, a.name, a.ids, a.note)
+        print(f"wrote {os.path.relpath(path, root)}")
+
+
+if __name__ == "__main__":
+    main()

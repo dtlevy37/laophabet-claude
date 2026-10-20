@@ -1,0 +1,49 @@
+2026-10-19 22:07:17 +0.0min start: max-k 15, chain-k 30, beam 40, top 20, hours 10.0, score word count
+2026-10-19 22:07:17 +0.0min signatures: 1617 common words, 1610 searchable (≤ 30 items with ລາວ), 1607 distinct
+2026-10-19 22:07:21 +0.1min chain done: +ຂ → +◌່ → +ເ◌ົາ → +ຊ → +◌້ → +◌ງ → +ແ◌ → +ກ → +ທ → +◌ນ → +◌ີ → +ສ → +◌ັ◌ → +ຕ → +◌ົ◌ → +◌ມ → +ຈ → +◌ອ◌ → +ນ → +ຄ → +◌ຳ → +ປ → +ມ → +◌ື → +ໄ◌ → +◌ຍ → +ດ
+2026-10-19 22:07:21 +0.1min   k=3: 2 words (score 2)
+2026-10-19 22:07:21 +0.1min   k=4: 4 words (score 4)
+2026-10-19 22:07:21 +0.1min   k=5: 7 words (score 7)
+2026-10-19 22:07:21 +0.1min   k=6: 10 words (score 10)
+2026-10-19 22:07:21 +0.1min   k=7: 14 words (score 14)
+2026-10-19 22:07:21 +0.1min   k=8: 20 words (score 20)
+2026-10-19 22:07:21 +0.1min   k=9: 25 words (score 25)
+2026-10-19 22:07:21 +0.1min   k=10: 35 words (score 35)
+2026-10-19 22:07:21 +0.1min   k=11: 46 words (score 46)
+2026-10-19 22:07:21 +0.1min   k=12: 56 words (score 56)
+2026-10-19 22:07:21 +0.1min   k=13: 65 words (score 65)
+2026-10-19 22:07:21 +0.1min   k=14: 74 words (score 74)
+2026-10-19 22:07:21 +0.1min   k=15: 87 words (score 87)
+2026-10-19 22:07:21 +0.1min   k=16: 100 words (score 100)
+2026-10-19 22:07:21 +0.1min   k=17: 116 words (score 116)
+2026-10-19 22:07:21 +0.1min   k=18: 130 words (score 130)
+2026-10-19 22:07:21 +0.1min   k=19: 151 words (score 151)
+2026-10-19 22:07:21 +0.1min   k=20: 169 words (score 169)
+2026-10-19 22:07:21 +0.1min   k=21: 187 words (score 187)
+2026-10-19 22:07:21 +0.1min   k=22: 207 words (score 207)
+2026-10-19 22:07:21 +0.1min   k=23: 225 words (score 225)
+2026-10-19 22:07:21 +0.1min   k=24: 245 words (score 245)
+2026-10-19 22:07:21 +0.1min   k=25: 264 words (score 264)
+2026-10-19 22:07:21 +0.1min   k=26: 282 words (score 282)
+2026-10-19 22:07:21 +0.1min   k=27: 303 words (score 303)
+2026-10-19 22:07:21 +0.1min   k=28: 323 words (score 323)
+2026-10-19 22:07:21 +0.1min   k=29: 343 words (score 343)
+2026-10-19 22:07:21 +0.1min   k=30: 362 words (score 362)
+2026-10-19 22:07:21 +0.1min k=4: exhaustive search started (30 reachable signatures; seeded with chain 4)
+2026-10-19 22:07:21 +0.1min k=4: DONE, 27 nodes; best 4 = ລາວ + ໜ
+2026-10-19 22:07:21 +0.1min k=5: exhaustive search started (233 reachable signatures; seeded with chain 7)
+2026-10-19 22:07:21 +0.1min k=5: DONE, 894 nodes; best 7 = ລາວ + ◌່ ຂ
+2026-10-19 22:07:21 +0.1min k=6: exhaustive search started (621 reachable signatures; seeded with chain 11)
+2026-10-19 22:07:21 +0.1min k=6: DONE, 17,058 nodes; best 11 = ລາວ + ◌່ ຂ ໄ◌
+2026-10-19 22:07:21 +0.1min k=7: exhaustive search started (1015 reachable signatures; seeded with chain 15)
+2026-10-19 22:07:25 +0.1min k=7: DONE, 218,331 nodes; best 15 = ລາວ + ◌່ ກ ຂ ໄ◌
+2026-10-19 22:07:25 +0.1min k=8: exhaustive search started (1181 reachable signatures; seeded with chain 20)
+2026-10-19 22:07:59 +0.7min k=8: DONE, 1,914,414 nodes; best 21 = ລາວ + ◌້ ◌ງ ກ ແ◌ ຂ
+2026-10-19 22:07:59 +0.7min k=9: exhaustive search started (1387 reachable signatures; seeded with chain 26)
+2026-10-19 22:12:18 +5.0min k=9: DONE, 13,320,634 nodes; best 27 = ລາວ + ◌້ ◌ງ ◌່ ກ ແ◌ ຂ
+2026-10-19 22:12:18 +5.0min k=10: exhaustive search started (1511 reachable signatures; seeded with chain 35)
+2026-10-19 22:38:02 +30.7min k=10: DONE, 71,914,302 nodes; best 35 = ລາວ + ◌້ ◌ງ ◌່ ກ ແ◌ ຂ ໄ◌
+2026-10-19 22:38:02 +30.7min k=11: exhaustive search started (1558 reachable signatures; seeded with chain 46)
+2026-10-20 00:53:24 +166.1min k=11: DONE, 333,382,434 nodes; best 46 = ລາວ + ◌້ ◌ງ ◌່ ກ ແ◌ ຂ ຊ ເ◌ົາ
+2026-10-20 00:53:24 +166.1min k=12: exhaustive search started (1586 reachable signatures; seeded with chain 56)
+2026-10-20 08:07:18 +600.0min k=12: time limit after 968,220,000 nodes; best so far 56 (◌້ ◌ງ ◌່ ກ ແ◌ ຂ ທ ຊ ເ◌ົາ), provisional in best_k12.partial.csv

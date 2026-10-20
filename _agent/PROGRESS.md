@@ -167,3 +167,9 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - User decision 2026-10-19: keep LESSON_PLAN as recorded (role-units, no glyph bans; strict map rule not adopted). Wants a map under the lesson rules, run overnight with progressive output: proposed `lesson_map.py` (imports lesson_tool's World/FIRST_UNITS/CAT_WEIGHT; base = ລາວ; R01 is an item, detected from tone_derivation or the spelling; phase 1 beam chain to 30 items written per step; phase 2 exhaustive k = 4..max-k, seeded with the chain, partial file every 10 min, --hours limit, run.log every minute, summary.txt). Output `_agent/letter_map/lesson_rules/`. Untested (not yet approved).
 - Guard note: a heredoc mentioning a .sql path in a Bash command is blocked as "script not approved"; append with Edit instead.
 - **Next:** user approves the group → run `db_sql.py check` and `seed` (current seeds are the old do-update ones) → user tests `supabase db reset` → lesson 1.
+
+## 2026-10-20 lesson_map.py overnight run (--max-k 15 --hours 10)
+- User approved it with approve-script.ps1. It ran 22:07 to 08:07 (the 10 h limit) and exited 0. Results are in `_agent/letter_map/lesson_rules/` (summary.txt, run.log, best_k4..k11.csv, chain.csv, signatures.csv).
+- Exhaustive search finished for k4 to k11. Best word counts: k4=4, k5=7, k6=11, k7=15, k8=21, k9=27, k10=35, k11=46. The exhaustive result beats the greedy chain only at k8 (+1) and k9 (+1); at k10 and k11 they tie.
+- k12 hit the time limit after 968M nodes. Best so far is 56 (equal to the chain), provisional in best_k12.partial.csv. k13 to k15 were not reached.
+- **Next:** decide whether to resume k12 and above (longer run or narrower search) or use the chain for k>=12, then plan lesson 1.
