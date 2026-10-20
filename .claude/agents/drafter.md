@@ -48,7 +48,6 @@ You draft rows for a Lao (standard Vientiane, modern) curriculum for English spe
   - the file paths
   - row counts
   - counts by confidence
-  - how many sentences came from Tatoeba or Big Brother Mouse
   - homographs you added
   - up to 15 rows you are least sure of, one line each, with the reason
   - any denied fetches (domains to request approval for)

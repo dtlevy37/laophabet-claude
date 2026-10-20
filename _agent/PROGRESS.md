@@ -142,3 +142,10 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - **Next:** user approves the three files and installs CLAUDE.md → build lesson 1 interactively → runner test with -Count 1.
 - Later the same day: brief made size-bounded (counts + last 3 lessons + capped lists; new `lookup` and `can-read` modes). Distractors: lessons 1–5 may draw from lessons 1–5; from lesson 6 only taught items. No level demotion; every item has an info icon opening its teach card.
 - k ≤ 10 map run stopped by the user (45 min, no output). Not needed: lesson_tool brief replaces it.
+
+## 2026-10-19 App phase plan + accounts and roles
+- `_agent/APP_PLAN.md`: 8 app phases (foundation, content in DB, progress model, FSRS design, activity engine, learner views, native feedback v2, feedback → curriculum). Rule: CSVs stay the source of truth; feedback returns via reviewed export → apply_columns → pipeline → re-seed.
+- `native/` copied to `app/` (the folder itself was locked by the session cwd; its contents went to `_trash/native-old/`, an empty `native/` remains). Leftover React sources → `_trash/`. `lo.json` → `strings.json` ({lo, en}; en shown to learners).
+- Migration `..0500_roles.sql`: `profiles.role` learner|native from sign-up metadata; old profiles → native.
+- Frontend split: app.js (routing by role), auth.js (role-first sign-up, language toggle, role choice), onboarding.js, learn.js (placeholder). Not yet run in a browser.
+- **Next:** user tests both sign-ups against Supabase; then password reset + Netlify (phase 1 rest), then phase 2.

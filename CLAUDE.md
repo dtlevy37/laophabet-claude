@@ -18,6 +18,7 @@ The SessionStart notice says whether autorun is ON or OFF.
   - Batch early: near the start, list every domain and script you expect to need for the next stretch of work, so the user can approve them in one sitting.
   - Group script changes: collect related script edits and ask for approval of the whole group at once, rather than one script at a time.
 - **Autorun ON (unattended):** a denied fetch or a missing approval goes in `_agent/NEEDS_HUMAN.md`; then continue with other work.
+- **Lesson runner (`claude -p` started by `next_lesson.ps1`):** unattended whatever the notice says. Follow the runner prompt: build exactly one lesson, never ask, and on a block write `_agent/NEEDS_HUMAN.md` and stop.
 
 ## Scripts
 - You may write scripts to `_agent/proposed-scripts/`, but you cannot run them. Only approved scripts run, and only in these forms:
@@ -28,10 +29,13 @@ The SessionStart notice says whether autorun is ON or OFF.
 - Approved scripts must not import or execute files from writable folders.
 - Read-only helpers (grep, awk, sed, sort, cut, jq, find without -exec) are available. Inline interpreter code (`python -c`, `node -e`, `bash -c`, `powershell -Command`), installs, downloads, network tools and deletes are blocked.
 - Core data tools (usage in each script's docstring and in `_agent/SCHEMA.md`):
+  - `lesson_tool.py`: `brief` / `check` / `merge` for one lesson at a time; `status`.
+  - `next_lesson.ps1`: the user runs it to build the next lesson(s) with `claude -p` (one fresh session per lesson).
   - `check_drafts.py`: checks draft batches before merging.
   - `merge_words.py`: merges drafts into `data/`, assigning real IDs.
   - `apply_columns.py`: sets column values from an ID-keyed mapping.
   - `pipeline.sh`: tone fill → build → validate. Run it after any change to `data/`.
+  - `common_list.py`, `letter_map.py`, `enum_spellings.py`: the common-word list and the letter-set map (Phase 8).
 
 ## Web
 - Web access is read-only through WebFetch and WebSearch.
@@ -44,15 +48,9 @@ The SessionStart notice says whether autorun is ON or OFF.
 
 ## Delegation and context
 - Three subagents keep raw sources and bulk rows out of the main context. Each one's model is set in its `.claude/agents/<name>.md` frontmatter.
-  - **`researcher` (haiku; fast, cheap):** quick lookups. One precise question, compact cited answer. Use it for most questions.
-  - **`scholar` (sonnet; thorough, costlier):** studies an important source end to end and saves complete notes to `_agent/research/<topic>.md`, returning the path and a short abstract. Use it for expert sources the work will depend on, ideally once per source. Check `_agent/research/` for existing notes before commissioning a new study. Do not use it for drafting.
-  - **`drafter` (opus; most capable, costliest):** drafts new curriculum rows (words, sentences, templates, fillers) as CSV batches in `_agent/drafts/`, using the data headers and placeholder IDs.
-    - Checks words on Wiktionary.
-    - Reads pending drafts so it never repeats a word.
-    - Brief it with a batch tag, a topic list or word count, and the output file names.
-    - Then run `check_drafts.py`. Send fixes back to the same drafter (SendMessage) or make them by hand.
-    - Merge with `merge_words.py`, then run `pipeline.sh`.
-    - Run drafters one after another, not in parallel, unless their topics clearly don't overlap.
+  - **`researcher`:** quick lookups. One precise question, compact cited answer. Use it for most questions.
+  - **`scholar`:** studies an important source end to end and saves complete notes to `_agent/research/<topic>.md`, returning the path and a short abstract. Check `_agent/research/` for existing notes first. Do not use it for drafting.
+  - **`drafter`:** drafts new curriculum rows (words, sentences, templates, fillers) as CSV batches in `_agent/drafts/`, using the data headers and placeholder IDs. Brief it with a batch tag, the exact word list, and the output file names; keep runs short (10–15 words). Then `check_drafts.py`, `merge_words.py`, `pipeline.sh`. Run drafters one after another.
 - Study notes are the project's knowledge base. Read a notes file fully when a task depends on it instead of re-fetching the source.
 - Summarize large command outputs instead of pasting them.
 
@@ -67,39 +65,32 @@ The SessionStart notice says whether autorun is ON or OFF.
 ## Domain context
 
 ### Goal
-Plan a Lao language-learning curriculum for English speakers: letters, then vowels, then words, then sentences. Standard Vientiane, modern Lao. Learners learn to read the Lao script and to speak; writing practice is out of scope. The content is stored as structured data for later import into a Postgres database.
+A Lao course for English speakers, built as short lessons: Standard Vientiane, modern Lao. Learners learn to read the Lao script and to speak; writing is out of scope. Content is structured data in `data/` for import into Postgres, consumed by an app that turns lessons into activities.
 
-### Targets
-- **Done so far:** 1000 words, all letters and vowels introduced by word 600, all nouns classified.
-- **Current target: about 3000 words.** It may land slightly below or above as topics complete naturally. **Hard cap: 3000 words.** Never exceed it. Raising the cap means editing this file and the `HARD_CAP` constants in `validate_data.py` and `merge_words.py` (user approval).
-- Every Lao consonant letter and every vowel is introduced no later than word 600 (achieved). Take the inventory from a cited authoritative source and report the counts.
-- Every word has 2+ example sentences, tone data, IPA, and a pronunciation tip for English speakers.
-- Nouns record their classifier (`classifier_word_id`, `classifier_type`, `classifier_confidence`; see SCHEMA.md "Classifiers"); particles and classifiers are taught as items in their own right.
-- Reusable sentence templates with swappable slots (e.g. "I like ___").
-- Checkpoints at 30, 100, 300, 600 and 1000 are done. Next: 1500, 2000, 2500 and 3000 (see below).
+### Current focus: lessons (Phase 9)
+- Design and rules: `_agent/LESSON_PLAN.md` (lesson size, role-units, budget, sentence stages) and `_agent/APP_DESIGN.md` (activities; show first, test later).
+- Lessons are built one at a time: `lesson_tool.py brief` → draft → `check` → `merge`. The user runs `next_lesson.ps1` to do this unattended.
+- Material is filled in for planned lessons only: a lesson word with no words.csv row is drafted when a lesson needs it.
+- The word list is not being grown for its own sake. The earlier word-list phase (targets, ordering rules, checkpoints) is archived in `_agent/archive/CLAUDE-wordlist-phase.md`; follow it only if the user resumes Phase 7.
+- **Hard cap: 3000 words in data/words.csv.** Never exceed it. Raising it means editing this file and the `HARD_CAP` constants in `validate_data.py` and `merge_words.py` (user approval). The common-word list (`_agent/letter_map/common_words.csv`) has no cap.
 
-### Ordering rules
-- Rank by frequency and usefulness, subject to the letter-introduction constraint: each new word should introduce few new letters or vowels (ideally at most one or two), so reading is built up gradually.
-- Each step reinforces earlier material: new words reuse previously introduced letters, words and templates.
-- Example sentences prioritize words already introduced, and soon to be introduced words.
-- **Trunk and branches:** roughly the first 100–200 words are the trunk, a fixed baseline. After that the order is loose: words are grouped by topic (the `topic` column), and learners branch by interest. learning_order.csv is a default suggestion, not a strict path. Do not add a core/trunk field; position in the order already conveys it.
-- Seed words the user expects early (a guide, not a complete list): eat, drink, need, want, have, plus basic pronouns and common verbs.
-
-### Checkpoints
-- **At 30 words:** commit, write a summary in `_agent/PROGRESS.md` (sources used, how tones were derived, confidence breakdown, anything doubtful), then create `_agent/BLOCKED` so the user can review before the run continues. This validates the method before it is repeated hundreds of times. (Done.)
-- **At 100, 300, 600 and 1000:** done.
-- **At 1500, 2000, 2500 and 3000:** commit as `checkpoint-<n>` with a short summary in PROGRESS.md (word and sentence confidence breakdown, verified-sentence share, anything doubtful), then continue.
+### Lesson rules (summary; LESSON_PLAN.md is authoritative)
+- A lesson takes 5–10 minutes: about 3–4 new items (units, rules, words), plus recycled earlier material. No review-only lessons.
+- Units are glyph + role (initial, final, cluster, vowel, tone mark); vowels, tone marks and rules count as items.
+- Every word in a lesson must be readable with what has been taught; every new word uses something new from this or the previous lesson.
+- Lesson 1 is ລາວ. Sentences as early as is realistic, then question and answer pairs, then dialogues.
+- Every word has 2+ example sentences, tone data, IPA and a pronunciation tip for English speakers (as before). Nouns record their classifier (SCHEMA.md "Classifiers").
 
 ### Language facts (attempt verify against sources; do not solely rely on memory)
 - Tones are derived from consonant class, syllable type (live or dead), vowel length and tone mark. Record the derivation for every syllable. Compute and cross-check with an approved script rather than by eye.
 - Loanwords whose sourced tone breaks the rule go in `data/tone_exceptions.csv` with a source.
-- Choose one tone-naming convention from a cited source, write it in `_agent/SCHEMA.md`, and use it everywhere.
+- The tone-naming convention is in `_agent/SCHEMA.md`; use it everywhere.
 
 ### Accuracy rules
 - Lao is lower-resource and easy to get confidently wrong. Never invent a word, tone, reading or sentence without marking it.
 - Every row carries `source` and `confidence`: `verified` (taken from a cited source), `derived` (computed by rule from verified facts), or `unverified` (the agent's own construction, needs human review).
 - Where sources disagree, record both and add a note to `_agent/NEEDS_HUMAN.md`.
-- Sentences you compose are `unverified` unless a source provides them. 
+- Sentences, dialogues and teaching texts you compose are `unverified` unless a source provides them.
 
 ### Sources
 - Approved and in use: English Wiktionary (words, IPA, some classifiers), SEAsite and Wikipedia (tone rules).
@@ -108,7 +99,7 @@ Plan a Lao language-learning curriculum for English speakers: letters, then vowe
 
 ### Data
 Flat tables as CSV, one row per item, stable IDs, consistent column names (see `_agent/SCHEMA.md`). Files live in `data/`:
-`letters.csv`, `vowels.csv`, `words.csv`, `sentences.csv`, `sentence_words.csv`, `templates.csv`, `template_fillers.csv`, `tone_exceptions.csv`, plus `learning_order.csv` and a letters-to-words-to-sentences map.
-- IDs: words `W` + 6 digits, sentences `S` + 9 digits.
+`letters.csv`, `vowels.csv`, `words.csv`, `sentences.csv`, `sentence_words.csv`, `templates.csv`, `template_fillers.csv`, `tone_exceptions.csv`, `learning_order.csv`, and the lesson tables `lessons.csv`, `lesson_items.csv`, `units.csv`, `rules.csv` (dialogues planned).
+- IDs: words `W` + 6 digits, sentences `S` + 9 digits, lessons `L` + 4 digits, rules `R` + 2 digits; units are role-units (`C23`, `C24f`, `V03`, `T2`).
 - Homographs: one row per spelling+meaning. Sentences choose the meaning with `word_overrides`.
 - Word ↔ sentence links: `sentence_words.csv` (generated) plus `sentences.target_word_id`.

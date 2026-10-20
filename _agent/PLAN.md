@@ -71,4 +71,8 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [ ] Lesson 1 (ລາວ) built interactively as the reference
 - [ ] Runner test: `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
 - [ ] Dialogues: tables and item type once Q&A pairs exist
-- [ ] Postgres schema and import (data tables, lessons, app-side learner tables)
+- [ ] Postgres schema and import (data tables, lessons, app-side learner tables) → now app phases 2–3
+
+## Phase 10: App (user, 2026-10-19). Phases and checklists in `_agent/APP_PLAN.md`
+- [x] App phases drafted; `native/` moved to `app/`
+- [ ] App phase 1: accounts and roles (code done; user to test against Supabase)

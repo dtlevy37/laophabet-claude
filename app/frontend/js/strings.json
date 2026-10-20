@@ -1,0 +1,391 @@
+{
+  "_note": {
+    "lo": "UNREVIEWED: all Lao UI text below was invented by the AI and must be reviewed by a native speaker. Edit only the lo fields. en is the learner (English) UI text where a learner sees the string, otherwise a gloss for the reviewer. Strings without lo are learner-only.",
+    "en": "Review note"
+  },
+  "brand": {
+    "en": "Laophabet"
+  },
+  "auth_tagline": {
+    "lo": "ຮຽນອ່ານ ແລະ ເວົ້າພາສາລາວ, ຫຼື ຊ່ວຍໃຫ້ຄົນອື່ນຮຽນ.",
+    "en": "Learn to read and speak Lao, or help others learn it."
+  },
+  "role_question": {
+    "lo": "ທ່ານຈະໃຊ້ແອັບນີ້ແນວໃດ?",
+    "en": "How will you use the app?"
+  },
+  "role_learner_title": {
+    "lo": "ຂ້ອຍກຳລັງຮຽນພາສາລາວ",
+    "en": "I'm learning Lao"
+  },
+  "role_learner_body": {
+    "lo": "ບົດຮຽນ, ການຝຶກ ແລະ ການທົບທວນ.",
+    "en": "Lessons, practice and reviews."
+  },
+  "role_native_title": {
+    "lo": "ຂ້ອຍເວົ້າພາສາລາວເປັນພາສາແມ່",
+    "en": "I'm a native Lao speaker"
+  },
+  "role_native_body": {
+    "lo": "ກວດປະໂຫຍກ ແລະ ໃຫ້ຄຳຄິດເຫັນກ່ຽວກັບບົດຮຽນ.",
+    "en": "Check sentences and give feedback on the course."
+  },
+  "role_change": {
+    "lo": "ປ່ຽນ",
+    "en": "Change"
+  },
+  "learn_welcome": {
+    "en": "Welcome"
+  },
+  "learn_coming_soon": {
+    "en": "Lessons will appear here. The first one is on its way."
+  },
+  "app_name": {
+    "lo": "ກວດປະໂຫຍກລາວ",
+    "en": "Lao Sentence Check (app name)"
+  },
+  "app_tagline": {
+    "lo": "ຊ່ວຍກວດປະໂຫຍກພາສາລາວສຳລັບຄົນທີ່ຮຽນພາສາລາວ.",
+    "en": "Help check Lao sentences for people learning Lao."
+  },
+  "loading": {
+    "lo": "ກຳລັງໂຫຼດ…",
+    "en": "Loading…"
+  },
+  "config_error": {
+    "lo": "ລະບົບຍັງຕັ້ງຄ່າບໍ່ຄົບ. ກະລຸນາແຈ້ງທີມງານ.",
+    "en": "The system is not fully set up. Please tell the team."
+  },
+  "generic_error": {
+    "lo": "ມີບັນຫາ. ກະລຸນາລອງໃໝ່.",
+    "en": "Something went wrong. Please try again."
+  },
+  "sign_out": {
+    "lo": "ອອກຈາກລະບົບ",
+    "en": "Sign out"
+  },
+  "auth_email": {
+    "lo": "ອີເມລ",
+    "en": "Email"
+  },
+  "auth_password": {
+    "lo": "ລະຫັດຜ່ານ (ຢ່າງໜ້ອຍ 8 ຕົວ)",
+    "en": "Password (at least 8 characters)"
+  },
+  "auth_name": {
+    "lo": "ຊື່",
+    "en": "Name"
+  },
+  "auth_login": {
+    "lo": "ເຂົ້າສູ່ລະບົບ",
+    "en": "Log in"
+  },
+  "auth_signup": {
+    "lo": "ສ້າງບັນຊີ",
+    "en": "Create account"
+  },
+  "auth_new_here": {
+    "lo": "ຍັງບໍ່ມີບັນຊີ?",
+    "en": "No account yet?"
+  },
+  "auth_have_account": {
+    "lo": "ມີບັນຊີແລ້ວ?",
+    "en": "Already have an account?"
+  },
+  "auth_check_email": {
+    "lo": "ສ້າງບັນຊີແລ້ວ. ກະລຸນາເບິ່ງອີເມລຂອງທ່ານເພື່ອຢືນຢັນ ແລ້ວເຂົ້າສູ່ລະບົບ.",
+    "en": "Account created. Please check your email to confirm, then log in."
+  },
+  "auth_login_failed": {
+    "lo": "ອີເມລ ຫຼື ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ.",
+    "en": "Email or password is wrong."
+  },
+  "auth_signup_failed": {
+    "lo": "ສ້າງບັນຊີບໍ່ໄດ້. ກະລຸນາກວດຂໍ້ມູນແລ້ວລອງໃໝ່.",
+    "en": "Could not create the account. Please check the details and try again."
+  },
+  "profile_title": {
+    "lo": "ກ່ຽວກັບທ່ານ",
+    "en": "About you"
+  },
+  "profile_why": {
+    "lo": "ຂໍ້ມູນນີ້ຊ່ວຍໃຫ້ທີມງານເຂົ້າໃຈຄຳຕອບຂອງທ່ານດີຂຶ້ນ. ບໍ່ຕ້ອງຕອບທຸກຂໍ້. ຖາມເທື່ອດຽວເທົ່ານັ້ນ.",
+    "en": "This information helps the team understand your answers better. You do not have to answer every question. Asked only once."
+  },
+  "profile_native": {
+    "lo": "ພາສາລາວແມ່ນພາສາແມ່ຂອງຂ້ອຍ",
+    "en": "Lao is my mother tongue"
+  },
+  "profile_gender": {
+    "lo": "ເພດ",
+    "en": "Gender"
+  },
+  "gender_female": {
+    "lo": "ຍິງ",
+    "en": "Female"
+  },
+  "gender_male": {
+    "lo": "ຊາຍ",
+    "en": "Male"
+  },
+  "gender_other": {
+    "lo": "ອື່ນໆ",
+    "en": "Other"
+  },
+  "gender_undisclosed": {
+    "lo": "ບໍ່ຢາກບອກ",
+    "en": "Prefer not to say"
+  },
+  "profile_age": {
+    "lo": "ວັນເດືອນປີເກີດ",
+    "en": "Date of birth"
+  },
+  "profile_locale": {
+    "lo": "ທ່ານເວົ້າພາສາລາວສຳນຽງໃດ?",
+    "en": "Which accent/dialect of Lao do you speak?"
+  },
+  "locale_vientiane": {
+    "lo": "ວຽງຈັນ",
+    "en": "Vientiane"
+  },
+  "locale_other": {
+    "lo": "ອື່ນໆ",
+    "en": "Other"
+  },
+  "profile_region": {
+    "lo": "ພິມສຳນຽງ ຫຼື ບ່ອນທີ່ທ່ານມາຈາກ (ບໍ່ບັງຄັບ)",
+    "en": "Type your dialect or where you are from (optional)"
+  },
+  "profile_english": {
+    "lo": "ທ່ານເຂົ້າໃຈພາສາອັງກິດບໍ?",
+    "en": "Do you understand English?"
+  },
+  "english_none": {
+    "lo": "ບໍ່ເຂົ້າໃຈ",
+    "en": "No"
+  },
+  "english_some": {
+    "lo": "ເຂົ້າໃຈໜ້ອຍໜຶ່ງ",
+    "en": "A little"
+  },
+  "english_good": {
+    "lo": "ເຂົ້າໃຈດີ",
+    "en": "Well"
+  },
+  "profile_continue": {
+    "lo": "ສືບຕໍ່",
+    "en": "Continue"
+  },
+  "review_done_count": {
+    "lo": "ກວດແລ້ວ:",
+    "en": "Checked so far:"
+  },
+  "review_loading": {
+    "lo": "ກຳລັງໂຫຼດປະໂຫຍກ…",
+    "en": "Loading a sentence…"
+  },
+  "review_load_failed": {
+    "lo": "ໂຫຼດປະໂຫຍກບໍ່ໄດ້.",
+    "en": "Could not load a sentence."
+  },
+  "review_retry": {
+    "lo": "ລອງໃໝ່",
+    "en": "Try again"
+  },
+  "review_empty_title": {
+    "lo": "ໝົດແລ້ວ, ຂອບໃຈຫຼາຍໆ!",
+    "en": "All finished, thank you very much!"
+  },
+  "review_empty_body": {
+    "lo": "ຕອນນີ້ບໍ່ມີປະໂຫຍກໃຫ້ກວດແລ້ວ.",
+    "en": "There are no more sentences to check right now."
+  },
+  "english_show": {
+    "lo": "ເບິ່ງຄວາມໝາຍພາສາອັງກິດ",
+    "en": "Show the English meaning"
+  },
+  "english_hide": {
+    "lo": "ເຊື່ອງຄວາມໝາຍພາສາອັງກິດ",
+    "en": "Hide the English meaning"
+  },
+  "english_label": {
+    "lo": "ຄວາມໝາຍພາສາອັງກິດ (ໃຊ້ຊ່ວຍກວດເທົ່ານັ້ນ):",
+    "en": "English meaning (only to help with checking):"
+  },
+  "q1": {
+    "lo": "1. ປະໂຫຍກນີ້ມີຂໍ້ຜິດບໍ?",
+    "en": "1. Does this sentence have a mistake?"
+  },
+  "q1_no": {
+    "lo": "ບໍ່ມີຜິດ",
+    "en": "No mistake"
+  },
+  "q1_yes": {
+    "lo": "ມີຜິດ",
+    "en": "Has a mistake"
+  },
+  "q1_kinds": {
+    "lo": "ຜິດແບບໃດ? (ເລືອກໄດ້ຫຼາຍຂໍ້)",
+    "en": "What kind of mistake? (you can choose several)"
+  },
+  "err_spelling": {
+    "lo": "ສະກົດຜິດ",
+    "en": "Wrong spelling"
+  },
+  "err_grammar": {
+    "lo": "ໄວຍາກອນຜິດ",
+    "en": "Wrong grammar"
+  },
+  "err_word_choice": {
+    "lo": "ໃຊ້ຄຳບໍ່ຖືກ",
+    "en": "Wrong word used"
+  },
+  "err_word_order": {
+    "lo": "ລຽງຄຳຜິດລຳດັບ",
+    "en": "Words in the wrong order"
+  },
+  "err_translation_mismatch": {
+    "lo": "ຄວາມໝາຍພາສາອັງກິດຜິດໄປຫຼາຍ",
+    "en": "The English meaning is very different"
+  },
+  "err_other": {
+    "lo": "ອື່ນໆ",
+    "en": "Other"
+  },
+  "q1_where": {
+    "lo": "ຜິດຕົງໃດ? (ບໍ່ບັງຄັບ)",
+    "en": "Where is the mistake? (optional)"
+  },
+  "q1_fix": {
+    "lo": "ທ່ານຈະຂຽນແນວໃດ? (ບໍ່ບັງຄັບ)",
+    "en": "How would you write it? (optional)"
+  },
+  "q2": {
+    "lo": "2. ຟັງແລ້ວເປັນທຳມະຊາດບໍ?",
+    "en": "2. Does it sound natural?"
+  },
+  "nat_natural": {
+    "lo": "ເປັນທຳມະຊາດ",
+    "en": "Natural"
+  },
+  "nat_awkward": {
+    "lo": "ເຂົ້າໃຈໄດ້ ແຕ່ຟັງແປກໆ",
+    "en": "Understandable but sounds odd"
+  },
+  "nat_unnatural": {
+    "lo": "ບໍ່ມີໃຜເວົ້າແບບນີ້",
+    "en": "Nobody says it this way"
+  },
+  "q3": {
+    "lo": "3. ເປັນພາສາແບບໃດ?",
+    "en": "3. What style of speech is it?"
+  },
+  "reg_casual": {
+    "lo": "ກັນເອງ (ກັບໝູ່, ຄອບຄົວ)",
+    "en": "Casual (with friends, family)"
+  },
+  "reg_neutral": {
+    "lo": "ທົ່ວໄປ",
+    "en": "Ordinary / neutral"
+  },
+  "reg_formal": {
+    "lo": "ທາງການ / ສຸພາບ",
+    "en": "Formal / polite"
+  },
+  "q4": {
+    "lo": "4. ອ່ານປະໂຫຍກນີ້ອອກສຽງ",
+    "en": "4. Read this sentence aloud"
+  },
+  "q4_hint": {
+    "lo": "ອ່ານແບບທີ່ທ່ານເວົ້າຕາມປົກກະຕິ. ບໍ່ບັງຄັບ.",
+    "en": "Read it the way you normally speak. Optional."
+  },
+  "rec_start": {
+    "lo": "ອັດສຽງ",
+    "en": "Record"
+  },
+  "rec_stop": {
+    "lo": "ຢຸດ",
+    "en": "Stop"
+  },
+  "rec_again": {
+    "lo": "ອັດໃໝ່",
+    "en": "Record again"
+  },
+  "rec_unsupported": {
+    "lo": "ບຣາວເຊີນີ້ບໍ່ຮອງຮັບການອັດສຽງ. ທ່ານຂ້າມຂັ້ນຕອນນີ້ໄດ້.",
+    "en": "This browser does not support recording. You can skip this step."
+  },
+  "rec_mic_error": {
+    "lo": "ໃຊ້ໄມໂຄຣໂຟນບໍ່ໄດ້. ກະລຸນາອະນຸຍາດໃຫ້ໃຊ້ໄມໂຄຣໂຟນ.",
+    "en": "Cannot use the microphone. Please allow microphone access."
+  },
+  "comments": {
+    "lo": "ມີຫຍັງອີກບໍ? (ບໍ່ບັງຄັບ)",
+    "en": "Anything else? (optional)"
+  },
+  "submit": {
+    "lo": "ສົ່ງ ແລ້ວໄປຕໍ່",
+    "en": "Send and go to the next one"
+  },
+  "saving": {
+    "lo": "ກຳລັງບັນທຶກ…",
+    "en": "Saving…"
+  },
+  "skip": {
+    "lo": "ຂ້າມອັນນີ້",
+    "en": "Skip this one"
+  },
+  "skip_cannot_read": {
+    "lo": "ອ່ານບໍ່ອອກ",
+    "en": "I cannot read it"
+  },
+  "skip_not_sure": {
+    "lo": "ບໍ່ແນ່ໃຈ",
+    "en": "I am not sure"
+  },
+  "skip_inappropriate": {
+    "lo": "ບໍ່ເໝາະສົມ",
+    "en": "Not appropriate"
+  },
+  "skip_other": {
+    "lo": "ອື່ນໆ",
+    "en": "Other"
+  },
+  "review_optional": {
+    "lo": "ບໍ່ຕ້ອງຕອບທຸກຂໍ້. ຕອບສະເພາະຂໍ້ທີ່ທ່ານຢາກຕອບ.",
+    "en": "You do not have to answer every question. Answer only the ones you want."
+  },
+  "reg_vulgar": {
+    "lo": "ຫຍາບຄາຍ / ບໍ່ສຸພາບ",
+    "en": "Vulgar / rude"
+  },
+  "q5": {
+    "lo": "5. ປະໂຫຍກນີ້ເປັນພາສາສະແລງເປັນຫຼັກບໍ?",
+    "en": "5. Is this sentence mainly slang?"
+  },
+  "yes": {
+    "lo": "ແມ່ນ",
+    "en": "Yes"
+  },
+  "no": {
+    "lo": "ບໍ່ແມ່ນ",
+    "en": "No"
+  },
+  "q6": {
+    "lo": "6. ຄຳຂຽນແບບນີ້ມີຫຼາຍຄວາມໝາຍບໍ?",
+    "en": "6. Does this exact spelling have more than one meaning?"
+  },
+  "q6_yes": {
+    "lo": "ມີ",
+    "en": "Yes, it does"
+  },
+  "q6_no": {
+    "lo": "ບໍ່ມີ",
+    "en": "No, it does not"
+  },
+  "q6_notes": {
+    "lo": "ບອກຄວາມໝາຍອື່ນ (ບໍ່ບັງຄັບ)",
+    "en": "Tell us the other meanings (optional)"
+  }
+}
