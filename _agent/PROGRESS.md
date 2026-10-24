@@ -186,3 +186,10 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - The advisory chain was computed from the ລາວ base; after re-approval a chain-only rerun of lesson_map gives a ກິນ-based chain.
 - **Next:** user re-approves lesson_tool.py and edits CLAUDE.md; then S2 (local backend boots) and S3 (build lesson 1).
 - Later same day: user re-approved lesson_tool.py (ກິນ is live). Regenerated `_agent/lessons/next-brief.md` (now ກິນ). `_agent/proposed-config/CLAUDE.md` updated; the real CLAUDE.md is edit-protected, so the user must change its line 81 ("Lesson 1 is ລາວ") by hand. Left as is: the lesson_map.py docstring says "lesson 1, ລາວ" (comment only; its base is read from FIRST_UNITS) and a lookup example in the lesson_tool.py docstring.
+
+## 2026-10-24 S1 ticked; S3 lesson 1 drafted; S4 learner view written
+- APP_PLAN S1 ticked. User skips S2 for now (no local backend). S3 and S4 are built assuming the DB exists and tested later.
+- S3: lesson 1 draft in `_agent/lessons/drafts/next/` (ກ C01, ◌ິ V04, ◌ນ C13f, word W000018 ກິນ; kind letters; teach_en from verified pron_tips, wording by agent). `lesson_tool.py check`: 0 errors, 0 warnings. **Not merged:** waiting for the user's review of the teach texts. The `get_lesson('L0001')` check waits for S2.
+- S4: new migration `20261024000800_list_lessons.sql` (`list_lessons()` RPC; content tables have RLS and no read policies). `app/frontend/js/learn.js` rewritten: hash routes `#/` (list) and `#/lesson/<id>/<n>` (one teach card per item, Back/Next, unit/word/rule/sentence cards, word chips with an info dialog). app.js re-routes on hashchange in the learner view only. Strings (en only) and styles added. Untested: no backend, and the guard blocks `node --check`.
+- After merge: add the list_lessons migration line to `_agent/PENDING_MIGRATIONS.md` (db_sql creates the file on the first merge).
+- **Next:** user reviews the lesson 1 draft → merge → pipeline.sh → checkpoint. Then the step-1 runner audit.

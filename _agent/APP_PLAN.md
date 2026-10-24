@@ -22,7 +22,7 @@ Ground rules that cut across phases:
 ## Slices (re-sliced 2026-10-24; this is the working order)
 User rule: build small pieces, one slice at a time, stop and check after each. Phases 1–8 below stay as detail
 for their topics; each slice names the phase it draws from. Tick here.
-- [ ] **S1 Approve scripts:** user approves lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md, pipeline.sh
+- [x] **S1 Approve scripts:** user approves lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md, pipeline.sh
       (proposed-scripts/ → approved). Agent then runs `db_sql.py check` and `seed` (current seeds are the old generator's).
 - [ ] **S2 Local backend boots:** supabase CLI and Docker present; `supabase start`, `supabase db reset` applies
       migrations ..0000–..0700 and seeds; existing sign-up and native review flow works in a browser. (Phase 1 test, Phase 2 run)

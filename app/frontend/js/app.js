@@ -11,6 +11,7 @@ const topbar = document.getElementById('topbar')
 
 let session = null
 let profile = null
+let learnerView = false // the learner view routes by URL hash (learn.js)
 
 const card = (...kids) => h('main', { class: 'card' }, kids)
 
@@ -74,6 +75,7 @@ function showTopbar(title, extra = null) {
 // chose to try it); learner → learner home.
 function render() {
   topbar.replaceChildren()
+  learnerView = false
   if (!session) return showAuth(app)
   if (!profile) return app.replaceChildren(card(t('loading')))
   if (!profile.role) return showRoleChoice(app, { userId: session.user.id, onDone: refresh })
@@ -92,8 +94,13 @@ function render() {
     ? h('button', { class: 'link', lang: 'lo', onclick: () => setViewAsLearner(false) }, tIn('lo', 'view_back_to_review'))
     : null
   showTopbar(t('brand'), back)
+  learnerView = true
   showLearnerHome(app, { profile })
 }
+
+window.addEventListener('hashchange', () => {
+  if (learnerView) showLearnerHome(app, { profile })
+})
 
 // ------------------------------------------------------------------ boot
 await loadStrings()
