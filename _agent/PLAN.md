@@ -62,6 +62,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] Map: signatures, best sets, nested chain (k ≤ 7)
 - [x] Gap fill with `enum_spellings.py`
 - [x] k ≤ 10 run: stopped by the user after 45 min with no output (search grows too fast; old exclusions now superseded by role-units and lesson_tool brief). k ≤ 7 results remain the reference.
+- [x] `lesson_map.py` overnight run under lesson rules (2026-10-19/20): exhaustive k4–k11, k12 partial. Exhaustive beat the chain only at k8/k9 (+1 word); k12 partial ties it. **Decision (user, 2026-10-24): stop; use `_agent/letter_map/lesson_rules/chain.csv` as the advisory unit order** (`lesson_tool.py brief` picks each lesson). k13–k15 not needed.
 
 ## Phase 9: Lessons (user, 2026-10-19). See `_agent/LESSON_PLAN.md`
 - [x] Lesson decisions recorded; notes updated (LESSON_PLAN, PLAN, PROGRESS, SCHEMA)
@@ -71,9 +72,12 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [ ] Lesson 1 (ລາວ) built interactively as the reference
 - [ ] Runner test: `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
 - [ ] Dialogues: tables and item type once Q&A pairs exist
-- [ ] Postgres schema and import (data tables, lessons, app-side learner tables) → now app phases 2–3
+- [x] Postgres schema and import → moved to the app plan (`_agent/APP_PLAN.md`, Phase 2 written, not yet run)
 
 ## Phase 10: App (user, 2026-10-19). Phases and checklists in `_agent/APP_PLAN.md`
 - [x] App phases drafted; `native/` moved to `app/`
-- [ ] App phase 1: accounts and roles (code done incl. native verification + learner-view switch; user to test)
-- [ ] App phase 2: DB as source of truth (written 2026-10-19: migration ..0700, db_sql.py + changed lesson_tool/runner/pipeline awaiting approval; see APP_PLAN "Phase 2")
+- [x] App plan re-sliced into small steps (2026-10-24): see APP_PLAN "Slices"; one slice at a time, stop after each
+- [ ] Slice 1: user approves the Phase 2 script group; agent runs `db_sql.py check` + `seed`
+- [ ] Slice 2: local backend boots (`supabase start`, `db reset`), existing sign-up and review flow works in a browser
+- [ ] Slice 3: lesson 1 (ລາວ) built interactively; migration applied; `get_lesson('L0001')` works
+- [ ] Slices 4–11: see APP_PLAN (learner read-only view, progress tables, activity shell, more activities, home/path, FSRS, native feedback on lessons, deploy)

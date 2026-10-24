@@ -173,3 +173,8 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - Exhaustive search finished for k4 to k11. Best word counts: k4=4, k5=7, k6=11, k7=15, k8=21, k9=27, k10=35, k11=46. The exhaustive result beats the greedy chain only at k8 (+1) and k9 (+1); at k10 and k11 they tie.
 - k12 hit the time limit after 968M nodes. Best so far is 56 (equal to the chain), provisional in best_k12.partial.csv. k13 to k15 were not reached.
 - **Next:** decide whether to resume k12 and above (longer run or narrower search) or use the chain for k>=12, then plan lesson 1.
+
+## 2026-10-24 Plan review: map closed, app re-sliced
+- Reviewed PLAN, PROGRESS, APP_PLAN, LESSON_PLAN, APP_DESIGN and the app folder. User decision: stop the letter map (the k12 partial ties the chain) and use the chain.csv in the lesson_rules map folder as the advisory unit order.
+- App phases re-sliced into S1–S11 (APP_PLAN "Slices"): small steps, stop after each. Next is S1: the user approves the Phase 2 script group (lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md and pipeline.sh differ between approved-scripts and proposed-scripts); then the agent runs db_sql.py check and seed.
+- Found: nothing has run against Supabase yet; the seeds come from the old generator; whether the supabase CLI and Docker are installed is unchecked (the guard blocked the check, so the user should confirm). The c7 drafts (74 words) remain unmerged and Phase 7 stays paused.

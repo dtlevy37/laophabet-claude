@@ -22,6 +22,11 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
 7. **Sentences come as early as is realistic,** then question and answer pairs, then short dialogues on a topic.
 8. **Targeting specific words is not the aim at this stage** (except ລາວ); the aim is common, useful words.
 
+## Unit order guide (2026-10-24)
+`_agent/letter_map/lesson_rules/chain.csv` (greedy chain from ລາວ, 30 steps, ~362 readable common words) is the
+advisory unit order. The exhaustive search (k4–k11) beat it by only one word at k8 and k9, so it was not pursued
+further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is a tiebreaker, not a rule.
+
 ## Lesson model
 - **Units carry a role.** The same glyph can have several roles, and each role is learned separately: ດ-initial
   and ດ-final, ວ-final, ວ-initial and ວ in a vowel, ອ as carrier and ອ in a vowel, ຫ as h and as silent tone leader.

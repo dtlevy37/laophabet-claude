@@ -19,7 +19,31 @@ Ground rules that cut across phases:
 - **Privileged roles** (admin) live in a separate table users cannot write; `profiles.role` is self-declared.
 - Natives can try the learner view (topbar switch, per browser); their learner progress is their own like anyone's.
 
-## Phase 1: Foundation: accounts and roles  ← current
+## Slices (re-sliced 2026-10-24; this is the working order)
+User rule: build small pieces, one slice at a time, stop and check after each. Phases 1–8 below stay as detail
+for their topics; each slice names the phase it draws from. Tick here.
+- [ ] **S1 Approve scripts:** user approves lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md, pipeline.sh
+      (proposed-scripts/ → approved). Agent then runs `db_sql.py check` and `seed` (current seeds are the old generator's).
+- [ ] **S2 Local backend boots:** supabase CLI and Docker present; `supabase start`, `supabase db reset` applies
+      migrations ..0000–..0700 and seeds; existing sign-up and native review flow works in a browser. (Phase 1 test, Phase 2 run)
+- [ ] **S3 Lesson 1 (ລາວ):** built interactively with `lesson_tool.py` brief → check → merge; apply its migration;
+      `select get_lesson('L0001')` returns the bundle.
+- [ ] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
+      cards, info-icon card. No scoring. (Phase 8, part)
+- [ ] **S5 Progress tables + RPCs (SQL only):** lesson_progress, learner_items (level 0–4, no FSRS fields yet),
+      review_log; start_lesson, record_answers, complete_lesson. Tested in SQL. (Phase 5)
+- [ ] **S6 Activity shell + Spot it + Multiple choice:** module interface `{type, canUse, render}`, minimal session
+      planner, answers sent to record_answers. Done when a learner finishes lesson 1 and levels update. (Phase 7, part)
+- [ ] **S7 More v1 activities, two per slice:** matching + flashcards; fill in the blank + build the sentence; tone drill.
+- [ ] **S8 Home and path:** locked / next / done, continue, simple due list with fixed intervals. (Phase 8, rest)
+- [ ] **S9 FSRS:** design note first, then implement over the fixed intervals. (Phase 6)
+- [ ] **S10 Native feedback on lesson content:** native-role checks on review RPCs, queue, word/unit feedback, owner views;
+      then the feedback subroutine. (Phases 3–4)
+- [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. (Phase 1, rest)
+- In parallel from S3: after lesson 1 is reviewed, `next_lesson.ps1 -Count N` in small batches; about 10 lessons are
+  enough to build S4–S8 against. Audio is v2 (teach cards use respelling + IPA; audio column nullable).
+
+## Phase 1: Foundation: accounts and roles
 - [x] Move `native/` → `app/`; retire the leftover React sources
 - [x] `profiles.role` (learner | native) set at sign-up via metadata (migration `..0500_roles.sql`)
 - [x] Sign-up: pick role first (bilingual cards), then the form in that role's language; login with a
