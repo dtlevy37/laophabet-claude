@@ -78,7 +78,7 @@ A Lao course for English speakers, built as short lessons: Standard Vientiane, m
 - A lesson takes 5–10 minutes: about 3–4 new items (units, rules, words), plus recycled earlier material. No review-only lessons.
 - Units are glyph + role (initial, final, cluster, vowel, tone mark); vowels, tone marks and rules count as items.
 - Every word in a lesson must be readable with what has been taught; every new word uses something new from this or the previous lesson.
-- Lesson 1 is ລາວ. Sentences as early as is realistic, then question and answer pairs, then dialogues.
+- Lesson 1 is ກິນ "eat" (units ກ, ◌ິ, final ນ); ລາວ follows in lesson 2 or 3. Sentences as early as is realistic, then question and answer pairs, then dialogues.
 - Every word has 2+ example sentences, tone data, IPA and a pronunciation tip for English speakers (as before). Nouns record their classifier (SCHEMA.md "Classifiers").
 
 ### Language facts (attempt verify against sources; do not solely rely on memory)
