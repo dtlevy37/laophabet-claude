@@ -26,7 +26,7 @@ for their topics; each slice names the phase it draws from. Tick here.
       (proposed-scripts/ → approved). Agent then runs `db_sql.py check` and `seed` (current seeds are the old generator's).
 - [ ] **S2 Local backend boots:** supabase CLI and Docker present; `supabase start`, `supabase db reset` applies
       migrations ..0000–..0700 and seeds; existing sign-up and native review flow works in a browser. (Phase 1 test, Phase 2 run)
-- [ ] **S3 Lesson 1 (ລາວ):** built interactively with `lesson_tool.py` brief → check → merge; apply its migration;
+- [ ] **S3 Lesson 1 (ກິນ):** built interactively with `lesson_tool.py` brief → check → merge; apply its migration;
       `select get_lesson('L0001')` returns the bundle.
 - [ ] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
       cards, info-icon card. No scoring. (Phase 8, part)

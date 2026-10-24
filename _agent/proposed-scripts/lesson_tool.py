@@ -47,8 +47,8 @@ import db_sql
 from build_order import parse_syllable
 
 DEAD_RULE = "R01"
-FIRST_WORD = "ລາວ"
-FIRST_UNITS = {"C23", "V03", "C24f"}
+FIRST_WORD = "ກິນ"
+FIRST_UNITS = {"C01", "V04", "C13f"}
 ITEM_TYPES = {"unit", "rule", "word", "sentence"}
 ROLES = {"new", "recycle", "example"}
 KINDS = {"letters", "rule", "words", "sentences"}
@@ -264,7 +264,7 @@ def brief(world, top):
         L.append(f"Teach {FIRST_WORD}: units {' '.join(sorted(FIRST_UNITS))} "
                  f"({', '.join(world.show(u) for u in sorted(FIRST_UNITS))}); word rows: "
                  + ", ".join(f"{w} '{world.words[w]['gloss_en']}'" for w in ids)
-                 + ". Both meanings may be taught as new words (same spelling). No recycling yet.\n")
+                 + ". If several rows share the spelling, teach only the meaning given first. No recycling yet.\n")
     # The brief stays about the same size however many lessons exist: the full state lives in data/
     # (lessons.csv, lesson_items.csv, units.csv, rules.csv); look things up with `lookup` / `can-read`.
     L.append("## State\n")

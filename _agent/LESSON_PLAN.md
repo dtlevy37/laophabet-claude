@@ -13,18 +13,21 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    offers other activities such as flashcard review.
 4. **Spaced repetition is the app's job** and should track how well each learner knows each item (some words stick,
    others don't). The data gives the order and the item IDs. The scheduler is app-side (see "App side" below).
-5. **Lesson 1 is ລາວ** (Lao: the language, the people, the country, and the pronoun he/she). Its units are
-   ລ + ◌າ + final ວ. ພາສາລາວ, ຄົນລາວ and ປະເທດລາວ follow as soon as their units are in.
+5. **Lesson 1 is ກິນ "eat"** (changed 2026-10-24 from ລາວ). Its units are ກ (initial) + ◌ິ + final ນ: a plain live
+   syllable and a verb that makes sentences possible early (ກິນເຂົ້າ, ກິນປາ). ລາວ (the language, the people, the
+   country, he/she; units ລ + ◌າ + final ວ) becomes a lesson 2 or 3 payoff. ພາສາລາວ, ຄົນລາວ and ປະເທດລາວ follow as
+   soon as their units are in.
 6. **Earlier exclusions are lifted in stages** (my proposal, user agreed):
    - ດ and ບ as initials from the start, because they sound plain there; their final sounds (t, p) are a later rule lesson.
    - ອ early, as its own rule lesson (silent carrier; needed for ຂ້ອຍ and vowel-initial words).
-   - ຍ, ວ and ຫ by about lessons 8–12. Final ວ comes in at lesson 1 only through ລາວ.
+   - ຍ, ວ and ຫ by about lessons 8–12. Final ວ comes in with ລາວ (lesson 2 or 3).
 7. **Sentences come as early as is realistic,** then question and answer pairs, then short dialogues on a topic.
-8. **Targeting specific words is not the aim at this stage** (except ລາວ); the aim is common, useful words.
+8. **Targeting specific words is not the aim at this stage** (except ກິນ and ລາວ); the aim is common, useful words.
 
 ## Unit order guide (2026-10-24)
-`_agent/letter_map/lesson_rules/chain.csv` (greedy chain from ລາວ, 30 steps, ~362 readable common words) is the
-advisory unit order. The exhaustive search (k4–k11) beat it by only one word at k8 and k9, so it was not pursued
+`_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
+advisory unit order. It predates the switch to ກິນ as lesson 1; `lesson_map.py` takes its base from lesson_tool's
+FIRST_UNITS, so a chain-only rerun (seconds) gives a ກິນ-based chain once the new lesson_tool is approved. The exhaustive search (k4–k11) beat it by only one word at k8 and k9, so it was not pursued
 further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is a tiebreaker, not a rule.
 
 ## Lesson model
@@ -35,7 +38,7 @@ further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is
 
   | Lesson | New units / rules | New words | Recycled |
   |---|---|---|---|
-  | 1 | 3 (ລ ◌າ ວ-final) | 1 (ລາວ) | none |
+  | 1 | 3 (ກ ◌ິ ນ-final) | 1 (ກິນ) | none |
   | Normal | 1–2 | 2–3 | 4–8 earlier words, in phrases once possible |
   | Rule lesson | the rule + at most 1 unit | 1–2 words that show the rule | words that contrast the rule |
 
@@ -65,7 +68,7 @@ further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is
    - `next_lesson.ps1` + `next_lesson_prompt.md`: the user runs it; per lesson it writes the brief, starts a fresh
      `claude -p` session that drafts, checks and merges one lesson, then runs the pipeline and commits.
      `-Count N` builds N lessons in a row; it stops at the first failure or if `_agent/BLOCKED` exists.
-4. **Build lesson 1 (ລາວ) interactively** with the user present, as the reference for the runner.
+4. **Build lesson 1 (ກິນ) interactively** with the user present, as the reference for the runner.
 5. **Review the first ~10–20 lessons with the user** and tune budget, weights and the runner prompt.
 6. **Gaps are filled per lesson:** a lesson word with no words.csv row is drafted in that lesson's run (drafting
    workflow), as are new phrases and sentences.

@@ -10,8 +10,10 @@ Per lesson:
   2. python approved-scripts/lesson_tool.py brief  -> _agent/lessons/next-brief.md
   3. Pipes approved-scripts/next_lesson_prompt.md into `claude -p` (fresh context, project settings and hooks apply).
      The session drafts, checks and merges exactly one lesson (lesson_tool.py check / merge).
-  4. Verifies that data/lessons.csv gained exactly one row; otherwise stops with exit code 1.
-  5. Runs the data pipeline, then commits: "lesson: <id> <title>".
+  4. Verifies that data/lessons.csv gained exactly one row and that merge wrote the lesson migration
+     app/backend/supabase/migrations/<stamp>_lesson_<id>.sql; otherwise stops with exit code 1.
+  5. Runs the data pipeline, then commits: "lesson: <id> <title>". The migration is committed for owner
+     review and never applied here (see _agent/PENDING_MIGRATIONS.md).
 Logs: _agent/lessons/logs/<id>-<timestamp>.log
 Runs only approved scripts, git and the claude CLI.
 #>
@@ -54,6 +56,10 @@ for ($i = 1; $i -le $Count; $i++) {
         exit 1
     }
 
+    $mig = Get-ChildItem -Path "app/backend/supabase/migrations" -Filter "*_lesson_$($lid.ToLower()).sql" |
+        Select-Object -Last 1
+    if (-not $mig) { Write-Host "Stopped: $lid merged but no lesson migration was written."; exit 1 }
+
     & bash approved-scripts/pipeline.sh
     if ($LASTEXITCODE -ne 0) { Write-Host "Stopped: pipeline failed after $lid. Lesson merged but not committed."; exit 1 }
 
@@ -61,5 +67,5 @@ for ($i = 1; $i -le $Count; $i++) {
     & git add -A
     & git commit -q -m "lesson: $lid $title"
     if ($LASTEXITCODE -ne 0) { Write-Host "Stopped: commit failed."; exit 1 }
-    Write-Host "Committed $lid $title"
+    Write-Host "Committed $lid $title (migration for review: $($mig.Name))"
 }

@@ -178,3 +178,10 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - Reviewed PLAN, PROGRESS, APP_PLAN, LESSON_PLAN, APP_DESIGN and the app folder. User decision: stop the letter map (the k12 partial ties the chain) and use the chain.csv in the lesson_rules map folder as the advisory unit order.
 - App phases re-sliced into S1–S11 (APP_PLAN "Slices"): small steps, stop after each. Next is S1: the user approves the Phase 2 script group (lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md and pipeline.sh differ between approved-scripts and proposed-scripts); then the agent runs db_sql.py check and seed.
 - Found: nothing has run against Supabase yet; the seeds come from the old generator; whether the supabase CLI and Docker are installed is unchecked (the guard blocked the check, so the user should confirm). The c7 drafts (74 words) remain unmerged and Phase 7 stays paused.
+
+## 2026-10-24 S1 done; pivot lesson 1 from ລາວ to ກິນ
+- User approved lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md and pipeline.sh. `db_sql.py check` OK (1424 words, 2810 sentences, 0 lessons). `db_sql.py seed` regenerated all nine seed files with `on conflict do nothing`.
+- User decision: lesson 1 is ກິນ (W000018; units C01, V04, C13f), not ລາວ. ລາວ moves to lesson 2 or 3.
+- Changed `_agent/proposed-scripts/lesson_tool.py`: FIRST_WORD ກິນ, FIRST_UNITS {C01, V04, C13f}, and a generic homograph sentence in the brief. **Needs re-approval** (approve-script, same command as before). Notes updated: LESSON_PLAN, PLAN, APP_PLAN. CLAUDE.md still says "Lesson 1 is ລາວ": the user edits it (protected). APP_DESIGN's homograph example (ລາວ) is still valid.
+- The advisory chain was computed from the ລາວ base; after re-approval a chain-only rerun of lesson_map gives a ກິນ-based chain.
+- **Next:** user re-approves lesson_tool.py and edits CLAUDE.md; then S2 (local backend boots) and S3 (build lesson 1).

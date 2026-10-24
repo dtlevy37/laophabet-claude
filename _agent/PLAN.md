@@ -69,7 +69,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] App activities and presentation drafted (`_agent/APP_DESIGN.md`)
 - [x] CLAUDE.md archived (`_agent/archive/CLAUDE-wordlist-phase.md`); new version proposed (`_agent/proposed-config/CLAUDE.md`)
 - [ ] User approves `lesson_tool.py`, `next_lesson.ps1`, `next_lesson_prompt.md` and installs the new CLAUDE.md
-- [ ] Lesson 1 (ລາວ) built interactively as the reference
+- [ ] Lesson 1 (ກິນ; was ລາວ until 2026-10-24) built interactively as the reference
 - [ ] Runner test: `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
 - [ ] Dialogues: tables and item type once Q&A pairs exist
 - [x] Postgres schema and import → moved to the app plan (`_agent/APP_PLAN.md`, Phase 2 written, not yet run)
@@ -79,5 +79,5 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 - [x] App plan re-sliced into small steps (2026-10-24): see APP_PLAN "Slices"; one slice at a time, stop after each
 - [ ] Slice 1: user approves the Phase 2 script group; agent runs `db_sql.py check` + `seed`
 - [ ] Slice 2: local backend boots (`supabase start`, `db reset`), existing sign-up and review flow works in a browser
-- [ ] Slice 3: lesson 1 (ລາວ) built interactively; migration applied; `get_lesson('L0001')` works
+- [ ] Slice 3: lesson 1 (ກິນ) built interactively; migration applied; `get_lesson('L0001')` works
 - [ ] Slices 4–11: see APP_PLAN (learner read-only view, progress tables, activity shell, more activities, home/path, FSRS, native feedback on lessons, deploy)

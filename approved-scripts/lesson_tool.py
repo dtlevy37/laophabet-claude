@@ -30,8 +30,11 @@ Draft folder (default _agent/lessons/drafts/next/):
 status: counts so far. brief: state plus candidates for the next lesson (markdown, for the runner); its size
 does not grow with the number of lessons (lists are capped by --top; the full state stays in data/).
 lookup / can-read: answer single questions about the taught state without reading the tables.
-check: validates the draft; exit 1 on any error. merge: check, then append to data/, assign the next
-lesson_id (L + 4 digits) and move the draft folder to _agent/lessons/merged/<lesson_id>/.
+check: validates the draft; exit 1 on any error. merge: check, validate data/ against the DB spec
+(db_sql.load), append to data/, assign the next lesson_id (L + 4 digits), write the lesson migration
+app/backend/supabase/migrations/<stamp>_lesson_<id>.sql (db_sql.lesson_migration, from the CSVs just
+written; listed in _agent/PENDING_MIGRATIONS.md for the owner to apply) and move the draft folder to
+_agent/lessons/merged/<lesson_id>/. Nothing here connects to the DB.
 Words in a lesson must have a data/words.csv row (word_id); sentences must be in data/sentences.csv.
 """
 import argparse
@@ -40,6 +43,7 @@ import os
 import sys
 import unicodedata
 
+import db_sql
 from build_order import parse_syllable
 
 DEAD_RULE = "R01"
@@ -488,6 +492,12 @@ def report(err, warn):
 
 def merge(world, draft, path, root, new_units, new_rules):
     data = world.data
+    _, problems = db_sql.load(data)
+    if problems:
+        print("data/ does not match the DB spec (db_sql.py check); nothing merged:")
+        for p in problems[:20]:
+            print("  -", p)
+        sys.exit(1)
     nxt = world.n_lessons + 1
     lid = f"L{nxt:04d}"
     les = draft["lesson.csv"][0]
@@ -512,6 +522,8 @@ def merge(world, draft, path, root, new_units, new_rules):
     write(os.path.join(data, "lesson_items.csv"), COLS["lesson_items"], world.items)
     write(os.path.join(data, "units.csv"), COLS["units"], world.units)
     write(os.path.join(data, "rules.csv"), COLS["rules"], world.rules)
+    mig = db_sql.lesson_migration(root, data, inside(db_sql.MIGRATIONS, root), lid)
+    print(f"migration for owner review: {os.path.relpath(mig, root)}")
     dest = inside(os.path.join("_agent", "lessons", "merged", lid), root)
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     os.replace(path, dest)
