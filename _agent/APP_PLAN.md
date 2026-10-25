@@ -31,12 +31,19 @@ for their topics; each slice names the phase it draws from. Tick here.
       pending. Left: user applies it locally and runs the get_lesson check.)
 - [ ] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
       cards, info-icon card. No scoring. (Phase 8, part)
-- [ ] **S5 Progress tables + RPCs (SQL only):** lesson_progress, learner_items (level 0–4, no FSRS fields yet),
-      review_log; start_lesson, record_answers, complete_lesson. Tested in SQL. (Phase 5)
-- [ ] **S6 Activity shell + Spot it + Multiple choice:** module interface `{type, canUse, render}`, minimal session
-      planner, answers sent to record_answers. Done when a learner finishes lesson 1 and levels update. (Phase 7, part)
+- [ ] **S5 Progress tables + RPCs (SQL only):** sessions (kind lesson|practice, lesson_id, learner's local day,
+      started/completed), lesson_progress, learner_items (level 0–4, no FSRS fields yet), review_log (with session_id
+      and lao_word_ids); start_lesson, record_answers, complete_lesson (returns the session summary: words read,
+      accuracy, new items, level-ups, streak; APP_DESIGN "Stats and encouragement"). Tested in SQL. (Phase 5)
+- [ ] **S6 Activity shell + Spot it + Multiple choice + summary screen:** module interface `{type, canUse, render}`,
+      minimal session planner, answers sent to record_answers, summary screen after the lesson. Done when a learner
+      finishes lesson 1, levels update, and the summary shows words read and % correct. (Phase 7, part)
 - [ ] **S7 More v1 activities, two per slice:** matching + flashcards; fill in the blank + build the sentence; tone drill.
-- [ ] **S8 Home and path:** locked / next / done, continue, simple due list with fixed intervals. (Phase 8, rest)
+- [ ] **S8 Home, path and stats:** locked / next / done, continue; streak, letters known and words known from a
+      `learner_stats()` RPC. (Phase 8, rest)
+- [ ] **S8b Practice sessions:** `practice_items(limit)` RPC (due by fixed intervals, then weak, then oldest),
+      practice mode in the planner (recall first, no teach cards), `complete_practice` summary, Practice button and
+      due count on home. Done when a learner with lesson 1 done can run a practice session and see its summary.
 - [ ] **S9 FSRS:** design note first, then implement over the fixed intervals. (Phase 6)
 - [ ] **S10 Native feedback on lesson content:** native-role checks on review RPCs, queue, word/unit feedback, owner views;
       then the feedback subroutine. (Phases 3–4)

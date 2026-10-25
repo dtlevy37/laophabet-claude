@@ -1,12 +1,12 @@
 {
-  "weeklyStopPct": 60,
-  "weeklyWarnPct": 55,
-  "fiveHourWarnPct": 90,
-  "fiveHourPausePct": 100,
+  "weeklyStopPct": 75,
+  "weeklyWarnPct": 70,
+  "fiveHourWarnPct": 75,
+  "fiveHourPausePct": 95,
   "contextCheckpointPct": 70,
   "pauseBufferSeconds": 120,
   "pauseMaxSeconds": 18000,
   "requireUsageData": true,
   "maxStopStalls": 3,
-  "allowedSubagents": ["researcher", "scholar", "drafter"]
+  "allowedSubagents": ["researcher", "scholar", "drafter", "code-reviewer", "curriculum-reviewer"]
 }

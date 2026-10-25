@@ -50,6 +50,34 @@ climbs a ladder per learner, and an activity may only use items at or above the 
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
 | Typing Lao | keyboard input in Lao script | writing | Lao keyboard | out of scope (writing is out of scope) |
 
+## Practice sessions (user, 2026-10-24)
+Lessons introduce material; practice sessions make the learner recall what they already know.
+- **No new items and no teach cards.** The info icon still opens any item's teach card.
+- Available once lesson 1 is done. The home screen shows a Practice button and the number of items due.
+- **What comes up:** introduced items only (level ≥ 1). Due items first (FSRS from S9; before that, fixed intervals
+  such as 1, 3, 7, 14 and 30 days), then weak items (wrong recently), then the least recently seen.
+- **Recall first:** items at level ≥ 2 get recall activities (meaning → Lao, fill in the blank, build the sentence);
+  level-1 items get recognition activities so they can climb. Mixed activity types; never the same item twice in a row.
+- **Length:** about 15–20 answers (about 5 minutes) by default. The learner can stop early and still gets the summary.
+- Practice answers count for levels and scheduling exactly like lesson answers.
+
+## Stats and encouragement (user, 2026-10-24; definitions proposed, to confirm)
+Shown on the home screen and after every lesson or practice session, to keep learners coming back. The DB computes
+every number from `review_log`, `learner_items` and sessions, and RPCs return them; the client never counts on its own.
+- **Streak:** consecutive days, in the learner's local time zone, with at least one completed lesson or practice
+  session. Before today's session, the home screen still shows yesterday's streak with a "keep it going" nudge. A
+  missed day resets it to 0. (Streak freezes: later, maybe.)
+- **Letters known:** distinct Lao glyphs (consonants, vowels, tone marks) with at least one role-unit at level ≥ 2
+  (recognised). ດ as an initial and as a final count once. *Open: one number, or consonants / vowels / tone marks
+  separately?*
+- **Words known:** words at level ≥ 2. A later "mastered" count can use level ≥ 3.
+- **Session summary** (returned by `complete_lesson` / `complete_practice`):
+  - *words read*: Lao words the learner had to read to answer, counting repeats (each answer reports its
+    `lao_word_ids`). *Open: count repeats ("20 words read") or distinct words?*
+  - *accuracy*: answers correct on the first try ÷ answers (teach cards excluded), e.g. "80% correct".
+  - new items learned (lessons), items that moved up a level, and the streak including today.
+  - One encouraging line chosen by thresholds. Never shaming: a low score gets "these will come back soon" framing.
+
 ## Presentation
 - Lao script is always the main text. Respelling and IPA can be toggled; respelling fades as the learner advances
   (a setting, default on for the first lessons).

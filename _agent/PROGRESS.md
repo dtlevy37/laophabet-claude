@@ -197,6 +197,11 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - User rule: every slice must wrap up all agent work and end only at named user gates (apply migration, approve script). Proposed: a "Done when" line per slice in APP_PLAN (not yet added).
 - **Next:** user boots local Supabase (S2): `supabase start`, `supabase db reset`, then `select get_lesson('L0001')` and the learner view in a browser (S3 check, S4 test). Then the step-1 runner audit.
 
+## 2026-10-24 App-phase config staged (awaiting install)
+- New CLAUDE.md, 5 agents, 6 skills and guard-config in `_agent/proposed-config/`; the user installs them per its INSTALL.md (includes settings.json Agent allow lines). `check_frontend.js` awaits approval.
+- Open stats questions (APP_DESIGN "Stats and encouragement"): letters known as one number or split; words read counting repeats or distinct.
+- Until installed, the old CLAUDE.md is live; its research parts are preserved in `CLAUDE_Research.md`.
+
 ## 2026-10-24 Lesson 2 fixed as ເຂົ້າ (rice)
 - User decision: the second word learned is ເຂົ້າ "rice" (W000019, kao). Recorded in LESSON_PLAN.md as decision 5b: 'rice' sense only; new units ຂ (C02), ເ◌ົາ (V35), ◌້ (T2), plus the high-class mai-tho tone rule if it fits; payoff sentence ກິນເຂົ້າ. ລາວ moves to lesson 3 or later.
 - Not enforced in scripts: lesson_tool.py hard-codes only lesson 1, so the brief for lesson 2 still ranks candidates. Enforcing it needs a script change (a SECOND_WORD/SECOND_UNITS like FIRST_*) and re-approval.

@@ -77,6 +77,7 @@ Source of truth: CLAUDE.md "Domain context". Tick items as they finish.
 ## Phase 10: App (user, 2026-10-19). Phases and checklists in `_agent/APP_PLAN.md`
 - [x] App phases drafted; `native/` moved to `app/`
 - [x] App plan re-sliced into small steps (2026-10-24): see APP_PLAN "Slices"; one slice at a time, stop after each
+- [ ] App-phase config (2026-10-24): user installs `_agent/proposed-config/` (CLAUDE.md, agents, skills, guard-config) and approves `check_frontend.js`
 - [ ] Slice 1: user approves the Phase 2 script group; agent runs `db_sql.py check` + `seed`
 - [ ] Slice 2: local backend boots (`supabase start`, `db reset`), existing sign-up and review flow works in a browser
 - [ ] Slice 3: lesson 1 (ກິນ) built interactively; migration applied; `get_lesson('L0001')` works
