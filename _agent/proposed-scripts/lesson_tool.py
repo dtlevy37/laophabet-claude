@@ -13,6 +13,9 @@ Units are role-units, derived from build_order.parse_syllable:
   initial consonant = letter_id (C23), final consonant = letter_id + "f" (C24f),
   second letter of a cluster (ຂວາ, ຄລີ) = letter_id + "c", vowel pattern = vowel_id (V03),
   tone mark = T1/T2..., symbol = S1/S3.
+Same-sound letters (ງ ນ ມ: ipa_initial = ipa_final and no "(final ...)" in the respelling) are taught at the
+start and the end together: their initial and final units are new in the same lesson and count as one unit
+(budget and weight). The app shows the pair as one card.
 Rule R01 (dead syllables) is required by any word with a dead syllable (words.tone_derivation).
 Other rules (R02...) are free-form: introduced by a lesson, not enforced on words.
 
@@ -48,7 +51,7 @@ from build_order import parse_syllable
 
 DEAD_RULE = "R01"
 FIRST_WORD = "ກິນ"
-FIRST_UNITS = {"C01", "V04", "C13f"}
+FIRST_UNITS = {"C01", "V04", "C13", "C13f"}
 ITEM_TYPES = {"unit", "rule", "word", "sentence"}
 ROLES = {"new", "recycle", "example"}
 KINDS = {"letters", "rule", "words", "sentences"}
@@ -201,6 +204,19 @@ class World:
             return ("consonant", role, base, lao)
         return None
 
+    def same_sound(self, base):
+        """True for a consonant that sounds the same at the start and the end of a syllable (ງ ນ ມ)."""
+        r = self.letter.get(base) or {}
+        return (r.get("kind", "").startswith("consonant") and bool(r.get("ipa_final"))
+                and r.get("ipa_initial") == r.get("ipa_final") and "(final" not in (r.get("respelling") or ""))
+
+    def partner(self, uid):
+        """The other unit of a same-sound pair (C13 <-> C13f), or None."""
+        info = self.unit_info(uid)
+        if not info or info[0] != "consonant" or info[1] not in ("initial", "final") or not self.same_sound(info[2]):
+            return None
+        return info[2] + "f" if info[1] == "initial" else info[2]
+
     def weight(self, uid):
         if uid.startswith("R"):
             return 2.0
@@ -289,7 +305,8 @@ def brief(world, top):
         untaught |= set(s - have)
 
     def gain(extra):
-        h = have | extra
+        # a same-sound unit always comes with its partner (ງ ນ ມ at the start and the end)
+        h = have | extra | {p for p in map(world.partner, extra) if p}
         return [r for r, s in P if s <= h and not s <= have]
 
     single = []
@@ -300,7 +317,9 @@ def brief(world, top):
     single.sort(key=lambda x: (-x[0], x[1]))
     L.append(f"## Candidates: one new unit or rule (top {top} by usefulness of newly readable words)\n")
     L.append("Score = sum of category weights (function/pronoun/verb/question/basics 3; everyday nouns and describing 2; else 1). "
-             "Words marked * have no words.csv row yet (draft one first, or choose another word).\n")
+             "Words marked * have no words.csv row yet (draft one first, or choose another word). "
+             "A same-sound letter (ງ ນ ມ) is taught at the start and the end together: list both units as new "
+             "(they count as one).\n")
     for sc, u, g in single[:top]:
         g = sorted(g, key=lambda r: (-r["w"], r["lao"]))
         L.append(f"- **{world.show(u)}** (weight {world.weight(u)}), score {sc}: " +
@@ -435,6 +454,16 @@ def check(world, draft, a):
     for u in new_units:
         if not (teach_u.get(u) or {}).get("teach_en", "").strip():
             err.append(f"units.csv: teach_en required for new unit {u}")
+    # same-sound pairs (ງ ນ ມ) are taught together; the pair counts as one unit
+    paired = set()
+    for u in sorted(new_units):
+        p = world.partner(u)
+        if not p or p in world.known_units:
+            continue
+        if p not in new_units:
+            err.append(f"unit {world.show(u)}: same sound at the start and the end, so add {world.show(p)} as new too")
+        elif u.endswith("f"):
+            paired.add(u)
     for u in teach_u:
         if u not in new_units:
             err.append(f"units.csv: {u} is not a new unit in items.csv")
@@ -466,14 +495,15 @@ def check(world, draft, a):
         if new_units != FIRST_UNITS or lao_new != {FIRST_WORD}:
             err.append(f"lesson 1 is fixed: new units {sorted(FIRST_UNITS)} and the word {FIRST_WORD} only")
     else:
-        if len(new_units) > a.max_units:
-            err.append(f"{len(new_units)} new units (max {a.max_units})")
+        n_units = len(new_units - paired)
+        if n_units > a.max_units:
+            err.append(f"{n_units} new units (max {a.max_units}; a same-sound pair counts once)")
         lao_new = {nfc(world.words[w]["lao"]) for w in new_words}
         if len(lao_new) > a.max_words:
             err.append(f"{len(lao_new)} new word spellings (max {a.max_words})")
         if not new_words and not new_units and not new_rules:
             err.append("lesson introduces nothing new")
-        wt = sum(world.weight(u) for u in new_units | new_rules) + len(lao_new)
+        wt = sum(world.weight(u) for u in (new_units - paired) | new_rules) + len(lao_new)
         if wt > a.max_weight:
             err.append(f"new-item weight {wt} (max {a.max_weight})")
         need = min(a.min_recycle, len(world.known_words))

@@ -79,7 +79,8 @@ async function showLesson(root, lessonId, index, stale) {
     bundle = data
     bundles.set(lessonId, bundle)
   }
-  const { lesson, items } = bundle
+  const { lesson } = bundle
+  const items = cardItems(bundle.items)
   if (!items.length) return root.replaceChildren(card(h('h1', null, lesson.title_en), backToList()))
   const i = Math.min(index, items.length - 1)
   const at = (n) => `#/lesson/${lessonId}/${n + 1}`
@@ -106,6 +107,21 @@ async function showLesson(root, lessonId, index, stale) {
       ),
     ),
   )
+}
+
+// A same-sound letter (ງ ນ ມ) is taught at the start and the end together (LESSON_PLAN decision 10). The lesson
+// lists both units; the final one folds into the initial one's card, whose text covers both positions.
+function cardItems(items) {
+  const initials = new Map(
+    items.filter((it) => it.item_type === 'unit' && it.detail?.role === 'initial').map((it) => [it.detail.base_id, it.detail]),
+  )
+  return items.filter((it) => {
+    const d = it.detail
+    if (it.item_type !== 'unit' || d?.role !== 'final') return true
+    const first = initials.get(d.base_id)
+    const same = first && first.letter?.ipa === d.letter?.ipa && !(d.letter?.respelling || '').includes('(final')
+    return !same
+  })
 }
 
 const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to_list'))

@@ -30,7 +30,12 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
 9. **Teach texts are one line** (user, 2026-10-24; card layout in APP_DESIGN "Teach cards"). units/rules teach_en is
    the card's front: a sound cue ("Sounds like the g in 'get'") plus at most one sentence of essential context. No
    IPA, class, length or letter names in it (the card's "More" section shows those from letters/vowels). Lesson
-   titles and summaries are short and do not name the lesson's word before its card (L0001: "Your first word").
+   titles and summaries are short and do not name the lesson's word before its card, and are not shown on cards.
+10. **Same-sound letters are taught at both positions at once** (user, 2026-10-24). ງ ນ ມ sound the same at the
+   start and the end of a syllable (ipa_initial = ipa_final, no "(final x)" respelling), so their initial and final
+   units are new in the same lesson, count as one unit, and share one card whose text covers both positions.
+   Letters that change at the end (ກ ດ ບ ຍ ວ ...) keep separate role-units. Enforced by lesson_tool check (rev
+   pending approval, 2026-10-24). L0001 now teaches C13 + C13f.
 
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
