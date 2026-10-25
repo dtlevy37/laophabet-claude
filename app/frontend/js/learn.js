@@ -93,7 +93,6 @@ async function showLesson(root, lessonId, index, stale) {
         backToList(),
         h('span', { class: 'muted' }, `${t('learn_lesson')} ${lesson.lesson_order} · ${i + 1} / ${items.length}`),
       ),
-      i === 0 ? h('h1', null, lesson.title_en) : null,
       teachCard(items[i], bundle),
       h(
         'div',
@@ -113,9 +112,9 @@ const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to
 
 // ------------------------------------------------------------------ teach cards
 // One card per lesson item. The same builder fills the info dialog.
-// The front shows only what is taught: the glyph or word, its sound, the meaning, one line of text and (for words)
-// the tone picture. Everything else sits in a closed "More" section (open in the info dialog). Nothing the learner
-// has not been taught is shown, such as a letter's name word.
+// The front is a small table: labelled cells (Lao letter | Sounds like, or Lao word | Sounds like, Means, Tone)
+// with large content under small labels, then one line of text. Everything else sits in a closed "More" section
+// (open in the info dialog). Nothing the learner has not been taught is shown, such as a letter's name word.
 function teachCard(item, bundle, { inDialog = false } = {}) {
   const d = item.detail || {}
   const body =
@@ -136,9 +135,15 @@ function teachCard(item, bundle, { inDialog = false } = {}) {
 
 function unitBody(u, open) {
   const sound = u.letter || u.vowel || {}
+  const says = soundOf(u, sound.respelling)
   return [
-    h('p', { class: 'glyph lao', lang: 'lo' }, u.lao),
-    u.teach_en ? h('p', { class: 'center meaning' }, u.teach_en) : null,
+    h(
+      'div',
+      { class: 'teach-grid' },
+      cell(t(u.kind === 'vowel' ? 'card_lao_vowel' : u.kind === 'consonant' ? 'card_lao_letter' : 'card_lao_mark'), h('span', { class: 'glyph lao', lang: 'lo' }, u.lao)),
+      says ? cell(t('card_sounds_like'), h('span', { class: 'cell-big' }, says)) : null,
+    ),
+    u.teach_en ? h('p', { class: 'center hint' }, u.teach_en) : null,
     more(open, [
       h('p', { class: 'muted' }, unitLabel(u)),
       u.lao.includes('◌') ? h('p', { class: 'muted' }, t('unit_dotted_circle')) : null,
@@ -155,11 +160,16 @@ function unitBody(u, open) {
 function wordBody(w, open) {
   const syllables = w.syllables || []
   const tones = w.tones || []
+  const tonePics = toneRow(syllables, tones)
   return [
-    h('p', { class: 'glyph lao', lang: 'lo' }, w.lao),
-    h('p', { class: 'center' }, h('strong', null, w.respelling)),
-    h('p', { class: 'center meaning' }, w.gloss_en),
-    toneRow(syllables, tones),
+    h(
+      'div',
+      { class: 'teach-grid' },
+      cell(t('card_lao_word'), h('span', { class: 'glyph lao', lang: 'lo' }, w.lao)),
+      w.respelling ? cell(t('card_sounds_like'), h('span', { class: 'cell-big' }, w.respelling)) : null,
+      w.gloss_en ? cell(t('card_means'), h('span', { class: 'cell-mid' }, w.gloss_en)) : null,
+      tonePics ? cell(t('label_tones'), tonePics) : null,
+    ),
     more(open, [
       facts([
         w.ipa ? [t('label_ipa'), `/${w.ipa}/`] : null,
@@ -191,6 +201,17 @@ function toneRow(syllables, tones) {
     })
     .filter(Boolean)
   return cells.length ? h('div', { class: 'tone-row' }, cells) : null
+}
+
+const cell = (label, content) => h('div', { class: 'cell' }, h('span', { class: 'cell-label' }, label), content)
+
+// The sound of a unit in the learner respelling (SCHEMA "Learner respelling scheme"). Letters store
+// 'g (final k)' or just 'n'; a final takes the part in brackets when there is one.
+function soundOf(u, respelling) {
+  if (!respelling) return ''
+  const m = respelling.match(/^(.*?)\s*\(final (.+)\)$/)
+  if (!m) return respelling
+  return u.role === 'final' ? m[2] : m[1]
 }
 
 const more = (open, kids) => h('details', { class: 'more', open }, h('summary', null, t('label_more')), kids)

@@ -33,7 +33,10 @@ climbs a ladder per learner, and an activity may only use items at or above the 
 
 ## Teach cards (user, 2026-10-24)
 A new learner is overwhelmed by text, so a card shows only what it teaches.
-- **Front:** the glyph or word; its sound as a simple English cue ("Sounds like the g in 'get'"); the meaning for
+- **Layout:** a small table. Small labels over large content: `Lao letter | Sounds like` (ກ | g), then one hint
+  line under it ("A hard g, as in the word 'get'."). Words: `Lao word | Sounds like`, then `Means` and `Tone`. The
+  sound value comes from letters/vowels respelling (a final takes the "(final x)" part). No lesson title on the cards.
+- **Front:** the glyph or word; its sound as a simple English cue ("A hard g, as in the word 'get'"); the meaning for
   words (common senses together are fine: ກິນ "eat; drink"); at most one sentence of essential context ("Written
   above the consonant, but said after it"); for words, a tone picture per syllable (a pitch line on a 5-level
   scale, `js/tone.js`), not tone names.

@@ -108,6 +108,13 @@ legend { font-weight: 600; padding: 0 6px; }
   border: 1px solid var(--accent); color: var(--accent);
 }
 .badge.recycle { border-color: var(--muted); color: var(--muted); }
+.teach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin: 8px 0 4px; text-align: center; }
+.cell { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-width: 0; }
+.cell-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.cell .glyph { margin: 0; }
+.cell-big { font-size: 3rem; font-weight: 700; line-height: 1.6; }
+.cell-mid { font-size: 1.4rem; line-height: 1.4; padding-top: 6px; }
+.hint { font-size: 1.1rem; margin: 4px 0 12px; }
 details.more { margin: 12px 0 0; border-top: 1px solid var(--border); padding-top: 8px; }
 details.more summary { cursor: pointer; color: var(--accent); min-height: 44px; display: flex; align-items: center; }
 .tone-row { display: flex; justify-content: center; gap: 16px; margin: 4px 0 8px; }
