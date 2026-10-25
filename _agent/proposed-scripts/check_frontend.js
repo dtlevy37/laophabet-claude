@@ -9,8 +9,9 @@
 //   2. Relative imports: the target file exists, and every named import { a, b as c } is exported by it
 //      (export function/const/let/class/async function, export { x, y as z }). `export *` and default
 //      imports are not checked.
-//   3. Strings: strings.json parses; every t('key') / tIn(lang, 'key') key exists; every entry has `en`.
-//      --unused also lists keys that no file references literally (some may be built dynamically).
+//   3. Strings: strings.json parses; every t('key') / tIn(lang, 'key') key exists; every entry has `en`
+//      (keys starting with _ are comments and skipped). --unused also lists keys that no file references;
+//      keys matching a template-literal prefix such as t(`badge_${role}`) count as used.
 // Exit code 0 when no errors, 1 otherwise. Warnings never fail the run.
 'use strict'
 const fs = require('node:fs')
@@ -105,19 +106,31 @@ try {
 }
 if (strings) {
   for (const [k, v] of Object.entries(strings)) {
+    if (k.startsWith('_')) continue // comment entries such as _note
     if (!v || typeof v !== 'object' || typeof v.en !== 'string' || !v.en.trim()) errors.push(`strings.json: '${k}' has no en text`)
   }
   const used = new Set()
+  const prefixes = new Set() // t(`badge_${role}`) -> 'badge_': keys built at runtime
+  // t('key') takes the key first; tIn(lang, 'key') second (lang may itself be a quoted string, e.g. tIn('lo', ...)).
+  const keyCalls = [/\bt\(\s*(['"`])([A-Za-z0-9_.-]*)(\$\{)?/g, /\btIn\(\s*[^,()]+,\s*(['"`])([A-Za-z0-9_.-]*)(\$\{)?/g]
   for (const [f, src] of sources) {
-    for (const m of src.matchAll(/\bt(?:In)?\(\s*(?:[^,()'"`]+,\s*)?['"]([A-Za-z0-9_.-]+)['"]/g)) {
-      used.add(m[1])
-      if (!(m[1] in strings)) errors.push(`${rel(f)}: string key '${m[1]}' missing from strings.json`)
+    for (const re of keyCalls) {
+      for (const m of src.matchAll(re)) {
+        if (m[1] === '`' && m[3]) {
+          if (m[2]) prefixes.add(m[2])
+          continue
+        }
+        if (!m[2]) continue
+        used.add(m[2])
+        if (!(m[2] in strings)) errors.push(`${rel(f)}: string key '${m[2]}' missing from strings.json`)
+      }
     }
   }
   if (showUnused) {
     const all = [...sources.values()].join('\n')
     for (const k of Object.keys(strings)) {
-      if (!used.has(k) && !all.includes(`'${k}'`) && !all.includes(`"${k}"`)) warnings.push(`strings.json: '${k}' not referenced literally`)
+      if (k.startsWith('_') || used.has(k) || [...prefixes].some((p) => k.startsWith(p))) continue
+      if (!all.includes(`'${k}'`) && !all.includes(`"${k}"`)) warnings.push(`strings.json: '${k}' not referenced literally`)
     }
   }
 }
