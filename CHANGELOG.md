@@ -12,7 +12,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
   - Guard config allowing the new agents.
 - `CLAUDE_Research.md`: the previous CLAUDE.md, preserved unchanged for research and word-list work (not auto-loaded).
 - Proposed script `_agent/proposed-scripts/check_frontend.js`: JS syntax, import/export and strings.json key checks for `app/frontend` (awaiting approval).
-- APP_DESIGN: "Practice sessions" and "Stats and encouragement" (streak, letters known, words known, session summary; definitions proposed, two open questions).
+- APP_DESIGN: "Practice sessions" and "Stats and encouragement" (streak, letters known, words known, session summary). Confirmed by the user: letters known is one number; words read counts repeats.
 
 ### Changed
 - APP_PLAN slices: S5 adds sessions and the session summary; S6 adds the summary screen; S8 adds home stats; new S8b practice sessions.

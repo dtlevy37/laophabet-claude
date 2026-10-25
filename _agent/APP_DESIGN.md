@@ -61,19 +61,19 @@ Lessons introduce material; practice sessions make the learner recall what they 
 - **Length:** about 15–20 answers (about 5 minutes) by default. The learner can stop early and still gets the summary.
 - Practice answers count for levels and scheduling exactly like lesson answers.
 
-## Stats and encouragement (user, 2026-10-24; definitions proposed, to confirm)
+## Stats and encouragement (user, 2026-10-24; definitions confirmed)
 Shown on the home screen and after every lesson or practice session, to keep learners coming back. The DB computes
 every number from `review_log`, `learner_items` and sessions, and RPCs return them; the client never counts on its own.
 - **Streak:** consecutive days, in the learner's local time zone, with at least one completed lesson or practice
   session. Before today's session, the home screen still shows yesterday's streak with a "keep it going" nudge. A
   missed day resets it to 0. (Streak freezes: later, maybe.)
 - **Letters known:** distinct Lao glyphs (consonants, vowels, tone marks) with at least one role-unit at level ≥ 2
-  (recognised). ດ as an initial and as a final count once. *Open: one number, or consonants / vowels / tone marks
-  separately?*
+  (recognised). ດ as an initial and as a final count once. One number, no breakdown (user, 2026-10-24).
 - **Words known:** words at level ≥ 2. A later "mastered" count can use level ≥ 3.
 - **Session summary** (returned by `complete_lesson` / `complete_practice`):
   - *words read*: Lao words the learner had to read to answer, counting repeats (each answer reports its
-    `lao_word_ids`). *Open: count repeats ("20 words read") or distinct words?*
+    `lao_word_ids`). Repeats count (user, 2026-10-24): it appears only in the end-of-session summary, and its job
+    is to hype the learner up.
   - *accuracy*: answers correct on the first try ÷ answers (teach cards excluded), e.g. "80% correct".
   - new items learned (lessons), items that moved up a level, and the streak including today.
   - One encouraging line chosen by thresholds. Never shaming: a low score gets "these will come back soon" framing.

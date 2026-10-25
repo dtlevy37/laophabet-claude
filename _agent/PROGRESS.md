@@ -199,7 +199,6 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 
 ## 2026-10-24 App-phase config staged (awaiting install)
 - New CLAUDE.md, 5 agents, 6 skills and guard-config in `_agent/proposed-config/`; the user installs them per its INSTALL.md (includes settings.json Agent allow lines). `check_frontend.js` awaits approval.
-- Open stats questions (APP_DESIGN "Stats and encouragement"): letters known as one number or split; words read counting repeats or distinct.
 - Until installed, the old CLAUDE.md is live; its research parts are preserved in `CLAUDE_Research.md`.
 
 ## 2026-10-24 Lesson 2 fixed as ເຂົ້າ (rice)
