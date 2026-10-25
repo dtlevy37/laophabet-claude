@@ -57,19 +57,26 @@ create table public.lesson_items (
 create index lesson_items_item_idx on public.lesson_items (item_type, item_id);
 
 create or replace function public.check_lesson_item()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql as $fn$
+declare
+  found_it boolean := false;
 begin
-  if not case new.item_type
-      when 'unit'     then exists (select 1 from public.units where unit_id = new.item_id)
-      when 'rule'     then exists (select 1 from public.rules where rule_id = new.item_id)
-      when 'word'     then exists (select 1 from public.words where word_id = new.item_id)
-      when 'sentence' then exists (select 1 from public.sentences where sentence_id = new.item_id)
-      else false end then
+  if new.item_type = 'unit' then
+    select exists (select 1 from public.units where unit_id = new.item_id) into found_it;
+  elsif new.item_type = 'rule' then
+    select exists (select 1 from public.rules where rule_id = new.item_id) into found_it;
+  elsif new.item_type = 'word' then
+    select exists (select 1 from public.words where word_id = new.item_id) into found_it;
+  elsif new.item_type = 'sentence' then
+    select exists (select 1 from public.sentences where sentence_id = new.item_id) into found_it;
+  end if;
+  if not found_it then
     raise exception 'lesson_items %/%: % % does not exist',
       new.lesson_id, new.position, new.item_type, new.item_id;
   end if;
   return new;
-end $$;
+end
+$fn$;
 create trigger lesson_items_check before insert or update on public.lesson_items
   for each row execute function public.check_lesson_item();
 
