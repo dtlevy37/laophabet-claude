@@ -98,6 +98,10 @@
     "lo": "ມີບັນຫາ. ກະລຸນາລອງໃໝ່.",
     "en": "Something went wrong. Please try again."
   },
+  "retry": {
+    "lo": "ລອງໃໝ່",
+    "en": "Try again"
+  },
   "sign_out": {
     "lo": "ອອກຈາກລະບົບ",
     "en": "Sign out"

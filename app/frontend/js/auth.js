@@ -107,32 +107,40 @@ export function showAuth(root, mode = 'login', role = null) {
         submit.disabled = true
         message.className = ''
         message.textContent = ''
-        if (mode === 'login') {
-          const { error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
-          if (error) {
-            console.error(error)
-            message.className = 'error'
-            message.textContent = t('auth_login_failed')
+        try {
+          if (mode === 'login') {
+            const { error } = await supabase.auth.signInWithPassword({ email: email.value, password: password.value })
+            if (error) {
+              console.error(error)
+              message.className = 'error'
+              message.textContent = t('auth_login_failed')
+            }
+          } else {
+            const { data, error } = await supabase.auth.signUp({
+              email: email.value,
+              password: password.value,
+              options: {
+                data: { display_name: name.value.trim(), role },
+                emailRedirectTo: location.origin + location.pathname,
+              },
+            })
+            if (error) {
+              console.error(error)
+              message.className = 'error'
+              message.textContent = t('auth_signup_failed')
+            } else if (!data.session) {
+              message.className = 'info'
+              message.textContent = t('auth_check_email')
+            }
           }
-        } else {
-          const { data, error } = await supabase.auth.signUp({
-            email: email.value,
-            password: password.value,
-            options: {
-              data: { display_name: name.value.trim(), role },
-              emailRedirectTo: location.origin + location.pathname,
-            },
-          })
-          if (error) {
-            console.error(error)
-            message.className = 'error'
-            message.textContent = t('auth_signup_failed')
-          } else if (!data.session) {
-            message.className = 'info'
-            message.textContent = t('auth_check_email')
-          }
+        } catch (err) {
+          // Server unreachable: show an error instead of leaving the form stuck.
+          console.error(err)
+          message.className = 'error'
+          message.textContent = t('generic_error')
+        } finally {
+          submit.disabled = false
         }
-        submit.disabled = false
       },
     },
     mode === 'signup' ? h('label', null, t('auth_name'), name) : null,

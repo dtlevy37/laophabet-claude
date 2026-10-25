@@ -11,6 +11,7 @@ const topbar = document.getElementById('topbar')
 
 let session = null
 let profile = null
+let profileFailed = false
 let learnerView = false // the learner view routes by URL hash (learn.js)
 
 const card = (...kids) => h('main', { class: 'card' }, kids)
@@ -20,13 +21,20 @@ async function loadProfile() {
     profile = null
     return
   }
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('id, role, display_name, is_native_speaker, gender, birth_date, lao_locale, region, english_level, onboarded_at')
-    .eq('id', session.user.id)
-    .maybeSingle()
-  if (error) console.error(error)
-  profile = data
+  profileFailed = false
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('id, role, display_name, is_native_speaker, gender, birth_date, lao_locale, region, english_level, onboarded_at')
+      .eq('id', session.user.id)
+      .maybeSingle()
+    if (error) throw error
+    profile = data
+  } catch (err) {
+    console.error(err)
+    profile = null
+    profileFailed = true
+  }
 }
 
 async function refresh() {
@@ -77,6 +85,16 @@ function render() {
   topbar.replaceChildren()
   learnerView = false
   if (!session) return showAuth(app)
+  if (!profile && profileFailed) {
+    return app.replaceChildren(
+      card(
+        h('p', { class: 'error' }, t('generic_error')),
+        h('button', { class: 'primary', onclick: refresh }, t('retry')),
+        ' ',
+        h('button', { class: 'link', onclick: () => supabase.auth.signOut() }, t('sign_out')),
+      ),
+    )
+  }
   if (!profile) return app.replaceChildren(card(t('loading')))
   if (!profile.role) return showRoleChoice(app, { userId: session.user.id, onDone: refresh })
 
@@ -108,8 +126,12 @@ if (!configured) {
   app.replaceChildren(h('main', { class: 'card error' }, t('config_error')))
 } else {
   app.replaceChildren(card(t('loading')))
-  const { data } = await supabase.auth.getSession()
-  session = data.session
+  try {
+    const { data } = await supabase.auth.getSession()
+    session = data.session
+  } catch (err) {
+    console.error(err)
+  }
   await refresh()
   supabase.auth.onAuthStateChange((event, next) => {
     // Only react to real changes; token refreshes would otherwise reset the form.
