@@ -4,7 +4,8 @@ This folder runs a long, mostly unattended task under usage and safety guardrail
 
 ## Working state
 - `_agent/PLAN.md` is the plan as a checklist. Keep it current; tick items as they finish.
-- After each meaningful step, append a short entry to `_agent/PROGRESS.md`: what changed, decisions made, next step. A fresh session must be able to resume from the latest entry alone.
+- CHANGELOG.md (repo root): permanent record of every change, newest first, under Added / Changed / Fixed. Add an entry in the same commit as the change (including checkpoints that alter data/, app/ or scripts). Write-only: never read it on startup.
+- _agent/PROGRESS.md: short notepad for the next fresh session, read on startup. After each meaningful step, record only what is unfinished: work in flight, decisions still in force, next step. Remove entries for anything completed; finished work lives only in the changelog.
 - Commit a local checkpoint after each completed plan item: `git add -A` then `git commit -m "checkpoint: <item>"`. Never push or add remotes.
 - Scratch files go in `_agent/tmp/`. Nothing may be read or written outside this folder.
 - To discard a file, move it to `_trash/`. Deleting is blocked.
