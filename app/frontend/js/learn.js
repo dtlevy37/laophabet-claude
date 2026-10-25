@@ -1,6 +1,7 @@
 import { supabase } from './supabase.js'
 import { t } from './i18n.js'
 import { h } from './dom.js'
+import { toneContour } from './tone.js'
 
 // Learner view, read-only (APP_PLAN S4). Hash routes:
 //   #/                     lesson list (list_lessons RPC)
@@ -92,7 +93,7 @@ async function showLesson(root, lessonId, index, stale) {
         backToList(),
         h('span', { class: 'muted' }, `${t('learn_lesson')} ${lesson.lesson_order} · ${i + 1} / ${items.length}`),
       ),
-      i === 0 ? [h('h1', null, lesson.title_en), h('p', { class: 'muted' }, lesson.summary_en)] : null,
+      i === 0 ? h('h1', null, lesson.title_en) : null,
       teachCard(items[i], bundle),
       h(
         'div',
@@ -112,13 +113,16 @@ const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to
 
 // ------------------------------------------------------------------ teach cards
 // One card per lesson item. The same builder fills the info dialog.
+// The front shows only what is taught: the glyph or word, its sound, the meaning, one line of text and (for words)
+// the tone picture. Everything else sits in a closed "More" section (open in the info dialog). Nothing the learner
+// has not been taught is shown, such as a letter's name word.
 function teachCard(item, bundle, { inDialog = false } = {}) {
   const d = item.detail || {}
   const body =
     item.item_type === 'unit'
-      ? unitBody(d, bundle)
+      ? unitBody(d, inDialog)
       : item.item_type === 'word'
-        ? wordBody(d)
+        ? wordBody(d, inDialog)
         : item.item_type === 'rule'
           ? ruleBody(d)
           : sentenceBody(d, bundle)
@@ -130,40 +134,66 @@ function teachCard(item, bundle, { inDialog = false } = {}) {
   )
 }
 
-function unitBody(u, bundle) {
+function unitBody(u, open) {
   const sound = u.letter || u.vowel || {}
-  const examples = lessonWords(bundle).filter((w) => w.lao.includes(glyphOf(u.lao)))
   return [
     h('p', { class: 'glyph lao', lang: 'lo' }, u.lao),
-    h('p', { class: 'muted center' }, unitLabel(u)),
-    facts([
-      [t('label_sound'), [sound.respelling, sound.ipa ? ` /${sound.ipa}/` : null]],
-      u.letter ? [t('label_letter_name'), h('span', { lang: 'lo' }, u.letter.name_lao), ` “${u.letter.name_gloss_en}”`] : null,
-      u.letter ? [t('label_class'), u.letter.consonant_class] : null,
-      u.vowel ? [t('label_length'), u.vowel.length] : null,
+    u.teach_en ? h('p', { class: 'center meaning' }, u.teach_en) : null,
+    more(open, [
+      h('p', { class: 'muted' }, unitLabel(u)),
+      u.lao.includes('◌') ? h('p', { class: 'muted' }, t('unit_dotted_circle')) : null,
+      facts([
+        sound.ipa ? [t('label_ipa'), `/${sound.ipa}/`] : null,
+        u.letter ? [t('label_class'), u.letter.consonant_class] : null,
+        u.vowel ? [t('label_length'), u.vowel.length] : null,
+      ]),
+      sound.pron_tip ? h('p', null, sound.pron_tip) : null,
     ]),
-    h('p', null, u.teach_en),
-    examples.length ? [h('h3', null, t('label_examples')), chips(examples, bundle)] : null,
   ]
 }
 
-function wordBody(w) {
+function wordBody(w, open) {
   const syllables = w.syllables || []
+  const tones = w.tones || []
   return [
     h('p', { class: 'glyph lao', lang: 'lo' }, w.lao),
-    h('p', { class: 'center' }, h('strong', null, w.respelling), w.ipa ? h('span', { class: 'muted' }, ` /${w.ipa}/`) : null),
+    h('p', { class: 'center' }, h('strong', null, w.respelling)),
     h('p', { class: 'center meaning' }, w.gloss_en),
-    facts([
-      w.pos ? [t('label_pos'), w.pos] : null,
-      [
-        t('label_tones'),
-        syllables.map((s, k) => [k ? ' · ' : null, h('span', { lang: 'lo' }, s), ` ${(w.tones || [])[k] || ''}`]),
-      ],
-      w.classifier_lao ? [t('label_classifier'), h('span', { lang: 'lo' }, w.classifier_lao)] : null,
+    toneRow(syllables, tones),
+    more(open, [
+      facts([
+        w.ipa ? [t('label_ipa'), `/${w.ipa}/`] : null,
+        tones.length
+          ? [
+              t('label_tones'),
+              syllables.map((s, k) => [
+                k ? ' · ' : null,
+                syllables.length > 1 ? [h('span', { lang: 'lo' }, s), ' '] : null,
+                tones[k] ? t(`tone_${tones[k]}`) : '',
+              ]),
+            ]
+          : null,
+        w.pos ? [t('label_pos'), w.pos] : null,
+        w.classifier_lao ? [t('label_classifier'), h('span', { lang: 'lo' }, w.classifier_lao)] : null,
+      ]),
+      w.pron_tip ? h('p', null, w.pron_tip) : null,
     ]),
-    w.pron_tip ? h('p', null, w.pron_tip) : null,
   ]
 }
+
+// One tone picture per syllable; the syllable is written under it only when there is more than one.
+function toneRow(syllables, tones) {
+  const cells = syllables
+    .map((s, k) => {
+      const pic = toneContour(tones[k])
+      if (!pic) return null
+      return h('figure', { class: 'tone' }, pic, syllables.length > 1 ? h('figcaption', { class: 'lao', lang: 'lo' }, s) : null)
+    })
+    .filter(Boolean)
+  return cells.length ? h('div', { class: 'tone-row' }, cells) : null
+}
+
+const more = (open, kids) => h('details', { class: 'more', open }, h('summary', null, t('label_more')), kids)
 
 function ruleBody(r) {
   return [h('h2', null, r.name_en), h('p', null, r.teach_en)]
@@ -235,10 +265,12 @@ function openInfo(wordId, bundle) {
 
 // ------------------------------------------------------------------ helpers
 function facts(rows) {
+  const kept = rows.filter(Boolean)
+  if (!kept.length) return null
   return h(
     'dl',
     { class: 'facts' },
-    rows.filter(Boolean).map(([k, ...v]) => [h('dt', null, k), h('dd', null, v)]),
+    kept.map(([k, ...v]) => [h('dt', null, k), h('dd', null, v)]),
   )
 }
 
@@ -247,9 +279,3 @@ function unitLabel(u) {
   if (u.kind === 'symbol') return t('unit_symbol')
   return t(`unit_${u.role}`)
 }
-
-// The bare glyph of a unit's display form: '◌ນ' -> 'ນ', '◌ິ' -> 'ິ' (vowel patterns with two parts keep both,
-// so examples are only found for one-part vowels for now).
-const glyphOf = (lao) => lao.replace(/◌| \(cluster\)/g, '')
-
-const lessonWords = (bundle) => bundle.items.filter((it) => it.item_type === 'word').map((it) => it.detail)

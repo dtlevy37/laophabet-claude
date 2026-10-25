@@ -108,6 +108,14 @@ legend { font-weight: 600; padding: 0 6px; }
   border: 1px solid var(--accent); color: var(--accent);
 }
 .badge.recycle { border-color: var(--muted); color: var(--muted); }
+details.more { margin: 12px 0 0; border-top: 1px solid var(--border); padding-top: 8px; }
+details.more summary { cursor: pointer; color: var(--accent); min-height: 44px; display: flex; align-items: center; }
+.tone-row { display: flex; justify-content: center; gap: 16px; margin: 4px 0 8px; }
+.tone { margin: 0; text-align: center; }
+.tone figcaption.lao { font-size: 1.25rem; line-height: 1.6; }
+.tone-guide { stroke: var(--border); stroke-width: 1; }
+.tone-line { fill: none; stroke: var(--accent); stroke-width: 3.5; stroke-linecap: round; }
+.tone-end { fill: var(--accent); }
 .facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 12px 0; }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; }

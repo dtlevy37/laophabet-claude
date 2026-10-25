@@ -1,4 +1,4 @@
 unit_id,kind,role,base_id,lao,teach_en,intro_lesson_id,source,confidence,notes
-C01,consonant,initial,C01,ກ,"ກ is a consonant. At the start of a syllable it is an unaspirated k, said with no puff of air, so English ears often hear a g (as in 'gas').",L0001,SRC-AGENT:lesson,unverified,From letters.csv C01 pron_tip (verified); wording by agent.
-C13f,consonant,final,C13,◌ນ,"ນ at the end of a syllable is n, as in 'sun'. (At the start of a syllable it is also n, as in 'no'.)",L0001,SRC-AGENT:lesson,unverified,From letters.csv C13 (ipa_final n; verified); wording by agent.
-V04,vowel,vowel,V04,◌ິ,"◌ິ is the short vowel i, like the i in 'bit' but tenser. It is written above the consonant; the dotted circle shows where the consonant goes. Even though it is written above, you say it after the consonant.",L0001,SRC-AGENT:lesson,unverified,From vowels.csv V04 pron_tip (verified); wording by agent.
+C01,consonant,initial,C01,ກ,Sounds like the g in 'get'.,L0001,SRC-AGENT:lesson,unverified,From letters.csv C01 pron_tip (verified); wording by agent. Shortened 2026-10-24 (teach cards: one line on the front).
+C13f,consonant,final,C13,◌ນ,"At the end of a syllable, sounds like the n in 'sun'.",L0001,SRC-AGENT:lesson,unverified,From letters.csv C13 (ipa_final n; verified); wording by agent. Shortened 2026-10-24.
+V04,vowel,vowel,V04,◌ິ,"Sounds like the i in 'bit'. Written above the consonant, but said after it.",L0001,SRC-AGENT:lesson,unverified,From vowels.csv V04 pron_tip (verified); wording by agent. Shortened 2026-10-24.

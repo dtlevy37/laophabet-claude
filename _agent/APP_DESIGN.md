@@ -31,11 +31,23 @@ climbs a ladder per learner, and an activity may only use items at or above the 
   item's memory state, and recall answers count for more than recognition answers. A failed item simply comes
   back sooner. This is how the app learns which words stick for which learner.
 
+## Teach cards (user, 2026-10-24)
+A new learner is overwhelmed by text, so a card shows only what it teaches.
+- **Front:** the glyph or word; its sound as a simple English cue ("Sounds like the g in 'get'"); the meaning for
+  words (common senses together are fine: ກິນ "eat; drink"); at most one sentence of essential context ("Written
+  above the consonant, but said after it"); for words, a tone picture per syllable (a pitch line on a 5-level
+  scale, `js/tone.js`), not tone names.
+- **Behind "More"** (closed on the card, open in the info dialog): IPA, consonant class, vowel length, role label,
+  tone names in words, part of speech, classifier, the longer pron_tip.
+- **Never shown before it is taught:** a letter's name word (ໄກ່ "chicken" for ກ), example words that come later
+  in the lesson, or a lesson title/summary that gives the lesson's word away.
+- units.teach_en / rules.teach_en hold only the front text: one or two short sentences.
+
 ## Activities
 
 | Activity | What it looks like | Tests | Data it needs | When |
 |---|---|---|---|---|
-| Teach card | glyph or word, respelling, audio, meaning, 1–3 lines of explanation, example words | nothing (show) | units.teach_en, rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, audio | v1 |
+| Teach card | front: glyph or word, sound cue, meaning, at most one sentence, tone picture for words; the rest behind "More" (see "Teach cards" below) | nothing (show) | units.teach_en, rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, audio | v1 |
 | Spot it | "Which of these is ລ?" with the card still visible | level 1 | same | v1 |
 | Matching | tap pairs: Lao ↔ English, Lao ↔ respelling, letter ↔ sound | recognition | words, units | v1 |
 | Multiple choice | Lao → pick meaning; meaning → pick Lao; sound → pick letter | recognition or recall | words, units, confusable sets | v1 |

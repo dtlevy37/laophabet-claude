@@ -27,6 +27,10 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    - ຍ, ວ and ຫ by about lessons 8–12. Final ວ comes in with ລາວ (lesson 2 or 3).
 7. **Sentences come as early as is realistic,** then question and answer pairs, then short dialogues on a topic.
 8. **Targeting specific words is not the aim at this stage** (except ກິນ and ລາວ); the aim is common, useful words.
+9. **Teach texts are one line** (user, 2026-10-24; card layout in APP_DESIGN "Teach cards"). units/rules teach_en is
+   the card's front: a sound cue ("Sounds like the g in 'get'") plus at most one sentence of essential context. No
+   IPA, class, length or letter names in it (the card's "More" section shows those from letters/vowels). Lesson
+   titles and summaries are short and do not name the lesson's word before its card (L0001: "Your first word").
 
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the

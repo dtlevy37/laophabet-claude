@@ -201,6 +201,11 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - New CLAUDE.md, 5 agents, 6 skills and guard-config in `_agent/proposed-config/`; the user installs them per its INSTALL.md (includes settings.json Agent allow lines). `check_frontend.js` awaits approval.
 - Until installed, the old CLAUDE.md is live; its research parts are preserved in `CLAUDE_Research.md`.
 
+## 2026-10-24 Minimal teach cards + tone picture (untested)
+- User rule: teach cards show only what's taught (glyph/word, sound cue, meaning, one sentence max, tone picture for words); everything else goes behind "More"; never show untaught things (letter name words, later example words). Recorded in APP_DESIGN "Teach cards" and LESSON_PLAN decision 9. Memory folder writes are blocked, so this is the record.
+- Done: learn.js/tone.js/strings/styles; L0001 content shortened; migration `20261025032517_l0001_short_teach_text.sql` pending. Code review: no major findings, minors fixed.
+- **Next:** user applies the pending migrations and views lesson 1 in a browser. Possible follow-ups: tone pictures in the tone drill; `lo` strings for tone_* if natives see the cards.
+
 ## 2026-10-24 Lesson 2 fixed as ເຂົ້າ (rice)
 - User decision: the second word learned is ເຂົ້າ "rice" (W000019, kao). Recorded in LESSON_PLAN.md as decision 5b: 'rice' sense only; new units ຂ (C02), ເ◌ົາ (V35), ◌້ (T2), plus the high-class mai-tho tone rule if it fits; payoff sentence ກິນເຂົ້າ. ລາວ moves to lesson 3 or later.
 - Not enforced in scripts: lesson_tool.py hard-codes only lesson 1, so the brief for lesson 2 still ranks candidates. Enforcing it needs a script change (a SECOND_WORD/SECOND_UNITS like FIRST_*) and re-approval.
