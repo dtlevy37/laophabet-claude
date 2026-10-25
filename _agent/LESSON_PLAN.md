@@ -17,6 +17,10 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    syllable and a verb that makes sentences possible early (ກິນເຂົ້າ, ກິນປາ). ລາວ (the language, the people, the
    country, he/she; units ລ + ◌າ + final ວ) becomes a lesson 2 or 3 payoff. ພາສາລາວ, ຄົນລາວ and ປະເທດລາວ follow as
    soon as their units are in.
+5b. **Lesson 2 is ເຂົ້າ "rice" (W000019, kao)** (user, 2026-10-24). Teach the 'rice' meaning only (the 'enter' sense
+   shares the spelling and waits). New units: ຂ (C02, high-class initial), ເ◌ົາ (V35) and the tone mark ◌້ (T2), plus the
+   tone rule they need (high class + live + mai tho → low-falling) if it fits the budget. Payoff: the first sentence,
+   ກິນເຂົ້າ "eat (a meal)", from lesson 1's ກິນ. ລາວ moves to lesson 3 or later.
 6. **Earlier exclusions are lifted in stages** (my proposal, user agreed):
    - ດ and ບ as initials from the start, because they sound plain there; their final sounds (t, p) are a later rule lesson.
    - ອ early, as its own rule lesson (silent carrier; needed for ຂ້ອຍ and vowel-initial words).
