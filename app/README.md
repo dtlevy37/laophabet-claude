@@ -19,6 +19,9 @@ app/
 | `supabase/migrations/..0300_profile_demographics.sql` | Adds gender, age range, Lao locale and self-reported English level to `profiles`. |
 | `supabase/migrations/..0200_review_functions.sql` | RPCs `claim_next_sentence`, `submit_review`, `skip_sentence`; RLS policies; private `recordings` storage bucket. |
 | `supabase/migrations/..0700_lesson_tables.sql` | `lessons`, `units`, `rules`, `lesson_items`; `updated_at` + `retired_at` on every content table; `lesson_locked` view + `is_lesson_locked()`; RPC `get_lesson(lesson_id)`. |
+| `supabase/migrations/..0800_list_lessons.sql` | RPC `list_lessons()` for the learner lesson list. |
+| `supabase/migrations/20261025040000_progress_tables.sql` | Learner progress (S5): `learner_sessions`, `lesson_progress`, `learner_items` (level 0–4), append-only `review_log`; RPCs `start_lesson`, `record_answers`, `complete_lesson`. Own-row select only; writes only through the RPCs. |
+| `tests/s5_progress_test.sql` | Paste-in SQL check for S5 (throwaway users, rolled back; prints check / got / expected). |
 | `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `approved-scripts/db_sql.py` (never by hand). Listed in `_agent/PENDING_MIGRATIONS.md` until you apply them. |
 | `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
 
@@ -36,6 +39,12 @@ app/
 
 ### `get_lesson(lesson_id)` (signed-in users)
 Returns `{lesson, items, distractors}` or null. `items` are in teaching order, each `{position, item_type, item_id, role, detail}`; `detail` is a unit (teach text + letter/vowel IPA, respelling, pron tip, class), rule, word (gloss, respelling, IPA, syllables, tones, pron tip, classifier) or sentence (lao, lao_spaced, english, words with positions). `distractors` = units and words introduced up to lesson `max(order, 5)` (APP_DESIGN). The client never reads the content tables.
+
+### Learner progress (S5)
+- `start_lesson(lesson_id, local_day)` → `{session_id}`. `local_day` is the learner's calendar date (within 14 h of UTC). Lesson 1 is always open; a later lesson needs the previous one completed (or this learner started it before).
+- `record_answers(session_id, answers)` → `{saved, levels}`. Up to 200 answers per call, each `{answer_id (client uuid), item_type, item_id, activity, direction show|recognition|recall, correct, latency_ms, lao_word_ids}`. Teach cards are sent as `show` with no `correct`. Replayed `answer_id`s are skipped, so the client can resend a batch after a dropped connection. Levels never go down: show → 1, recognition right → 2, recall right → 3 (one step at a time from below).
+- `complete_lesson(session_id)` → summary `{answers, correct, accuracy, words_read, new_items, level_ups, streak, ...}`, computed from `review_log` (APP_DESIGN "Session summary"). Calling it again returns the same summary.
+- Streak = consecutive `local_day`s with a completed session, ending at that session's day.
 
 ### How work is handed out
 `claim_next_sentence()` returns the user's open claim if they have one (survives page refresh). Otherwise it claims the sentence with the fewest submitted reviews plus live claims, that this user has not reviewed or skipped, until a sentence has 3 reviews (`p_target`). Ties break by `sentence_id`, so the earliest curriculum sentences go first. Claims expire after 30 minutes. The RPC returns only `sentence_id, lao, lao_spaced, english`, so reviewers never see IPA, confidence, source or notes (avoids anchoring them).

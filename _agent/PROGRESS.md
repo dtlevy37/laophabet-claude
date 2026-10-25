@@ -201,6 +201,12 @@ The cost is in growing context: every tool call re-sends the whole transcript, s
 - New CLAUDE.md, 5 agents, 6 skills and guard-config in `_agent/proposed-config/`; the user installs them per its INSTALL.md (includes settings.json Agent allow lines). `check_frontend.js` awaits approval.
 - Until installed, the old CLAUDE.md is live; its research parts are preserved in `CLAUDE_Research.md`.
 
+## 2026-10-24 S5 written; awaiting gate
+- User order: S5 (progress tables) before the first quiz. Then S6: activity shell + "Sounds like g: tap the Lao letter" quiz (options = all letters learned so far; ✓/✗, the right answer + ⓘ on a miss), answers saved through record_answers, summary screen.
+- S5 gate: user applies migrations (`supabase migration up` from app/backend) and runs `app/backend/tests/s5_progress_test.sql` in Studio; every row should show pass = true.
+- Awaiting script approval: `_agent/proposed-scripts/lesson_tool.py` (same-sound pairs ງ ນ ມ; FIRST_UNITS + C13). Data and frontend already assume it.
+- Later: the planner must treat a same-sound pair (C13 + C13f) as one quiz option, and send `show` for both units of a folded card.
+
 ## 2026-10-24 Minimal teach cards + tone picture (untested)
 - User rule: teach cards show only what's taught (glyph/word, sound cue, meaning, one sentence max, tone picture for words); everything else goes behind "More"; never show untaught things (letter name words, later example words). Recorded in APP_DESIGN "Teach cards" and LESSON_PLAN decision 9. Memory folder writes are blocked, so this is the record.
 - Done: learn.js/tone.js/strings/styles; L0001 content shortened; migration `20261025032517_l0001_short_teach_text.sql` pending. Code review: no major findings, minors fixed.

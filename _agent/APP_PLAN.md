@@ -35,6 +35,11 @@ for their topics; each slice names the phase it draws from. Tick here.
       started/completed), lesson_progress, learner_items (level 0–4, no FSRS fields yet), review_log (with session_id
       and lao_word_ids); start_lesson, record_answers, complete_lesson (returns the session summary: words read,
       accuracy, new items, level-ups, streak; APP_DESIGN "Stats and encouragement"). Tested in SQL. (Phase 5)
+      **Done when:** after `supabase db reset`, the hand-over SQL block (as a signed-in test user) starts lesson 1,
+      records 5 teach-card views (C01 V04 C13 C13f W000018) + 3 answers (ກ right, ◌ິ wrong, ກິນ right), shows 5
+      learner_items rows (C01 and W000018 at level 2, the rest at 1), and complete_lesson returns words_read 1,
+      accuracy 67, new_items 5, level_ups 2, streak 1; a replayed batch saves 0; an anonymous call fails and
+      another user sees no rows. Table is `learner_sessions` (not `sessions`, to stay clear of auth.sessions).
 - [ ] **S6 Activity shell + Spot it + Multiple choice + summary screen:** module interface `{type, canUse, render}`,
       minimal session planner, answers sent to record_answers, summary screen after the lesson. Done when a learner
       finishes lesson 1, levels update, and the summary shows words read and % correct. (Phase 7, part)
