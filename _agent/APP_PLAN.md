@@ -27,7 +27,8 @@ for their topics; each slice names the phase it draws from. Tick here.
 - [ ] **S2 Local backend boots:** supabase CLI and Docker present; `supabase start`, `supabase db reset` applies
       migrations ..0000–..0700 and seeds; existing sign-up and native review flow works in a browser. (Phase 1 test, Phase 2 run)
 - [ ] **S3 Lesson 1 (ກິນ):** built interactively with `lesson_tool.py` brief → check → merge; apply its migration;
-      `select get_lesson('L0001')` returns the bundle.
+      `select get_lesson('L0001')` returns the bundle. (2026-10-24: merged; migration `20261025013136_lesson_l0001.sql`
+      pending. Left: user applies it locally and runs the get_lesson check.)
 - [ ] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
       cards, info-icon card. No scoring. (Phase 8, part)
 - [ ] **S5 Progress tables + RPCs (SQL only):** lesson_progress, learner_items (level 0–4, no FSRS fields yet),
