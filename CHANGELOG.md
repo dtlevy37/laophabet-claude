@@ -14,7 +14,12 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ### Fixed
 - The app no longer hangs on "Loading" when the browser holds a session for an account that no longer exists (as after a local `supabase db reset`): `app.js` drops the session and shows the sign-in screen. Untested in a browser.
 
+### Added
+- Learner settings dialog (Settings in the top bar; `app/frontend/js/settings.js`, remembered per browser) with one setting so far: show spaces between Lao words. It replaces the per-card "Show as normally written" switch. Untested in a browser.
+
 ### Changed
+- Lao text uses the looped typeface Noto Sans Lao Looped (was the loopless Noto Sans Lao). Untested in a browser.
+- The word info dialog no longer shows "Taught in lesson L0001": internal IDs are not shown to learners.
 - Teach cards put the Lao first: the glyph or word takes the whole top row, larger and semi-bold, and "Sounds like", "Means" and the tone picture sit below it in smaller type. Sentence cards show the Lao larger too. CSS only; untested in a browser.
 - W000019 ເຂົ້າ is now "rice" (noun) only. S000000512, S000002222 and S000002853 pick W001425 through `word_overrides`; ເຂົ້າໃຈ, ເຂົ້ານອນ and ທາງເຂົ້າ list W001425 as their component.
 - Seed files regenerated (`db_sql.py seed`) so a local `supabase db reset` includes the split.

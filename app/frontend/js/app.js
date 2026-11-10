@@ -5,6 +5,7 @@ import { showAuth, showRoleChoice } from './auth.js'
 import { showNativeOnboarding } from './onboarding.js'
 import { showReview } from './review.js'
 import { showLearnerHome } from './learn.js'
+import { openSettings } from './settings.js'
 
 const app = document.getElementById('app')
 const topbar = document.getElementById('topbar')
@@ -121,7 +122,13 @@ function render() {
   const back = native
     ? h('button', { class: 'link', lang: 'lo', onclick: () => setViewAsLearner(false) }, tIn('lo', 'view_back_to_review'))
     : null
-  showTopbar(t('brand'), back)
+  // Display settings (settings.js); a change redraws the learner screen behind the dialog.
+  const settingsBtn = h(
+    'button',
+    { class: 'link', onclick: () => openSettings(() => learnerView && showLearnerHome(app, { profile })) },
+    t('settings_open'),
+  )
+  showTopbar(t('brand'), back ? [back, ' · ', settingsBtn] : settingsBtn)
   learnerView = true
   showLearnerHome(app, { profile })
 }

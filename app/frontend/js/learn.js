@@ -2,6 +2,7 @@ import { supabase } from './supabase.js'
 import { t } from './i18n.js'
 import { h } from './dom.js'
 import { toneContour } from './tone.js'
+import { getSetting } from './settings.js'
 
 // Learner view, read-only (APP_PLAN S4). Hash routes:
 //   #/                     lesson list (list_lessons RPC)
@@ -241,30 +242,12 @@ function ruleBody(r) {
   return [h('h2', null, r.name_en), h('p', null, r.teach_en)]
 }
 
-// Sentences show lao_spaced as a reading aid; the standard form is one tap away (APP_DESIGN).
+// Sentences show lao_spaced as a reading aid, or the standard form without spaces: a site-wide setting
+// (settings.js; user, 2026-11-09), not a per-card switch.
 function sentenceBody(s, bundle) {
-  const lao = h('p', { class: 'lao center', lang: 'lo' }, s.lao_spaced || s.lao)
-  let spaced = true
+  const text = getSetting('spaces') ? s.lao_spaced || s.lao : s.lao || s.lao_spaced
   return [
-    lao,
-    s.lao_spaced && s.lao_spaced !== s.lao
-      ? h(
-          'p',
-          { class: 'center' },
-          h(
-            'button',
-            {
-              class: 'link',
-              onclick: (e) => {
-                spaced = !spaced
-                lao.textContent = spaced ? s.lao_spaced : s.lao
-                e.target.textContent = t(spaced ? 'sentence_show_standard' : 'sentence_show_spaced')
-              },
-            },
-            t('sentence_show_standard'),
-          ),
-        )
-      : null,
+    h('p', { class: 'lao center', lang: 'lo' }, text),
     h('p', { class: 'center' }, h('strong', null, s.respelling)),
     h('p', { class: 'center meaning' }, s.english),
     chips(s.words || [], bundle),
@@ -293,12 +276,10 @@ function openInfo(wordId, bundle) {
   const pooled = (bundle.distractors?.words || []).find((w) => w.word_id === wordId)
   const detail = item?.detail || pooled
   if (!detail) return
-  const from = pooled?.intro_lesson_id
   const dlg = h(
     'dialog',
     { class: 'info', onclose: () => dlg.remove() },
     teachCard({ item_type: 'word', detail }, bundle, { inDialog: true }),
-    from ? h('p', { class: 'muted' }, `${t('label_from_lesson')} ${from}`) : null,
     h('form', { method: 'dialog' }, h('button', null, t('info_close'))),
   )
   document.body.append(dlg)

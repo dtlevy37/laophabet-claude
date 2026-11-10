@@ -98,7 +98,11 @@ every number from `review_log`, `learner_items` and sessions, and RPCs return th
 ## Presentation
 - Lao script is always the main text. Respelling and IPA can be toggled; respelling fades as the learner advances
   (a setting, default on for the first lessons).
-- Sentences show `lao_spaced` (spaces between words) as a reading aid, with the standard form on tap.
+- Sentences show `lao_spaced` (spaces between words) as a reading aid. Spaces on or off is a site-wide learner
+  setting (Settings in the top bar; `js/settings.js`, remembered per browser), not a per-card switch (user, 2026-11-09).
+- Lao is set in a looped typeface (Noto Sans Lao Looped): the loops are what learners meet in print and on signs
+  (user, 2026-11-09).
+- Internal IDs (L0001, W000018) are never shown to learners. A lesson is "Lesson 1" at most (user, 2026-11-09).
 - Tone shown from `tone_by_syllable` (colour or a small contour icon per syllable); one convention throughout.
 - In new words, the letters just taught are highlighted.
 - Homographs (ລາວ "Lao" / ລາວ "he, she") are shown on one card with both meanings.

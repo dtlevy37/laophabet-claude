@@ -85,9 +85,10 @@
   "tone_mid": { "en": "Mid: level, in the middle of your voice" },
   "tone_low-falling": { "en": "Low falling: starts in the middle, falls low" },
   "tone_high-falling": { "en": "High falling: starts high, falls" },
-  "label_from_lesson": { "en": "Taught in lesson" },
-  "sentence_show_standard": { "en": "Show as normally written" },
-  "sentence_show_spaced": { "en": "Show with spaces" },
+  "settings_open": { "en": "Settings" },
+  "settings_title": { "en": "Settings" },
+  "settings_spaces": { "en": "Show spaces between Lao words" },
+  "settings_spaces_hint": { "en": "Lao is normally written without spaces between words. Spaces make the words easier to pick out while you learn." },
   "info_open": { "en": "More about this" },
   "info_close": { "en": "Close" },
   "app_name": {
