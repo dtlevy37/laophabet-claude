@@ -53,8 +53,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/checkpoint.
 ```
 Expected: for each repo, "nothing to commit in ..." (or "committed ...") then "pushed ...".
 
-### 5. CLAUDE.md: replace these two lines
-In "Working state", replace
+### 5. CLAUDE.md (only after steps 1–4, or the agent will call a script that is not approved yet)
+Easiest: `Copy-Item _agent/proposed-config/CLAUDE.md CLAUDE.md -Force`. The staged copy already has the three edits
+below (identical to the installed file otherwise). By hand instead: in "Working state", replace
 
 > - Commit a local checkpoint after each finished slice or plan item: `git add -A`, then
 >   `git commit -m "checkpoint: <item>"`. Never push or add remotes.
