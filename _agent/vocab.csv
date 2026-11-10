@@ -16,8 +16,8 @@ W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
 W000016,ນີ້,pronoun; adverb,this; here,basics,,391
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,115
-W000019,ເຂົ້າ,noun; verb,(cooked) rice; to enter,food,W000419,42
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,116
+W000019,ເຂົ້າ,noun,rice,food,W000419,40
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,111
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
@@ -1423,3 +1423,4 @@ W001421,ຖາມທາງ,verb,ask the way; ask for directions,directions,,2
 W001422,ບອກທາງ,verb,give directions; show the way,directions,,2
 W001423,ສູບ,verb,pump (air or water); smoke (a cigarette),transport,,2
 W001424,ທາງດ່ວນ,noun,expressway; motorway,transport,W000613,2
+W001425,ເຂົ້າ,verb,to enter; to go in,basics,,3

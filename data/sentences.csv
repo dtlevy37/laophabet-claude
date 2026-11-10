@@ -509,7 +509,7 @@ S000000508,ລົດເມໄປວຽງຈັນບໍ່?,ລົດເມ ໄ
 S000000509,ເກີບນີ້ແພງ.,ເກີບ ນີ້ ແພງ.,kɤːp̚˧˩ niː˥˨ pʰɛːŋ˧˥,goep nii paeng.,These shoes are expensive.,W000291,TPL09,,unverified,Composed by the agent,
 S000000510,ເກີບຂ້ອຍຢູ່ໃສ?,ເກີບ ຂ້ອຍ ຢູ່ ໃສ?,kɤːp̚˧˩ kʰɔːj˧˩ juː˧ saj˩(˧),goep kawy yuu sai?,Where are my shoes?,W000291,TPL04,,unverified,Composed by the agent,
 S000000511,ເຊີນນັ່ງ.,ເຊີນ ນັ່ງ.,sɤːn˧˥ naŋ˧,soen nang.,Please sit down.,W000292,,,unverified,Composed by the agent,
-S000000512,ເຊີນເຂົ້າ.,ເຊີນ ເຂົ້າ.,sɤːn˧˥ kʰaw˧˩,soen kao.,Please come in.,W000292,,,unverified,Composed by the agent; ເຂົ້າ = enter here,
+S000000512,ເຊີນເຂົ້າ.,ເຊີນ ເຂົ້າ.,sɤːn˧˥ kʰaw˧˩,soen kao.,Please come in.,W000292,,,unverified,Composed by the agent; ເຂົ້າ = enter here,2=W001425
 S000000513,ໂຊກດີ!,ໂຊກດີ!,soːk̚˥˨.diː˩(˧),sook-dii!,Good luck! / Goodbye!,W000293,,,unverified,Composed by the agent,
 S000000514,ໂຊກດີ ພົບກັນໃໝ່.,ໂຊກດີ ພົບ ກັນ ໃໝ່.,soːk̚˥˨.diː˩(˧) pʰop̚˧ kan˩(˧) maj˧,sook-dii pop gan mai.,"Good luck, see you again.",W000293,,,unverified,Composed by the agent,
 S000000515,ລາກ່ອນ.,ລາກ່ອນ.,laː˧˥.kɔːn˧,laa-gawn.,Goodbye.,W000294,,,unverified,Composed by the agent,
@@ -2161,7 +2161,7 @@ S000002218,ໜາວແລ້ວ ໃສ່ເສື້ອກັນໜາວເ�
 S000002219,ເສື້ອກັນໜາວຂອງເຈົ້າຢູ່ໃສ?,ເສື້ອກັນໜາວ ຂອງ ເຈົ້າ ຢູ່ ໃສ?,sɯːə̯˧˩.kan˩(˧).naːw˩(˧) kʰɔːŋ˩(˧) t͡ɕaw˥˨ juː˧ saj˩(˧),seua-gan-naao kawng jao yuu sai?,Where is your sweater?,W001079,,,unverified,Composed by the agent,
 S000002220,ຝົນຕົກ ເອົາເສື້ອກັນຝົນໄປນຳເດີ.,ຝົນ ຕົກ ເອົາ ເສື້ອກັນຝົນ ໄປ ນຳ ເດີ.,fon˩(˧) tok̚˧˥ ʔaw˩(˧) sɯːə̯˧˩.kan˩(˧).fon˩(˧) paj˩(˧) nam˧˥ dɤː˩(˧),fon dtok ao seua-gan-fon bpai nam doe.,"It's raining, take a raincoat with you, OK?",W001080,,,unverified,Composed by the agent. Space between the two clauses,
 S000002221,ຂ້ອຍລືມເສື້ອກັນຝົນຢູ່ເຮືອນ.,ຂ້ອຍ ລືມ ເສື້ອກັນຝົນ ຢູ່ ເຮືອນ.,kʰɔːj˧˩ lɯːm˧˥ sɯːə̯˧˩.kan˩(˧).fon˩(˧) juː˧ hɯːə̯n˧˥,kawy leum seua-gan-fon yuu heuan.,I left my raincoat at home.,W001080,,,unverified,Composed by the agent,
-S000002222,ຖອດເກີບກ່ອນເຂົ້າເຮືອນ.,ຖອດ ເກີບ ກ່ອນ ເຂົ້າ ເຮືອນ.,tʰɔːt̚˧˩ kɤːp̚˧˩ kɔːn˧ kʰaw˧˩ hɯːə̯n˧˥,tawt goep gawn kao heuan.,Take off your shoes before going into the house.,W001081,,,unverified,Composed by the agent,
+S000002222,ຖອດເກີບກ່ອນເຂົ້າເຮືອນ.,ຖອດ ເກີບ ກ່ອນ ເຂົ້າ ເຮືອນ.,tʰɔːt̚˧˩ kɤːp̚˧˩ kɔːn˧ kʰaw˧˩ hɯːə̯n˧˥,tawt goep gawn kao heuan.,Take off your shoes before going into the house.,W001081,,,unverified,Composed by the agent,4=W001425
 S000002223,ຂໍໂທດ ຕ້ອງຖອດໝວກບໍ່?,ຂໍໂທດ ຕ້ອງ ຖອດ ໝວກ ບໍ່?,kʰɔː˩(˧).tʰoːt̚˥˨ tɔːŋ˥˨ tʰɔːt̚˧˩ muːə̯k̚˧˩ bɔː˧,kaw-toot dtawng tawt muak baw?,"Excuse me, do I have to take off my hat?",W001081,,,unverified,Composed by the agent,
 S000002224,ເຈົ້າໃສ່ເກີບເບີຈັກ?,ເຈົ້າ ໃສ່ ເກີບ ເບີ ຈັກ?,t͡ɕaw˥˨ saj˧ kɤːp̚˧˩ bɤː˩(˧) t͡ɕak̚˧˥,jao sai goep boe jak?,What size shoes do you wear?,W001082,,,unverified,Composed by the agent,
 S000002225,ຂ້ອຍໃສ່ເບີສາມສິບແປດ.,ຂ້ອຍ ໃສ່ ເບີ ສາມສິບ ແປດ.,kʰɔːj˧˩ saj˧ bɤː˩(˧) saːm˩(˧).sip̚˧˥ pɛːt̚˧˩,kawy sai boe saam-sip bpaet.,I wear size 38.,W001082,,,unverified,Composed by the agent,
@@ -2792,7 +2792,7 @@ S000002849,ທາງອອກຢູ່ທາງຂວາ.,ທາງອອກ ຢ
 S000002850,ທາງເຂົ້າສະໜາມບິນຢູ່ທາງຊ້າຍ.,ທາງເຂົ້າ ສະໜາມບິນ ຢູ່ ທາງ ຊ້າຍ.,tʰaːŋ˧˥.kʰaw˧˩ sa(ʔ˧˥).naːm˩(˧).bin˩(˧) juː˧ tʰaːŋ˧˥ saːj˥˨,taang-kao sa-naam-bin yuu taang saai.,The airport entrance is on the left.,W001415,,,unverified,Composed by the agent,
 S000002851,ຈອດລົດຢູ່ທາງເຂົ້າບໍ່ໄດ້.,ຈອດ ລົດ ຢູ່ ທາງເຂົ້າ ບໍ່ໄດ້.,t͡ɕɔːt̚˧˩ lot̚˧ juː˧ tʰaːŋ˧˥.kʰaw˧˩ bɔː˧.daj˥˨,jawt lot yuu taang-kao baw-dai.,You cannot park at the entrance.,W001415,,,unverified,Composed by the agent,
 S000002852,ເຮືອນຂ້ອຍຢູ່ໃນຮ່ອມນີ້.,ເຮືອນ ຂ້ອຍ ຢູ່ ໃນ ຮ່ອມ ນີ້.,hɯːə̯n˧˥ kʰɔːj˧˩ juː˧ naj˧˥ hɔːm˧ niː˥˨,heuan kawy yuu nai hawm nii.,My house is in this lane.,W001416,,,unverified,Composed by the agent,
-S000002853,ລ້ຽວຊ້າຍເຂົ້າຮ່ອມທີ່ສອງ.,ລ້ຽວ ຊ້າຍ ເຂົ້າ ຮ່ອມ ທີ່ສອງ.,liːə̯w˥˨ saːj˥˨ kʰaw˧˩ hɔːm˧ tʰiː˧.sɔːŋ˩(˧),liaw saai kao hawm tii-sawng.,Turn left into the second lane.,W001416,,,unverified,Composed by the agent,
+S000002853,ລ້ຽວຊ້າຍເຂົ້າຮ່ອມທີ່ສອງ.,ລ້ຽວ ຊ້າຍ ເຂົ້າ ຮ່ອມ ທີ່ສອງ.,liːə̯w˥˨ saːj˥˨ kʰaw˧˩ hɔːm˧ tʰiː˧.sɔːŋ˩(˧),liaw saai kao hawm tii-sawng.,Turn left into the second lane.,W001416,,,unverified,Composed by the agent,3=W001425
 S000002854,ຄ່າຈອດລົດເທົ່າໃດ?,ຄ່າຈອດລົດ ເທົ່າໃດ?,kʰaː˧.t͡ɕɔːt̚˧˩.lot̚˧ tʰaw˧.daj˩˧,kaa-jawt-lot tao-dai?,How much is the parking fee?,W001417,,,unverified,Composed by the agent,
 S000002855,ຄ່າຈອດລົດຢູ່ສະໜາມບິນແພງ.,ຄ່າຈອດລົດ ຢູ່ ສະໜາມບິນ ແພງ.,kʰaː˧.t͡ɕɔːt̚˧˩.lot̚˧ juː˧ sa(ʔ˧˥).naːm˩(˧).bin˩(˧) pʰɛːŋ˧˥,kaa-jawt-lot yuu sa-naam-bin paeng.,Parking at the airport is expensive.,W001417,,,unverified,Composed by the agent,
 S000002856,ໄປຕາມທາງນີ້ຮອດແມ່ນ້ຳ.,ໄປ ຕາມ ທາງ ນີ້ ຮອດ ແມ່ນ້ຳ.,paj˩(˧) taːm˩(˧) tʰaːŋ˧˥ niː˥˨ hɔːt̚˥˨ mɛː˧.nam˥˨,bpai dtaam taang nii hawt mae-nam.,Follow this road to the river.,W001418,,,unverified,Composed by the agent,
@@ -2809,3 +2809,4 @@ S000002866,ຂ້ອຍຕ້ອງສູບລົມຢາງລົດຖີບ
 S000002867,ພໍ່ບໍ່ສູບຢາ.,ພໍ່ ບໍ່ ສູບ ຢາ.,pʰɔː˧ bɔː˧ suːp̚˧˩ jaː˩(˧),paw baw suup yaa.,Father does not smoke.,W001423,,,unverified,Composed by the agent,
 S000002868,ທາງດ່ວນໄວກວ່າທາງຫຼວງ.,ທາງດ່ວນ ໄວ ກວ່າ ທາງຫຼວງ.,tʰaːŋ˧˥.duːə̯n˧ ʋaj˧˥ kwaː˧ tʰaːŋ˧˥.luːə̯ŋ˩(˧),taang-duan wai gwaa taang-luang.,The expressway is faster than the highway.,W001424,,,unverified,Composed by the agent,
 S000002869,ຕ້ອງຈ່າຍເງິນເພື່ອໃຊ້ທາງດ່ວນ.,ຕ້ອງ ຈ່າຍເງິນ ເພື່ອ ໃຊ້ ທາງດ່ວນ.,tɔːŋ˥˨ t͡ɕaːj˧.ŋɤn˧˥ pʰɯːə̯˧ saj˥˨ tʰaːŋ˧˥.duːə̯n˧,dtawng jaai-ngoen peua sai taang-duan.,You have to pay to use the expressway.,W001424,,,unverified,Composed by the agent,
+S000002870,ກິນເຂົ້າ.,ກິນ ເຂົ້າ.,kin˩(˧) kʰaw˧˩,gin kao.,To eat (a meal). Literally: eat rice.,W000019,,,unverified,"Composed by the agent for lesson 2; the phrase ກິນເຂົ້າ is in Tatoeba 8977012, 8990242 (see S000000021) and in the W000019 pron_tip. Not re-checked against a source on 2026-11-09.",

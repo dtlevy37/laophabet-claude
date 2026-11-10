@@ -37,6 +37,15 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    Letters that change at the end (ກ ດ ບ ຍ ວ ...) keep separate role-units. Enforced by lesson_tool check (rev
    pending approval, 2026-10-24). L0001 now teaches C13 + C13f.
 
+11. **Natural learning first; rules are a backup** (user, 2026-11-09). The learner should absorb tones and spellings
+   by meeting words again and again, not by memorising rules and applying them. A tone mark is first taught as
+   "changes the melody of the word", and each word's tone is learned with the word (tone picture, later audio).
+   Rules (consonant classes, dead syllables) come later, once contrast pairs exist, as short "there is a pattern
+   here" cards that help when the learner keeps getting an item wrong. Lesson 2 teaches ◌້ this way, with no rule.
+12. **Audio: build as if native recordings exist** (user, 2026-11-09). The first user is the owner, and a native
+   speaker is expected to be available from about December 2026. Lessons and UI keep audio slots and play buttons
+   (hidden or disabled while empty); listening and tone-by-ear activities wait for the recordings. No TTS.
+
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
 advisory unit order. It predates the switch to ກິນ as lesson 1; `lesson_map.py` takes its base from lesson_tool's

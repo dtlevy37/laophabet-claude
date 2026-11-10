@@ -65,6 +65,7 @@
   "unit_vowel": { "en": "Vowel" },
   "unit_tone_mark": { "en": "Tone mark" },
   "unit_symbol": { "en": "Symbol" },
+  "unit_dotted_circle_first": { "en": "The dotted circle ◌ is not a letter. It is a placeholder that shows where a real letter goes." },
   "unit_dotted_circle": { "en": "The dotted circle ◌ shows where the consonant goes." },
   "card_lao_letter": { "en": "Lao letter" },
   "card_lao_vowel": { "en": "Lao vowel" },

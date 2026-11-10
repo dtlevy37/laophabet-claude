@@ -2,6 +2,22 @@
 
 The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it only when you need the background of a past decision. Rules: CLAUDE.md. Data model and workflow: `_agent/SCHEMA.md`.
 
+## Now (2026-11-09): read this first; the sections below are older history
+- **Order of work (user):** hand-build lessons 2–6 interactively, then S6 (quiz shell). The runner comes after.
+- **Lesson 2 merged** (L0002: ຂ, ເ◌ົາ, ◌້, ເຂົ້າ "rice", ກິນເຂົ້າ). Needs `--max-units 3` on check/merge. User had not
+  explicitly approved the card texts before the merge (they tried to view it in the browser); texts can still change
+  with `db_sql.py change`.
+- **Backend:** the user's Docker works again and `supabase db reset` runs. Not yet confirmed: lesson 1 and 2 visible in
+  the browser, `get_lesson`, and `app/backend/tests/s5_progress_test.sql` (S2–S5 gates).
+- **Lesson 3 idea:** no or few new letters; ເຂົາ "he/she/they" (W000160) and ເກົ້າ "nine" (W000141); first full sentence
+  ເຂົາກິນເຂົ້າ; the ເຂົາ / ເຂົ້າ pair shows what the mark does. Still no class rule unless the user wants it.
+- **Open with the user:** "kao" vs "kow" respelling for ເ◌ົາ (the user wrote "kow"); whether the ຂ card should say
+  "ກ has no puff"; stale notes on W000035 and W001415 (they still mention W000019 for the "enter" sense).
+- **Uncommitted on purpose:** the user's staged config install (.claude/, CLAUDE.md, check_frontend.js) and the
+  approved lesson_tool.py. The user wants to decide on that commit themselves.
+- **Adjustments proposed, not yet done:** interleave teach and check cards; "Build the word" in v1 ahead of the tone
+  drill; trim this file and fix stale ticks in PLAN.md; add Supabase temp folders to .gitignore.
+
 ## Current state (2026-10-10)
 - **Data:**
   - 1015 words (W000001–W001015; cap 3000); 2032 sentences; 30 templates.

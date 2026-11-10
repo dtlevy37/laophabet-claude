@@ -1,2 +1,3 @@
 lesson_id,lesson_order,title_en,kind,summary_en,source,confidence,notes
 L0001,1,First letters: ກ ◌ິ ນ,letters,Three letters and a word you can read with them.,SRC-AGENT:lesson,unverified,Lesson 1 is fixed by the user: ກິນ (W000018). Title and summary shortened 2026-10-24 so they do not give the word away; the title is not shown on the cards.
+L0002,2,A second word and a first phrase,letters,"A new letter, a new vowel, a mark that changes a word's melody, and your first phrase.",SRC-AGENT:lesson,unverified,Lesson 2 is fixed by the user: ເຂົ້າ 'rice' (W000019). Over the usual budget (3 units + 1 word) because the word is fixed. The tone mark is taught as 'changes the melody' only; the class rule comes later (user 2026-11-09). Only one earlier word exists to recycle.

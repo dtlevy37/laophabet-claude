@@ -94,7 +94,7 @@ async function showLesson(root, lessonId, index, stale) {
         backToList(),
         h('span', { class: 'muted' }, `${t('learn_lesson')} ${lesson.lesson_order} · ${i + 1} / ${items.length}`),
       ),
-      teachCard(items[i], bundle),
+      teachCard(items[i], bundle, { explainCircle: lesson.lesson_order === 1 && items[i] === firstCircle(items) }),
       h(
         'div',
         { class: 'actions' },
@@ -124,6 +124,10 @@ function cardItems(items) {
   })
 }
 
+// The first card of the course that shows the dotted circle ◌ (lesson 1 only). Its front explains that the
+// circle is a placeholder, not a letter (user, 2026-11-09). Later cards keep the note under "More".
+const firstCircle = (items) => items.find((it) => it.item_type === 'unit' && (it.detail?.lao || '').includes('◌'))
+
 const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to_list'))
 
 // ------------------------------------------------------------------ teach cards
@@ -131,11 +135,11 @@ const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to
 // The front is a small table: labelled cells (Lao letter | Sounds like, or Lao word | Sounds like, Means, Tone)
 // with large content under small labels, then one line of text. Everything else sits in a closed "More" section
 // (open in the info dialog). Nothing the learner has not been taught is shown, such as a letter's name word.
-function teachCard(item, bundle, { inDialog = false } = {}) {
+function teachCard(item, bundle, { inDialog = false, explainCircle = false } = {}) {
   const d = item.detail || {}
   const body =
     item.item_type === 'unit'
-      ? unitBody(d, inDialog)
+      ? unitBody(d, inDialog, explainCircle)
       : item.item_type === 'word'
         ? wordBody(d, inDialog)
         : item.item_type === 'rule'
@@ -149,7 +153,7 @@ function teachCard(item, bundle, { inDialog = false } = {}) {
   )
 }
 
-function unitBody(u, open) {
+function unitBody(u, open, explainCircle = false) {
   const sound = u.letter || u.vowel || {}
   const says = soundOf(u, sound.respelling)
   return [
@@ -160,6 +164,7 @@ function unitBody(u, open) {
       says ? cell(t('card_sounds_like'), h('span', { class: 'cell-big' }, says)) : null,
     ),
     u.teach_en ? h('p', { class: 'center hint' }, u.teach_en) : null,
+    explainCircle ? h('p', { class: 'center muted' }, t('unit_dotted_circle_first')) : null,
     more(open, [
       h('p', { class: 'muted' }, unitLabel(u)),
       u.lao.includes('◌') ? h('p', { class: 'muted' }, t('unit_dotted_circle')) : null,
