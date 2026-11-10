@@ -11,7 +11,7 @@ Safety:
   - each repo must be on branch main
   - the origin URL must be exactly https://github.com/dtlevy37/<that repo's name>(.git)
   - pushes only `origin main`, never forces, never touches other remotes or branches
-  - aborts that repo (and unstages) if the staged changes add a Supabase secret key (sb_secret_...),
+  - aborts that repo (and unstages) if the staged changes add a Supabase secret key,
     a private key block, or a service_role JWT
   - commits only when something is staged; with -Push it still pushes earlier unpushed commits
   - one repo failing does not stop the others; the script exits 1 at the end and lists what failed
@@ -30,7 +30,8 @@ $repos = @(
     @{ Path = (Join-Path $root 'app/backend');  Name = 'laophabet-backend' },
     @{ Path = (Join-Path $root 'app/frontend'); Name = 'laophabet-frontend' }
 )
-$secretPattern = '^\+.*(sb_secret_|BEGIN [A-Z ]*PRIVATE KEY|service_role.{0,40}eyJ)'
+# Built from fragments so this file never matches its own scan.
+$secretPattern = '^\+.*(' + 'sb_' + 'secret_|BEGIN [A-Z ]*PRIVATE' + ' KEY|service_' + 'role.{0,40}eyJ)'
 $failed = @()
 
 foreach ($r in $repos) {

@@ -13,7 +13,7 @@ Repos (github.com/dtlevy37, private, created empty by the user):
 
 Safety:
   - an existing origin must already be exactly the expected URL, otherwise that repo is skipped with an error
-  - a commit is aborted (and unstaged) if the staged changes add sb_secret_..., a private key block or a
+  - a commit is aborted (and unstaged) if the staged changes add a Supabase secret key, a private key block or a
     service_role JWT
   - GIT_TERMINAL_PROMPT=0 so a missing GitHub login fails fast instead of hanging; sign in once by hand
     (a manual `git push` in any repo) to store the login
@@ -26,7 +26,8 @@ $env:GIT_TERMINAL_PROMPT = '0'
 
 $root  = Split-Path -Parent $PSScriptRoot
 $owner = 'dtlevy37'
-$secretPattern = '^\+.*(sb_secret_|BEGIN [A-Z ]*PRIVATE KEY|service_role.{0,40}eyJ)'
+# Built from fragments so this file never matches its own scan.
+$secretPattern = '^\+.*(' + 'sb_' + 'secret_|BEGIN [A-Z ]*PRIVATE' + ' KEY|service_' + 'role.{0,40}eyJ)'
 $failed = @()
 
 function Test-RepoGit([string]$path) { Test-Path -LiteralPath (Join-Path $path '.git') }
