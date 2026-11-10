@@ -4,82 +4,70 @@
 |---|---|---|
 | `laophabet-frontend` | what Netlify deploys; Netlify never sees the backend | `app/frontend` |
 | `laophabet-backend` | Supabase migrations, seeds, tests: DB history and restoration | `app/backend` |
-| `laophabet` | the harness and everything else: scripts, agents, guard, data CSVs, plans, notes. Lets you resume the workflow after losing the drive | project root (ignores the two app folders) |
+| `laophabet-claude` | the harness and everything else: scripts, agents, guard, data CSVs, plans, notes. Lets you resume the workflow after losing the drive | project root (ignores the two app folders) |
 
-The two app repos are nested inside the project folder. The root repo ignores them (`.gitignore` already says so).
+The two app repos are nested in the project folder. The root `.gitignore` already ignores them.
 
 **How the agent pushes:** not by loosening the guard (`git push`, `remote`, `-C` stay blocked for ad-hoc commands).
-One approved script, `approved-scripts/checkpoint.ps1`, commits all three repos and pushes only `origin main`, never
-with force. It checks each origin URL is exactly `github.com/dtlevy37/<that repo>`, and aborts a repo if a secret key
-is staged. **Untested** (the agent cannot run PowerShell git).
+Two approved scripts do all git work that needs those:
+- `setup_repos.ps1`: one-time, idempotent. Creates the backend repo, untracks the app folders in the root repo, renames
+  `master` to `main`, adds the three origins, optionally pushes (`-Push`).
+- `checkpoint.ps1`: every checkpoint. Commits all three repos and pushes `origin main`.
+Both: never force, check each origin URL is exactly `github.com/dtlevy37/<that repo>`, abort a commit if a secret key
+is staged. **Both untested** (the agent cannot run them until approved, and nothing here has been run yet).
 
-**Restore story:** `laophabet-backend` has the migrations that rebuild the database; `laophabet` has the content
-CSVs those migrations are generated from. Clone all three into the same layout:
-`laophabet/` then `laophabet/app/frontend` and `laophabet/app/backend`.
+**Restore story:** `laophabet-backend` has the migrations that rebuild the database; `laophabet-claude` has the
+content CSVs they are generated from. Clone all three into the same layout: `laophabet-claude/`, then
+`laophabet-claude/app/frontend` and `laophabet-claude/app/backend`.
+
+## State on 2026-11-10 (checked from the repos' files)
+- `laophabet-frontend`: set up by the user, on `main`, pushed, tracking `origin/main`.
+- `laophabet-backend`: no git repo yet in `app/backend` (the script creates it). GitHub repo created (empty).
+- `laophabet-claude`: still on `master`, no remote, 53 app files tracked (the script untracks them). GitHub repo created (empty).
 
 ## Steps (PowerShell, from the project root)
 
-### 1. GitHub: create empty private repos
-`laophabet-backend` and `laophabet` (no README, .gitignore or licence). `laophabet-frontend` already exists.
-
-### 2. Frontend: check it is pushed
+### 1. Approve both scripts
 ```powershell
-cd app/frontend
-git status        # expect: on branch main, up to date with 'origin/main', config.js not listed
-cd ../..
-```
-If not up to date: `git push -u origin main` inside `app/frontend`.
-
-### 3. Backend repo (new history starts here)
-```powershell
-cd app/backend
-git init -b main
-git add -A
-git status        # check: no supabase/.temp, no .branches, no __pycache__ in the list
-git commit -m "Initial commit: backend (earlier history is in the laophabet repo)"
-git remote add origin https://github.com/dtlevy37/laophabet-backend.git
-git push -u origin main
-cd ../..
-```
-
-### 4. Root repo: stop tracking the two app folders and the .pyc files, rename the branch, push
-(`.gitignore` is already updated.)
-```powershell
-git rm -r --cached app/frontend app/backend -q
-git rm -r --cached approved-scripts/__pycache__ -q
-git branch -m master main
-git add -A
-git commit -m "Split app/frontend and app/backend into their own repos"
-git remote add origin https://github.com/dtlevy37/laophabet.git
-git push -u origin main
-```
-(`git rm --cached` only changes what git tracks; files stay on disk.) The first push asks you to sign in to GitHub;
-Git Credential Manager remembers it, which is what lets the script push later. If a path in `git rm` says "did not
-match any files", it was already untracked: fine, carry on.
-
-### 5. Re-approve the script (its content changed from the two-repo version, so the old hash no longer matches)
-```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .claude/tools/approve-script.ps1 _agent/proposed-scripts/setup_repos.ps1 -Force
 powershell -NoProfile -ExecutionPolicy Bypass -File .claude/tools/approve-script.ps1 _agent/proposed-scripts/checkpoint.ps1 -Force
 ```
-Test it yourself (nothing to commit is fine):
+(`checkpoint.ps1` must be re-approved: its content changed since the two-repo version.) Read both first if you like;
+each has its behaviour and safety rules at the top.
+
+### 2. Run the setup (the agent can do this once approved, or you can)
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/setup_repos.ps1 -Push
+```
+Expected output, in order:
+- `laophabet-backend`: initialised, committed, added origin, pushed
+- `laophabet-frontend`: nothing to commit (or committed), origin ok, pushed
+- `laophabet-claude`: untracked app/frontend, untracked app/backend, untracked approved-scripts/__pycache__,
+  renamed master -> main, committed, added origin, pushed
+- `setup done`
+
+Failures print `FAILED: <reason>` for that repo and the others still run; re-running is safe. Likely ones:
+"push failed": GitHub repo not empty (README or licence added) or not signed in (the script cannot prompt; do one
+manual `git push` in `app/frontend` to see that your login is stored, which it is if that push worked). Nothing is forced.
+
+### 3. Test the checkpoint script
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/checkpoint.ps1 -Message "checkpoint: test" -Push
 ```
-Expected, per repo: "nothing to commit in laophabet-..." (or "committed ...") then "pushed laophabet-...". A repo
-that fails prints `FAILED <name>: <reason>`, and the others still run.
+Expected, per repo: "nothing to commit in laophabet-..." then "pushed laophabet-...".
 
-### 6. CLAUDE.md (after steps 1–5, or the agent will call a script that is not approved yet)
-`Copy-Item _agent/proposed-config/CLAUDE.md CLAUDE.md -Force`. The staged copy is the installed file plus: the
-`checkpoint.ps1` instruction (three repos, no direct `git push`/`remote`/`-C`, never force), Map rows for the two
-app repos, and `checkpoint.ps1` in the scripts list.
-
-### 7. Start a fresh session
-The next session reads the new CLAUDE.md. Delete this file after installing.
+### 4. Install CLAUDE.md, then start a fresh session
+```powershell
+Copy-Item _agent/proposed-config/CLAUDE.md CLAUDE.md -Force
+```
+The staged copy is the installed file plus: the `checkpoint.ps1` instruction (three repos, no direct
+`git push`/`remote`/`-C`, never force), Map rows for the two app repos, and `checkpoint.ps1` in the scripts list.
+Then delete this file.
 
 ## About "write access to the whole project folder"
-Not needed for this: everything above is staged, and the agent already writes to `app/` and `_agent/`. If you do widen
-it, I recommend keeping `approved-scripts/`, `.claude/` and `CLAUDE.md` protected: `checkpoint.ps1` holds your GitHub
-credentials' reach, and its hash check only means something while the agent cannot edit it or the guard.
+Not needed for this: everything is staged, and the agent already writes to `app/` and `_agent/`. If you do widen it,
+I recommend keeping `approved-scripts/`, `.claude/` and `CLAUDE.md` protected: the scripts' hash check only means
+something while the agent cannot edit them or the guard.
 
 ## Before connecting Netlify (slice S11, not now)
 - `netlify.toml` has `publish = "."`, so Netlify serves everything in the frontend repo root, including
@@ -88,8 +76,8 @@ credentials' reach, and its hash check only means something while the agent cann
 
 ## Caveats
 - A slice touching frontend and backend is two commits, and a content change is a root commit (CSVs) plus a backend
-  commit (migration). The script does all three in one call with one message.
+  commit (migration). `checkpoint.ps1` does all three in one call with one message.
 - `lesson_tool.py` and `db_sql.py` read `data/` (root) and write migrations into `app/backend` (nested repo): they
   keep working unchanged, since all three folders stay in place.
 - The frontend and backend repos have no history before their first commit; the older history of those folders stays in
-  `laophabet` (`git log -- app/backend`, from the commits before the split).
+  `laophabet-claude` (`git log -- app/backend`, from before the split).

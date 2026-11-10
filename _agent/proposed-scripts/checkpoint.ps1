@@ -4,7 +4,7 @@ Checkpoint: commit, and optionally push, the project's three git repos.
   powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/checkpoint.ps1 -Message "checkpoint: <item>" [-Push]
 
 Repos (each skipped if its own folder has no .git; the script never lets git walk up to a parent repo):
-  1. laophabet           the project root (harness, data, scripts, notes; ignores the two app folders)
+  1. laophabet-claude    the project root (harness, data, scripts, notes; ignores the two app folders)
   2. laophabet-backend   app/backend  (Supabase migrations, seeds, tests)
   3. laophabet-frontend  app/frontend (deployed by Netlify)
 Safety:
@@ -26,7 +26,7 @@ $ErrorActionPreference = 'Stop'
 
 $root  = Split-Path -Parent $PSScriptRoot
 $repos = @(
-    @{ Path = $root;                            Name = 'laophabet' },
+    @{ Path = $root;                            Name = 'laophabet-claude' },
     @{ Path = (Join-Path $root 'app/backend');  Name = 'laophabet-backend' },
     @{ Path = (Join-Path $root 'app/frontend'); Name = 'laophabet-frontend' }
 )
