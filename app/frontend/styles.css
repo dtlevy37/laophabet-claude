@@ -30,7 +30,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font: 16px/1.5 'Noto Sans Lao Looped', 'Noto Sans Lao', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 .topbar {
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
@@ -68,7 +68,9 @@ button.link { border: 0; padding: 0; background: none; color: var(--accent); tex
 .counter { text-align: right; margin: 0; }
 
 .sentence { text-align: center; padding: 16px 8px 24px; }
-.lao { font-family: 'Noto Sans Lao Looped', 'Noto Sans Lao', system-ui, sans-serif; font-size: 2rem; line-height: 1.6; margin: 0; word-break: break-word; }
+/* Trial (user, 2026-11-09): the device's own Lao font, which is what Wikipedia shows (it sends no Lao web font).
+   Once the user names the font they like, pin it here (and self-host it if its licence allows). */
+.lao { font-family: sans-serif; font-size: 2rem; line-height: 1.6; margin: 0; word-break: break-word; }
 .english { color: var(--muted); margin: 8px 0 0; }
 
 fieldset { border: 1px solid var(--border); border-radius: 10px; margin: 0 0 16px; padding: 12px 14px; }

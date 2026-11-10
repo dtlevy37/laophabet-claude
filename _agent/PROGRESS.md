@@ -11,8 +11,14 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
   the browser, `get_lesson`, and `app/backend/tests/s5_progress_test.sql` (S2–S5 gates).
 - **Lesson 3 idea:** no or few new letters; ເຂົາ "he/she/they" (W000160) and ເກົ້າ "nine" (W000141); first full sentence
   ເຂົາກິນເຂົ້າ; the ເຂົາ / ເຂົ້າ pair shows what the mark does. Still no class rule unless the user wants it.
-- **Open with the user:** "kao" vs "kow" respelling for ເ◌ົາ (the user wrote "kow"); whether the ຂ card should say
-  "ກ has no puff"; stale notes on W000035 and W001415 (they still mention W000019 for the "enter" sense).
+- **Decided (user, 2026-11-09):** ເ◌ົາ stays "ao" in every transliteration style (as in "Lao"); never "ow".
+- **Open with the user:** Lao font (trial: system `sans-serif`, same as Wikipedia on their device; the user will name
+  the font they like, then pin or self-host it; they disliked three Noto faces); a transliteration setting
+  (current g/k/bp/dt style vs standard k/kh/p/ph; needs derived columns, a migration and RPC changes: its own slice;
+  user still deciding when); whether the ກ cue should be "the k in 'sky'" instead of a hard g; whether the ຂ card
+  should say "ກ has no puff"; stale notes on W000035 and W001415 (they still mention W000019 for "enter").
+- **Frontend changes awaiting the user's browser check:** Lao-first card layout, settings dialog (spaces), stale-session
+  fix, dotted-circle note on the first ◌ card.
 - **Uncommitted on purpose:** the user's staged config install (.claude/, CLAUDE.md, check_frontend.js) and the
   approved lesson_tool.py. The user wants to decide on that commit themselves.
 - **Adjustments proposed, not yet done:** interleave teach and check cards; "Build the word" in v1 ahead of the tone
