@@ -52,7 +52,9 @@ for their topics; each slice names the phase it draws from. Tick here.
 - [ ] **S9 FSRS:** design note first, then implement over the fixed intervals. (Phase 6)
 - [ ] **S10 Native feedback on lesson content:** native-role checks on review RPCs, queue, word/unit feedback, owner views;
       then the feedback subroutine. (Phases 3–4)
-- [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. (Phase 1, rest)
+- [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. (Phase 1, rest) Also: frontend `config.js` for
+      the deployed site (env vars vs a committed production file; see PLAN Phase 10), and move `LAO_UI_REVIEW.md` and
+      `export_lao_review.py` out of the frontend repo before connecting Netlify.
 - In parallel from S3: after lesson 1 is reviewed, `next_lesson.ps1 -Count N` in small batches; about 10 lessons are
   enough to build S4–S8 against. Audio is v2 (teach cards use respelling + IPA; audio column nullable).
 

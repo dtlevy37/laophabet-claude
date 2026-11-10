@@ -87,4 +87,6 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] Slice 3: lesson 1 (ກິນ) built interactively; migration applied locally; lessons show in the browser
 - [x] Slice 4: learner read-only view (lesson list, teach cards, info dialog), plus settings (transliteration, font, spaces)
 - [ ] Slice 5: progress tables written; the user has not yet confirmed `app/backend/tests/s5_progress_test.sql`
+- [ ] Frontend repo config (user, 2026-11-10): `config.js` is git-ignored and points at local Supabase, so it is not in `laophabet-frontend`. Decide and set up how the deployed frontend gets its config: Netlify builds it from `SUPABASE_URL` / `SUPABASE_ANON_KEY` env vars (already in `netlify.toml`), or commit a production `config.js` with the publishable key only. Hosted Supabase project and Netlify env vars needed first (part of S11)
+- [ ] Move `LAO_UI_REVIEW.md` and `scripts/export_lao_review.py` out of the frontend repo (Netlify would serve them): into the main repo, fix the script's path to `app/frontend/js/strings.json`, update `app/README.md`, approve the script if it is to be run by the agent
 - [ ] Slices 6–11: see APP_PLAN (activity shell, more activities, home/path, practice, FSRS, native feedback on lessons, deploy)
