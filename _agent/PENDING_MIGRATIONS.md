@@ -14,3 +14,4 @@ Written by approved-scripts/db_sql.py. The owner reviews each file, applies it w
 - [ ] 20261110034746_l0002_phrase_english.sql: change 'l0002_phrase_english' (1 sentences, 2 sentence_words)
 - [ ] 20261110040845_lesson_l0004.sql: lesson L0004 "More words, more sentences"
 - [ ] 20261110041529_l0004_recap_rows.sql: change 'l0004_recap_rows' (1 rules)
+- [ ] 20261110120000_played_lesson.sql: review_log.first_try; list_lessons state/completed_at/last_accuracy; get_lesson levels + pool unit sounds; record_answers accepts first_try (S6a; written by the agent, not db_sql)

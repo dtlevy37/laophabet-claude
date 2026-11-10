@@ -22,6 +22,8 @@ app/
 | `supabase/migrations/..0800_list_lessons.sql` | RPC `list_lessons()` for the learner lesson list. |
 | `supabase/migrations/20261025040000_progress_tables.sql` | Learner progress (S5): `learner_sessions`, `lesson_progress`, `learner_items` (level 0–4), append-only `review_log`; RPCs `start_lesson`, `record_answers`, `complete_lesson`. Own-row select only; writes only through the RPCs. |
 | `tests/s5_progress_test.sql` | Paste-in SQL check for S5 (throwaway users, rolled back; prints check / got / expected). |
+| `supabase/migrations/20261110120000_played_lesson.sql` | S6a: `review_log.first_try`; replaces `session_summary`, `record_answers`, `list_lessons` and `get_lesson` (per-learner lesson state, levels, pool unit sounds). |
+| `tests/s6a_played_lesson_test.sql` | Paste-in SQL check for S6a (one throwaway user; prints check / got / expected). |
 | `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `approved-scripts/db_sql.py` (never by hand). Listed in `_agent/PENDING_MIGRATIONS.md` until you apply them. |
 | `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
 
@@ -40,9 +42,14 @@ app/
 ### `get_lesson(lesson_id)` (signed-in users)
 Returns `{lesson, items, distractors}` or null. `items` are in teaching order, each `{position, item_type, item_id, role, detail}`; `detail` is a unit (teach text + letter/vowel IPA, respelling, pron tip, class), rule, word (gloss, respelling, IPA, syllables, tones, pron tip, classifier) or sentence (lao, lao_spaced, english, words with positions). `distractors` = units and words introduced up to lesson `max(order, 5)` (APP_DESIGN). The client never reads the content tables.
 
+Since S6a the bundle is `{lesson, items, distractors, levels}`. Pool units carry their sound as `letter {ipa, respelling}` or `vowel {ipa, respelling}` (the same shape as an item's unit detail, so one function labels both). `levels` is `[{item_type, item_id, level}]` for the caller over the lesson's items and the pool; an item that is not listed is at level 0.
+
+### `list_lessons()` (signed-in users)
+Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state, completed_at, last_accuracy}]` by lesson order. `state` follows the `start_lesson` rule: `done` (the caller completed it), `open` (lesson 1, a lesson the caller has started, or the one after a completed lesson), else `locked`. `completed_at` is the first completion; `last_accuracy` is the first-try accuracy (0–100, or null) of the caller's latest completed session of that lesson.
+
 ### Learner progress (S5)
 - `start_lesson(lesson_id, local_day)` → `{session_id}`. `local_day` is the learner's calendar date (within 14 h of UTC). Lesson 1 is always open; a later lesson needs the previous one completed (or this learner started it before).
-- `record_answers(session_id, answers)` → `{saved, levels}`. Up to 200 answers per call, each `{answer_id (client uuid), item_type, item_id, activity, direction show|recognition|recall, correct, latency_ms, lao_word_ids}`. Teach cards are sent as `show` with no `correct`. Replayed `answer_id`s are skipped, so the client can resend a batch after a dropped connection. Levels never go down: show → 1, recognition right → 2, recall right → 3 (one step at a time from below).
+- `record_answers(session_id, answers)` → `{saved, levels}`. Up to 200 answers per call, each `{answer_id (client uuid), item_type, item_id, activity, direction show|recognition|recall, correct, latency_ms, lao_word_ids}`. Teach cards are sent as `show` with no `correct`. Replayed `answer_id`s are skipped, so the client can resend a batch after a dropped connection. Levels never go down: show → 1, recognition right → 2, recall right → 3 (one step at a time from below). Optional `first_try` (default true): send `false` when a missed question is asked again. Such answers still count for levels and words read, but not for the summary's `answers`, `correct` and `accuracy`. It is trusted client input and affects only the learner's own accuracy.
 - `complete_lesson(session_id)` → summary `{answers, correct, accuracy, words_read, new_items, level_ups, streak, ...}`, computed from `review_log` (APP_DESIGN "Session summary"). Calling it again returns the same summary.
 - Streak = consecutive `local_day`s with a completed session, ending at that session's day.
 

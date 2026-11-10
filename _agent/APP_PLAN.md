@@ -58,6 +58,9 @@ building stays paused until the user lifts it; the content shape is final after 
       completed lesson-1 session lesson 1 is `done` with its accuracy and lesson 2 is `open`; a replayed question
       sent with `first_try: false` leaves accuracy unchanged; `get_lesson('L0001')` returns `levels` and pool units
       with a sound; the S5 test still passes. **Gate (user):** `supabase db reset` + the SQL block.
+      (2026-11-10: written and reviewed, untested: `20261110120000_played_lesson.sql`, test
+      `app/backend/tests/s6a_played_lesson_test.sql`. `levels` lists only items with a `learner_items` row; absent
+      = level 0. Pool units carry `letter` / `vowel` `{ipa, respelling}`. Awaiting the gate.)
 - [ ] **S6b Session runner: a lesson can be played and completed (cards only).** `js/session.js` (planner + runner),
       `js/activities/index.js` and `activities/teach_card.js` (moved out of `learn.js`, same look). Route
       `#/lesson/L0001` starts a session (`start_lesson`), steps through the teach cards with a progress bar, sends
