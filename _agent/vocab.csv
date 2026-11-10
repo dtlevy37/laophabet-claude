@@ -9,15 +9,15 @@ W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
 W000009,ຂໍ,verb,"ask for, request; may I have",requests,,82
 W000010,ຂໍໂທດ,interjection; verb,"sorry, excuse me",greetings,,5
-W000011,ນ້ຳ,noun,water; liquid,food,W000218,32
+W000011,ນ້ຳ,noun,water; liquid,food,W000218,34
 W000012,ຫ້ອງ,noun; classifier,room,places,W000012,34
 W000013,ຫ້ອງນ້ຳ,noun,"bathroom, toilet",places,W000012,12
 W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
 W000016,ນີ້,pronoun; adverb,this; here,basics,,391
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,118
-W000019,ເຂົ້າ,noun,rice,food,W000419,42
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,120
+W000019,ເຂົ້າ,noun,rice,food,W000419,43
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,111
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
@@ -29,7 +29,7 @@ W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
 W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,11
-W000031,ລາວ,pronoun,"he, she",pronouns,,167
+W000031,ລາວ,pronoun,"he, she",pronouns,,168
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
 W000033,ນອນ,verb,sleep; lie down,home,,19
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
@@ -536,7 +536,7 @@ W000534,ທຳມະດາ,adjective,ordinary; normal,describing,,2
 W000535,ເຕັມ,adjective,full,describing,,3
 W000536,ສີ,noun,colour,colours,W000536,43
 W000537,ແດງ,adjective,red,colours,,8
-W000538,ຂາວ,adjective,white,colours,,14
+W000538,ຂາວ,adjective,white,colours,,15
 W000539,ດຳ,adjective,black,colours,,11
 W000540,ຂຽວ,adjective,green,colours,,10
 W000541,ຟ້າ,noun; adjective,sky; blue,colours,,3

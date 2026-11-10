@@ -18,9 +18,13 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 - **How lessons get built now:** the guard allows only the five project agents, so the `drafter` (sonnet) writes the
   draft files (it has no Bash) and the main agent runs check_drafts / merge_words / lesson_tool / pipeline. A
   sentences-only merge needs a header-only words batch file as the positional argument.
-- **Next lesson (4):** per LESSON_PLAN 17: one new unit ◌ຳ → ນ້ຳ "water" (W000011), ກິນນ້ຳ, ລາວກິນນ້ຳ; plus ຂາ "leg"
-  (W000389) and ຂາວ "white" (W000538), which need nothing new. Not ນາ. Propose to the user first, with a short list
-  of other very common early words they can pick from (they asked for suggestions).
+- **Lesson 4 merged** (L0004: ◌ຳ; ນ້ຳ, ຂາ, ຂາວ; S000002873–875; default limits).
+- **Next lessons (user agreed 2026-11-09), one new piece or two plus 2–3 very common words each; propose each first:**
+  ບ + ◌ໍ + ◌່ → ບໍ່ "not; no" (ລາວບໍ່ກິນເຂົ້າ); ມ + ◌ີ → ມີ "have"; ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ
+  "I". The user also wants ແມ່ນ "yes; to be" (W000004) early: it needs ມ, ◌່ and ແ◌, so it fits right after ບໍ່ and ມີ.
+  Bring ເຂົາ "they" and ເກົ້າ "nine" back only once ເຂົ້າ is solid (LESSON_PLAN 15).
+- **Reviewer notes to watch in the browser:** "kao" (ເຂົ້າ) and "kaao" (ຂາວ) look alike in English letters; "nam" may be
+  read as in "ham" although the cue says "um in hum".
 - **Transliteration, intro cards, Wikipedia links, font setting:** built 2026-11-09, untested in a browser. The
   Wikipedia URLs were written from memory. pron_tip prose may still quote English-style spellings ("gao").
 - **Decided (user, 2026-11-09):** ເ◌ົາ stays "ao" in every transliteration style (as in "Lao"); never "ow".

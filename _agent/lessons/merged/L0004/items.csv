@@ -1,0 +1,12 @@
+position,item_type,item_id,role,notes
+1,unit,V36,new,vowel with a small circle above and a stroke after the consonant
+2,word,W000011,new,'water'; uses the new vowel
+3,word,W000389,new,'leg'; known letters only
+4,word,W000538,new,'white'; known letters only
+5,word,W000018,recycle,earlier word
+6,word,W000019,recycle,earlier word
+7,word,W000031,recycle,earlier word
+8,sentence,S000002873,new,first drink phrase
+9,sentence,S000002872,recycle,earlier sentence
+10,sentence,S000002874,new,sentence
+11,sentence,S000002875,new,noun then describing word

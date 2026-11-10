@@ -9,3 +9,4 @@ V35,vowel,vowel,V35,ເ◌ົາ,"As in the word 'now'. Written in three parts a
 C23,consonant,initial,C23,ລ,Like the l in 'law'.,L0003,SRC-AGENT:lesson,unverified,From letters.csv C23 pron_tip (verified: l as in 'law'); wording by agent.
 C24f,consonant,final,C24,◌ວ,"At the end of a syllable, a short w sound, as at the end of 'now'.",L0003,SRC-AGENT:lesson,unverified,From letters.csv C24 pron_tip (verified: at the end of a syllable a w glide as in 'now'); wording by agent.
 V03,vowel,vowel,V03,◌າ,Like the a in 'father'. Written after the consonant.,L0003,SRC-AGENT:lesson,unverified,From vowels.csv V03 pron_tip (verified: long 'a' as in 'father') and its pattern; wording by agent.
+V36,vowel,vowel,V36,◌ຳ,Like the um in 'hum'. Written with a small circle above the consonant and a stroke after it.,L0004,SRC-AGENT:lesson,unverified,From vowels.csv row V36 pron_tip (verified: 'um' as in 'hum') and its pattern; wording by agent.
