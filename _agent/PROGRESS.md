@@ -5,7 +5,7 @@ and git. History up to 2026-10-10 is in `_agent/progress-archive.md`; the long 2
 used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUDE.md. Lesson decisions:
 `_agent/LESSON_PLAN.md` (1–19). App design: `_agent/APP_DESIGN.md`. Slices: `_agent/APP_PLAN.md`.
 
-## State (2026-11-09)
+## State (2026-11-10)
 - **Content pool:** 1425 words, 2816 sentences, 30 templates. Pipeline clean (0 errors; the usual 8 warnings).
 - **Lessons merged: 4.** L0001 ກິນ · L0002 ເຂົ້າ, ກິນເຂົ້າ · L0003 ລາວ, ລາວກິນເຂົ້າ · L0004 ຂາ, ຂາວ, ລາວຂາວ, then ◌ຳ, ນ້ຳ,
   recap R02 (the stroke າ in three vowels), ກິນນ້ຳ, ລາວກິນນ້ຳ.
@@ -38,12 +38,10 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - Edit-tool caution: a `replace_all` that removed text at line ends in a CSV also removed the line breaks. Rewrite
   small CSVs whole instead.
 
-## Awaiting the user's browser check (all untested by the agent)
-- Lesson 4 with the recap card; lesson 1's ກ card with the transliteration choice on it (choosing should change
-  "Sounds like" at once); the single intro card.
-- Settings dialog: transliteration, Lao font (default Leelawadee UI, Windows only), spaces.
-- "Read more on Wikipedia" links under "More" (URLs written from memory).
-- Shared homograph card (ລາວ), translations one per line, Lao-first card layout, dotted-circle note.
+## Browser check
+- The user reviewed lessons 1–4 in the browser (local Docker Supabase) on 2026-11-10. Their findings are not yet
+  recorded here: add any fixes they want as open items. One item is still unverified: the "Read more on Wikipedia"
+  links under "More" (URLs written from memory).
 
 ## Open questions with the user
 - Final-ວ card probably shows "o/w" as its sound: tidy?

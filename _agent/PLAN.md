@@ -45,9 +45,9 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] Wide IDs (W 6 digits, S 9 digits) via rekey_ids; validate enforces the formats
 - [x] check_drafts.py, pipeline.sh, merge_words rev 3 (sentence renumbering, override remap)
 - [x] drafter subagent + guard allowlist; .gitattributes; CLAUDE.md updated by the user (cap 3000)
-- [ ] Drafter test batch (small, ~15 words + sentences); check_drafts → merge → pipeline; review the workflow with the user
+- [x] Drafter test batch: superseded by lessons 3–4, which used the drafter with fully specified briefs (workflow in PROGRESS.md)
 
-## Phase 7: To about 3000 words (hard cap 3000)
+## Phase 7: To about 3000 words (hard cap 3000). PAUSED since 2026-10-19: content is now drafted only when a lesson needs it (CLAUDE.md); the pool is 1425 words
 - [ ] Topic batches via drafter (sequential), each checked, merged and piped
 - [ ] CHECKPOINT 1500
 - [ ] CHECKPOINT 2000
@@ -70,7 +70,7 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] CLAUDE.md archived (`_agent/archive/CLAUDE-wordlist-phase.md`); new version proposed (`_agent/proposed-config/CLAUDE.md`)
 - [x] User approves `lesson_tool.py`, `next_lesson.ps1`, `next_lesson_prompt.md` and installs the new CLAUDE.md
 - [x] Lesson 1 (ກິນ; was ລາວ until 2026-10-24) built interactively as the reference
-- [x] Lessons 2–4 built interactively (2026-11-09): ເຂົ້າ; ລາວ; ຂາ, ຂາວ, ນ້ຳ
+- [x] Lessons 2–4 built interactively (2026-11-09): ເຂົ້າ; ລາວ; ຂາ, ຂາວ, ນ້ຳ; reviewed in the browser against local Docker Supabase (2026-11-10)
 - [ ] Lessons 5 onward by hand, one new piece or two plus 2–3 common words each (order in PROGRESS.md)
 - [ ] Runner test (after S6): `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
 - [ ] Dialogues: tables and item type once Q&A pairs exist
