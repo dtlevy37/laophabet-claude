@@ -72,7 +72,7 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] Lesson 1 (ກິນ; was ລາວ until 2026-10-24) built interactively as the reference
 - [x] Lessons 2–4 built interactively (2026-11-09): ເຂົ້າ; ລາວ; ຂາ, ຂາວ, ນ້ຳ; reviewed in the browser against local Docker Supabase (2026-11-10)
 - [ ] **PAUSED at 4 lessons (user, 2026-11-10).** First: Opus planning session on the learning experience (activities, completion, progress), following `_agent/OPUS_PLANNING_PROMPT.md`; then re-slice APP_PLAN so one playable vertical slice (lessons 1–4) comes before more content
-- [ ] Harness: GitHub remote(s) under github.com/dtlevy37 and agent push permission (needs user: create repo, install proposed config; agent suggests one repo, user wants up to three: frontend, backend, tools)
+- [ ] Harness: two GitHub repos under github.com/dtlevy37 (`laophabet-frontend` = app/frontend; `laophabet` = the rest) and agent push via approved `checkpoint.ps1`. Staged in `_agent/proposed-scripts/` and `_agent/proposed-config/GIT_SETUP.md`; the user runs the steps there, approves the script and edits CLAUDE.md
 - [ ] Lessons 5 onward by hand, one new piece or two plus 2–3 common words each (order in PROGRESS.md)
 - [ ] Runner test (after S6): `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
 - [ ] Dialogues: tables and item type once Q&A pairs exist
