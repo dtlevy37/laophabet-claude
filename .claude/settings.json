@@ -55,7 +55,15 @@
       "PowerShell(powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/*)"
     ],
     "deny": [
-      "Edit(/.claude/**)",
+      "Edit(/.claude/hooks/**)",
+      "Edit(/.claude/state/**)",
+      "Edit(/.claude/tools/**)",
+      "Edit(/.claude/agents/**)",
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/settings.local.json)",
+      "Edit(/.claude/guard-config.json)",
+      "Edit(/.claude/approved-scripts.json)",
+      "Edit(/.claude/statusline.ps1)",
       "Edit(/.git/**)",
       "Edit(/approved-scripts/**)",
       "Edit(/CLAUDE.md)",

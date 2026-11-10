@@ -15,6 +15,9 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - S6a backend for a played lesson (gate passed on the user's local Supabase, 5 of 5 checks): migration `20261110120000_played_lesson.sql` adds `review_log.first_try`; `record_answers` accepts `first_try`; the session summary's answers, correct and accuracy count first tries only; `list_lessons()` returns per-learner `state` (done / open / locked), `completed_at` and `last_accuracy`; `get_lesson()` returns the caller's `levels` and pool units with their sound. Test: `app/backend/tests/s6a_played_lesson_test.sql`.
 
 ### Changed
+- Guard: the agent may write inside `.claude/skills/` (`Get-WritableExceptions` in `.claude/hooks/common.ps1`; the
+  deny rule `Edit(/.claude/**)` in `.claude/settings.json` narrowed to hooks, state, tools, agents and the top-level
+  files). Installed by the user; the updated `activity-module` skill is in place.
 - S5 (progress tables and RPCs) confirmed: `app/backend/tests/s5_progress_test.sql` passed 11 of 11 on the user's local Supabase. Decisions recorded: final ວ is labelled "-ao" (applied in S6c); lessons 5+ resume after S7c.
 - Learning-experience plan (planning only, no code). APP_DESIGN: new sections "Curriculum lesson, app lesson, session", "Lesson session" (interleaved teach and check, closing block, mistake replay, feedback, completion, lesson list states, resume) and "Audio and speaking hooks"; activity table re-ordered (build the word is v1, tone drill waits for a tone-rule lesson, "Spot it" dropped); decisions log. APP_PLAN: slices re-cut as S6a–S6c (playable lessons 1–4), S7a–S7d, S8, S8b, S9, S9b, S10, S11; S2–S4 ticked. SCHEMA: planned `word_units.csv`. No change to merged lessons.
 

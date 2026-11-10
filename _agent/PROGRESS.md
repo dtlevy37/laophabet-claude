@@ -37,14 +37,14 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
      chosen by streak only; switch to accuracy thresholds.
    - Units have no info icon yet (only word chips on sentence cards open the dialog); wrong-answer feedback needs it.
    - Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
-   - The user must copy the staged `activity-module` skill (see "Left for the user" below) or the old one, which
-     still mentions `level1` and "Spot it", keeps loading.
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
    `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill).
    **To stage later, not now:** S7c script group (build_order.py, db_sql.py, lesson_tool.py) in
    `_agent/proposed-scripts/`.
-   **Left for the user:** copy the updated skill:
-   `Copy-Item _agent/proposed-config/skills/activity-module/SKILL.md .claude/skills/activity-module/SKILL.md -Force`.
+   **Guard (2026-11-10):** the agent may now write inside `.claude/skills/` (user installed the patched
+   `common.ps1` and `settings.json`; both checks passed: a skills write works, `guard-config.json` is still refused).
+   The rest of `.claude/` stays protected. The updated `activity-module` skill is installed. Still for the user:
+   add "(except `.claude/skills/`)" to the CLAUDE.md line about `.claude/`. Backups of the old files are in `_trash/`.
 2. **Git/harness (2026-11-10): three repos are live and pushed** (`laophabet-frontend` = app/frontend, `laophabet-backend`
    = app/backend, `laophabet-claude` = project root), all private under github.com/dtlevy37. `checkpoint.ps1 -Push` was
    tested across all three. Root history was purged of `.temp/` (local Supabase keys) with `purge_temp_secrets.ps1`.

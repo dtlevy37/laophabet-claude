@@ -192,7 +192,19 @@ function Get-ProtectedDirs {
     )
 }
 
+# Folders inside a protected area that the agent may write. Skills are instructions, not controls.
+function Get-WritableExceptions {
+    $proj = Get-ProjectDir
+    return @(
+        [IO.Path]::Combine($proj, '.claude', 'skills')
+    )
+}
+
 function Test-Protected([string]$full) {
+    foreach ($d in (Get-WritableExceptions)) {
+        # Only what is inside the folder is writable; the folder itself cannot be moved or replaced.
+        if ((Test-UnderDir $full $d) -and -not $full.Equals($d, $script:PathComparison)) { return $false }
+    }
     foreach ($d in (Get-ProtectedDirs)) { if (Test-UnderDir $full $d) { return $true } }
     return $false
 }
