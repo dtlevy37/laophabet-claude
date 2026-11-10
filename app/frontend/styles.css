@@ -101,7 +101,8 @@ legend { font-weight: 600; padding: 0 6px; }
 .lesson-num { font-weight: 600; color: var(--accent); min-width: 1.5em; }
 .lesson-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
 .teach { position: relative; padding: 8px 0; }
-.glyph { font-size: 4rem; text-align: center; line-height: 1.4; }
+.glyph { font-size: clamp(4rem, 22vw, 6rem); font-weight: 600; text-align: center; line-height: 1.4; }
+.teach > .lao { font-size: 2.6rem; font-weight: 600; }
 .meaning { font-size: 1.15rem; margin: 4px 0 12px; }
 .badge {
   position: absolute; top: 0; right: 0; font-size: 0.8rem; padding: 2px 10px; border-radius: 999px;
@@ -112,7 +113,11 @@ legend { font-weight: 600; padding: 0 6px; }
 .cell { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-width: 0; }
 .cell-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .cell .glyph { margin: 0; }
-.cell-big { font-size: 3rem; font-weight: 700; line-height: 1.6; }
+/* The Lao is the focus: it takes the whole first row, and the English cells sit under it (two per row; a lone
+   last cell takes a whole row too). */
+.teach-grid > .cell:first-child,
+.teach-grid > .cell:last-child:nth-child(even) { grid-column: 1 / -1; }
+.cell-big { font-size: 2rem; font-weight: 600; line-height: 1.5; }
 .cell-mid { font-size: 1.4rem; line-height: 1.4; padding-top: 6px; }
 .hint { font-size: 1.1rem; margin: 4px 0 12px; }
 details.more { margin: 12px 0 0; border-top: 1px solid var(--border); padding-top: 8px; }

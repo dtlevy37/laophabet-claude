@@ -33,6 +33,8 @@ climbs a ladder per learner, and an activity may only use items at or above the 
 
 ## Teach cards (user, 2026-10-24)
 A new learner is overwhelmed by text, so a card shows only what it teaches.
+- **Lao first** (user, 2026-11-09): the Lao glyph or word is the largest thing on the card and sits on its own row at
+  the top; the English cells ("Sounds like", "Means", tone) go below it, smaller. This also fits a phone screen.
 - **Layout:** a small table. Small labels over large content: `Lao letter | Sounds like` (ກ | g), then one hint
   line under it ("A hard g, as in the word 'get'."). Words: `Lao word | Sounds like`, then `Means` and `Tone`. The
   sound value comes from letters/vowels respelling (a final takes the "(final x)" part). No lesson title on the cards.
