@@ -21,8 +21,8 @@ work (growing the word list, new source research, tone-rule work).
 ## Map
 | Path | What |
 |---|---|
-| `app/frontend/` | Plain HTML + CSS + ES modules. No framework, npm or build step. supabase-js comes from a CDN. |
-| `app/backend/supabase/migrations/` | Schema and RPC migrations (hand-written) and content migrations (written by scripts) |
+| `app/frontend/` | Own git repo (`laophabet-frontend`, deployed by Netlify), ignored by the root repo. Plain HTML + CSS + ES modules. No framework, npm or build step. supabase-js comes from a CDN. |
+| `app/backend/` | Own git repo (`laophabet-backend`), ignored by the root repo. `supabase/migrations/`: schema and RPC migrations (hand-written) and content migrations (written by scripts) |
 | `app/README.md` | Backend and frontend reference: tables, RPCs, setup |
 | `data/*.csv` | Working copy of the content (hosted DB + pending migrations); the agent's read model |
 | `approved-scripts/` | Scripts the agent may run (hash-checked). Proposals go in `_agent/proposed-scripts/`. |
@@ -35,8 +35,11 @@ work (growing the word list, new source research, tone-rule work).
   force, and the next step. Remove anything finished.
 - `CHANGELOG.md`: permanent record, newest first, under Added / Changed / Fixed. Add the entry in the same commit as
   the change. Write-only: never read it on startup.
-- Commit a local checkpoint after each finished slice or plan item: `git add -A`, then
-  `git commit -m "checkpoint: <item>"`. Never push or add remotes.
+- Checkpoint after each finished slice or plan item:
+  `powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/checkpoint.ps1 -Message "checkpoint: <item>" -Push`.
+  It commits and pushes all three repos: the project root, `app/backend` and `app/frontend` (the last two are their own
+  repos, ignored by the root).
+  Never run `git push`, `git remote` or `git -C` directly, never force, and never add other remotes or branches.
 - Scratch files go in `_agent/tmp/`. Nothing is read or written outside this folder. To discard a file, move it to
   `_trash/` (deleting is blocked).
 - Never run git commands that rewrite working-tree files (`git stash`, `git checkout -- <file>`, `git restore`). To
@@ -110,7 +113,7 @@ work (growing the word list, new source research, tone-rule work).
   sed, sort, cut, jq, find without -exec) are available.
 - Usage for each script is in its docstring. The main ones: `lesson_tool.py` (brief/check/merge/status/lookup/can-read),
   `db_sql.py` (check/seed/lesson/change/refresh), `check_drafts.py`, `merge_words.py`, `apply_columns.py`,
-  `pipeline.sh`, `next_lesson.ps1`.
+  `pipeline.sh`, `next_lesson.ps1`, `checkpoint.ps1` (commit and push).
 - The SessionStart notice says whether autorun is ON or OFF.
   - **Autorun OFF (user present):** ask in chat and wait. Web: just make the fetch, and the user approves the domain
     at the prompt. Scripts: write them to `_agent/proposed-scripts/` and give the path and purpose in one or two
