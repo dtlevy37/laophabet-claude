@@ -24,8 +24,10 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    - Build the word is v1 (needs `word_units`, S7c); tone drill waits for a tone-rule lesson.
    - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
-   **S6a gate passed** (2026-11-10, 5 of 5; the user did not report the S5 re-run: ask once).
-   **Next: S6b** with the `app-slice` skill. For S6b: `learn.js` caches the bundle,
+   **S6a is done** (gate passed 2026-11-10, 5 of 5; the user closed it).
+   **Next: S6b** with the `app-slice` skill, in a fresh session. The RPC contracts it codes against are in the
+   comments of `app/backend/supabase/migrations/20261110120000_played_lesson.sql` and in `app/README.md`
+   (`list_lessons`, `get_lesson`, "Learner progress"). For S6b: `learn.js` caches the bundle,
    so refetch `get_lesson` after a played session (its `levels` go stale); the list must use `state`.
    Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
