@@ -88,6 +88,15 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - Homograph flags needed on check_drafts/merge_words when a batch repeats a spelling on purpose
   (`--allow-homograph <lao>`).
 
+## Working preferences (user, 2026-11-10)
+- **Keep SQL gate checks short:** the user found the 11-check S5 test overkill. For a slice gate, hand over a
+  handful of queries that confirm the Done-when line, not an exhaustive suite.
+- **Run checkpoints through the Bash tool** (`powershell -NoProfile -ExecutionPolicy Bypass -File
+  approved-scripts/checkpoint.ps1 ...`): through the PowerShell tool it asked for approval every time although
+  both forms are on the allowlist. Untested; if Bash also prompts, look at the guard hook.
+- Avoid `cd` into `app/backend` or `app/frontend`, and `mv`, for routine work: they are not on the allowlist and
+  prompt each time. Kept tests live in `app/backend/tests/`; `supabase/snippets/` is git-ignored.
+
 ## Standing decisions (older, still in force)
 - Sources: Wiktionary (words), SEAsite and Wikipedia (tone rules); Glosbe if needed. Declined: sealang, Enfield.
   Tatoeba and Big Brother Mouse are skipped; drafters compose sentences (`unverified`).
