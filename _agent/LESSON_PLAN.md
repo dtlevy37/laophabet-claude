@@ -46,6 +46,14 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    speaker is expected to be available from about December 2026. Lessons and UI keep audio slots and play buttons
    (hidden or disabled while empty); listening and tone-by-ear activities wait for the recordings. No TTS.
 
+13. **Two transliteration styles; teach texts must work in both** (user, 2026-11-09). The app shows respellings in
+   the learner's chosen style: **Standard** (default: ກ k, ຂ/ຄ kh, ປ p, ຜ/ພ ph, ຕ t, ຖ/ທ th, ຈ ch) or
+   **English-style** (ກ g, ຂ/ຄ k, ປ bp, ຜ/ພ p, ຕ dt, ຖ/ທ t, ຈ j). Everything else is the same in both (ວ w, ຊ s,
+   ເ◌ົາ always "ao"). The data keeps storing the English-style respelling (SCHEMA "Learner respelling scheme"); the
+   app converts it for display (`app/frontend/js/translit.js`). So a teach text never names a respelling letter as
+   the sound ("sounds like g"): it cues with an English example word and describes the sound, e.g. "Like the k in
+   'sky': a k with no puff of air." Never write respellings of Lao words inside teach texts, titles or summaries.
+
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
 advisory unit order. It predates the switch to ກິນ as lesson 1; `lesson_map.py` takes its base from lesson_tool's

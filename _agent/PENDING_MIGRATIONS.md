@@ -9,3 +9,4 @@ Written by approved-scripts/db_sql.py. The owner reviews each file, applies it w
 - [ ] 20261025040000_progress_tables.sql: learner_sessions, lesson_progress, learner_items, review_log; start_lesson, record_answers, complete_lesson (S5; written by the agent, not db_sql)
 - [ ] 20261025034328_l0001_initial_na.sql: change 'l0001_initial_na' (1 lessons, 1 units, 5 lesson_items)
 - [ ] 20261110025408_lesson_l0002.sql: lesson L0002 "A second word and a first phrase"
+- [ ] 20261110032940_l0001_k_cue.sql: change 'l0001_k_cue' (1 units)
