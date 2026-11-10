@@ -12,8 +12,8 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - **Backend:** the user's local Supabase works (`supabase db reset` from `app/backend`, then sign up again: a reset
   wipes accounts). Nothing is hosted yet, so every migration in `_agent/PENDING_MIGRATIONS.md` is still unticked.
 - **App:** lesson list and teach cards work in the user's browser (S4). Progress tables (S5) and the played-lesson
-  backend (S6a) passed their SQL gates. **S6b (session runner, cards only) is written and reviewed but untested:
-  it waits at its browser gate** (steps in APP_PLAN S6b "Done when"). No quiz yet (S6c).
+  backend (S6a) passed their SQL gates. The session runner (S6b, cards only) passed its browser gate
+  (user, 2026-11-10). No quiz yet (S6c).
 
 ## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
 1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
@@ -26,9 +26,12 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
    **S6a is done** (gate passed 2026-11-10, 5 of 5; the user closed it).
-   **S6b is at its gate** (browser test by the user: play lesson 1 as a new learner, see the summary, list shows
-   lesson 1 ticked and lesson 2 open, `learner_items` rows at level 1). When it passes: tick S6b in APP_PLAN, then
-   **S6c** with the `app-slice` and `activity-module` skills, in a fresh session. Notes for S6c:
+   **S6b is done** (the user closed it 2026-11-10 after the browser test).
+   **Next: S6c** with the `app-slice` and `activity-module` skills, in a fresh session. Notes for S6c:
+   - User, 2026-11-10: "Read the cards" on a done lesson looked redundant while a session is cards only. Kept
+     because from S6c a replay asks questions; if the user still finds it redundant after S6c, remove the link
+     and keep the `#/read/` URL.
+   - Use Read/Grep/Glob, not `ls`/`head`/`grep`/`cd` in Bash: those prompt the user for approval.
    - Code map: `js/session.js` (`planLesson` returns specs; the runner's `advance` takes an array of answers and
      adds `answer_id`), `js/activities/index.js` (interface in its comment), `activities/teach_card.js`
      (`lessonCards`, `cardItems` with `shown` ids for folded finals and homograph twins).

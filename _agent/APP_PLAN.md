@@ -61,7 +61,7 @@ building stays paused until the user lifts it; the content shape is final after 
       (2026-11-10: written and reviewed, untested: `20261110120000_played_lesson.sql`, test
       `app/backend/tests/s6a_played_lesson_test.sql`. `levels` lists only items with a `learner_items` row; absent
       = level 0. Pool units carry `letter` / `vowel` `{ipa, respelling}`.)
-- [ ] **S6b Session runner: a lesson can be played and completed (cards only).** `js/session.js` (planner + runner),
+- [x] **S6b Session runner: a lesson can be played and completed (cards only).** (gate passed 2026-11-10: the user closed it after the browser test) `js/session.js` (planner + runner),
       `js/activities/index.js` and `activities/teach_card.js` (moved out of `learn.js`, same look). Route
       `#/lesson/L0001` starts a session (`start_lesson`), steps through the teach cards with a progress bar, sends
       each as `show` (`record_answers`, batched, resent after a dropped connection), calls `complete_lesson` and
@@ -70,7 +70,7 @@ building stays paused until the user lifts it; the content shape is final after 
       lesson; works for any lesson by URL, so new lessons can be reviewed without playing up to them).
       **Done when:** a new learner plays lesson 1, sees the summary, returns to a list with lesson 1 ticked and
       lesson 2 open; `learner_items` has the lesson's items at level 1. **Gate (user):** browser test.
-      (2026-11-10: written and reviewed, untested. Also `js/bundle.js` (get_lesson cache). A session shows cards
+      (2026-11-10: also `js/bundle.js` (get_lesson cache). A session shows cards
       for `new` items only; steps go forward only; a running session stays in memory across a settings change or
       a visit to the list, and a page reload starts a new one until S7b.)
 - [ ] **S6c First checks: multiple choice, interleaved, with feedback and mistake replay.** `activities/multiple_choice.js`

@@ -5,7 +5,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ## 2026-11-10
 
 ### Added
-- S6b session runner (untested until the browser gate): `#/lesson/L0001` plays a lesson as a session. New
+- S6b session runner (browser gate passed, closed by the user): `#/lesson/L0001` plays a lesson as a session. New
   `app/frontend/js/session.js` (planner and runner: `start_lesson`, teach cards under a progress bar, answers
   batched to `record_answers` and resent after a failure, `complete_lesson`, summary screen with new items, streak
   and one encouraging line), `js/activities/index.js` and `js/activities/teach_card.js` (card code moved out of
