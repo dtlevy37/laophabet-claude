@@ -11,8 +11,8 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   recap R02 (the stroke າ in three vowels), ກິນນ້ຳ, ລາວກິນນ້ຳ.
 - **Backend:** the user's local Supabase works (`supabase db reset` from `app/backend`, then sign up again: a reset
   wipes accounts). Nothing is hosted yet, so every migration in `_agent/PENDING_MIGRATIONS.md` is still unticked.
-- **App:** lesson list and teach cards work in the user's browser (S4). No quiz yet (S6). Progress tables (S5) are
-  written but `app/backend/tests/s5_progress_test.sql` has not been confirmed by the user.
+- **App:** lesson list and teach cards work in the user's browser (S4). Progress tables (S5) pass their SQL test on
+  the user's local Supabase. No quiz yet (S6a–S6c).
 
 ## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
 1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
@@ -24,11 +24,10 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    - Build the word is v1 (needs `word_units`, S7c); tone drill waits for a tone-rule lesson.
    - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
-   **Next:** the user runs the S5 gate (`supabase db reset`, paste `app/backend/tests/s5_progress_test.sql`, all rows
-   pass). Then S6a with the `app-slice` skill.
+   **Next: S6a** with the `app-slice` skill (the S5 gate passed 2026-11-10, 11 of 11 checks).
+   Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
-   `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill). Optional tidy before S6c: the
-   final-ວ sound label "o/w" (APP_DESIGN open question 1).
+   `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill).
    **To stage later, not now:** S7c script group (build_order.py, db_sql.py, lesson_tool.py) in
    `_agent/proposed-scripts/`; an updated `activity-module` skill in `_agent/proposed-config/` at S6b (it still
    mentions the dropped `level1` direction and "Spot it").
@@ -40,7 +39,7 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    once happy (it holds the old history with the keys); (c) delete `_agent/proposed-config/GIT_SETUP.md` after (a).
    Until (a), CLAUDE.md still says "never push": use `checkpoint.ps1 -Message "checkpoint: <item>" -Push` anyway.
 
-## Order of work (user; lessons resume when the user lifts the pause: recommended after S7c, possible after S6c)
+## Order of work (user, 2026-11-10: lessons resume after S7c; structure and major design first, then content)
 1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**
    (ລາວບໍ່ກິນເຂົ້າ). Then, one or two new pieces plus 2–3 very common words each: ມ + ◌ີ → ມີ "have"; ແ◌ → ແມ່ນ
    "yes; to be" (W000004; the user wants it early); ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ "I".
@@ -70,7 +69,6 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   links under "More" (URLs written from memory).
 
 ## Open questions with the user
-- Final-ວ card probably shows "o/w" as its sound: tidy?
 - "nam" for ນ້ຳ although the cue says "um in hum"; "kao" (ເຂົ້າ) vs "kaao" (ຂາວ) look alike in English letters.
 - pron_tip texts under "More" are stored prose with English-style spellings and the word "aspirated": reword?
 - Stale notes on W000035 and W001415 (they still mention W000019 for the "enter" sense; the links are fixed).

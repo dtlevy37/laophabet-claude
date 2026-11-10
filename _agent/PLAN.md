@@ -72,7 +72,7 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] Lesson 1 (ກິນ; was ລາວ until 2026-10-24) built interactively as the reference
 - [x] Lessons 2–4 built interactively (2026-11-09): ເຂົ້າ; ລາວ; ຂາ, ຂາວ, ນ້ຳ; reviewed in the browser against local Docker Supabase (2026-11-10)
 - [x] Planning session on the learning experience (2026-11-10): decisions in APP_DESIGN "Decisions log", slices re-cut in APP_PLAN (S6a–S6c = lessons 1–4 playable). No change to merged lessons
-- [ ] **Lesson building PAUSED at 4 (user, 2026-11-10)** until the user lifts it: recommended after S7c (content gate), possible after S6c
+- [ ] **Lesson building PAUSED at 4 (user, 2026-11-10)** until S7c is done (user, 2026-11-10: structure and major design first, then content)
 - [x] (done 2026-11-10 except installing the new CLAUDE.md, see PROGRESS) Harness: three GitHub repos under github.com/dtlevy37 (`laophabet-frontend` = app/frontend; `laophabet-backend` = app/backend; `laophabet-claude` = the rest) and agent push via approved `setup_repos.ps1` (one-time) and `checkpoint.ps1`. Staged in `_agent/proposed-scripts/` and `_agent/proposed-config/GIT_SETUP.md`; the user approves both scripts and installs CLAUDE.md
 - [ ] Lessons 5 onward by hand, one new piece or two plus 2–3 common words each (order in PROGRESS.md)
 - [ ] Runner test (after S6): `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
@@ -87,7 +87,7 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] Slice 2: local backend boots (`supabase start`, `db reset`); learner sign-up works in a browser (2026-11-09; the native review flow was not re-tested)
 - [x] Slice 3: lesson 1 (ກິນ) built interactively; migration applied locally; lessons show in the browser
 - [x] Slice 4: learner read-only view (lesson list, teach cards, info dialog), plus settings (transliteration, font, spaces)
-- [ ] Slice 5: progress tables written; the user has not yet confirmed `app/backend/tests/s5_progress_test.sql`
+- [x] Slice 5: progress tables; `app/backend/tests/s5_progress_test.sql` passed on the user's local Supabase (2026-11-10, 11 of 11)
 - [ ] Frontend repo config (user, 2026-11-10): `config.js` is git-ignored and points at local Supabase, so it is not in `laophabet-frontend`. Decide and set up how the deployed frontend gets its config: Netlify builds it from `SUPABASE_URL` / `SUPABASE_ANON_KEY` env vars (already in `netlify.toml`), or commit a production `config.js` with the publishable key only. Hosted Supabase project and Netlify env vars needed first (part of S11)
 - [ ] Move `LAO_UI_REVIEW.md` and `scripts/export_lao_review.py` out of the frontend repo (Netlify would serve them): into the main repo, fix the script's path to `app/frontend/js/strings.json`, update `app/README.md`, approve the script if it is to be run by the agent
 - [ ] Slices S6a–S6c: lessons 1–4 playable (backend for a played lesson; session runner and completed tick; interleaved multiple choice with feedback and summary)

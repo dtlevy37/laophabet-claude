@@ -31,7 +31,7 @@ for their topics; each slice names the phase it draws from. Tick here.
       pending. Left: user applies it locally and runs the get_lesson check.)
 - [x] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
       cards, info-icon card. No scoring. (Phase 8, part)
-- [ ] **S5 Progress tables + RPCs (SQL only):** sessions (kind lesson|practice, lesson_id, learner's local day,
+- [x] **S5 Progress tables + RPCs (SQL only):** (gate passed 2026-11-10: all 11 checks) sessions (kind lesson|practice, lesson_id, learner's local day,
       started/completed), lesson_progress, learner_items (level 0–4, no FSRS fields yet), review_log (with session_id
       and lao_word_ids); start_lesson, record_answers, complete_lesson (returns the session summary: words read,
       accuracy, new items, level-ups, streak; APP_DESIGN "Stats and encouragement"). Tested in SQL. (Phase 5)
@@ -111,8 +111,8 @@ building stays paused until the user lifts it; the content shape is final after 
 - [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. (Phase 1, rest) Also: frontend `config.js` for
       the deployed site (env vars vs a committed production file; see PLAN Phase 10), and move `LAO_UI_REVIEW.md` and
       `export_lao_review.py` out of the frontend repo before connecting Netlify.
-- Lessons 5+ (hand-built, order in PROGRESS) resume when the user says so: recommended after S7c, possible after
-  S6c. The unattended runner comes after S7d.
+- Lessons 5+ (hand-built, order in PROGRESS) resume after S7c (user, 2026-11-10: structure and major design first,
+  then content). The unattended runner comes after S7d.
 
 ## Phase 1: Foundation: accounts and roles
 - [x] Move `native/` → `app/`; retire the leftover React sources

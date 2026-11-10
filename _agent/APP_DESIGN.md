@@ -190,8 +190,10 @@ A lesson is content, not a script of screens: the app turns it into activities b
 - Order in items.csv = teaching order: each new unit, then the words that use it, then sentences.
 
 ## Open questions
-1. **Final ວ sound label:** letters.csv gives "w (final o/w)", so the C24f card and its sound question would show
-   "o/w". Pick one label before S6c (a `db_sql.py change` on the letter row, or a display rule).
+1. **Final ວ sound label: "-ao"** (user, 2026-11-10). letters.csv gives "w (final o/w)", so the C24f card would
+   show "o/w"; it must show "-ao" on the card and in its sound question. Apply in S6c (a `db_sql.py change` on the
+   row or a display rule; choose then). Every taught word so far has ວ after າ; revisit the label when a word with
+   ວ after another vowel (ແມວ) is taught.
 2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, once
    lessons pass about 10.
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
