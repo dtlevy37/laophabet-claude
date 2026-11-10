@@ -23,7 +23,12 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    empty GitHub repos. Next: the user approves `_agent/proposed-scripts/setup_repos.ps1` and `checkpoint.ps1`
    (re-approve: content changed), then the agent runs `setup_repos.ps1 -Push` and `checkpoint.ps1 -Message "checkpoint: test"
    -Push`; then the user installs `_agent/proposed-config/CLAUDE.md`. Steps: `_agent/proposed-config/GIT_SETUP.md`.
-   Both scripts untested. Until then, checkpoints are local commits on `master`.
+   Both scripts untested. **State 2026-11-10 (end of session):** backend and frontend repos are pushed. The root repo
+   is committed locally on `main` with origin set, but GitHub push protection rejected the push: two early commits
+   (a181f49, 3d31743) contain Supabase local-stack keys in `.temp/start-secrets/.../docker.env`. The user agreed to
+   purge them from history: `_agent/proposed-scripts/purge_temp_secrets.ps1` (backs up .git to `_trash/`, filter-branch,
+   then `-Push`) awaits approval. After it, run `checkpoint.ps1 -Message "checkpoint: test" -Push`, then the user
+   copies `_agent/proposed-config/CLAUDE.md` over CLAUDE.md (the earlier Copy-Item ran in bash and failed).
 
 ## Order of work (user; resumes after the two items above)
 1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**
