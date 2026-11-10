@@ -17,11 +17,12 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 ## Next step (user, 2026-11-10): lesson building is PAUSED at 4
 1. **Opus planning session** on the learning experience: follow `_agent/OPUS_PLANNING_PROMPT.md`. It re-slices
    APP_PLAN so lessons 1–4 become playable (teach, quiz, summary, completed tick) before any new content.
-2. **Git/harness (decided 2026-11-10):** two private repos under github.com/dtlevy37: `laophabet-frontend`
-   (`app/frontend`, for Netlify) and `laophabet` (everything else, full history). Agent pushes through one approved
-   script, `checkpoint.ps1`, not by loosening the guard. Staged, untested: `_agent/proposed-scripts/checkpoint.ps1`
-   and `_agent/proposed-config/GIT_SETUP.md` (the user's steps, the CLAUDE.md edit, Netlify exposure note).
-   Until the user installs it, checkpoints stay local commits on `master`.
+2. **Git/harness (decided 2026-11-10, final):** three private repos under github.com/dtlevy37: `laophabet-frontend`
+   (`app/frontend`, Netlify), `laophabet-backend` (`app/backend`, DB history and restore) and `laophabet` (the rest,
+   full history, for resuming the harness). The agent pushes through one approved script, `checkpoint.ps1`, not by
+   loosening the guard. Staged, untested: `_agent/proposed-scripts/checkpoint.ps1` (three-repo version; the user must
+   re-approve it, the earlier two-repo copy is approved) and `_agent/proposed-config/GIT_SETUP.md` (the user's steps).
+   Frontend repo exists on `main`; backend and root still to do. Until then, checkpoints stay local commits on `master`.
 
 ## Order of work (user; resumes after the two items above)
 1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**

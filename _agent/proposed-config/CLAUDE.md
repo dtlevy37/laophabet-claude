@@ -22,7 +22,7 @@ work (growing the word list, new source research, tone-rule work).
 | Path | What |
 |---|---|
 | `app/frontend/` | Own git repo (`laophabet-frontend`, deployed by Netlify), ignored by the root repo. Plain HTML + CSS + ES modules. No framework, npm or build step. supabase-js comes from a CDN. |
-| `app/backend/supabase/migrations/` | Schema and RPC migrations (hand-written) and content migrations (written by scripts) |
+| `app/backend/` | Own git repo (`laophabet-backend`), ignored by the root repo. `supabase/migrations/`: schema and RPC migrations (hand-written) and content migrations (written by scripts) |
 | `app/README.md` | Backend and frontend reference: tables, RPCs, setup |
 | `data/*.csv` | Working copy of the content (hosted DB + pending migrations); the agent's read model |
 | `approved-scripts/` | Scripts the agent may run (hash-checked). Proposals go in `_agent/proposed-scripts/`. |
@@ -37,7 +37,8 @@ work (growing the word list, new source research, tone-rule work).
   the change. Write-only: never read it on startup.
 - Checkpoint after each finished slice or plan item:
   `powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/checkpoint.ps1 -Message "checkpoint: <item>" -Push`.
-  It commits and pushes both repos: the project root, and `app/frontend`, which is its own repo (ignored by the root).
+  It commits and pushes all three repos: the project root, `app/backend` and `app/frontend` (the last two are their own
+  repos, ignored by the root).
   Never run `git push`, `git remote` or `git -C` directly, never force, and never add other remotes or branches.
 - Scratch files go in `_agent/tmp/`. Nothing is read or written outside this folder. To discard a file, move it to
   `_trash/` (deleting is blocked).

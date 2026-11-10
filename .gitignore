@@ -2,8 +2,8 @@
 .claude/settings.local.json
 _agent/tmp/
 _trash/
-# local Supabase CLI state (holds local secrets)
-supabase/.temp/
-supabase/.branches/
-app/backend/supabase/.temp/
-app/backend/supabase/.branches/
+__pycache__/
+*.pyc
+# the app folders are their own repos (laophabet-frontend, laophabet-backend)
+app/frontend/
+app/backend/
