@@ -24,12 +24,12 @@ User rule: build small pieces, one slice at a time, stop and check after each. P
 for their topics; each slice names the phase it draws from. Tick here.
 - [x] **S1 Approve scripts:** user approves lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md, pipeline.sh
       (proposed-scripts/ → approved). Agent then runs `db_sql.py check` and `seed` (current seeds are the old generator's).
-- [ ] **S2 Local backend boots:** supabase CLI and Docker present; `supabase start`, `supabase db reset` applies
+- [x] **S2 Local backend boots:** supabase CLI and Docker present; `supabase start`, `supabase db reset` applies
       migrations ..0000–..0700 and seeds; existing sign-up and native review flow works in a browser. (Phase 1 test, Phase 2 run)
-- [ ] **S3 Lesson 1 (ກິນ):** built interactively with `lesson_tool.py` brief → check → merge; apply its migration;
+- [x] **S3 Lesson 1 (ກິນ):** built interactively with `lesson_tool.py` brief → check → merge; apply its migration;
       `select get_lesson('L0001')` returns the bundle. (2026-10-24: merged; migration `20261025013136_lesson_l0001.sql`
       pending. Left: user applies it locally and runs the get_lesson check.)
-- [ ] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
+- [x] **S4 Learner read-only view:** hash router, lesson list, lesson page rendering the `get_lesson` bundle as teach
       cards, info-icon card. No scoring. (Phase 8, part)
 - [ ] **S5 Progress tables + RPCs (SQL only):** sessions (kind lesson|practice, lesson_id, learner's local day,
       started/completed), lesson_progress, learner_items (level 0–4, no FSRS fields yet), review_log (with session_id
@@ -40,23 +40,79 @@ for their topics; each slice names the phase it draws from. Tick here.
       learner_items rows (C01 and W000018 at level 2, the rest at 1), and complete_lesson returns words_read 1,
       accuracy 67, new_items 5, level_ups 2, streak 1; a replayed batch saves 0; an anonymous call fails and
       another user sees no rows. Table is `learner_sessions` (not `sessions`, to stay clear of auth.sessions).
-- [ ] **S6 Activity shell + Spot it + Multiple choice + summary screen:** module interface `{type, canUse, render}`,
-      minimal session planner, answers sent to record_answers, summary screen after the lesson. Done when a learner
-      finishes lesson 1, levels update, and the summary shows words read and % correct. (Phase 7, part)
-- [ ] **S7 More v1 activities, two per slice:** matching + flashcards; fill in the blank + build the sentence; tone drill.
-- [ ] **S8 Home, path and stats:** locked / next / done, continue; streak, letters known and words known from a
-      `learner_stats()` RPC. (Phase 8, rest)
+      **Gate (user):** `supabase db reset`, paste `app/backend/tests/s5_progress_test.sql` into the SQL editor; every
+      row of the result table passes.
+
+### Re-sliced 2026-11-10 (learning-experience plan; design in APP_DESIGN "Lesson session")
+Goal: lessons 1–4 playable end to end before any new content. **S6a–S6c are the playable vertical slice.** Lesson
+building stays paused until the user lifts it; the content shape is final after S7c (see "Content gate").
+
+- [ ] **S6a Backend for a played lesson (SQL only).** One new migration (never edit `..040000`):
+      - `list_lessons()` adds per-learner `state` (`done` | `open` | `locked`, same rule as `start_lesson`),
+        `completed_at` and `last_accuracy` (latest completed session of that lesson).
+      - `get_lesson()` adds `levels` (the caller's level for every item in the bundle and the pool) and gives pool
+        units what an option needs (sound: respelling and IPA, as in `unit_json`).
+      - `review_log.first_try boolean not null default true`; `record_answers` accepts `first_try`; the summary's
+        `answers`, `correct` and `accuracy` count first tries only (`words_read` and levels count every answer).
+      **Done when:** the hand-over SQL block shows lesson 1 `open` and lessons 2–4 `locked` for a new user; after a
+      completed lesson-1 session lesson 1 is `done` with its accuracy and lesson 2 is `open`; a replayed question
+      sent with `first_try: false` leaves accuracy unchanged; `get_lesson('L0001')` returns `levels` and pool units
+      with a sound; the S5 test still passes. **Gate (user):** `supabase db reset` + the SQL block.
+- [ ] **S6b Session runner: a lesson can be played and completed (cards only).** `js/session.js` (planner + runner),
+      `js/activities/index.js` and `activities/teach_card.js` (moved out of `learn.js`, same look). Route
+      `#/lesson/L0001` starts a session (`start_lesson`), steps through the teach cards with a progress bar, sends
+      each as `show` (`record_answers`, batched, resent after a dropped connection), calls `complete_lesson` and
+      shows the summary screen (new items, streak, one encouraging line). The lesson list shows done (tick, date) /
+      open / locked from `list_lessons`. The old read-only viewer stays at `#/read/L0001` ("Read the cards" on a done
+      lesson; works for any lesson by URL, so new lessons can be reviewed without playing up to them).
+      **Done when:** a new learner plays lesson 1, sees the summary, returns to a list with lesson 1 ticked and
+      lesson 2 open; `learner_items` has the lesson's items at level 1. **Gate (user):** browser test.
+- [ ] **S6c First checks: multiple choice, interleaved, with feedback and mistake replay.** `activities/multiple_choice.js`
+      (unit: sound → letter and letter → sound; word: Lao → meaning and meaning → Lao). Planner per APP_DESIGN "Lesson
+      session": a check after each new card, a question for each recycled word, a closing mixed block, then missed
+      questions again until right once. Wrong answer: the correct option is shown with the item's info icon, then
+      Continue. Summary shows words read and % correct on the first try.
+      **Done when:** the user plays lessons 1–4 in order; each asks questions between the cards and at the end; a
+      deliberately wrong answer comes back before the summary; the summary shows words read and % correct; items
+      answered right are at level 2 in `learner_items`. **Gate (user):** browser test. *End of the vertical slice.*
+- [ ] **S7a Sentence activities:** build the sentence (word tiles in order) and fill in the blank (one gap, word
+      tiles), from `sentence_json.words`; no new data. Planner: a new sentence gets its reading card, then build the
+      sentence; a recycled sentence gets fill in the blank. **Done when:** lessons 2–4 ask at least one sentence
+      activity each and a wrong order shows the right sentence. **Gate (user):** browser test.
+- [ ] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,
+      seed and step in localStorage; specs are rebuilt from the seed); "Leave lesson?" confirm; dry-run mode on
+      `#/read/…` that plays the questions without recording; `js/audio.js` `audioButton(detail)` placed on teach
+      cards, sentence cards and wrong-answer feedback (renders nothing while `audio_url` is absent).
+      **Done when:** refreshing mid-lesson returns to the same question; a dry run of lesson 4 leaves no rows in
+      `review_log`. **Gate (user):** browser test.
+- [ ] **S7c Word-to-units data (script change + SQL).** `build_order.py` writes `data/word_units.csv` (word_id,
+      syl_index, position, unit_id; generated from `parse_syllable`, confidence `derived`); `db_sql.py` knows the
+      table (seed, lesson, change, refresh); `lesson_tool.py merge` carries a lesson's rows. Migration: table
+      `word_units` + `word_json` gains `units`. A `db_sql.py change` migration backfills the words of lessons 1–4.
+      **Done when:** `pipeline.sh` is clean; `select get_lesson('L0001')` shows ກິນ with units C01, V04, C13f.
+      **Gate (user):** approve the script group in `_agent/proposed-scripts/`, then `supabase db reset` + SQL check.
+      **Content gate:** from here a merged lesson carries everything the planned activities need.
+- [ ] **S7d Build the word:** `activities/build_word.js`: the meaning and sound are shown; the learner taps the
+      pieces in spoken order (consonant, vowel, final, tone mark) from tiles that include wrong pieces; when right,
+      the assembled word appears ("ກ + ◌ິ + ນ = ກິນ"). No in-progress glyph composer. Also: letters just taught are
+      highlighted in new words, and tone marks get their first check here (they have no sound to ask about).
+      **Done when:** every lesson 1–4 word can be built; a wrong piece gets feedback. **Gate (user):** browser test.
+- [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known), home screen with Continue
+      (the next open lesson), the stats, and settings moved to the learner's profile. (Phase 8, rest)
 - [ ] **S8b Practice sessions:** `practice_items(limit)` RPC (due by fixed intervals, then weak, then oldest),
       practice mode in the planner (recall first, no teach cards), `complete_practice` summary, Practice button and
-      due count on home. Done when a learner with lesson 1 done can run a practice session and see its summary.
+      due count on home; adds matching and flashcards (practice is where they fit). Done when a learner with lesson
+      1 done can run a practice session and see its summary.
 - [ ] **S9 FSRS:** design note first, then implement over the fixed intervals. (Phase 6)
-- [ ] **S10 Native feedback on lesson content:** native-role checks on review RPCs, queue, word/unit feedback, owner views;
-      then the feedback subroutine. (Phases 3–4)
+- [ ] **S9b Tone drill:** only once the first tone-rule lesson exists (LESSON_PLAN decision 11).
+- [ ] **S10 Native feedback on lesson content, and audio:** native-role checks on review RPCs, queue (lesson content
+      first), word/unit feedback, owner views, the feedback subroutine; `item_audio` + the `audio` bucket, bundles
+      gain `audio_url`; then "Listen and choose" and "Say it". (Phases 3–4)
 - [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. (Phase 1, rest) Also: frontend `config.js` for
       the deployed site (env vars vs a committed production file; see PLAN Phase 10), and move `LAO_UI_REVIEW.md` and
       `export_lao_review.py` out of the frontend repo before connecting Netlify.
-- In parallel from S3: after lesson 1 is reviewed, `next_lesson.ps1 -Count N` in small batches; about 10 lessons are
-  enough to build S4–S8 against. Audio is v2 (teach cards use respelling + IPA; audio column nullable).
+- Lessons 5+ (hand-built, order in PROGRESS) resume when the user says so: recommended after S7c, possible after
+  S6c. The unattended runner comes after S7d.
 
 ## Phase 1: Foundation: accounts and roles
 - [x] Move `native/` → `app/`; retire the leftover React sources
@@ -176,5 +232,9 @@ Work (2026-10-19; written, scripts awaiting approval, nothing run against a DB y
 Admin role and in-app owner tools, dialogues, PWA/offline, analytics on drop-off and difficulty, trust scores.
 
 ## Decisions log
+- 2026-11-10 (learning-experience plan; detail in APP_DESIGN "Decisions log"): one curriculum lesson = one app
+  lesson, screens come from the planner; teach and check are interleaved; a lesson is completed by reaching the end
+  (missed questions replayed, no pass mark); build the word is v1 and the tone drill waits for a tone-rule lesson.
+  Slices S6–S8b re-cut so S6a–S6c make lessons 1–4 playable. No change to merged lessons.
 - 2026-10-19: everything goes in the DB; lesson content is DB-master once planned; all content changes are
   SQL migrations the owner applies; hosted Supabase is the master, local = hosted + proposals.

@@ -71,7 +71,8 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] User approves `lesson_tool.py`, `next_lesson.ps1`, `next_lesson_prompt.md` and installs the new CLAUDE.md
 - [x] Lesson 1 (ກິນ; was ລາວ until 2026-10-24) built interactively as the reference
 - [x] Lessons 2–4 built interactively (2026-11-09): ເຂົ້າ; ລາວ; ຂາ, ຂາວ, ນ້ຳ; reviewed in the browser against local Docker Supabase (2026-11-10)
-- [ ] **PAUSED at 4 lessons (user, 2026-11-10).** First: Opus planning session on the learning experience (activities, completion, progress), following `_agent/OPUS_PLANNING_PROMPT.md`; then re-slice APP_PLAN so one playable vertical slice (lessons 1–4) comes before more content
+- [x] Planning session on the learning experience (2026-11-10): decisions in APP_DESIGN "Decisions log", slices re-cut in APP_PLAN (S6a–S6c = lessons 1–4 playable). No change to merged lessons
+- [ ] **Lesson building PAUSED at 4 (user, 2026-11-10)** until the user lifts it: recommended after S7c (content gate), possible after S6c
 - [x] (done 2026-11-10 except installing the new CLAUDE.md, see PROGRESS) Harness: three GitHub repos under github.com/dtlevy37 (`laophabet-frontend` = app/frontend; `laophabet-backend` = app/backend; `laophabet-claude` = the rest) and agent push via approved `setup_repos.ps1` (one-time) and `checkpoint.ps1`. Staged in `_agent/proposed-scripts/` and `_agent/proposed-config/GIT_SETUP.md`; the user approves both scripts and installs CLAUDE.md
 - [ ] Lessons 5 onward by hand, one new piece or two plus 2–3 common words each (order in PROGRESS.md)
 - [ ] Runner test (after S6): `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
@@ -89,4 +90,6 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [ ] Slice 5: progress tables written; the user has not yet confirmed `app/backend/tests/s5_progress_test.sql`
 - [ ] Frontend repo config (user, 2026-11-10): `config.js` is git-ignored and points at local Supabase, so it is not in `laophabet-frontend`. Decide and set up how the deployed frontend gets its config: Netlify builds it from `SUPABASE_URL` / `SUPABASE_ANON_KEY` env vars (already in `netlify.toml`), or commit a production `config.js` with the publishable key only. Hosted Supabase project and Netlify env vars needed first (part of S11)
 - [ ] Move `LAO_UI_REVIEW.md` and `scripts/export_lao_review.py` out of the frontend repo (Netlify would serve them): into the main repo, fix the script's path to `app/frontend/js/strings.json`, update `app/README.md`, approve the script if it is to be run by the agent
-- [ ] Slices 6–11: see APP_PLAN (activity shell, more activities, home/path, practice, FSRS, native feedback on lessons, deploy)
+- [ ] Slices S6a–S6c: lessons 1–4 playable (backend for a played lesson; session runner and completed tick; interleaved multiple choice with feedback and summary)
+- [ ] Slices S7a–S7d: sentence activities; session comfort (resume, dry run, audio slot); word-to-units data (script approval); build the word
+- [ ] Slices S8–S11: home and stats, practice, FSRS, tone drill, native feedback and audio, deploy (see APP_PLAN)

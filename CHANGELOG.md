@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-10
+
+### Changed
+- Learning-experience plan (planning only, no code). APP_DESIGN: new sections "Curriculum lesson, app lesson, session", "Lesson session" (interleaved teach and check, closing block, mistake replay, feedback, completion, lesson list states, resume) and "Audio and speaking hooks"; activity table re-ordered (build the word is v1, tone drill waits for a tone-rule lesson, "Spot it" dropped); decisions log. APP_PLAN: slices re-cut as S6a–S6c (playable lessons 1–4), S7a–S7d, S8, S8b, S9, S9b, S10, S11; S2–S4 ticked. SCHEMA: planned `word_units.csv`. No change to merged lessons.
+
 ## 2026-11-09
 
 ### Added

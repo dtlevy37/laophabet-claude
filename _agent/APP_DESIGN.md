@@ -3,6 +3,19 @@
 Scope: what the learner does in the app and what data each activity needs. The data project (this folder)
 supplies the content; the app chooses activities per learner. See `_agent/LESSON_PLAN.md` for lesson rules.
 
+## Curriculum lesson, app lesson, session (user, 2026-11-10)
+Three things share the word "lesson"; keep them apart.
+- **Curriculum lesson** (L0001; LESSON_PLAN): the linguistic content. An ordered list of items (units, rules, words,
+  sentences) with a role (`new` / `recycle`). It names no screens and no activities.
+- **App lesson:** one entry on the learner's lesson list. **One curriculum lesson = one app lesson** (user,
+  2026-11-10). Splitting or grouping lessons in the app is not built; if it is ever wanted it is an app-side mapping,
+  not a content change.
+- **Session:** one play-through. A *lesson session* is generated from the curriculum lesson by the planner
+  (`js/session.js`) and the learner's levels; a *practice session* is generated from the learner's items alone.
+- **App features** (activities, feedback, stats, audio, settings) belong to the app and may change without touching
+  content. The test for any new feature: can the planner build it from what a merged lesson already carries? If not,
+  the missing data is added as a generated or additive table (as `word_units` is), never by rewriting lessons.
+
 ## Core principle: show first, test later (user, 2026-10-19)
 Never test an item the learner has not been shown and had explained. Each item (unit, rule, word, sentence)
 climbs a ladder per learner, and an activity may only use items at or above the level it needs:
@@ -10,13 +23,14 @@ climbs a ladder per learner, and an activity may only use items at or above the 
 | Level | Name | How the item reaches it | Activities allowed |
 |---|---|---|---|
 | 0 | unseen | — | none |
-| 1 | introduced | a teach card was shown (glyph or word, sound, meaning, explanation, example); it stays reachable through the info icon | the teach card itself, then a "spot it" check with the answer still visible |
+| 1 | introduced | a teach card was shown (glyph or word, sound, meaning, explanation, example); it stays reachable through the info icon | the teach card itself; then recognition activities (the first one comes right after the card, with the card gone) |
 | 2 | recognised | answered correctly in a recognition activity | Lao → meaning or sound: matching, multiple choice, flashcards (front = Lao) |
 | 3 | recalled | answered correctly in a recall activity | meaning → Lao: multiple choice with close distractors, fill in the blank, build the word, build the sentence, flashcards (front = English) |
 | 4 | in use | read correctly inside phrases, sentences and dialogues over several days | dialogues, longer reading, spaced reviews only |
 
-- A lesson first teaches its new items (level 0 → 1), then practises them right away at level 2, mixed with
-  recycled items at levels 2–3. Recall activities for a new item normally start in a later session.
+- A lesson teaches each new item (level 0 → 1) and checks it straight away (a right answer → level 2), then mixes
+  the new items with recycled items at levels 2–3 (see "Lesson session"). Recall activities for a new item normally
+  start in a later session.
 - **Distractors** (wrong options in multiple choice and matching): the *tested* item must always have been
   taught, but wrong options may also come from nearby lessons, because early on the learner knows too few items
   to fill four options. In lessons 1–5, distractors may come from any of lessons 1–5. From lesson 6 on, distractors
@@ -53,19 +67,64 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Activity | What it looks like | Tests | Data it needs | When |
 |---|---|---|---|---|
 | Teach card | front: glyph or word, sound cue, meaning, at most one sentence, tone picture for words; the rest behind "More" (see "Teach cards" below) | nothing (show) | units.teach_en, rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, audio | v1 |
-| Spot it | "Which of these is ລ?" with the card still visible | level 1 | same | v1 |
-| Matching | tap pairs: Lao ↔ English, Lao ↔ respelling, letter ↔ sound | recognition | words, units | v1 |
-| Multiple choice | Lao → pick meaning; meaning → pick Lao; sound → pick letter | recognition or recall | words, units, confusable sets | v1 |
-| Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 |
-| Fill in the blank | sentence with one gap; pick the word from tiles | recall in context | sentences, sentence_words | v1 |
-| Build the sentence | put word tiles in order to match the English | recall, word order | sentences (lao_spaced), sentence_words | v1 |
-| Tone drill | see a syllable, pick its tone; later, apply the rule (class + live/dead + mark) | rules | words.tone_by_syllable, tone_derivation, rules | v1 |
-| Build the word | tap letter and vowel pieces into place (shows where vowels sit) | spelling recognition | units, syllable parse | v2 |
+| Multiple choice | unit: sound → pick letter, letter → pick sound; word: Lao → pick meaning (recognition), meaning → pick Lao (recall). The check right after a card is this activity (the separate "Spot it" with the card visible was dropped 2026-11-10) | recognition or recall | bundle items; pool units (lao, sound) and pool words (lao, gloss_en) from `get_lesson` | v1 (S6c) |
+| Build the sentence | put word tiles in order to match the English | recall, word order | `sentence_json.words` (position, word_id, lao), english; extra tiles from pool words | v1 (S7a) |
+| Fill in the blank | sentence with one gap; pick the word from tiles | recall in context | same; the English is shown, so it decides between ເຂົ້າ and ນ້ຳ | v1 (S7a) |
+| Build the word | meaning and sound shown; tap the pieces in spoken order (consonant, vowel, final, tone mark); the assembled word appears when right | spelling, where vowels sit | `word_units` (new, generated; S7c), pool units | v1 (S7d) |
+| Matching | tap pairs: Lao ↔ English, letter ↔ sound | recognition | words, units (needs 3+ pairs) | v1 (S8b) |
+| Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 (S8b, practice) |
+| Tone drill | see a syllable, pick its tone; later, apply the rule (class + live/dead + mark) | rules | words.tone_by_syllable, tone_derivation, rules | after the first tone-rule lesson (S9b) |
 | Listen and choose | hear audio, pick the word | listening | audio per word and sentence | v2 (needs audio) |
 | Dialogue reader | line by line, tap for translation, then comprehension questions | reading in context | dialogues, dialogue_lines, sentences | v2 |
 | Say it | hear, record yourself, play both back, grade yourself | speaking (self-graded) | audio | v2 |
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
 | Typing Lao | keyboard input in Lao script | writing | Lao keyboard | out of scope (writing is out of scope) |
+
+## Lesson session (2026-11-10)
+The planner walks `lesson_items` in `position` order; that order is the backbone of the session, so lessons need no
+extra columns.
+
+| Item | Steps |
+|---|---|
+| new unit | teach card, then one check (sound → letter or letter → sound). A same-sound pair (C13 + C13f) is one card and one check; both ids are sent as shown. A unit with no sound of its own (tone mark) gets no check until build the word |
+| new word | teach card, then Lao → meaning. Homographs on one card (ລາວ) accept either meaning, and no option is another word with the same spelling |
+| new rule / recap | card only |
+| recycled word | no card; one question: meaning → Lao if the learner's level is ≥ 2, else Lao → meaning |
+| new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
+| recycled sentence | fill in the blank (from S7a); before S7a, nothing |
+
+- **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8).
+  Then every question missed on the first try comes back until answered right once (at most twice each).
+- **Questions on words test meaning, never the English-letter spelling** (kao / kaao look alike); questions on
+  units test the sound, labelled exactly as on the unit's teach card.
+- **Options:** 4 where the pool allows (3 at least; otherwise the planner skips that question). Wrong options come
+  from the bundle's pool (lessons 1–5 share one pool, then taught items only), never two with the same Lao or the
+  same label. No confusable-sets table yet: with under about 15 units every pool unit is a candidate. Add one (or
+  derive it from letter shapes and sounds) when lessons pass about 10.
+- **Feedback:** right → a short confirmation, then Continue. Wrong → the correct option is marked and shown with
+  the item's Lao, sound, meaning and info icon, then Continue. No hearts, timers or fail state.
+- **Length:** about 10–25 first-try answers (lesson 1 about 10, lesson 4 about 25). A progress bar shows steps left.
+- **Completed** (user, 2026-11-10) = the learner reached the end and `complete_lesson` ran. No pass mark. The summary
+  shows first-try accuracy (`review_log.first_try`); replays do not count against it but can raise a level.
+- **Lesson list:** `done` (tick, date; tap to play again or "Read the cards"), `open` (lesson 1, the lesson after a
+  done one, or one already started), `locked`. Playing a done lesson again is a normal session: it counts for the
+  streak and levels, and `lesson_progress.completed_at` keeps the first date.
+- **Leaving mid-lesson:** answers already sent stay (levels are kept). From S7b the same device resumes at the same
+  step on the same day; otherwise the lesson starts again. **No offline mode** (unsent answers are retried while
+  the page is open).
+- **Authoring review:** `#/read/L0005` shows any lesson's cards without a session (and from S7b can dry-run the
+  questions without recording), so a new lesson can be reviewed after `supabase db reset` without replaying 1–4.
+
+## Audio and speaking hooks (2026-11-10; LESSON_PLAN decision 12)
+Nothing in the content tables changes for audio.
+- **UI now (S7b):** one `audioButton(detail)` in `js/audio.js`, placed on unit, word and sentence teach cards, on
+  wrong-answer feedback and in sentence activities. It renders nothing while `detail.audio_url` is absent.
+- **Schema later (S10):** `item_audio(item_type, item_id, recording_id, approved_at)` and a learner-readable `audio`
+  bucket (APP_PLAN Phase 4); `unit_json` / `word_json` / `sentence_json` then add `audio_url`. Keyed by item id, so
+  recordings attach to lessons that are already merged.
+- **Activities later:** "Listen and choose" (logged as `recognition`) and "Say it" (self-graded; reuses
+  `js/recorder.js`) are new modules; `record_answers` needs no change.
+- Recording order for the native speaker: units, words and sentences of the merged lessons first.
 
 ## Practice sessions (user, 2026-10-24)
 Lessons introduce material; practice sessions make the learner recall what they already know.
@@ -131,7 +190,25 @@ A lesson is content, not a script of screens: the app turns it into activities b
 - Order in items.csv = teaching order: each new unit, then the words that use it, then sentences.
 
 ## Open questions
-1. **Audio:** native recordings (best, needs a speaker) or Lao text-to-speech (availability and quality to check).
-   Needed for teach cards, listening and tone drills.
-2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, later.
+1. **Final ວ sound label:** letters.csv gives "w (final o/w)", so the C24f card and its sound question would show
+   "o/w". Pick one label before S6c (a `db_sql.py change` on the letter row, or a display rule).
+2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, once
+   lessons pass about 10.
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
+
+## Decisions log
+- 2026-11-10 (user): one curriculum lesson = one app lesson; the planner makes the screens, content names none.
+- 2026-11-10 (agent recommendation, user approved): teach and check are interleaved (card, check, next card, then
+  a closing mixed block). Basis: testing beats restudy at 2 days and 1 week (Roediger & Karpicke 2006,
+  https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01693.x/).
+- 2026-11-10 (agent recommendation, user approved): completed = reached the end; missed questions come back at the
+  end of the session; no pass mark, no fail state. Duolingo replays mistakes at the end of a lesson
+  (https://blog.duolingo.com/spaced-repetition-for-learning); errors followed by corrective feedback tend to help
+  (Metcalfe 2017, doi 10.1146/annurev-psych-010416-044022, abstract only). No source was found for a
+  minimum-accuracy rule in comparable apps.
+- 2026-11-10 (agent recommendation, user approved): build the word is v1, ahead of the tone drill; it needs the
+  generated `word_units` table. The tone drill waits for the first tone-rule lesson.
+- 2026-11-10 (agent recommendation; say if you disagree): the check right after a card is asked with the card gone
+  and counts as recognition (level 2), so "Spot it" with the card visible is dropped and `record_answers` keeps its
+  three directions; audio is keyed by item id in `item_audio`, with an empty play-button slot from S7b; resume is
+  same-device only; no offline mode.

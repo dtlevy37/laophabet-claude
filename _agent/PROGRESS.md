@@ -14,9 +14,24 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - **App:** lesson list and teach cards work in the user's browser (S4). No quiz yet (S6). Progress tables (S5) are
   written but `app/backend/tests/s5_progress_test.sql` has not been confirmed by the user.
 
-## Next step (user, 2026-11-10): lesson building is PAUSED at 4
-1. **Opus planning session** on the learning experience: follow `_agent/OPUS_PLANNING_PROMPT.md`. It re-slices
-   APP_PLAN so lessons 1–4 become playable (teach, quiz, summary, completed tick) before any new content.
+## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
+1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
+   session", "Lesson session", "Audio and speaking hooks", "Decisions log". Slice order: APP_PLAN "Re-sliced
+   2026-11-10". In force:
+   - One curriculum lesson = one app lesson; content names no screens; the planner (`js/session.js`) builds them.
+   - Interleaved: card, check, next card; closing mixed block; missed questions replayed.
+   - Completed = reached the end; no pass mark; summary accuracy is first try only.
+   - Build the word is v1 (needs `word_units`, S7c); tone drill waits for a tone-rule lesson.
+   - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
+     keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
+   **Next:** the user runs the S5 gate (`supabase db reset`, paste `app/backend/tests/s5_progress_test.sql`, all rows
+   pass). Then S6a with the `app-slice` skill.
+   **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
+   `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill). Optional tidy before S6c: the
+   final-ວ sound label "o/w" (APP_DESIGN open question 1).
+   **To stage later, not now:** S7c script group (build_order.py, db_sql.py, lesson_tool.py) in
+   `_agent/proposed-scripts/`; an updated `activity-module` skill in `_agent/proposed-config/` at S6b (it still
+   mentions the dropped `level1` direction and "Spot it").
 2. **Git/harness (2026-11-10): three repos are live and pushed** (`laophabet-frontend` = app/frontend, `laophabet-backend`
    = app/backend, `laophabet-claude` = project root), all private under github.com/dtlevy37. `checkpoint.ps1 -Push` was
    tested across all three. Root history was purged of `.temp/` (local Supabase keys) with `purge_temp_secrets.ps1`.
@@ -25,12 +40,12 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    once happy (it holds the old history with the keys); (c) delete `_agent/proposed-config/GIT_SETUP.md` after (a).
    Until (a), CLAUDE.md still says "never push": use `checkpoint.ps1 -Message "checkpoint: <item>" -Push` anyway.
 
-## Order of work (user; resumes after the two items above)
+## Order of work (user; lessons resume when the user lifts the pause: recommended after S7c, possible after S6c)
 1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**
    (ລາວບໍ່ກິນເຂົ້າ). Then, one or two new pieces plus 2–3 very common words each: ມ + ◌ີ → ມີ "have"; ແ◌ → ແມ່ນ
    "yes; to be" (W000004; the user wants it early); ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ "I".
    Bring back ເຂົາ "they" (W000160) and ເກົ້າ "nine" (W000141) only once ເຂົ້າ is solid (decision 15).
-2. Then S6 (activity shell and first quiz). The unattended runner (`next_lesson.ps1`) comes after that.
+2. The unattended runner (`next_lesson.ps1`) comes after S7d.
 
 ## How a lesson gets built (what worked for lessons 3–4)
 - `lesson_tool.py brief` → propose to the user → the `drafter` agent (sonnet; it has no Bash) writes
@@ -63,8 +78,6 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   A native speaker is expected from about December 2026; audio is built as if recordings exist (decision 12).
 
 ## Proposed, not yet agreed or built
-- Interleave teach and check cards (show a card, check it, next card) when S6 is built.
-- "Build the word" activity in v1, ahead of the tone drill (assembling ກ + ◌ິ + ນ is the core skill).
 - Move settings from the browser to the learner's profile when the home screen exists (S8).
 
 ## Parked (older work, still true)
