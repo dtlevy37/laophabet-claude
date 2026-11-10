@@ -12,4 +12,4 @@ Written by approved-scripts/db_sql.py. The owner reviews each file, applies it w
 - [ ] 20261110032940_l0001_k_cue.sql: change 'l0001_k_cue' (1 units)
 - [ ] 20261110034745_lesson_l0003.sql: lesson L0003 "A new word and a first sentence"
 - [ ] 20261110034746_l0002_phrase_english.sql: change 'l0002_phrase_english' (1 sentences, 2 sentence_words)
-- [ ] 20261110040307_lesson_l0004.sql: lesson L0004 "More words, more sentences"
+- [ ] 20261110040845_lesson_l0004.sql: lesson L0004 "More words, more sentences"

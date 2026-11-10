@@ -25,8 +25,9 @@ L0004,3,word,W000031,recycle,earlier word; used in the next sentence
 L0004,4,sentence,S000002876,new,describing word after the pronoun; no word for 'is'
 L0004,5,unit,V36,new,vowel with a small circle above and a stroke after the consonant
 L0004,6,word,W000011,new,'water'; uses the new vowel
-L0004,7,word,W000018,recycle,earlier word
-L0004,8,sentence,S000002873,new,first drink phrase
-L0004,9,word,W000019,recycle,earlier word
-L0004,10,sentence,S000002872,recycle,earlier sentence
-L0004,11,sentence,S000002874,new,sentence
+L0004,7,rule,R02,new,recap: the same stroke in three vowels (shown once all three are taught)
+L0004,8,word,W000018,recycle,earlier word
+L0004,9,sentence,S000002873,new,first drink phrase
+L0004,10,word,W000019,recycle,earlier word
+L0004,11,sentence,S000002872,recycle,earlier sentence
+L0004,12,sentence,S000002874,new,sentence

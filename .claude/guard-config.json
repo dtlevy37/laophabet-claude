@@ -8,5 +8,5 @@
   "pauseMaxSeconds": 18000,
   "requireUsageData": true,
   "maxStopStalls": 3,
-  "allowedSubagents": ["researcher", "scholar", "drafter"]
+  "allowedSubagents": ["researcher", "scholar", "drafter", "code-reviewer", "curriculum-reviewer"]
 }

@@ -97,7 +97,10 @@ async function showLesson(root, lessonId, index, stale) {
         backToList(),
         h('span', { class: 'muted' }, `${t('learn_lesson')} ${lesson.lesson_order} · ${i + 1} / ${items.length}`),
       ),
-      teachCard(items[i], bundle, { explainCircle: lesson.lesson_order === 1 && items[i] === firstCircle(items) }),
+      teachCard(items[i], bundle, {
+        explainCircle: lesson.lesson_order === 1 && items[i] === firstCircle(items),
+        chooseStyle: lesson.lesson_order === 1 && items[i] === items.find((it) => it.item_type === 'unit'),
+      }),
       h(
         'div',
         { class: 'actions' },
@@ -155,12 +158,12 @@ const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to
 // The front is a small table: labelled cells (Lao letter | Sounds like, or Lao word | Sounds like, Means, Tone)
 // with large content under small labels, then one line of text. Everything else sits in a closed "More" section
 // (open in the info dialog). Nothing the learner has not been taught is shown, such as a letter's name word.
-function teachCard(item, bundle, { inDialog = false, explainCircle = false } = {}) {
-  if (item.item_type === 'intro') return h('section', { class: 'teach' }, introBody(item.item_id))
+function teachCard(item, bundle, { inDialog = false, explainCircle = false, chooseStyle = false } = {}) {
+  if (item.item_type === 'intro') return h('section', { class: 'teach' }, introBody())
   const d = item.detail || {}
   const body =
     item.item_type === 'unit'
-      ? unitBody(d, inDialog, explainCircle)
+      ? unitBody(d, inDialog, explainCircle, chooseStyle)
       : item.item_type === 'word'
         ? wordBody(d, inDialog)
         : item.item_type === 'rule'
@@ -176,21 +179,24 @@ function teachCard(item, bundle, { inDialog = false, explainCircle = false } = {
 
 // The tutorial cards at the start of lesson 1: Lao sounds do not map neatly onto English letters, and the learner
 // picks how they want the sounds written (changeable later in Settings). App text, not lesson content.
-const INTRO = [
-  { item_type: 'intro', item_id: 'sounds' },
-  { item_type: 'intro', item_id: 'style' },
-]
+const INTRO = [{ item_type: 'intro', item_id: 'sounds' }]
 
-function introBody(id) {
-  if (id === 'sounds') {
-    return [h('h2', null, t('intro_sounds_title')), h('p', null, t('intro_sounds_1')), h('p', null, t('intro_sounds_2'))]
-  }
-  return [
-    h('h2', null, t('intro_style_title')),
+function introBody() {
+  return [h('h2', null, t('intro_sounds_title')), h('p', null, t('intro_sounds_1')), h('p', null, t('intro_sounds_2'))]
+}
+
+// The transliteration choice sits on the first letter card of lesson 1 (ກ), where the learner has a real example
+// in front of them (user, 2026-11-09). Picking a style redraws the card so "Sounds like" changes at once.
+function styleChoice() {
+  return h(
+    'div',
+    { class: 'style-choice' },
+    h('h3', null, t('intro_style_title')),
     h('p', null, t('intro_style_1')),
-    translitChoice(),
+    h('p', null, t('intro_style_2')),
+    translitChoice(() => window.dispatchEvent(new Event('hashchange'))),
     h('p', { class: 'muted' }, t('intro_style_later')),
-  ]
+  )
 }
 
 // Background reading for the terms used under "More" (Wikipedia; opens in a new tab).
@@ -218,7 +224,7 @@ function readMore(keys) {
   )
 }
 
-function unitBody(u, open, explainCircle = false) {
+function unitBody(u, open, explainCircle = false, chooseStyle = false) {
   const sound = u.letter || u.vowel || {}
   const raw = soundOf(u, sound.respelling)
   // finals sound the same in both transliteration styles; only initials are converted (translit.js)
@@ -232,6 +238,7 @@ function unitBody(u, open, explainCircle = false) {
     ),
     u.teach_en ? h('p', { class: 'center hint' }, u.teach_en) : null,
     explainCircle ? h('p', { class: 'center muted' }, t('unit_dotted_circle_first')) : null,
+    chooseStyle ? styleChoice() : null,
     more(open, [
       h('p', { class: 'muted' }, unitLabel(u)),
       u.lao.includes('◌') ? h('p', { class: 'muted' }, t('unit_dotted_circle')) : null,
@@ -312,8 +319,14 @@ function soundOf(u, respelling) {
 
 const more = (open, kids) => h('details', { class: 'more', open }, h('summary', null, t('label_more')), kids)
 
+// Rule and recap cards are prose with Lao inside ("the shape າ in three vowels: ◌າ ..."); the Lao parts are shown
+// larger, in the Lao font.
 function ruleBody(r) {
-  return [h('h2', null, r.name_en), h('p', null, r.teach_en)]
+  const parts = (r.teach_en || '').split(/([຀-໿◌]+)/)
+  return [
+    h('h2', null, r.name_en),
+    h('p', { class: 'rule-text' }, parts.map((p, n) => (n % 2 ? h('span', { class: 'lao-inline', lang: 'lo' }, p) : p))),
+  ]
 }
 
 // Sentences show lao_spaced as a reading aid, or the standard form without spaces: a site-wide setting

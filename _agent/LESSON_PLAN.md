@@ -71,6 +71,17 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    "white" are fine. Likely lesson 4: ◌ຳ → ນ້ຳ, ກິນນ້ຳ, plus ຂາ / ຂາວ from lesson 3's ◌າ. The user will suggest
    early words too; propose candidates and let them pick.
 
+18. **Explain apparent contradictions; recap cards** (user, 2026-11-09). A learner who half-remembers something and
+   then sees what looks like a contradiction, with no explanation, gets confused. When the same shape or spelling
+   turns up with a different job (the stroke າ in ◌າ, ເ◌ົາ and ◌ຳ; one word with two meanings; one letter with two
+   sounds), add a short recap card that shows the cases side by side, as soon as all of them have been taught. A
+   recap is a `rule` item (R02 "One shape, three vowels" in lesson 4 is the model; R01 stays reserved for dead
+   syllables) and needs `--max-weight` raised on check/merge, since it is a reminder, not new load.
+19. **Lesson layout and reading load** (user, 2026-11-09). A new unit's card is followed directly by a word that
+   uses it; words that need nothing new go in their own block first ("words you can already read"). Early cards
+   may carry up to a short paragraph when they explain how the app works (motivated learners read it); later
+   lessons carry less reading and more exercises.
+
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
 advisory unit order. It predates the switch to ກິນ as lesson 1; `lesson_map.py` takes its base from lesson_tool's

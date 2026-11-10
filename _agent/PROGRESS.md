@@ -1,260 +1,79 @@
 # Progress
 
-The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it only when you need the background of a past decision. Rules: CLAUDE.md. Data model and workflow: `_agent/SCHEMA.md`.
+Notepad for the next session: open work, decisions still in force, next steps. Finished work is in `CHANGELOG.md`
+and git. History up to 2026-10-10 is in `_agent/progress-archive.md`; the long 2026-10-10 to 2026-11-09 notes that
+used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUDE.md. Lesson decisions:
+`_agent/LESSON_PLAN.md` (1–19). App design: `_agent/APP_DESIGN.md`. Slices: `_agent/APP_PLAN.md`.
 
-## Now (2026-11-09): read this first; the sections below are older history
-- **Order of work (user):** hand-build lessons 2–6 interactively, then S6 (quiz shell). The runner comes after.
-- **Lesson 2 merged** (L0002: ຂ, ເ◌ົາ, ◌້, ເຂົ້າ "rice", ກິນເຂົ້າ). Needs `--max-units 3` on check/merge. User had not
-  explicitly approved the card texts before the merge (they tried to view it in the browser); texts can still change
-  with `db_sql.py change`.
-- **Backend:** the user's Docker works again and `supabase db reset` runs. Not yet confirmed: lesson 1 and 2 visible in
-  the browser, `get_lesson`, and `app/backend/tests/s5_progress_test.sql` (S2–S5 gates).
-- **Lesson 3 merged** (L0003: ລ, ◌າ, final ວ; ລາວ W000031 + W000058 on one card; S000002872 ລາວກິນເຂົ້າ;
-  `--max-units 3 --min-recycle 2`). It replaced a withdrawn first version (ເຂົາ, ເກົ້າ; see LESSON_PLAN 14–15). The
-  user reviews lessons in the browser after merge; texts can still change with `db_sql.py change`.
-- **To withdraw a merged lesson that never reached a hosted DB:** remove its rows from data/lessons.csv and
-  data/lesson_items.csv (and units/rules it introduced), move its migration and merged draft to `_trash/`, drop its
-  PENDING_MIGRATIONS line, then rebuild. Not possible once a hosted DB exists (then: `db_sql.py change`/retire).
-- **How lessons get built now:** the guard allows only the five project agents, so the `drafter` (sonnet) writes the
-  draft files (it has no Bash) and the main agent runs check_drafts / merge_words / lesson_tool / pipeline. A
-  sentences-only merge needs a header-only words batch file as the positional argument.
-- **Lesson 4 merged** (L0004, rebuilt once: first ຂາ, ຂາວ, ລາວຂາວ S000002876 from known letters; then ◌ຳ, ນ້ຳ,
-  S000002873–874; default limits). Pattern the user liked: "words you can already read" first, then the one new
-  piece with the word that uses it. The last rebuild (new order + ລາວຂາວ) was not re-run through the reviewer.
-- **Lesson structure rule (user, 2026-11-09):** a new unit's card is followed directly by a word that uses it; words
-  that need nothing new go in their own block so they do not look like examples of the new unit.
-- **Next lessons (user agreed 2026-11-09), one new piece or two plus 2–3 very common words each; propose each first:**
-  ບ + ◌ໍ + ◌່ → ບໍ່ "not; no" (ລາວບໍ່ກິນເຂົ້າ); ມ + ◌ີ → ມີ "have"; ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ
-  "I". The user also wants ແມ່ນ "yes; to be" (W000004) early: it needs ມ, ◌່ and ແ◌, so it fits right after ບໍ່ and ມີ.
-  Bring ເຂົາ "they" and ເກົ້າ "nine" back only once ເຂົ້າ is solid (LESSON_PLAN 15).
-- **Reviewer notes to watch in the browser:** "kao" (ເຂົ້າ) and "kaao" (ຂາວ) look alike in English letters; "nam" may be
-  read as in "ham" although the cue says "um in hum".
-- **Transliteration, intro cards, Wikipedia links, font setting:** built 2026-11-09, untested in a browser. The
-  Wikipedia URLs were written from memory. pron_tip prose may still quote English-style spellings ("gao").
-- **Decided (user, 2026-11-09):** ເ◌ົາ stays "ao" in every transliteration style (as in "Lao"); never "ow".
-- **Open with the user:** Lao font (trial: system `sans-serif`, same as Wikipedia on their device; the user will name
-  the font they like, then pin or self-host it; they disliked three Noto faces); a transliteration setting
-  (current g/k/bp/dt style vs standard k/kh/p/ph; needs derived columns, a migration and RPC changes: its own slice;
-  user still deciding when); whether the ກ cue should be "the k in 'sky'" instead of a hard g; whether the ຂ card
-  should say "ກ has no puff"; stale notes on W000035 and W001415 (they still mention W000019 for "enter").
-- **Frontend changes awaiting the user's browser check:** Lao-first card layout, settings dialog (spaces), stale-session
-  fix, dotted-circle note on the first ◌ card.
-- **Uncommitted on purpose:** the user's staged config install (.claude/, CLAUDE.md, check_frontend.js) and the
-  approved lesson_tool.py. The user wants to decide on that commit themselves.
-- **Adjustments proposed, not yet done:** interleave teach and check cards; "Build the word" in v1 ahead of the tone
-  drill; trim this file and fix stale ticks in PLAN.md; add Supabase temp folders to .gitignore.
+## State (2026-11-09)
+- **Content pool:** 1425 words, 2816 sentences, 30 templates. Pipeline clean (0 errors; the usual 8 warnings).
+- **Lessons merged: 4.** L0001 ກິນ · L0002 ເຂົ້າ, ກິນເຂົ້າ · L0003 ລາວ, ລາວກິນເຂົ້າ · L0004 ຂາ, ຂາວ, ລາວຂາວ, then ◌ຳ, ນ້ຳ,
+  recap R02 (the stroke າ in three vowels), ກິນນ້ຳ, ລາວກິນນ້ຳ.
+- **Backend:** the user's local Supabase works (`supabase db reset` from `app/backend`, then sign up again: a reset
+  wipes accounts). Nothing is hosted yet, so every migration in `_agent/PENDING_MIGRATIONS.md` is still unticked.
+- **App:** lesson list and teach cards work in the user's browser (S4). No quiz yet (S6). Progress tables (S5) are
+  written but `app/backend/tests/s5_progress_test.sql` has not been confirmed by the user.
 
-## Current state (2026-10-10)
-- **Data:**
-  - 1015 words (W000001–W001015; cap 3000); 2032 sentences; 30 templates.
-  - All 35 required letters and 31 vowels introduced by word 600.
-  - All nouns classified (classifier_word_id / classifier_type / classifier_confidence).
-- **Last pipeline:** tone_derive 1627 syllables, 0 problems; build 3145 steps; validate 0 errors.
-  - Known warnings: ໃຈ W000007 appears only in compounds; ສ່ວນຫຼຸດ W000647 comes before its part ສ່ວນ W000799.
-- **Confidence:** words about 60% verified (Wiktionary is the only word source; about half of lookups are 404s). Sentences: 61 verified, everything else agent-composed and `unverified`.
-- **Tools (approved):** tone_derive, build_order, validate_data, merge_words, apply_columns, check_drafts, rekey_ids (done; one-off), pipeline.sh.
-- **Workflow:** drafter → check_drafts → (tone_derive on the draft) → merge_words --check → merge → pipeline.sh → move drafts to `_agent/drafts/merged/` → commit.
+## Order of work (user)
+1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**
+   (ລາວບໍ່ກິນເຂົ້າ). Then, one or two new pieces plus 2–3 very common words each: ມ + ◌ີ → ມີ "have"; ແ◌ → ແມ່ນ
+   "yes; to be" (W000004; the user wants it early); ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ "I".
+   Bring back ເຂົາ "they" (W000160) and ເກົ້າ "nine" (W000141) only once ເຂົ້າ is solid (decision 15).
+2. Then S6 (activity shell and first quiz). The unattended runner (`next_lesson.ps1`) comes after that.
 
-## Standing user decisions (most recent)
-- **Target and cap:** target about 3000 words, hard cap 3000. Checkpoints at 1500, 2000, 2500 and 3000.
-- **Order:** trunk (first ~100–200 words), then loose topic branches. No core field.
-- **Meanings:** one row per spelling+meaning; `word_overrides` picks the meaning in sentences.
-- **Approvals:** group script changes for approval.
-- **Git:** never stash or checkout. `.gitattributes` keeps the approved scripts byte-exact.
-- **Sources:**
-  - In use: Wiktionary, Tatoeba.
-  - Declined: sealang, Enfield's grammar.
-  - Glosbe acceptable if needed.
-- **Classifiers:** 3 columns (SCHEMA "Classifiers"). Templates TPL27–30 teach the classifier patterns.
+## How a lesson gets built (what worked for lessons 3–4)
+- `lesson_tool.py brief` → propose to the user → the `drafter` agent (sonnet; it has no Bash) writes
+  `_agent/drafts/<tag>-sentences.csv` and `_agent/lessons/drafts/next/*.csv` from a brief that names every row →
+  main agent: `check_drafts.py`, `merge_words.py` (a sentences-only merge needs a header-only words file as the
+  positional argument), replace placeholder sentence IDs, `pipeline.sh`, `lesson_tool.py check` →
+  `curriculum-reviewer` → fix → `lesson_tool.py merge` → `db_sql.py seed` → `pipeline.sh` → CHANGELOG → commit.
+- The guard allows only the five project agents (researcher, scholar, drafter, code-reviewer, curriculum-reviewer).
+- Check/merge flags used so far: L0002 and L0003 `--max-units 3`; L0003 `--min-recycle 2`; L0004 `--max-weight 7.5`
+  (recap rule card).
+- The user reviews a lesson **in the browser after merge**, so merge once the reviewer has no blockers. While nothing
+  is hosted, a merged lesson can be withdrawn and rebuilt: remove its rows from data/lessons.csv, lesson_items.csv
+  and any units/rules it introduced, move its migration to `_trash/`, drop its PENDING_MIGRATIONS line, and empty
+  (do not leave behind) its `_agent/lessons/merged/<id>` folder, or merge fails at the final move. Once a hosted DB
+  exists this is no longer allowed: use `db_sql.py change`.
+- Edit-tool caution: a `replace_all` that removed text at line ends in a CSV also removed the line breaks. Rewrite
+  small CSVs whole instead.
 
-## 2026-10-10 Drafter test batch t1 (15 hobby words): workflow validated
-- 15 words (7 verified / 8 unverified) and 36 sentences (all composed) merged as W001001–W001015.
-- check_drafts: 0 problems; draft tones 26/26 consistent; merge and pipeline clean.
-- **Finding: real-sentence sources yielded nothing.**
-  - Tatoeba's Lao collection is small, and its search API matches loosely: 0 hits for 7 words.
-  - Big Brother Mouse pages show no Lao script as text.
-  - Searching costs tokens with little return. Decision for the user: keep trying, or skip.
-- **Doubtful items (in NEEDS_HUMAN):** ງານອະດິເລກ "hobby" (spelling modelled on Thai), ກີຕາ vs ກີຕ້າ, the loanword tone of ເກມ, ໜັງ "movie" sense, ເລື່ອງ as classifier.
-- New topic value `hobbies` sits beside the existing `leisure` (7 words). Reconcile when branches are designed.
-- Drafter cost: about 91k tokens for 15 words; fixed overhead dominates small batches.
+## Awaiting the user's browser check (all untested by the agent)
+- Lesson 4 with the recap card; lesson 1's ກ card with the transliteration choice on it (choosing should change
+  "Sounds like" at once); the single intro card.
+- Settings dialog: transliteration, Lao font (default Leelawadee UI, Windows only), spaces.
+- "Read more on Wikipedia" links under "More" (URLs written from memory).
+- Shared homograph card (ລາວ), translations one per line, Lao-first card layout, dotted-circle note.
 
-## User decisions after t1 (2026-10-10)
-- **Skip Tatoeba and Big Brother Mouse.** Drafters compose sentences (`unverified`) and still check words on Wiktionary.
-- **Don't over-optimize word choice.** If reasonable candidates exist for a category, use them confidently; no long deliberation over which words to pick.
-- **Next categories** (some partly covered already; the drafter skips existing words via vocab):
-  - restaurants
-  - clothes
-  - gardening
-  - fruits
-  - vegetables
-  - meat
-  - animals
-  - transportation
-  - directions
+## Open questions with the user
+- Final-ວ card probably shows "o/w" as its sound: tidy?
+- "nam" for ນ້ຳ although the cue says "um in hum"; "kao" (ເຂົ້າ) vs "kaao" (ຂາວ) look alike in English letters.
+- pron_tip texts under "More" are stored prose with English-style spellings and the word "aspirated": reword?
+- Stale notes on W000035 and W001415 (they still mention W000019 for the "enter" sense; the links are fixed).
+- Native-speaker questions are collected at the top of `_agent/NEEDS_HUMAN.md` ("For the native speaker").
+  A native speaker is expected from about December 2026; audio is built as if recordings exist (decision 12).
 
-## Next
-1. **Done:** build_order rev 5 approved. The pipeline ran (0 errors) and created `_agent/vocab.csv` (1015 words). No need to re-run it before the first batch.
-2. **Done by user** (report still mentions Tatoeba/BBM; drafter told to ignore): edits to `.claude/agents/drafter.md`:
-   - Line 14: load the vocabulary from `_agent/vocab.csv`.
-   - Remove the Tatoeba/BBM steps in "Sentences": compose directly.
-   - Add: "Pick reasonable common words for the category without long deliberation."
-   - CLAUDE.md also mentions Tatoeba/BBM in the drafter bullet, Accuracy rules and Sources.
-3. **Phase 7 (in progress, see entries below):** one drafter batch per category (~50–100 words each, one after another; tags c1, c2, ...) → check_drafts → tone check → merge → pipeline → commit. Checkpoints at 1500/2000/2500/3000.
+## Proposed, not yet agreed or built
+- Interleave teach and check cards (show a card, check it, next card) when S6 is built.
+- "Build the word" activity in v1, ahead of the tone drill (assembling ກ + ◌ິ + ນ is the core skill).
+- Move settings from the browser to the learner's profile when the home screen exists (S8).
 
-## 2026-10-10 Phase 7 batch c1 (restaurants) merged
-- 56 words (21 verified, 35 unverified) and 112 composed sentences became W001016–W001071. Totals: 1071 words, 2144 sentences.
-- check_drafts 0 problems; draft tones 112/112 ok; pipeline 0 errors.
-- New benign warning: W001028 ບ່ອນນັ່ງ uses the noun ບ່ອນ as its classifier (valid usage).
-- Doubtful items added to NEEDS_HUMAN. Drafter cost about 160k tokens.
+## Parked (older work, still true)
+- **Phase 7 (grow the pool to 3000 words) is paused.** The c7 batch (weather, family, body: 74 words, 148 sentences)
+  sits unmerged in `_agent/drafts/c7-*`. To resume: check_drafts → tone_derive on the drafts → merge_words with
+  `--allow-homograph ຕາ` → pipeline; hand-fix c7-067 ຕາເວັນຂຶ້ນ gloss to "sunrise".
+- To do in the pool: add ຜູ້ to the components of ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້.
+- Drafter cost for big batches was about 2k tokens per word; a small, fully specified brief (as for lessons 3–4)
+  costs about 27k tokens per run.
+- Homograph flags needed on check_drafts/merge_words when a batch repeats a spelling on purpose
+  (`--allow-homograph <lao>`).
 
-## 2026-10-10 Batch c2 (clothes) merged
-- 61 words (24 verified, 37 unverified) and 109 composed sentences became W001072–W001132. Totals: 1132 words, 2253 sentences.
-- Homograph ຄຳ "gold" added; merge needs `--allow-homograph ຄຳ` (check_drafts too). Pipeline 0 errors; classifier-pos warning now also W001090 ຖົງມື→ຖົງ (benign).
-
-## 2026-10-10 Batch c3 (gardening) merged
-- 61 words (20 verified, 41 unverified) and 115 composed sentences became W001133–W001193. Totals: 1193 words, 2368 sentences.
-- Homograph ບານ "bloom" (`--allow-homograph ບານ`). Pipeline 0 errors; classifier-pos warnings are repeaters (ສວນ etc.), benign.
-
-## 2026-10-10 Batch c4 (fruits + vegetables) merged
-- 78 words (13 verified, 65 unverified) and 144 composed sentences became W001194–W001271. Totals: 1271 words, 2512 sentences. Pipeline 0 errors.
-- Components rule given to drafter: list every part whose spelling is a known word.
-
-## 2026-10-10 Batch c5 (meat + animals) merged
-- 79 words (19 verified, 60 unverified) and 158 composed sentences became W001272–W001350. Totals: 1350 words, 2670 sentences. Pipeline 0 errors.
-- Homographs ເຂົາ "horn" and ມັນ "fat" (`--allow-homograph ເຂົາ,ມັນ`).
-- Gap noticed: ຜູ້ is not a word yet; add it in a later batch.
-
-## 2026-10-10 Batch c6 (transport + directions) merged; all listed categories done
-- 74 words (19 verified, 55 unverified; includes ຜູ້) and 140 composed sentences became W001351–W001424. Totals: 1424 words, 2810 sentences. Pipeline 0 errors.
-- Drafter cost c1–c6: about 150–180k tokens per batch on opus (~2.4k tokens per word).
-- **User switched the drafter to `model: sonnet`** (2026-10-10). Next batch is a trial: compare cost and quality.
-- To do: add ຜູ້ (now W0013xx) to components of ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້.
-- All user-listed categories are done.
-
-## 2026-10-10 Batch c7 (weather, family, body): drafted on sonnet, NOT yet checked or merged
-- 74 words and 148 sentences in per-word files `_agent/drafts/c7-001-words.csv` / `c7-001-sentences.csv` … `c7-074-*`. Words: 15 verified, 59 unverified. Cost about 147k tokens and 189 tool calls (barely below opus).
-- Homograph ຕາ "maternal grandfather" (c7-W042), so use `--allow-homograph ຕາ`.
-- Hand fix needed: c7-067 ຕາເວັນຂຶ້ນ gloss "sunrise; east" → "sunrise".
-- **Resume here:** check_drafts on `c7-*-words.csv` / `c7-*-sentences.csv` → tone_derive on the drafts → merge_words (accepts several batch files) → pipeline → move to merged/ → commit. That reaches about 1498 words, so the 1500 checkpoint is next.
-- To do: add ຜູ້ to the components of ຜູ້ຊາຍ, ຜູ້ຍິງ, ຜູ້ຈັດການ, ໄກ່ຜູ້, ໂຕຜູ້.
-
-## TODO: more efficient drafter (next run)
-The cost is in growing context: every tool call re-sends the whole transcript, so 190 calls × a growing context is the bill. Writing one word at a time inside one long agent run does not fix this.
-1. **Main agent picks the word list** (lao + gloss) up front with one cheap grep against vocab.csv. The drafter does no candidate search.
-2. **Short drafter runs:** about 10–15 words per call, many calls in sequence. Each run starts with a small context. Fixed overhead stays small once the next point is in place.
-3. **Tiny brief, no big reads:** paste the words.csv/sentences.csv headers, 2 example rows and the classifier rules into the brief, so the drafter skips reading SCHEMA.md and data files. Grep vocab only for sentence tokens.
-4. **Skip Wiktionary for compounds** of known words (they 404); take IPA from the components. Fetch only roots, and ask the fetch for only IPA, pos and classifier.
-5. **Fewer writes:** one words file and one sentences file per run (not per word).
-6. **Measure** tokens per word for each run and compare with about 2k per word for c1–c7.
-- The user must update `.claude/agents/drafter.md` to match (the agent cannot edit `.claude/`). Its report section still mentions Tatoeba/BBM.
-
-## 2026-10-19 Pivot: letter-set to word map (planning only)
-- User asked for a map from learned unit sets to readable common words; best 3/4/5-unit sets; vowels are units; avoid multi-sound glyphs.
-- Plan written to `_agent/LETTER_MAP_PLAN.md`; Phase 8 added to PLAN.md. c7 drafts remain unmerged (Phase 7 paused).
-- User decisions (rev 2 of the plan): multi-role glyphs excluded from the first set; patterns and tone marks are units; multi-syllable ok; build a closed common-word list first, then the map is set math.
-- Rev 3: commonness is the model's judgement (no source needed, sources don't imply common); Lao spelling keeps a confidence column; list has no cap (expect 1000–2000); no proposed/accepted status.
-- Exclusion list confirmed. `common_list.py` (seed/merge/report) and `letter_map.py` (signatures, union-closure search, best sets, nested chain) written to `_agent/proposed-scripts/`; both import `parse_syllable` from approved build_order.py. Not yet run (cannot run unapproved scripts).
-- 2026-10-19 scripts approved. Judged words.csv: 72 not common (`_agent/letter_map/not_common_ids.txt`), 1352 seeded into common_words.csv.
-- v0 map: only 431 of 1352 are searchable (most need ດ/ບ/ວ/ຍ/ອ/ຫ or > 5 units). Best: k=3 ກ ປ ◌າ 3 words; k=4 ກ ງ ນ ◌າ 5; k=5 ກ ຕ ປ ◌າ ◌ີ 9. Chain ປ◌າ → +ກ → +◌ີ → +ຕ (ປາ ປາກ ປາກກາ ປີ ປີກ ຕາ ຕີ ຕາກ ກີຕາ). Too thin: the list lacks short everyday words.
-- 7-unit run (rev 1): 1.54M candidate sets; k=6 13 words ກ ງ ປ ◌້ ◌າ ◌ີ; k=7 18 words ກ ງ ນ ປ ◌້ ◌າ ◌ີ. Saved as `_agent/letter_map/v1-map7-reference.txt`.
-- letter_map rev 2 proposed (bitmasks, branch-and-bound DFS with live signatures, beam chain adding 1–2 units per step; default --max-k 7). After approval, check that its best-set counts match the rev 1 reference.
-- enum_spellings.py proposed, awaiting approval.
-- 2026-10-19 gap fill done: enum_spellings → 19 batches (5624 spellings) judged by drafter (sonnet, ~24k tokens each), reviewed by main agent (dropped Thai forms/spellings such as ຄ່ະ ຕຽມ ຖູກ ເພັງ ລິງ ເລັກ ເລ່ນ ໄໜ, non-standard ມູ່ ມຶກ ປື້ມ ໜໍ້), merged. Common list 1575 (861 unverified). 738 searchable.
-- Map (k ≤ 7, 106 s): k=3 ງ ນ ◌າ 5; k=4 ກ ງ ນ ◌າ 8; k=5 +ຈ 11; k=6 ກ ງ ນ ລ ◌້ ◌າ 17; k=7 ກ ຄ ງ ນ ◌້ ◌າ ◌ົ◌ 24. Chain ນ◌າ → ງ → ກ → ◌້ → ຄ → ◌ົ◌ (score 66).
-- Next: Wiktionary check of the words in the top sets; consider two-syllable compounds from top-set units.
-- (old) gap fill with short words from allowed units (propose `enum_spellings.py`, then judge enumerated spellings).
-- (old) once approved, judge words.csv for commonness → seed_ids.txt → `common_list.py seed` → `letter_map.py` v0 → category gap lists → drafter list batches → `common_list.py merge`.
-- Weekly usage 55% at this point (stop at 60%).
-
-## 2026-10-19 Zipf top-300 coverage check
-- English list: Wiktionary "Frequency lists/TV/2006" ranks 1–300, folded into 186 base words (inflections and contractions merged; articles, fillers and names dropped). Lao candidates in `_agent/tmp/zipf300.tsv`, results in `_agent/tmp/zipf300-check.tsv`.
-- 173/186 matched. 13 missing: life, guess, idea, honey, hell, oh, bad, never, nothing, everything, together, better, best. About 25 more matched only a weaker sense, with the main Lao word absent (ອື່ນ, ຫາ, ເດັກນ້ອຍ, ເຂົາເຈົ້າ, ຍ້ອນ, ດ້ວຍ, ສາມາດ, ກະລຸນາ …). Likely cause: the enum gap fill never generated ອ/ຫ-initial spellings.
-- Merged 42 rows from `_agent/letter_map/proposals/zipf300.csv` (spelling unverified). Common list now 1617. Map not yet rerun.
-
-## 2026-10-19 Pivot to lessons (Phase 9)
-- k ≤ 10 map run started in the background → `_agent/letter_map/k10/` (k ≤ 7 outputs left in place). Not finished at this entry.
-- User decisions, recorded in `_agent/LESSON_PLAN.md`: 5–10 minute lessons, about 3–4 new items each; vowels, tone marks and rules count as items; no review lessons (lessons recycle earlier material, and the app has flashcards); app-side spaced repetition per learner and item; lesson 1 = ລາວ (ລ ◌າ final-ວ); ດ/ບ as initials from the start, ອ early, ຍ ວ ຫ by lessons 8–12; sentences early, then Q&A, then dialogues; there is enough material to start, and gaps are filled after lessons are mapped.
-- Design: role-units (glyph + role) replace the exclusion list. Planned tables in SCHEMA.md (units, rules, lessons, lesson_items, dialogues).
-- **Next:** read the k10 results → write units.csv / rules.csv → propose `lesson_plan.py` → draft and review the first ~20 lessons.
-
-## 2026-10-19 Lesson runner, app design, CLAUDE.md
-- User wants one-lesson-at-a-time generation via a script that launches `claude -p`. Proposed (one group): `_agent/proposed-scripts/lesson_tool.py` (status/brief/check/merge), `next_lesson.ps1` (runner: brief → claude -p → verify +1 lesson → pipeline → commit), `next_lesson_prompt.md` (runner prompt, ASCII). Role-unit IDs are derived (C23, C24f, V03, T2), so units.csv is written per lesson by merge, not by hand. R01 = dead syllables.
-- `_agent/APP_DESIGN.md`: show first, test later (levels unseen → introduced → recognised → recalled → in use), activity table (v1: teach card, spot it, matching, multiple choice, flashcards, fill in the blank, build the sentence, tone drill; v2: build the word, listening, dialogues, self-graded speaking; no ASR or Lao typing), and "What a lesson must contain".
-- CLAUDE.md is edit-protected: the old version is archived at `_agent/archive/CLAUDE-wordlist-phase.md`; the new one is at `_agent/proposed-config/CLAUDE.md` for the user to copy.
-- **Next:** user approves the three files and installs CLAUDE.md → build lesson 1 interactively → runner test with -Count 1.
-- Later the same day: brief made size-bounded (counts + last 3 lessons + capped lists; new `lookup` and `can-read` modes). Distractors: lessons 1–5 may draw from lessons 1–5; from lesson 6 only taught items. No level demotion; every item has an info icon opening its teach card.
-- k ≤ 10 map run stopped by the user (45 min, no output). Not needed: lesson_tool brief replaces it.
-
-## 2026-10-19 App phase plan + accounts and roles
-- `_agent/APP_PLAN.md`: 8 app phases (foundation, content in DB, progress model, FSRS design, activity engine, learner views, native feedback v2, feedback → curriculum). Rule: CSVs stay the source of truth; feedback returns via reviewed export → apply_columns → pipeline → re-seed.
-- `native/` copied to `app/` (the folder itself was locked by the session cwd; its contents went to `_trash/native-old/`, an empty `native/` remains). Leftover React sources → `_trash/`. `lo.json` → `strings.json` ({lo, en}; en shown to learners).
-- Migration `..0500_roles.sql`: `profiles.role` learner|native from sign-up metadata; old profiles → native.
-- Frontend split: app.js (routing by role), auth.js (role-first sign-up, language toggle, role choice), onboarding.js, learn.js (placeholder). Not yet run in a browser.
-- **Next:** user tests both sign-ups against Supabase; then password reset + Netlify (phase 1 rest), then phase 2.
-
-## 2026-10-19 DB as source of truth (APP_PLAN rev 2)
-- User: DB becomes the source of truth for units, the full word list and lesson words/sentences; native feedback attaches to DB rows; later an owner-run subroutine reviews feedback per lesson (e.g. recordings → lesson audio). Natives self-declare, feedback unverified until the owner verifies them in SQL; natives may try the learner view.
-- Done: migration `..0600_native_verification.sql` (reviewer_trust.native_verified_at, is_verified_native(), owner view sentence_feedback); learner-view switch for natives (app.js, strings view_as_learner / view_back_to_review).
-- APP_PLAN rev 2: Phase 2 = pull → work on files → push (`db_sync.py`, conflict check on updated_at); Phase 3 native feedback on lesson content; Phase 4 feedback subroutine (`feedback.py`, item_audio). Three open decisions listed at the end of APP_PLAN.
-- Working rule from the user: never chain `cd` in shell commands; use absolute paths or Read/Grep (the memory folder is outside the guard's folder, so it is recorded here).
-- User answers: schema holds everything; lesson content DB-master once planned; all content changes are SQL migrations the user applies (runner drafts them, never connects); hosted = master, local = hosted + proposals. APP_PLAN Phase 2/4 rewritten: no db_sync; lesson merge emits a migration alongside the CSV working copy; bulk pool refreshes skip lesson rows; PENDING_MIGRATIONS.md.
-- **Next:** Phase 2 migration (units, rules, lessons, lesson_items, updated_at/retired_at) + seed generator change + lesson_tool merge emitting SQL (script changes as one approval group).
-
-## 2026-10-19 App phase 2 written (DB as source of truth); awaiting script approval
-- Migration `app/backend/supabase/migrations/20261019000700_lesson_tables.sql`: lessons, units, rules, lesson_items (CHECKs match lesson_tool constants; trigger checks item references); updated_at (trigger) + retired_at on all 13 content tables; view lesson_locked + is_lesson_locked(); item JSON helpers unit_json/rule_json/word_json/sentence_json (not callable by app users); RPC get_lesson(lesson_id) for authenticated users (distractor pool through lesson max(order, 5)).
-- New `_agent/proposed-scripts/db_sql.py` replaces app/backend/scripts/generate_seed.py (moved to `_trash/app-scripts/`): modes check / seed (do nothing) / refresh (staging tables, upsert changed, retire missing, skip lesson rows in Python and SQL) / lesson Lnnnn / change --name. Migrations named `<UTC stamp>_<name>.sql` after the latest; each is listed in `_agent/PENDING_MIGRATIONS.md` (moved up from _agent/lessons/ since change/refresh migrations are listed too).
-- Changed (same approval group): lesson_tool.py (merge validates data/ via db_sql.load, then writes the lesson migration from the CSVs it just wrote), next_lesson.ps1 (stops if the migration is missing; commit message names it), next_lesson_prompt.md (never edit/apply migrations), pipeline.sh (step 4 db_sql check).
-- Docs: app/README.md, config.toml comment, APP_PLAN Phase 2 ticked, SCHEMA.md note.
-- Letter map k ≤ 8 done (513 s, 760 searchable of 1617) → `_agent/letter_map/k8/`. k ≤ 7 results unchanged; k=8 best: ກ ຄ ງ ນ ລ ◌້ ◌າ ◌ົ◌, 32 words. Chain ນ◌າ → ງ → ກ → ◌້ → ຄ → ◌ົ◌ → ລ (score 98).
-- User decision 2026-10-19: keep LESSON_PLAN as recorded (role-units, no glyph bans; strict map rule not adopted). Wants a map under the lesson rules, run overnight with progressive output: proposed `lesson_map.py` (imports lesson_tool's World/FIRST_UNITS/CAT_WEIGHT; base = ລາວ; R01 is an item, detected from tone_derivation or the spelling; phase 1 beam chain to 30 items written per step; phase 2 exhaustive k = 4..max-k, seeded with the chain, partial file every 10 min, --hours limit, run.log every minute, summary.txt). Output `_agent/letter_map/lesson_rules/`. Untested (not yet approved).
-- Guard note: a heredoc mentioning a .sql path in a Bash command is blocked as "script not approved"; append with Edit instead.
-- **Next:** user approves the group → run `db_sql.py check` and `seed` (current seeds are the old do-update ones) → user tests `supabase db reset` → lesson 1.
-
-## 2026-10-20 lesson_map.py overnight run (--max-k 15 --hours 10)
-- User approved it with approve-script.ps1. It ran 22:07 to 08:07 (the 10 h limit) and exited 0. Results are in `_agent/letter_map/lesson_rules/` (summary.txt, run.log, best_k4..k11.csv, chain.csv, signatures.csv).
-- Exhaustive search finished for k4 to k11. Best word counts: k4=4, k5=7, k6=11, k7=15, k8=21, k9=27, k10=35, k11=46. The exhaustive result beats the greedy chain only at k8 (+1) and k9 (+1); at k10 and k11 they tie.
-- k12 hit the time limit after 968M nodes. Best so far is 56 (equal to the chain), provisional in best_k12.partial.csv. k13 to k15 were not reached.
-- **Next:** decide whether to resume k12 and above (longer run or narrower search) or use the chain for k>=12, then plan lesson 1.
-
-## 2026-10-24 Plan review: map closed, app re-sliced
-- Reviewed PLAN, PROGRESS, APP_PLAN, LESSON_PLAN, APP_DESIGN and the app folder. User decision: stop the letter map (the k12 partial ties the chain) and use the chain.csv in the lesson_rules map folder as the advisory unit order.
-- App phases re-sliced into S1–S11 (APP_PLAN "Slices"): small steps, stop after each. Next is S1: the user approves the Phase 2 script group (lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md and pipeline.sh differ between approved-scripts and proposed-scripts); then the agent runs db_sql.py check and seed.
-- Found: nothing has run against Supabase yet; the seeds come from the old generator; whether the supabase CLI and Docker are installed is unchecked (the guard blocked the check, so the user should confirm). The c7 drafts (74 words) remain unmerged and Phase 7 stays paused.
-
-## 2026-10-24 S1 done; pivot lesson 1 from ລາວ to ກິນ
-- User approved lesson_tool.py, next_lesson.ps1, next_lesson_prompt.md and pipeline.sh. `db_sql.py check` OK (1424 words, 2810 sentences, 0 lessons). `db_sql.py seed` regenerated all nine seed files with `on conflict do nothing`.
-- User decision: lesson 1 is ກິນ (W000018; units C01, V04, C13f), not ລາວ. ລາວ moves to lesson 2 or 3.
-- Changed `_agent/proposed-scripts/lesson_tool.py`: FIRST_WORD ກິນ, FIRST_UNITS {C01, V04, C13f}, and a generic homograph sentence in the brief. **Needs re-approval** (approve-script, same command as before). Notes updated: LESSON_PLAN, PLAN, APP_PLAN. CLAUDE.md still says "Lesson 1 is ລາວ": the user edits it (protected). APP_DESIGN's homograph example (ລາວ) is still valid.
-- The advisory chain was computed from the ລາວ base; after re-approval a chain-only rerun of lesson_map gives a ກິນ-based chain.
-- **Next:** user re-approves lesson_tool.py and edits CLAUDE.md; then S2 (local backend boots) and S3 (build lesson 1).
-- Later same day: user re-approved lesson_tool.py (ກິນ is live). Regenerated `_agent/lessons/next-brief.md` (now ກິນ). `_agent/proposed-config/CLAUDE.md` updated; the real CLAUDE.md is edit-protected, so the user must change its line 81 ("Lesson 1 is ລາວ") by hand. Left as is: the lesson_map.py docstring says "lesson 1, ລາວ" (comment only; its base is read from FIRST_UNITS) and a lookup example in the lesson_tool.py docstring.
-
-## 2026-10-24 S1 ticked; S3 lesson 1 drafted; S4 learner view written
-- APP_PLAN S1 ticked. User skips S2 for now (no local backend). S3 and S4 are built assuming the DB exists and tested later.
-- S3: lesson 1 draft in `_agent/lessons/drafts/next/` (ກ C01, ◌ິ V04, ◌ນ C13f, word W000018 ກິນ; kind letters; teach_en from verified pron_tips, wording by agent). `lesson_tool.py check`: 0 errors, 0 warnings. **Not merged:** waiting for the user's review of the teach texts. The `get_lesson('L0001')` check waits for S2.
-- S4: new migration `20261024000800_list_lessons.sql` (`list_lessons()` RPC; content tables have RLS and no read policies). `app/frontend/js/learn.js` rewritten: hash routes `#/` (list) and `#/lesson/<id>/<n>` (one teach card per item, Back/Next, unit/word/rule/sentence cards, word chips with an info dialog). app.js re-routes on hashchange in the learner view only. Strings (en only) and styles added. Untested: no backend, and the guard blocks `node --check`.
-- After merge: add the list_lessons migration line to `_agent/PENDING_MIGRATIONS.md` (db_sql creates the file on the first merge).
-- **Next:** user reviews the lesson 1 draft → merge → pipeline.sh → checkpoint. Then the step-1 runner audit.
-- Later same day: user reviewed and approved the draft unchanged. `lesson_tool.py merge` → L0001 and migration `20261025013136_lesson_l0001.sql`; `pipeline.sh` OK (0 errors; 8 warnings, none from L0001). Both pending migrations are listed in PENDING_MIGRATIONS.md. Open points the user left as is: "gin" respelling (could be read as the drink), tone and consonant class shown before they are taught, gloss shows both meanings.
-- User rule: every slice must wrap up all agent work and end only at named user gates (apply migration, approve script). Proposed: a "Done when" line per slice in APP_PLAN (not yet added).
-- **Next:** user boots local Supabase (S2): `supabase start`, `supabase db reset`, then `select get_lesson('L0001')` and the learner view in a browser (S3 check, S4 test). Then the step-1 runner audit.
-
-## 2026-10-24 App-phase config staged (awaiting install)
-- New CLAUDE.md, 5 agents, 6 skills and guard-config in `_agent/proposed-config/`; the user installs them per its INSTALL.md (includes settings.json Agent allow lines). `check_frontend.js` awaits approval.
-- Until installed, the old CLAUDE.md is live; its research parts are preserved in `CLAUDE_Research.md`.
-
-## 2026-10-24 S5 written; awaiting gate
-- User order: S5 (progress tables) before the first quiz. Then S6: activity shell + "Sounds like g: tap the Lao letter" quiz (options = all letters learned so far; ✓/✗, the right answer + ⓘ on a miss), answers saved through record_answers, summary screen.
-- S5 gate: user applies migrations (`supabase migration up` from app/backend) and runs `app/backend/tests/s5_progress_test.sql` in Studio; every row should show pass = true.
-- Awaiting script approval: `_agent/proposed-scripts/lesson_tool.py` (same-sound pairs ງ ນ ມ; FIRST_UNITS + C13). Data and frontend already assume it.
-- Later: the planner must treat a same-sound pair (C13 + C13f) as one quiz option, and send `show` for both units of a folded card.
-
-## 2026-10-24 Minimal teach cards + tone picture (untested)
-- User rule: teach cards show only what's taught (glyph/word, sound cue, meaning, one sentence max, tone picture for words); everything else goes behind "More"; never show untaught things (letter name words, later example words). Recorded in APP_DESIGN "Teach cards" and LESSON_PLAN decision 9. Memory folder writes are blocked, so this is the record.
-- Done: learn.js/tone.js/strings/styles; L0001 content shortened; migration `20261025032517_l0001_short_teach_text.sql` pending. Code review: no major findings, minors fixed.
-- **Next:** user applies the pending migrations and views lesson 1 in a browser. Possible follow-ups: tone pictures in the tone drill; `lo` strings for tone_* if natives see the cards.
-
-## 2026-10-24 Lesson 2 fixed as ເຂົ້າ (rice)
-- User decision: the second word learned is ເຂົ້າ "rice" (W000019, kao). Recorded in LESSON_PLAN.md as decision 5b: 'rice' sense only; new units ຂ (C02), ເ◌ົາ (V35), ◌້ (T2), plus the high-class mai-tho tone rule if it fits; payoff sentence ກິນເຂົ້າ. ລາວ moves to lesson 3 or later.
-- Not enforced in scripts: lesson_tool.py hard-codes only lesson 1, so the brief for lesson 2 still ranks candidates. Enforcing it needs a script change (a SECOND_WORD/SECOND_UNITS like FIRST_*) and re-approval.
-- **Next:** user chooses: enforce in lesson_tool.py (re-approval), or build lesson 2 interactively with this decision.
+## Standing decisions (older, still in force)
+- Sources: Wiktionary (words), SEAsite and Wikipedia (tone rules); Glosbe if needed. Declined: sealang, Enfield.
+  Tatoeba and Big Brother Mouse are skipped; drafters compose sentences (`unverified`).
+- One row per spelling and meaning; sentences pick a meaning with `word_overrides`.
+- Do not over-deliberate word choice; group script changes into one approval.
+- Git: never stash, checkout or restore; no `git -C`; no chained `cd`. Guard: `sed -e`, awk pipes and heredocs that
+  mention .sql paths are blocked.
+- The memory folder is outside the guard's folder, so durable preferences are recorded here and in LESSON_PLAN /
+  APP_DESIGN instead.
