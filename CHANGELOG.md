@@ -11,6 +11,9 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - LESSON_PLAN decisions 11 (natural learning first; rules are a backup) and 12 (build as if native audio exists; no TTS).
 - `.vscode/settings.json`: Live Server root is `/app/frontend`.
 
+### Fixed
+- The app no longer hangs on "Loading" when the browser holds a session for an account that no longer exists (as after a local `supabase db reset`): `app.js` drops the session and shows the sign-in screen. Untested in a browser.
+
 ### Changed
 - W000019 ເຂົ້າ is now "rice" (noun) only. S000000512, S000002222 and S000002853 pick W001425 through `word_overrides`; ເຂົ້າໃຈ, ເຂົ້ານອນ and ທາງເຂົ້າ list W001425 as their component.
 - Seed files regenerated (`db_sql.py seed`) so a local `supabase db reset` includes the split.

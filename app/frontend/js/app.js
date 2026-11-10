@@ -30,6 +30,16 @@ async function loadProfile() {
       .maybeSingle()
     if (error) throw error
     profile = data
+    if (!data) {
+      // A saved session whose account no longer exists (e.g. after a local `supabase db reset`): the page would
+      // wait on "Loading" forever. Drop the session so the sign-in screen shows.
+      session = null
+      try {
+        await supabase.auth.signOut({ scope: 'local' })
+      } catch (err) {
+        console.error(err)
+      }
+    }
   } catch (err) {
     console.error(err)
     profile = null
