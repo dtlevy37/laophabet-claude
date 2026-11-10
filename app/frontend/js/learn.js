@@ -118,14 +118,31 @@ function cardItems(items) {
   const initials = new Map(
     items.filter((it) => it.item_type === 'unit' && it.detail?.role === 'initial').map((it) => [it.detail.base_id, it.detail]),
   )
-  return items.filter((it) => {
+  const kept = items.filter((it) => {
     const d = it.detail
     if (it.item_type !== 'unit' || d?.role !== 'final') return true
     const first = initials.get(d.base_id)
     const same = first && first.letter?.ipa === d.letter?.ipa && !(d.letter?.respelling || '').includes('(final')
     return !same
   })
+  // Homographs taught together (ລາວ "he, she" and ລາວ "Lao") share one card that lists each meaning on its own
+  // line (APP_DESIGN "Presentation"). The lesson lists them as neighbouring word items with the same spelling.
+  const out = []
+  for (const it of kept) {
+    const prev = out[out.length - 1]
+    const twin =
+      it.item_type === 'word' && prev?.item_type === 'word' && prev.role === it.role && prev.detail?.lao === it.detail?.lao
+    if (!twin) out.push(it)
+    else {
+      const glosses = [...(prev.detail.glosses || [prev.detail.gloss_en]), it.detail.gloss_en].filter(Boolean)
+      out[out.length - 1] = { ...prev, detail: { ...prev.detail, glosses } }
+    }
+  }
+  return out
 }
+
+// Alternatives in a translation or a list of meanings, one per line (never joined with "or").
+const lines = (parts) => parts.map((p, n) => [n ? h('br') : null, p])
 
 // The first card of the course that shows the dotted circle ◌ (lesson 1 only). Its front explains that the
 // circle is a placeholder, not a letter (user, 2026-11-09). Later cards keep the note under "More".
@@ -245,7 +262,7 @@ function wordBody(w, open) {
       { class: 'teach-grid' },
       cell(t('card_lao_word'), h('span', { class: 'glyph lao', lang: 'lo' }, w.lao)),
       w.respelling ? cell(t('card_sounds_like'), h('span', { class: 'cell-big' }, respell(w.respelling))) : null,
-      w.gloss_en ? cell(t('card_means'), h('span', { class: 'cell-mid' }, w.gloss_en)) : null,
+      w.gloss_en ? cell(t('card_means'), h('span', { class: 'cell-mid' }, lines(w.glosses || [w.gloss_en]))) : null,
       tonePics ? cell(t('label_tones'), tonePics) : null,
     ),
     more(open, [
@@ -306,7 +323,8 @@ function sentenceBody(s, bundle) {
   return [
     h('p', { class: 'lao center', lang: 'lo' }, text),
     h('p', { class: 'center' }, h('strong', null, respell(s.respelling))),
-    h('p', { class: 'center meaning' }, s.english),
+    // sentences.english separates alternative translations with " / " ("He eats. / She eats.")
+    h('p', { class: 'center meaning' }, lines((s.english || '').split(' / '))),
     chips(s.words || [], bundle),
   ]
 }

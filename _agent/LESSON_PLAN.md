@@ -54,6 +54,23 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    the sound ("sounds like g"): it cues with an English example word and describes the sound, e.g. "Like the k in
    'sky': a k with no puff of air." Never write respellings of Lao words inside teach texts, titles or summaries.
 
+14. **Lesson 3 is ລາວ** (user, 2026-11-09): ລ, ◌າ, final ວ; the word ລາວ as "he, she" (the everyday word; W000031)
+   with "Lao" (W000058) on the same card; first full sentence ລາວກິນເຂົ້າ. A first lesson-3 draft with ເຂົາ and ເກົ້າ
+   was withdrawn.
+15. **Look-alikes wait until the first one is solid** (user, 2026-11-09). A word that differs from a taught word only
+   by a tone mark or one small sign (ເຂົາ vs ເຂົ້າ) is not introduced in the next lessons. Let the first word come
+   back in several lessons, then bring in the second as a deliberate contrast. ເຂົາ is glossed "they" first (the
+   user has only heard it as they/them; ລາວ is the everyday he/she): confirm with the native speaker.
+16. **Translations show alternatives, never "or"** (user, 2026-11-09). `sentences.english` is the natural
+   translation. Alternatives are separated by " / " and shown one per line: "He eats. / She eats." No "literally"
+   clause: the word chips under the sentence give the word-by-word meaning. Brackets only for a real nuance:
+   "To eat (a meal)."
+17. **From lesson 4 on: fewer new letters, more words** (user, 2026-11-09), so sentences come earlier. Prefer
+   lessons with 0–1 new units and 2–3 new words built from known letters, as soon as enough letters exist.
+   Choose very common words over merely readable ones: ນ້ຳ "water" yes, ນາ "rice field" no; ຂາ "leg" and ຂາວ
+   "white" are fine. Likely lesson 4: ◌ຳ → ນ້ຳ, ກິນນ້ຳ, plus ຂາ / ຂາວ from lesson 3's ◌າ. The user will suggest
+   early words too; propose candidates and let them pick.
+
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
 advisory unit order. It predates the switch to ກິນ as lesson 1; `lesson_map.py` takes its base from lesson_tool's

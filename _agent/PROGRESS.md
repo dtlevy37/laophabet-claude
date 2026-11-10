@@ -9,13 +9,18 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
   with `db_sql.py change`.
 - **Backend:** the user's Docker works again and `supabase db reset` runs. Not yet confirmed: lesson 1 and 2 visible in
   the browser, `get_lesson`, and `app/backend/tests/s5_progress_test.sql` (S2–S5 gates).
-- **Lesson 3 merged** (L0003: no new units; ເຂົາ, ເກົ້າ, sentence S000002871; `--min-recycle 2`). Merged for the user to
-  view in the browser, as with lesson 2; texts can still change with `db_sql.py change`.
+- **Lesson 3 merged** (L0003: ລ, ◌າ, final ວ; ລາວ W000031 + W000058 on one card; S000002872 ລາວກິນເຂົ້າ;
+  `--max-units 3 --min-recycle 2`). It replaced a withdrawn first version (ເຂົາ, ເກົ້າ; see LESSON_PLAN 14–15). The
+  user reviews lessons in the browser after merge; texts can still change with `db_sql.py change`.
+- **To withdraw a merged lesson that never reached a hosted DB:** remove its rows from data/lessons.csv and
+  data/lesson_items.csv (and units/rules it introduced), move its migration and merged draft to `_trash/`, drop its
+  PENDING_MIGRATIONS line, then rebuild. Not possible once a hosted DB exists (then: `db_sql.py change`/retire).
 - **How lessons get built now:** the guard allows only the five project agents, so the `drafter` (sonnet) writes the
   draft files (it has no Bash) and the main agent runs check_drafts / merge_words / lesson_tool / pipeline. A
   sentences-only merge needs a header-only words batch file as the positional argument.
-- **Next lesson (4):** needs new units again. The brief's top pick after lesson 1 was ◌າ (ນາ, ການ, ຂາ); ລາວ (ລ + ◌າ +
-  final ວ) is due in lesson 3 or later, so ◌າ in lesson 4 and ລ + final ວ in lesson 5 is a natural path. Propose first.
+- **Next lesson (4):** per LESSON_PLAN 17: one new unit ◌ຳ → ນ້ຳ "water" (W000011), ກິນນ້ຳ, ລາວກິນນ້ຳ; plus ຂາ "leg"
+  (W000389) and ຂາວ "white" (W000538), which need nothing new. Not ນາ. Propose to the user first, with a short list
+  of other very common early words they can pick from (they asked for suggestions).
 - **Transliteration, intro cards, Wikipedia links, font setting:** built 2026-11-09, untested in a browser. The
   Wikipedia URLs were written from memory. pron_tip prose may still quote English-style spellings ("gao").
 - **Decided (user, 2026-11-09):** ເ◌ົາ stays "ao" in every transliteration style (as in "Lao"); never "ow".

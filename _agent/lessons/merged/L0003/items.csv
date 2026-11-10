@@ -1,7 +1,10 @@
 position,item_type,item_id,role,notes
-1,word,W000160,new,he/she/they; same letters as ເຂົ້າ but no tone mark and a different melody
-2,word,W000141,new,nine; has a tone mark but a different melody from ເຂົ້າ (no rule given)
-3,word,W000018,recycle,earlier word
-4,word,W000019,recycle,earlier word; contrast with ເຂົາ
-5,sentence,S000002870,recycle,earlier phrase; the new sentence builds on it
-6,sentence,S000002871,new,first full sentence
+1,unit,C23,new,ລ at the start of a syllable
+2,unit,V03,new,vowel written after the consonant
+3,unit,C24f,new,ວ at the end of a syllable
+4,word,W000031,new,'he; she' (pronoun); shown together with W000058 on one card
+5,word,W000058,new,'Laos; Lao' (same spelling and sound; homograph of W000031)
+6,word,W000018,recycle,earlier word
+7,word,W000019,recycle,earlier word
+8,sentence,S000002870,recycle,the phrase the new sentence builds on
+9,sentence,S000002872,new,first full sentence; placeholder id to be replaced by the main agent

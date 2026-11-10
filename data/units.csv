@@ -6,3 +6,6 @@ V04,vowel,vowel,V04,◌ິ,"As in the word 'bit'. Written above the consonant, b
 C02,consonant,initial,C02,ຂ,"A k with a puff of air, as in the word 'kite'.",L0002,SRC-AGENT:lesson,unverified,From letters.csv C02 pron_tip (verified); wording by agent.
 T2,tone-mark,mark,T2,◌້,A small mark written above the letter. It changes the melody of the word.,L0002,SRC-AGENT:lesson,unverified,From letters.csv T2 (verified: the mark changes the tone); wording by agent. The class rule is deliberately left out (user 2026-11-09).
 V35,vowel,vowel,V35,ເ◌ົາ,"As in the word 'now'. Written in three parts around the consonant: before, above and after.",L0002,SRC-AGENT:lesson,unverified,From vowels.csv V35 pron_tip and pattern ເ◌ົາ (verified); wording by agent.
+C23,consonant,initial,C23,ລ,Like the l in 'law'.,L0003,SRC-AGENT:lesson,unverified,From letters.csv C23 pron_tip (verified: l as in 'law'); wording by agent.
+C24f,consonant,final,C24,◌ວ,"At the end of a syllable, a short w sound, as at the end of 'now'.",L0003,SRC-AGENT:lesson,unverified,From letters.csv C24 pron_tip (verified: at the end of a syllable a w glide as in 'now'); wording by agent.
+V03,vowel,vowel,V03,◌າ,Like the a in 'father'. Written after the consonant.,L0003,SRC-AGENT:lesson,unverified,From vowels.csv V03 pron_tip (verified: long 'a' as in 'father') and its pattern; wording by agent.

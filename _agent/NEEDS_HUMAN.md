@@ -40,6 +40,16 @@
 - ໜັງ "movie" and ເລື່ອງ as the classifier for films and novels are agent knowledge (Wiktionary gives skin / story).
 - Sentences t1 S029/S031 use ເປັນ for "know how to".
 
+## For the native speaker (lessons 1–3, 2026-11-09)
+- ເຂົາ (W000160): the owner has only heard it as "they/them", with ລາວ as the everyday "he/she". The gloss was changed
+  from Wiktionary's "he; she; they" to "they; (more formal) he; she". Is that right for Vientiane speech?
+- Composed lesson sentences to confirm: ກິນເຂົ້າ "to eat (a meal)" (S000002870), ລາວກິນເຂົ້າ "He eats. / She eats."
+  (lesson 3), ເຂົາກິນເຂົ້າ "They eat." (S000002871, held for a later lesson).
+- ລາວ "he, she" (W000031) is recorded with a short vowel (law, "lao") and ລາວ "Lao" (W000058) with a long one
+  (laːw, "laao"), per Wiktionary. Is the pronoun really shorter in normal speech? The lesson 3 card shows one
+  respelling ("lao") for both, and the ◌າ card avoids the word "long" because of this.
+- Tone of ເຂົ້າ (low-falling) and ເກົ້າ (high-falling) as stored: do they match Vientiane speech?
+
 ## Awaiting approval
 - `_agent/proposed-scripts/tone_derive.py`: derives tones per syllable and cross-checks against recorded tones and IPA. Run with `--selftest` first.
 

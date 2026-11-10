@@ -10,4 +10,5 @@ Written by approved-scripts/db_sql.py. The owner reviews each file, applies it w
 - [ ] 20261025034328_l0001_initial_na.sql: change 'l0001_initial_na' (1 lessons, 1 units, 5 lesson_items)
 - [ ] 20261110025408_lesson_l0002.sql: lesson L0002 "A second word and a first phrase"
 - [ ] 20261110032940_l0001_k_cue.sql: change 'l0001_k_cue' (1 units)
-- [ ] 20261110033330_lesson_l0003.sql: lesson L0003 "Look-alike words, different melodies"
+- [ ] 20261110034745_lesson_l0003.sql: lesson L0003 "A new word and a first sentence"
+- [ ] 20261110034746_l0002_phrase_english.sql: change 'l0002_phrase_english' (1 sentences, 2 sentence_words)
