@@ -11,8 +11,9 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   recap R02 (the stroke າ in three vowels), ກິນນ້ຳ, ລາວກິນນ້ຳ.
 - **Backend:** the user's local Supabase works (`supabase db reset` from `app/backend`, then sign up again: a reset
   wipes accounts). Nothing is hosted yet, so every migration in `_agent/PENDING_MIGRATIONS.md` is still unticked.
-- **App:** lesson list and teach cards work in the user's browser (S4). Progress tables (S5) pass their SQL test on
-  the user's local Supabase. No quiz yet (S6b–S6c; the S6a backend passed its gate).
+- **App:** lesson list and teach cards work in the user's browser (S4). Progress tables (S5) and the played-lesson
+  backend (S6a) passed their SQL gates. **S6b (session runner, cards only) is written and reviewed but untested:
+  it waits at its browser gate** (steps in APP_PLAN S6b "Done when"). No quiz yet (S6c).
 
 ## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
 1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
@@ -25,16 +26,25 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
    **S6a is done** (gate passed 2026-11-10, 5 of 5; the user closed it).
-   **Next: S6b** with the `app-slice` skill, in a fresh session. The RPC contracts it codes against are in the
-   comments of `app/backend/supabase/migrations/20261110120000_played_lesson.sql` and in `app/README.md`
-   (`list_lessons`, `get_lesson`, "Learner progress"). For S6b: `learn.js` caches the bundle,
-   so refetch `get_lesson` after a played session (its `levels` go stale); the list must use `state`.
-   Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
+   **S6b is at its gate** (browser test by the user: play lesson 1 as a new learner, see the summary, list shows
+   lesson 1 ticked and lesson 2 open, `learner_items` rows at level 1). When it passes: tick S6b in APP_PLAN, then
+   **S6c** with the `app-slice` and `activity-module` skills, in a fresh session. Notes for S6c:
+   - Code map: `js/session.js` (`planLesson` returns specs; the runner's `advance` takes an array of answers and
+     adds `answer_id`), `js/activities/index.js` (interface in its comment), `activities/teach_card.js`
+     (`lessonCards`, `cardItems` with `shown` ids for folded finals and homograph twins).
+   - A session already fetches a fresh bundle (`getBundle(id, {fresh: true})`), so `levels` are current at the start.
+   - The summary screen shows only new items and streak; add words read and % correct. The encouraging line is
+     chosen by streak only; switch to accuracy thresholds.
+   - Units have no info icon yet (only word chips on sentence cards open the dialog); wrong-answer feedback needs it.
+   - Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
+   - The user must copy the staged `activity-module` skill (see "Left for the user" below) or the old one, which
+     still mentions `level1` and "Spot it", keeps loading.
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
    `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill).
    **To stage later, not now:** S7c script group (build_order.py, db_sql.py, lesson_tool.py) in
-   `_agent/proposed-scripts/`; an updated `activity-module` skill in `_agent/proposed-config/` at S6b (it still
-   mentions the dropped `level1` direction and "Spot it").
+   `_agent/proposed-scripts/`.
+   **Left for the user:** copy the updated skill:
+   `Copy-Item _agent/proposed-config/skills/activity-module/SKILL.md .claude/skills/activity-module/SKILL.md -Force`.
 2. **Git/harness (2026-11-10): three repos are live and pushed** (`laophabet-frontend` = app/frontend, `laophabet-backend`
    = app/backend, `laophabet-claude` = project root), all private under github.com/dtlevy37. `checkpoint.ps1 -Push` was
    tested across all three. Root history was purged of `.temp/` (local Supabase keys) with `purge_temp_secrets.ps1`.

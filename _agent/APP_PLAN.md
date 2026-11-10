@@ -70,6 +70,9 @@ building stays paused until the user lifts it; the content shape is final after 
       lesson; works for any lesson by URL, so new lessons can be reviewed without playing up to them).
       **Done when:** a new learner plays lesson 1, sees the summary, returns to a list with lesson 1 ticked and
       lesson 2 open; `learner_items` has the lesson's items at level 1. **Gate (user):** browser test.
+      (2026-11-10: written and reviewed, untested. Also `js/bundle.js` (get_lesson cache). A session shows cards
+      for `new` items only; steps go forward only; a running session stays in memory across a settings change or
+      a visit to the list, and a page reload starts a new one until S7b.)
 - [ ] **S6c First checks: multiple choice, interleaved, with feedback and mistake replay.** `activities/multiple_choice.js`
       (unit: sound → letter and letter → sound; word: Lao → meaning and meaning → Lao). Planner per APP_DESIGN "Lesson
       session": a check after each new card, a question for each recycled word, a closing mixed block, then missed

@@ -111,9 +111,22 @@ frontend/
   js/onboarding.js       native profile questions
   js/review.js           native: the review screen
   js/recorder.js         microphone recording
-  js/learn.js            learner home (placeholder)
+  js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards
+  js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen
+  js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog)
+  js/bundle.js           get_lesson cache
+  js/settings.js  translit.js  tone.js    learner display settings, respelling styles, tone pictures
   js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)
 ```
+
+### A lesson session (S6b; untested until the browser gate passes)
+`#/lesson/L0001` fetches a fresh bundle, calls `start_lesson`, and steps through the plan (S6b: one teach card per
+new item; the intro card first in lesson 1) under a progress bar. Each finished step queues its answers (a teach
+card reports every item on it as `show`) and sends the queue to `record_answers`; a failed batch stays queued and is
+sent again with the next step, and the server skips `answer_id`s it already has. At the end everything unsent is
+flushed, `complete_lesson` runs, and the summary screen shows what it returned. If saving fails the learner gets a
+retry; nothing is lost while the page stays open. A running session is kept in memory, so a settings change or a
+visit to the lesson list does not start a second one; a page reload does (resume comes in S7b).
 Local: copy `config.example.js` to `config.js`, fill it in, then open `frontend/index.html` with VS Code Live Server (serve the `frontend` folder as root).
 
 Netlify: set **Base directory** to `app/frontend`, leave the publish directory as set in `netlify.toml`, and add env vars `SUPABASE_URL` and `SUPABASE_ANON_KEY`. The build command only writes `config.js` from them.

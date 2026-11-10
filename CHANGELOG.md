@@ -5,6 +5,13 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ## 2026-11-10
 
 ### Added
+- S6b session runner (untested until the browser gate): `#/lesson/L0001` plays a lesson as a session. New
+  `app/frontend/js/session.js` (planner and runner: `start_lesson`, teach cards under a progress bar, answers
+  batched to `record_answers` and resent after a failure, `complete_lesson`, summary screen with new items, streak
+  and one encouraging line), `js/activities/index.js` and `js/activities/teach_card.js` (card code moved out of
+  `learn.js`, same look), `js/bundle.js`. The lesson list shows done (tick and date, "Read the cards"), open and
+  locked from `list_lessons`. The read-only viewer moved to `#/read/L0001`. `t(key, vars)` fills `{n}`-style
+  placeholders. Staged: an updated `activity-module` skill in `_agent/proposed-config/skills/`.
 - S6a backend for a played lesson (gate passed on the user's local Supabase, 5 of 5 checks): migration `20261110120000_played_lesson.sql` adds `review_log.first_try`; `record_answers` accepts `first_try`; the session summary's answers, correct and accuracy count first tries only; `list_lessons()` returns per-learner `state` (done / open / locked), `completed_at` and `last_accuracy`; `get_lesson()` returns the caller's `levels` and pool units with their sound. Test: `app/backend/tests/s6a_played_lesson_test.sql`.
 
 ### Changed
