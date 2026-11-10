@@ -29,7 +29,7 @@ W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
 W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,11
-W000031,ລາວ,pronoun,"he, she",pronouns,,168
+W000031,ລາວ,pronoun,"he, she",pronouns,,169
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
 W000033,ນອນ,verb,sleep; lie down,home,,19
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
@@ -536,7 +536,7 @@ W000534,ທຳມະດາ,adjective,ordinary; normal,describing,,2
 W000535,ເຕັມ,adjective,full,describing,,3
 W000536,ສີ,noun,colour,colours,W000536,43
 W000537,ແດງ,adjective,red,colours,,8
-W000538,ຂາວ,adjective,white,colours,,15
+W000538,ຂາວ,adjective,white,colours,,16
 W000539,ດຳ,adjective,black,colours,,11
 W000540,ຂຽວ,adjective,green,colours,,10
 W000541,ຟ້າ,noun; adjective,sky; blue,colours,,3

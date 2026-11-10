@@ -20,7 +20,7 @@ insert into public.sentences as t (sentence_id, lao, lao_spaced, ipa, respelling
   ('S000002872', 'ລາວກິນເຂົ້າ.', 'ລາວ ກິນ ເຂົ້າ.', 'law˧˥ kin˩(˧) kʰaw˧˩', 'lao gin kao.', 'He eats. / She eats.', 'W000031', null, null, 'unverified', 'Composed by the agent for lesson 3; not from a source.', null),
   ('S000002873', 'ກິນນ້ຳ.', 'ກິນ ນ້ຳ.', 'kin˩(˧) nam˥˨', 'gin nam.', 'To drink water.', 'W000011', null, null, 'unverified', 'Composed by the agent for lesson 4; not from a source.', null),
   ('S000002874', 'ລາວກິນນ້ຳ.', 'ລາວ ກິນ ນ້ຳ.', 'law˧˥ kin˩(˧) nam˥˨', 'lao gin nam.', 'He drinks water. / She drinks water.', 'W000011', null, null, 'unverified', 'Composed by the agent for lesson 4; not from a source.', null),
-  ('S000002875', 'ເຂົ້າຂາວ.', 'ເຂົ້າ ຂາວ.', 'kʰaw˧˩ kʰaːw˩(˧)', 'kao kaao.', 'White rice.', 'W000538', null, null, 'unverified', 'Composed by the agent for lesson 4; not from a source.', null)
+  ('S000002876', 'ລາວຂາວ.', 'ລາວ ຂາວ.', 'law˧˥ kʰaːw˩(˧)', 'lao kaao.', 'He is fair-skinned. / She is fair-skinned.', 'W000538', null, null, 'unverified', 'Composed by the agent for lesson 4; not from a source. Literally ''he/she white'': a describing word follows its noun or pronoun with no word for ''is''. Replaces ເຂົ້າຂາວ (S000002875) in the lesson: the owner doubted that phrase, and plain white rice is usually ເຂົ້າຈ້າວ.', null)
 on conflict (sentence_id) do update set lao = excluded.lao, lao_spaced = excluded.lao_spaced, ipa = excluded.ipa, respelling = excluded.respelling, english = excluded.english, target_word_id = excluded.target_word_id, template_id = excluded.template_id, source = excluded.source, confidence = excluded.confidence, notes = excluded.notes, word_overrides = excluded.word_overrides, retired_at = null
 where (t.retired_at is not null or (t.lao, t.lao_spaced, t.ipa, t.respelling, t.english, t.target_word_id, t.template_id, t.source, t.confidence, t.notes, t.word_overrides) is distinct from (excluded.lao, excluded.lao_spaced, excluded.ipa, excluded.respelling, excluded.english, excluded.target_word_id, excluded.template_id, excluded.source, excluded.confidence, excluded.notes, excluded.word_overrides));
 insert into public.sentence_words as t (sentence_id, position, word_id, source, confidence, notes) values
@@ -32,12 +32,12 @@ insert into public.sentence_words as t (sentence_id, position, word_id, source, 
   ('S000002874', 1, 'W000031', 'SRC-AGENT:segmentation', 'derived', null),
   ('S000002874', 2, 'W000018', 'SRC-AGENT:segmentation', 'derived', null),
   ('S000002874', 3, 'W000011', 'SRC-AGENT:segmentation', 'derived', null),
-  ('S000002875', 1, 'W000019', 'SRC-AGENT:segmentation', 'derived', null),
-  ('S000002875', 2, 'W000538', 'SRC-AGENT:segmentation', 'derived', null)
+  ('S000002876', 1, 'W000031', 'SRC-AGENT:segmentation', 'derived', null),
+  ('S000002876', 2, 'W000538', 'SRC-AGENT:segmentation', 'derived', null)
 on conflict (sentence_id, position) do update set word_id = excluded.word_id, source = excluded.source, confidence = excluded.confidence, notes = excluded.notes, retired_at = null
 where (t.retired_at is not null or (t.word_id, t.source, t.confidence, t.notes) is distinct from (excluded.word_id, excluded.source, excluded.confidence, excluded.notes));
 update public.sentence_words t set retired_at = now()
-where t.retired_at is null and t.sentence_id in ('S000002872', 'S000002873', 'S000002874', 'S000002875') and (t.sentence_id, t.position) not in (('S000002872', 1), ('S000002872', 2), ('S000002872', 3), ('S000002873', 1), ('S000002873', 2), ('S000002874', 1), ('S000002874', 2), ('S000002874', 3), ('S000002875', 1), ('S000002875', 2));
+where t.retired_at is null and t.sentence_id in ('S000002872', 'S000002873', 'S000002874', 'S000002876') and (t.sentence_id, t.position) not in (('S000002872', 1), ('S000002872', 2), ('S000002872', 3), ('S000002873', 1), ('S000002873', 2), ('S000002874', 1), ('S000002874', 2), ('S000002874', 3), ('S000002876', 1), ('S000002876', 2));
 insert into public.lessons as t (lesson_id, lesson_order, title_en, kind, summary_en, source, confidence, notes) values
   ('L0004', 4, 'More words, more sentences', 'words', 'One new vowel, three new words, and more sentences.', 'SRC-AGENT:lesson', 'unverified', 'Lesson 4 follows decision 17: one new unit (V36) and three common words (W000011 water, W000389 leg, W000538 white) built from known letters. W000389 and W000538 reuse the vowel from lesson 3. The rice field word (ນາ) is deliberately not used. Recycles W000018, W000019, W000031 and sentence S000002872. No rules, no tone explanations (decision 11).')
 on conflict (lesson_id) do update set lesson_order = excluded.lesson_order, title_en = excluded.title_en, kind = excluded.kind, summary_en = excluded.summary_en, source = excluded.source, confidence = excluded.confidence, notes = excluded.notes, retired_at = null
@@ -47,17 +47,17 @@ insert into public.units as t (unit_id, kind, role, base_id, lao, teach_en, intr
 on conflict (unit_id) do update set kind = excluded.kind, role = excluded.role, base_id = excluded.base_id, lao = excluded.lao, teach_en = excluded.teach_en, intro_lesson_id = excluded.intro_lesson_id, source = excluded.source, confidence = excluded.confidence, notes = excluded.notes, retired_at = null
 where (t.retired_at is not null or (t.kind, t.role, t.base_id, t.lao, t.teach_en, t.intro_lesson_id, t.source, t.confidence, t.notes) is distinct from (excluded.kind, excluded.role, excluded.base_id, excluded.lao, excluded.teach_en, excluded.intro_lesson_id, excluded.source, excluded.confidence, excluded.notes));
 insert into public.lesson_items as t (lesson_id, position, item_type, item_id, role, notes) values
-  ('L0004', 1, 'unit', 'V36', 'new', 'vowel with a small circle above and a stroke after the consonant'),
-  ('L0004', 2, 'word', 'W000011', 'new', '''water''; uses the new vowel'),
-  ('L0004', 3, 'word', 'W000389', 'new', '''leg''; known letters only'),
-  ('L0004', 4, 'word', 'W000538', 'new', '''white''; known letters only'),
-  ('L0004', 5, 'word', 'W000018', 'recycle', 'earlier word'),
-  ('L0004', 6, 'word', 'W000019', 'recycle', 'earlier word'),
-  ('L0004', 7, 'word', 'W000031', 'recycle', 'earlier word'),
+  ('L0004', 1, 'word', 'W000389', 'new', '''leg''; known letters only (practises the vowel from lesson 3)'),
+  ('L0004', 2, 'word', 'W000538', 'new', '''white''; known letters only'),
+  ('L0004', 3, 'word', 'W000031', 'recycle', 'earlier word; used in the next sentence'),
+  ('L0004', 4, 'sentence', 'S000002876', 'new', 'describing word after the pronoun; no word for ''is'''),
+  ('L0004', 5, 'unit', 'V36', 'new', 'vowel with a small circle above and a stroke after the consonant'),
+  ('L0004', 6, 'word', 'W000011', 'new', '''water''; uses the new vowel'),
+  ('L0004', 7, 'word', 'W000018', 'recycle', 'earlier word'),
   ('L0004', 8, 'sentence', 'S000002873', 'new', 'first drink phrase'),
-  ('L0004', 9, 'sentence', 'S000002872', 'recycle', 'earlier sentence'),
-  ('L0004', 10, 'sentence', 'S000002874', 'new', 'sentence'),
-  ('L0004', 11, 'sentence', 'S000002875', 'new', 'noun then describing word')
+  ('L0004', 9, 'word', 'W000019', 'recycle', 'earlier word'),
+  ('L0004', 10, 'sentence', 'S000002872', 'recycle', 'earlier sentence'),
+  ('L0004', 11, 'sentence', 'S000002874', 'new', 'sentence')
 on conflict (lesson_id, position) do update set item_type = excluded.item_type, item_id = excluded.item_id, role = excluded.role, notes = excluded.notes, retired_at = null
 where (t.retired_at is not null or (t.item_type, t.item_id, t.role, t.notes) is distinct from (excluded.item_type, excluded.item_id, excluded.role, excluded.notes));
 update public.lesson_items t set retired_at = now()

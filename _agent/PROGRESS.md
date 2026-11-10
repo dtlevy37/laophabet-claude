@@ -18,7 +18,11 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
 - **How lessons get built now:** the guard allows only the five project agents, so the `drafter` (sonnet) writes the
   draft files (it has no Bash) and the main agent runs check_drafts / merge_words / lesson_tool / pipeline. A
   sentences-only merge needs a header-only words batch file as the positional argument.
-- **Lesson 4 merged** (L0004: ◌ຳ; ນ້ຳ, ຂາ, ຂາວ; S000002873–875; default limits).
+- **Lesson 4 merged** (L0004, rebuilt once: first ຂາ, ຂາວ, ລາວຂາວ S000002876 from known letters; then ◌ຳ, ນ້ຳ,
+  S000002873–874; default limits). Pattern the user liked: "words you can already read" first, then the one new
+  piece with the word that uses it. The last rebuild (new order + ລາວຂາວ) was not re-run through the reviewer.
+- **Lesson structure rule (user, 2026-11-09):** a new unit's card is followed directly by a word that uses it; words
+  that need nothing new go in their own block so they do not look like examples of the new unit.
 - **Next lessons (user agreed 2026-11-09), one new piece or two plus 2–3 very common words each; propose each first:**
   ບ + ◌ໍ + ◌່ → ບໍ່ "not; no" (ລາວບໍ່ກິນເຂົ້າ); ມ + ◌ີ → ມີ "have"; ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ
   "I". The user also wants ແມ່ນ "yes; to be" (W000004) early: it needs ມ, ◌່ and ແ◌, so it fits right after ບໍ່ and ມີ.

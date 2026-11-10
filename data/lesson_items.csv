@@ -19,14 +19,14 @@ L0003,6,word,W000018,recycle,earlier word
 L0003,7,word,W000019,recycle,earlier word
 L0003,8,sentence,S000002870,recycle,the phrase the new sentence builds on
 L0003,9,sentence,S000002872,new,first full sentence; placeholder id to be replaced by the main agent
-L0004,1,unit,V36,new,vowel with a small circle above and a stroke after the consonant
-L0004,2,word,W000011,new,'water'; uses the new vowel
-L0004,3,word,W000389,new,'leg'; known letters only
-L0004,4,word,W000538,new,'white'; known letters only
-L0004,5,word,W000018,recycle,earlier word
-L0004,6,word,W000019,recycle,earlier word
-L0004,7,word,W000031,recycle,earlier word
+L0004,1,word,W000389,new,'leg'; known letters only (practises the vowel from lesson 3)
+L0004,2,word,W000538,new,'white'; known letters only
+L0004,3,word,W000031,recycle,earlier word; used in the next sentence
+L0004,4,sentence,S000002876,new,describing word after the pronoun; no word for 'is'
+L0004,5,unit,V36,new,vowel with a small circle above and a stroke after the consonant
+L0004,6,word,W000011,new,'water'; uses the new vowel
+L0004,7,word,W000018,recycle,earlier word
 L0004,8,sentence,S000002873,new,first drink phrase
-L0004,9,sentence,S000002872,recycle,earlier sentence
-L0004,10,sentence,S000002874,new,sentence
-L0004,11,sentence,S000002875,new,noun then describing word
+L0004,9,word,W000019,recycle,earlier word
+L0004,10,sentence,S000002872,recycle,earlier sentence
+L0004,11,sentence,S000002874,new,sentence
