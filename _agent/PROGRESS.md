@@ -9,8 +9,15 @@ The full history up to 2026-10-10 is in `_agent/progress-archive.md`; read it on
   with `db_sql.py change`.
 - **Backend:** the user's Docker works again and `supabase db reset` runs. Not yet confirmed: lesson 1 and 2 visible in
   the browser, `get_lesson`, and `app/backend/tests/s5_progress_test.sql` (S2–S5 gates).
-- **Lesson 3 idea:** no or few new letters; ເຂົາ "he/she/they" (W000160) and ເກົ້າ "nine" (W000141); first full sentence
-  ເຂົາກິນເຂົ້າ; the ເຂົາ / ເຂົ້າ pair shows what the mark does. Still no class rule unless the user wants it.
+- **Lesson 3 merged** (L0003: no new units; ເຂົາ, ເກົ້າ, sentence S000002871; `--min-recycle 2`). Merged for the user to
+  view in the browser, as with lesson 2; texts can still change with `db_sql.py change`.
+- **How lessons get built now:** the guard allows only the five project agents, so the `drafter` (sonnet) writes the
+  draft files (it has no Bash) and the main agent runs check_drafts / merge_words / lesson_tool / pipeline. A
+  sentences-only merge needs a header-only words batch file as the positional argument.
+- **Next lesson (4):** needs new units again. The brief's top pick after lesson 1 was ◌າ (ນາ, ການ, ຂາ); ລາວ (ລ + ◌າ +
+  final ວ) is due in lesson 3 or later, so ◌າ in lesson 4 and ລ + final ວ in lesson 5 is a natural path. Propose first.
+- **Transliteration, intro cards, Wikipedia links, font setting:** built 2026-11-09, untested in a browser. The
+  Wikipedia URLs were written from memory. pron_tip prose may still quote English-style spellings ("gao").
 - **Decided (user, 2026-11-09):** ເ◌ົາ stays "ao" in every transliteration style (as in "Lao"); never "ow".
 - **Open with the user:** Lao font (trial: system `sans-serif`, same as Wikipedia on their device; the user will name
   the font they like, then pin or self-host it; they disliked three Noto faces); a transliteration setting

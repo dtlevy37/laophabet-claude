@@ -1,5 +1,5 @@
 unit_id,kind,role,base_id,lao,teach_en,intro_lesson_id,source,confidence,notes
-C01,consonant,initial,C01,ກ,"Like the k in 'sky': a k with no puff of air.",L0001,SRC-AGENT:lesson,unverified,From letters.csv C01 (ipa k: unaspirated; verified); wording by agent. Changed 2026-11-09 from 'a hard g' so the text reads correctly in both transliteration styles (user).
+C01,consonant,initial,C01,ກ,Like the k in 'sky': a k with no puff of air.,L0001,SRC-AGENT:lesson,unverified,From letters.csv C01 (ipa k: unaspirated; verified); wording by agent. Changed 2026-11-09 from 'a hard g' so the text reads correctly in both transliteration styles (user).
 C13,consonant,initial,C13,ນ,"As in the word 'no'. It sounds the same at the end of a word, as in 'sun'.",L0001,SRC-AGENT:lesson,unverified,From letters.csv C13 (ipa_initial = ipa_final n; verified); wording by agent. Taught with C13f as one card (same-sound pair; user 2026-10-24).
 C13f,consonant,final,C13,◌ນ,"At the end of a syllable, as in the word 'sun'.",L0001,SRC-AGENT:lesson,unverified,From letters.csv C13 (ipa_final n; verified); wording by agent. Shortened 2026-10-24.
 V04,vowel,vowel,V04,◌ິ,"As in the word 'bit'. Written above the consonant, but said after it.",L0001,SRC-AGENT:lesson,unverified,From vowels.csv V04 pron_tip (verified); wording by agent. Shortened 2026-10-24.

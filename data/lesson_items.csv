@@ -10,3 +10,9 @@ L0002,3,unit,T2,new,tone mark; taught as a change of melody only (no class rule 
 L0002,4,word,W000019,new,'rice' sense only; 'to enter' is the separate row W001425
 L0002,5,word,W000018,recycle,the only earlier word
 L0002,6,sentence,S000002870,new,first phrase: ກິນເຂົ້າ
+L0003,1,word,W000160,new,he/she/they; same letters as ເຂົ້າ but no tone mark and a different melody
+L0003,2,word,W000141,new,nine; has a tone mark but a different melody from ເຂົ້າ (no rule given)
+L0003,3,word,W000018,recycle,earlier word
+L0003,4,word,W000019,recycle,earlier word; contrast with ເຂົາ
+L0003,5,sentence,S000002870,recycle,earlier phrase; the new sentence builds on it
+L0003,6,sentence,S000002871,new,first full sentence

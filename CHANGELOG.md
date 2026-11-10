@@ -21,7 +21,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - Transliteration is a learner setting: Standard (k, kh, p, ph, t, th, ch; the default) or English-style (g, k, bp, p, dt, t, j). The data keeps the English-style respelling and `app/frontend/js/translit.js` converts it for display. LESSON_PLAN decision 13: teach texts must read correctly in both styles. Untested in a browser.
 - Lesson 1 opens with two intro cards: Lao sounds do not map neatly onto English letters, and the learner picks a transliteration style (changeable in Settings). Untested in a browser.
 - "Read more on Wikipedia" links under "More" on letter, vowel, tone mark and word cards (aspiration, vowel length, tones, IPA for Lao, the Lao script). The link targets were written from memory and not opened.
-- Sentence S000002871 ເຂົາກິນເຂົ້າ "He/she/they eat (a meal)." (composed, unverified), for lesson 3.
+- Lesson 3 (L0003, "Look-alike words, different melodies"): no new letters; new words ເຂົາ "he; she; they" and ເກົ້າ "nine"; the first full sentence S000002871 ເຂົາກິນເຂົ້າ "He or she eats, or they eat (a meal)." (composed, unverified); recycles ກິນ, ເຂົ້າ and ກິນເຂົ້າ. Drafted by the drafter agent, checked with `--min-recycle 2`. Migration `20261110033330_lesson_l0003.sql` (pending).
 - Lao font is a learner setting (Settings dialog): Standard (Leelawadee UI on Windows, else the device's Lao font; the default), Looped (Noto Sans Lao Looped), Modern (Noto Sans Lao) and Serif (Noto Serif Lao), each shown with a sample. Untested in a browser.
 
 ### Changed

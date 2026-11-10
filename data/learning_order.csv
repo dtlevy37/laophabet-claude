@@ -534,7 +534,7 @@ step,item_type,item_id,why,source,confidence,notes
 533,word,W000160,ເຂົາ he; she; they (word 160; 0 new symbols),SRC-AGENT:sequencing,derived,
 534,sentence,S000000288,ເຂົາບໍ່ມາ. He/They didn't come.,SRC-AGENT:sequencing,derived,
 535,sentence,S000000289,ເຂົາເວົ້າຫຍັງ? What did he say?,SRC-AGENT:sequencing,derived,
-536,sentence,S000002871,ເຂົາກິນເຂົ້າ. He/she/they eat (a meal).,SRC-AGENT:sequencing,derived,
+536,sentence,S000002871,"ເຂົາກິນເຂົ້າ. He or she eats, or they eat (a meal).",SRC-AGENT:sequencing,derived,
 537,word,W000161,ພວກເຂົາ they (word 161; 0 new symbols),SRC-AGENT:sequencing,derived,
 538,sentence,S000000290,ພວກເຂົາເປັນນັກຮຽນ. They are students.,SRC-AGENT:sequencing,derived,
 539,sentence,S000000291,ພວກເຂົາຢູ່ໃສ? Where are they?,SRC-AGENT:sequencing,derived,
