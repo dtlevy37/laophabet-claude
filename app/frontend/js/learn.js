@@ -321,11 +321,31 @@ const more = (open, kids) => h('details', { class: 'more', open }, h('summary', 
 
 // Rule and recap cards are prose with Lao inside ("the shape າ in three vowels: ◌າ ..."); the Lao parts are shown
 // larger, in the Lao font.
+// A recap puts its cases in rows after the prose: "prose || Lao | sounds like | cue || Lao | sounds like | cue"
+// (LESSON_PLAN decision 18). They are shown as a table: the Lao, its sound again, and the English cue.
 function ruleBody(r) {
-  const parts = (r.teach_en || '').split(/([຀-໿◌]+)/)
+  const [prose, ...rows] = (r.teach_en || '').split(' || ')
+  const parts = prose.split(/([຀-໿◌]+)/)
   return [
     h('h2', null, r.name_en),
     h('p', { class: 'rule-text' }, parts.map((p, n) => (n % 2 ? h('span', { class: 'lao-inline', lang: 'lo' }, p) : p))),
+    rows.length
+      ? h(
+          'div',
+          { class: 'recap' },
+          h('span', { class: 'cell-label' }, t('card_lao')),
+          h('span', { class: 'cell-label' }, t('card_sounds_like')),
+          h('span', { class: 'cell-label' }, t('card_as_in')),
+          rows.map((row) => {
+            const [lao, sound, cue] = row.split(' | ')
+            return [
+              h('span', { class: 'lao recap-lao', lang: 'lo' }, lao),
+              h('span', { class: 'recap-sound' }, sound || ''),
+              h('span', null, cue || ''),
+            ]
+          }),
+        )
+      : null,
   ]
 }
 

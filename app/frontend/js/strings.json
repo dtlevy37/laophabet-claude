@@ -101,6 +101,8 @@
   "intro_style_1": { "en": "This letter is a k with no puff of air. Lao also has a k with a puff of air, which you will meet in the next lesson. English has no way to spell that difference, so there are two common ways to write it." },
   "intro_style_2": { "en": "Pick the one you prefer and watch \"Sounds like\" above change." },
   "intro_style_later": { "en": "You can change this, the Lao font and more at any time in Settings." },
+  "card_lao": { "en": "Lao" },
+  "card_as_in": { "en": "As in" },
   "label_read_more": { "en": "Read more on Wikipedia:" },
   "wiki_aspiration": { "en": "the puff of air (aspiration)" },
   "wiki_vowel_length": { "en": "short and long vowels" },

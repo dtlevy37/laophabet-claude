@@ -76,7 +76,11 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    turns up with a different job (the stroke າ in ◌າ, ເ◌ົາ and ◌ຳ; one word with two meanings; one letter with two
    sounds), add a short recap card that shows the cases side by side, as soon as all of them have been taught. A
    recap is a `rule` item (R02 "One shape, three vowels" in lesson 4 is the model; R01 stays reserved for dead
-   syllables) and needs `--max-weight` raised on check/merge, since it is a reminder, not new load.
+   syllables) and needs `--max-weight` raised on check/merge, since it is a reminder, not new load. Its `teach_en`
+   is one or two sentences, then one row per case: `prose || Lao | sounds like | cue || Lao | sounds like | cue`.
+   The app shows the rows as a table. Every row repeats the sound itself ("aa"), not only the example word: a
+   learner who has forgotten the sound gets nothing from "as in 'father'" alone (user, 2026-11-09). The same
+   applies to any card that refers back to an earlier item.
 19. **Lesson layout and reading load** (user, 2026-11-09). A new unit's card is followed directly by a word that
    uses it; words that need nothing new go in their own block first ("words you can already read"). Early cards
    may carry up to a short paragraph when they explain how the app works (motivated learners read it); later

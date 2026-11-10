@@ -31,6 +31,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - Lao font is a learner setting (Settings dialog): Standard (Leelawadee UI on Windows, else the device's Lao font; the default), Looped (Noto Sans Lao Looped), Modern (Noto Sans Lao) and Serif (Noto Serif Lao), each shown with a sample. Untested in a browser.
 
 ### Changed
+- The recap card "One shape, three vowels" is now a table with one row per vowel: the Lao, its sound again (aa, ao, am) and the English cue (the a in 'father'). Rule text format `prose || Lao | sounds like | cue || ...` (LESSON_PLAN decision 18). Migration `20261110041529_l0004_recap_rows.sql` (pending). Untested in a browser.
 - The transliteration choice moved from its own intro card onto lesson 1's first letter card (ກ), with a short explanation; choosing redraws the card. Lesson 1 keeps one intro card ("Lao has its own sounds"). Untested in a browser.
 - `.gitignore` now covers the local Supabase CLI folders (`.temp`, `.branches`).
 - PROGRESS.md cut down to open work, decisions in force and next steps; PLAN.md ticks brought up to date.
