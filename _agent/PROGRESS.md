@@ -14,7 +14,15 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - **App:** lesson list and teach cards work in the user's browser (S4). No quiz yet (S6). Progress tables (S5) are
   written but `app/backend/tests/s5_progress_test.sql` has not been confirmed by the user.
 
-## Order of work (user)
+## Next step (user, 2026-11-10): lesson building is PAUSED at 4
+1. **Opus planning session** on the learning experience: follow `_agent/OPUS_PLANNING_PROMPT.md`. It re-slices
+   APP_PLAN so lessons 1–4 become playable (teach, quiz, summary, completed tick) before any new content.
+2. **Git/harness:** no remote exists; branch is `master` (user convention `main`). The user will create repo(s) under
+   github.com/dtlevy37 and wants the agent to push. Open: one repo (agent recommends: tools and data and migrations
+   change together, the guard confines the agent to one folder) or three (frontend, backend, tools). Then stage a
+   CLAUDE.md edit and a guard patch allowing only `git push origin main` in `_agent/proposed-config/`.
+
+## Order of work (user; resumes after the two items above)
 1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**
    (ລາວບໍ່ກິນເຂົ້າ). Then, one or two new pieces plus 2–3 very common words each: ມ + ◌ີ → ມີ "have"; ແ◌ → ແມ່ນ
    "yes; to be" (W000004; the user wants it early); ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ "I".
