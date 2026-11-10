@@ -12,7 +12,7 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - **Backend:** the user's local Supabase works (`supabase db reset` from `app/backend`, then sign up again: a reset
   wipes accounts). Nothing is hosted yet, so every migration in `_agent/PENDING_MIGRATIONS.md` is still unticked.
 - **App:** lesson list and teach cards work in the user's browser (S4). Progress tables (S5) pass their SQL test on
-  the user's local Supabase. No quiz yet (S6a–S6c; S6a SQL is at its gate).
+  the user's local Supabase. No quiz yet (S6b–S6c; the S6a backend passed its gate).
 
 ## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
 1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
@@ -24,9 +24,8 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    - Build the word is v1 (needs `word_units`, S7c); tone drill waits for a tone-rule lesson.
    - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
-   **S6a is written and reviewed, awaiting the user gate:** `supabase db reset`, then paste
-   `app/backend/tests/s6a_played_lesson_test.sql` (5 checks) and re-run `tests/s5_progress_test.sql` (11 checks).
-   On a pass: tick S6a in APP_PLAN, then **S6b** with the `app-slice` skill. For S6b: `learn.js` caches the bundle,
+   **S6a gate passed** (2026-11-10, 5 of 5; the user did not report the S5 re-run: ask once).
+   **Next: S6b** with the `app-slice` skill. For S6b: `learn.js` caches the bundle,
    so refetch `get_lesson` after a played session (its `levels` go stale); the list must use `state`.
    Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated

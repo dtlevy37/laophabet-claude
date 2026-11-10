@@ -47,7 +47,7 @@ for their topics; each slice names the phase it draws from. Tick here.
 Goal: lessons 1–4 playable end to end before any new content. **S6a–S6c are the playable vertical slice.** Lesson
 building stays paused until the user lifts it; the content shape is final after S7c (see "Content gate").
 
-- [ ] **S6a Backend for a played lesson (SQL only).** One new migration (never edit `..040000`):
+- [x] **S6a Backend for a played lesson (SQL only).** (gate passed 2026-11-10: 5 of 5 checks) One new migration (never edit `..040000`):
       - `list_lessons()` adds per-learner `state` (`done` | `open` | `locked`, same rule as `start_lesson`),
         `completed_at` and `last_accuracy` (latest completed session of that lesson).
       - `get_lesson()` adds `levels` (the caller's level for every item in the bundle and the pool) and gives pool
@@ -60,7 +60,7 @@ building stays paused until the user lifts it; the content shape is final after 
       with a sound; the S5 test still passes. **Gate (user):** `supabase db reset` + the SQL block.
       (2026-11-10: written and reviewed, untested: `20261110120000_played_lesson.sql`, test
       `app/backend/tests/s6a_played_lesson_test.sql`. `levels` lists only items with a `learner_items` row; absent
-      = level 0. Pool units carry `letter` / `vowel` `{ipa, respelling}`. Awaiting the gate.)
+      = level 0. Pool units carry `letter` / `vowel` `{ipa, respelling}`.)
 - [ ] **S6b Session runner: a lesson can be played and completed (cards only).** `js/session.js` (planner + runner),
       `js/activities/index.js` and `activities/teach_card.js` (moved out of `learn.js`, same look). Route
       `#/lesson/L0001` starts a session (`start_lesson`), steps through the teach cards with a progress bar, sends

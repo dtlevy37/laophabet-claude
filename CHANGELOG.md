@@ -5,7 +5,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ## 2026-11-10
 
 ### Added
-- S6a backend for a played lesson (untested until the user's gate): migration `20261110120000_played_lesson.sql` adds `review_log.first_try`; `record_answers` accepts `first_try`; the session summary's answers, correct and accuracy count first tries only; `list_lessons()` returns per-learner `state` (done / open / locked), `completed_at` and `last_accuracy`; `get_lesson()` returns the caller's `levels` and pool units with their sound. Test: `app/backend/tests/s6a_played_lesson_test.sql`.
+- S6a backend for a played lesson (gate passed on the user's local Supabase, 5 of 5 checks): migration `20261110120000_played_lesson.sql` adds `review_log.first_try`; `record_answers` accepts `first_try`; the session summary's answers, correct and accuracy count first tries only; `list_lessons()` returns per-learner `state` (done / open / locked), `completed_at` and `last_accuracy`; `get_lesson()` returns the caller's `levels` and pool units with their sound. Test: `app/backend/tests/s6a_played_lesson_test.sql`.
 
 ### Changed
 - S5 (progress tables and RPCs) confirmed: `app/backend/tests/s5_progress_test.sql` passed 11 of 11 on the user's local Supabase. Decisions recorded: final ວ is labelled "-ao" (applied in S6c); lessons 5+ resume after S7c.
