@@ -2,7 +2,8 @@ import { supabase } from './supabase.js'
 import { t } from './i18n.js'
 import { h } from './dom.js'
 import { toneContour } from './tone.js'
-import { getSetting } from './settings.js'
+import { getSetting, translitChoice } from './settings.js'
+import { respell } from './translit.js'
 
 // Learner view, read-only (APP_PLAN S4). Hash routes:
 //   #/                     lesson list (list_lessons RPC)
@@ -81,7 +82,8 @@ async function showLesson(root, lessonId, index, stale) {
     bundles.set(lessonId, bundle)
   }
   const { lesson } = bundle
-  const items = cardItems(bundle.items)
+  // Lesson 1 opens with two intro cards about how the app shows Lao sounds (user, 2026-11-09).
+  const items = [...(lesson.lesson_order === 1 ? INTRO : []), ...cardItems(bundle.items)]
   if (!items.length) return root.replaceChildren(card(h('h1', null, lesson.title_en), backToList()))
   const i = Math.min(index, items.length - 1)
   const at = (n) => `#/lesson/${lessonId}/${n + 1}`
@@ -137,6 +139,7 @@ const backToList = () => h('a', { href: '#/', class: 'link' }, t('lesson_back_to
 // with large content under small labels, then one line of text. Everything else sits in a closed "More" section
 // (open in the info dialog). Nothing the learner has not been taught is shown, such as a letter's name word.
 function teachCard(item, bundle, { inDialog = false, explainCircle = false } = {}) {
+  if (item.item_type === 'intro') return h('section', { class: 'teach' }, introBody(item.item_id))
   const d = item.detail || {}
   const body =
     item.item_type === 'unit'
@@ -154,9 +157,55 @@ function teachCard(item, bundle, { inDialog = false, explainCircle = false } = {
   )
 }
 
+// The tutorial cards at the start of lesson 1: Lao sounds do not map neatly onto English letters, and the learner
+// picks how they want the sounds written (changeable later in Settings). App text, not lesson content.
+const INTRO = [
+  { item_type: 'intro', item_id: 'sounds' },
+  { item_type: 'intro', item_id: 'style' },
+]
+
+function introBody(id) {
+  if (id === 'sounds') {
+    return [h('h2', null, t('intro_sounds_title')), h('p', null, t('intro_sounds_1')), h('p', null, t('intro_sounds_2'))]
+  }
+  return [
+    h('h2', null, t('intro_style_title')),
+    h('p', null, t('intro_style_1')),
+    translitChoice(),
+    h('p', { class: 'muted' }, t('intro_style_later')),
+  ]
+}
+
+// Background reading for the terms used under "More" (Wikipedia; opens in a new tab).
+const WIKI = {
+  aspiration: 'https://en.wikipedia.org/wiki/Aspirated_consonant',
+  vowel_length: 'https://en.wikipedia.org/wiki/Vowel_length',
+  tone: 'https://en.wikipedia.org/wiki/Tone_(linguistics)',
+  ipa: 'https://en.wikipedia.org/wiki/Help:IPA/Lao',
+  script: 'https://en.wikipedia.org/wiki/Lao_script',
+}
+const PUFF_PAIRS = new Set(['k', 'kʰ', 'p', 'pʰ', 't', 'tʰ'])
+
+function readMore(keys) {
+  const kept = keys.filter(Boolean)
+  if (!kept.length) return null
+  return h(
+    'p',
+    { class: 'muted read-more' },
+    t('label_read_more'),
+    ' ',
+    kept.map((k, n) => [
+      n ? ' · ' : null,
+      h('a', { href: WIKI[k], target: '_blank', rel: 'noopener noreferrer' }, t(`wiki_${k}`)),
+    ]),
+  )
+}
+
 function unitBody(u, open, explainCircle = false) {
   const sound = u.letter || u.vowel || {}
-  const says = soundOf(u, sound.respelling)
+  const raw = soundOf(u, sound.respelling)
+  // finals sound the same in both transliteration styles; only initials are converted (translit.js)
+  const says = u.role === 'final' ? raw : respell(raw)
   return [
     h(
       'div',
@@ -175,6 +224,13 @@ function unitBody(u, open, explainCircle = false) {
         u.vowel ? [t('label_length'), u.vowel.length] : null,
       ]),
       sound.pron_tip ? h('p', null, sound.pron_tip) : null,
+      readMore([
+        u.kind === 'consonant' && PUFF_PAIRS.has(sound.ipa) ? 'aspiration' : null,
+        u.kind === 'vowel' ? 'vowel_length' : null,
+        u.kind === 'tone-mark' ? 'tone' : null,
+        sound.ipa ? 'ipa' : null,
+        'script',
+      ]),
     ]),
   ]
 }
@@ -188,7 +244,7 @@ function wordBody(w, open) {
       'div',
       { class: 'teach-grid' },
       cell(t('card_lao_word'), h('span', { class: 'glyph lao', lang: 'lo' }, w.lao)),
-      w.respelling ? cell(t('card_sounds_like'), h('span', { class: 'cell-big' }, w.respelling)) : null,
+      w.respelling ? cell(t('card_sounds_like'), h('span', { class: 'cell-big' }, respell(w.respelling))) : null,
       w.gloss_en ? cell(t('card_means'), h('span', { class: 'cell-mid' }, w.gloss_en)) : null,
       tonePics ? cell(t('label_tones'), tonePics) : null,
     ),
@@ -209,6 +265,7 @@ function wordBody(w, open) {
         w.classifier_lao ? [t('label_classifier'), h('span', { lang: 'lo' }, w.classifier_lao)] : null,
       ]),
       w.pron_tip ? h('p', null, w.pron_tip) : null,
+      readMore([tones.length ? 'tone' : null, w.ipa ? 'ipa' : null]),
     ]),
   ]
 }
@@ -248,7 +305,7 @@ function sentenceBody(s, bundle) {
   const text = getSetting('spaces') ? s.lao_spaced || s.lao : s.lao || s.lao_spaced
   return [
     h('p', { class: 'lao center', lang: 'lo' }, text),
-    h('p', { class: 'center' }, h('strong', null, s.respelling)),
+    h('p', { class: 'center' }, h('strong', null, respell(s.respelling))),
     h('p', { class: 'center meaning' }, s.english),
     chips(s.words || [], bundle),
   ]

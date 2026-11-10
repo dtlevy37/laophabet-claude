@@ -102,6 +102,17 @@ every number from `review_log`, `learner_items` and sessions, and RPCs return th
   setting (Settings in the top bar; `js/settings.js`, remembered per browser), not a per-card switch (user, 2026-11-09).
 - Lao is set in a looped typeface (Noto Sans Lao Looped): the loops are what learners meet in print and on signs
   (user, 2026-11-09).
+- **Transliteration is a learner setting** (user, 2026-11-09; LESSON_PLAN decision 13): Standard (k, kh; default) or
+  English-style (g, k). The data stores the English-style respelling; `js/translit.js` converts it for display
+  (initial consonants only). Every place that shows a respelling goes through `respell()`. Known gap: `pron_tip`
+  texts (under "More") are stored prose and may quote English-style spellings.
+- **Lesson 1 opens with two intro cards** (app text, not lesson content): Lao has sounds English lacks, so the
+  English letters are only hints; then the learner picks a transliteration style and is told it can be changed in
+  Settings. Later lessons can introduce other display choices the same way when they first matter.
+- **Settings** (top bar; `js/settings.js`, remembered per browser for now): transliteration style, Lao font, spaces
+  between words. Move to the learner's profile when there is a home screen (S8).
+- **"Read more" links** under "More": Wikipedia pages for the terms used there (aspiration, vowel length, tones,
+  IPA for Lao, the Lao script). They open in a new tab.
 - Internal IDs (L0001, W000018) are never shown to learners. A lesson is "Lesson 1" at most (user, 2026-11-09).
 - Tone shown from `tone_by_syllable` (colour or a small contour icon per syllable); one convention throughout.
 - In new words, the letters just taught are highlighted.

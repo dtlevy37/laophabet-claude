@@ -16,8 +16,8 @@ W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
 W000016,ນີ້,pronoun; adverb,this; here,basics,,391
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,116
-W000019,ເຂົ້າ,noun,rice,food,W000419,40
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,117
+W000019,ເຂົ້າ,noun,rice,food,W000419,41
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,111
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
@@ -158,7 +158,7 @@ W000156,ຄູ,noun,teacher,people,W000040,9
 W000157,ນັກຮຽນ,noun,student,people,W000040,7
 W000158,ທ່ານ,pronoun,you (formal); sir/madam,pronouns,,2
 W000159,ພວກເຮົາ,pronoun,we (plural),pronouns,,7
-W000160,ເຂົາ,pronoun,he; she; they,pronouns,,37
+W000160,ເຂົາ,pronoun,he; she; they,pronouns,,38
 W000161,ພວກເຂົາ,pronoun,they,pronouns,,6
 W000162,ໝໍ,noun,doctor,health,W000040,7
 W000163,ຊາວ,numeral,twenty,numbers,,4

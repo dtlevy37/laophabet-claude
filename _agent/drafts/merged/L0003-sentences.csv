@@ -1,0 +1,2 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+L0003-S001,ເຂົາກິນເຂົ້າ.,ເຂົາ ກິນ ເຂົ້າ.,kʰaw˩(˧) kin˩(˧) kʰaw˧˩,kao gin kao.,He/she/they eat (a meal).,W000160,,,unverified,Composed by the agent for lesson 3; not from a source. ເຂົາ is a homograph (W001287 'horn'); override 1=W000160.,1=W000160

@@ -70,6 +70,7 @@ button.link { border: 0; padding: 0; background: none; color: var(--accent); tex
 .sentence { text-align: center; padding: 16px 8px 24px; }
 /* The Lao font is a learner setting (js/settings.js sets --lao-font). Default: Leelawadee UI (Windows), else the
    device's own Lao font. */
+.read-more { margin-top: 12px; }
 .font-sample { font-size: 1.3rem; margin-left: 8px; }
 [lang='lo'] { font-family: var(--lao-font, 'Leelawadee UI', sans-serif); }
 .lao { font-family: var(--lao-font, 'Leelawadee UI', sans-serif); font-size: 2rem; line-height: 1.6; margin: 0; word-break: break-word; }

@@ -18,9 +18,14 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - Learner settings dialog (Settings in the top bar; `app/frontend/js/settings.js`, remembered per browser) with one setting so far: show spaces between Lao words. It replaces the per-card "Show as normally written" switch. Untested in a browser.
 
 ### Added
+- Transliteration is a learner setting: Standard (k, kh, p, ph, t, th, ch; the default) or English-style (g, k, bp, p, dt, t, j). The data keeps the English-style respelling and `app/frontend/js/translit.js` converts it for display. LESSON_PLAN decision 13: teach texts must read correctly in both styles. Untested in a browser.
+- Lesson 1 opens with two intro cards: Lao sounds do not map neatly onto English letters, and the learner picks a transliteration style (changeable in Settings). Untested in a browser.
+- "Read more on Wikipedia" links under "More" on letter, vowel, tone mark and word cards (aspiration, vowel length, tones, IPA for Lao, the Lao script). The link targets were written from memory and not opened.
+- Sentence S000002871 ເຂົາກິນເຂົ້າ "He/she/they eat (a meal)." (composed, unverified), for lesson 3.
 - Lao font is a learner setting (Settings dialog): Standard (Leelawadee UI on Windows, else the device's Lao font; the default), Looped (Noto Sans Lao Looped), Modern (Noto Sans Lao) and Serif (Noto Serif Lao), each shown with a sample. Untested in a browser.
 
 ### Changed
+- Lesson 1's ກ card now reads "Like the k in 'sky': a k with no puff of air." (was "A hard g, as in the word 'get'."), so it is right in both transliteration styles. Migration `20261110032940_l0001_k_cue.sql` (pending).
 - Lao text font, trial: the device's own Lao font (`sans-serif`, which is what Wikipedia shows), after the loopless Noto Sans Lao and then Noto Sans Lao Looped were tried and not liked. English text uses the system font. To be pinned once the owner names a font.
 - The word info dialog no longer shows "Taught in lesson L0001": internal IDs are not shown to learners.
 - Teach cards put the Lao first: the glyph or word takes the whole top row, larger and semi-bold, and "Sounds like", "Means" and the tone picture sit below it in smaller type. Sentence cards show the Lao larger too. CSS only; untested in a browser.

@@ -2,11 +2,12 @@ import { t } from './i18n.js'
 import { h, radios } from './dom.js'
 
 // Learner display settings, remembered per browser (a convenience, not learner data; nothing is stored in the DB).
-//   spaces: show Lao sentences with spaces between words (a reading aid; Lao is normally written without them).
-//   font:   the typeface for Lao text (one of FONTS).
-// More settings (such as the transliteration style) belong here too.
+//   translit: how Lao sounds are written in English letters: 'standard' (k, kh) or 'english' (g, k). See translit.js.
+//   spaces:   show Lao sentences with spaces between words (a reading aid; Lao is normally written without them).
+//   font:     the typeface for Lao text (one of FONTS).
 const KEY = 'laophabet.settings'
-const defaults = { spaces: true, font: 'standard' }
+const defaults = { translit: 'standard', spaces: true, font: 'standard' }
+const TRANSLITS = ['standard', 'english']
 
 // The default is Leelawadee UI (user, 2026-11-09): it ships with Windows and cannot be sent with the site, so
 // other devices fall back to their own Lao font. The Noto faces are web fonts loaded in index.html.
@@ -24,6 +25,7 @@ try {
   if (saved && typeof saved === 'object') current = { ...defaults, ...saved }
 } catch {}
 if (!FONTS[current.font]) current.font = defaults.font
+if (!TRANSLITS.includes(current.translit)) current.translit = defaults.translit
 applyFont()
 
 function applyFont() {
@@ -40,6 +42,27 @@ function setSetting(name, value) {
     localStorage.setItem(KEY, JSON.stringify(current))
   } catch {}
 }
+
+// The transliteration choice as radio buttons. Used in the settings dialog and on the lesson 1 intro card.
+export function translitChoice(onChange) {
+  const group = radios(
+    `translit-${++groups}`,
+    TRANSLITS.map((id) => ({
+      value: id,
+      label: h('span', null, h('strong', null, t(`settings_translit_${id}`)), h('span', { class: 'muted block' }, t(`settings_translit_${id}_hint`))),
+    })),
+    {
+      vertical: true,
+      onChange: (id) => {
+        setSetting('translit', id)
+        if (onChange) onChange()
+      },
+    },
+  )
+  group.set(current.translit)
+  return group.el
+}
+let groups = 0
 
 // The settings dialog. onChange runs after every change so the caller can redraw the screen behind it.
 export function openSettings(onChange) {
@@ -70,6 +93,11 @@ export function openSettings(onChange) {
     'dialog',
     { class: 'info', onclose: () => dlg.remove() },
     h('h2', null, t('settings_title')),
+    h('h3', null, t('settings_translit')),
+    translitChoice(changed),
+    h('h3', null, t('settings_font')),
+    fonts.el,
+    h('h3', null, t('settings_reading')),
     h(
       'label',
       { class: 'check' },
@@ -85,8 +113,6 @@ export function openSettings(onChange) {
       t('settings_spaces'),
     ),
     h('p', { class: 'muted' }, t('settings_spaces_hint')),
-    h('h3', null, t('settings_font')),
-    fonts.el,
     h('form', { method: 'dialog' }, h('button', null, t('info_close'))),
   )
   document.body.append(dlg)
