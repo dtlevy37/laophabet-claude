@@ -15,7 +15,7 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   backend (S6a) passed their SQL gates. The session runner (S6b, cards only) passed its browser gate
   (user, 2026-11-10). Multiple-choice checks (S6c) are built but untested in a browser.
 
-## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
+## Next step (2026-11-10): lesson building is PAUSED at 4 until "Before the unattended run" is done; app slices
 1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
    session", "Lesson session", "Audio and speaking hooks", "Decisions log". Slice order: APP_PLAN "Re-sliced
    2026-11-10". In force:
@@ -61,12 +61,28 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    once happy (it holds the old history with the keys); (c) delete `_agent/proposed-config/GIT_SETUP.md` after (a).
    Until (a), CLAUDE.md still says "never push": use `checkpoint.ps1 -Message "checkpoint: <item>" -Push` anyway.
 
-## Order of work (user, 2026-11-10: lessons resume after S7c; structure and major design first, then content)
-1. Hand-build lessons, one at a time, proposing each first. Next is **lesson 5: ບ, ◌ໍ, ◌່ → ບໍ່ "not; no"**
-   (ລາວບໍ່ກິນເຂົ້າ). Then, one or two new pieces plus 2–3 very common words each: ມ + ◌ີ → ມີ "have"; ແ◌ → ແມ່ນ
-   "yes; to be" (W000004; the user wants it early); ດ → ດີ "good"; ໄ◌ + ປ → ໄປ "go"; ອ + final ຍ → ຂ້ອຍ "I".
-   Bring back ເຂົາ "they" (W000160) and ເກົ້າ "nine" (W000141) only once ເຂົ້າ is solid (decision 15).
-2. The unattended runner (`next_lesson.ps1`) comes after S7d.
+## Curriculum path (agreed by the user 2026-11-10; replaces the old lesson 5+ order)
+- **The order for lessons 4–11 is `_agent/CURRICULUM_PATH.md`**; the rules are LESSON_PLAN decisions 20–25
+  (natural sentences first, core and bonus words, conversations as canned content, ຂໍ … ແນ່).
+- The user plans to **run the unattended runner up to lesson 10 or 11** and will play-test the lessons (lesson 6
+  may be split in two; lesson 4 felt too big and should feel right once ຂາ is bonus and ຂາວ is gone).
+- Still wanted later, not placed yet: ແມ່ນ "yes; to be" (W000004), ໄປ "go", and ເຂົາ "they" / ເກົ້າ "nine" once ເຂົ້າ
+  is solid (decision 15).
+
+### Before the unattended run (nothing here is built or staged yet)
+1. **S7f script group** (APP_PLAN): the `bonus` role in `lesson_tool.py` and `db_sql.py`, the DB check on
+   `lesson_items.role` (today `new|recycle|example`), and an updated `next_lesson_prompt.md` that reads
+   CURRICULUM_PATH.md and uses its budget flags (the prompt runs `check` with no flags today, so lessons 6, 8
+   and 11 would fail the default budget). Stage in `_agent/proposed-scripts/` for one approval.
+2. **Rebuild lesson 4** (withdraw and re-merge; steps under "How a lesson gets built").
+3. **Decide with the user: run before or after S7c?** A lesson merged before S7c lacks word units, categories
+   and sentence slots; S7c's backfill would then cover lessons 1–11, not 1–4 (categories and slots are
+   hand-tagged). Agent's recommendation: stage S7c and S7f as one script approval, then run. Not decided.
+4. Drafting needs: a words.csv row for ແນ່ as a softener (the pool has ແດ່ W000308; the only ແນ່ listing is
+   "sure; certain" in the common list); ສາວ, ກໍ, ຈຳ have no rows (not needed by the path).
+5. Conversations (S7g) are not a blocker: lessons 8 and 10 carry their lines as ordinary sentences in order.
+6. Add to NEEDS_HUMAN "For the native speaker" when lesson 6 is built: ແນ່ vs ແດ່ (which is everyday Vientiane
+   speech, spelling), whether bare ຂໍນ້ຳ sounds abrupt, ຫິວເຂົ້າ as the normal "hungry".
 
 ## How a lesson gets built (what worked for lessons 3–4)
 - `lesson_tool.py brief` → propose to the user → the `drafter` agent (sonnet; it has no Bash) writes
@@ -95,9 +111,8 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   one logical choice" + Decisions log. Slice order now: S7a (build the sentence only), S7b, S7c (also categories,
   slots, checks, `get_lesson` fields), S7e (fill in the blank), S7d. The brief `_agent/FILL_BLANK_BRIEF.md` is
   superseded (moved to `_trash/`).
-- **Lesson 4 sentence ລາວຂາວ** ("He is fair-skinned", S000002876): the user dislikes it as an early sentence. Rework
-  later; the user thinks ຂາວ is hard to put in a natural sentence unless "see" is taught too (which Lao word, ເຫັນ or ເບິ່ງ, and the
-  sentence are still to be chosen). Not decided; lessons stay paused.
+- **Lesson 4 sentence ລາວຂາວ** (S000002876): decided 2026-11-10: removed; ຂາ becomes a bonus word and ຂາວ moves
+  to lesson 11 (LESSON_PLAN decision 22). Done by the lesson 4 rebuild above.
 - **ລາວ vs ຂາວ vowel:** data has ລາວ short (`law`, respelling "lao") but ຂາວ long (`kaao`) though both are ◌າ+ວ. Researcher
   check 2026-11-11: Wiktionary gives ລາວ long ([laːw˧˥]) as a noun/proper noun but short ([law˧˥]) as the pronoun;
   Wikipedia gives the language name long ([láːw]); ຂາວ long. Unsettled whether the pronoun is really short. Our
@@ -126,6 +141,9 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   (`--allow-homograph <lao>`).
 
 ## Working preferences (user, 2026-11-10)
+- **Every Lao example shown to the user in chat carries a romanization and the English** (user, 2026-11-10: they
+  know a few hundred Lao words and cannot read every word shown). Use their own spellings where they have given
+  one (leo, khoy, mee, muk, jak, sabaidee).
 - **Keep usage down** (S6c took about 20% of a 5-hour window, which the user found far too high): do not re-read
   everything each session. Work from the code map here and grep; read in full only modules being changed
   substantially. The `app-slice` skill and CLAUDE.md ("Reading depth", when to run `code-reviewer`) say so (the user

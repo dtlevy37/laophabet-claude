@@ -72,11 +72,13 @@ Source of truth: CLAUDE.md. Tick items as they finish. Open work and next steps:
 - [x] Lesson 1 (ກິນ; was ລາວ until 2026-10-24) built interactively as the reference
 - [x] Lessons 2–4 built interactively (2026-11-09): ເຂົ້າ; ລາວ; ຂາ, ຂາວ, ນ້ຳ; reviewed in the browser against local Docker Supabase (2026-11-10)
 - [x] Planning session on the learning experience (2026-11-10): decisions in APP_DESIGN "Decisions log", slices re-cut in APP_PLAN (S6a–S6c = lessons 1–4 playable). No change to merged lessons
-- [ ] **Lesson building PAUSED at 4 (user, 2026-11-10)** until S7c is done (user, 2026-11-10: structure and major design first, then content)
+- [x] Curriculum path for lessons 4–11 agreed (user, 2026-11-10): `_agent/CURRICULUM_PATH.md`, LESSON_PLAN decisions 20–25 (natural sentences first, bonus words, conversations)
+- [ ] Runner readiness: APP_PLAN S7f (bonus role, runner prompt follows the path, lesson 4 rebuilt). Lesson building stays paused at 4 until then (PROGRESS "Before the unattended run")
 - [x] (done 2026-11-10 except installing the new CLAUDE.md, see PROGRESS) Harness: three GitHub repos under github.com/dtlevy37 (`laophabet-frontend` = app/frontend; `laophabet-backend` = app/backend; `laophabet-claude` = the rest) and agent push via approved `setup_repos.ps1` (one-time) and `checkpoint.ps1`. Staged in `_agent/proposed-scripts/` and `_agent/proposed-config/GIT_SETUP.md`; the user approves both scripts and installs CLAUDE.md
-- [ ] Lessons 5 onward by hand, one new piece or two plus 2–3 common words each (order in PROGRESS.md)
-- [ ] Runner test (after S6): `next_lesson.ps1 -Count 1`, then a few more; review the first ~10–20 lessons; tune
-- [ ] Dialogues: tables and item type once Q&A pairs exist
+- [ ] Lessons 5–11 by the unattended runner, following `_agent/CURRICULUM_PATH.md`; the user play-tests them (lesson 6 may be split)
+- [ ] Runner test: `next_lesson.ps1 -Count 1` first, then the rest; review and tune
+- [ ] Conversations: APP_PLAN S7g (canned content; first ones in lessons 8 and 10)
+- [ ] Plan the stretch after lesson 11 (ມີ, ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່) around a second conversation (ordering food)
 - [x] Postgres schema and import → moved to the app plan (`_agent/APP_PLAN.md`, Phase 2 written, not yet run)
 
 ## Phase 10: App (user, 2026-10-19). Phases and checklists in `_agent/APP_PLAN.md`

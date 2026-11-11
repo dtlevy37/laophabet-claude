@@ -5,6 +5,10 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ## 2026-11-10
 
 ### Added
+- Curriculum path for lessons 4–11 (`_agent/CURRICULUM_PATH.md`), agreed with the user: planned backwards from
+  natural sentences to a first conversation in lesson 10 (hello, are you hungry, I've eaten already). LESSON_PLAN
+  decisions 20–25: core and bonus words, conversations as canned content, ຂໍ … ແນ່, lesson 4 changes. New slices
+  S7f (bonus words, runner readiness) and S7g (conversations) in APP_PLAN. Plan only: no data or lesson changed yet.
 - S7a build the sentence (`js/activities/build_sentence.js`): the English is shown and the learner taps the Lao word
   tiles into order (the sentence's words plus up to 2 pool words). A wrong order shows the right sentence with its word
   chips. The planner gives a new sentence its card, then build the sentence; a recycled sentence gets build the sentence.

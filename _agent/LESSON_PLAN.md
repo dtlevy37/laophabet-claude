@@ -86,6 +86,29 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    may carry up to a short paragraph when they explain how the app works (motivated learners read it); later
    lessons carry less reading and more exercises.
 
+20. **The path is planned backwards from natural sentences and conversations** (user, 2026-11-10). Order:
+   letters → words → sentences → conversations and stories. Pick the next thing a person would really say, then
+   add the letters it needs; never a forced sentence because its words happen to be readable. **The agreed order
+   for lessons 4–11 is `_agent/CURRICULUM_PATH.md`: read it before building any of those lessons and follow it**
+   (it overrides the brief's ranking and the chain). In short: 5 ແລ້ວ · 6 ບໍ່, ຂໍ, ແນ່ · 7 ດີ, ນີ້ · 8 ສະບາຍດີ ·
+   9 ຫິວ, ເຈົ້າ · 10 ຂ້ອຍ, ນອນ + the first full conversation · 11 no new letters (ສີ, ຂາວ, ດຳ, ຂາຍ, ນ້ອຍ).
+   Then ມີ/ມາ, ອາຫານ/ເອົາ, ຢາກ, ມັກ, ຄົນ with a "three k letters" recap card (ກ ຂ ຄ), ໃຫຍ່.
+21. **Core words and bonus words** (user, 2026-11-10). Core words are used in sentences. A bonus word is readable
+   with the letters known, common, shown in the lesson under a "bonus" label (one or two per lesson), never used
+   in a sentence, and available in practice alongside core words. A bonus word becomes core the first time a
+   lesson uses it in a sentence: as we go when a lesson has room, or several at once in a lesson with no new
+   letters (a review of letters that still brings new content). Needs the `bonus` role (APP_PLAN S7f).
+22. **Lesson 4 changes** (user, 2026-11-10): the sentence ລາວຂາວ is removed; ຂາ is the lesson's bonus word; ຂາວ
+   moves to lesson 11 with ສີ. Lessons 1–3 stay as they are.
+23. **Conversations are canned content** (user, 2026-11-10): a fixed, ordered set of lines shown as a
+   conversation, followed by fill in the blank (one logical answer) on those lines. First ones: lesson 8 (hello,
+   how are you) and lesson 10 (hello, are you hungry, I've eaten already). Needs APP_PLAN S7g.
+24. **Real spoken Lao over tidy Lao** (user, 2026-11-10): teach the natural form even when slightly irregular,
+   when the sentence is real and useful. A request is ຂໍ … ແນ່ (the softener the user hears; the pool has ແດ່:
+   native-speaker question).
+25. **The cut-off (dead syllable) card is one brief line** (user, 2026-11-10), first needed for ສະ in lesson 8.
+   No rule to memorise (decision 11).
+
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
 advisory unit order. It predates the switch to ກິນ as lesson 1; `lesson_map.py` takes its base from lesson_tool's

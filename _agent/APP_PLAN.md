@@ -135,8 +135,28 @@ building stays paused until the user lifts it; the content shape is final after 
 - [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. (Phase 1, rest) Also: frontend `config.js` for
       the deployed site (env vars vs a committed production file; see PLAN Phase 10), and move `LAO_UI_REVIEW.md` and
       `export_lao_review.py` out of the frontend repo before connecting Netlify.
-- Lessons 5+ (hand-built, order in PROGRESS) resume after S7c (user, 2026-11-10: structure and major design first,
-  then content). The unattended runner comes after S7d.
+- [ ] **S7f Bonus words and runner readiness (script change + SQL + small frontend)** (added 2026-11-10 with the
+      curriculum path; LESSON_PLAN decisions 20–22). `lesson_tool.py`: role `bonus` (a word only; readable; not
+      allowed in the lesson's sentences; outside the "uses something new" rule; a later lesson may list a bonus
+      word as `new` to make it core, also outside that rule); `brief` lists readable bonus candidates.
+      `db_sql.py` and a migration: `lesson_items.role` check gains `bonus`; `get_lesson` returns the role;
+      `list_lessons.covers` shows bonus words apart. Planner: a bonus word gets its card with a "Bonus word"
+      label and recognition checks only. `next_lesson_prompt.md`: read `_agent/CURRICULUM_PATH.md`, follow it,
+      and use its per-lesson budget flags. Then rebuild lesson 4 (withdraw and re-merge: ຂາ bonus, ລາວຂາວ and
+      ຂາວ out). Best staged in one approval with the S7c script group.
+      **Done when:** `lesson_tool.py check` passes a draft with a bonus word and rejects a bonus word used in a
+      sentence; rebuilt lesson 4 shows ຂາ with the bonus label in the browser.
+      **Gate (user):** approve the script group, `supabase db reset`, browser test.
+- [ ] **S7g Conversations (canned content)** (added 2026-11-10; LESSON_PLAN decision 23). Design note first
+      (APP_DESIGN): tables `dialogues` and `dialogue_lines` (ordered sentence ids, speaker A/B), a `dialogue`
+      lesson item, a conversation card (lines shown in order with speaker sides), then fill in the blank on its
+      lines (needs S7e). Until this is built, a lesson carries its conversation lines as ordinary sentences in
+      order, so lessons 8 and 10 can be built first and the dialogue rows added by a `db_sql.py change`.
+      **Done when:** lesson 10 shows its conversation as one card and asks a fill in the blank on one line.
+      **Gate (user):** design agreed; approve scripts; SQL check; browser test.
+- Bonus words also enter the practice pool (S8b): `practice_items` includes them like core words.
+- Lessons 5–11 follow `_agent/CURRICULUM_PATH.md` (agreed 2026-11-10). The user plans to run the unattended
+  runner for them; what must be in place first is listed in PROGRESS "Before the unattended run".
 
 ## Phase 1: Foundation: accounts and roles
 - [x] Move `native/` → `app/`; retire the leftover React sources
