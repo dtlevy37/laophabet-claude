@@ -2,6 +2,15 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-11 (phone test)
+
+### Changed
+- S7a build the sentence passed the owner's phone test (Firefox Android); ticked in PLAN.
+- Lesson steps now use a fixed frame that fills the visible screen (`100dvh`): progress on top, the activity
+  scrolls inside itself, the button is pinned at the bottom, and smaller type is used on short screens. The page no
+  longer scrolls, so the mobile address bar stops covering content. Not yet phone-tested.
+  (`app/frontend/styles.css`, `app/frontend/js/session.js`)
+
 ## 2026-11-11
 
 ### Changed

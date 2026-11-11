@@ -18,16 +18,16 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (S6a–S6c passed). Build the sentence (S7a) passed on desktop, including drag tiles and `covers` on the lesson list.
 
 ## Next steps
-1. **S7a phone test** (owner). `config.js` SUPABASE_URL must use the PC's LAN address (192.168.1.189 on 2026-11-10),
-   the frontend server must bind 0.0.0.0, and the firewall may need the ports. When it passes, tick S7a.
-2. **Mobile lesson frame (owner, important):** the lesson screen has no fixed area, so a step with more text grows
-   the page and the Continue/Check button and tiles move about. Wanted: progress bar on top, the activity in a
-   fixed-height middle that scrolls inside itself, the action button pinned at the bottom. Propose the layout first.
-3. **Rebuild lesson 4** (LESSON_RULES decision 22): ຂາ (kaa, leg) W000389 becomes `bonus`; ຂາວ (kaao, white) W000538
+1. **Mobile lesson frame** (built 2026-11-11, owner phone test pending): a lesson step fills the visible screen
+   (`100dvh`, `.lesson-frame` in `styles.css`, class set in `session.js` `draw`): progress on top, the activity
+   scrolls inside itself, the button pinned at the bottom, space kept for it before an answer; smaller type on
+   screens under 720px tall. The page never scrolls, so Firefox's address bar no longer covers content. Phone
+   testing: `config.js` SUPABASE_URL uses the PC's LAN address (192.168.1.189), the app is `http://192.168.1.189:5500/`.
+2. **Rebuild lesson 4** (LESSON_RULES decision 22): ຂາ (kaa, leg) W000389 becomes `bonus`; ຂາວ (kaao, white) W000538
    and the sentence ລາວຂາວ S000002876 leave the lesson (ຂາວ moves to lesson 11). Withdraw and re-merge (steps under
    "Lesson building"). Then run `app/backend/tests/s7c_s7f_test.sql` and build the frontend bonus label
    (`badge_bonus` string; the planner gives a bonus word its card and recognition checks only).
-4. Then S7b, S7e, S7d and lessons 5–11 (PLAN "Working order").
+3. Then S7b, S7e, S7d and lessons 5–11 (PLAN "Working order").
 
 ## Decisions in force
 - One curriculum lesson = one app lesson. Content names no screens; the planner (`js/session.js`) builds them.

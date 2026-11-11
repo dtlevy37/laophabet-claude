@@ -20,7 +20,7 @@ categories, slots; scripts, migration and backfill written; its SQL test waits f
 Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 
 ## Working order
-1. S7a phone test, then the mobile lesson-frame proposal (NOTES "Mobile layout")
+1. Mobile lesson frame: built 2026-11-11, owner phone test pending (NOTES next step 1)
 2. S7f remainder: rebuild lesson 4, bonus label in the frontend, run `app/backend/tests/s7c_s7f_test.sql`
 3. S7b session comfort
 4. S7e fill in the blank, then S7d build the word
@@ -31,13 +31,13 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 
 ## Slices
 
-- [ ] **S7a Build the sentence** (re-cut 2026-11-10, agreed; fill in the blank moved to S7e): word tiles in
+- [x] **S7a Build the sentence** (re-cut 2026-11-10, agreed; fill in the blank moved to S7e): word tiles in
       order, from `sentence_json.words`; no new data. Planner: a new sentence gets its reading card, then build the
       sentence; a recycled sentence also gets build the sentence until S7e. **Done when:** lessons 2–4 ask at least
       one build the sentence each and a wrong order shows the right sentence. **Gate:** owner browser test.
       (2026-11-10: built, untested: `activities/build_sentence.js`, planner in `session.js`. Tiles = the sentence's
       words + up to 2 pool words; checked by Lao string, so the two ລາວ are interchangeable; recall, item_type sentence.
-      Desktop browser test passed (user, also for drag and covers); phone test still to do. Added at the user's request: drag tiles into, within
+      Desktop browser test passed (user, also for drag and covers); phone test passed 2026-11-11 (Firefox Android). Added at the user's request: drag tiles into, within
       and out of the line (tap still works); the lesson list shows what each done lesson covers
       (`20261111010000_list_lessons_covers.sql`).)
 - [ ] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,
