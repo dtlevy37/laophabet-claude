@@ -102,8 +102,13 @@ reused. Part of speech (option 4) is used only to order the distractors.
   loaded into the DB. First set: `person` (pronouns, people), `animal`, `plant`, `food`, `drink`, `body`,
   `clothing`, `object`, `place`, `time`, `number`, `quality` (adjectives, colours, states), `action` (verbs),
   `function` (particles, negation, question words, classifiers; never blanked and never an option). Grow the set
-  when sentences need it. A finer verb category (e.g. `consume` for ກິນ, ດື່ມ) would let other verbs such as ໄປ
-  become distractors in a verb gap. With only `action`, a verb gap gets non-verb distractors.
+  when sentences need it.
+- **Verbs get finer categories** (user, 2026-11-10: not every verb fits every noun). Each verb keeps `action` and
+  adds one or more verb classes by the kind of object or complement it takes (first ideas: `consume` ກິນ, ດື່ມ;
+  `motion` ໄປ, ມາ; `perceive` ເຫັນ, ເບິ່ງ; `speak`; `have`; settle the list at S7c when the first verbs are tagged).
+  A verb gap's `accepts` lists the classes that fit (e.g. `<pronoun> __ <food|drink>` accepts `consume`), so other
+  verbs such as ໄປ can be distractors. Safety rule: a verb with only `action` and no class counts as fitting every
+  verb gap, so it is never a distractor there.
 - Confidence: `unverified` when the agent tags (the normal case), `verified` only once a native speaker has
   reviewed the row. Both files go on the native-speaker review list.
 
