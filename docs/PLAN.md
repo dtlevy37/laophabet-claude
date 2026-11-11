@@ -56,6 +56,12 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       fields come in S7c). **Done when:** lessons 3 and 4 each ask a fill in the blank on their recycled sentence;
       for `ກິນ __` and `ລາວກິນ __`, ນ້ຳ is never an option; a wrong answer shows the full sentence. **Gate (user):**
       browser test.
+- [ ] **S7w Letter writing practice** (owner request 2026-11-11; built, awaiting the owner's browser and phone test):
+      `#/write` grid and per-letter flow (`js/write.js`, `js/writing/pad.js`, `js/writing/score.js`), stroke data
+      `data/strokes.json` from `scripts/strokes_build.js`. Frontend only. **Done when:** on a phone, every step of
+      two letters can be completed with a finger; a careless trace fails; drawing ຂ when asked for ຊ is refused with
+      "looks like ຂ"; a finished letter shows a tick on the grid. **Gate (owner):** browser and phone test.
+      Later: vowels, tone marks and ໜ ໝ; use inside lessons; progress in the DB.
 - [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known), home screen with Continue
       (the next open lesson), the stats, and settings moved to the learner's profile.
 - [ ] **S8b Practice sessions:** `practice_items(limit)` RPC (due by fixed intervals, then weak, then oldest),

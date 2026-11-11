@@ -78,7 +78,24 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Dialogue reader | line by line, tap for translation, then comprehension questions | reading in context | dialogues, dialogue_lines, sentences | v2 |
 | Say it | hear, record yourself, play both back, grade yourself | speaking (self-graded) | audio | v2 |
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
+| Letter writing | draw a letter with a finger on a pad: watch it drawn, trace each part, trace the whole, draw each part from memory, draw the whole from memory (see "Letter writing" below) | letter shape (helps reading) | `data/strokes.json` (static file, built by `scripts/strokes_build.js`) | separate practice area `#/write` (S7w, 2026-11-11); not in lessons yet |
 | Typing Lao | keyboard input in Lao script | writing | Lao keyboard | out of scope (writing is out of scope) |
+
+### Letter writing (owner, 2026-11-11)
+Drawing letters by hand is practised to fix their shapes for reading. Typing Lao and writing words stay out of scope.
+- **Where:** its own area (`#/write`, a grid of the 27 consonants), open to every learner, not tied to lessons.
+  Nothing is recorded in the DB; a per-device tick marks finished letters. When it joins lessons it becomes an
+  activity module and its answers go through `record_answers` like any other.
+- **Stroke data** is computed once by `scripts/strokes_build.js` (centre lines of the font's glyphs, one stroke per
+  letter starting at the loop, cut into 2–3 parts) and shipped as `app/frontend/data/strokes.json`. It is keyed by
+  letter, so lesson data never changes for it. Geometry is `derived`; stroke order and direction are `unverified`.
+- **Steps per letter:** watch → trace each part → trace the whole → each part from memory (the rest shown) → the
+  whole from memory. A failed from-memory step can be retried; after two misses "Show me" replays the animation.
+- **What counts as right** (`js/writing/score.js`; thresholds tuned with `scripts/strokes_test.js`):
+  tracing must follow the guide in order and stay near it; a part from memory must lie roughly where the real one
+  does; the whole letter from memory may be any size and place, and passes when it is close to the letter **and no
+  other letter is a clearly better match** (the stand-in for "a Lao reader would read it as this letter"). Otherwise
+  the learner is told which letter it looked like. Drawing in the wrong direction is a tip, never a failure.
 
 ### Fill in the blank: one logical choice (agreed with the user 2026-11-10)
 **Rule:** exactly one option makes a sensible Lao sentence. A distractor that could

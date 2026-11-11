@@ -19,3 +19,10 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 - Tone of ເຂົ້າ (low-falling) and ເກົ້າ (high-falling) as stored: do they match Vientiane speech?
 - **ບໍ່ vs ບໍ** (question marker): Wiktionary has only ບໍ່ for both "no" and the question sense; other sources often write
   the question marker without the tone mark. The data uses ບໍ່ for both. Which is right?
+- **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
+  screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
+  ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right
+  direction? (2) is every consonant really one stroke without lifting the pen? (3) ພ por, ຟ for, ຜ por, ຝ for: is the
+  middle peak drawn up and back down the same line? (4) the shapes are Noto Sans Lao Looped; its ກ gor had two loops,
+  so ກ alone was taken from the plain Noto Sans Lao. Do ຖ tor (loop at the top left) and the others look like
+  normal school handwriting?

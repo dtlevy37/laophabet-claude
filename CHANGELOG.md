@@ -2,6 +2,31 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-11 (letter writing)
+
+### Added
+- **Letter writing practice (S7w), a separate area at `#/write`** (link under the lesson list). For each of the 27
+  consonants: watch the letter drawn, trace each part, trace the whole letter, draw each part from memory, draw the
+  whole letter from memory. Frontend only; nothing is recorded in the DB (a per-device tick marks finished letters).
+  **Untested in a browser.** (`app/frontend/js/write.js`, `js/writing/pad.js`, `js/writing/score.js`, `js/dom.js`
+  `s()`, `js/learn.js`, `strings.json` `write_*`, `styles.css`)
+- `scripts/strokes_build.js`: builds `app/frontend/data/strokes.json` once from the font outlines (rasterise, thin
+  to a skeleton, read the skeleton as pen strokes; no dependencies). Fonts in `scripts/assets/` (Noto Sans Lao
+  Looped and Noto Sans Lao, SIL OFL). Hand corrections in `scripts/strokes_overrides.json` (ກ from the plain font,
+  ອ direction). Geometry is `derived`; stroke order and direction are the agent's (`unverified`, in QUESTIONS).
+- `scripts/strokes_test.js`: simulated handwriting against the scorer. Result at commit: careful drawings accepted
+  97.5%, a different letter accepted 0.24%, junk 0/81, tracer and part checks all as expected.
+- DESIGN "Letter writing" (writing letters by hand is now in scope as shape practice; typing Lao is still out).
+
+### Browser steps (owner)
+1. `#/`: "Practice writing letters" under the lesson list → `#/write`: 27 letters.
+2. `#/write/C02` (ຂ, kor): go through all steps. Trace carelessly once (should fail), lift the pen mid-trace
+   (should let you continue).
+3. `#/write/C07` (ຊ, sor), last step: draw ຂ (kor) instead → "looks like ຂ". Draw it tiny → too small.
+4. Fail a from-memory step twice → "Show me" appears. Finish a letter → tick on the grid.
+5. Phone: the page must not scroll while drawing. Error case: rename `data/strokes.json`, reload `#/write` → error
+   with retry.
+
 ## 2026-11-11 (phone test)
 
 ### Changed

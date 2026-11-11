@@ -18,6 +18,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (S6a–S6c passed). Build the sentence (S7a) passed on desktop, including drag tiles and `covers` on the lesson list.
 
 ## Next steps
+0. **Owner test of letter writing (S7w)**: `#/write` on desktop and phone (steps in CHANGELOG 2026-11-11 "letter
+   writing"). Untested in any browser. If judging feels too strict or too loose, the knobs are `TUNING` in
+   `js/writing/score.js` (`LETTER_MAX`, `LETTER_MARGIN`, `TRACE_TOL`, `PART_MAX`); rerun `node scripts/strokes_test.js`.
 1. Phone testing: `config.js` SUPABASE_URL uses the PC's LAN address (192.168.1.189); the app is at
    `http://192.168.1.189:5500/`. The lesson frame (`.lesson-frame`, 100dvh, pinned button) passed the phone test on 2026-11-11.
 2. **Rebuild lesson 4** (LESSON_RULES decision 22): ຂາ (kaa, leg) W000389 becomes `bonus`; ຂາວ (kaao, white) W000538
@@ -27,6 +30,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 3. Then S7b, S7e, S7d and lessons 5–11 (PLAN "Working order").
 
 ## Decisions in force
+- Letter writing (DESIGN "Letter writing"): separate area, static stroke file, nothing recorded in the DB yet; the
+  whole-letter judge passes a drawing only when the wanted letter is the best match among all letters.
 - One curriculum lesson = one app lesson. Content names no screens; the planner (`js/session.js`) builds them.
 - Interleaved: card, check, next card; a closing mixed block; missed questions replayed until right once.
 - Completed = reached the end; no pass mark; summary accuracy counts first tries only.
@@ -45,6 +50,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 - `js/activities/multiple_choice.js`: forms; `build` returns null when it cannot fill 3 options.
 - `js/activities/build_sentence.js`: tiles; `again` reshuffles.
 - `js/activities/teach_card.js`: `cardItems`, `unitSound`, `openInfo`, `infoButton`, `chips`.
+- `js/write.js` (grid, step flow), `js/writing/pad.js` (SVG pad, pointer input, animation), `js/writing/score.js`
+  (pure judges: `createTracer`, `scorePart`, `scoreLetter`). Data: `data/strokes.json`, rebuilt with
+  `node scripts/strokes_build.js --png` (sheet in `tmp/strokes/`; corrections in `scripts/strokes_overrides.json`).
 - `js/learn.js`: lesson list and the read-only viewer. `js/bundle.js`: `get_lesson` cache.
 
 ## Lesson building (what worked for lessons 3–4)
