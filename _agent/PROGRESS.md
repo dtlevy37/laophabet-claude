@@ -84,6 +84,23 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   recorded here: add any fixes they want as open items. One item is still unverified: the "Read more on Wikipedia"
   links under "More" (URLs written from memory).
 
+## Lesson 4 and fill-in-the-blank notes (user, 2026-11-11, after the S6c browser test)
+- **Fill in the blank, one logical choice: planned 2026-11-10, awaiting the user's OK.** Design: APP_DESIGN "Fill
+  in the blank: one logical choice" (word categories + per-sentence slot `accepts`; the option rule takes the union
+  of categories over a spelling, which covers homographs). Re-cut proposed in APP_PLAN: S7a = build the sentence
+  only; S7c also carries the categories/slots data, script checks and `get_lesson` fields; new S7e = fill in the
+  blank (frontend only). Open for the user: the category list, whether S7e goes before S7d, logging the sentence
+  as well as the word. Brief: `_agent/FILL_BLANK_BRIEF.md` (move to `_trash/` once agreed).
+- **Lesson 4 sentence ລາວຂາວ** ("He is fair-skinned", S000002876): the user dislikes it as an early sentence. Rework
+  later; the user thinks ຂາວ is hard to put in a natural sentence unless "see" is taught too (which Lao word, ເຫັນ or ເບິ່ງ, and the
+  sentence are still to be chosen). Not decided; lessons stay paused.
+- **ລາວ vs ຂາວ vowel:** data has ລາວ short (`law`, respelling "lao") but ຂາວ long (`kaao`) though both are ◌າ+ວ. Researcher
+  check 2026-11-11: Wiktionary gives ລາວ long ([laːw˧˥]) as a noun/proper noun but short ([law˧˥]) as the pronoun;
+  Wikipedia gives the language name long ([láːw]); ຂາວ long. Unsettled whether the pronoun is really short. Our
+  W000538 ("he/she") follows the pronoun entry. Settling it needs the 1994 Vientiane phonology study (scholar) or a
+  native speaker (add to NEEDS_HUMAN "For the native speaker"). The English word stays "Lao"; only the transliteration may change (user).
+- **ນ້ຳ cue:** keep respelling "nam"; reword the pron_tip ("'num' as in 'number'") (user asked "nam or num?").
+
 ## Open questions with the user
 - "nam" for ນ້ຳ although the cue says "um in hum"; "kao" (ເຂົ້າ) vs "kaao" (ຂາວ) look alike in English letters.
 - pron_tip texts under "More" are stored prose with English-style spellings and the word "aspirated": reword?

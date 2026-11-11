@@ -81,21 +81,29 @@ building stays paused until the user lifts it; the content shape is final after 
       **Done when:** the user plays lessons 1–4 in order; each asks questions between the cards and at the end; a
       deliberately wrong answer comes back before the summary; the summary shows words read and % correct; items
       answered right are at level 2 in `learner_items`. **Gate (user):** browser test. *End of the vertical slice.*
-- [ ] **S7a Sentence activities:** build the sentence (word tiles in order) and fill in the blank (one gap, word
-      tiles), from `sentence_json.words`; no new data. Planner: a new sentence gets its reading card, then build the
-      sentence; a recycled sentence gets fill in the blank. **Done when:** lessons 2–4 ask at least one sentence
-      activity each and a wrong order shows the right sentence. **Gate (user):** browser test.
+- [ ] **S7a Build the sentence** (re-cut 2026-11-10, proposed; fill in the blank moved to S7e): word tiles in
+      order, from `sentence_json.words`; no new data. Planner: a new sentence gets its reading card, then build the
+      sentence; a recycled sentence also gets build the sentence until S7e. **Done when:** lessons 2–4 ask at least
+      one build the sentence each and a wrong order shows the right sentence. **Gate (user):** browser test.
 - [ ] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,
       seed and step in localStorage; specs are rebuilt from the seed); "Leave lesson?" confirm; dry-run mode on
       `#/read/…` that plays the questions without recording; `js/audio.js` `audioButton(detail)` placed on teach
       cards, sentence cards and wrong-answer feedback (renders nothing while `audio_url` is absent).
       **Done when:** refreshing mid-lesson returns to the same question; a dry run of lesson 4 leaves no rows in
       `review_log`. **Gate (user):** browser test.
-- [ ] **S7c Word-to-units data (script change + SQL).** `build_order.py` writes `data/word_units.csv` (word_id,
-      syl_index, position, unit_id; generated from `parse_syllable`, confidence `derived`); `db_sql.py` knows the
-      table (seed, lesson, change, refresh); `lesson_tool.py merge` carries a lesson's rows. Migration: table
-      `word_units` + `word_json` gains `units`. A `db_sql.py change` migration backfills the words of lessons 1–4.
-      **Done when:** `pipeline.sh` is clean; `select get_lesson('L0001')` shows ກິນ with units C01, V04, C13f.
+- [ ] **S7c Activity data: word units, word categories, sentence slots (script change + SQL).** `build_order.py`
+      writes `data/word_units.csv` (word_id, syl_index, position, unit_id; generated from `parse_syllable`, confidence
+      `derived`). New hand-tagged files `data/word_categories.csv`, `data/sentence_slots.csv`, `data/categories.csv`
+      (APP_DESIGN "Fill in the blank: one logical choice"; proposed 2026-11-10). `db_sql.py` knows the new tables
+      (seed, lesson, change, refresh); `lesson_tool.py merge` carries a lesson's rows; `lesson_tool.py check` runs
+      the option rule and prints each lesson's blank options; the pipeline validates categories. Migration: tables
+      `word_units`, `word_categories`, `sentence_slots`; `get_lesson` adds `units` to `word_json`, `slots` to
+      `sentence_json` and `cats` to pool words. A `db_sql.py change` migration backfills lessons 1–4 (units,
+      categories for the L1–5 pool, slots for their sentences). Staging also covers the `draft-content` skill, the
+      drafter agent brief and `next_lesson_prompt.md` (new columns at draft time).
+      **Done when:** `pipeline.sh` is clean; `lesson_tool.py check` passes lessons 1–4 with no slot that offers two
+      valid answers; `select get_lesson('L0001')` shows ກິນ with units C01, V04, C13f, and `get_lesson('L0003')`
+      shows a slot on ກິນເຂົ້າ.
       **Gate (user):** approve the script group in `_agent/proposed-scripts/`, then `supabase db reset` + SQL check.
       **Content gate:** from here a merged lesson carries everything the planned activities need.
 - [ ] **S7d Build the word:** `activities/build_word.js`: the meaning and sound are shown; the learner taps the
@@ -103,6 +111,12 @@ building stays paused until the user lifts it; the content shape is final after 
       the assembled word appears ("ກ + ◌ິ + ນ = ກິນ"). No in-progress glyph composer. Also: letters just taught are
       highlighted in new words, and tone marks get their first check here (they have no sound to ask about).
       **Done when:** every lesson 1–4 word can be built; a wrong piece gets feedback. **Gate (user):** browser test.
+- [ ] **S7e Fill in the blank, one logical choice** (proposed 2026-11-10; built right after S7c, before S7d if the
+      user prefers): `activities/fill_blank.js` per APP_DESIGN "Fill in the blank: one logical choice"; the planner
+      gives a recycled sentence fill in the blank and falls back to build the sentence. Frontend only (the bundle
+      fields come in S7c). **Done when:** lessons 3 and 4 each ask a fill in the blank on their recycled sentence;
+      for `ກິນ __` and `ລາວກິນ __`, ນ້ຳ is never an option; a wrong answer shows the full sentence. **Gate (user):**
+      browser test.
 - [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known), home screen with Continue
       (the next open lesson), the stats, and settings moved to the learner's profile. (Phase 8, rest)
 - [ ] **S8b Practice sessions:** `practice_items(limit)` RPC (due by fixed intervals, then weak, then oldest),

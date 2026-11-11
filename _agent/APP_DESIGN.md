@@ -69,7 +69,7 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Teach card | front: glyph or word, sound cue, meaning, at most one sentence, tone picture for words; the rest behind "More" (see "Teach cards" below) | nothing (show) | units.teach_en, rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, audio | v1 |
 | Multiple choice | unit: sound → pick letter, letter → pick sound; word: Lao → pick meaning (recognition), meaning → pick Lao (recall). The check right after a card is this activity (the separate "Spot it" with the card visible was dropped 2026-11-10) | recognition or recall | bundle items; pool units (lao, sound) and pool words (lao, gloss_en) from `get_lesson` | v1 (S6c) |
 | Build the sentence | put word tiles in order to match the English | recall, word order | `sentence_json.words` (position, word_id, lao), english; extra tiles from pool words | v1 (S7a) |
-| Fill in the blank | sentence with one gap; pick the word from tiles | recall in context | same; the English is shown, so it decides between ເຂົ້າ and ນ້ຳ | v1 (S7a) |
+| Fill in the blank | sentence with one gap; pick the word from tiles; exactly one option is logically valid (see "Fill in the blank: one logical choice") | recall in context | `sentence_json.slots`, pool words with `cats` (new, S7c) | v1 (S7e, proposed) |
 | Build the word | meaning and sound shown; tap the pieces in spoken order (consonant, vowel, final, tone mark); the assembled word appears when right | spelling, where vowels sit | `word_units` (new, generated; S7c), pool units | v1 (S7d) |
 | Matching | tap pairs: Lao ↔ English, letter ↔ sound | recognition | words, units (needs 3+ pairs) | v1 (S8b) |
 | Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 (S8b, practice) |
@@ -79,6 +79,82 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Say it | hear, record yourself, play both back, grade yourself | speaking (self-graded) | audio | v2 |
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
 | Typing Lao | keyboard input in Lao script | writing | Lao keyboard | out of scope (writing is out of scope) |
+
+### Fill in the blank: one logical choice (proposed 2026-11-10, agent; awaiting the user)
+From `_agent/FILL_BLANK_BRIEF.md`. **Rule:** exactly one option makes a sensible Lao sentence. A distractor that could
+also fit, even with another sense or as a stretch, is a defect, because it marks a correct reading wrong. Example:
+`ລາວ ກິນ __` with answer ເຂົ້າ: ນ້ຳ may never be an option; ຂາ "leg" and ຂາວ "white" may.
+
+**Approach: categories on words, accepted categories on slots** (brief option 2, with the slot data per sentence
+rather than per verb). Each word is tagged once and each blankable slot once, so the work grows with the content
+and not with words × slots, as hand lists of wrong fillers (option 1) would. A verb → category table was rejected:
+in Lao the object of a verb is not marked, and serial verbs make it hard to tell which verb governs a slot. The
+templates (option 3) only list words that fit, never words that are wrong, and none covers ກິນ, so they are not
+reused. Part of speech (option 4) is used only to order the distractors.
+
+**Data (two new CSVs, two new tables; additive, nothing merged changes):**
+- `data/word_categories.csv`: `word_id, categories` (pipe list from a closed set), `source, confidence, notes`.
+  One row per word. A word with no row is never a distractor.
+- `data/sentence_slots.csv`: `sentence_id, position` (as in `sentence_words`), `accepts` (pipe list: every category
+  that gives a sensible sentence in that gap), `exclude_word_ids` (optional; words to keep out despite their
+  categories, for stretch cases), `source, confidence, notes`. A position with no row is never blanked.
+- `data/categories.csv`: the closed set (`category, definition, examples`), checked by the pipeline only and not
+  loaded into the DB. First set: `person` (pronouns, people), `animal`, `plant`, `food`, `drink`, `body`,
+  `clothing`, `object`, `place`, `time`, `number`, `quality` (adjectives, colours, states), `action` (verbs),
+  `function` (particles, negation, question words, classifiers; never blanked and never an option).
+- Confidence: `unverified` when the agent tags (the normal case), `verified` only once a native speaker has
+  reviewed the row. Both files go on the native-speaker review list.
+
+**Authoring rule for `accepts`** (drafter brief and `draft-content` skill): list every category that gives a
+grammatical, sensible sentence with the other words unchanged. Read every other word in **all** its senses, and
+count compounds formed with a neighbour. Example: in `__ ເຂົ້າ`, ລາວ gives ລາວເຂົ້າ "he enters" (ເຂົ້າ also means
+"enter"), so that slot accepts `action|person|animal`. When unsure, add the category: a wider `accepts` only
+removes distractors, never adds a wrong one.
+
+**Option rule** (one rule, used both by the client and by the check script):
+- Options come from the bundle's pool, the same pool as multiple choice (lessons 1–5 share one pool; taught items
+  only from lesson 6).
+- A pool word is a safe distractor when: it has categories; none of them is `function`; the **union of categories
+  over every live word with the same Lao spelling** has nothing in common with `accepts` (this handles homographs,
+  so ເຂົ້າ "enter" counts as an `action`); it is not in `exclude_word_ids`; and its Lao differs from the answer's
+  and from the other options.
+- Prefer distractors with the answer's part of speech (a noun gap gets nouns first), so the question tests meaning
+  rather than grammar. 4 options when there are 3 safe distractors, 3 when there are 2, otherwise no fill in the
+  blank for that sentence (same as multiple choice).
+
+**Which gap:** only positions with a slot row, and only content words (never `function`). The answer word must be
+at level ≥ 2 for this learner. If a sentence has several slots, pick the one whose answer word has the lowest
+level, then by the session seed. Drafters tag at least the target word's slot in every sentence a lesson uses, and
+more slots where they can.
+
+**Bundle:** `get_lesson` adds `slots: [{position, accepts, exclude}]` to each sentence's `sentence_json`, and
+`cats` (the union over the spelling, as above) to each pool word. The client still reads content only through
+the RPC.
+
+**Module:** `activities/fill_blank.js`, `{type: 'fill_blank', canUse, render}`. `canUse`: the sentence is at
+level ≥ 1, it has a slot whose answer is at level ≥ 2, and `build` finds at least 2 safe distractors. Screen: the
+English on top, the Lao sentence with one gap as the main text, and the word tiles below. A wrong answer shows the
+full sentence with the right word marked (shared feedback, as in multiple choice). Ladder: recall (a right answer
+can raise the answer word to level 3). Logged: one answer for the answer word (recall) and one for the sentence,
+both with `first_try`.
+
+**Planner:** a recycled sentence gets fill in the blank. When no slot qualifies, it gets build the sentence
+instead.
+
+**Checks (agent side):** `lesson_tool.py check` (and a pass over all merged lessons) runs the option rule for each
+lesson's sentences against that lesson's pool, and:
+- errors on an answer whose own categories miss its slot's `accepts`, on a category outside `categories.csv`, and,
+  for lessons merged after S7c, on a new word with no categories or a lesson sentence with no slot;
+- warns on a slot with fewer than 2 safe distractors (the question will be skipped), on a slot where another word
+  in the sentence has a homograph (re-check `accepts` against the other sense), and on a lesson where no recycled
+  sentence can be a fill in the blank;
+- prints each lesson's sentences with the options the rule would offer, so the user or a native speaker can scan
+  for a second valid answer.
+
+**Lessons 1–4:** covered additively by one content migration (`db_sql.py change`): categories for the L1–5 pool
+words (ກິນ, ເຂົ້າ, ເຂົ້າ "enter", ລາວ ×2, ຂາ, ຂາວ, ນ້ຳ, and lesson 5 words once chosen) and slots for S000002870,
+2872–2874 and 2876. Expected result: L3 recycles ກິນເຂົ້າ → `ກິນ __`, options ເຂົ້າ plus ຂາ, ລາວ, ຂາວ (ນ້ຳ
+excluded); L4 recycles ລາວກິນເຂົ້າ → a gap at ລາວ (`person|animal`) or ເຂົ້າ (`food|drink`).
 
 ## Lesson session (2026-11-10)
 The planner walks `lesson_items` in `position` order; that order is the backbone of the session, so lessons need no
@@ -91,7 +167,7 @@ extra columns.
 | new rule / recap | card only |
 | recycled word | no card; one question: meaning → Lao if the learner's level is ≥ 2, else Lao → meaning |
 | new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
-| recycled sentence | fill in the blank (from S7a); before S7a, nothing |
+| recycled sentence | fill in the blank (from S7e, proposed); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 
 - **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8).
   Then every question missed on the first try comes back until answered right once (at most twice each).
