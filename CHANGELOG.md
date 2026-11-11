@@ -5,9 +5,9 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ## 2026-11-10
 
 ### Changed
-- Fill-in-the-blank design proposed (APP_DESIGN "Fill in the blank: one logical choice"): word categories plus
-  per-sentence slot `accepts`, so exactly one option is valid. APP_PLAN re-cut proposed: S7a is build the sentence
-  only, S7c also carries the category and slot data, and a new S7e is fill in the blank.
+- Fill-in-the-blank design agreed with the user (APP_DESIGN "Fill in the blank: one logical choice"): word categories plus
+  per-sentence slot `accepts`, so exactly one option is valid. APP_PLAN re-cut: S7a is build the sentence only, S7c
+  also carries the category and slot data, and a new S7e (fill in the blank) comes before S7d.
 
 ### Fixed
 - S6c browser feedback (user): a question showed the text "null" under the options before the answer

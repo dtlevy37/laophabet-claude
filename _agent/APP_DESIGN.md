@@ -69,7 +69,7 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Teach card | front: glyph or word, sound cue, meaning, at most one sentence, tone picture for words; the rest behind "More" (see "Teach cards" below) | nothing (show) | units.teach_en, rules.teach_en, letters/vowels pron_tip, words gloss/respelling/pron_tip, audio | v1 |
 | Multiple choice | unit: sound → pick letter, letter → pick sound; word: Lao → pick meaning (recognition), meaning → pick Lao (recall). The check right after a card is this activity (the separate "Spot it" with the card visible was dropped 2026-11-10) | recognition or recall | bundle items; pool units (lao, sound) and pool words (lao, gloss_en) from `get_lesson` | v1 (S6c) |
 | Build the sentence | put word tiles in order to match the English | recall, word order | `sentence_json.words` (position, word_id, lao), english; extra tiles from pool words | v1 (S7a) |
-| Fill in the blank | sentence with one gap; pick the word from tiles; exactly one option is logically valid (see "Fill in the blank: one logical choice") | recall in context | `sentence_json.slots`, pool words with `cats` (new, S7c) | v1 (S7e, proposed) |
+| Fill in the blank | sentence with one gap; pick the word from tiles; exactly one option is logically valid (see "Fill in the blank: one logical choice") | recall in context | `sentence_json.slots`, pool words with `cats` (new, S7c) | v1 (S7e) |
 | Build the word | meaning and sound shown; tap the pieces in spoken order (consonant, vowel, final, tone mark); the assembled word appears when right | spelling, where vowels sit | `word_units` (new, generated; S7c), pool units | v1 (S7d) |
 | Matching | tap pairs: Lao ↔ English, letter ↔ sound | recognition | words, units (needs 3+ pairs) | v1 (S8b) |
 | Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 (S8b, practice) |
@@ -80,7 +80,7 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
 | Typing Lao | keyboard input in Lao script | writing | Lao keyboard | out of scope (writing is out of scope) |
 
-### Fill in the blank: one logical choice (proposed 2026-11-10, agent; awaiting the user)
+### Fill in the blank: one logical choice (agreed with the user 2026-11-10)
 From `_agent/FILL_BLANK_BRIEF.md`. **Rule:** exactly one option makes a sensible Lao sentence. A distractor that could
 also fit, even with another sense or as a stretch, is a defect, because it marks a correct reading wrong. Example:
 `ລາວ ກິນ __` with answer ເຂົ້າ: ນ້ຳ may never be an option; ຂາ "leg" and ຂາວ "white" may.
@@ -101,7 +101,9 @@ reused. Part of speech (option 4) is used only to order the distractors.
 - `data/categories.csv`: the closed set (`category, definition, examples`), checked by the pipeline only and not
   loaded into the DB. First set: `person` (pronouns, people), `animal`, `plant`, `food`, `drink`, `body`,
   `clothing`, `object`, `place`, `time`, `number`, `quality` (adjectives, colours, states), `action` (verbs),
-  `function` (particles, negation, question words, classifiers; never blanked and never an option).
+  `function` (particles, negation, question words, classifiers; never blanked and never an option). Grow the set
+  when sentences need it. A finer verb category (e.g. `consume` for ກິນ, ດື່ມ) would let other verbs such as ໄປ
+  become distractors in a verb gap. With only `action`, a verb gap gets non-verb distractors.
 - Confidence: `unverified` when the agent tags (the normal case), `verified` only once a native speaker has
   reviewed the row. Both files go on the native-speaker review list.
 
@@ -167,7 +169,7 @@ extra columns.
 | new rule / recap | card only |
 | recycled word | no card; one question: meaning → Lao if the learner's level is ≥ 2, else Lao → meaning |
 | new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
-| recycled sentence | fill in the blank (from S7e, proposed); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
+| recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 
 - **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8).
   Then every question missed on the first try comes back until answered right once (at most twice each).
@@ -276,6 +278,11 @@ A lesson is content, not a script of screens: the app turns it into activities b
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
 
 ## Decisions log
+- 2026-11-10 (user, fill in the blank): the approach in "Fill in the blank: one logical choice" and the S7a/S7c/S7e
+  re-cut are agreed. The first category list is agreed; add categories as sentences need them. Not every sentence,
+  and not every word in a sentence, has to be blankable; basic sentences are the target (e.g. `<pronoun> __
+  <food|drink>` expects ກິນ or ດື່ມ). Order: S7e before S7d. Distractors come from the same pool as multiple choice
+  (lessons 1–5 share one pool). One answer is logged for both the word and the sentence.
 - 2026-11-10 (agent, S6c, provisional; say if you disagree):
   - Both unit questions (letter → sound, sound → letter) are logged as `recognition`; only meaning → Lao is `recall`.
   - The check after a card is letter → sound or Lao → meaning; the closing block asks the other form. For a card

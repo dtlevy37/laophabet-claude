@@ -81,7 +81,7 @@ building stays paused until the user lifts it; the content shape is final after 
       **Done when:** the user plays lessons 1–4 in order; each asks questions between the cards and at the end; a
       deliberately wrong answer comes back before the summary; the summary shows words read and % correct; items
       answered right are at level 2 in `learner_items`. **Gate (user):** browser test. *End of the vertical slice.*
-- [ ] **S7a Build the sentence** (re-cut 2026-11-10, proposed; fill in the blank moved to S7e): word tiles in
+- [ ] **S7a Build the sentence** (re-cut 2026-11-10, agreed; fill in the blank moved to S7e): word tiles in
       order, from `sentence_json.words`; no new data. Planner: a new sentence gets its reading card, then build the
       sentence; a recycled sentence also gets build the sentence until S7e. **Done when:** lessons 2–4 ask at least
       one build the sentence each and a wrong order shows the right sentence. **Gate (user):** browser test.
@@ -94,7 +94,7 @@ building stays paused until the user lifts it; the content shape is final after 
 - [ ] **S7c Activity data: word units, word categories, sentence slots (script change + SQL).** `build_order.py`
       writes `data/word_units.csv` (word_id, syl_index, position, unit_id; generated from `parse_syllable`, confidence
       `derived`). New hand-tagged files `data/word_categories.csv`, `data/sentence_slots.csv`, `data/categories.csv`
-      (APP_DESIGN "Fill in the blank: one logical choice"; proposed 2026-11-10). `db_sql.py` knows the new tables
+      (APP_DESIGN "Fill in the blank: one logical choice"; agreed 2026-11-10). `db_sql.py` knows the new tables
       (seed, lesson, change, refresh); `lesson_tool.py merge` carries a lesson's rows; `lesson_tool.py check` runs
       the option rule and prints each lesson's blank options; the pipeline validates categories. Migration: tables
       `word_units`, `word_categories`, `sentence_slots`; `get_lesson` adds `units` to `word_json`, `slots` to
@@ -111,8 +111,7 @@ building stays paused until the user lifts it; the content shape is final after 
       the assembled word appears ("ກ + ◌ິ + ນ = ກິນ"). No in-progress glyph composer. Also: letters just taught are
       highlighted in new words, and tone marks get their first check here (they have no sound to ask about).
       **Done when:** every lesson 1–4 word can be built; a wrong piece gets feedback. **Gate (user):** browser test.
-- [ ] **S7e Fill in the blank, one logical choice** (proposed 2026-11-10; built right after S7c, before S7d if the
-      user prefers): `activities/fill_blank.js` per APP_DESIGN "Fill in the blank: one logical choice"; the planner
+- [ ] **S7e Fill in the blank, one logical choice** (agreed 2026-11-10; built right after S7c, before S7d): `activities/fill_blank.js` per APP_DESIGN "Fill in the blank: one logical choice"; the planner
       gives a recycled sentence fill in the blank and falls back to build the sentence. Frontend only (the bundle
       fields come in S7c). **Done when:** lessons 3 and 4 each ask a fill in the blank on their recycled sentence;
       for `ກິນ __` and `ລາວກິນ __`, ນ້ຳ is never an option; a wrong answer shows the full sentence. **Gate (user):**
