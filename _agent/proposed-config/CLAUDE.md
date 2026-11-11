@@ -132,7 +132,7 @@ spawn others. Implementation stays in the main session, because it holds the sli
 | `researcher` | One precise question (a Lao fact, a Supabase/Postgres/browser API detail, a library version). Compact cited answer. |
 | `scholar` | Studying an important source end to end (a spec, the FSRS paper, Supabase RLS docs) and saving notes to `_agent/research/<topic>.md`. Check that folder first. |
 | `drafter` | New content rows (words, sentences) as CSV drafts for a lesson. Give it a batch tag, the exact list and the file names. Run drafters one after another. |
-| `code-reviewer` | Read-only review of a slice's diff against the app rules: security, RLS, RPC contracts, migration conventions, strings, bugs. Run it before every app gate. |
+| `code-reviewer` | Read-only review of a slice's diff against the app rules: security, RLS, RPC contracts, migration conventions, strings, bugs. Run it before a gate when the slice changes SQL (schema, RLS, RPCs) or more than about 150 lines of JS; skip it for small frontend-only changes. Give it the changed files and what to look for, not the whole spec. |
 | `curriculum-reviewer` | Read-only review of a lesson draft or a run of lessons: readability, show-first, budget, recycling, accuracy of teach texts and tones, confidence marks. Run it before merging an interactive lesson and on runner batches. |
 
 | Skill | Use it when |
@@ -149,8 +149,13 @@ spawn others. Implementation stays in the main session, because it holds the sli
 - Summarize large command outputs instead of pasting them.
 
 ## Reading depth
-- Read fully: a file you are about to edit, a spec or design doc the task depends on, a research notes file you rely on.
-- Read selectively (grep, line ranges): data files, logs, locating a function or term. Never read `data/*.csv` whole.
+- Read as little as the task needs (user, 2026-11-10: sessions must not re-read everything every time). Start
+  from `_agent/PROGRESS.md` (its code map) and grep; open a file only when the task touches it.
+- Read fully: a code module you are about to change substantially, and the one spec section the task depends on
+  (find it by heading, read that section, not the whole document).
+- Read selectively (grep, line ranges): data files, logs, `strings.json`, `styles.css`, `app/README.md`, applied
+  migrations (the contract comment above a function is enough), and any file you only append to. Never read
+  `data/*.csv` whole.
 
 ## Guardrail notices
 - Usage notices (context %, 5-hour window, weekly %) arrive as system reminders. On any checkpoint notice, update

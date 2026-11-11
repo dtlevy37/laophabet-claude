@@ -9,8 +9,10 @@ The user's rule: small pieces, one slice at a time, and every slice ends at a na
 already finished. Nobody can run the code before the gate, so careful reading and review replace tests.
 
 ## 1. Frame it
-- Read the slice in `_agent/APP_PLAN.md` "Slices" and the spec sections it depends on (`_agent/APP_DESIGN.md`,
-  `app/README.md`). Read every file you will change, in full.
+- Read the slice in `_agent/APP_PLAN.md` "Slices" and only the spec sections it depends on (grep the headings of
+  `_agent/APP_DESIGN.md`, then read those sections by line range). Keep reading small (user, 2026-11-10): read in
+  full only the code modules you will change substantially; grep `strings.json`, `styles.css`, `app/README.md` and
+  applied migrations (the contract comment above an RPC is enough) and append to them without a full read.
 - If the slice has no **Done when** line, write one under it before coding: an observable result the user can check,
   such as "learner finishes lesson 1; `select * from learner_items` shows 4 rows at level 2; the summary screen
   shows words read and % correct".
@@ -28,7 +30,8 @@ already finished. Nobody can run the code before the gate, so careful reading an
 ## 3. Check
 - Re-read your diff (`git diff`) top to bottom once.
 - If approved: `node approved-scripts/check_frontend.js` (JS syntax, strings.json keys).
-- Run the `code-reviewer` agent with: slice name, Done-when line, files changed. Fix blockers and majors, or explain
+- Run the `code-reviewer` agent when the slice changes SQL (schema, RLS, RPCs) or more than about 150 lines of JS;
+  skip it for small frontend-only changes (user, 2026-11-10: cost). Give it: slice name, Done-when line, files changed. Fix blockers and majors, or explain
   in the hand-over why not. Run it again only if fixes were large.
 
 ## 4. Wrap up (all before the gate)
