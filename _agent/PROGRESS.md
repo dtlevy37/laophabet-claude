@@ -13,7 +13,7 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
   wipes accounts). Nothing is hosted yet, so every migration in `_agent/PENDING_MIGRATIONS.md` is still unticked.
 - **App:** lesson list and teach cards work in the user's browser (S4). Progress tables (S5) and the played-lesson
   backend (S6a) passed their SQL gates. The session runner (S6b, cards only) passed its browser gate
-  (user, 2026-11-10). No quiz yet (S6c).
+  (user, 2026-11-10). Multiple-choice checks (S6c) are built but untested in a browser.
 
 ## Next step (2026-11-10): lesson building is PAUSED at 4; app slices first
 1. **Learning-experience plan is agreed** (2026-11-10). Decisions: APP_DESIGN "Curriculum lesson, app lesson,
@@ -27,19 +27,16 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
    **S6a is done** (gate passed 2026-11-10, 5 of 5; the user closed it).
    **S6b is done** (the user closed it 2026-11-10 after the browser test).
-   **Next: S6c** with the `app-slice` and `activity-module` skills, in a fresh session. Notes for S6c:
-   - User, 2026-11-10: "Read the cards" on a done lesson looked redundant while a session is cards only. Kept
-     because from S6c a replay asks questions; if the user still finds it redundant after S6c, remove the link
-     and keep the `#/read/` URL.
+   **S6c is built and awaits the user's browser gate** (2026-11-10; frontend only, no migration). If it passes:
+   tick S6c in APP_PLAN, then S7a (sentence activities). Notes:
+   - Provisional S6c decisions are in APP_DESIGN "Decisions log" (2026-11-10, agent, S6c); the user has not yet
+     confirmed them.
+   - User, 2026-11-10: "Read the cards" on a done lesson looked redundant while a session was cards only. Ask
+     again now that a replay asks questions; if still redundant, remove the link and keep the `#/read/` URL.
    - Use Read/Grep/Glob, not `ls`/`head`/`grep`/`cd` in Bash: those prompt the user for approval.
-   - Code map: `js/session.js` (`planLesson` returns specs; the runner's `advance` takes an array of answers and
-     adds `answer_id`), `js/activities/index.js` (interface in its comment), `activities/teach_card.js`
-     (`lessonCards`, `cardItems` with `shown` ids for folded finals and homograph twins).
-   - A session already fetches a fresh bundle (`getBundle(id, {fresh: true})`), so `levels` are current at the start.
-   - The summary screen shows only new items and streak; add words read and % correct. The encouraging line is
-     chosen by streak only; switch to accuracy thresholds.
-   - Units have no info icon yet (only word chips on sentence cards open the dialog); wrong-answer feedback needs it.
-   - Final ວ is labelled "-ao" (user, 2026-11-10); apply in S6c (APP_DESIGN open question 1).
+   - Code map: `js/session.js` (`planLesson(bundle, rng)`; `advance` queues `again(spec)` for a missed question),
+     `js/activities/multiple_choice.js` (forms, `build` returns null when it cannot fill 3 options),
+     `activities/teach_card.js` (`cardItems`, `unitSound`, `openInfo`, `infoButton`).
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
    `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill).
    **To stage later, not now:** S7c script group (build_order.py, db_sql.py, lesson_tool.py) in

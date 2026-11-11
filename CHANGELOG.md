@@ -5,6 +5,13 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ## 2026-11-10
 
 ### Added
+- S6c first checks (frontend only; untested until the browser gate): `js/activities/multiple_choice.js` (unit:
+  letter → sound and sound → letter; word: Lao → meaning and meaning → Lao; options never share a Lao form or a
+  label; after the answer the right option is marked and the item is shown with its sound, meaning and info icon).
+  `planLesson` now interleaves: card, check, next card; one question per recycled word (by level); a closing mixed
+  block (at most 8); a missed question comes back at the end, at most twice, sent with `first_try: false`. The
+  summary shows words read and "right first time", and its line goes by accuracy. Final ວ is labelled "-ao"
+  (display rule in `teach_card.js`). Units now have an info dialog (`openInfo`, `infoButton`).
 - S6b session runner (browser gate passed, closed by the user): `#/lesson/L0001` plays a lesson as a session. New
   `app/frontend/js/session.js` (planner and runner: `start_lesson`, teach cards under a progress bar, answers
   batched to `record_answers` and resent after a failure, `complete_lesson`, summary screen with new items, streak

@@ -190,15 +190,24 @@ A lesson is content, not a script of screens: the app turns it into activities b
 - Order in items.csv = teaching order: each new unit, then the words that use it, then sentences.
 
 ## Open questions
-1. **Final ວ sound label: "-ao"** (user, 2026-11-10). letters.csv gives "w (final o/w)", so the C24f card would
-   show "o/w"; it must show "-ao" on the card and in its sound question. Apply in S6c (a `db_sql.py change` on the
-   row or a display rule; choose then). Every taught word so far has ວ after າ; revisit the label when a word with
-   ວ after another vowel (ແມວ) is taught.
+1. **Final ວ sound label: "-ao"** (user, 2026-11-10). Applied in S6c as a display rule (`SOUND_LABEL` in
+   `js/activities/teach_card.js`; letters.csv keeps "w (final o/w)", which scripts read). Every taught word so far
+   has ວ after າ; revisit the label when a word with ວ after another vowel (ແມວ) is taught.
 2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, once
    lessons pass about 10.
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
 
 ## Decisions log
+- 2026-11-10 (agent, S6c, provisional; say if you disagree):
+  - Both unit questions (letter → sound, sound → letter) are logged as `recognition`; only meaning → Lao is `recall`.
+  - The check after a card is letter → sound or Lao → meaning; the closing block asks the other form. For a card
+    with two meanings (ລາວ) the check asks the first meaning and the closing block asks the second.
+  - In a question the info icon appears only after the answer (right or wrong): before it, the teach card would
+    give the answer away.
+  - "-ao" (final ວ) and "ao" (ເ◌ົາ) count as the same label, so they are never options in the same question.
+  - A recycled word the learner has never been shown (level 0) gets no question.
+  - "Words read" counts the tested word once per word question (not the Lao words among the options).
+  - Summary line: 90% or more, 60% or more, below 60% ("these will come back" framing).
 - 2026-11-10 (user): one curriculum lesson = one app lesson; the planner makes the screens, content names none.
 - 2026-11-10 (agent recommendation, user approved): teach and check are interleaved (card, check, next card, then
   a closing mixed block). Basis: testing beats restudy at 2 days and 1 week (Roediger & Karpicke 2006,

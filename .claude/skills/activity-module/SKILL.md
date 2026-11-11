@@ -18,14 +18,19 @@ export default {
   itemTypes: ['word', 'unit'],
   minLevel: 1,                    // the item must be at or above this level (APP_DESIGN ladder)
   canUse(item, level, pool) { ... }, // pool = distractor candidates; false if not enough options
-  build(item, pool, rng) { ... },    // -> spec {activity: type, ...}: a plain object, no DOM
+  build(item, pool, rng, opts) { ... }, // -> spec {activity: type, ...}: a plain object, no DOM; null if it cannot
+  again(spec, rng) { ... },          // question activities: the same question for another try (replay + 1)
   render(root, spec, done, ctx) { ... }, // draws the spec; calls done(answers) once. ctx = {bundle, last}
 }
 ```
+- `item` is a card item from `cardItems` (teach_card.js): `detail` plus `shown`, the ids it stands for.
+- The runner queues `again(spec)` at the end of the session when an answer has `correct: false` (at most twice).
+- The info icon on the tested item appears only after the answer (it would give the answer away before).
+- `activities/multiple_choice.js` is the reference for a question activity.
 - `build` is pure (given a seeded `rng`), so the planner builds the whole session up front and a spec can be
   rebuilt from the seed (resume, S7b).
-- `render` uses `h()` and `t()` (frontend-feature skill), draws its own Next / Continue button, shows the info icon
-  on the tested item, and after a wrong answer shows the correct one with its info icon before calling `done`.
+- `render` uses `h()` and `t()` (frontend-feature skill), draws its own Next / Continue button, and after an
+  answer (right or wrong) shows the correct one with the item's info icon before calling `done`.
   The runner may call `render` again for the same spec (a settings change redraws the screen).
 - The same module serves lessons and practice sessions. It never knows which one it is in.
 

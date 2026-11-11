@@ -113,15 +113,18 @@ frontend/
   js/recorder.js         microphone recording
   js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards
   js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen
-  js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog)
+  js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog),
+                         multiple_choice.js (unit and word questions)
   js/bundle.js           get_lesson cache
   js/settings.js  translit.js  tone.js    learner display settings, respelling styles, tone pictures
   js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)
 ```
 
-### A lesson session (S6b; untested until the browser gate passes)
-`#/lesson/L0001` fetches a fresh bundle, calls `start_lesson`, and steps through the plan (S6b: one teach card per
-new item; the intro card first in lesson 1) under a progress bar. Each finished step queues its answers (a teach
+### A lesson session (S6c; the questions are untested until the browser gate passes)
+`#/lesson/L0001` fetches a fresh bundle, calls `start_lesson`, and steps through the plan under a progress bar: a
+teach card per new item (the intro card first in lesson 1), a multiple-choice check after each new unit or word,
+one question per recycled word, then a closing mixed block. A question answered wrong is queued again at the end
+(at most twice, sent with `first_try: false`). Each finished step queues its answers (a teach
 card reports every item on it as `show`) and sends the queue to `record_answers`; a failed batch stays queued and is
 sent again with the next step, and the server skips `answer_id`s it already has. At the end everything unsent is
 flushed, `complete_lesson` runs, and the summary screen shows what it returned. If saving fails the learner gets a
