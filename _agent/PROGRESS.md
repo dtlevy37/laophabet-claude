@@ -25,20 +25,18 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
    - Build the word is v1 (needs `word_units`, S7c); tone drill waits for a tone-rule lesson.
    - Agent defaults the user has not objected to: the check after a card counts as recognition (level 2); audio
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
-   **S6a is done** (gate passed 2026-11-10, 5 of 5; the user closed it).
-   **S6b is done** (the user closed it 2026-11-10 after the browser test).
-   **S6c is built and awaits the user's browser re-test** (2026-11-10). First test found 3 things, all fixed:
-   "null" text under options, "-ao" label (now "ao"), ເຂົ້າ gloss "rice, food" (new migration
-   `20261111003745_gloss_rice_food.sql`: the user must `supabase db reset` or apply it, then reload). Lowercase
-   sound labels kept. If it passes: tick S6c in APP_PLAN, then S7a (sentence activities). Notes:
-   - Provisional S6c decisions are in APP_DESIGN "Decisions log" (2026-11-10, agent, S6c); the user has not yet
-     confirmed them.
-   - User, 2026-11-10: "Read the cards" on a done lesson looked redundant while a session was cards only. Ask
-     again now that a replay asks questions; if still redundant, remove the link and keep the `#/read/` URL.
-   - Use Read/Grep/Glob, not `ls`/`head`/`grep`/`cd` in Bash: those prompt the user for approval.
+   **S6a, S6b, S6c are done** (S6c gate passed 2026-11-10; the done-lesson link is now "Review lesson material",
+   read-only cards, never questions: user).
+   **S7a is built and awaits the user's browser test** (2026-11-10). If it passes: tick S7a, then S7b. Notes:
+   - Provisional S6c decisions are in APP_DESIGN "Decisions log" (2026-11-10, agent, S6c); the user has not
+     objected.
+   - Use Read/Grep/Glob, not `ls`/`head`/`grep`/`cd` in Bash: those prompt the user for approval. Subagents cannot
+     `git diff` the sub-repos (chained `cd` and `git -C` are blocked); offered the user a read-only
+     `repo_diff.ps1` approved script (not yet staged).
    - Code map: `js/session.js` (`planLesson(bundle, rng)`; `advance` queues `again(spec)` for a missed question),
      `js/activities/multiple_choice.js` (forms, `build` returns null when it cannot fill 3 options),
-     `activities/teach_card.js` (`cardItems`, `unitSound`, `openInfo`, `infoButton`).
+     `js/activities/build_sentence.js` (tiles, `again` reshuffles), `activities/teach_card.js` (`cardItems`,
+     `unitSound`, `openInfo`, `infoButton`, `chips`).
    **Content impact on lessons 1–4: none.** Nothing merged is re-ordered or rewritten. Additive only: generated
    `word_units` rows for their words (S7c, by script + a `db_sql.py change` backfill).
    **To stage later, not now:** S7c script group (build_order.py, db_sql.py, lesson_tool.py) in

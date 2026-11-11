@@ -115,6 +115,7 @@ frontend/
   js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen
   js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog),
                          multiple_choice.js (unit and word questions)
+                         build_sentence.js (word tiles in order; sentence items, recall)
   js/bundle.js           get_lesson cache
   js/settings.js  translit.js  tone.js    learner display settings, respelling styles, tone pictures
   js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)

@@ -189,7 +189,7 @@ extra columns.
 - **Length:** about 10–25 first-try answers (lesson 1 about 10, lesson 4 about 25). A progress bar shows steps left.
 - **Completed** (user, 2026-11-10) = the learner reached the end and `complete_lesson` ran. No pass mark. The summary
   shows first-try accuracy (`review_log.first_try`); replays do not count against it but can raise a level.
-- **Lesson list:** `done` (tick, date; tap to play again or "Read the cards"), `open` (lesson 1, the lesson after a
+- **Lesson list:** `done` (tick, date; tap to play again or "Review lesson material", the read-only cards with no questions; user, 2026-11-10), `open` (lesson 1, the lesson after a
   done one, or one already started), `locked`. Playing a done lesson again is a normal session: it counts for the
   streak and levels, and `lesson_progress.completed_at` keeps the first date.
 - **Leaving mid-lesson:** answers already sent stay (levels are kept). From S7b the same device resumes at the same

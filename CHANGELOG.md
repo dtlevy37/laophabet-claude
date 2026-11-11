@@ -4,7 +4,14 @@ Every change to the project is recorded here, newest first. Update it in the sam
 
 ## 2026-11-10
 
+### Added
+- S7a build the sentence (`js/activities/build_sentence.js`): the English is shown and the learner taps the Lao word
+  tiles into order (the sentence's words plus up to 2 pool words). A wrong order shows the right sentence with its word
+  chips. The planner gives a new sentence its card, then build the sentence; a recycled sentence gets build the sentence.
+
 ### Changed
+- S6c passed its browser gate. The done-lesson link "Read the cards" is now "Review lesson material" (still the
+  read-only viewer, no questions).
 - Fill-in-the-blank design agreed with the user (APP_DESIGN "Fill in the blank: one logical choice"): word categories plus
   per-sentence slot `accepts`, so exactly one option is valid. APP_PLAN re-cut: S7a is build the sentence only, S7c
   also carries the category and slot data, and a new S7e (fill in the blank) comes before S7d.

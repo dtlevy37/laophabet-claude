@@ -73,7 +73,7 @@ building stays paused until the user lifts it; the content shape is final after 
       (2026-11-10: also `js/bundle.js` (get_lesson cache). A session shows cards
       for `new` items only; steps go forward only; a running session stays in memory across a settings change or
       a visit to the list, and a page reload starts a new one until S7b.)
-- [ ] **S6c First checks: multiple choice, interleaved, with feedback and mistake replay.** `activities/multiple_choice.js`
+- [x] **S6c First checks: multiple choice, interleaved, with feedback and mistake replay.** (gate passed 2026-11-10; "Read the cards" renamed "Review lesson material", still the read-only viewer) `activities/multiple_choice.js`
       (unit: sound → letter and letter → sound; word: Lao → meaning and meaning → Lao). Planner per APP_DESIGN "Lesson
       session": a check after each new card, a question for each recycled word, a closing mixed block, then missed
       questions again until right once. Wrong answer: the correct option is shown with the item's info icon, then
@@ -85,6 +85,8 @@ building stays paused until the user lifts it; the content shape is final after 
       order, from `sentence_json.words`; no new data. Planner: a new sentence gets its reading card, then build the
       sentence; a recycled sentence also gets build the sentence until S7e. **Done when:** lessons 2–4 ask at least
       one build the sentence each and a wrong order shows the right sentence. **Gate (user):** browser test.
+      (2026-11-10: built, untested: `activities/build_sentence.js`, planner in `session.js`. Tiles = the sentence's
+      words + up to 2 pool words; checked by Lao string, so the two ລາວ are interchangeable; recall, item_type sentence.)
 - [ ] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,
       seed and step in localStorage; specs are rebuilt from the seed); "Leave lesson?" confirm; dry-run mode on
       `#/read/…` that plays the questions without recording; `js/audio.js` `audioButton(detail)` placed on teach
