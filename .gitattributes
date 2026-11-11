@@ -9,7 +9,3 @@
 *.json text eol=lf
 # Windows PowerShell 5.1 tooling stays CRLF.
 *.ps1  text eol=crlf
-
-# Approved scripts are verified by SHA256 of their exact bytes: git must never convert them.
-approved-scripts/** -text
-_agent/proposed-scripts/** -text

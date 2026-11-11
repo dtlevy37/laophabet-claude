@@ -4,6 +4,26 @@ Every change to the project is recorded here, newest first. Update it in the sam
 
 ## 2026-11-11
 
+### Changed
+- **Harness refactor.** Folders: `approved-scripts/` → `scripts/`; `_agent/` split into `docs/` (NOTES, PLAN,
+  DESIGN, SCHEMA, LESSON_RULES, CURRICULUM_PATH, QUESTIONS), `curriculum/` (lesson drafts and merged folders,
+  `vocab.csv`, `common_words.csv`) and `tmp/`. Paths updated in every script, skill, agent and doc; older entries
+  below use the old names. Word-list, letter-map and research material parked in `_shelf/` (see its README).
+- Guardrails reduced to `.claude/hooks/usage-guard.ps1` (weekly stop, 5-hour pause, STOP file; thresholds in
+  `.claude/usage-config.json`). The agent may now edit and run anything inside the project, including the local
+  Supabase. Removed: the command filter, script hash approvals, autorun, `run.ps1`, `setup.ps1`, `GUARDRAILS.md`,
+  the staging folders (`proposed-scripts/`, `proposed-config/`) and `_trash/`.
+- `CLAUDE.md` rewritten (165 → 70 lines). `PLAN.md` holds only open slices. `PROGRESS.md` became `docs/NOTES.md`.
+  `app-slice` skill folded into `CLAUDE.md`; `scholar`, `researcher` and `builder` agents shelved.
+- `db_sql.py` no longer writes a pending-migrations list (the migrations folder is the list while nothing is hosted).
+  `next_lesson.ps1` stops on `tmp/STOP_LESSONS` instead of `_agent/BLOCKED`.
+
+### Added
+- `app/backend/tests/s7c_s7f_test.sql` (the S7c/S7f SQL gate, from the builder's hand-over; untested).
+- Root `README.md` (usage guard, lesson runner, commit command).
+
+## 2026-11-11 (earlier)
+
 ### Added
 - S7c + S7f script group (staged by the `builder` agent, approved by the user): `build_order.py` writes
   `data/word_units.csv` (6,868 rows); `db_sql.py` knows `word_units`, `word_categories`, `sentence_slots` and the

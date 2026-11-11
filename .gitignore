@@ -1,7 +1,7 @@
 .claude/state/
 .claude/settings.local.json
-_agent/tmp/
-_trash/
+tmp/
+curriculum/lessons/logs/
 __pycache__/
 *.pyc
 # the app folders are their own repos (laophabet-frontend, laophabet-backend)

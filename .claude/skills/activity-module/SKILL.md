@@ -5,8 +5,8 @@ description: How quiz activities work in the app and how to add one — the modu
 
 # Activities
 
-Spec: `_agent/APP_DESIGN.md` (ladder, activity table, "Lesson session", practice sessions, stats). Read it before
-changing anything here. Where this skill and APP_DESIGN disagree, APP_DESIGN wins; fix this skill.
+Spec: `docs/DESIGN.md` (ladder, activity table, "Lesson session", practice sessions, stats). Read it before
+changing anything here. Where this skill and DESIGN disagree, DESIGN wins; fix this skill.
 
 ## The interface
 Each activity is one module in `app/frontend/js/activities/<type>.js`, registered in `activities/index.js`.
@@ -16,7 +16,7 @@ export default {
   type: 'multiple_choice',
   direction: 'recognition',       // 'show' | 'recognition' | 'recall' (the three record_answers directions)
   itemTypes: ['word', 'unit'],
-  minLevel: 1,                    // the item must be at or above this level (APP_DESIGN ladder)
+  minLevel: 1,                    // the item must be at or above this level (DESIGN ladder)
   canUse(item, level, pool) { ... }, // pool = distractor candidates; false if not enough options
   build(item, pool, rng, opts) { ... }, // -> spec {activity: type, ...}: a plain object, no DOM; null if it cannot
   again(spec, rng) { ... },          // question activities: the same question for another try (replay + 1)
@@ -58,7 +58,7 @@ resent. Teach cards send `{ item_type, item_id, activity: 'teach_card', directio
 
 ## The session planner (`session.js`)
 Input: the content bundle from `get_lesson` (items, distractor pool, the learner's `levels`). Output: an ordered
-list of specs. The rules are the table in APP_DESIGN "Lesson session":
+list of specs. The rules are the table in DESIGN "Lesson session":
 - **Lesson:** walk the items in order. New unit or word: teach card, then one check. New rule: card only. Recycled
   word: one question, no card. Sentences: reading card, then build the sentence (S7a). Then a closing mixed block,
   then every question missed on the first try again until right once.
@@ -67,7 +67,7 @@ list of specs. The rules are the table in APP_DESIGN "Lesson session":
 - Both end on the summary screen, using only what `complete_lesson` / `complete_practice` returns.
 
 ## Adding an activity: checklist
-1. Check APP_DESIGN's activity table for its data, level and v1/v2 status; add a row if it is new.
+1. Check DESIGN's activity table for its data, level and v1/v2 status; add a row if it is new.
 2. Write the module and register it. Strings in strings.json.
 3. Teach the planner when to use it (direction, item types, level).
 4. Verify with the bundles of lessons 1–4 on paper: can `build` always fill its options at lesson 1? If not,

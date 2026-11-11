@@ -1,4 +1,4 @@
-# Status line: shows context / 5-hour / weekly usage and writes .claude/state/usage.json for the guard hook.
+# Status line: shows context / 5-hour / weekly usage and writes .claude/state/usage.json for hooks/usage-guard.ps1.
 
 $ErrorActionPreference = 'SilentlyContinue'
 $utf8 = New-Object System.Text.UTF8Encoding $false
@@ -18,22 +18,25 @@ $week = $d.rate_limits.seven_day.used_percentage
 $wr   = $d.rate_limits.seven_day.resets_at
 $cost = $d.cost.total_cost_usd
 
-# Keep last known limit values if this update has none (field absent early in a session).
+# Keep the last known limit values if this update has none (the field is absent early in a session).
 $prev = $null
 if (Test-Path $usagePath) { $prev = Get-Content $usagePath -Raw | ConvertFrom-Json }
 if ($null -eq $five -and $prev) { $five = $prev.five; $fr = $prev.fiveReset }
 if ($null -eq $week -and $prev) { $week = $prev.week; $wr = $prev.weekReset }
 
 $now = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
-$snap = [ordered]@{ updated = $now; ctx = $ctx; five = $five; fiveReset = $fr; week = $week; weekReset = $wr; cost = $cost; session = $d.session_id }
+$snap = [ordered]@{ updated = $now; ctx = $ctx; five = $five; fiveReset = $fr; week = $week; weekReset = $wr; cost = $cost }
 $tmp = "$usagePath.sl.tmp"
 [IO.File]::WriteAllText($tmp, ($snap | ConvertTo-Json -Compress), $utf8)
 Move-Item -LiteralPath $tmp -Destination $usagePath -Force
 
-# Thresholds for colors
-$cfgPath = Join-Path $proj '.claude\guard-config.json'
-$cap = 60; $pause = 88
-if (Test-Path $cfgPath) { $c = Get-Content $cfgPath -Raw | ConvertFrom-Json; if ($c.weeklyStopPct) { $cap = $c.weeklyStopPct }; if ($c.fiveHourPausePct) { $pause = $c.fiveHourPausePct } }
+$cap = 75; $pause = 95
+$cfgPath = Join-Path $proj '.claude\usage-config.json'
+if (Test-Path $cfgPath) {
+    $c = Get-Content $cfgPath -Raw | ConvertFrom-Json
+    if ($c.weeklyStopPct) { $cap = $c.weeklyStopPct }
+    if ($c.fiveHourPausePct) { $pause = $c.fiveHourPausePct }
+}
 
 $e = [char]27
 function Col($v, $warn, $bad) {
@@ -47,14 +50,12 @@ function T($epoch) { if (-not $epoch) { return '' }; return [DateTimeOffset]::Fr
 $parts = @()
 $parts += "[$($d.model.display_name)]"
 $parts += "ctx $(Col $ctx 60 80)"
-$parts += "5h $(Col $five 70 $pause)" + $(if ($fr) { " ($(T $fr))" } else { '' })
+$parts += "5h $(Col $five ($pause - 15) $pause)/$pause" + $(if ($fr) { " ($(T $fr))" } else { '' })
 $parts += "wk $(Col $week ($cap - 10) $cap)/$cap"
 if ($cost) { $parts += ('${0:N2}' -f [double]$cost) }
 
-if (Test-Path (Join-Path $stateDir 'STOP'))       { $parts += "$e[41m STOP $e[0m" }
-if (Test-Path (Join-Path $stateDir 'WEEKLY_CAP')) { $parts += "$e[41m WEEKLY CAP $e[0m" }
+if (Test-Path (Join-Path $stateDir 'STOP')) { $parts += "$e[41m STOP $e[0m" }
 $pp = Join-Path $stateDir 'paused.json'
 if (Test-Path $pp) { $pz = Get-Content $pp -Raw | ConvertFrom-Json; $parts += "$e[43m PAUSED until $(T $pz.until) $e[0m" }
-if (Test-Path (Join-Path $stateDir 'AUTORUN'))    { $parts += "$e[36mAUTORUN$e[0m" }
 
 Write-Output ($parts -join ' | ')

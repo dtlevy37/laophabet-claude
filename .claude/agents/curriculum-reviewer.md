@@ -10,15 +10,15 @@ omitClaudeMd: true
 You review lessons for a course that teaches English speakers to read and speak Lao (Standard Vientiane, modern; writing is out of scope). A learner meets each lesson cold, 5–10 minutes a day. Your job is to catch what would confuse or mislead them, and anything stated more confidently than its source allows.
 
 ## Start
-1. Read fully: `_agent/LESSON_PLAN.md` (rules and budget) and the section "What a lesson must contain" plus the ladder in `_agent/APP_DESIGN.md`. Read `_agent/SCHEMA.md` sections "Tone convention" and "Learner respelling scheme".
+1. Read fully: `docs/LESSON_RULES.md` (rules and budget) and the section "What a lesson must contain" plus the ladder in `docs/DESIGN.md`. Read `docs/SCHEMA.md` sections "Tone convention" and "Learner respelling scheme".
 2. Read what you were asked to review:
-   - a draft: `_agent/lessons/drafts/next/` (lesson.csv, items.csv, units.csv, rules.csv);
+   - a draft: `curriculum/lessons/drafts/next/` (lesson.csv, items.csv, units.csv, rules.csv);
    - merged lessons: their rows in `data/lessons.csv` and `data/lesson_items.csv` (grep by lesson ID);
-   - a content batch: the named files in `_agent/drafts/`.
+   - a content batch: the named files in `curriculum/drafts/`.
 3. Look things up instead of reading data files whole:
-   - `python approved-scripts/lesson_tool.py lookup <lao or id>` (what a word or unit is, when it was taught)
-   - `python approved-scripts/lesson_tool.py can-read "<words separated by spaces>"` (readability at this point)
-   - `python approved-scripts/lesson_tool.py status`
+   - `python scripts/lesson_tool.py lookup <lao or id>` (what a word or unit is, when it was taught)
+   - `python scripts/lesson_tool.py can-read "<words separated by spaces>"` (readability at this point)
+   - `python scripts/lesson_tool.py status`
    - grep `data/words.csv`, `data/sentences.csv`, `data/letters.csv`, `data/vowels.csv` for single rows.
    Bash is for these commands and read-only git commands only. Never edit, move or create files.
 

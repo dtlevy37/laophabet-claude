@@ -1,101 +1,30 @@
 {
-  "env": {
-    "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "1",
-    "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "2",
-    "CLAUDE_CODE_FORK_SUBAGENT": "0",
-    "CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS": "1"
-  },
   "permissions": {
+    "defaultMode": "acceptEdits",
     "blockReadsOutsideWorkingDirectories": true,
-    "disableBypassPermissionsMode": "disable",
     "allow": [
-      "Edit(/**)",
+      "Read",
+      "Edit",
+      "Write",
+      "Bash",
+      "PowerShell",
       "WebSearch",
-      "Agent(researcher)",
-      "Agent(scholar)",
-      "Agent(drafter)",
-      "Agent(code-reviewer)",
-      "Agent(curriculum-reviewer)",
-      "Agent(builder)",
-      "Bash(awk *)",
-      "Bash(sed *)",
-      "Bash(sort *)",
-      "Bash(uniq *)",
-      "Bash(cut *)",
-      "Bash(tr *)",
-      "Bash(jq *)",
-      "Bash(mkdir *)",
-      "Bash(mv *)",
-      "Bash(cp *)",
-      "Bash(touch *)",
-      "Bash(tee *)",
-      "Bash(date)",
-      "Bash(grep *)", "Bash(egrep *)", "Bash(rg *)", "Bash(cat *)", "Bash(head *)",
-      "Bash(tail *)", "Bash(wc *)", "Bash(ls *)", "Bash(ls)", "Bash(find *)", "Bash(diff *)",
-      "Bash(git init)",
-      "Bash(git status *)",
-      "Bash(git diff *)",
-      "Bash(git log *)",
-      "Bash(git show *)",
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(python approved-scripts/*)",
-      "Bash(py approved-scripts/*)",
-      "Bash(node approved-scripts/*)",
-      "Bash(bash approved-scripts/*)",
-      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/*)",
-      "PowerShell(Get-ChildItem *)",
-      "PowerShell(Get-Content *)",
-      "PowerShell(Select-String *)",
-      "PowerShell(Measure-Object *)",
-      "PowerShell(Sort-Object *)",
-      "PowerShell(Test-Path *)",
-      "PowerShell(New-Item *)",
-      "PowerShell(Move-Item *)",
-      "PowerShell(Copy-Item *)",
-      "PowerShell(python approved-scripts/*)",
-      "PowerShell(node approved-scripts/*)",
-      "PowerShell(powershell -NoProfile -ExecutionPolicy Bypass -File approved-scripts/*)"
+      "WebFetch",
+      "Agent"
     ],
     "deny": [
-      "Edit(/.claude/hooks/**)",
-      "Edit(/.claude/state/**)",
-      "Edit(/.claude/tools/**)",
-      "Edit(/.claude/agents/**)",
-      "Edit(/.claude/settings.json)",
-      "Edit(/.claude/settings.local.json)",
-      "Edit(/.claude/guard-config.json)",
-      "Edit(/.claude/approved-scripts.json)",
-      "Edit(/.claude/statusline.ps1)",
-      "Edit(/.git/**)",
-      "Edit(/approved-scripts/**)",
-      "Edit(/CLAUDE.md)",
-      "Agent(general-purpose)",
-      "Agent(claude)",
-      "Agent(fork)",
-      "Agent(Explore)",
-      "Agent(Plan)",
-      "Bash(rm *)",
-      "Bash(find * -exec *)", "Bash(find * -execdir *)", "Bash(find * -delete*)",
-      "Bash(rmdir *)",
-      "Bash(curl *)",
-      "Bash(wget *)",
-      "Bash(pip *)",
-      "Bash(npm *)",
-      "Bash(npx *)",
-      "Bash(winget *)",
-      "Bash(git push *)",
-      "Bash(git remote *)",
-      "Bash(git config *)",
-      "Bash(git clean *)",
-      "PowerShell(Remove-Item *)",
-      "PowerShell(Invoke-WebRequest *)",
-      "PowerShell(Invoke-RestMethod *)",
-      "PowerShell(Start-BitsTransfer *)",
-      "PowerShell(Install-Module *)",
-      "PowerShell(Install-Package *)",
-      "PowerShell(Invoke-Expression *)",
-      "PowerShell(Start-Process *)"
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push * --force*)",
+      "Bash(git push * -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*)",
+      "PowerShell(git push --force*)",
+      "PowerShell(git push -f*)",
+      "PowerShell(git push * --force*)",
+      "PowerShell(git push * -f*)",
+      "PowerShell(git reset --hard*)",
+      "PowerShell(git clean*)"
     ]
   },
   "statusLine": {
@@ -110,59 +39,9 @@
           {
             "type": "command",
             "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/guard.ps1"],
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/usage-guard.ps1"],
             "timeout": 18600,
-            "onFailure": "block",
-            "statusMessage": "Guardrail check"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/events.ps1"],
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/events.ps1"],
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "StopFailure": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/events.ps1"],
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "idle_prompt|permission_prompt|agent_needs_input|quota_auto_resume_fired|quota_auto_resume_stale",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/events.ps1"],
-            "timeout": 30
+            "statusMessage": "Usage check"
           }
         ]
       }

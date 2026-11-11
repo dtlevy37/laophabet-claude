@@ -10,21 +10,20 @@ description: Conventions and checklist for hand-written Supabase schema and RPC 
   `app/backend/supabase/migrations/` for `create table public.<name>` or `function public.<name>`.
 - **Content rows** (words, sentences, lessons, units, rules ...) are never inserted or updated by hand. They come only
   from `lesson_tool.py merge` or `db_sql.py lesson|change|refresh`. If a schema change adds a content column, the
-  `TABLES` spec in `db_sql.py` must change too (script approval), in the same approval group.
-- Never edit a migration that may be applied (anything listed in PENDING_MIGRATIONS.md as ticked, or older than the
-  latest applied). Write a new one. Unapplied files written in this same slice may be edited.
+  `TABLES` spec in `db_sql.py` must change too, in the same slice.
+- Never edit a migration that has been applied to a hosted DB: write a new one. While nothing is hosted
+  (`docs/NOTES.md` says so), prefer a new file anyway; files written in this same slice may be edited.
 
 ## File
 - Name: `app/backend/supabase/migrations/<YYYYMMDDhhmmss>_<snake_name>.sql`, with a stamp later than the newest file
   in the folder (check with Glob; content migrations use real UTC time, so yours must sort after them).
 - Start with a 2–4 line comment: which slice, what it adds, how the client uses it.
-- Add a line to `_agent/PENDING_MIGRATIONS.md`: `- [ ] <file>: <what> (<slice>; written by the agent, not db_sql)`.
 
 ## Tables (learner and app data)
 - `user_id uuid not null references auth.users(id) on delete cascade` for per-user rows; primary keys that make
   retries safe (e.g. `(user_id, item_type, item_id)`), and `on conflict` in the RPC that writes them.
 - `timestamptz` for times, `default now()`. Check constraints for enums (`check (level between 0 and 4)`), matching
-  the constants in `lesson_tool.py` / APP_DESIGN where they exist.
+  the constants in `lesson_tool.py` / DESIGN where they exist.
 - `alter table ... enable row level security;` always. Own-row select policy where the client reads directly:
   `using (user_id = auth.uid())`. Prefer no insert/update/delete policies: writes go through RPCs.
 - Append-only logs (`review_log`): no update or delete path at all.
@@ -61,8 +60,10 @@ grant execute on function public.<name>(<arg types>) to authenticated;
 - Dates for streaks: the learner's local day. Take it as an argument validated against `now()` (within ±14 h of UTC)
   or store the time zone in `profiles`; never use the server's `current_date`.
 
-## Test block for the hand-over
-Write SQL the user can paste into the SQL editor or `psql` after `supabase db reset`. Act as a user with:
+## Test
+Save a short test as `app/backend/tests/<slice>_test.sql` with the expected result beside each query. If the local
+Supabase is running, apply the migration (`supabase migration up` from `app/backend`) and run the test yourself;
+otherwise hand it to the owner to paste into the SQL editor. Act as a user with:
 ```sql
 select set_config('request.jwt.claims', json_build_object('sub', '<uuid>', 'role', 'authenticated')::text, true);
 set local role authenticated;

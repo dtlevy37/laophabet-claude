@@ -28,7 +28,7 @@ Plain HTML + CSS + ES modules. No framework, npm or build step; `@supabase/supab
   unverified: note it in the changelog. Use `{n}`-style placeholders filled in code, not sentence fragments joined
   together (word order differs between languages).
 - Lao content (words, sentences) comes from the RPC bundle, never from strings.json. Lao script is the main text;
-  respelling and IPA are secondary and can be toggled (APP_DESIGN "Presentation"). Sentences show `lao_spaced`.
+  respelling and IPA are secondary and can be toggled (DESIGN "Presentation"). Sentences show `lao_spaced`.
 - Every item shown in an activity or card gets the info icon that opens its teach card.
 
 ## Data
@@ -46,8 +46,8 @@ Plain HTML + CSS + ES modules. No framework, npm or build step; `@supabase/supab
   line height than Latin text (stacked vowels and tone marks).
 - Colour is never the only signal (correct/wrong also gets an icon or text).
 
-## Before the gate
-- If approved, run `node approved-scripts/check_frontend.js` (syntax of every module, `t()` keys present in
+## Before handing over
+- Run `node scripts/check_frontend.js` (syntax of every module, `t()` keys present in
   strings.json).
-- In the hand-over, list the routes to open and what each should show, including one error case (for example, stop
+- For the owner's browser check, list the routes to open and what each should show, including one error case (for example, stop
   the backend and reload).

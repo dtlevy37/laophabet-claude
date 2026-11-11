@@ -1,12 +1,12 @@
 # Laophabet app
 
 One app for two kinds of user, chosen at sign-up and stored in `profiles.role`:
-- **Learners** (English UI): lessons, practice and reviews. Today only a placeholder home; see `_agent/APP_PLAN.md`.
+- **Learners** (English UI): lessons, practice and reviews. Today only a placeholder home; see `docs/PLAN.md`.
 - **Native speakers** (Lao UI): are handed one Lao sentence at a time and report errors, naturalness, casual/neutral/formal, and an optional voice recording.
 
 ```
 app/
-  backend/    Supabase: migrations, generated seeds (generator: approved-scripts/db_sql.py)
+  backend/    Supabase: migrations, generated seeds (generator: scripts/db_sql.py)
   frontend/   plain HTML + CSS + ES modules (Netlify)
 ```
 
@@ -26,13 +26,13 @@ app/
 | `supabase/migrations/20261111010000_list_lessons_covers.sql` | S7a extra: `list_lessons` adds `covers` (a done lesson's new items). |
 | `supabase/migrations/20261111020000_activity_data_bonus.sql` | S7c + S7f: tables `word_units`, `word_categories`, `sentence_slots` (locked down like the other content tables); `lesson_items.role` allows `bonus`; internal helper `word_cats(word_id)` (category union over the word's spelling, verb safety rule; not callable by app users); replaces `get_lesson` and `list_lessons` (additive changes, below). |
 | `tests/s6a_played_lesson_test.sql` | Paste-in SQL check for S6a (one throwaway user; prints check / got / expected). |
-| `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `approved-scripts/db_sql.py` (never by hand). Listed in `_agent/PENDING_MIGRATIONS.md` until you apply them. |
+| `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `scripts/db_sql.py` (never by hand). |
 | `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
 
 ### The DB is the source of truth for content (Phase 2)
 - Every content change is a migration file you review and apply (`supabase db push`). Scripts never connect to the DB. The hosted project is the master; a local Supabase (`supabase db reset`) is hosted + pending migrations, for testing them.
 - `data/*.csv` is the agent's working copy (hosted + pending migrations), so the repo can always rebuild the content.
-- `python approved-scripts/db_sql.py` modes (run from the project root):
+- `python scripts/db_sql.py` modes (run from the project root):
   - `check`: the CSVs match the DB spec (run as step 4 of `pipeline.sh`).
   - `seed`: initial import, `on conflict do nothing`, so re-running never overwrites a row.
   - `lesson L0001`: everything one lesson uses, upserted. `lesson_tool.py merge` writes it automatically.
@@ -42,7 +42,7 @@ app/
 - On `supabase db reset` migrations run before seeds, so lesson migrations are self-contained (they upsert every row they reference) and the seed's `do nothing` leaves them alone.
 
 ### `get_lesson(lesson_id)` (signed-in users)
-Returns `{lesson, items, distractors}` or null. `items` are in teaching order, each `{position, item_type, item_id, role, detail}`; `detail` is a unit (teach text + letter/vowel IPA, respelling, pron tip, class), rule, word (gloss, respelling, IPA, syllables, tones, pron tip, classifier) or sentence (lao, lao_spaced, english, words with positions). `distractors` = units and words introduced up to lesson `max(order, 5)` (APP_DESIGN). The client never reads the content tables.
+Returns `{lesson, items, distractors}` or null. `items` are in teaching order, each `{position, item_type, item_id, role, detail}`; `detail` is a unit (teach text + letter/vowel IPA, respelling, pron tip, class), rule, word (gloss, respelling, IPA, syllables, tones, pron tip, classifier) or sentence (lao, lao_spaced, english, words with positions). `distractors` = units and words introduced up to lesson `max(order, 5)` (DESIGN). The client never reads the content tables.
 
 Since S6a the bundle is `{lesson, items, distractors, levels}`. Pool units carry their sound as `letter {ipa, respelling}` or `vowel {ipa, respelling}` (the same shape as an item's unit detail, so one function labels both). `levels` is `[{item_type, item_id, level}]` for the caller over the lesson's items and the pool; an item that is not listed is at level 0.
 
@@ -57,7 +57,7 @@ Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state
 ### Learner progress (S5)
 - `start_lesson(lesson_id, local_day)` → `{session_id}`. `local_day` is the learner's calendar date (within 14 h of UTC). Lesson 1 is always open; a later lesson needs the previous one completed (or this learner started it before).
 - `record_answers(session_id, answers)` → `{saved, levels}`. Up to 200 answers per call, each `{answer_id (client uuid), item_type, item_id, activity, direction show|recognition|recall, correct, latency_ms, lao_word_ids}`. Teach cards are sent as `show` with no `correct`. Replayed `answer_id`s are skipped, so the client can resend a batch after a dropped connection. Levels never go down: show → 1, recognition right → 2, recall right → 3 (one step at a time from below). Optional `first_try` (default true): send `false` when a missed question is asked again. Such answers still count for levels and words read, but not for the summary's `answers`, `correct` and `accuracy`. It is trusted client input and affects only the learner's own accuracy.
-- `complete_lesson(session_id)` → summary `{answers, correct, accuracy, words_read, new_items, level_ups, streak, ...}`, computed from `review_log` (APP_DESIGN "Session summary"). Calling it again returns the same summary.
+- `complete_lesson(session_id)` → summary `{answers, correct, accuracy, words_read, new_items, level_ups, streak, ...}`, computed from `review_log` (DESIGN "Session summary"). Calling it again returns the same summary.
 - Streak = consecutive `local_day`s with a completed session, ending at that session's day.
 
 ### How work is handed out
@@ -77,7 +77,7 @@ for f in supabase/seeds/*.sql; do psql "$DB_URL" -f "$f"; done
 ```
 Local dev: `supabase start && supabase db reset` applies migrations and seeds.
 
-Seeds are for the first import only (`python approved-scripts/db_sql.py seed`; re-applying never overwrites rows). Later pool changes go through `db_sql.py refresh` or `change` migrations. The script aborts without writing if the CSV headers or keys no longer match its `TABLES` spec; update `TABLES` and add a migration together when you add a column.
+Seeds are for the first import only (`python scripts/db_sql.py seed`; re-applying never overwrites rows). Later pool changes go through `db_sql.py refresh` or `change` migrations. The script aborts without writing if the CSV headers or keys no longer match its `TABLES` spec; update `TABLES` and add a migration together when you add a column.
 
 ### Auth settings (Supabase dashboard)
 - Email confirmations are on in `config.toml`; for hosted projects set it under Authentication > Providers > Email.
