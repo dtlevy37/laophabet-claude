@@ -105,8 +105,8 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 ## Working preferences (user, 2026-11-10)
 - **Keep usage down** (S6c took about 20% of a 5-hour window, which the user found far too high): do not re-read
   everything each session. Work from the code map here and grep; read in full only modules being changed
-  substantially. The `app-slice` skill is updated; the matching CLAUDE.md edit ("Reading depth", when to run
-  `code-reviewer`) is staged in `_agent/proposed-config/CLAUDE.md` for the user to copy over. The main session's
+  substantially. The `app-slice` skill and CLAUDE.md ("Reading depth", when to run `code-reviewer`) say so (the user
+  installed the CLAUDE.md edit 2026-11-10). The main session's
   model is the user's choice (`/model`); the agent cannot switch it.
 - **Keep SQL gate checks short:** the user found the 11-check S5 test overkill. For a slice gate, hand over a
   handful of queries that confirm the Done-when line, not an exhaustive suite.
