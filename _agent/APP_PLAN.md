@@ -87,7 +87,7 @@ building stays paused until the user lifts it; the content shape is final after 
       one build the sentence each and a wrong order shows the right sentence. **Gate (user):** browser test.
       (2026-11-10: built, untested: `activities/build_sentence.js`, planner in `session.js`. Tiles = the sentence's
       words + up to 2 pool words; checked by Lao string, so the two ລາວ are interchangeable; recall, item_type sentence.
-      Desktop browser test passed (user); phone test still to do. Added at the user's request: drag tiles into, within
+      Desktop browser test passed (user, also for drag and covers); phone test still to do. Added at the user's request: drag tiles into, within
       and out of the line (tap still works); the lesson list shows what each done lesson covers
       (`20261111010000_list_lessons_covers.sql`).)
 - [ ] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,

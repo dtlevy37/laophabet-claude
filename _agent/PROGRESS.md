@@ -27,9 +27,10 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
    **S6a, S6b, S6c are done** (S6c gate passed 2026-11-10; the done-lesson link is now "Review lesson material",
    read-only cards, never questions: user).
-   **S7a: desktop browser test passed (user, 2026-11-10); phone test not done yet** (user: soon, not tonight). Added
-   after the test at the user's request, untested: drag tiles, and `covers` on the lesson list (new migration
-   `20261111010000_list_lessons_covers.sql`, needs `supabase db reset`). When the phone test passes: tick S7a, then S7b.
+   **S7a: desktop browser test passed (user, 2026-11-10), including drag tiles and `covers` on the lesson list;
+   phone test not done yet** (user: soon). Phone: `config.js` SUPABASE_URL must use the PC's LAN address
+   (192.168.1.189 on 2026-11-10), the frontend server must bind 0.0.0.0, firewall may need the ports. When the
+   phone test passes: tick S7a, then the mobile layout proposal, then S7b.
    **Mobile layout (user, 2026-11-10, important, next after the phone test):** the lesson screen has no fixed area;
    a step with more text grows the page, so on a phone the Continue/Check button and the tiles move about and the page
    scrolls. Wanted: a stable lesson frame on mobile (progress bar on top, the activity in a fixed-height middle that
