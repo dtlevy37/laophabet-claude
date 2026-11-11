@@ -12,6 +12,8 @@ Every change to the project is recorded here, newest first. Update it in the sam
 ### Changed
 - S6c passed its browser gate. The done-lesson link "Read the cards" is now "Review lesson material" (still the
   read-only viewer, no questions).
+- Seed files regenerated from `data/` (`db_sql.py seed`); they still had ເຂົ້າ as "rice" (harmless: seeds never
+  overwrite, but they now match).
 - Fill-in-the-blank design agreed with the user (APP_DESIGN "Fill in the blank: one logical choice"): word categories plus
   per-sentence slot `accepts`, so exactly one option is valid. APP_PLAN re-cut: S7a is build the sentence only, S7c
   also carries the category and slot data, and a new S7e (fill in the blank) comes before S7d.
