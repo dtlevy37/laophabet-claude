@@ -69,23 +69,24 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - Still wanted later, not placed yet: ແມ່ນ "yes; to be" (W000004), ໄປ "go", and ເຂົາ "they" / ເກົ້າ "nine" once ເຂົ້າ
   is solid (decision 15).
 
-### Opus subagent (user asked 2026-11-10; blocked by the guard)
-The user wants the S7c + S7f script group and the lesson 4 rebuild done by an Opus subagent. The guard refused a
-general subagent, and none of the five allowed agents can write scripts. Staged for the user: a `builder` agent
-(`_agent/proposed-config/.claude/agents/builder.md`) and install steps (`_agent/proposed-config/BUILDER_AGENT_SETUP.md`).
-The task brief is ready: `_agent/tmp/S7C_S7F_BRIEF.md`. **Waiting for the user:** install the builder agent, or
-say the main session should do the work. Order agreed (decision 27): scripts → approval → rebuild lesson 4 →
-lessons 5–11. Budget is a guideline (decision 26).
+### S7c + S7f script group (2026-11-11): approved and run
+Built by the `builder` agent, approved by the user, reviewed (no blockers). Hand-over with the SQL test block:
+`_agent/proposed-scripts/S7C_S7F_HANDOVER.md`. Done: tag files for lessons 1–4 (`data/categories.csv`,
+`word_categories.csv`, `sentence_slots.csv`), pipeline clean, `lesson_tool.py check --merged` 0 errors, backfill
+migration `20261111144707_s7c_backfill.sql`, seeds 10–12. config.toml seed lines added by the user.
+- **User still to do:** install the updated `draft-content` skill
+  (`cp _agent/proposed-config/.claude/skills/draft-content/SKILL.md .claude/skills/draft-content/SKILL.md`; the
+  agent's copy was refused as self-modification); `supabase db reset` + the hand-over's SQL tests (after the
+  lesson 4 rebuild, so ຂາ shows as bonus).
+- **Next (agent):** rebuild lesson 4 (ຂາ W000389 → `bonus`; ຂາວ W000538 and S000002876 leave the lesson). Then
+  the runner can build lessons 5–11. `db_sql.py` syntax: options before the mode (`--name x change <ids>`).
+- Not built: frontend bonus label (S7f frontend), `badge_bonus` string. Reviewer minors left: `word_cats` scans
+  per pool word (fine at this size); "lesson lock" comment in the migration is loose (db_sql handles it).
+- Order agreed (decision 27): scripts → approval → rebuild lesson 4 → lessons 5–11. Budget is a guideline (26).
 
-### Before the unattended run (nothing here is built or staged yet)
-1. **S7f script group** (APP_PLAN): the `bonus` role in `lesson_tool.py` and `db_sql.py`, the DB check on
-   `lesson_items.role` (today `new|recycle|example`), and an updated `next_lesson_prompt.md` that reads
-   CURRICULUM_PATH.md and uses its budget flags (the prompt runs `check` with no flags today, so lessons 6, 8
-   and 11 would fail the default budget). Stage in `_agent/proposed-scripts/` for one approval.
+### Before the unattended run
+1. S7c + S7f script group: done (above).
 2. **Rebuild lesson 4** (withdraw and re-merge; steps under "How a lesson gets built").
-3. **Decide with the user: run before or after S7c?** A lesson merged before S7c lacks word units, categories
-   and sentence slots; S7c's backfill would then cover lessons 1–11, not 1–4 (categories and slots are
-   hand-tagged). Agent's recommendation: stage S7c and S7f as one script approval, then run. Not decided.
 4. Drafting needs: a words.csv row for ແນ່ as a softener (the pool has ແດ່ W000308; the only ແນ່ listing is
    "sure; certain" in the common list); ສາວ, ກໍ, ຈຳ have no rows (not needed by the path).
 5. Conversations (S7g) are not a blocker: lessons 8 and 10 carry their lines as ordinary sentences in order.

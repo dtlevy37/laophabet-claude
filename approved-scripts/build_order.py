@@ -11,7 +11,7 @@ Hand-maintained inputs:  words.csv (lao, syllables, intro_order, ...), sentences
 Generated (overwritten):
   words.new_letter_ids / new_vowel_ids        letters.intro_word_id / vowels.intro_word_id
   sentences.target_word_id, ipa, respelling (only where empty; joined from the words)
-  sentence_words.csv   learning_order.csv
+  sentence_words.csv   learning_order.csv   word_units.csv
 Each syllable is parsed into initial consonant (or ຫ-cluster / kw-cluster), vowel pattern
 (matched against vowels.csv), final consonant and tone mark. learning_order interleaves:
 new letters/vowels of a word -> the word -> templates whose required words are known ->
@@ -24,6 +24,12 @@ Revision 4: ວ after ໄ/ໃ belongs to the initial (ໄຫວ້); loanword �
 sign (ຄລີນິກ) are parsed. Same rules as tone_derive rev 5.
 Revision 5: also writes _agent/vocab.csv (word_id, lao, pos, gloss_en, topic,
 classifier_word_id, sentence_uses): a compact vocabulary for drafters, not app data.
+Revision 6 (2026-11-10, APP_PLAN S7c): also writes data/word_units.csv (word_id, syl_index,
+position, unit_id, source, confidence, notes): every word of words.csv as role-units in spoken
+order within each syllable (initial, cluster, vowel, final, tone mark, symbol), confidence
+derived. Unit ids are those of lesson_tool.py (role_units below is shared with it): initial =
+letter_id (C01), cluster = letter_id + "c", final = letter_id + "f" (C13f), vowel = vowel_id,
+tone mark T1..T4, symbol S1/S3. A word whose spelling does not parse gets no rows (WARN).
 """
 import argparse
 import csv
@@ -149,6 +155,45 @@ def parse_syllable(syl, letter_id, vowel_id, vowel_form, problems, ctx):
     if has_repeat:
         items.append(("letter", letter_id.get(REPEAT, "S1")))
     return items
+
+
+def role_units(items):
+    """Role-unit ids of one parsed syllable (parse_syllable output), in the same order.
+
+    Letters before the vowel are the initial (first) and a cluster letter (second, + "c"); letters after
+    it are the final (+ "f"); tone marks (T*) and symbols (S*) keep their id. Shared with lesson_tool.py.
+    """
+    out, seen_vowel, n_before = [], False, 0
+    for kind, uid in items:
+        if kind == "vowel":
+            seen_vowel = True
+            out.append(uid)
+        elif uid.startswith(("T", "S")):
+            out.append(uid)
+        elif not seen_vowel:
+            out.append(uid if n_before == 0 else uid + "c")
+            n_before += 1
+        else:
+            out.append(uid + "f")
+    return out
+
+
+def word_unit_rows(words, letter_id, vowel_id, vowel_form):
+    """data/word_units.csv rows for every word, and the ids of words skipped because a syllable did not parse."""
+    rows, skipped = [], []
+    for w in words:
+        syls = [x for x in (w.get("syllables") or "").split("|") if x.strip()]
+        probs, mine = [], []
+        for k, syl in enumerate(syls, 1):
+            units = role_units(parse_syllable(syl, letter_id, vowel_id, vowel_form, probs, f"{w['word_id']} syl {k}"))
+            mine += [{"word_id": w["word_id"], "syl_index": k, "position": n, "unit_id": u,
+                      "source": "SRC-AGENT:parse_syllable", "confidence": "derived", "notes": ""}
+                     for n, u in enumerate(units, 1)]
+        if probs or not syls:
+            skipped.append(w["word_id"])
+        else:
+            rows += mine
+    return rows, skipped
 
 
 def main():
@@ -296,6 +341,12 @@ def main():
         if t["template_id"] not in done_t:
             warnings.append(f"{t['template_id']} never placed (requires_word_ids missing or not introduced)")
 
+    # Word units (S7c): every word, not only ordered ones; parse problems of ordered words are ERRORs above.
+    wu_rows, wu_skipped = word_unit_rows(words, letter_id, vowel_id, vowel_form)
+    if wu_skipped:
+        warnings.append(f"{len(wu_skipped)} word(s) get no word_units rows (spelling does not parse): "
+                        + " ".join(wu_skipped[:10]) + (" ..." if len(wu_skipped) > 10 else ""))
+
     # Report
     print("== Reading load per word ==" + ("" if a.verbose else " (only words with new symbols; --verbose for all)"))
     heavy = 0
@@ -338,6 +389,7 @@ def main():
         lo = [{"step": n, "item_type": k, "item_id": i, "why": why, "source": "SRC-AGENT:sequencing",
                "confidence": "derived", "notes": ""} for n, (k, i, why) in enumerate(steps, 1)]
         write(p("learning_order"), ["step", "item_type", "item_id", "why", "source", "confidence", "notes"], lo)
+        write(p("word_units"), ["word_id", "syl_index", "position", "unit_id", "source", "confidence", "notes"], wu_rows)
         vcount = {}
         for r in sw_rows:
             vcount[r["word_id"]] = vcount.get(r["word_id"], 0) + 1
@@ -347,7 +399,8 @@ def main():
                  for w in words]
         write(os.path.join(root, "_agent", "vocab.csv"),
               ["word_id", "lao", "pos", "gloss_en", "topic", "classifier_word_id", "sentence_uses"], vocab)
-        print("written: words, letters, vowels, sentences, sentence_words, learning_order, _agent/vocab.csv")
+        print(f"written: words, letters, vowels, sentences, sentence_words, learning_order, "
+              f"word_units ({len(wu_rows)} rows), _agent/vocab.csv")
     sys.exit(1 if problems else 0)
 
 

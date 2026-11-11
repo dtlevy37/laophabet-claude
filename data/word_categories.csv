@@ -1,0 +1,9 @@
+word_id,categories,source,confidence,notes
+W000018,action|consume,SRC-AGENT,unverified,ກິນ eat
+W000019,food,SRC-AGENT,unverified,ເຂົ້າ rice
+W001425,action|motion,SRC-AGENT,unverified,ເຂົ້າ enter
+W000031,person,SRC-AGENT,unverified,ລາວ he/she
+W000058,place|person,SRC-AGENT,unverified,ລາວ Laos/Lao
+W000011,drink,SRC-AGENT,unverified,ນ້ຳ water
+W000389,body,SRC-AGENT,unverified,ຂາ leg
+W000538,quality,SRC-AGENT,unverified,ຂາວ white

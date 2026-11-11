@@ -1,0 +1,9 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+S000002870,1,action|person|animal|drink,,SRC-AGENT,unverified,__ ເຂົ້າ: ລາວເຂົ້າ he enters; ນ້ຳເຂົ້າ rice water possible
+S000002870,2,food|drink,,SRC-AGENT,unverified,ກິນ __: food or drink
+S000002872,1,person|animal|motion,,SRC-AGENT,unverified,__ ກິນເຂົ້າ: who eats; ເຂົ້າກິນເຂົ້າ go in and eat may read as a serial verb
+S000002872,3,food|drink,,SRC-AGENT,unverified,ລາວກິນ __: food or drink
+S000002873,2,food|drink,,SRC-AGENT,unverified,ກິນ __: food or drink
+S000002874,1,person|animal|motion,,SRC-AGENT,unverified,__ ກິນນ້ຳ: who drinks; ເຂົ້າກິນນ້ຳ go in and drink may read as a serial verb
+S000002874,3,food|drink,,SRC-AGENT,unverified,ລາວກິນ __: food or drink
+S000002876,2,quality|action,,SRC-AGENT,unverified,ລາວ __: ລາວກິນ he eats and ລາວເຂົ້າ he enters also fit

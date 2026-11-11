@@ -2,6 +2,23 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-11
+
+### Added
+- S7c + S7f script group (staged by the `builder` agent, approved by the user): `build_order.py` writes
+  `data/word_units.csv` (6,868 rows); `db_sql.py` knows `word_units`, `word_categories`, `sentence_slots` and the
+  `bonus` role; `lesson_tool.py` has the `bonus` role, the fill-in-the-blank option rule in `check` (and
+  `check --merged`), and treats the budget as a warning; `validate_data.py` checks the tag files;
+  `next_lesson_prompt.md` follows `_agent/CURRICULUM_PATH.md`. Updated `drafter` agent and `draft-content` skill.
+- Migration `20261111020000_activity_data_bonus.sql` (new tables, `bonus` role, `get_lesson`/`list_lessons`
+  additions; reviewed, no blockers) and content migration `20261111144707_s7c_backfill.sql` (tags for lessons 1–4).
+  Seeds 10–12 regenerated. Both migrations untested until `supabase db reset`.
+- `data/categories.csv` (16 categories incl. verb classes `consume`, `motion`), `data/word_categories.csv` (the 8
+  words of lessons 1–4) and `data/sentence_slots.csv` (8 slots), all agent-tagged and `unverified`.
+
+### Changed
+- `app/README.md` and `_agent/SCHEMA.md` document the new tables, RPC fields and the `bonus` role.
+
 ## 2026-11-10
 
 ### Added

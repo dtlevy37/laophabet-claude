@@ -24,6 +24,7 @@ app/
 | `tests/s5_progress_test.sql` | Paste-in SQL check for S5 (throwaway users, rolled back; prints check / got / expected). |
 | `supabase/migrations/20261110120000_played_lesson.sql` | S6a: `review_log.first_try`; replaces `session_summary`, `record_answers`, `list_lessons` and `get_lesson` (per-learner lesson state, levels, pool unit sounds). |
 | `supabase/migrations/20261111010000_list_lessons_covers.sql` | S7a extra: `list_lessons` adds `covers` (a done lesson's new items). |
+| `supabase/migrations/20261111020000_activity_data_bonus.sql` | S7c + S7f: tables `word_units`, `word_categories`, `sentence_slots` (locked down like the other content tables); `lesson_items.role` allows `bonus`; internal helper `word_cats(word_id)` (category union over the word's spelling, verb safety rule; not callable by app users); replaces `get_lesson` and `list_lessons` (additive changes, below). |
 | `tests/s6a_played_lesson_test.sql` | Paste-in SQL check for S6a (one throwaway user; prints check / got / expected). |
 | `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `approved-scripts/db_sql.py` (never by hand). Listed in `_agent/PENDING_MIGRATIONS.md` until you apply them. |
 | `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
@@ -45,8 +46,13 @@ Returns `{lesson, items, distractors}` or null. `items` are in teaching order, e
 
 Since S6a the bundle is `{lesson, items, distractors, levels}`. Pool units carry their sound as `letter {ipa, respelling}` or `vowel {ipa, respelling}` (the same shape as an item's unit detail, so one function labels both). `levels` is `[{item_type, item_id, level}]` for the caller over the lesson's items and the pool; an item that is not listed is at level 0.
 
+Since `20261111020000_activity_data_bonus.sql`: a word detail has `units: [{syl_index, position, unit_id}]` (empty
+when unparsed); a sentence detail has `slots: [{position, accepts, exclude}]`; each pool word has `cats` (the
+category union over every live word with the same spelling, or null when untagged); the pool includes `bonus` words.
+An item's `role` can be `bonus`.
+
 ### `list_lessons()` (signed-in users)
-Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state, completed_at, last_accuracy}]` by lesson order. `state` follows the `start_lesson` rule: `done` (the caller completed it), `open` (lesson 1, a lesson the caller has started, or the one after a completed lesson), else `locked`. `completed_at` is the first completion; `last_accuracy` is the first-try accuracy (0–100, or null) of the caller's latest completed session of that lesson. Since `20261111010000_list_lessons_covers.sql` each row also has `covers`: for a done lesson, its new items in teaching order `[{item_type, lao, en}]` (unit: lao; word: lao + gloss; sentence: lao + English; rule: name), else null. The lesson list shows them so a learner can pick a lesson to review.
+Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state, completed_at, last_accuracy}]` by lesson order. `state` follows the `start_lesson` rule: `done` (the caller completed it), `open` (lesson 1, a lesson the caller has started, or the one after a completed lesson), else `locked`. `completed_at` is the first completion; `last_accuracy` is the first-try accuracy (0–100, or null) of the caller's latest completed session of that lesson. Since `20261111010000_list_lessons_covers.sql` each row also has `covers`: for a done lesson, its new items in teaching order `[{item_type, lao, en}]` (unit: lao; word: lao + gloss; sentence: lao + English; rule: name), else null. The lesson list shows them so a learner can pick a lesson to review. Since `20261111020000_activity_data_bonus.sql` each row also has `bonus`: for a done lesson, its bonus words in teaching order (`[]` when none), else null; `covers` and `new_items` count core items only.
 
 ### Learner progress (S5)
 - `start_lesson(lesson_id, local_day)` → `{session_id}`. `local_day` is the learner's calendar date (within 14 h of UTC). Lesson 1 is always open; a later lesson needs the previous one completed (or this learner started it before).
