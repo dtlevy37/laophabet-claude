@@ -8,6 +8,10 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - S7a build the sentence (`js/activities/build_sentence.js`): the English is shown and the learner taps the Lao word
   tiles into order (the sentence's words plus up to 2 pool words). A wrong order shows the right sentence with its word
   chips. The planner gives a new sentence its card, then build the sentence; a recycled sentence gets build the sentence.
+- Build the sentence: tiles can also be dragged into the line at any place, moved within it, or dragged out (touch
+  and mouse; tapping still works).
+- The lesson list shows what each done lesson covers (letters, words with meanings, sentences, rules):
+  `list_lessons` returns `covers` (migration `20261111010000_list_lessons_covers.sql`).
 
 ### Changed
 - S6c passed its browser gate. The done-lesson link "Read the cards" is now "Review lesson material" (still the

@@ -27,7 +27,14 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
    **S6a, S6b, S6c are done** (S6c gate passed 2026-11-10; the done-lesson link is now "Review lesson material",
    read-only cards, never questions: user).
-   **S7a is built and awaits the user's browser test** (2026-11-10). If it passes: tick S7a, then S7b. Notes:
+   **S7a: desktop browser test passed (user, 2026-11-10); phone test not done yet** (user: soon, not tonight). Added
+   after the test at the user's request, untested: drag tiles, and `covers` on the lesson list (new migration
+   `20261111010000_list_lessons_covers.sql`, needs `supabase db reset`). When the phone test passes: tick S7a, then S7b.
+   **Mobile layout (user, 2026-11-10, important, next after the phone test):** the lesson screen has no fixed area;
+   a step with more text grows the page, so on a phone the Continue/Check button and the tiles move about and the page
+   scrolls. Wanted: a stable lesson frame on mobile (progress bar on top, the activity in a fixed-height middle that
+   scrolls inside itself if needed, the action button pinned at the bottom). Propose the layout first; not built.
+   Notes:
    - Provisional S6c decisions are in APP_DESIGN "Decisions log" (2026-11-10, agent, S6c); the user has not
      objected.
    - Use Read/Grep/Glob, not `ls`/`head`/`grep`/`cd` in Bash: those prompt the user for approval. Subagents cannot

@@ -16,3 +16,4 @@ Written by approved-scripts/db_sql.py. The owner reviews each file, applies it w
 - [ ] 20261110041529_l0004_recap_rows.sql: change 'l0004_recap_rows' (1 rules)
 - [ ] 20261110120000_played_lesson.sql: review_log.first_try; list_lessons state/completed_at/last_accuracy; get_lesson levels + pool unit sounds; record_answers accepts first_try (S6a; written by the agent, not db_sql)
 - [ ] 20261111003745_gloss_rice_food.sql: change 'gloss_rice_food' (1 words)
+- [ ] 20261111010000_list_lessons_covers.sql: list_lessons adds `covers` for done lessons (S7a extra; written by the agent, not db_sql)
