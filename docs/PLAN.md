@@ -20,7 +20,7 @@ categories, slots; scripts, migration and backfill written; its SQL test waits f
 Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 
 ## Working order
-1. Mobile lesson frame: built 2026-11-11, owner phone test pending (NOTES next step 1)
+1. Mobile lesson frame: done (phone test passed 2026-11-11)
 2. S7f remainder: rebuild lesson 4, bonus label in the frontend, run `app/backend/tests/s7c_s7f_test.sql`
 3. S7b session comfort
 4. S7e fill in the blank, then S7d build the word

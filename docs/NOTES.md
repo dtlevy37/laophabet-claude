@@ -18,11 +18,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (S6a–S6c passed). Build the sentence (S7a) passed on desktop, including drag tiles and `covers` on the lesson list.
 
 ## Next steps
-1. **Mobile lesson frame** (built 2026-11-11, owner phone test pending): a lesson step fills the visible screen
-   (`100dvh`, `.lesson-frame` in `styles.css`, class set in `session.js` `draw`): progress on top, the activity
-   scrolls inside itself, the button pinned at the bottom, space kept for it before an answer; smaller type on
-   screens under 720px tall. The page never scrolls, so Firefox's address bar no longer covers content. Phone
-   testing: `config.js` SUPABASE_URL uses the PC's LAN address (192.168.1.189), the app is `http://192.168.1.189:5500/`.
+1. Phone testing: `config.js` SUPABASE_URL uses the PC's LAN address (192.168.1.189); the app is at
+   `http://192.168.1.189:5500/`. The lesson frame (`.lesson-frame`, 100dvh, pinned button) passed the phone test on 2026-11-11.
 2. **Rebuild lesson 4** (LESSON_RULES decision 22): ຂາ (kaa, leg) W000389 becomes `bonus`; ຂາວ (kaao, white) W000538
    and the sentence ລາວຂາວ S000002876 leave the lesson (ຂາວ moves to lesson 11). Withdraw and re-merge (steps under
    "Lesson building"). Then run `app/backend/tests/s7c_s7f_test.sql` and build the frontend bonus label
