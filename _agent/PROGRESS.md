@@ -69,6 +69,14 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
 - Still wanted later, not placed yet: ແມ່ນ "yes; to be" (W000004), ໄປ "go", and ເຂົາ "they" / ເກົ້າ "nine" once ເຂົ້າ
   is solid (decision 15).
 
+### Opus subagent (user asked 2026-11-10; blocked by the guard)
+The user wants the S7c + S7f script group and the lesson 4 rebuild done by an Opus subagent. The guard refused a
+general subagent, and none of the five allowed agents can write scripts. Staged for the user: a `builder` agent
+(`_agent/proposed-config/.claude/agents/builder.md`) and install steps (`_agent/proposed-config/BUILDER_AGENT_SETUP.md`).
+The task brief is ready: `_agent/tmp/S7C_S7F_BRIEF.md`. **Waiting for the user:** install the builder agent, or
+say the main session should do the work. Order agreed (decision 27): scripts → approval → rebuild lesson 4 →
+lessons 5–11. Budget is a guideline (decision 26).
+
 ### Before the unattended run (nothing here is built or staged yet)
 1. **S7f script group** (APP_PLAN): the `bonus` role in `lesson_tool.py` and `db_sql.py`, the DB check on
    `lesson_items.role` (today `new|recycle|example`), and an updated `next_lesson_prompt.md` that reads

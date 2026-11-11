@@ -108,6 +108,12 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    native-speaker question).
 25. **The cut-off (dead syllable) card is one brief line** (user, 2026-11-10), first needed for ສະ in lesson 8.
    No rule to memorise (decision 11).
+26. **The budget is a guideline, not a hard rule** (user, 2026-11-10). Its purpose is to avoid overloading a
+   lesson. `lesson_tool.py check` should warn when a lesson goes over (units, words, weight), not fail (script
+   change in S7f); the user play-tests and splits a lesson that feels too big. Readability, show-first and
+   "bonus words stay out of sentences" remain hard rules.
+27. **No knowingly planned lesson rework** (user, 2026-11-10). Lessons are built only once the scripts give them
+   everything the planned activities need: order is S7c + S7f scripts → rebuild lesson 4 → lessons 5–11.
 
 ## Unit order guide (2026-10-24)
 `_agent/letter_map/lesson_rules/chain.csv` (greedy chain from the old base ລາວ, 30 steps, ~362 readable common words) is the
