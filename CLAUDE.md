@@ -21,7 +21,8 @@ design and the lesson path; the agent builds the app slices and the lessons.
 - **Start** from `docs/NOTES.md`, then grep. Read in full only the module you are about to change and the one spec
   section the task depends on. Do not re-read the docs every session.
 - **You may do anything inside this folder that the task needs:** edit any file (scripts, `.claude/`, this file),
-  run python, node, the supabase CLI, docker and git, and fetch from the web. Nothing outside this folder.
+  run python, node, the supabase CLI, docker and git, and fetch from the web. Stay inside this folder: do not read,
+  write or search outside it unless the owner asks (the settings no longer enforce this, so it is on you).
 - **One slice at a time** (`docs/PLAN.md`). Each slice has a "Done when" line; write one if it is missing. Build
   backend first (the RPC contract is what the UI codes against), then frontend. Keep to the slice and put anything
   else you notice in NOTES.
