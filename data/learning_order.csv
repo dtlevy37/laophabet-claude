@@ -72,7 +72,7 @@ step,item_type,item_id,why,source,confidence,notes
 71,vowel,V04,◌ິ: new in ກິນ,SRC-AGENT:sequencing,derived,
 72,word,W000018,ກິນ eat; (colloquial) drink (word 19; 2 new symbols),SRC-AGENT:sequencing,derived,
 73,sentence,S000002873,ກິນນ້ຳ. To drink water.,SRC-AGENT:sequencing,derived,
-74,word,W000019,ເຂົ້າ rice (word 20; 0 new symbols),SRC-AGENT:sequencing,derived,
+74,word,W000019,"ເຂົ້າ rice, food (word 20; 0 new symbols)",SRC-AGENT:sequencing,derived,
 75,sentence,S000000021,ຂ້ອຍກິນເຂົ້າ. I'm eating. (I eat rice / a meal.),SRC-AGENT:sequencing,derived,
 76,sentence,S000000022,"ຂໍເຂົ້າ. Rice, please.",SRC-AGENT:sequencing,derived,
 77,sentence,S000002870,ກິນເຂົ້າ. To eat (a meal).,SRC-AGENT:sequencing,derived,

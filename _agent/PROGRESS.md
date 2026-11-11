@@ -27,8 +27,10 @@ used to be here are in git (`git show 1494e18:_agent/PROGRESS.md`). Rules: CLAUD
      keyed by item id (`item_audio`, S10) with an empty button slot from S7b; resume same-device only; no offline.
    **S6a is done** (gate passed 2026-11-10, 5 of 5; the user closed it).
    **S6b is done** (the user closed it 2026-11-10 after the browser test).
-   **S6c is built and awaits the user's browser gate** (2026-11-10; frontend only, no migration). If it passes:
-   tick S6c in APP_PLAN, then S7a (sentence activities). Notes:
+   **S6c is built and awaits the user's browser re-test** (2026-11-10). First test found 3 things, all fixed:
+   "null" text under options, "-ao" label (now "ao"), ເຂົ້າ gloss "rice, food" (new migration
+   `20261111003745_gloss_rice_food.sql`: the user must `supabase db reset` or apply it, then reload). Lowercase
+   sound labels kept. If it passes: tick S6c in APP_PLAN, then S7a (sentence activities). Notes:
    - Provisional S6c decisions are in APP_DESIGN "Decisions log" (2026-11-10, agent, S6c); the user has not yet
      confirmed them.
    - User, 2026-11-10: "Read the cards" on a done lesson looked redundant while a session was cards only. Ask

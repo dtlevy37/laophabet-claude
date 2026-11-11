@@ -4,6 +4,12 @@ Every change to the project is recorded here, newest first. Update it in the sam
 
 ## 2026-11-10
 
+### Fixed
+- S6c browser feedback (user): a question showed the text "null" under the options before the answer
+  (`replaceChildren` was given `null`); final ວ is now labelled "ao" like ເ◌ົາ, not "-ao" (card and questions);
+  W000019 ເຂົ້າ gloss is "rice, food" (migration `20261111003745_gloss_rice_food.sql`). Letter case in sound
+  labels: kept lowercase (user: "maybe lowercase is fine").
+
 ### Added
 - S6c first checks (frontend only; untested until the browser gate): `js/activities/multiple_choice.js` (unit:
   letter → sound and sound → letter; word: Lao → meaning and meaning → Lao; options never share a Lao form or a

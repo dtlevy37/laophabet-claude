@@ -190,9 +190,11 @@ A lesson is content, not a script of screens: the app turns it into activities b
 - Order in items.csv = teaching order: each new unit, then the words that use it, then sentences.
 
 ## Open questions
-1. **Final ວ sound label: "-ao"** (user, 2026-11-10). Applied in S6c as a display rule (`SOUND_LABEL` in
-   `js/activities/teach_card.js`; letters.csv keeps "w (final o/w)", which scripts read). Every taught word so far
-   has ວ after າ; revisit the label when a word with ວ after another vowel (ແມວ) is taught.
+1. **Final ວ sound label: "ao"** (user, 2026-11-10; first "-ao", changed after the S6c browser test: the hyphen
+   adds confusion). A display rule (`SOUND_LABEL` in `js/activities/teach_card.js`; letters.csv keeps
+   "w (final o/w)", which scripts read). Same label as ເ◌ົາ, so the two are never options in one question. Every
+   taught word so far has ວ after າ; revisit when a word with ວ after another vowel (ແມວ) is taught. If the two
+   "ao" sounds need telling apart, the user will decide later.
 2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, once
    lessons pass about 10.
 3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
@@ -204,7 +206,7 @@ A lesson is content, not a script of screens: the app turns it into activities b
     with two meanings (ລາວ) the check asks the first meaning and the closing block asks the second.
   - In a question the info icon appears only after the answer (right or wrong): before it, the teach card would
     give the answer away.
-  - "-ao" (final ວ) and "ao" (ເ◌ົາ) count as the same label, so they are never options in the same question.
+  - "ao" (final ວ) and "ao" (ເ◌ົາ) are the same label, so they are never options in the same question.
   - A recycled word the learner has never been shown (level 0) gets no question.
   - "Words read" counts the tested word once per word question (not the Lao words among the options).
   - Summary line: 90% or more, 60% or more, below 60% ("these will come back" framing).
