@@ -39,3 +39,6 @@ W000072,quality,SRC-AGENT,unverified,Tagged by the agent
 W000005,person|function,SRC-AGENT,unverified,Tagged by the agent; function so it is never offered as a wrong option (polite yes particle)
 W000082,number,SRC-AGENT,unverified,Tagged by the agent
 W000629,object,SRC-AGENT,unverified,Tagged by the agent
+W000006,person,SRC-AGENT,unverified,Tagged by the agent
+W000033,action,SRC-AGENT,unverified,Tagged by the agent; no verb class fits sleep so action alone
+W000090,quality,SRC-AGENT,unverified,Tagged by the agent; also a personal name Noy so excluded where person is accepted

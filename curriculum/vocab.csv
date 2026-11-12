@@ -4,7 +4,7 @@ W000002,ດີ,adjective,good,basics,,41
 W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,318
 W000004,ແມ່ນ,verb; particle,"yes, that's right; to be",basics,,66
 W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,213
-W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,735
+W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,736
 W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
 W000009,ຂໍ,verb,"ask for, request; may I have",requests,,85
@@ -16,9 +16,9 @@ W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
 W000016,ນີ້,pronoun; adverb,this; here,basics,,393
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,123
-W000019,ເຂົ້າ,noun,"rice, food",food,W000419,48
-W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,114
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,124
+W000019,ເຂົ້າ,noun,"rice, food",food,W000419,49
+W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,116
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
 W000023,ມີ,verb,have; there is/are,basics,,244
@@ -29,9 +29,9 @@ W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
 W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,11
-W000031,ລາວ,pronoun,"he, she",pronouns,,173
+W000031,ລາວ,pronoun,"he, she",pronouns,,174
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
-W000033,ນອນ,verb,sleep; lie down,home,,19
+W000033,ນອນ,verb,sleep; lie down,home,,20
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
 W000035,ເຂົ້າໃຈ,verb,understand,basics,,3
 W000036,ມື້,noun,day,time,W000036,21
@@ -70,7 +70,7 @@ W000068,ໃຫ້,verb; preposition,give; to/for,basics,,38
 W000069,ມັກ,verb,like,feelings,,88
 W000070,ຮັກ,verb,love,feelings,,5
 W000071,ສີ່,numeral,four,numbers,,11
-W000072,ຫິວ,adjective,hungry,food,,12
+W000072,ຫິວ,adjective,hungry,food,,13
 W000073,ອີ່ມ,adjective; verb,full (after eating),food,,3
 W000074,ແຊບ,adjective,delicious,food,,36
 W000075,ປາ,noun,fish,food,W000097,17

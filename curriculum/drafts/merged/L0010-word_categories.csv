@@ -1,0 +1,4 @@
+word_id,categories,source,confidence,notes
+W000006,person,SRC-AGENT,unverified,Tagged by the agent
+W000033,action,SRC-AGENT,unverified,Tagged by the agent; no verb class fits sleep so action alone
+W000090,quality,SRC-AGENT,unverified,Tagged by the agent; also a personal name Noy so excluded where person is accepted

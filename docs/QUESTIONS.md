@@ -72,6 +72,20 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   would one say ທ່ານ (thaan) or a kin term (ເອື້ອຍ, ອ້າຍ)? Tag: ເຈົ້າ (W000005) is tagged person|function (it is also the
   polite "yes"), so it is never a wrong option.
 - Lesson 9 sounds: does ຈ (jor) in ເຈົ້າ / ຈານ sound between the j in "jaw" and the ch in "chew", as the card says?
+- Lesson 10 (composed): is the bare reply ຫິວ. (hiu, "Yes, I'm hungry. / Hungry.", S000002892) natural as the answer to
+  ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiu khao bor?, "Are you hungry?"), or would one say ຫິວເຂົ້າ / ຫິວແລ້ວ / ເຈົ້າ ຫິວ?
+- Lesson 10 (composed): ຂ້ອຍກິນເຂົ້າແລ້ວ (khoy kin khao leo, "I've eaten already", S000002890) is the last line of the
+  conversation, after ບໍ່ຫິວ (bor hiu, "Not hungry"). Is the full form natural there, or would one just say ກິນແລ້ວ
+  (kin leo, "Eaten already")?
+- Lesson 10 (composed): does ລາວນອນແລ້ວ (lao non leo, S000002891) mean "He's asleep already" (now the English), or
+  "He has gone to bed" (which we think is ເຂົ້ານອນແລ້ວ, khao non leo)?
+- Lesson 10 register: ຂ້ອຍ (khoy, "I", W000006) is labelled colloquial on Wiktionary. Is it fine with strangers and
+  older people, or is ຂ້າພະເຈົ້າ / a kin term expected? Also confirm ຂ້ອຍຫິວເຂົ້າ (S000000113) and ຂ້ອຍສະບາຍດີ
+  (S000000008), both existing and unverified.
+- Lesson 10: ນ້ອຍ (noy, "small", W000090) is treated as a common personal name (Noy), so it is kept out of subject and
+  person slots (exclude_word_ids, 38 earlier slots updated). Is that right? Also: ນ້ອຍ is a wrong option in
+  ກິນ __ (kin __) blanks; is "ກິນນ້ອຍ" ever said, or only ກິນໜ້ອຍ (kin noy, "eat a little")? Tags: ຂ້ອຍ person,
+  ນອນ action (no verb class), ນ້ອຍ quality.
 - **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
   screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
   ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right

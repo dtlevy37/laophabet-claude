@@ -1,0 +1,14 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0010-S001,1,person|animal|motion,W000019|W001425|W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"__ ກິນເຂົ້າແລ້ວ: who has eaten; names and ເຂົ້າ excluded"
+L0010-S001,2,action|consume|motion|quality,,SRC-AGENT,unverified,Tagged by the agent
+L0010-S001,3,food|drink,,SRC-AGENT,unverified,ຂ້ອຍກິນ __ ແລ້ວ: food or drink
+L0010-S001,4,function|food|drink|plant|quality|action|motion|consume|person|animal|place|time|number|object,W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"sentence-final particle; ເຂົ້າ+X compounds accepted"
+L0010-S002,1,person|animal|motion,W000019|W001425|W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"__ ນອນແລ້ວ: who has slept; names excluded"
+L0010-S002,2,action|consume|motion|quality,W000019,SRC-AGENT,unverified,"ລາວ __ ແລ້ວ: almost any verb or state; ເຂົ້າ rice excluded (same spelling as ເຂົ້າ enter: ລາວເຂົ້າແລ້ວ he went in)"
+L0010-S002,3,function|food|drink|plant|quality|action|motion|consume|person|animal|place|time|number|object,W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"sentence-final particle; ນອນ+X compounds accepted"
+L0010-S003,1,quality|action|consume|motion|function,W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"one-word reply to 'Are you hungry?': states, verbs and particles accepted; names excluded"
+S000000113,1,person|animal,W000019|W001425|W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"__ ຫິວເຂົ້າ: who is hungry; names and ເຂົ້າ excluded"
+S000000113,2,quality|action|consume|motion,,SRC-AGENT,unverified,Tagged by the agent
+S000000113,3,function|food|drink|plant|quality|action|consume|motion,W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"ຂ້ອຍຫິວ __: food or drink; also particles and ເຂົ້າ+X compounds"
+S000000008,1,person|animal,W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"__ ສະບາຍດີ: who is well; names excluded"
+S000000008,2,quality|action|consume|motion|function,W000011|W000218|W000546|W000090,SRC-AGENT,unverified,"ຂ້ອຍ __: states, verbs, particles"

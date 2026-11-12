@@ -45,6 +45,16 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   not taught, its tag removed) + S000002889 ຫິວນ້ຳ. "Yes, I'm thirsty" (composed), S000000007 ເຈົ້າສະບາຍດີບໍ່? (existing).
   Lessons 9 and 10 may swap (path note). **Pending:** slot edits on merged-lesson sentences S000002870 s1 and
   S000002879 s3 (exclude ຫິວ), S000002880/S000002881 s2 (accept number for ຫ້າ) need a `db_sql.py change`.
+- **L0010 "I, and the conversation"** merged 2026-11-12 (`20261112214853_lesson_l0010.sql`, not applied; no flags, no
+  budget warnings): new V22 ◌ອ◌; core ຂ້ອຍ (khoy, I; W000006), ນອນ (non, sleep; W000033); bonus ນ້ອຍ (noy, small;
+  W000090). Recycles ຫິວ, ເຂົ້າ, ກິນ, ແລ້ວ, ສະບາຍດີ, ລາວ, ເຈົ້າ, ບໍ່. Sentences: S000000113 ຂ້ອຍຫິວເຂົ້າ, S000000008
+  ຂ້ອຍສະບາຍດີ (existing), S000002891 ລາວນອນແລ້ວ "He's asleep already" (composed), then the target conversation
+  contiguous (S7g): S000000001 (lines 1–2), S000002887 (line 3, repeated as 4b, listed once), S000002892 ຫິວ. (4a,
+  composed), S000002888 (5a), S000002890 ຂ້ອຍກິນເຂົ້າແລ້ວ (5b, composed). Lessons 9 and 10 may swap (path note).
+  **Pending:** ນ້ອຍ (W000090, also the name Noy) added to exclude_word_ids on 38 slots of earlier sentences
+  (S000000023, S000000024, S000002870, S000002872, S000002874, S000002877, S000002878, S000002879, S000002880,
+  S000002881, S000002882, S000002883, S000002884, S000000004, S000000001, S000000003, S000002885, S000002886,
+  S000002887, S000002888, S000000007, S000001170, S000002889): needs a `db_sql.py change`.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary

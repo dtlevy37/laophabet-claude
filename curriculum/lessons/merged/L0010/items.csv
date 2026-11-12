@@ -1,0 +1,21 @@
+position,item_type,item_id,role,notes
+1,unit,V22,new,new vowel (the 'aw' sound before a final letter)
+2,word,W000006,new,'I; me'; uses the new vowel
+3,word,W000072,recycle,earlier word 'hungry'; used in the next sentence and the conversation
+4,word,W000019,recycle,earlier word 'rice'; used in the next sentence and the conversation
+5,sentence,S000000113,new,'I'm hungry' (existing; unverified)
+6,word,W000018,recycle,earlier word 'eat'; used in the conversation (line 5)
+7,word,W000020,recycle,earlier word 'already'; used in the next sentences
+8,word,W000001,recycle,earlier word 'hello; to be well'; used in the next sentence and the conversation
+9,sentence,S000000008,new,'I'm well' (existing; unverified)
+10,word,W000033,new,'sleep; lie down'; uses the new vowel
+11,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+12,sentence,S000002891,new,'He's asleep already' (composed)
+13,word,W000005,recycle,earlier word 'you'; used in the conversation
+14,word,W000003,recycle,earlier word (not; question marker); used in the conversation
+15,sentence,S000000001,recycle,"conversation lines 1 and 2, speakers A and B: Hello (existing, verified); S7g will carry the real conversation"
+16,sentence,S000002887,recycle,"conversation line 3, speaker A: Are you hungry? (lesson 9); repeated as line 4 (second part), speaker B; listed once until S7g"
+17,sentence,S000002892,new,"conversation line 4 (first part), speaker B: 'Yes, I'm hungry' (composed); Lao answers yes by repeating the verb"
+18,sentence,S000002888,recycle,"conversation line 5 (first part), speaker A: Not hungry (lesson 9)"
+19,sentence,S000002890,new,"conversation line 5 (second part), speaker A: 'I've eaten already' (composed); the payoff of the conversation"
+20,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
