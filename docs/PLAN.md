@@ -22,7 +22,7 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 
 ## Working order
 1. Mobile lesson frame: done (phone test passed 2026-11-11)
-2. S7f: owner browser test of the rebuilt lesson 4 (built 2026-11-12)
+2. S7f: done 2026-11-12
 3. S7b, S7e, S7d: done 2026-11-12
 4. Lessons 5–11 along `docs/CURRICULUM_PATH.md` (owner play-tests; lesson 6 may be split)
 6. S7g conversations (first ones in lessons 8 and 10)
@@ -90,7 +90,7 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 - [ ] **S11 Deploy:** password reset, Netlify, Supabase auth URLs. Also: frontend `config.js` for
       the deployed site (below), and move `LAO_UI_REVIEW.md` and
       `export_lao_review.py` out of the frontend repo before connecting Netlify.
-- [ ] **S7f Bonus words and runner readiness (script change + SQL + small frontend)** (added 2026-11-10 with the
+- [x] **S7f Bonus words and runner readiness (script change + SQL + small frontend)** (added 2026-11-10 with the
       curriculum path; LESSON_RULES decisions 20–22). `lesson_tool.py`: role `bonus` (a word only; readable; not
       allowed in the lesson's sentences; outside the "uses something new" rule; a later lesson may list a bonus
       word as `new` to make it core, also outside that rule); `brief` lists readable bonus candidates.
@@ -106,7 +106,8 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       Left: rebuild lesson 4, the planner's bonus label and the `badge_bonus` string, the SQL test.
       2026-11-12: lesson 4 rebuilt in place by `20261112195124_lesson_l0004.sql` (`db_sql.py lesson L0004`, no
       withdrawal, so no reset); bonus label, planner rule and "Bonus words" line on the lesson list built;
-      `s7c_s7f_test.sql` passed. Awaiting the owner's browser test.)
+      `s7c_s7f_test.sql` passed. ຂາວ added as a second bonus word at the owner's request. Owner browser test
+      passed 2026-11-12.)
 - [ ] **S7g Conversations (canned content)** (added 2026-11-10; LESSON_RULES decision 23). Design note first
       (DESIGN): tables `dialogues` and `dialogue_lines` (ordered sentence ids, speaker A/B), a `dialogue`
       lesson item, a conversation card (lines shown in order with speaker sides), then fill in the blank on its

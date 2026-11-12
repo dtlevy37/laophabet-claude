@@ -4,6 +4,9 @@ Every change to the project is recorded here, newest first. Update it in the sam
 
 ## 2026-11-12 (lesson 4 rebuild, bonus words; owner tests)
 
+S7f passed the owner's browser test (lesson 4 with bonus words ຂາ and ຂາວ). Letter writing: the owner says it still
+feels weird and will review it in depth later.
+
 ### Changed
 - **Lesson 4 rebuilt in place** (`20261112195124_lesson_l0004.sql`, written by `db_sql.py lesson L0004`; applied with
   `supabase migration up`, no reset): ◌ຳ, ນ້ຳ water, the R02 recap, ກິນນ້ຳ, ລາວກິນນ້ຳ, recycled ລາວກິນເຂົ້າ, and ຂາ leg

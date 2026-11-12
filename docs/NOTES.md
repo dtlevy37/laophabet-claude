@@ -19,13 +19,12 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
   (S6a–S6c passed). Build the sentence (S7a) passed on desktop, including drag tiles and `covers` on the lesson list.
 - S7b (resume, leave dialog, dry run `#/try/L000n`, `audio.js`), S7e (fill in the blank) and S7d (build the word)
-  passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) built 2026-11-12, awaiting test.
+  passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
-0. **Owner test of S7f**: play lesson 4 (ຂາ last, "Bonus word" label, one check, nothing in the closing block);
-   the lesson list shows "Bonus words: ຂາ leg · ຂາວ white" under done lesson 4. Then tick S7f in PLAN.
-   Re-dump `tmp/bundles/` and rerun `node scripts/session_test.mjs` after any lesson merge.
-0. **Owner test of letter writing (S7w)**: desktop passed 2026-11-12 apart from two bugs, now fixed ("null" after
+0. Re-dump `tmp/bundles/` and rerun `node scripts/session_test.mjs` after any lesson merge.
+0. **Owner test of letter writing (S7w)**: owner 2026-11-12, after the fixes: "still feels weird", will review in
+   depth later; wait for their notes. Earlier: desktop drawing and judging good apart from two bugs, now fixed ("null" after
    Check; the letter showing on part-from-memory steps). Retest those, then the phone. `#/write` on desktop and phone (steps in CHANGELOG 2026-11-11 "letter
    writing"). Untested in any browser. If judging feels too strict or too loose, the knobs are `TUNING` in
    `js/writing/score.js` (`LETTER_MAX`, `LETTER_MARGIN`, `TRACE_TOL`, `PART_MAX`); rerun `node scripts/strokes_test.js`.
