@@ -37,6 +37,14 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   First mini-conversation as ordinary sentences (S7g): S000000001 ສະບາຍດີ (lines 1–2), S000000003 ສະບາຍດີບໍ່? (English
   now "How are you?"), S000002885 ສະບາຍດີ. "I'm well" (composed, unverified). The lesson row's notes still list W000058
   as a recycle (replaced by W000031 in review; items are right); harmless.
+- **L0009 "Hungry, you"** merged 2026-11-12 (`20261112214113_lesson_l0009.sql`, not applied; no flags, no budget
+  warnings): new C25 ຫ (initial h only; the silent ຫ before ນ ມ ລ is later) and C05 ຈ; core ຫິວ (hiu, hungry; W000072),
+  ເຈົ້າ (jao, you; W000005, tagged person|function so it is never a wrong option); bonus ຫ້າ (haa, five; W000082), ຈານ
+  (jaan, plate; W000629). Recycles ລາວ, ເຂົ້າ, ບໍ່, ນ້ຳ, ສະບາຍດີ. Sentences: S000002886 ລາວຫິວເຂົ້າ, S000002887
+  ເຈົ້າຫິວເຂົ້າບໍ່? + S000002888 ບໍ່ຫິວ., S000001170 ເຈົ້າຫິວນ້ຳບໍ່? (existing, resegmented ຫິວ + ນ້ຳ; W000621 ຫິວນ້ຳ
+  not taught, its tag removed) + S000002889 ຫິວນ້ຳ. "Yes, I'm thirsty" (composed), S000000007 ເຈົ້າສະບາຍດີບໍ່? (existing).
+  Lessons 9 and 10 may swap (path note). **Pending:** slot edits on merged-lesson sentences S000002870 s1 and
+  S000002879 s3 (exclude ຫິວ), S000002880/S000002881 s2 (accept number for ຫ້າ) need a `db_sql.py change`.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary

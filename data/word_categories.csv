@@ -35,3 +35,7 @@ W000550,object,SRC-AGENT,unverified,Tagged by the agent
 W000512,quality,SRC-AGENT,unverified,Tagged by the agent; ສະບາຍ well; comfortable (a state)
 W000001,quality,SRC-AGENT,unverified,Tagged by the agent; ສະບາຍດີ hello; to be well: tagged as a state (to be well) so it fits quality slots
 W000084,action,SRC-AGENT,unverified,Tagged by the agent; ຂາຍ sell: no verb class fits yet (takes goods; not consume or motion); action only means it is never a distractor in a verb gap
+W000072,quality,SRC-AGENT,unverified,Tagged by the agent
+W000005,person|function,SRC-AGENT,unverified,Tagged by the agent; function so it is never offered as a wrong option (polite yes particle)
+W000082,number,SRC-AGENT,unverified,Tagged by the agent
+W000629,object,SRC-AGENT,unverified,Tagged by the agent

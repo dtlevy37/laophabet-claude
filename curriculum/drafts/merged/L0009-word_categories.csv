@@ -1,0 +1,6 @@
+word_id,categories,source,confidence,notes
+W000072,quality,,unverified,Tagged by the agent
+W000005,person|function,,unverified,Tagged by the agent; function so it is never offered as a wrong option (polite yes particle)
+W000621,quality,,unverified,Tagged by the agent
+W000082,number,,unverified,Tagged by the agent
+W000629,object,,unverified,Tagged by the agent

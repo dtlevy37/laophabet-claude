@@ -1,0 +1,18 @@
+position,item_type,item_id,role,notes
+1,unit,C25,new,new letter (initial h role only)
+2,word,W000072,new,'hungry'; uses the new letter
+3,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+4,word,W000019,recycle,earlier word 'rice'; used in the next sentences (ຫິວເຂົ້າ hungry)
+5,sentence,S000002886,new,'He is hungry' (composed)
+6,unit,C05,new,new letter
+7,word,W000005,new,'you'; uses the new letter
+8,word,W000003,recycle,earlier word (not; question marker); used in the next sentences
+9,sentence,S000002887,new,"question: 'Are you hungry?' (composed); question and answer pair with the next item; conversation line 3, speaker A (target conversation, lesson 10)"
+10,sentence,S000002888,new,answer: 'Not hungry' (composed); reply to the previous item
+11,word,W000011,recycle,earlier word 'water'; used in the next two sentences (ຫິວນ້ຳ thirsty)
+12,sentence,S000001170,new,"question: 'Are you thirsty?' (existing, unverified); question and answer pair with the next item"
+13,sentence,S000002889,new,"answer: 'Yes, I'm thirsty' (composed); Lao answers yes by repeating the verb phrase"
+14,word,W000001,recycle,earlier word 'hello; to be well'; used in the next sentence
+15,sentence,S000000007,new,"'How are you?' with you (existing, unverified)"
+16,word,W000082,bonus,'five'; bonus word (LESSON_RULES decision 21): readable with known letters plus ຫ; never in a sentence
+17,word,W000629,bonus,'plate; dish'; bonus word: readable with known letters plus ຈ; never in a sentence

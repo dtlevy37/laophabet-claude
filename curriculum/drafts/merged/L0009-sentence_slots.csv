@@ -1,0 +1,17 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0009-S001,1,person|animal,W000011|W000218|W000546,,unverified,Tagged by the agent
+L0009-S001,2,action|consume|motion|quality,,,unverified,Tagged by the agent
+L0009-S001,3,food|drink,,,unverified,Tagged by the agent
+L0009-S002,1,person|animal|function,W000011|W000218|W000546,,unverified,Tagged by the agent
+L0009-S002,2,action|consume|motion|quality,,,unverified,Tagged by the agent
+L0009-S002,3,food|drink,,,unverified,Tagged by the agent
+L0009-S002,4,function|quality,,,unverified,Tagged by the agent
+L0009-S003,1,function|person|animal,W000011|W000218|W000546,,unverified,Tagged by the agent
+L0009-S003,2,quality|action|consume|motion,W000031|W000058,,unverified,"Tagged by the agent; ບໍ່ __: as S000000004 slot 2, ລາວ excluded (colloquial ບໍ່ລາວ)"
+L0009-S004,1,quality|action|consume|motion|function,W000011|W000218|W000546,,unverified,Tagged by the agent
+S000001170,1,person|animal|function,W000011|W000218|W000546,,unverified,Tagged by the agent
+S000001170,2,quality|action|consume|motion,,,unverified,Tagged by the agent
+S000001170,3,function,,,unverified,Tagged by the agent
+S000000007,1,person|animal|place|function,W000011|W000218|W000546,,unverified,Tagged by the agent
+S000000007,2,quality|action|consume|motion,,,unverified,Tagged by the agent
+S000000007,3,function,,,unverified,Tagged by the agent

@@ -1,0 +1,5 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+L0009-S001,ລາວຫິວເຂົ້າ.,ລາວ ຫິວ ເຂົ້າ.,law˧˥ hiw˩(˧) kʰaw˧˩,lao hiw kao.,He is hungry. / She is hungry.,W000072,,,unverified,Composed by the agent for lesson 9; not from a source.,
+L0009-S002,ເຈົ້າຫິວເຂົ້າບໍ່?,ເຈົ້າ ຫິວ ເຂົ້າ ບໍ່?,t͡ɕaw˥˨ hiw˩(˧) kʰaw˧˩ bɔː˧,jao hiw kao baw?,Are you hungry?,W000005,,,unverified,Composed by the agent for lesson 9 (conversation question; answered by L0009-S003); not from a source.,
+L0009-S003,ບໍ່ຫິວ.,ບໍ່ ຫິວ.,bɔː˧ hiw˩(˧),baw hiw.,I'm not hungry. / Not hungry.,W000003,,,unverified,Composed by the agent for lesson 9 (conversation reply to L0009-S002); not from a source.,
+L0009-S004,ຫິວ.,ຫິວ.,hiw˩(˧),hiw.,"Yes, I am.",W000072,,,unverified,Composed by the agent for lesson 9 (conversation reply to ເຈົ້າຫິວນ້ຳບໍ່?; Lao answers yes by repeating the verb); not from a source.,

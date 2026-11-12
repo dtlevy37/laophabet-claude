@@ -59,6 +59,19 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 - Lesson 8 tags: ສະບາຍ (W000512) and ສະບາຍດີ (W000001) as qualities (states), ຂາຍ (W000084) as a verb with no verb
   class. In the one-word blanks for "Hello" / "I'm well", ດີ (dee, good) and ສະບາຍ (sabai, well) are accepted as
   answers: is either a sensible one-word reply to ສະບາຍດີບໍ່?
+- Lesson 9 (composed): are ລາວຫິວເຂົ້າ (lao hiu khao, "He/She is hungry", S000002886), ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiu khao
+  bor?, "Are you hungry?", S000002887) and the bare reply ບໍ່ຫິວ. (bor hiu, "Not hungry", S000002888) natural, or does
+  the reply need more (ບໍ່ຫິວເທື່ອ, ຂ້ອຍບໍ່ຫິວ)? Is ເຈົ້າຫິວນ້ຳບໍ່? (jao hiu nam bor?, "Are you thirsty?", S000001170,
+  existing) natural?
+- Lesson 9 thirst: is ຫິວນ້ຳ (hiu nam) the everyday Vientiane word for "thirsty", or ຢາກນ້ຳ (yaak nam)? The reply to
+  "Are you thirsty?" is ຫິວນ້ຳ. (hiu nam, "Yes, I'm thirsty", S000002889): would a bare ຫິວ. (hiu) also work as that
+  reply, or does it only ever mean "hungry"?
+- Lesson 9: would anyone say ລາວຫິວກິນ (lao hiu kin, "he's hungry to eat")? ກິນ is kept out of the ຫິວ __ blanks in
+  case it would.
+- Lesson 9 register: is ເຈົ້າ (jao, "you") polite enough with strangers and older people (shop staff, a waiter), or
+  would one say ທ່ານ (thaan) or a kin term (ເອື້ອຍ, ອ້າຍ)? Tag: ເຈົ້າ (W000005) is tagged person|function (it is also the
+  polite "yes"), so it is never a wrong option.
+- Lesson 9 sounds: does ຈ (jor) in ເຈົ້າ / ຈານ sound between the j in "jaw" and the ch in "chew", as the card says?
 - **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
   screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
   ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right

@@ -86,3 +86,20 @@ L0008,10,sentence,S000000003,new,"conversation line 3, speaker A: How are you? (
 L0008,11,sentence,S000002885,new,"conversation line 4, speaker B: I'm well (composed, unverified)"
 L0008,12,word,W000031,recycle,"earlier word 'he, she'; shown before the bonus word (ລາວຂາຍເຂົ້າ comes in lesson 11)"
 L0008,13,word,W000084,bonus,'sell'; bonus word (LESSON_RULES decision 21): readable with known letters plus final ຍ; never in a sentence
+L0009,1,unit,C25,new,new letter (initial h role only)
+L0009,2,word,W000072,new,'hungry'; uses the new letter
+L0009,3,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0009,4,word,W000019,recycle,earlier word 'rice'; used in the next sentences (ຫິວເຂົ້າ hungry)
+L0009,5,sentence,S000002886,new,'He is hungry' (composed)
+L0009,6,unit,C05,new,new letter
+L0009,7,word,W000005,new,'you'; uses the new letter
+L0009,8,word,W000003,recycle,earlier word (not; question marker); used in the next sentences
+L0009,9,sentence,S000002887,new,"question: 'Are you hungry?' (composed); question and answer pair with the next item; conversation line 3, speaker A (target conversation, lesson 10)"
+L0009,10,sentence,S000002888,new,answer: 'Not hungry' (composed); reply to the previous item
+L0009,11,word,W000011,recycle,earlier word 'water'; used in the next two sentences (ຫິວນ້ຳ thirsty)
+L0009,12,sentence,S000001170,new,"question: 'Are you thirsty?' (existing, unverified); question and answer pair with the next item"
+L0009,13,sentence,S000002889,new,"answer: 'Yes, I'm thirsty' (composed); Lao answers yes by repeating the verb phrase"
+L0009,14,word,W000001,recycle,earlier word 'hello; to be well'; used in the next sentence
+L0009,15,sentence,S000000007,new,"'How are you?' with you (existing, unverified)"
+L0009,16,word,W000082,bonus,'five'; bonus word (LESSON_RULES decision 21): readable with known letters plus ຫ; never in a sentence
+L0009,17,word,W000629,bonus,'plate; dish'; bonus word: readable with known letters plus ຈ; never in a sentence
