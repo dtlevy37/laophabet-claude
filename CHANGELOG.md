@@ -2,6 +2,9 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (word ເຕ້ຍ)
+- Added ເຕ້ຍ W001427 "short (in height), low" at the owner's request (unverified, not on Wiktionary) with sentences S000002899 ລາວເຕ້ຍ, S000002900 ພໍ່ເຕ້ຍ. Not in a lesson; no DB change.
+
 ## 2026-11-12 (lessons 7–11; fill in the blank on new sentences)
 - Lessons 7 "Good, this" (ດ ◌ີ; ດີ ນີ້; bonus ດາວ ດິນ), 8 "Hello" (ສ ◌ະ ◌ຍ, rule R01; ສະບາຍ ສະບາຍດີ; bonus ຂາຍ),
   9 "Hungry, you" (ຫ ຈ; ຫິວ ເຈົ້າ; bonus ຫ້າ ຈານ), 10 "I, and the conversation" (◌ອ◌; ຂ້ອຍ ນອນ; bonus ນ້ອຍ; the target

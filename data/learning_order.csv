@@ -4362,3 +4362,6 @@ step,item_type,item_id,why,source,confidence,notes
 4361,sentence,S000002881,ຂໍເຂົ້າແນ່. Could I have some rice?,SRC-AGENT:sequencing,derived,
 4362,sentence,S000002884,ຂໍນ້ຳນີ້ແນ່. Could I have this water?,SRC-AGENT:sequencing,derived,
 4363,sentence,S000002897,ຂໍແກ້ວນ້ອຍແນ່. Could I have a small glass?,SRC-AGENT:sequencing,derived,
+4364,word,W001427,"ເຕ້ຍ short (in height), low (word 1427; 0 new symbols)",SRC-AGENT:sequencing,derived,
+4365,sentence,S000002899,ລາວເຕ້ຍ. He/She is short.,SRC-AGENT:sequencing,derived,
+4366,sentence,S000002900,ພໍ່ເຕ້ຍ. Father is short.,SRC-AGENT:sequencing,derived,

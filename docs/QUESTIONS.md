@@ -7,6 +7,7 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 - (nothing open)
 
 ## For the native speaker
+- ເຕ້ຍ W001427 "short (in height), low" (owner asked, 2026-11-12; not on Wiktionary): reading tia˥˨ high-falling, and the sentences ລາວເຕ້ຍ S000002899, ພໍ່ເຕ້ຍ S000002900.
 - ເຂົາ (W000160): the owner has only heard it as "they/them", with ລາວ as the everyday "he/she". The gloss was changed
   from Wiktionary's "he; she; they" to "they; (more formal) he; she". Is that right for Vientiane speech?
 - Composed lesson sentences to confirm: ກິນເຂົ້າ "to eat (a meal)" (S000002870), ລາວກິນເຂົ້າ "He eats. / She eats."

@@ -29,7 +29,7 @@ W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
 W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,11
-W000031,ລາວ,pronoun,"he, she",pronouns,,175
+W000031,ລາວ,pronoun,"he, she",pronouns,,176
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
 W000033,ນອນ,verb,sleep; lie down,home,,20
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
@@ -41,7 +41,7 @@ W000039,ໜຶ່ງ,numeral,one,numbers,,49
 W000040,ຄົນ,noun; classifier,person; classifier for people,people,W000040,47
 W000041,ຊື່,noun,name,people,W000041,6
 W000042,ແມ່,noun,mother,people,W000040,95
-W000043,ພໍ່,noun,father,people,W000040,49
+W000043,ພໍ່,noun,father,people,W000040,50
 W000044,ລູກ,noun; classifier,child (son or daughter),people,W000040,23
 W000045,ໝູ່,noun,friend,people,W000040,16
 W000046,ໃຜ,pronoun (interrogative),who,questions,,10
@@ -1425,3 +1425,4 @@ W001423,ສູບ,verb,pump (air or water); smoke (a cigarette),transport,,2
 W001424,ທາງດ່ວນ,noun,expressway; motorway,transport,W000613,2
 W001425,ເຂົ້າ,verb,to enter; to go in,basics,,3
 W001426,ແນ່,particle,please (softens a request),function,,4
+W001427,ເຕ້ຍ,adjective,"short (in height), low",describing,,2

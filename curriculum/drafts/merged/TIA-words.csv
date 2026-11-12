@@ -1,0 +1,2 @@
+word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,pron_tip,source,confidence,notes
+TIA-W001,ເຕ້ຍ,tia˥˨,dtia,ເຕ້ຍ,high-falling,mid/live/long/mai_tho→8,adjective,,,,,"short (in height), low",,describing,,,,,"'dtia' like 'tea-a' run together, starting high and dropping. For height or low things; ສັ້ນ 'san' is short in length or time.",SRC-AGENT:knowledge,unverified,Not on Wiktionary; IPA by agent
