@@ -1,0 +1,12 @@
+position,item_type,item_id,role,notes
+1,unit,V15,new,vowel written before the consonant
+2,word,W000020,new,'already'; uses the new vowel
+3,word,W000018,recycle,earlier word; used in the next sentence
+4,sentence,S000000024,new,first 'already' sentence (existing row)
+5,word,W000031,recycle,earlier word
+6,word,W000019,recycle,earlier word
+7,sentence,S000002872,recycle,earlier sentence; contrast for the next one
+8,sentence,S000002877,new,'he has eaten already'
+9,word,W000011,recycle,earlier word
+10,sentence,S000002878,new,'she has had some water already'
+11,word,W000218,bonus,"'glass'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence"

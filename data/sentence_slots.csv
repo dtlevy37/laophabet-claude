@@ -7,3 +7,8 @@ S000002873,2,food|drink,,SRC-AGENT,unverified,ກິນ __: food or drink
 S000002874,1,person|animal|motion,,SRC-AGENT,unverified,__ ກິນນ້ຳ: who drinks; ເຂົ້າກິນນ້ຳ go in and drink may read as a serial verb
 S000002874,3,food|drink,,SRC-AGENT,unverified,ລາວກິນ __: food or drink
 S000002876,2,quality|action,,SRC-AGENT,unverified,ລາວ __: ລາວກິນ he eats and ລາວເຂົ້າ he enters also fit
+S000000024,1,action|quality|time|person|place,,SRC-AGENT,unverified,__ ແລ້ວ: every verb (done already) and every state (ຂາວແລ້ວ white now) is accepted so no verb or describing word is ever an option; person/place too (ລາວແລ້ວ could be heard as 'it's him now'); only nouns such as ນ້ຳ ຂາ ແກ້ວ remain as options and none makes a sentence
+S000002877,1,person|animal|motion,W000019|W001425,SRC-AGENT,unverified,__ ກິນເຂົ້າແລ້ວ: who has eaten; ເຂົ້າກິນເຂົ້າແລ້ວ go in and eat may read as a serial verb
+S000002877,3,food|drink,,SRC-AGENT,unverified,ລາວກິນ __ ແລ້ວ: food or drink
+S000002878,1,person|animal|motion,W000019|W001425,SRC-AGENT,unverified,__ ກິນນ້ຳແລ້ວ: who has drunk; ເຂົ້າກິນນ້ຳແລ້ວ go in and drink may read as a serial verb
+S000002878,3,food|drink,,SRC-AGENT,unverified,ລາວກິນ __ ແລ້ວ: food or drink

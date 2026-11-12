@@ -30,3 +30,14 @@ L0004,8,word,W000019,recycle,earlier word
 L0004,9,sentence,S000002872,recycle,earlier sentence
 L0004,10,word,W000389,bonus,"'leg'; bonus word (LESSON_RULES decisions 21-22): known letters only, practises the vowel from lesson 3; never in a sentence"
 L0004,11,word,W000538,bonus,"'white'; bonus word (owner 2026-11-12): known letters only, pairs with ຂາ (adds the final ວ from lesson 3); never in a sentence; core in lesson 11 (colours)"
+L0005,1,unit,V15,new,vowel written before the consonant
+L0005,2,word,W000020,new,'already'; uses the new vowel
+L0005,3,word,W000018,recycle,earlier word; used in the next sentence
+L0005,4,sentence,S000000024,new,first 'already' sentence (existing row)
+L0005,5,word,W000031,recycle,earlier word
+L0005,6,word,W000019,recycle,earlier word
+L0005,7,sentence,S000002872,recycle,earlier sentence; contrast for the next one
+L0005,8,sentence,S000002877,new,'he has eaten already'
+L0005,9,word,W000011,recycle,earlier word
+L0005,10,sentence,S000002878,new,'she has had some water already'
+L0005,11,word,W000218,bonus,'glass'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence

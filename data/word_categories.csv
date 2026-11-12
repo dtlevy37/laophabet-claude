@@ -7,3 +7,5 @@ W000058,place|person,SRC-AGENT,unverified,ລາວ Laos/Lao
 W000011,drink,SRC-AGENT,unverified,ນ້ຳ water
 W000389,body,SRC-AGENT,unverified,ຂາ leg
 W000538,quality,SRC-AGENT,unverified,ຂາວ white
+W000020,function,SRC-AGENT,unverified,ແລ້ວ already (aspect marker after the verb phrase; never blanked)
+W000218,object,SRC-AGENT,unverified,ແກ້ວ glass; bottle (also a classifier for drinks)

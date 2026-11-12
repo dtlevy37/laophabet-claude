@@ -14,6 +14,11 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (nam, water), bonus ຂາ (kaa, leg) and ຂາວ (kaao, white). L0004 was rebuilt in place 2026-11-12
   (`20261112195124_lesson_l0004.sql`, then `20261112204059_lesson_l0004.sql` adding ຂາວ as bonus at the owner's
   request); ຂາວ becomes core in lesson 11; ລາວຂາວ is out of every lesson.
+- **L0005 "Already"** merged 2026-11-12 (`20261112205459_lesson_l0005.sql`, not applied): new V15 ແ◌; core ແລ້ວ
+  (laew, already; W000020, tagged `function`, so it is never the blank); bonus ແກ້ວ (gaew, glass; W000218). Recycles
+  ກິນ, ລາວ, ເຂົ້າ, ນ້ຳ and S000002872. Sentences: S000000024 ກິນແລ້ວ (existing), S000002877 and S000002878 (composed, unverified).
+  No budget warnings, no flags. W000020's gloss is still "already, done; then" (lessons have no gloss override): the card
+  shows all three senses. Native-speaker points in QUESTIONS.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary

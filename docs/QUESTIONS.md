@@ -19,6 +19,11 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   `python tmp/laao_change.py` (word row + 166 sentences).
 - Lesson 4 (composed): is ກິນນ້ຳ the everyday way to say "drink water" (versus ດື່ມນ້ຳ)? Is ລາວຂາວ natural for "he/she is
   fair-skinned"? Would anyone say ເຂົ້າຂາວ for white rice, or only ເຂົ້າຈ້າວ (S000002875, taken out of the lesson)? Is ລາວກິນນ້ຳ natural? Does ◌ຳ in ນ້ຳ sound like the "um" in "hum", and is "nam" a fair spelling of it?
+- Lesson 5 (composed): are ລາວກິນເຂົ້າແລ້ວ "He/She has eaten already" (S000002877) and ລາວກິນນ້ຳແລ້ວ "He/She has had some
+  water already" (S000002878) natural? Is the bare reply ກິນແລ້ວ "I've eaten (already)" (S000000024) natural? Tags to
+  confirm: ແລ້ວ (W000020) as a function word (never blanked), ແກ້ວ (W000218) as an object; in the blank __ ແລ້ວ only
+  nouns (ນ້ຳ, ຂາ, ແກ້ວ) are offered as wrong options: does any of them make a sensible reply? Does ແ in ແລ້ວ sound like the
+  a in "cat", held long?
 - Tone of ເຂົ້າ (low-falling) and ເກົ້າ (high-falling) as stored: do they match Vientiane speech?
 - **ບໍ່ vs ບໍ** (question marker): Wiktionary has only ບໍ່ for both "no" and the question sense; other sources often write
   the question marker without the tone mark. The data uses ບໍ່ for both. Which is right?
