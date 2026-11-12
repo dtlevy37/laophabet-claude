@@ -91,6 +91,8 @@ POOL_ROLES = ("new", "bonus")    # words that enter the distractor pool (get_les
 POOL_THROUGH = 5                 # lessons 1-5 share one pool (get_lesson: greatest(lesson_order, 5))
 MAX_BONUS = 2                    # decision 21: one or two per lesson (warning above)
 FUNCTION, ACTION = "function", "action"
+# twin_key: drop tone marks (U+0EC8-0ECB); fold ◌ີ ◌ື ◌ູ to ◌ິ ◌ຶ ◌ຸ
+TWIN_FOLD = {0x0EC8: None, 0x0EC9: None, 0x0ECA: None, 0x0ECB: None, 0x0EB5: 0x0EB4, 0x0EB7: 0x0EB6, 0x0EB9: 0x0EB8}
 KINDS = {"letters", "rule", "words", "sentences"}
 CAT_WEIGHT = {"function": 3, "pronouns": 3, "questions": 3, "basics": 3, "verbs": 3, "greetings": 3,
               "describing": 2, "people": 2, "time": 2, "numbers": 2, "feelings": 2, "home": 2, "food": 2,
@@ -332,6 +334,12 @@ class World:
         spell = {nfc(self.lao(w)) for w in pool}
         return sorted(w for w in self.word_cats if w in self.words and w not in pool and nfc(self.lao(w)) not in spell)
 
+    def twin_key(self, w):
+        """Spelling with tone marks dropped and long upper/lower vowels folded to short (owner 2026-11-12): an
+        untaught option may not differ from a word the learner sees only by such a mark (ເຂົ່າ knee vs ເຂົ້າ rice).
+        Same as fill_blank.js twinKey."""
+        return nfc(self.lao(w)).translate(TWIN_FOLD)
+
     def safe_option(self, w, acc, excl, seen_lao):
         c = self.cats(w)
         # same as fill_blank.js ok(): a word with no gloss is never offered
@@ -372,8 +380,9 @@ class World:
         ans_pos = self.first_pos(ans)
         safe.sort(key=lambda w: self.first_pos(w) != ans_pos)   # stable: pool order otherwise
         extra = []
+        twins = {self.twin_key(x) for x in list(pool) + list(ws)}
         for w in (untaught if len(safe) < 3 else []):
-            if w in self.words and self.safe_option(w, acc, excl, seen_lao):
+            if w in self.words and self.twin_key(w) not in twins and self.safe_option(w, acc, excl, seen_lao):
                 seen_lao.add(nfc(self.lao(w)))
                 extra.append(w)
         homo = [f"{k}:{self.lao(w)}" for k, w in enumerate(ws, 1)

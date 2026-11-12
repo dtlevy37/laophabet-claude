@@ -83,7 +83,7 @@ for (const b of bundles) {
       blanks++
       const words = s.item.detail.words
       const before = words.find((w) => w.position === s.position - 1)
-      if (before?.lao === 'ກິນ' && s.options.some((o) => o.lao === 'ນ້ຳ')) fail(`${lao(s)}: ນ້ຳ offered after ກິນ`)
+      if (before?.lao === 'ກິນ' && s.answer.lao !== 'ນ້ຳ' && s.options.some((o) => o.lao === 'ນ້ຳ')) fail(`${lao(s)}: ນ້ຳ offered after ກິນ`)
       if (new Set(s.options.map((o) => o.lao)).size !== s.options.length) fail(`${lao(s)}: two options with the same Lao`)
       if (s.options.length < 3) fail(`${lao(s)}: fewer than 3 options`)
       for (const o of s.options) if (wordsCsv.get(o.id) !== o.lao) fail(`${lao(s)}: option ${o.id} ${o.lao} is not a words.csv word`)
