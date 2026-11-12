@@ -28,3 +28,7 @@ W000674,action|motion,SRC-AGENT,unverified,Tagged by the agent (S7h); ບິນ 
 W000241,action|motion,SRC-AGENT,unverified,Tagged by the agent (S7h); ແລ່ນ run; untaught option
 W000261,quality,SRC-AGENT,unverified,Tagged by the agent (S7h); ຍາວ long; untaught option
 W000300,quality,SRC-AGENT,unverified,Tagged by the agent (S7h); ໜາວ cold (weather); untaught option
+W000002,quality,SRC-AGENT,unverified,Tagged by the agent
+W000016,function,SRC-AGENT,unverified,Tagged by the agent; demonstrative: tagged function so its slot can be blanked but it is never an option
+W000546,object,SRC-AGENT,unverified,Tagged by the agent
+W000550,object,SRC-AGENT,unverified,Tagged by the agent

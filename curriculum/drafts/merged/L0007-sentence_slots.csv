@@ -1,0 +1,9 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0007-S001,1,action|consume|motion|quality|time|person|place|animal|number,W000011|W000218,,unverified,Tagged by the agent; __ ແລ້ວ: any verb or state or noun-like word plus already is sensible; names excluded
+L0007-S002,1,person|animal|plant|food|drink|body|clothing|object|place|time|number|quality|action|consume|motion,W000218,,unverified,Tagged by the agent; this X is good: nearly any noun fits; verbs fit as gerund (ກິນນີ້ດີ eating this is good); only function words fail; answer W000011 not excluded
+L0007-S002,2,function|quality|action|consume|motion|person|animal|plant|food|drink|body|clothing|object|place|time|number,,,unverified,Tagged by the agent; function slot: ນ້ຳ __ ດີ takes particles and almost any word or compound ນ້ຳ+X
+L0007-S002,3,quality|action|consume|motion|function,,,unverified,Tagged by the agent; ນ້ຳນີ້ __: qualities and verbs as comment (ນ້ຳນີ້ກິນ); particles like ແລ້ວ or ບໍ່ also fit
+L0007-S003,2,food|drink|object|action|consume|motion|person|place|quality|clothing|plant|animal,W000218,,unverified,Tagged by the agent; ຂໍ __ ນີ້ແນ່: things or actions fit (ຂໍກິນນີ້ແນ່); body left out as in ຂໍ __ ແນ່; answer W000011 not excluded
+L0007-S003,3,function|food|drink|plant|quality|action|motion|consume|person|animal|place|time|number|object|body,W000011|W000218,,unverified,Tagged by the agent; function slot copied from existing ຂໍນ້ຳ __ ແນ່ equivalent
+S000000004,1,function|person|animal|plant|food|drink|body|clothing|object|place|time|number|quality|action|consume|motion,W000011|W000218,,unverified,Tagged by the agent; __ ດີ: almost anything can be the subject; names excluded
+S000000004,2,quality|action|consume|motion,,,unverified,Tagged by the agent; ບໍ່ __: negated quality or verb

@@ -26,6 +26,11 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   S000000023 ກິນເຂົ້າແລ້ວບໍ່? (existing). Budget warning: weight 7.5 (guideline 5.5); the path allows splitting the
   ຂໍ … ແນ່ half into its own lesson 7 if it plays long. Blanks that were short of safe distractors are topped up with untaught real words since S7h.
   Native-speaker points in QUESTIONS.
+- **L0007 "Good, this"** merged 2026-11-12 (`20261112212459_lesson_l0007.sql`, not applied; no flags): new C09 ດ (initial)
+  and V05 ◌ີ; core ດີ (dee, good; W000002), ນີ້ (nee, this; W000016); bonus ດາວ (dao, star; W000546), ດິນ (din, soil;
+  W000550). Recycles ແລ້ວ, ບໍ່, ນ້ຳ, ຂໍ, ແນ່. Sentences: S000002882 ດີແລ້ວ, S000002883 ນ້ຳນີ້ດີ, S000002884 ຂໍນ້ຳນີ້ແນ່
+  (composed, unverified), S000000004 ບໍ່ດີ (existing). No budget warnings. ດາວ excluded as a name (Dao) in person slots;
+  four blanks have no safe option and are skipped. Native-speaker points in QUESTIONS.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
@@ -52,6 +57,13 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    (sabai) and ສະບາຍດີ (sabaidee) together in lesson 8 as the path has them.
 
 ## Decisions in force
+- Fill in the blank (owner 2026-11-12): a new sentence is also blanked in its own lesson (closing block; the
+  lesson's new words count as level 2 there). Untaught wrong options (S7h) are real words only, never a tone-mark or
+  long/short-vowel twin of a word on screen (ເຂົ່າ knee vs ເຂົ້າ rice waits until both are taught). Personal-name
+  words (ນ້ຳ Nam, ແກ້ວ Kaew, ດາວ Dao) are excluded from subject slots.
+- Idea, not sliced (owner 2026-11-12): a fill in the blank whose only readable option is the answer (the rest
+  untaught) shows reading, but is weaker evidence of knowing the meaning; consider logging it with less weight
+  (e.g. not raising the word's recall level) when S9 (FSRS) uses the answers.
 - Letter writing (DESIGN "Letter writing"): separate area, static stroke file, nothing recorded in the DB yet; the
   whole-letter judge passes a drawing only when the wanted letter is the best match among all letters.
 - One curriculum lesson = one app lesson. Content names no screens; the planner (`js/session.js`) builds them.

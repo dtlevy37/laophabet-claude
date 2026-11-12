@@ -40,6 +40,14 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 - Fill in the blank hazard: ນ້ຳ (Nam) and ແກ້ວ (Kaew) are also common personal names, so they can make sense in any
   subject slot (ນ້ຳບໍ່ກິນເຂົ້າ "Nam doesn't eat"). They are now excluded in S000002879, S000000023 and S000000024 slot 1.
   Are there other pool words (ຂາວ, ບ້ານ ...) that are common names or nicknames?
+- Lesson 7 (composed): does ດີແລ້ວ (dee leo, S000002882) mean "That's fine. / That's good." (agreeing, or "good enough,
+  stop")? Is ນ້ຳນີ້ດີ (nam nee dee, "This water is good", S000002883) natural, or would one say ນ້ຳນີ້ແຊບ / ນ້ຳນີ້ສະອາດ?
+  Is ຂໍນ້ຳນີ້ແນ່ (khor nam nee nae, "Could I have this water?", S000002884) natural, or is a classifier needed
+  (ຂໍນ້ຳແກ້ວນີ້ແນ່)? ບໍ່ດີ (bor dee, "Not good", S000000004, existing) as a bare reply.
+- Lesson 7: is ດາວ (dao, star; W000546) also a common personal name (Dao)? It is excluded from subject slots as one.
+  Tags: ດາວ and ດິນ (din, soil; W000550) as objects (ດິນ not place), ນີ້ (nee, this; W000016) as a function word.
+- Lesson 7 tones and lengths: ດີ (dee, good) is stored low-rising (diː˩(˧)); is that how it is said in Vientiane?
+  ດິນ (din, soil) is short and ດາວ (dao, star) long, per Wiktionary: do they sound that way?
 - **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
   screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
   ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right

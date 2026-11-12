@@ -1,0 +1,16 @@
+position,item_type,item_id,role,notes
+1,unit,C09,new,new letter (initial role)
+2,unit,V05,new,long 'ee' vowel above the consonant
+3,word,W000002,new,'good'; uses both new units
+4,word,W000020,recycle,earlier word; used in the next sentence
+5,sentence,S000002882,new,'that's fine' (composed)
+6,word,W000003,recycle,earlier word; used in the next sentence
+7,sentence,S000000004,new,'not good' (existing row)
+8,word,W000016,new,'this'; uses the new vowel
+9,word,W000011,recycle,earlier word; used in the next two sentences
+10,sentence,S000002883,new,'this water is good' (composed)
+11,word,W000009,recycle,earlier word; used in the next sentence
+12,word,W001426,recycle,earlier word (softener); used in the next sentence
+13,sentence,S000002884,new,'could I have this water?' (composed)
+14,word,W000546,bonus,"'star'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence"
+15,word,W000550,bonus,"'earth; soil; land'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence"

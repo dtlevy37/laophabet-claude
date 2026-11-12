@@ -58,3 +58,18 @@ L0006,14,word,W000011,recycle,earlier word; used in the next sentence
 L0006,15,sentence,S000002880,new,'could I have some water?' (composed)
 L0006,16,sentence,S000002881,new,'could I have some rice?' (composed)
 L0006,17,word,W000049,bonus,'home; village'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence
+L0007,1,unit,C09,new,new letter (initial role)
+L0007,2,unit,V05,new,long 'ee' vowel above the consonant
+L0007,3,word,W000002,new,'good'; uses both new units
+L0007,4,word,W000020,recycle,earlier word; used in the next sentence
+L0007,5,sentence,S000002882,new,'that's fine' (composed)
+L0007,6,word,W000003,recycle,earlier word; used in the next sentence
+L0007,7,sentence,S000000004,new,'not good' (existing row)
+L0007,8,word,W000016,new,'this'; uses the new vowel
+L0007,9,word,W000011,recycle,earlier word; used in the next two sentences
+L0007,10,sentence,S000002883,new,'this water is good' (composed)
+L0007,11,word,W000009,recycle,earlier word; used in the next sentence
+L0007,12,word,W001426,recycle,earlier word (softener); used in the next sentence
+L0007,13,sentence,S000002884,new,'could I have this water?' (composed)
+L0007,14,word,W000546,bonus,'star'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence
+L0007,15,word,W000550,bonus,'earth; soil; land'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence
