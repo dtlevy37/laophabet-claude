@@ -23,7 +23,7 @@ Task: create exactly ONE new lesson (the next one), the one docs/CURRICULUM_PATH
 
 5. Write the draft files in curriculum/lessons/drafts/next/ (lesson.csv, items.csv, units.csv, rules.csv; formats at the end of the brief). Teaching text (teach_en): 1-3 short plain-English sentences for an English speaker. Say what the learner sees, what it sounds like (use pron_tip in data/letters.csv / data/vowels.csv), and anything about tone that matters at this point. Do not state facts you are unsure of; keep to what letters.csv, vowels.csv and docs/SCHEMA.md say.
 
-6. Run: python scripts/lesson_tool.py check  (add the budget flags CURRICULUM_PATH.md gives for this lesson, for example `--max-units 3`; the same flags go on merge)
+6. Run: python scripts/lesson_tool.py check  (add the budget flags CURRICULUM_PATH.md gives for this lesson, for example `--max-units 3`; a lesson with no new letters, such as lesson 11, adds `--no-new-letters`; the same flags go on merge)
    Fix the draft until it reports 0 errors. The budget is a guideline (decision 26): budget warnings do not block, so do not cut prescribed content to silence them; mention them in your NOTES entry. Warnings about unverified rows are expected. Read the printed fill-in-the-blank options: if any option would also make a sensible sentence, widen that slot's `accepts` (or add the word to exclude_word_ids), run pipeline.sh, and check again.
 
 7. Run: python scripts/lesson_tool.py merge  (same flags)

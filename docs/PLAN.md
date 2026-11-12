@@ -24,7 +24,7 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 1. Mobile lesson frame: done (phone test passed 2026-11-11)
 2. S7f: done 2026-11-12
 3. S7b, S7e, S7d: done 2026-11-12
-4. Lessons 5–11 along `docs/CURRICULUM_PATH.md` (owner play-tests; lesson 6 may be split)
+4. Lessons 5–11 along `docs/CURRICULUM_PATH.md`: built 2026-11-12; owner play-test pending (lessons 6 and 11 may split)
 6. S7g conversations (first ones in lessons 8 and 10)
 7. S8 home and stats, S8b practice, S9 FSRS, S9b tone drill, S10 native feedback and audio, S11 deploy
 8. Plan the stretch after lesson 11 (ມີ, ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່) around a second conversation (ordering food)

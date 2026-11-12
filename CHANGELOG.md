@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (lessons 7–11; fill in the blank on new sentences)
+- Lessons 7 "Good, this" (ດ ◌ີ; ດີ ນີ້; bonus ດາວ ດິນ), 8 "Hello" (ສ ◌ະ ◌ຍ, rule R01; ສະບາຍ ສະບາຍດີ; bonus ຂາຍ),
+  9 "Hungry, you" (ຫ ຈ; ຫິວ ເຈົ້າ; bonus ຫ້າ ຈານ), 10 "I, and the conversation" (◌ອ◌; ຂ້ອຍ ນອນ; bonus ນ້ອຍ; the target
+  conversation as ordinary sentences), 11 "Colours, selling, small" (no new letters; ສີ ຂາວ ດຳ ຂາຍ ແກ້ວ ນ້ອຍ) built by
+  subagents, each curriculum-reviewed, merged and applied locally. New `lesson_tool.py --no-new-letters` flag.
+- Name exclusions in subject slots (ດາວ, ນ້ອຍ, ດຳ, ຂາວ besides ນ້ຳ, ແກ້ວ) and other earlier-slot fixes shipped as
+  `db_sql.py change` migrations (`..._dao_name_exclusion`, `..._l0009_earlier_slots`, `..._noy_name_exclusion`,
+  `..._dam_khao_name_exclusion`).
+- App: a new sentence also gets a fill in the blank in its own lesson (closing block; the lesson's new words count
+  as level 2); untaught options are never a tone-mark or long/short-vowel twin of a word on screen. Owner browser
+  test pending: `#/try/L0005` … `#/try/L0011`.
+
 ## 2026-11-12 (lessons 5–6, S7h untaught wrong options)
 - Lesson 5 "Already" (ແ◌; ແລ້ວ; bonus ແກ້ວ) and lesson 6 "Not, questions, asking for something" (◌ໍ ບ ◌່; ຂໍ ບໍ່ ແນ່;
   bonus ບ້ານ) built by subagents, curriculum-reviewed, merged; migrations `..._lesson_l0005.sql`, `..._lesson_l0006.sql`

@@ -1,0 +1,19 @@
+position,item_type,item_id,role,notes
+1,word,W000536,new,'colour'; no new letters (lesson 11 uses known letters only)
+2,word,W000016,recycle,earlier word 'this'; used in the colour sentences and later ones
+3,word,W000538,new,"'white'; bonus word in lesson 4, now core"
+4,sentence,S000002893,new,'This colour is white' (composed)
+5,word,W000539,new,'black'; readable with known letters
+6,sentence,S000002894,new,'This colour is black' (composed)
+7,word,W000002,recycle,earlier word 'good'; used in the next sentence
+8,sentence,S000002895,new,'This colour is good' (composed)
+9,word,W000084,new,"'sell'; bonus word in lesson 8, now core"
+10,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+11,word,W000019,recycle,earlier word 'rice'; used in the next sentence
+12,sentence,S000002896,new,'She sells rice' (composed)
+13,word,W000218,new,"'glass; bottle'; bonus word in lesson 5, now core"
+14,word,W000090,new,"'small; little'; bonus word in lesson 10, now core"
+15,word,W000009,recycle,earlier word 'ask for'; used in the next sentence
+16,word,W001426,recycle,earlier word 'please (softener)'; used in the next sentence
+17,sentence,S000002897,new,'Could I have a small glass?' (composed)
+18,sentence,S000002898,new,'This glass is small' (composed)

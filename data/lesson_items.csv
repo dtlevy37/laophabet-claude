@@ -123,3 +123,21 @@ L0010,17,sentence,S000002892,new,"conversation line 4 (first part), speaker B: '
 L0010,18,sentence,S000002888,recycle,"conversation line 5 (first part), speaker A: Not hungry (lesson 9)"
 L0010,19,sentence,S000002890,new,"conversation line 5 (second part), speaker A: 'I've eaten already' (composed); the payoff of the conversation"
 L0010,20,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
+L0011,1,word,W000536,new,'colour'; no new letters (lesson 11 uses known letters only)
+L0011,2,word,W000016,recycle,earlier word 'this'; used in the colour sentences and later ones
+L0011,3,word,W000538,new,"'white'; bonus word in lesson 4, now core"
+L0011,4,sentence,S000002893,new,'This colour is white' (composed)
+L0011,5,word,W000539,new,'black'; readable with known letters
+L0011,6,sentence,S000002894,new,'This colour is black' (composed)
+L0011,7,word,W000002,recycle,earlier word 'good'; used in the next sentence
+L0011,8,sentence,S000002895,new,'This colour is good' (composed)
+L0011,9,word,W000084,new,"'sell'; bonus word in lesson 8, now core"
+L0011,10,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0011,11,word,W000019,recycle,earlier word 'rice'; used in the next sentence
+L0011,12,sentence,S000002896,new,'She sells rice' (composed)
+L0011,13,word,W000218,new,"'glass; bottle'; bonus word in lesson 5, now core"
+L0011,14,word,W000090,new,"'small; little'; bonus word in lesson 10, now core"
+L0011,15,word,W000009,recycle,earlier word 'ask for'; used in the next sentence
+L0011,16,word,W001426,recycle,earlier word 'please (softener)'; used in the next sentence
+L0011,17,sentence,S000002897,new,'Could I have a small glass?' (composed)
+L0011,18,sentence,S000002898,new,'This glass is small' (composed)

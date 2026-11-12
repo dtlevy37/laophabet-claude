@@ -42,3 +42,5 @@ W000629,object,SRC-AGENT,unverified,Tagged by the agent
 W000006,person,SRC-AGENT,unverified,Tagged by the agent
 W000033,action,SRC-AGENT,unverified,Tagged by the agent; no verb class fits sleep so action alone
 W000090,quality,SRC-AGENT,unverified,Tagged by the agent; also a personal name Noy so excluded where person is accepted
+W000536,object|action,SRC-AGENT,unverified,"Tagged by the agent; ສີ colour (also paint); action for the verb sense 'to rub; to mill (rice)' (ສີເຂົ້າ), so it is never a distractor in a verb gap (ລາວ __ ເຂົ້າ)"
+W000539,quality|action,SRC-AGENT,unverified,"Tagged by the agent; ດຳ black; action for the verb sense 'to dive' (ດຳນ້ຳ), so it is never a distractor in a verb gap (ລາວ __ ນ້ຳ); also a personal name Dam, excluded with the other names"

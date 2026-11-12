@@ -10,7 +10,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   `docker exec -i <supabase_db container> psql -U postgres`; there is no `psql` on PATH) and the lesson runner
   (`scripts/next_lesson.ps1`). First use of each should be treated as a test.
 - **Content pool:** 1425 words, 2816 sentences, 30 templates. Pipeline clean (0 errors, the usual 8 warnings).
-- **Lessons merged: 4.** L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
+- **Lessons merged: 11** (5–11 built 2026-11-12 by subagents, each curriculum-reviewed; entries below). Earlier: L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
   (nam, water), bonus ຂາ (kaa, leg) and ຂາວ (kaao, white). L0004 was rebuilt in place 2026-11-12
   (`20261112195124_lesson_l0004.sql`, then `20261112204059_lesson_l0004.sql` adding ຂາວ as bonus at the owner's
   request); ຂາວ becomes core in lesson 11; ລາວຂາວ is out of every lesson.
@@ -55,6 +55,18 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (S000000023, S000000024, S000002870, S000002872, S000002874, S000002877, S000002878, S000002879, S000002880,
   S000002881, S000002882, S000002883, S000002884, S000000004, S000000001, S000000003, S000002885, S000002886,
   S000002887, S000002888, S000000007, S000001170, S000002889): needs a `db_sql.py change`.
+- **L0011 "Colours, selling, small"** merged 2026-11-12 (`20261112215850_lesson_l0011.sql`, not applied; flags
+  `--max-words 5 --no-new-letters`; budget warnings: 6 new words, weight 6): no new units; core ສີ (sii, colour;
+  W000536), ຂາວ (khao, white; W000538), ດຳ (dam, black; W000539), ຂາຍ (khaai, sell; W000084), ແກ້ວ (kaew, glass;
+  W000218, made core for the path sentence), ນ້ອຍ (noy, small; W000090). Recycles ນີ້, ດີ, ລາວ, ເຂົ້າ, ຂໍ, ແນ່. Sentences,
+  all composed (unverified): S000002893 ສີນີ້ຂາວ, S000002894 ສີນີ້ດຳ, S000002895 ສີນີ້ດີ, S000002896 ລາວຂາຍເຂົ້າ,
+  S000002897 ຂໍແກ້ວນ້ອຍແນ່, S000002898 ແກ້ວນີ້ນ້ອຍ. Kept as one lesson (decision 26) with a colour block and a sell/small
+  block; the owner may split it there after play-testing. New `lesson_tool.py --no-new-letters` flag (check/merge):
+  a lesson with no new units or rules; its new words need not use something new. ສີ tagged object|action (ສີເຂົ້າ mill
+  rice), ດຳ quality|action (ດຳນ້ຳ dive), so neither is a wrong option in a verb gap; ສີ pron_tip no longer compares
+  ສີ່ four. **Pending:** ດຳ W000539 and ຂາວ W000538 (names Dam, Khao) added to exclude_word_ids on the 47 earlier slots
+  that exclude ນ້ອຍ (S000000001, S000000003, S000000004, S000000007, S000000008, S000000023, S000000024, S000000113,
+  S000001170, S000002870, S000002872, S000002874, S000002877–S000002892): needs a `db_sql.py change`.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
@@ -77,8 +89,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    `js/writing/score.js` (`LETTER_MAX`, `LETTER_MARGIN`, `TRACE_TOL`, `PART_MAX`); rerun `node scripts/strokes_test.js`.
 1. Phone testing: `config.js` SUPABASE_URL uses the PC's LAN address (192.168.1.189); the app is at
    `http://192.168.1.189:5500/`. The lesson frame (`.lesson-frame`, 100dvh, pinned button) passed the phone test on 2026-11-11.
-3. Then lessons 5–11 (PLAN "Working order"). Owner, 2026-11-12: wait on lessons 5–11 until asked; keep ສະບາຍ
-   (sabai) and ສະບາຍດີ (sabaidee) together in lesson 8 as the path has them.
+3. **Owner play-test of lessons 5–11** (`#/try/L0005` … `#/try/L0011`): lesson 6 and lesson 11 may split; conversation
+   lines in 8 and 10 play as ordinary sentences until S7g. Many native-speaker questions added to QUESTIONS.
 
 ## Decisions in force
 - Fill in the blank (owner 2026-11-12): a new sentence is also blanked in its own lesson (closing block; the
@@ -97,7 +109,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   button slot from S7b. Resume is same-device only. No offline.
 - A done lesson links to "Review lesson material": read-only cards, never questions.
 - Fill in the blank offers exactly one logical choice (DESIGN "Fill in the blank: one logical choice").
-- Lesson budget is a guideline (decision 26). Lesson 4 is rebuilt; lessons 5–11 wait until the owner asks.
+- Lesson budget is a guideline (decision 26). Lessons 5–11 are built.
 - Still wanted in a later lesson, not placed: ແມ່ນ (maen, yes / to be) W000004, ໄປ (bpai, go), and ເຂົາ (kao, they) /
   ເກົ້າ (gao, nine) once ເຂົ້າ is solid (decision 15).
 - One row per spelling and meaning; sentences pick a meaning with `word_overrides`.

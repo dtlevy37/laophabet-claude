@@ -86,6 +86,16 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   person slots (exclude_word_ids, 38 earlier slots updated). Is that right? Also: ນ້ອຍ is a wrong option in
   ກິນ __ (kin __) blanks; is "ກິນນ້ອຍ" ever said, or only ກິນໜ້ອຍ (kin noy, "eat a little")? Tags: ຂ້ອຍ person,
   ນອນ action (no verb class), ນ້ອຍ quality.
+- **Lesson 11 (L0011)**, all composed by the agent: ສີນີ້ຂາວ (sii nee khao, "This colour is white"; S000002893),
+  ສີນີ້ດຳ (sii nee dam, "This colour is black"; S000002894), ສີນີ້ດີ (sii nee dee, "This colour is good"; S000002895;
+  the pool has ສີນີ້ງາມ "beautiful": which is more natural?), ລາວຂາຍເຂົ້າ (lao khaai khao, "She sells rice";
+  S000002896), ແກ້ວນີ້ນ້ອຍ (kaew nee noy, "This glass is small"; S000002898). (1) Asked "what colour?", do people
+  answer with the bare ສີຂາວ (sii khao) or just ຂາວ (khao)? (2) ຂໍແກ້ວນ້ອຍແນ່ (khor kaew noy nae; S000002897): does it
+  mean "Could I have a small glass?", or is it heard as "a little glass(ful)" / something else? (3) ເຂົ້າຂາວ (khao
+  khao, "white rice"; S000002875, not used in any lesson): real, or is plain rice always ເຂົ້າຈ້າວ (khao jaao)?
+  (4) Are ດຳ (Dam) and ຂາວ (Khao) common nicknames? Both are now kept out as wrong options wherever a name could fit
+  (W000539, W000538 in exclude_word_ids). (5) Does ສີ (sii, colour) have an impolite or rude sense to avoid? The agent
+  tagged it with the verb sense "to rub; to mill (rice)" (ສີເຂົ້າ) and ດຳ with "to dive" (ດຳນ້ຳ): right?
 - **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
   screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
   ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right

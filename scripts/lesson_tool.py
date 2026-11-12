@@ -733,7 +733,9 @@ def check(world, draft, a):
         if miss:
             err.append(f"word {w} {world.lao(w)}: not readable yet, needs {' '.join(world.show(u) for u in sorted(miss))}")
     fresh = {u for u in new_units | new_rules} | {i for _, i in world.prev_new}
-    if fresh:
+    if a.no_new_letters and (new_units or new_rules):
+        err.append("--no-new-letters: the draft lists new units or rules")
+    if fresh and not a.no_new_letters:
         for w in new_words:
             if w not in promoted and not (world.word_sig(w)[0] & fresh):
                 err.append(f"word {w} {world.lao(w)}: uses no unit or rule from this or the previous lesson")
@@ -926,6 +928,9 @@ def main():
     ap.add_argument("--max-words", type=int, default=3)
     ap.add_argument("--max-weight", type=float, default=5.5)
     ap.add_argument("--min-recycle", type=int, default=3)
+    ap.add_argument("--no-new-letters", action="store_true",
+                    help="check/merge: a lesson with no new units or rules (CURRICULUM_PATH lesson 11): its new words "
+                         "need not use a unit or rule from this or the previous lesson")
     ap.add_argument("--merged", action="store_true", help="check: every merged lesson instead of a draft")
     a = ap.parse_args()
     root = os.path.abspath(os.getcwd())

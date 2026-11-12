@@ -1,0 +1,7 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+L0011-S001,ສີນີ້ຂາວ.,ສີ ນີ້ ຂາວ.,siː˩(˧) niː˥˨ kʰaːw˩(˧),sii nii kaao.,This colour is white.,W000538,,,unverified,Composed by the agent for lesson 11 (same pattern as S000001007 ສີນີ້ງາມ); not from a source.,
+L0011-S002,ສີນີ້ດຳ.,ສີ ນີ້ ດຳ.,siː˩(˧) niː˥˨ dam˩(˧),sii nii dam.,This colour is black.,W000539,,,unverified,Composed by the agent for lesson 11 (same pattern as S000001007 ສີນີ້ງາມ); not from a source.,
+L0011-S003,ສີນີ້ດີ.,ສີ ນີ້ ດີ.,siː˩(˧) niː˥˨ diː˩(˧),sii nii dii.,This colour is good.,W000536,,,unverified,Composed by the agent for lesson 11 (CURRICULUM_PATH candidate; same pattern as S000001007 ສີນີ້ງາມ); not from a source.,
+L0011-S004,ລາວຂາຍເຂົ້າ.,ລາວ ຂາຍ ເຂົ້າ.,law˧˥ kʰaːj˩(˧) kʰaw˧˩,lao kaai kao.,She sells rice. / He sells rice.,W000084,,,unverified,Composed by the agent for lesson 11 (CURRICULUM_PATH candidate; same pattern as S000000136 ລາວຂາຍໝາກໄມ້); not from a source.,
+L0011-S005,ຂໍແກ້ວນ້ອຍແນ່.,ຂໍ ແກ້ວ ນ້ອຍ ແນ່.,kʰɔː˩(˧) kɛːw˥˨ nɔːj˥˨ nɛː˧,kaw gaew nawy nae.,Could I have a small glass?,W000090,,,unverified,Composed by the agent for lesson 11 (CURRICULUM_PATH candidate); not from a source.,
+L0011-S006,ແກ້ວນີ້ນ້ອຍ.,ແກ້ວ ນີ້ ນ້ອຍ.,kɛːw˥˨ niː˥˨ nɔːj˥˨,gaew nii nawy.,This glass is small.,W000218,,,unverified,Composed by the agent for lesson 11 (same pattern as S000000393 ຈອກນີ້ນ້ອຍ this cup is small); not from a source.,
