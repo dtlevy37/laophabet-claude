@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (lessons 5–6, S7h untaught wrong options)
+- Lesson 5 "Already" (ແ◌; ແລ້ວ; bonus ແກ້ວ) and lesson 6 "Not, questions, asking for something" (◌ໍ ບ ◌່; ຂໍ ບໍ່ ແນ່;
+  bonus ບ້ານ) built by subagents, curriculum-reviewed, merged; migrations `..._lesson_l0005.sql`, `..._lesson_l0006.sql`
+  applied locally. New word ແນ່ W001426 (unverified). Native-speaker questions added.
+- S7h (built, owner browser test pending): fill in the blank tops up wrong options at random from real untaught
+  words (any tagged word outside the pool) when fewer than 3 known options are safe; `get_lesson` returns
+  `distractors.untaught` (`20261112211502_s7h_untaught_options.sql`). Function words can be blanked but are never
+  options; particle slots for ແລ້ວ/ບໍ່/ແນ່; ນ້ຳ/ແກ້ວ (names) excluded from subject slots; 15 filler words tagged
+  (`20261112211540_s7h_untaught_tags_particle_slots.sql`). Owner rule: every word shown is real Lao, never invented.
+  Browser: `#/try/L0006`, play to ກິນແລ້ວ; the blank shows 4 tiles, some untaught (ສິ້ນ, ເຂົ່າ…).
+
 ## 2026-11-12 (lesson 4 rebuild, bonus words; owner tests)
 
 S7f passed the owner's browser test (lesson 4 with bonus words ຂາ and ຂາວ). Letter writing: the owner says it still

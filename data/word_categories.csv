@@ -13,3 +13,18 @@ W001426,function,SRC-AGENT,unverified,Tagged by the agent
 W000003,function,SRC-AGENT,unverified,Tagged by the agent
 W000009,action,SRC-AGENT,unverified,"Tagged by the agent; ຂໍ ask for: no existing verb class fits, so with only action it is never a distractor in a verb gap"
 W000049,place,SRC-AGENT,unverified,Tagged by the agent
+W000384,body,SRC-AGENT,unverified,Tagged by the agent (S7h); ແຂ້ວ tooth; untaught option
+W000721,body,SRC-AGENT,unverified,Tagged by the agent (S7h); ນິ້ວ finger/toe; untaught option
+W000388,body,SRC-AGENT,unverified,Tagged by the agent (S7h); ແຂນ arm; untaught option
+W000722,body,SRC-AGENT,unverified,Tagged by the agent (S7h); ບ່າ shoulder; untaught option
+W000724,body,SRC-AGENT,unverified,Tagged by the agent (S7h); ເຂົ່າ knee; untaught option
+W000416,clothing,SRC-AGENT,unverified,Tagged by the agent (S7h); ສິ້ນ sinh skirt; untaught option
+W001091,clothing,SRC-AGENT,unverified,Tagged by the agent (S7h); ສາຍແອວ belt; untaught option
+W001358,object,SRC-AGENT,unverified,Tagged by the agent (S7h); ລໍ້ wheel; untaught option
+W001006,object,SRC-AGENT,unverified,Tagged by the agent (S7h); ບານ ball; untaught option
+W001158,action,SRC-AGENT,unverified,"Tagged by the agent (S7h); ບານ to bloom, homograph of ບານ ball; only action, so never a distractor in a verb gap"
+W000257,quality,SRC-AGENT,unverified,Tagged by the agent (S7h); ເກົ່າ old (things); untaught option
+W000674,action|motion,SRC-AGENT,unverified,Tagged by the agent (S7h); ບິນ fly; untaught option
+W000241,action|motion,SRC-AGENT,unverified,Tagged by the agent (S7h); ແລ່ນ run; untaught option
+W000261,quality,SRC-AGENT,unverified,Tagged by the agent (S7h); ຍາວ long; untaught option
+W000300,quality,SRC-AGENT,unverified,Tagged by the agent (S7h); ໜາວ cold (weather); untaught option

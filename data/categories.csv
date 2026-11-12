@@ -14,4 +14,4 @@ quality,"Adjectives, colours, states",ຂາວ (white)
 action,Verbs (every verb also lists one or more verb classes),ກິນ (eat)
 consume,Verb class: takes food or drink as its object,ກິນ (eat)
 motion,Verb class: going or moving somewhere,ເຂົ້າ (enter)
-function,"Particles, negation, question words, classifiers; never blanked and never an option",
+function,"Particles, negation, question words, classifiers; never an option (may be blanked: the slot lists function in accepts)",

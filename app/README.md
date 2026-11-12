@@ -24,6 +24,7 @@ app/
 | `tests/s5_progress_test.sql` | Paste-in SQL check for S5 (throwaway users, rolled back; prints check / got / expected). |
 | `supabase/migrations/20261110120000_played_lesson.sql` | S6a: `review_log.first_try`; replaces `session_summary`, `record_answers`, `list_lessons` and `get_lesson` (per-learner lesson state, levels, pool unit sounds). |
 | `supabase/migrations/20261111010000_list_lessons_covers.sql` | S7a extra: `list_lessons` adds `covers` (a done lesson's new items). |
+| `supabase/migrations/20261112211502_s7h_untaught_options.sql` | S7h: replaces `get_lesson` (adds `distractors.untaught`). |
 | `supabase/migrations/20261111020000_activity_data_bonus.sql` | S7c + S7f: tables `word_units`, `word_categories`, `sentence_slots` (locked down like the other content tables); `lesson_items.role` allows `bonus`; internal helper `word_cats(word_id)` (category union over the word's spelling, verb safety rule; not callable by app users); replaces `get_lesson` and `list_lessons` (additive changes, below). |
 | `tests/s6a_played_lesson_test.sql` | Paste-in SQL check for S6a (one throwaway user; prints check / got / expected). |
 | `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `scripts/db_sql.py` (never by hand). |
@@ -50,6 +51,10 @@ Since `20261111020000_activity_data_bonus.sql`: a word detail has `units: [{syl_
 when unparsed); a sentence detail has `slots: [{position, accepts, exclude}]`; each pool word has `cats` (the
 category union over every live word with the same spelling, or null when untagged); the pool includes `bonus` words.
 An item's `role` can be `bonus`.
+
+Since `..._s7h_untaught_options.sql` (S7h): `distractors.untaught` is `[{word_id, lao, gloss_en, respelling, pos,
+cats}]`: every other live word with a word_categories row (no `function` in its cats, no pool word's spelling).
+Fill in the blank draws wrong options from it at random only when the pool's safe distractors run short.
 
 ### `list_lessons()` (signed-in users)
 Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state, completed_at, last_accuracy}]` by lesson order. `state` follows the `start_lesson` rule: `done` (the caller completed it), `open` (lesson 1, a lesson the caller has started, or the one after a completed lesson), else `locked`. `completed_at` is the first completion; `last_accuracy` is the first-try accuracy (0–100, or null) of the caller's latest completed session of that lesson. Since `20261111010000_list_lessons_covers.sql` each row also has `covers`: for a done lesson, its new items in teaching order `[{item_type, lao, en}]` (unit: lao; word: lao + gloss; sentence: lao + English; rule: name), else null. The lesson list shows them so a learner can pick a lesson to review. Since `20261111020000_activity_data_bonus.sql` each row also has `bonus`: for a done lesson, its bonus words in teaching order (`[]` when none), else null; `covers` and `new_items` count core items only.

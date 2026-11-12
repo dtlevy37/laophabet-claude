@@ -14,18 +14,17 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (nam, water), bonus ຂາ (kaa, leg) and ຂາວ (kaao, white). L0004 was rebuilt in place 2026-11-12
   (`20261112195124_lesson_l0004.sql`, then `20261112204059_lesson_l0004.sql` adding ຂາວ as bonus at the owner's
   request); ຂາວ becomes core in lesson 11; ລາວຂາວ is out of every lesson.
-- **L0005 "Already"** merged 2026-11-12 (`20261112205459_lesson_l0005.sql`, not applied): new V15 ແ◌; core ແລ້ວ
-  (laew, already; W000020, tagged `function`, so it is never the blank); bonus ແກ້ວ (gaew, glass; W000218). Recycles
+- **L0005 "Already"** merged 2026-11-12 (`20261112205459_lesson_l0005.sql`, applied locally): new V15 ແ◌; core ແລ້ວ
+  (laew, already; W000020, tagged `function`: never an option, blankable since S7h); bonus ແກ້ວ (gaew, glass; W000218). Recycles
   ກິນ, ລາວ, ເຂົ້າ, ນ້ຳ and S000002872. Sentences: S000000024 ກິນແລ້ວ (existing), S000002877 and S000002878 (composed, unverified).
   No budget warnings, no flags. W000020's gloss is still "already, done; then" (lessons have no gloss override): the card
   shows all three senses. Native-speaker points in QUESTIONS.
-- **L0006 "Not, questions, asking for something"** merged 2026-11-12 (`20261112210242_lesson_l0006.sql`, not applied;
+- **L0006 "Not, questions, asking for something"** merged 2026-11-12 (`20261112210242_lesson_l0006.sql`, applied locally;
   `--max-units 3`): new V21 ◌ໍ, C14 ບ, T1 ◌່; core ຂໍ (khor, may I have; W000009), ບໍ່ (bor, not/question; W000003),
   ແນ່ (nae, softener; W001426, newly drafted, unverified); bonus ບ້ານ (baan, home; W000049). Recycles ລາວ, ກິນ, ເຂົ້າ,
   ແລ້ວ, ນ້ຳ and S000000024. Sentences: S000002879 ລາວບໍ່ກິນເຂົ້າ, S000002880 ຂໍນ້ຳແນ່, S000002881 ຂໍເຂົ້າແນ່ (composed),
   S000000023 ກິນເຂົ້າແລ້ວບໍ່? (existing). Budget warning: weight 7.5 (guideline 5.5); the path allows splitting the
-  ຂໍ … ແນ່ half into its own lesson 7 if it plays long. Several blanks are skipped (1 safe distractor) because ນ້ຳ and
-  ແກ້ວ are excluded as personal names and ຂາ as food; the S000000024 slot change rides in the L0006 migration.
+  ຂໍ … ແນ່ half into its own lesson 7 if it plays long. Blanks that were short of safe distractors are topped up with untaught real words since S7h.
   Native-speaker points in QUESTIONS.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
@@ -35,6 +34,12 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
+0. **S7h built, not owner-tested** (2026-11-12): untaught real words (`get_lesson` `distractors.untaught`, every
+   other tagged word) top up fill in the blank; particles blankable; ນ້ຳ/ແກ້ວ excluded in subject slots.
+   Migrations `20261112211502_s7h_untaught_options.sql` (get_lesson) and `20261112211540_s7h_untaught_tags_particle_slots.sql`
+   applied locally. The planner still blanks only recycled sentences, so ແລ້ວ in S000002877 is first asked when
+   that sentence is recycled (lesson 5 itself recycles only S000002872). Any newly tagged word becomes an untaught
+   option in every lesson: tag only words that are safe as wrong options.
 0. Re-dump `tmp/bundles/` and rerun `node scripts/session_test.mjs` after any lesson merge.
 0. **Owner test of letter writing (S7w)**: owner 2026-11-12, after the fixes: "still feels weird", will review in
    depth later; wait for their notes. Earlier: desktop drawing and judging good apart from two bugs, now fixed ("null" after

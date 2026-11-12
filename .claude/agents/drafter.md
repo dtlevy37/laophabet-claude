@@ -38,11 +38,11 @@ Do not read SCHEMA.md or the data files whole. Grep `curriculum/vocab.csv` (word
 
 ## Word categories (file `<tag>-word_categories.csv`)
 - Header `word_id,categories,source,confidence,notes`. One row per word you draft (placeholder id) and per existing word the brief lists (real id).
-- `categories`: a pipe list from the brief's category list only, every sense of this one row (e.g. `body`, `food|plant`). Particles, negation, question words and classifiers are `function` (never blanked, never an option). Verbs get `action` plus one or more verb classes by the kind of object or complement they take (e.g. `action|consume` for ກິນ). If no category fits, use the nearest and say so in your report; never invent a category.
+- `categories`: a pipe list from the brief's category list only, every sense of this one row (e.g. `body`, `food|plant`). Particles, negation, question words and classifiers are `function` (never an option; may be blanked). Verbs get `action` plus one or more verb classes by the kind of object or complement they take (e.g. `action|consume` for ກິນ). If no category fits, use the nearest and say so in your report; never invent a category.
 - source empty, confidence `unverified`, notes `Tagged by the agent`.
 
 ## Sentence slots (file `<tag>-sentence_slots.csv`)
-- Header `sentence_id,position,accepts,exclude_word_ids,source,confidence,notes`. At least one row per sentence you draft (placeholder id) and per existing sentence the brief lists (real id): the target word's slot, more where you can. Never a slot on a `function` word.
+- Header `sentence_id,position,accepts,exclude_word_ids,source,confidence,notes`. At least one row per sentence you draft (placeholder id) and per existing sentence the brief lists (real id): the target word's slot, more where you can. A slot on a `function` word lists `function` in accepts plus every category that could sensibly sit there.
 - `position`: the 1-based token position in `lao_spaced`.
 - `accepts`: every category that gives a grammatical, sensible sentence in that gap with the other words unchanged. Read every other word in **all** its senses and count compounds formed with a neighbour (in `__ ເຂົ້າ`, ລາວ gives ລາວເຂົ້າ "he enters", so that slot accepts `action|person|animal`). The answer word's own categories must share at least one with `accepts`. When unsure, add the category: a wider `accepts` only removes wrong options.
 - `exclude_word_ids`: optional pipe list of real word ids to keep out of the options despite their categories (stretch cases).

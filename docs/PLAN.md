@@ -115,19 +115,17 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       order, so lessons 8 and 10 can be built first and the dialogue rows added by a `db_sql.py change`.
       **Done when:** lesson 10 shows its conversation as one card and asks a fill in the blank on one line.
       **Gate:** design agreed with the owner; SQL check; owner browser test.
-- [ ] **S7h Untaught look-alike words as wrong options in fill in the blank** (owner, 2026-11-12). Early
-      lessons have too few known words to fill a blank safely, so wrong options may be words the learner has not
-      been taught yet. **Every option is a real Lao word** (words.csv): never an invented spelling (global rule,
-      owner 2026-11-12). Pick untaught words that share as many taught letters with the answer as possible, and
-      whose other letters look like taught ones (ຂ/ລ/ສ, ບ/ປ/ພ, ດ/ຕ, ເ/ແ, ◌ິ/◌ີ, ◌້/◌່ …), so a close look trains
-      letter recognition. They still obey the option rule (a word_categories row, nothing in the slot's accepts),
-      so candidate words get tagged as part of the slice. Then particles such as ແລ້ວ can be blanked too
-      (`function` comes to mean "never a known-word distractor", not "never blanked").
-      Proposed shape: a pipeline step ranks look-alike candidates per word (generated, like `word_units`), shipped
-      in `get_lesson`; `fill_blank.js` and `lesson_tool.py check` top up the options from them when known safe
-      distractors run short. Look-alike pairs from a hand table.
-      **Done when:** lesson 5 asks a fill in the blank on ແລ້ວ in "ລາວກິນເຂົ້າ __" whose wrong options are real,
-      untaught look-alike words, and check prints them.
+- [ ] **S7h Untaught real words as wrong options in fill in the blank** (owner, 2026-11-12). Early lessons have
+      too few known words to fill a blank safely, so wrong options may be real words the learner has not been
+      taught. **Every option is a real Lao word** (words.csv): never an invented spelling (global rule, owner
+      2026-11-12). No look-alike table and no ranking (owner correction): get_lesson ships `distractors.untaught`
+      (every other word with a word_categories row); `fill_blank.js` draws from it at random only when the pool's
+      safe distractors run short, under the same option rule; `lesson_tool.py check` lists the qualifying ones. A
+      few common short words are tagged for it. Particles become blankable (`function` = never an option); slots
+      added for ແລ້ວ, ບໍ່, ແນ່; ນ້ຳ/ແກ້ວ excluded as personal names in subject slots.
+      **Done when:** a fill in the blank on ແລ້ວ in "ລາວກິນເຂົ້າ __" (S000002877) built from the lesson 5 bundle
+      has only real words.csv words as options, untaught ones among them, and check prints them; lesson 6 has a
+      fill in the blank on a recycled sentence.
 - Bonus words also enter the practice pool (S8b): `practice_items` includes them like core words.
 
 ## Detail for later slices

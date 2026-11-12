@@ -38,6 +38,10 @@ has a word_categories row; the union of categories over every word with its spel
 and nothing in the slot's accepts; it is not in exclude_word_ids; its Lao differs from the answer and from
 the other options. Verb safety: a union with `action` but no verb class (a category that some word lists
 together with `action`) counts as having every verb class. Same rule as get_lesson's `cats`.
+Untaught options (PLAN S7h): when a slot has fewer than 3 safe pool words, check tops the options up with the
+real words the lesson has not taught (get_lesson's distractors.untaught: every other word with a
+word_categories row), under the same option rule, as fill_blank.js does; the app picks among them at random, so
+check lists every one that qualifies. `function` words are never options (pool or untaught) but may be blanked: a particle's slot lists `function` in accepts, plus every category that could sit there.
 
 Data tables written by merge (all in data/):
   lessons.csv       lesson_id, lesson_order, title_en, kind, summary_en, source, confidence, notes
@@ -322,14 +326,26 @@ class World:
     def first_pos(self, wid):
         return (self.words.get(wid, {}).get("pos") or "").split(";")[0].strip()
 
-    def slot_options(self, sid, slot, pool):
-        """(answer word id or None, safe distractors with the answer's part of speech first, errors, warnings)."""
+    def untaught(self, pool):
+        """Untaught options (get_lesson distractors.untaught, S7h): every word with its own word_categories row
+        that is not in the pool and has no pool word's spelling, by word_id. No ranking: the app shuffles them."""
+        spell = {nfc(self.lao(w)) for w in pool}
+        return sorted(w for w in self.word_cats if w in self.words and w not in pool and nfc(self.lao(w)) not in spell)
+
+    def safe_option(self, w, acc, excl, seen_lao):
+        c = self.cats(w)
+        # same as fill_blank.js ok(): a word with no gloss is never offered
+        return not (c is None or not c or not (self.words.get(w, {}).get("gloss_en") or "").strip() or FUNCTION in c or c & acc or w in excl or nfc(self.lao(w)) in seen_lao)
+
+    def slot_options(self, sid, slot, pool, untaught=()):
+        """(answer word id or None, safe pool distractors with the answer's part of speech first, untaught
+        options that qualify (used only when the pool has fewer than 3), errors, warnings)."""
         errs, warns = [], []
         ws = self.sent_words.get(sid, [])
         p = (slot.get("position") or "").strip()
         if not p.isdigit() or not 1 <= int(p) <= len(ws):
             errs.append(f"{sid}: slot position {p!r} is not a word position of the sentence (1-{len(ws)})")
-            return None, [], errs, warns
+            return None, [], [], errs, warns
         pos = int(p)
         ans = ws[pos - 1]
         acc = set(split(slot.get("accepts")))
@@ -339,13 +355,9 @@ class World:
             errs.append(f"{ctx}: accepts is empty")
         if self.categories is not None and acc - self.categories:
             errs.append(f"{ctx}: accepts {sorted(acc - self.categories)} not in categories.csv")
-        if FUNCTION in acc:
-            errs.append(f"{ctx}: accepts lists '{FUNCTION}' (function words are never blanked)")
         own = self.word_cats.get(ans)
         if own is None:
             errs.append(f"{ctx}: answer word {ans} has no word_categories row")
-        elif FUNCTION in own:
-            errs.append(f"{ctx}: answer word {ans} is a function word (never blanked)")
         elif acc and not own & acc:
             errs.append(f"{ctx}: answer word {ans} ({'|'.join(sorted(own))}) fits none of accepts {'|'.join(sorted(acc))}")
         for x in excl:
@@ -353,28 +365,31 @@ class World:
                 errs.append(f"{ctx}: exclude_word_ids {x} not in words.csv")
         seen_lao, safe = {nfc(self.lao(ans))}, []
         for w in pool:
-            c = self.cats(w)
-            if c is None or FUNCTION in c or c & acc or w in excl:
+            if not self.safe_option(w, acc, excl, seen_lao):
                 continue
-            lw = nfc(self.lao(w))
-            if lw in seen_lao:
-                continue
-            seen_lao.add(lw)
+            seen_lao.add(nfc(self.lao(w)))
             safe.append(w)
         ans_pos = self.first_pos(ans)
         safe.sort(key=lambda w: self.first_pos(w) != ans_pos)   # stable: pool order otherwise
+        extra = []
+        for w in (untaught if len(safe) < 3 else []):
+            if w in self.words and self.safe_option(w, acc, excl, seen_lao):
+                seen_lao.add(nfc(self.lao(w)))
+                extra.append(w)
         homo = [f"{k}:{self.lao(w)}" for k, w in enumerate(ws, 1)
                 if k != pos and len(self.by_lao.get(nfc(self.lao(w)), [])) > 1]
         if homo:
             warns.append(f"{ctx}: other word(s) with a homograph ({', '.join(homo)}): re-check accepts against "
                          "their other senses")
-        if len(safe) < 2:
-            warns.append(f"{ctx}: {len(safe)} safe distractor(s); the app skips this blank")
-        return ans, safe, errs, warns
+        if len(safe) + len(extra) < 2:
+            warns.append(f"{ctx}: {len(safe) + len(extra)} safe option(s) with untaught words; the app "
+                         "skips this blank")
+        return ans, safe, extra, errs, warns
 
 
-def blank_report(world, label, sentences, pool):
-    """Option rule over a lesson's sentences [(sentence_id, role)]. Returns (errors, warnings, printed lines)."""
+def blank_report(world, label, sentences, pool, untaught=()):
+    """Option rule over a lesson's sentences [(sentence_id, role)], topped up from `untaught` (S7h).
+    Returns (errors, warnings, printed lines)."""
     err, warn = [], []
     lines = [f"== Fill in the blank: {label} (pool {len(pool)} words) =="]
     recycled_ok = False
@@ -389,20 +404,23 @@ def blank_report(world, label, sentences, pool):
             lines.append("    no slot")
             continue
         for slot in slots:
-            ans, safe, e, w = world.slot_options(sid, slot, pool)
+            ans, safe, extra, e, w = world.slot_options(sid, slot, pool, untaught)
             err += [f"{label} {x}" for x in e]
             warn += [f"{label} {x}" for x in w]
             if ans is None:
                 continue
             pos = int(slot["position"])
             gap = " ".join("__" if k == pos else world.lao(x) for k, x in enumerate(ws, 1))
-            n_opt = 4 if len(safe) >= 3 else 3 if len(safe) == 2 else 0
+            n = min(3, len(safe) + len(extra))
+            n_opt = 4 if n >= 3 else 3 if n == 2 else 0
             if n_opt and role == "recycle":
                 recycled_ok = True
             shown = ", ".join(f"{world.lao(x)} '{world.words[x].get('gloss_en', '')}'" for x in safe)
+            more = ", ".join(f"{world.lao(x)} '{world.words[x].get('gloss_en', '')}' {x}" for x in extra)
             lines.append(f"    {gap}   accepts {slot.get('accepts', '')}"
                          + (f", exclude {slot['exclude_word_ids']}" if (slot.get("exclude_word_ids") or "").strip() else "")
                          + f": answer {world.lao(ans)}; safe distractors ({len(safe)}): {shown or 'none'}"
+                         + (f"; untaught, the app picks {min(3 - len(safe), len(extra))} at random ({len(extra)}): {more}" if extra else "")
                          + (f" -> {n_opt} options" if n_opt else " -> skipped (fewer than 2)"))
     if any(r == "recycle" for _, r in sentences) and not recycled_ok:
         warn.append(f"{label}: no recycled sentence can be a fill in the blank")
@@ -749,7 +767,8 @@ def check(world, draft, a):
         label = f"L{world.n_lessons + 1:04d} (draft)"
         err += word_cat_errors(world, label, new_words + bonus_words)
         pool_ids = world.pool_words(world.n_lessons + 1, new_words + bonus_words)
-        e, w, lines = blank_report(world, label, [(s, r) for _, s, r in sents], pool_ids)
+        untaught = world.untaught(pool_ids)
+        e, w, lines = blank_report(world, label, [(s, r) for _, s, r in sents], pool_ids, untaught)
         err += e
         warn += w
     return err, warn, new_units, new_rules, new_words, lines
@@ -774,7 +793,7 @@ def check_merged(world):
                 err.append(f"{lid} {sid}: bonus word(s) {' '.join(f'{w} {world.lao(w)}' for w in bad)} in a sentence "
                            "before a lesson made them core")
         err += word_cat_errors(world, lid, [w for w, r in words if r in POOL_ROLES])
-        e, w, ls = blank_report(world, lid, sents, world.pool_words(n))
+        e, w, ls = blank_report(world, lid, sents, world.pool_words(n), world.untaught(world.pool_words(n)))
         err += e
         warn += w
         lines += ls

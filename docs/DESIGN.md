@@ -118,7 +118,8 @@ reused. Part of speech (option 4) is used only to order the distractors.
 - `data/categories.csv`: the closed set (`category, definition, examples`), checked by the pipeline only and not
   loaded into the DB. First set: `person` (pronouns, people), `animal`, `plant`, `food`, `drink`, `body`,
   `clothing`, `object`, `place`, `time`, `number`, `quality` (adjectives, colours, states), `action` (verbs),
-  `function` (particles, negation, question words, classifiers; never blanked and never an option). Grow the set
+  `function` (particles, negation, question words, classifiers; never an option, known or untaught; since S7h they
+  may be blanked: a particle's slot lists `function` in `accepts`). Grow the set
   when sentences need it.
 - **Verbs get finer categories** (user, 2026-11-10: not every verb fits every noun). Each verb keeps `action` and
   adds one or more verb classes by the kind of object or complement it takes (first ideas: `consume` ກິນ, ດື່ມ;
@@ -145,15 +146,23 @@ removes distractors, never adds a wrong one.
 - Prefer distractors with the answer's part of speech (a noun gap gets nouns first), so the question tests meaning
   rather than grammar. 4 options when there are 3 safe distractors, 3 when there are 2, otherwise no fill in the
   blank for that sentence (same as multiple choice).
+- **Untaught options (S7h, owner 2026-11-12):** when the pool has fewer than 3 safe distractors, the rest are drawn
+  at random from real untaught words: every other word in `data/words.csv` with a `word_categories` row (get_lesson
+  `distractors.untaught`), under the same rule. No ranking. **Every option is a real Lao word from words.csv; never
+  an invented spelling** (global rule). Tag a few common, short words (body parts, clothing, objects, describing
+  words) so every blank can reach 4 options.
+- Common personal names (ນ້ຳ Nam, ແກ້ວ Kaew) are excluded from every subject-position slot (and wherever a name
+  could make sense, e.g. a vocative or a possessor).
 
-**Which gap:** only positions with a slot row, and only content words (never `function`). The answer word must be
+**Which gap:** only positions with a slot row (particles too, since S7h: their slot lists `function` plus every
+category that could sensibly sit there, so only clearly absurd options remain). The answer word must be
 at level ≥ 2 for this learner. If a sentence has several slots, pick the one whose answer word has the lowest
 level, then by the session seed. Drafters tag at least the target word's slot in every sentence a lesson uses, and
 more slots where they can.
 
 **Bundle:** `get_lesson` adds `slots: [{position, accepts, exclude}]` to each sentence's `sentence_json`, and
 `cats` (the union over the spelling, as above) to each pool word. The client still reads content only through
-the RPC.
+the RPC. Since S7h the pool also has `untaught` (above).
 
 **Module:** `activities/fill_blank.js`, `{type: 'fill_blank', canUse, render}`. `canUse`: the sentence is at
 level ≥ 1, it has a slot whose answer is at level ≥ 2, and `build` finds at least 2 safe distractors. Screen: the
