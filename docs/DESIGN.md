@@ -159,8 +159,9 @@ the RPC.
 level ≥ 1, it has a slot whose answer is at level ≥ 2, and `build` finds at least 2 safe distractors. Screen: the
 English on top, the Lao sentence with one gap as the main text, and the word tiles below. A wrong answer shows the
 full sentence with the right word marked (shared feedback, as in multiple choice). Ladder: recall (a right answer
-can raise the answer word to level 3). Logged: one answer for the answer word (recall) and one for the sentence,
-both with `first_try`.
+can raise the answer word to level 3). Logged: one answer for the answer word (recall, with `first_try`) and one
+for the sentence (recall, sent with `first_try` false so the question counts once in the summary's accuracy, as a
+same-sound pair does in multiple choice; S7e, 2026-11-12).
 
 **Planner:** a recycled sentence gets fill in the blank. When no slot qualifies, it gets build the sentence
 instead.
@@ -186,10 +187,10 @@ extra columns.
 
 | Item | Steps |
 |---|---|
-| new unit | teach card, then one check (sound → letter or letter → sound). A same-sound pair (C13 + C13f) is one card and one check; both ids are sent as shown. A unit with no sound of its own (tone mark) gets no check until build the word |
+| new unit | teach card, then one check (sound → letter or letter → sound). A same-sound pair (C13 + C13f) is one card and one check; both ids are sent as shown. A unit with no sound of its own (tone mark) gets its check in the closing block: the first new word carrying it is built (build the word) instead of meaning → Lao, and the tone mark is logged as a recognition answer (S7d) |
 | new word | teach card, then Lao → meaning. Homographs on one card (ລາວ) accept either meaning, and no option is another word with the same spelling |
 | new rule / recap | card only |
-| recycled word | no card; one question: meaning → Lao if the learner's level is ≥ 2, else Lao → meaning |
+| recycled word | no card; one question: build the word if the learner's level is ≥ 2 (S7d), else meaning → Lao at level ≥ 2 when it cannot be built, else Lao → meaning |
 | new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
 | recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 

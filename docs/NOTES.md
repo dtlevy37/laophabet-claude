@@ -3,7 +3,7 @@
 Notepad for the next session: state, open work, decisions in force, next step. Remove what is finished (history is
 in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 
-## State (2026-11-11)
+## State (2026-11-12)
 - **Harness refactored 2026-11-11:** guardrails reduced to a usage guard, folders renamed (`scripts/`, `docs/`,
   `curriculum/`), word-list and research work parked in `_shelf/`. **Not yet proven in the new setup:** the agent
   running the local Supabase itself (`supabase status` / `migration up` from `app/backend`, SQL through
@@ -16,8 +16,12 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
   (S6a–S6c passed). Build the sentence (S7a) passed on desktop, including drag tiles and `covers` on the lesson list.
+- **Built 2026-11-12, awaiting the owner's browser test:** S7b (resume, leave dialog, dry run `#/try/L000n`,
+  `audio.js`), S7e (fill in the blank), S7d (build the word). Local DB now has the S7c migrations applied.
 
 ## Next steps
+0. **Owner test of S7b, S7e, S7d** (steps in CHANGELOG 2026-11-12 and the hand-over). Then tick them in PLAN.
+   Re-dump `tmp/bundles/` and rerun `node scripts/session_test.mjs` after any lesson merge.
 0. **Owner test of letter writing (S7w)**: `#/write` on desktop and phone (steps in CHANGELOG 2026-11-11 "letter
    writing"). Untested in any browser. If judging feels too strict or too loose, the knobs are `TUNING` in
    `js/writing/score.js` (`LETTER_MAX`, `LETTER_MARGIN`, `TRACE_TOL`, `PART_MAX`); rerun `node scripts/strokes_test.js`.
@@ -27,7 +31,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    and the sentence ລາວຂາວ S000002876 leave the lesson (ຂາວ moves to lesson 11). Withdraw and re-merge (steps under
    "Lesson building"). Then run `app/backend/tests/s7c_s7f_test.sql` and build the frontend bonus label
    (`badge_bonus` string; the planner gives a bonus word its card and recognition checks only).
-3. Then S7b, S7e, S7d and lessons 5–11 (PLAN "Working order").
+3. Then lessons 5–11 (PLAN "Working order"). Owner, 2026-11-12: wait on lessons 5–11 until asked; keep ສະບາຍ
+   (sabai) and ສະບາຍດີ (sabaidee) together in lesson 8 as the path has them.
 
 ## Decisions in force
 - Letter writing (DESIGN "Letter writing"): separate area, static stroke file, nothing recorded in the DB yet; the
@@ -49,6 +54,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 - `js/session.js`: `planLesson(bundle, rng)`; `advance` queues `again(spec)` for a missed question.
 - `js/activities/multiple_choice.js`: forms; `build` returns null when it cannot fill 3 options.
 - `js/activities/build_sentence.js`: tiles; `again` reshuffles.
+- `js/activities/fill_blank.js` (option rule; gap choice by lowest level), `js/activities/build_word.js` (pieces
+  from word_json `units`). `js/session.js`: `buildPlan(bundle, levels, seed, missed)` rebuilds a plan for resume;
+  `dryLevels` for `#/try/`. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`).
 - `js/activities/teach_card.js`: `cardItems`, `unitSound`, `openInfo`, `infoButton`, `chips`.
 - `js/write.js` (grid, step flow), `js/writing/pad.js` (SVG pad, pointer input, animation), `js/writing/score.js`
   (pure judges: `createTracer`, `scorePart`, `scoreLetter`). Data: `data/strokes.json`, rebuilt with

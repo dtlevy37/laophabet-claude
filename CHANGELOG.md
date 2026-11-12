@@ -2,6 +2,37 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (session comfort, fill in the blank, build the word)
+
+### Added
+- **Resume (S7b):** a lesson reloaded, or reopened on the same day in the same browser, returns to the same
+  question. A localStorage record (`laophabet.resume.<user>.<lesson>`) keeps the seed, the levels the plan was built
+  with, the step, the missed steps and any unsent answers; the plan is rebuilt from the seed. A reload during saving
+  goes straight to the save. A session the DB no longer knows (local reset) or that was completed elsewhere ends
+  with "start again" (`session_gone`). (`js/session.js`)
+- **"Leave the lesson?" dialog** on "All lessons" during a lesson. (`js/session.js`)
+- **Dry run `#/try/L000n`** ("Try the questions" on the read-only viewer): plays a lesson's questions as a learner
+  who has done the lessons before it, with no start_lesson, record_answers or complete_lesson. (`js/session.js`
+  `dryLevels`, `js/learn.js`)
+- **`js/audio.js` `audioButton(detail)`** on unit, word and sentence cards and in answer feedback; it renders nothing
+  until items carry `audio_url` (S10).
+- **Fill in the blank (S7e):** `js/activities/fill_blank.js`, asked on recycled sentences (build the sentence when
+  no slot qualifies), with the one-logical-choice option rule from DESIGN. The sentence's answer is sent with
+  `first_try` false so one question counts once (DESIGN updated).
+- **Build the word (S7d):** `js/activities/build_word.js`: tap a word's pieces in spoken order, each tap judged at
+  once; the assembled word appears at the end. Asked on recycled words at level 2 or more, and in the closing block
+  for the first new word carrying a new tone mark (the tone mark's first check, logged as a recognition answer).
+  Word cards gain a "Made of" line with this lesson's new pieces underlined. (`teach_card.js`)
+- **`scripts/session_test.mjs`:** plans lessons from dumped `get_lesson` bundles and checks resume rebuilds, fill
+  in the blank options (ນ້ຳ never after ກິນ) and that every lesson word can be built.
+
+### Changed
+- Local DB: applied the pending migrations `20261111020000_activity_data_bonus.sql` and `20261111144707_s7c_backfill.sql`
+  (`supabase migration up`, no reset).
+
+All three slices are **untested in a browser**; `check_frontend.js` and `session_test.mjs` pass, and the
+code-reviewer findings were fixed.
+
 ## 2026-11-11 (letter writing)
 
 ### Added

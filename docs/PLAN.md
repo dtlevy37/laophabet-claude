@@ -46,16 +46,26 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       cards, sentence cards and wrong-answer feedback (renders nothing while `audio_url` is absent).
       **Done when:** refreshing mid-lesson returns to the same question; a dry run of lesson 4 leaves no rows in
       `review_log`. **Gate:** owner browser test.
+      (2026-11-12: built, awaiting the owner's browser test. Resume record `laophabet.resume.<user>.<lesson>` keeps
+      the levels the plan was built with, so the rebuilt plan matches even after levels changed; the dry run is
+      `#/try/L000n`, linked from the reader as "Try the questions", and plays as a learner with earlier items at
+      level 2. `node scripts/session_test.mjs` checks the rebuild.)
 - [ ] **S7d Build the word:** `activities/build_word.js`: the meaning and sound are shown; the learner taps the
       pieces in spoken order (consonant, vowel, final, tone mark) from tiles that include wrong pieces; when right,
       the assembled word appears ("ກ + ◌ິ + ນ = ກິນ"). No in-progress glyph composer. Also: letters just taught are
       highlighted in new words, and tone marks get their first check here (they have no sound to ask about).
       **Done when:** every lesson 1–4 word can be built; a wrong piece gets feedback. **Gate:** owner browser test.
+      (2026-11-12: built, awaiting the owner's browser test. Used for recycled words at level ≥ 2 and, in the
+      closing block, for the first new word carrying a new tone mark. Each tap is judged at once; a slip marks the
+      tile and the question as missed but the learner carries on. The highlight is a "Made of" line on word cards,
+      not colour inside the word. `session_test.mjs` builds every lesson 1–4 word.)
 - [ ] **S7e Fill in the blank, one logical choice** (agreed 2026-11-10; built right after S7c, before S7d): `activities/fill_blank.js` per DESIGN "Fill in the blank: one logical choice"; the planner
       gives a recycled sentence fill in the blank and falls back to build the sentence. Frontend only (the bundle
       fields come in S7c). **Done when:** lessons 3 and 4 each ask a fill in the blank on their recycled sentence;
       for `ກິນ __` and `ລາວກິນ __`, ນ້ຳ is never an option; a wrong answer shows the full sentence. **Gate (user):**
       browser test.
+      (2026-11-12: built, awaiting the owner's browser test. `session_test.mjs` confirms lessons 3 and 4 plan one
+      and ນ້ຳ is never offered after ກິນ over 200 seeds.)
 - [ ] **S7w Letter writing practice** (owner request 2026-11-11; built, awaiting the owner's browser and phone test):
       `#/write` grid and per-letter flow (`js/write.js`, `js/writing/pad.js`, `js/writing/score.js`), stroke data
       `data/strokes.json` from `scripts/strokes_build.js`. Frontend only. **Done when:** on a phone, every step of

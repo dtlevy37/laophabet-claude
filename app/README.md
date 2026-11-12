@@ -119,10 +119,14 @@ frontend/
   js/review.js           native: the review screen
   js/recorder.js         microphone recording
   js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards
-  js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen
+  js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen; same-day resume
+                         (localStorage record); #/try/L0001 dry run (nothing recorded)
+  js/audio.js            audioButton(detail): play button, renders nothing until audio_url exists (S10)
   js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog),
                          multiple_choice.js (unit and word questions)
                          build_sentence.js (word tiles in order; sentence items, recall)
+                         fill_blank.js (one gap, one logical choice; recycled sentences, recall)
+                         build_word.js (pieces in spoken order; recycled words, new tone marks)
   js/bundle.js           get_lesson cache
   js/settings.js  translit.js  tone.js    learner display settings, respelling styles, tone pictures
   js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)
