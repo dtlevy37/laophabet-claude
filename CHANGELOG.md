@@ -2,6 +2,13 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (hosted 403 fix)
+- After sign-up the hosted site returned 403: the new hosted project grants no select/insert/update on public
+  tables to `authenticated` by default (local does). Migration `20261113010000_explicit_table_grants.sql` grants
+  them explicitly (profiles select + column-level update without the consent columns; sentence_reviews,
+  sentence_recordings, item_recordings and learner tables select; sentence_recordings insert). Applied locally
+  and pushed to hosted; privileges checked on hosted. The sql-migration skill now requires explicit grants.
+
 ## 2026-11-12 (hosted Supabase)
 - Linked `app/backend` to the hosted project `nerttltntbwhpvticuwe` and pushed all 41 migrations plus the seeds
   (`supabase db push --linked --include-seed`). Hosted counts match local (1426 words, 2839 sentences, 11 lessons).

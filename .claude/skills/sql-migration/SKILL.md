@@ -12,7 +12,7 @@ description: Conventions and checklist for hand-written Supabase schema and RPC 
   from `lesson_tool.py merge` or `db_sql.py lesson|change|refresh`. If a schema change adds a content column, the
   `TABLES` spec in `db_sql.py` must change too, in the same slice.
 - Never edit a migration that has been applied to a hosted DB: write a new one. Everything up to
-  `20261113000000` is hosted (2026-11-12); a file written in the current slice may be edited only until it is pushed.
+  `20261113010000` is hosted (2026-11-12); a file written in the current slice may be edited only until it is pushed.
 
 ## File
 - Name: `app/backend/supabase/migrations/<YYYYMMDDhhmmss>_<snake_name>.sql`, with a stamp later than the newest file
@@ -24,6 +24,9 @@ description: Conventions and checklist for hand-written Supabase schema and RPC 
   retries safe (e.g. `(user_id, item_type, item_id)`), and `on conflict` in the RPC that writes them.
 - `timestamptz` for times, `default now()`. Check constraints for enums (`check (level between 0 and 4)`), matching
   the constants in `lesson_tool.py` / DESIGN where they exist.
+- **Grant table privileges explicitly** (`grant select on public.x to authenticated;`) for every table the client
+  reads or writes directly. The hosted project does not grant them by default (the local stack does, so local tests
+  pass and production returns 403; this happened 2026-11-12).
 - `alter table ... enable row level security;` always. Own-row select policy where the client reads directly:
   `using (user_id = auth.uid())`. Prefer no insert/update/delete policies: writes go through RPCs.
 - Append-only logs (`review_log`): no update or delete path at all.
