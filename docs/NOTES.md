@@ -31,6 +31,12 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   W000550). Recycles ແລ້ວ, ບໍ່, ນ້ຳ, ຂໍ, ແນ່. Sentences: S000002882 ດີແລ້ວ, S000002883 ນ້ຳນີ້ດີ, S000002884 ຂໍນ້ຳນີ້ແນ່
   (composed, unverified), S000000004 ບໍ່ດີ (existing). No budget warnings. ດາວ excluded as a name (Dao) in person slots;
   four blanks have no safe option and are skipped. Native-speaker points in QUESTIONS.
+- **L0008 "Hello"** merged 2026-11-12 (`20261112213147_lesson_l0008.sql`, not applied; `--max-units 3 --max-weight 7.5`,
+  weight 7.5 over the 5.5 guideline): new C06 ສ, V01 ◌ະ, C08f ◌ຍ and rule R01 (first cut-off card, drafted here); core
+  ສະບາຍ (sabai; W000512), ສະບາຍດີ (sabaidee; W000001); bonus ຂາຍ (khaai, sell; W000084). Recycles ດີ, ບໍ່, ລາວ (W000031).
+  First mini-conversation as ordinary sentences (S7g): S000000001 ສະບາຍດີ (lines 1–2), S000000003 ສະບາຍດີບໍ່? (English
+  now "How are you?"), S000002885 ສະບາຍດີ. "I'm well" (composed, unverified). The lesson row's notes still list W000058
+  as a recycle (replaced by W000031 in review; items are right); harmless.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary

@@ -1,7 +1,7 @@
 sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
 S000000001,ສະບາຍດີ,ສະບາຍດີ,sa(ʔ˧˥).baːj˩(˧).diː˩(˧),sa-baai-dii,Hello.,W000001,,SRC-TATOEBA:8670346,verified,Code points checked 2026-10-09 (no final period in source),
 S000000002,ດີບໍ່?,ດີ ບໍ່?,diː˩(˧) bɔː˧,dii baw?,Is it good?,W000003,TPL01,SRC-WIKT:ບໍ່,verified,Usage example on the Wiktionary ບໍ່ page,
-S000000003,ສະບາຍດີບໍ່?,ສະບາຍດີ ບໍ່?,sa(ʔ˧˥).baːj˩(˧).diː˩(˧) bɔː˧,sa-baai-dii baw?,How are you? (Are you well?),W000003,TPL01,,unverified,Composed by the agent,
+S000000003,ສະບາຍດີບໍ່?,ສະບາຍດີ ບໍ່?,sa(ʔ˧˥).baːj˩(˧).diː˩(˧) bɔː˧,sa-baai-dii baw?,How are you?,W000003,TPL01,,unverified,Composed by the agent,
 S000000004,ບໍ່ດີ.,ບໍ່ ດີ.,bɔː˧ diː˩(˧),baw dii.,(It's) not good.,W000003,TPL02,,unverified,Composed by the agent,
 S000000005,ແມ່ນບໍ່?,ແມ່ນ ບໍ່?,mɛːn˧ bɔː˧,maen baw?,Is that right? / Right?,W000004,TPL01,,unverified,"Composed by the agent. Tag question also seen in Tatoeba 8986492 (..., ແມ່ນບໍ?)",
 S000000006,ບໍ່ແມ່ນ.,ບໍ່ ແມ່ນ.,bɔː˧ mɛːn˧,baw maen.,"No, that's not right.",W000004,TPL02,,unverified,Composed by the agent,
@@ -2824,3 +2824,4 @@ S000002881,ຂໍເຂົ້າແນ່.,ຂໍ ເຂົ້າ ແນ່.,kʰ
 S000002882,ດີແລ້ວ.,ດີ ແລ້ວ.,diː˩(˧) lɛːw˥˨,dii laew.,That's fine. / That's good.,W000002,,,unverified,Composed by the agent for lesson 7; not from a source.,
 S000002883,ນ້ຳນີ້ດີ.,ນ້ຳ ນີ້ ດີ.,nam˥˨ niː˥˨ diː˩(˧),nam nii dii.,This water is good.,W000016,,,unverified,Composed by the agent for lesson 7; not from a source.,
 S000002884,ຂໍນ້ຳນີ້ແນ່.,ຂໍ ນ້ຳ ນີ້ ແນ່.,kʰɔː˩(˧) nam˥˨ niː˥˨ nɛː˧,kaw nam nii nae.,Could I have this water?,W000016,,,unverified,Composed by the agent for lesson 7; not from a source.,
+S000002885,ສະບາຍດີ.,ສະບາຍດີ.,sa(ʔ˧˥).baːj˩(˧).diː˩(˧),sa-baai-dii,I'm well. / I'm fine.,W000001,,,unverified,Composed by the agent for lesson 8 (conversation reply); not from a source.,

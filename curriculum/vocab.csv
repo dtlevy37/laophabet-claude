@@ -1,5 +1,5 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
-W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,10
+W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,11
 W000002,ດີ,adjective,good,basics,,41
 W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,316
 W000004,ແມ່ນ,verb; particle,"yes, that's right; to be",basics,,66

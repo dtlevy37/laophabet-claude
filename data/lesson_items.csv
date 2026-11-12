@@ -73,3 +73,16 @@ L0007,12,word,W001426,recycle,earlier word (softener); used in the next sentence
 L0007,13,sentence,S000002884,new,'could I have this water?' (composed)
 L0007,14,word,W000546,bonus,'star'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence
 L0007,15,word,W000550,bonus,'earth; soil; land'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence
+L0008,1,unit,C06,new,new letter (initial role)
+L0008,2,unit,V01,new,short 'a' vowel written after the consonant
+L0008,3,rule,R01,new,cut-off card for the short syllable ສະ (decision 25)
+L0008,4,unit,C08f,new,final ຍ (y glide); initial role is a later unit
+L0008,5,word,W000512,new,'well; comfortable'; uses all three new units and R01
+L0008,6,word,W000002,recycle,earlier word; second part of the next word
+L0008,7,word,W000001,new,'hello'; kept together with ສະບາຍ (owner)
+L0008,8,sentence,S000000001,new,"conversation lines 1 and 2, speakers A and B: Hello (existing, verified); S7g will carry the real conversation"
+L0008,9,word,W000003,recycle,earlier word (question marker); used in the next sentence
+L0008,10,sentence,S000000003,new,"conversation line 3, speaker A: How are you? (existing, unverified)"
+L0008,11,sentence,S000002885,new,"conversation line 4, speaker B: I'm well (composed, unverified)"
+L0008,12,word,W000031,recycle,"earlier word 'he, she'; shown before the bonus word (ລາວຂາຍເຂົ້າ comes in lesson 11)"
+L0008,13,word,W000084,bonus,'sell'; bonus word (LESSON_RULES decision 21): readable with known letters plus final ຍ; never in a sentence

@@ -48,6 +48,17 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   Tags: ດາວ and ດິນ (din, soil; W000550) as objects (ດິນ not place), ນີ້ (nee, this; W000016) as a function word.
 - Lesson 7 tones and lengths: ດີ (dee, good) is stored low-rising (diː˩(˧)); is that how it is said in Vientiane?
   ດິນ (din, soil) is short and ດາວ (dao, star) long, per Wiktionary: do they sound that way?
+- Lesson 8 conversation: ສະບາຍດີ (sabaidee, "Hello", S000000001) / ສະບາຍດີ / ສະບາຍດີບໍ່? (sabaidee bor?, "How are
+  you?", S000000003) / ສະບາຍດີ (sabaidee, "I'm well", S000002885, composed). Is the bare ສະບາຍດີ the normal reply to
+  ສະບາຍດີບໍ່?, or is ສະບາຍດີ ຂອບໃຈ (sabaidee khop jai, "I'm well, thank you") more usual? Does answering a hello with
+  the same ສະບາຍດີ sound natural? Is ສະບາຍດີບໍ່? natural on its own, or is ເຈົ້າສະບາຍດີບໍ່? (jao sabaidee bor?) expected?
+  Is the question marker here ບໍ່ or ບໍ (see the ບໍ່ vs ບໍ items above)?
+- Lesson 8 sounds: is there an audible catch (glottal stop) at the end of ສະ (sa) in ສະບາຍດີ, as the cut-off card (R01)
+  says, or does it run into the next syllable in normal speech? Does final ຍ in ບາຍ (baai) / ຂາຍ (khaai, sell) sound
+  like the y at the end of "bye"?
+- Lesson 8 tags: ສະບາຍ (W000512) and ສະບາຍດີ (W000001) as qualities (states), ຂາຍ (W000084) as a verb with no verb
+  class. In the one-word blanks for "Hello" / "I'm well", ດີ (dee, good) and ສະບາຍ (sabai, well) are accepted as
+  answers: is either a sensible one-word reply to ສະບາຍດີບໍ່?
 - **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
   screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
   ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right
