@@ -71,8 +71,8 @@ Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state
 ### Set up
 ```bash
 cd backend
-supabase link --project-ref <ref>
-supabase db push                       # applies the migrations
+supabase link --project-ref <ref>       # this project: nerttltntbwhpvticuwe
+supabase db push --linked              # applies the migrations
 ```
 Load the data (either):
 ```bash

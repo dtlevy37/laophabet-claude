@@ -2,6 +2,13 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (hosted Supabase)
+- Linked `app/backend` to the hosted project `nerttltntbwhpvticuwe` and pushed all 41 migrations plus the seeds
+  (`supabase db push --linked --include-seed`). Hosted counts match local (1426 words, 2839 sentences, 11 lessons).
+- Frontend: `config.production.js` (hosted URL + publishable key, committed); the Netlify build copies it to
+  `config.js` unless the env vars are set.
+- CLAUDE.md, PLAN, NOTES and the sql-migration skill now say migrations are frozen once pushed.
+
 ## 2026-11-12 (S10r recording mode)
 - Natives get a home screen (`#/`) with two tasks: record (`#/record`, new) and check sentences (`#/review`, as before).
 - Recording mode (`js/record.js`): consent once with an optional credit (no name, first name or nickname); recording

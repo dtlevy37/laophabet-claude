@@ -67,8 +67,14 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   ສີ່ four. **Pending:** ດຳ W000539 and ຂາວ W000538 (names Dam, Khao) added to exclude_word_ids on the 47 earlier slots
   that exclude ນ້ອຍ (S000000001, S000000003, S000000004, S000000007, S000000008, S000000023, S000000024, S000000113,
   S000001170, S000002870, S000002872, S000002874, S000002877–S000002892): needs a `db_sql.py change`.
-- **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
-  `supabase db reset` wipes accounts; the owner then signs up again.
+- **Backend hosted 2026-11-12:** Supabase project `nerttltntbwhpvticuwe` (Laophabet-v2, Postgres 17), linked from
+  `app/backend`. All migrations through `20261113000000` plus the seeds were pushed by the agent (`supabase db push
+  --linked --include-seed`); counts match local. Applied migrations are now frozen: write new ones. The local
+  Docker DB is still Postgres 15 (`config.toml` major_version 15); move it to 17 some time. A local `supabase db
+  reset` wipes local accounts only. Not done yet (owner): Netlify site, Auth > URL Configuration (Site URL and
+  redirects = the Netlify URL), email sending (the built-in mailer is rate-limited, a few emails per hour).
+- Frontend config: `config.production.js` (committed; hosted URL + publishable key) is copied to `config.js` by the
+  Netlify build unless `SUPABASE_URL` / `SUPABASE_ANON_KEY` env vars are set. The secret key is not used anywhere.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
   (S6a–S6c passed). Build the sentence (S7a) passed on desktop, including drag tiles and `covers` on the lesson list.
 - S7b (resume, leave dialog, dry run `#/try/L000n`, `audio.js`), S7e (fill in the blank) and S7d (build the word)
@@ -153,7 +159,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 - **Changing a merged lesson in place** (what lesson 4 used, 2026-11-12): edit its rows in `data/lesson_items.csv`
   / `lessons.csv` and `curriculum/lessons/merged/<id>/`, `lesson_tool.py check --merged`, `pipeline.sh`, then
   `python scripts/db_sql.py --name <id>_rebuild lesson <id>` (upserts, retires dropped positions; no reset).
-- **Withdrawing a merged lesson** (allowed only while nothing is hosted; needs a db reset): remove its rows from `data/lessons.csv`,
+- **Withdrawing a merged lesson** (no longer allowed: hosted since 2026-11-12; was: needs a db reset): remove its rows from `data/lessons.csv`,
   `lesson_items.csv` and any units/rules it introduced, delete its migration, and remove its
   `curriculum/lessons/merged/<id>` folder (merge fails at the final move if it exists). Once hosted: `db_sql.py change`.
 - Editing CSVs: a `replace_all` that removed text at line ends also removed the line breaks. Rewrite small CSVs whole.

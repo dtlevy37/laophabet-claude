@@ -11,8 +11,8 @@ description: Conventions and checklist for hand-written Supabase schema and RPC 
 - **Content rows** (words, sentences, lessons, units, rules ...) are never inserted or updated by hand. They come only
   from `lesson_tool.py merge` or `db_sql.py lesson|change|refresh`. If a schema change adds a content column, the
   `TABLES` spec in `db_sql.py` must change too, in the same slice.
-- Never edit a migration that has been applied to a hosted DB: write a new one. While nothing is hosted
-  (`docs/NOTES.md` says so), prefer a new file anyway; files written in this same slice may be edited.
+- Never edit a migration that has been applied to a hosted DB: write a new one. Everything up to
+  `20261113000000` is hosted (2026-11-12); a file written in the current slice may be edited only until it is pushed.
 
 ## File
 - Name: `app/backend/supabase/migrations/<YYYYMMDDhhmmss>_<snake_name>.sql`, with a stamp later than the newest file

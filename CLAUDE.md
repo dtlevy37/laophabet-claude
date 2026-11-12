@@ -45,7 +45,9 @@ design and the lesson path; the agent builds the app slices and the lessons.
 - **The DB is the source of truth for content.** Content rows reach it only through migrations written by
   `scripts/lesson_tool.py merge` or `scripts/db_sql.py` (`lesson`, `change`, `refresh`), never by hand. Schema and
   RPC migrations are hand-written (`sql-migration` skill). Never edit a migration that has been applied to a hosted
-  DB: write a new one. Nothing is hosted yet (see NOTES).
+  DB: write a new one. Hosted since 2026-11-12 (Supabase project `nerttltntbwhpvticuwe`, linked in `app/backend`):
+  every migration up to `20261113000000` is applied there, so none of them may be edited, and lessons can no longer be
+  withdrawn. Push with `supabase db push --linked` after the owner agrees.
 - **Data access:** the client reads content only through RPCs (content tables have RLS on and no read policies).
   Writes go through `security definer` RPCs with `set search_path = public`, an `auth.uid()` check, and execute
   revoked from `public, anon`. Learner data lives in app tables with own-row RLS.

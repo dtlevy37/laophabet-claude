@@ -5,7 +5,7 @@ Tick a slice when the owner's check passes. Design: `docs/DESIGN.md`. Current st
 
 Ground rules that cut across slices:
 - **The DB is the source of truth for course content.** Every content change is a migration file written by the
-  scripts; `data/*.csv` is the working copy (local DB + migrations not yet applied). Nothing is hosted yet.
+  scripts; `data/*.csv` is the working copy (hosted DB + migrations not yet pushed). Hosted since 2026-11-12.
 - **Stable IDs everywhere** (W/S/L/R/unit IDs). Removing an item retires it; IDs are never reused.
 - **Writes from the app go through RPCs** (security definer, role-checked); tables are read-only or own-row-only
   under RLS. Learner and reviewer data live only in app tables.
