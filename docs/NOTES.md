@@ -84,6 +84,14 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 - Conversations (S7g) do not block lessons 8 and 10: they carry their lines as ordinary sentences in order.
 
 ## Open with the owner
+- **ລາວ (he/she) long or short?** Owner 2026-11-12: wants the long "laao" if that is the truth (Wiktionary's
+  short ເລົາ reading is not trusted); the owner's wife will confirm. If long: `python tmp/laao_change.py --write`
+  (dry run without the flag; word W000031 + 166 sentences, all aligned), then the steps in its docstring, and drop
+  the short/long wording from the lesson 3 card and QUESTIONS. If short: keep the data, note it as an exception.
+- **Idea: ຂາວ / ລາວ as the first tone pair** (owner 2026-11-12): same vowel and final, different consonant class,
+  so low-rising kʰaːw vs high-rising laːw. A "picture perfect" early example of tone differences. Lesson 4 has both
+  (ຂາວ as bonus); decision 11 keeps tone explanations out of early lessons, so this fits the first tone lesson or
+  a recap card. Owner to say where.
 - **Build the word, strict spoken order** (owner 2026-11-12): for ເຂົ້າ the vowel ເ is written before ຂ, and the
   tone mark ◌້ feels like it could go anywhere, so spoken order surprised the owner. Agent's view: keep spoken order
   (it is how Lao is read: find the consonant, then the vowel around it), but say so when it bites: a slip that picks
