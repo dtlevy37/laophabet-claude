@@ -75,6 +75,12 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
+0. **S10r recording mode built, browser untested** (2026-11-12, migration `20261113000000_s10r_recording_mode.sql`,
+   applied locally). The owner deploys hosted Supabase + Netlify (an iPhone allows the microphone only on https,
+   so the LAN address cannot record) and pushes all migrations. Then on the deployed site: sign up as native,
+   `#/record`. After the wife's first session: listen to takes in the dashboard (`recording_feedback` view;
+   files in bucket `recordings`), check volume and noise of the raw takes, and collect her feedback on the
+   instructions and the Lao UI text (all unverified). Verify her in `reviewer_trust` (README "Native verification").
 0. **S7h built, not owner-tested** (2026-11-12): untaught real words (`get_lesson` `distractors.untaught`, every
    other tagged word) top up fill in the blank; particles blankable; ນ້ຳ/ແກ້ວ excluded in subject slots.
    Migrations `20261112211502_s7h_untaught_options.sql` (get_lesson) and `20261112211540_s7h_untaught_tags_particle_slots.sql`
@@ -93,6 +99,14 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    lines in 8 and 10 play as ordinary sentences until S7g. Many native-speaker questions added to QUESTIONS.
 
 ## Decisions in force
+- Recording (owner 2026-11-12): words and sentences only, no letter sounds or names. One take per item, no
+  second speed. Words said clearly and deliberately; sentences naturally but clearly, a little slower than with
+  family. Never build a sentence's audio from word clips. "Is this natural?" comes before recording; if not, the
+  native records their own wording (`spoken_lao`), which then needs owner review before it becomes content. No
+  device or room questions. Consent is explicit, with an optional credit (first name or nickname).
+- Conversations with two voices (not built; for S7g/S10 audio): every speaker records both sides of a
+  conversation, so any two speakers can be paired; lines that depend on the speaker's gender or age get a tag.
+  Until a second native records, conversations play in one voice.
 - Fill in the blank (owner 2026-11-12): a new sentence is also blanked in its own lesson (closing block; the
   lesson's new words count as level 2 there). Untaught wrong options (S7h) are real words only, never a tone-mark or
   long/short-vowel twin of a word on screen (ເຂົ່າ knee vs ເຂົ້າ rice waits until both are taught). Personal-name

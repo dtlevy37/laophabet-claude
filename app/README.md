@@ -91,6 +91,9 @@ Seeds are for the first import only (`python scripts/db_sql.py seed`; re-applyin
 ### Ranking trust later
 `reviewer_trust(user_id, trust_score, notes)` is unreadable to app users. Useful signals already captured: `profiles.is_native_speaker`/`region`, `sentence_reviews.time_to_submit_ms` (server-measured), and per-sentence agreement across reviewers (`sentence_reviews` grouped by `sentence_id`). `lao_snapshot` keeps the exact text reviewed if the curriculum changes later. Recordings are in the private bucket `recordings` at `{user_id}/{sentence_id}/{timestamp}.ext`; listen via the dashboard or signed URLs from a service-role script.
 
+### Recording mode (S10r, migration `20261113000000_s10r_recording_mode.sql`)
+Natives (`profiles.role = 'native'`) open `#/record`. Once: `set_voice_consent(p_credit)` sets `profiles.voice_consent_at` and `voice_credit` (name learners may see; null = anonymous). Then `next_recording_item()` → `{item_type word|sentence, item_id, lao, english, lesson_order (null for pool items), lesson_left, recorded}` or null when nothing is left. Order: lessons by `lesson_order`, then teaching position, with a sentence's words just before it; then pool words by `intro_order`, then pool sentences. Items the caller recorded or skipped are left out, and so are words whose spelling the caller already did (same sound). Before recording the native answers "is this natural?"; when not, they type their own wording and record that. The client uploads to the private bucket `recordings` at `{uid}/{item_type}/{item_id}/{ms}.{ext}` and calls `save_recording(item_type, item_id, storage_path, mime_type, duration_ms, is_natural, spoken_lao, could_be_name)` → `{saved}` (a replayed path saves nothing; the file must exist), or `skip_recording_item(item_type, item_id, reason)`. Rows are in `item_recordings` (append-only, own-row select; a later take of the same item is a new row, latest wins; `lao_snapshot` keeps the text shown). Takes are raw: the browser's echo cancelling, noise suppression and automatic gain are turned off. The owner's view `recording_feedback` adds the speaker's credit, gender, dialect and `verified_native`.
+
 ### Latest changes (migration `..0400`)
 Birth date replaces age range; every question is optional (the all-answered check is dropped, so a review row can be empty); register gains `vulgar`; reviews gain `is_slang`, `multiple_meanings`, `meanings_notes`; `submit_review` has a new signature. The accent question already offers free text when the person is not from Vientiane (stored in `profiles.region`).
 
@@ -122,7 +125,8 @@ frontend/
   js/auth.js             login, sign-up (role first), role choice
   js/onboarding.js       native profile questions
   js/review.js           native: the review screen
-  js/recorder.js         microphone recording
+  js/recorder.js         microphone recording (raw takes)
+  js/record.js           native: recording mode (#/record); app.js has the native home (#/, #/record, #/review)
   js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards
   js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen; same-day resume
                          (localStorage record); #/try/L0001 dry run (nothing recorded)

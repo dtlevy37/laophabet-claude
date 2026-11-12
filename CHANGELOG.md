@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (S10r recording mode)
+- Natives get a home screen (`#/`) with two tasks: record (`#/record`, new) and check sentences (`#/review`, as before).
+- Recording mode (`js/record.js`): consent once with an optional credit (no name, first name or nickname); recording
+  tips once per page load; one word or sentence at a time, lesson 1–11 content first (a sentence's words just before
+  it), then pool words and sentences. "Is this natural?" comes before recording; if not, the native writes their own
+  wording and records that. Words also ask "could this be a person's name?" (optional). Listen, redo, save or skip.
+- `js/recorder.js`: raw takes (echo cancelling, noise suppression, auto gain off); `onChange`, `reset()`; the mic
+  is released when the screen is left.
+- Migration `20261113000000_s10r_recording_mode.sql`: `profiles.voice_consent_at`, `voice_credit`;
+  `item_recordings` (append-only); RPCs `set_voice_consent`, `next_recording_item`, `save_recording` (needs consent,
+  checks path, mime and that the file exists; replay-safe), `skip_recording_item` (idempotent); owner view
+  `recording_feedback`. Test `app/backend/tests/s10r_recording_test.sql`; also run over HTTP against local Supabase
+  (sign-up, consent, upload, save twice, next item). Code-reviewed; findings fixed.
+- New Lao UI strings (unverified). The native app name is now ຊ່ວຍສອນພາສາລາວ "Help teach Lao".
+- Browser untested; an iPhone can record only on the https (deployed) site.
+
 ## 2026-11-12 (word ເຕ້ຍ)
 - Added ເຕ້ຍ W001427 "short (in height), low" at the owner's request (unverified, not on Wiktionary) with sentences S000002899 ລາວເຕ້ຍ, S000002900 ພໍ່ເຕ້ຍ. Not in a lesson; no DB change.
 

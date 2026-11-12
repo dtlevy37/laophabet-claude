@@ -140,7 +140,15 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       into the main repo, fix the script path to `app/frontend/js/strings.json`, update `app/README.md`.
 
 ### S10: Native feedback on lesson content
-- [ ] Review RPCs require `role = 'native'` (today any signed-in user could call them)
+- [ ] **S10r Recording mode** (owner 2026-11-12): natives record words and sentences, lesson content first, on an
+      iPhone. Consent once (credit: no name, first name or nickname), recording tips once per page load, "is this
+      natural?" before recording (if not, they type their own wording and record that), "could this word be a
+      name?" on words, listen and redo, raw takes. No letter sounds (owner not keen on letter names; words carry
+      the sounds). **Done when:** the recording mode is available to the owner's wife: a native account on the
+      deployed site can record, redo, save and skip lesson 1–11 items in order, and the rows and files are in the
+      DB. (2026-11-12: built; SQL test and an HTTP run against local Supabase passed; browser untested.)
+- [ ] Review RPCs require `role = 'native'` (today any signed-in user could call them); the `recordings` storage
+      insert policy likewise lets any signed-in user upload to their own folder (S10r's RPCs already check the role)
 - [ ] Queue prioritises what planned lessons use (lesson sentences first, then their words), then the pool
 - [ ] Feedback on words (gloss, tone, IPA, pron tip) and units/teach cards, not only sentences; one
       `feedback` shape keyed by `(item_type, item_id)`
