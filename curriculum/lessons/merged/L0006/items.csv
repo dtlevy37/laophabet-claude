@@ -1,0 +1,18 @@
+position,item_type,item_id,role,notes
+1,unit,V21,new,vowel: a small circle above the consonant
+2,word,W000009,new,'may I have'; uses the new vowel
+3,unit,C14,new,new letter (initial role)
+4,unit,T1,new,second tone mark
+5,word,W000003,new,'not; question word'; uses all three new units
+6,word,W000031,recycle,earlier word; used in the next sentence
+7,word,W000018,recycle,earlier word
+8,word,W000019,recycle,earlier word
+9,sentence,S000002879,new,first 'not' sentence (composed)
+10,word,W000020,recycle,earlier word; used in the next two sentences
+11,sentence,S000000023,new,question: 'have you eaten yet?' (existing row); question and answer pair with the next item
+12,sentence,S000000024,recycle,answer: 'eaten already' (from lesson 5)
+13,word,W001426,new,softener at the end of a request; uses the new tone mark (newly drafted row)
+14,word,W000011,recycle,earlier word; used in the next sentence
+15,sentence,S000002880,new,'could I have some water?' (composed)
+16,sentence,S000002881,new,'could I have some rice?' (composed)
+17,word,W000049,bonus,"'home; village'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence"

@@ -1,0 +1,8 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0006-S001,1,person|animal|action|motion,,,unverified,"Tagged by the agent; __ ບໍ່ກິນເຂົ້າ: who does not eat; a verb fits as A-not-A (ກິນບໍ່ກິນເຂົ້າ) or ເຂົ້າບໍ່ກິນເຂົ້າ"
+L0006-S001,3,action|consume|motion,,,unverified,"Tagged by the agent; ລາວບໍ່ __ ເຂົ້າ: verb gap (eat rice; not enter); quality left out as ບໍ່ຂາວ ເຂົ້າ is not grammatical"
+L0006-S001,4,food|drink,,,unverified,Tagged by the agent; ລາວບໍ່ກິນ __: food or drink
+L0006-S002,2,food|drink|object|action|person|place|quality,,,unverified,"Tagged by the agent; ຂໍ __ ແນ່: things to ask for; ຂໍ+verb is let me do; quality is the white one; body left out so ຂາ leg is the wrong option"
+L0006-S003,2,food|drink|object|action|person|place|quality,,,unverified,"Tagged by the agent; ຂໍ __ ແນ່: things to ask for; ຂໍ+verb is let me do; quality is the white one; body left out so ຂາ leg is the wrong option"
+S000000023,1,action|motion|person|animal|drink|place|quality,,,unverified,"Tagged by the agent; __ ເຂົ້າແລ້ວບໍ່: verbs and nouns as subject of ເຂົ້າ enter (has he gone in yet)"
+S000000023,2,food|drink,,,unverified,Tagged by the agent; ກິນ __ ແລ້ວບໍ່: food or drink

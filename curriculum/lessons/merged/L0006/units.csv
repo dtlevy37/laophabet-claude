@@ -1,0 +1,4 @@
+unit_id,teach_en,notes
+V21,"Like the aw in 'law', held long. Just a small circle above the consonant, with no stroke after it.","From vowels.csv V21 pron_tip (verified: long 'aw' as in 'law') and its pattern ◌ໍ; the 'no stroke after it' remark separates it from ◌ຳ (lesson 4) by its written shape only; wording by agent."
+C14,Like the b in 'boy'.,"From letters.csv C14 pron_tip (verified: b as in 'boy'). Initial role only; its final sound (an unreleased p) is a later unit, so it is not mentioned. Wording by agent."
+T1,"A second tone mark, a small stroke above the letter. Words with this mark are said at a flat, middle pitch.","From letters.csv T1 (verified: gives the mid tone for every class); 'flat, middle pitch' restates the mid tone without naming classes (decision 11). Wording by agent."

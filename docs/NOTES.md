@@ -19,6 +19,14 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   ກິນ, ລາວ, ເຂົ້າ, ນ້ຳ and S000002872. Sentences: S000000024 ກິນແລ້ວ (existing), S000002877 and S000002878 (composed, unverified).
   No budget warnings, no flags. W000020's gloss is still "already, done; then" (lessons have no gloss override): the card
   shows all three senses. Native-speaker points in QUESTIONS.
+- **L0006 "Not, questions, asking for something"** merged 2026-11-12 (`20261112210242_lesson_l0006.sql`, not applied;
+  `--max-units 3`): new V21 ◌ໍ, C14 ບ, T1 ◌່; core ຂໍ (khor, may I have; W000009), ບໍ່ (bor, not/question; W000003),
+  ແນ່ (nae, softener; W001426, newly drafted, unverified); bonus ບ້ານ (baan, home; W000049). Recycles ລາວ, ກິນ, ເຂົ້າ,
+  ແລ້ວ, ນ້ຳ and S000000024. Sentences: S000002879 ລາວບໍ່ກິນເຂົ້າ, S000002880 ຂໍນ້ຳແນ່, S000002881 ຂໍເຂົ້າແນ່ (composed),
+  S000000023 ກິນເຂົ້າແລ້ວບໍ່? (existing). Budget warning: weight 7.5 (guideline 5.5); the path allows splitting the
+  ຂໍ … ແນ່ half into its own lesson 7 if it plays long. Several blanks are skipped (1 safe distractor) because ນ້ຳ and
+  ແກ້ວ are excluded as personal names and ຂາ as food; the S000000024 slot change rides in the L0006 migration.
+  Native-speaker points in QUESTIONS.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
@@ -82,9 +90,6 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   `lesson_items.csv` and any units/rules it introduced, delete its migration, and remove its
   `curriculum/lessons/merged/<id>` folder (merge fails at the final move if it exists). Once hosted: `db_sql.py change`.
 - Editing CSVs: a `replace_all` that removed text at line ends also removed the line breaks. Rewrite small CSVs whole.
-- When lesson 6 is built, add to QUESTIONS: ແນ່ vs ແດ່ (which softener is everyday Vientiane speech), whether bare
-  ຂໍນ້ຳ (kor nam, "water please") sounds abrupt, ຫິວເຂົ້າ (hiu kao) as the normal "hungry". ແນ່ as a softener has no
-  words.csv row yet (the pool has ແດ່ W000308).
 - Conversations (S7g) do not block lessons 8 and 10: they carry their lines as ordinary sentences in order.
 
 ## Open with the owner

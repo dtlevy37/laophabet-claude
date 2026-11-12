@@ -9,3 +9,7 @@ W000389,body,SRC-AGENT,unverified,ຂາ leg
 W000538,quality,SRC-AGENT,unverified,ຂາວ white
 W000020,function,SRC-AGENT,unverified,ແລ້ວ already (aspect marker after the verb phrase; never blanked)
 W000218,object,SRC-AGENT,unverified,ແກ້ວ glass; bottle (also a classifier for drinks)
+W001426,function,SRC-AGENT,unverified,Tagged by the agent
+W000003,function,SRC-AGENT,unverified,Tagged by the agent
+W000009,action,SRC-AGENT,unverified,"Tagged by the agent; ຂໍ ask for: no existing verb class fits, so with only action it is never a distractor in a verb gap"
+W000049,place,SRC-AGENT,unverified,Tagged by the agent

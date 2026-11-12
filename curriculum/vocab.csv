@@ -1,23 +1,23 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
 W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,10
 W000002,ດີ,adjective,good,basics,,39
-W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,315
+W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,316
 W000004,ແມ່ນ,verb; particle,"yes, that's right; to be",basics,,66
 W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,212
 W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,735
 W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
-W000009,ຂໍ,verb,"ask for, request; may I have",requests,,82
+W000009,ຂໍ,verb,"ask for, request; may I have",requests,,84
 W000010,ຂໍໂທດ,interjection; verb,"sorry, excuse me",greetings,,5
-W000011,ນ້ຳ,noun,water; liquid,food,W000218,35
+W000011,ນ້ຳ,noun,water; liquid,food,W000218,36
 W000012,ຫ້ອງ,noun; classifier,room,places,W000012,34
 W000013,ຫ້ອງນ້ຳ,noun,"bathroom, toilet",places,W000012,12
 W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
 W000016,ນີ້,pronoun; adverb,this; here,basics,,391
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,122
-W000019,ເຂົ້າ,noun,"rice, food",food,W000419,44
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,123
+W000019,ເຂົ້າ,noun,"rice, food",food,W000419,46
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,113
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
@@ -29,7 +29,7 @@ W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
 W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,11
-W000031,ລາວ,pronoun,"he, she",pronouns,,171
+W000031,ລາວ,pronoun,"he, she",pronouns,,172
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
 W000033,ນອນ,verb,sleep; lie down,home,,19
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
@@ -1424,3 +1424,4 @@ W001422,ບອກທາງ,verb,give directions; show the way,directions,,2
 W001423,ສູບ,verb,pump (air or water); smoke (a cigarette),transport,,2
 W001424,ທາງດ່ວນ,noun,expressway; motorway,transport,W000613,2
 W001425,ເຂົ້າ,verb,to enter; to go in,basics,,3
+W001426,ແນ່,particle,please (softens a request),function,,2

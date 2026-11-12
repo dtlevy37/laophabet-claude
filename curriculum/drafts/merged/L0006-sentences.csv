@@ -1,0 +1,4 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides
+L0006-S001,ລາວບໍ່ກິນເຂົ້າ.,ລາວ ບໍ່ ກິນ ເຂົ້າ.,law˧˥ bɔː˧ kin˩(˧) kʰaw˧˩,lao baw gin kao.,He doesn't eat. / She doesn't eat.,W000003,,,unverified,Composed by the agent for lesson 6; not from a source.,
+L0006-S002,ຂໍນ້ຳແນ່.,ຂໍ ນ້ຳ ແນ່.,kʰɔː˩(˧) nam˥˨ nɛː˧,kaw nam nae.,Could I have some water?,L0006-W001,,,unverified,Composed by the agent for lesson 6; not from a source.,
+L0006-S003,ຂໍເຂົ້າແນ່.,ຂໍ ເຂົ້າ ແນ່.,kʰɔː˩(˧) kʰaw˧˩ nɛː˧,kaw kao nae.,Could I have some rice?,W000009,,,unverified,Composed by the agent for lesson 6; not from a source.,

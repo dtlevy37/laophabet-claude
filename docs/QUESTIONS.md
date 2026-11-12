@@ -27,6 +27,19 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 - Tone of ເຂົ້າ (low-falling) and ເກົ້າ (high-falling) as stored: do they match Vientiane speech?
 - **ບໍ່ vs ບໍ** (question marker): Wiktionary has only ບໍ່ for both "no" and the question sense; other sources often write
   the question marker without the tone mark. The data uses ບໍ່ for both. Which is right?
+- Lesson 6 softener: ແນ່ (W001426, nae, newly drafted, IPA by agent) or ແດ່ (W000308, dae): which is everyday Vientiane
+  speech for softening a request, and how is each spelled? Is ຂໍນ້ຳແນ່ "Could I have some water?" (S000002880) /
+  ຂໍເຂົ້າແນ່ "Could I have some rice?" (S000002881) natural?
+- Does bare ຂໍນ້ຳ (khor nam, "water please"; S000000012) sound abrupt without a softener?
+- Is ຫິວເຂົ້າ (hiu khao) the normal way to say "hungry"? (needed in lesson 9)
+- Lesson 6 question word: in ກິນເຂົ້າແລ້ວບໍ່? "Have you eaten yet?" (S000000023), is the question word written ບໍ່ (with
+  the tone mark, as the data has it) or unmarked ບໍ, and is it said differently from ບໍ່ "not"?
+- Lesson 6 (composed): is ລາວບໍ່ກິນເຂົ້າ "He/She doesn't eat" (S000002879) natural?
+- Lesson 6 tags: ບໍ່ (W000003) and ແນ່ (W001426) as function words; ຂໍ (W000009) as a verb with no verb class; ບ້ານ
+  (W000049) as a place.
+- Fill in the blank hazard: ນ້ຳ (Nam) and ແກ້ວ (Kaew) are also common personal names, so they can make sense in any
+  subject slot (ນ້ຳບໍ່ກິນເຂົ້າ "Nam doesn't eat"). They are now excluded in S000002879, S000000023 and S000000024 slot 1.
+  Are there other pool words (ຂາວ, ບ້ານ ...) that are common names or nicknames?
 - **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
   screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
   ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right

@@ -1,0 +1,5 @@
+word_id,categories,source,confidence,notes
+L0006-W001,function,,unverified,Tagged by the agent
+W000003,function,,unverified,Tagged by the agent
+W000009,action,,unverified,"Tagged by the agent; ຂໍ ask for: no existing verb class fits, so with only action it is never a distractor in a verb gap"
+W000049,place,,unverified,Tagged by the agent
