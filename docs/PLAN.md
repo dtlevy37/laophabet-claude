@@ -16,15 +16,15 @@ Ground rules that cut across slices:
 ## Done
 S1 scripts · S2 local backend · S3 lesson 1 · S4 read-only learner view · S5 progress tables and RPCs · S6a played-lesson
 backend · S6b session runner · S6c multiple choice with feedback and replay · S7c activity data (word units,
-categories, slots; scripts, migration and backfill written; its SQL test waits for the lesson 4 rebuild, see S7f).
+categories, slots; its SQL test passed 2026-11-12 with the lesson 4 rebuild) · S7a build the sentence · S7b session
+comfort · S7d build the word · S7e fill in the blank.
 Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 
 ## Working order
 1. Mobile lesson frame: done (phone test passed 2026-11-11)
-2. S7f remainder: rebuild lesson 4, bonus label in the frontend, run `app/backend/tests/s7c_s7f_test.sql`
-3. S7b session comfort
-4. S7e fill in the blank, then S7d build the word
-5. Lessons 5–11 along `docs/CURRICULUM_PATH.md` (owner play-tests; lesson 6 may be split)
+2. S7f: owner browser test of the rebuilt lesson 4 (built 2026-11-12)
+3. S7b, S7e, S7d: done 2026-11-12
+4. Lessons 5–11 along `docs/CURRICULUM_PATH.md` (owner play-tests; lesson 6 may be split)
 6. S7g conversations (first ones in lessons 8 and 10)
 7. S8 home and stats, S8b practice, S9 FSRS, S9b tone drill, S10 native feedback and audio, S11 deploy
 8. Plan the stretch after lesson 11 (ມີ, ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່) around a second conversation (ordering food)
@@ -40,7 +40,7 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       Desktop browser test passed (user, also for drag and covers); phone test passed 2026-11-11 (Firefox Android). Added at the user's request: drag tiles into, within
       and out of the line (tap still works); the lesson list shows what each done lesson covers
       (`20261111010000_list_lessons_covers.sql`).)
-- [ ] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,
+- [x] **S7b Session comfort:** refresh or coming back the same day resumes the session at the same step (session id,
       seed and step in localStorage; specs are rebuilt from the seed); "Leave lesson?" confirm; dry-run mode on
       `#/read/…` that plays the questions without recording; `js/audio.js` `audioButton(detail)` placed on teach
       cards, sentence cards and wrong-answer feedback (renders nothing while `audio_url` is absent).
@@ -49,8 +49,9 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       (2026-11-12: built, awaiting the owner's browser test. Resume record `laophabet.resume.<user>.<lesson>` keeps
       the levels the plan was built with, so the rebuilt plan matches even after levels changed; the dry run is
       `#/try/L000n`, linked from the reader as "Try the questions", and plays as a learner with earlier items at
-      level 2. `node scripts/session_test.mjs` checks the rebuild.)
-- [ ] **S7d Build the word:** `activities/build_word.js`: the meaning and sound are shown; the learner taps the
+      level 2. `node scripts/session_test.mjs` checks the rebuild. Owner browser test passed 2026-11-12: resume,
+      leave dialog, dry run; the backend-down case was left untested by the owner.)
+- [x] **S7d Build the word:** `activities/build_word.js`: the meaning and sound are shown; the learner taps the
       pieces in spoken order (consonant, vowel, final, tone mark) from tiles that include wrong pieces; when right,
       the assembled word appears ("ກ + ◌ິ + ນ = ກິນ"). No in-progress glyph composer. Also: letters just taught are
       highlighted in new words, and tone marks get their first check here (they have no sound to ask about).
@@ -58,20 +59,23 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       (2026-11-12: built, awaiting the owner's browser test. Used for recycled words at level ≥ 2 and, in the
       closing block, for the first new word carrying a new tone mark. Each tap is judged at once; a slip marks the
       tile and the question as missed but the learner carries on. The highlight is a "Made of" line on word cards,
-      not colour inside the word. `session_test.mjs` builds every lesson 1–4 word.)
-- [ ] **S7e Fill in the blank, one logical choice** (agreed 2026-11-10; built right after S7c, before S7d): `activities/fill_blank.js` per DESIGN "Fill in the blank: one logical choice"; the planner
+      not colour inside the word. `session_test.mjs` builds every lesson 1–4 word. Owner browser test passed
+      2026-11-12; open question on the strict spoken order, see NOTES "Open with the owner".)
+- [x] **S7e Fill in the blank, one logical choice** (agreed 2026-11-10; built right after S7c, before S7d): `activities/fill_blank.js` per DESIGN "Fill in the blank: one logical choice"; the planner
       gives a recycled sentence fill in the blank and falls back to build the sentence. Frontend only (the bundle
       fields come in S7c). **Done when:** lessons 3 and 4 each ask a fill in the blank on their recycled sentence;
       for `ກິນ __` and `ລາວກິນ __`, ນ້ຳ is never an option; a wrong answer shows the full sentence. **Gate (user):**
       browser test.
       (2026-11-12: built, awaiting the owner's browser test. `session_test.mjs` confirms lessons 3 and 4 plan one
-      and ນ້ຳ is never offered after ກິນ over 200 seeds.)
+      and ນ້ຳ is never offered after ກິນ over 200 seeds. Owner browser test passed 2026-11-12.)
 - [ ] **S7w Letter writing practice** (owner request 2026-11-11; built, awaiting the owner's browser and phone test):
       `#/write` grid and per-letter flow (`js/write.js`, `js/writing/pad.js`, `js/writing/score.js`), stroke data
       `data/strokes.json` from `scripts/strokes_build.js`. Frontend only. **Done when:** on a phone, every step of
       two letters can be completed with a finger; a careless trace fails; drawing ຂ when asked for ຊ is refused with
       "looks like ຂ"; a finished letter shows a tick on the grid. **Gate (owner):** browser and phone test.
       Later: vowels, tone marks and ໜ ໝ; use inside lessons; progress in the DB.
+      (2026-11-12 owner desktop test: drawing and judging good. Fixed: a stray "null" under the result after Check,
+      and the printed letter now hides on every from-memory step, not only the whole-letter one. Phone untested.)
 - [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known), home screen with Continue
       (the next open lesson), the stats, and settings moved to the learner's profile.
 - [ ] **S8b Practice sessions:** `practice_items(limit)` RPC (due by fixed intervals, then weak, then oldest),
@@ -99,7 +103,10 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
       sentence; rebuilt lesson 4 shows ຂາ with the bonus label in the browser.
       **Gate:** `app/backend/tests/s7c_s7f_test.sql` passes; owner browser test.
       (2026-11-11: scripts, migration `20261111020000_activity_data_bonus.sql` and the lessons 1–4 backfill are done.
-      Left: rebuild lesson 4, the planner's bonus label and the `badge_bonus` string, the SQL test.)
+      Left: rebuild lesson 4, the planner's bonus label and the `badge_bonus` string, the SQL test.
+      2026-11-12: lesson 4 rebuilt in place by `20261112195124_lesson_l0004.sql` (`db_sql.py lesson L0004`, no
+      withdrawal, so no reset); bonus label, planner rule and "Bonus words" line on the lesson list built;
+      `s7c_s7f_test.sql` passed. Awaiting the owner's browser test.)
 - [ ] **S7g Conversations (canned content)** (added 2026-11-10; LESSON_RULES decision 23). Design note first
       (DESIGN): tables `dialogues` and `dialogue_lines` (ordered sentence ids, speaker A/B), a `dialogue`
       lesson item, a conversation card (lines shown in order with speaker sides), then fill in the blank on its

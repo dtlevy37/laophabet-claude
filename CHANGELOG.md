@@ -2,6 +2,24 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-12 (lesson 4 rebuild, bonus words; owner tests)
+
+### Changed
+- **Lesson 4 rebuilt in place** (`20261112195124_lesson_l0004.sql`, written by `db_sql.py lesson L0004`; applied with
+  `supabase migration up`, no reset): ◌ຳ, ນ້ຳ water, the R02 recap, ກິນນ້ຳ, ລາວກິນນ້ຳ, recycled ລາວກິນເຂົ້າ, and ຂາ leg
+  as the bonus word at the end. ຂາວ white (to lesson 11) and ລາວຂາວ left the lesson; old positions 11–12 retired.
+- `app/backend/tests/s7c_s7f_test.sql` passed (checks 1–8).
+- PLAN: S7b, S7d, S7e ticked after the owner's browser test (the backend-down case was not tested).
+
+### Added
+- **Bonus words in the app (S7f):** "Bonus word" badge on the card (`badge_bonus`, dashed border); the planner gives
+  a bonus word its card and one Lao → meaning check, nothing in the closing block; the lesson list shows a "Bonus
+  words" line for a done lesson (`covers_bonus`, from `list_lessons.bonus`). DESIGN lesson-session table updated.
+
+### Fixed
+- Letter writing: "null" printed under the result after Check (and in the recorder's idle view):
+  `replaceChildren` writes a null argument as text. The printed letter now hides on every from-memory step.
+
 ## 2026-11-12 (session comfort, fill in the blank, build the word)
 
 ### Added

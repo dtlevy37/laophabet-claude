@@ -189,6 +189,7 @@ extra columns.
 |---|---|
 | new unit | teach card, then one check (sound → letter or letter → sound). A same-sound pair (C13 + C13f) is one card and one check; both ids are sent as shown. A unit with no sound of its own (tone mark) gets its check in the closing block: the first new word carrying it is built (build the word) instead of meaning → Lao, and the tone mark is logged as a recognition answer (S7d) |
 | new word | teach card, then Lao → meaning. Homographs on one card (ລາວ) accept either meaning, and no option is another word with the same spelling |
+| bonus word (S7f) | teach card labelled "Bonus word", then Lao → meaning; nothing in the closing block (recall waits for practice) |
 | new rule / recap | card only |
 | recycled word | no card; one question: build the word if the learner's level is ≥ 2 (S7d), else meaning → Lao at level ≥ 2 when it cannot be built, else Lao → meaning |
 | new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |

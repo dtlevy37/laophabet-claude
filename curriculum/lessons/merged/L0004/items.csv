@@ -1,13 +1,11 @@
 position,item_type,item_id,role,notes
-1,word,W000389,new,'leg'; known letters only (practises the vowel from lesson 3)
-2,word,W000538,new,'white'; known letters only
-3,word,W000031,recycle,earlier word; used in the next sentence
-4,sentence,S000002876,new,describing word after the pronoun; no word for 'is'
-5,unit,V36,new,vowel with a small circle above and a stroke after the consonant
-6,word,W000011,new,'water'; uses the new vowel
-7,rule,R02,new,recap: the same stroke in three vowels (shown once all three are taught)
-8,word,W000018,recycle,earlier word
-9,sentence,S000002873,new,first drink phrase
-10,word,W000019,recycle,earlier word
-11,sentence,S000002872,recycle,earlier sentence
-12,sentence,S000002874,new,sentence
+1,unit,V36,new,vowel with a small circle above and a stroke after the consonant
+2,word,W000011,new,'water'; uses the new vowel
+3,rule,R02,new,recap: the same stroke in three vowels (shown once all three are taught)
+4,word,W000018,recycle,earlier word
+5,sentence,S000002873,new,first drink phrase
+6,word,W000031,recycle,earlier word; used in the next sentence
+7,sentence,S000002874,new,sentence
+8,word,W000019,recycle,earlier word
+9,sentence,S000002872,recycle,earlier sentence
+10,word,W000389,bonus,"'leg'; bonus word (LESSON_RULES decisions 21-22): known letters only, practises the vowel from lesson 3; never in a sentence"
