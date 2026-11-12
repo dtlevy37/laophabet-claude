@@ -99,7 +99,8 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    lesson uses it in a sentence: as we go when a lesson has room, or several at once in a lesson with no new
    letters (a review of letters that still brings new content). Needs the `bonus` role (PLAN S7f).
 22. **Lesson 4 changes** (user, 2026-11-10): the sentence ລາວຂາວ is removed; ຂາ is the lesson's bonus word; ຂາວ
-   moves to lesson 11 with ສີ. Lessons 1–3 stay as they are.
+   moves to lesson 11 with ສີ. Lessons 1–3 stay as they are. Amended 2026-11-12 (user): ຂາວ is also a bonus word
+   in lesson 4; lesson 11 makes it core.
 23. **Conversations are canned content** (user, 2026-11-10): a fixed, ordered set of lines shown as a
    conversation, followed by fill in the blank (one logical answer) on those lines. First ones: lesson 8 (hello,
    how are you) and lesson 10 (hello, are you hungry, I've eaten already). Needs PLAN S7g.

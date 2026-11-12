@@ -47,7 +47,7 @@ Lao answers "yes" by repeating the verb, so no separate word for "yes" is needed
 **Changes to lesson 4** (lessons 1–3 stay as they are):
 - Remove the sentence ລາວຂາວ *lao khao* "He is fair-skinned".
 - ຂາ *khaa* "leg" stays, as the lesson's bonus word.
-- ຂາວ *khao* "white" moves out to lesson 11 (colours).
+- ຂາວ *khao* "white" is a second bonus word (owner, 2026-11-12) and becomes core in lesson 11 (colours).
 
 ## Lessons 5–10 (new)
 

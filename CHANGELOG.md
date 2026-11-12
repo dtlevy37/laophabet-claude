@@ -8,6 +8,8 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - **Lesson 4 rebuilt in place** (`20261112195124_lesson_l0004.sql`, written by `db_sql.py lesson L0004`; applied with
   `supabase migration up`, no reset): ◌ຳ, ນ້ຳ water, the R02 recap, ກິນນ້ຳ, ລາວກິນນ້ຳ, recycled ລາວກິນເຂົ້າ, and ຂາ leg
   as the bonus word at the end. ຂາວ white (to lesson 11) and ລາວຂາວ left the lesson; old positions 11–12 retired.
+  Then, at the owner's request, ຂາວ white added back as a second bonus word (`20261112204059_lesson_l0004.sql`);
+  it becomes core in lesson 11. CURRICULUM_PATH and LESSON_RULES decision 22 updated.
 - `app/backend/tests/s7c_s7f_test.sql` passed (checks 1–8).
 - PLAN: S7b, S7d, S7e ticked after the owner's browser test (the backend-down case was not tested).
 

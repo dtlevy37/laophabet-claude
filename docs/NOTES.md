@@ -11,8 +11,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (`scripts/next_lesson.ps1`). First use of each should be treated as a test.
 - **Content pool:** 1425 words, 2816 sentences, 30 templates. Pipeline clean (0 errors, the usual 8 warnings).
 - **Lessons merged: 4.** L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
-  (nam, water), bonus ຂາ (kaa, leg). L0004 was rebuilt in place 2026-11-12 (`20261112195124_lesson_l0004.sql`):
-  ຂາວ (kaao, white) waits for lesson 11; ລາວຂາວ is out of every lesson.
+  (nam, water), bonus ຂາ (kaa, leg) and ຂາວ (kaao, white). L0004 was rebuilt in place 2026-11-12
+  (`20261112195124_lesson_l0004.sql`, then `20261112204059_lesson_l0004.sql` adding ຂາວ as bonus at the owner's
+  request); ຂາວ becomes core in lesson 11; ລາວຂາວ is out of every lesson.
 - **Backend:** local Supabase only (Docker). Nothing is hosted, so any migration may still be replaced. A
   `supabase db reset` wipes accounts; the owner then signs up again.
 - **App:** lessons 1–4 play end to end with teach cards, multiple choice, replay of missed questions and a summary
@@ -22,7 +23,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 
 ## Next steps
 0. **Owner test of S7f**: play lesson 4 (ຂາ last, "Bonus word" label, one check, nothing in the closing block);
-   the lesson list shows "Bonus words: ຂາ leg" under done lesson 4. Then tick S7f in PLAN.
+   the lesson list shows "Bonus words: ຂາ leg · ຂາວ white" under done lesson 4. Then tick S7f in PLAN.
    Re-dump `tmp/bundles/` and rerun `node scripts/session_test.mjs` after any lesson merge.
 0. **Owner test of letter writing (S7w)**: desktop passed 2026-11-12 apart from two bugs, now fixed ("null" after
    Check; the letter showing on part-from-memory steps). Retest those, then the phone. `#/write` on desktop and phone (steps in CHANGELOG 2026-11-11 "letter
