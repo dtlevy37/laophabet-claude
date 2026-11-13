@@ -60,8 +60,16 @@ Romanization in brackets; sentence ids for the agent. All composed sentences are
   fine in context, or ຫິວເຂົ້າ / ບໍ່ຫິວເທື່ອ? ເຈົ້າຫິວນ້ຳບໍ່? (S000001170). ຂ້ອຍກິນເຂົ້າແລ້ວ (S000002890) after ບໍ່ຫິວ,
   or just ກິນແລ້ວ? ລາວນອນແລ້ວ (S000002891) "asleep already" or "gone to bed" (ເຂົ້ານອນແລ້ວ)? ຂ້ອຍຫິວເຂົ້າ
   (S000000113), ຂ້ອຍສະບາຍດີ (S000000008).
+- L9–10, after "bare ຂ້ອຍຫິວ is incomplete" (2026-11-13): as a reply to ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiw kao baw?, "are
+  you hungry?"), is bare ຫິວ (hiw, S000002892) or ບໍ່ຫິວ (baw hiw, S000002888) fine, since the question already says
+  ເຂົ້າ? Or should the replies be ຫິວເຂົ້າ (hiw kao) / ບໍ່ຫິວເຂົ້າ (baw hiw kao)? Lesson 9's new card "Pronouns are
+  often left out" uses ບໍ່ຫິວ as its example. (Pool sentences ເດັກນ້ອຍຫິວ, ຍັງບໍ່ ຂ້ອຍຫິວ, ຂ້ອຍກິນຫຼາຍເພາະຫິວ now
+  end in ເຂົ້າ.)
 - L11: ສີນີ້ຂາວ / ດຳ / ດີ (S000002893–5; or ສີນີ້ງາມ "beautiful"?), ລາວຂາຍເຂົ້າ (S000002896), ແກ້ວນີ້ນ້ອຍ (S000002898).
   ຂໍແກ້ວນ້ອຍແນ່ (S000002897): "a small glass" or "a little glassful"? Asked "what colour?", ສີຂາວ or just ຂາວ?
+  You said ນີ້ຂາວ (nee khao) fits a wall's colour and ນີ້ມັນສີຂາວ (nee man sii khao) an object in hand: lesson 11
+  says ສີນີ້ຂາວ (sii nee khao, "this colour is white"), pointing at a colour, e.g. a colour swatch or a wall. Fine
+  that way, and is ສີນີ້ດີ (sii nee dee, "this colour is good") natural?
 
 **Rules the app states**
 - Word-order notes (A2): (1) a describing word comes after the thing (ນ້ຳນີ້ nam nee, ແກ້ວນ້ອຍ gaew noy); (2) ບໍ່ "not"

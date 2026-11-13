@@ -1,4 +1,4 @@
 unit_id,teach_en,notes
 C02,"A k with a puff of air, as in the word 'kite'.",From letters.csv C02 pron_tip (verified); wording by agent.
-V35,"As in the word 'now'. Written in three parts around the consonant: before, above and after.",From vowels.csv V35 pron_tip and pattern ເ◌ົາ (verified); wording by agent.
+V35,"As in the word 'now'. Written in three parts around the consonant: before, above and after. The three parts are one vowel, and you say the consonant first, then the vowel.",From vowels.csv V35 pron_tip and pattern ເ◌ົາ (verified); wording by agent.
 T2,A small mark written above the letter. It changes the melody of the word.,From letters.csv T2 (verified: the mark changes the tone); wording by agent. The class rule is deliberately left out (user 2026-11-09).

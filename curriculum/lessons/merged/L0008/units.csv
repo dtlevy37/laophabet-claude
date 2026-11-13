@@ -1,4 +1,4 @@
 unit_id,teach_en,notes
 C06,Like the s in 'saw'.,From letters.csv C06 pron_tip (verified: s as in 'saw'); the same-sound letter ຊ is not taught yet so it is not mentioned. Wording by agent.
-V01,"A short 'a', roughly like the 'uh' in 'uh-oh'. It is written after the consonant.","From vowels.csv V01 pron_tip (verified: short 'a' cut off sharply as in 'uh-oh') and its pattern ◌ະ; the cut-off itself is on the R01 card. Wording by agent."
-C08f,"At the end of a syllable, a short y sound, roughly like the y at the end of 'bye'.","From letters.csv C08 pron_tip (verified: at the end of a syllable a y glide); 'bye' from the ສະບາຍດີ pron_tip in words.csv. Final role only; the initial ny sound is a later unit. Modelled on the C24f card. Wording by agent."
+V01,"A short 'a', roughly like the 'uh' in 'uh-oh'. It is written after the consonant. As with every vowel, the consonant it goes with is said first.",From vowels.csv V01 pron_tip (verified: short 'a' cut off sharply as in 'uh-oh') and its pattern ◌ະ; the cut-off itself is on the R01 card. Wording by agent.
+C08f,"At the end of a syllable, a short y sound, roughly like the y at the end of 'bye'.",From letters.csv C08 pron_tip (verified: at the end of a syllable a y glide); 'bye' from the ສະບາຍດີ pron_tip in words.csv. Final role only; the initial ny sound is a later unit. Modelled on the C24f card. Wording by agent.

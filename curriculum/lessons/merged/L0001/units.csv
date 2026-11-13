@@ -1,4 +1,4 @@
 unit_id,teach_en,notes
 C01,"ກ is a consonant. At the start of a syllable it is an unaspirated k, said with no puff of air, so English ears often hear a g (as in 'gas').",From letters.csv C01 pron_tip (verified); wording by agent.
-V04,"◌ິ is the short vowel i, like the i in 'bit' but tenser. It is written above the consonant; the dotted circle shows where the consonant goes. Even though it is written above, you say it after the consonant.",From vowels.csv V04 pron_tip (verified); wording by agent.
+V04,"A short 'ee', tighter than the i in 'bin'. Written above the consonant, but said after it. A vowel is one unit, wherever its parts sit, and the consonant it goes with is always said first.",From vowels.csv V04 pron_tip (verified); wording by agent.
 C13f,"ນ at the end of a syllable is n, as in 'sun'. (At the start of a syllable it is also n, as in 'no'.)",From letters.csv C13 (ipa_final n; verified); wording by agent.

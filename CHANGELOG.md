@@ -2,6 +2,14 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 L1c, L1d, L1b(a) built (subagents; local only)
+- L1c: build the word slot board, Check early, slips stay green (kept in detail), compare view (`compare.js`),
+  pronoun-drop alternates via `sentence_json.alternates` (migration `20261113190300`, test `tests/l1c_sentence_alternates_test.sql`).
+- L1d: rules R03 (L0002, after ເ◌ົາ) and R04 (L0009, after ຫິວນ້ຳ); ຫິວ culture note; English fixes S000002881/2889/2892;
+  ເຂົ້າ added to S000000268, S000001655, S000000192; new QUESTIONS on bare ຫິວ replies and ສີນີ້ຂາວ.
+- L1b(a): vowel cards say the vowel is one unit and the consonant is said first.
+- Not pushed to hosted; owner check pending.
+
 ## 2026-11-13 (docs cleanup)
 - NOTES, PLAN, QUESTIONS rewritten about 3x shorter: per-lesson detail and finished slices left to CHANGELOG/git,
   owner decisions gathered in QUESTIONS "For the owner", native questions grouped by topic and deduplicated

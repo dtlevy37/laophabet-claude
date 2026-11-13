@@ -23,6 +23,10 @@
 // ), a lesson with a recorded new word plans at least one listen and pick for every seed; its item is recorded, the
 // answer is among the options, every option is a data/words.csv word, and no two options sound alike (same
 // respelling: a same-sound twin cannot be told apart by ear).
+// L1c: every build the word in a plan is right in the end after a wrong tap (the slip and every tap stay in detail),
+// a found piece goes to its own slot, and Check before complete is a wrong, early answer; in lesson 9 ສະບາຍດີບໍ່? is
+// also right for ເຈົ້າສະບາຍດີບໍ່? (S000000007, needs bundles dumped after the l1c_sentence_alternates migration) while
+// ເຈົ້າຫິວເຂົ້າບໍ່? and ລາວຫິວເຂົ້າ need their pronoun; "Your answer" / "Right answer" alignment cases.
 // Plans use the dry-run levels (a learner who has done the lessons before), as #/try/<id> does.
 import { register } from 'node:module'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
@@ -49,6 +53,15 @@ const { activities } = await import(js('activities/index.js'))
 const { unitSoundRaw } = await import(js('activities/teach_card.js'))
 const { wordSoundKey } = await import(js('activities/listen_pick.js'))
 const { applyAudio } = await import(js('bundle.js'))
+const { fitDetail } = await import(js('session.js'))
+const {
+  newState: bwNewState,
+  tapTile: bwTap,
+  checkEarly: bwCheck,
+  answersFor: bwAnswers,
+} = await import(js('activities/build_word.js'))
+const { judge: bsJudge, leftOut: bsLeftOut } = await import(js('activities/build_sentence.js'))
+const { align: cmpAlign, kindOf: cmpKind } = await import(js('activities/compare.js'))
 
 // data/words.csv: word_id -> lao (the first two columns; no quoted fields there)
 const wordsCsv = new Map(
@@ -201,6 +214,76 @@ for (const b of bundles) {
   }
   const newMark = b.items.some((it) => it.item_type === 'unit' && it.role === 'new' && it.detail?.kind === 'tone-mark')
   if (newMark && !one.steps.some((s) => s.activity === 'build_word')) fail('a new tone mark but no build the word')
+
+  // L1c (a, b, e) on every build the word of the lesson's plan: a wrong tap then every piece is right in the end,
+  // with the slip and every tap in detail; a found piece goes to its own slot; Check before complete is wrong.
+  for (const spec of one.steps.filter((s) => s.activity === 'build_word')) {
+    const w = lao(spec)
+    const pieceTile = (st, n) =>
+      spec.tiles.findIndex((tl, ti) => tl.lao === spec.pieces[n].lao && !st.placed.includes(ti))
+    const wrongTile = spec.tiles.findIndex((tl) => !spec.pieces.some((p) => p.lao === tl.lao))
+    for (const strict of [false, true]) {
+      const st = bwNewState(strict)
+      if (wrongTile >= 0 && bwTap(spec, st, wrongTile) !== 'slip') fail(`${w}: a wrong tile was not a slip`)
+      const last = spec.pieces.length - 1
+      if (!strict && spec.pieces.filter((p) => p.lao === spec.pieces[last].lao).length === 1) {
+        bwTap(spec, st, pieceTile(st, last))
+        if (st.pieceOf[0] !== last) fail(`${w}: the last piece did not go to the last slot`)
+      }
+      for (let n = 0; n < spec.pieces.length; n++) if (!st.pieceOf.includes(n)) bwTap(spec, st, pieceTile(st, n))
+      const [ans, ...parts] = bwAnswers(spec, st)
+      if (ans.correct !== true) fail(`${w} (${strict ? 'strict' : 'any'}): right in the end but not correct`)
+      const slips = strict ? (ans.detail.pieces[0].wrong || []) : ans.detail.stray
+      if (wrongTile >= 0 && !slips.includes(spec.tiles[wrongTile].unit_id)) fail(`${w}: the slip is not in detail`)
+      if (ans.detail.taps.length !== spec.pieces.length + (wrongTile >= 0 ? 1 : 0)) fail(`${w}: detail.taps does not list every tap`)
+      if (parts.some((p) => p.role !== 'part')) fail(`${w}: a tone mark answer is not a part`)
+      if (!fitDetail(ans.detail).taps) fail(`${w}: fitDetail drops taps`)
+    }
+    if (spec.pieces.length > 1) {
+      const st = bwNewState(false)
+      bwTap(spec, st, pieceTile(st, 0))
+      if (!bwCheck(spec, st)) fail(`${w}: Check refused with one piece placed`)
+      const [ans] = bwAnswers(spec, st)
+      if (ans.correct !== false || !ans.detail.early || ans.detail.pieces.filter((p) => p.found).length !== 1) fail(`${w}: Check before complete is not a wrong, early answer`)
+      if (bwTap(spec, st, pieceTile(st, 1)) !== null) fail(`${w}: a tap after Check was taken`)
+    }
+  }
+
+  // L1c (d): an equally right answer, from sentence_json.alternates (server: same English, only pronouns left out)
+  if (id === 'L0009') {
+    const sentenceSpec = (sid) => {
+      const it = b.items.find((x) => x.item_id === sid)
+      if (!it) return fail(`L0009: no ${sid}`)
+      return activities.build_sentence.build({ ...it, shown: [{ item_type: 'sentence', item_id: sid }] }, b.distractors, () => 0.3)
+    }
+    const how = sentenceSpec('S000000007') // ເຈົ້າສະບາຍດີບໍ່? "How are you?"
+    if (how) {
+      const v = bsJudge(how, ['ສະບາຍດີ', 'ບໍ່'])
+      if (!v.right || v.alt?.id !== 'S000000003') fail('S000000007: ສະບາຍດີບໍ່? is not accepted as also right')
+      else if (bsLeftOut(how, v.alt).map((x) => x.lao).join() !== 'ເຈົ້າ') fail('S000000007: the note does not name ເຈົ້າ')
+      if (!bsJudge(how, ['ເຈົ້າ', 'ສະບາຍດີ', 'ບໍ່']).right || bsJudge(how, ['ເຈົ້າ', 'ສະບາຍດີ', 'ບໍ່']).alt) fail('S000000007: the sentence itself')
+      if (bsJudge(how, ['ສະບາຍດີ']).right || bsJudge(how, ['ບໍ່', 'ສະບາຍດີ']).right) fail('S000000007: a wrong answer accepted')
+      else console.log(`  L1c ${lao(how)}: ສະບາຍດີບໍ່? also right (${how.alts.map((a) => a.id).join(', ')})`)
+    }
+    // ເຈົ້າ cannot be dropped here: no sentence without it says "Are you hungry?" with these words
+    const hungry = sentenceSpec('S000002887') // ເຈົ້າຫິວເຂົ້າບໍ່?
+    if (hungry && bsJudge(hungry, ['ຫິວ', 'ເຂົ້າ', 'ບໍ່']).right) fail('S000002887: ຫິວເຂົ້າບໍ່? accepted without ເຈົ້າ')
+    const he = sentenceSpec('S000002886') // ລາວຫິວເຂົ້າ.
+    if (he && bsJudge(he, ['ຫິວ', 'ເຂົ້າ']).right) fail('S000002886: ຫິວເຂົ້າ accepted without ລາວ')
+  }
+}
+
+// L1c (c): "Your answer" over "Right answer" lines up word by word
+{
+  const cols = (y, r) => cmpAlign(y, r).map((c) => `${c.you ?? '_'}/${c.right ?? '_'}`).join(' ')
+  const cases = [
+    [['ກິນ', 'ເຂົ້າ'], ['ລາວ', 'ກິນ', 'ເຂົ້າ'], '_/ລາວ ກິນ/ກິນ ເຂົ້າ/ເຂົ້າ'],
+    [['ລາວ', 'ນ້ຳ', 'ເຂົ້າ'], ['ລາວ', 'ກິນ', 'ເຂົ້າ'], 'ລາວ/ລາວ ນ້ຳ/ກິນ ເຂົ້າ/ເຂົ້າ'],
+    [['ເຂົ້າ', 'ລາວ', 'ກິນ'], ['ລາວ', 'ກິນ', 'ເຂົ້າ'], 'ເຂົ້າ/_ ລາວ/ລາວ ກິນ/ກິນ _/ເຂົ້າ'],
+    [['ລາວ', 'ກິນ', 'ເຂົ້າ', 'ແລ້ວ'], ['ລາວ', 'ກິນ', 'ເຂົ້າ'], 'ລາວ/ລາວ ກິນ/ກິນ ເຂົ້າ/ເຂົ້າ ແລ້ວ/_'],
+  ]
+  for (const [y, r, want] of cases) if (cols(y, r) !== want) fail(`align ${y.join(' ')}: ${cols(y, r)}, want ${want}`)
+  if (cmpKind({ you: null, right: 'ກ' }) !== 'missing' || cmpKind({ you: 'ກ', right: 'ຂ' }) !== 'swap') fail('compare kinds')
 }
 
 console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')
