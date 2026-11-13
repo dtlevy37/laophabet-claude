@@ -28,6 +28,7 @@ async function setTheme(page, theme) {
     const errors = []
     page.on('pageerror', (e) => errors.push(String(e)))
     page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
+    page.on('requestfailed', (r) => errors.push(`request failed ${r.url().replace(/\?.*/, '')} (${r.failure()?.errorText}) on ${page.url()}`))
     await page.goto(BASE)
     await page.fill('input[type=email]', email)
     await page.fill('input[type=password]', password)
@@ -99,7 +100,9 @@ async function setTheme(page, theme) {
     await page.waitForTimeout(1200)
     const bg2 = await page.evaluate(() => getComputedStyle(document.body).backgroundColor)
     check(`${width} System follows a dark device`, bg2 === 'rgb(20, 22, 26)', bg2)
-    if (errors.length) check(`${width} console errors`, false, errors.join(' | '))
+    // a reload in the middle of list_lessons aborts it (ERR_ABORTED, then the app logs "Failed to fetch"): the driver's doing
+    const real = errors.filter((e) => !/ERR_ABORTED|Failed to fetch/.test(e))
+    check(`${width} no console errors`, !real.length, real.join(' | '))
     await page.close()
   }
   await browser.close()

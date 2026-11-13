@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 2: slim header and lesson chrome
+- Learner header (`app.js` `showLearnerTopbar`): one line, the brand and Settings (plus a native's way back to
+  review). Hidden on `#/lesson/…` and `#/try/…` (`syncTopbar`, on render and every hashchange). The native header
+  (`showTopbar`: name and Sign out) is unchanged.
+- Settings page: an Account section at the end, "Signed in as {email}" and Sign out (`settings.js`; the email comes
+  from app.js through `showLearnerHome`'s ctx).
+- Lesson head (`session.js` `stepView`): a 44px ✕ (opens the leave dialog), the progress bar and a counter
+  `{n} / {total}` (this step / the steps planned so far, replays included). The dry-run badge moved under the head.
+  The loading screen has a ✕ link home. Esc still opens the leave dialog.
+- Strings: `lesson_close`, `session_counter`, `settings_account`, `settings_signed_in_as` (learner only).
+
 ## 2026-11-13 A7 step 1: settings page, sound spelling on the intro card, light/dark
 - Settings is a page, `#/settings` (`settings.js` `showSettings`, routed in `learn.js`), scrolling like any other;
   ← Back goes back in history when opened from the app, else home. The top bar's Settings is a link. The dialog

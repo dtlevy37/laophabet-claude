@@ -18,7 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 2 (`docs/A7_PLAN.md`; steps 0–1 built 2026-11-13), then A7 steps 3–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 3 (`docs/A7_PLAN.md`; steps 0–2 built 2026-11-13), then A7 steps 4–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
@@ -39,6 +39,9 @@ and L1e are pending (list below).
 9. A7 step 1: Settings (top bar) opens `#/settings` as a page; "Light or dark" System / Light / Dark switches at
    once and is kept after a reload; ← Back returns. `#/read/L0001/1` (or a new lesson 1): the intro card has the
    sound-spelling choice with ກ and "Sounds like" (k ↔ g as you pick); the ກ card has no radios.
+10. A7 step 2 (phone and desktop): the header is one line, "Laophabet" and Settings; email and Sign out are at the
+   end of Settings (Account). In a lesson (`#/lesson/…`, `#/try/…`) there is no header: ✕ top left (Leave dialog),
+   progress bar, "1 / 34" counter; Esc still asks to leave. Natives' recording header is unchanged (untested).
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
