@@ -75,8 +75,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 
 ## Next steps
 0. **Handoff 2026-11-13.** A3 and A5 migrations are on hosted (pushed 2026-11-13 with the owner's go-ahead,
-   checked). **Unpushed:** `20261113143534_a4_sound_hints.sql` (owner agreed the hints; the agent's push was blocked
-   by the permission system): the owner runs `supabase db push --linked` from `app/backend`.
+   checked). A4 hints `20261113143534_a4_sound_hints.sql` pushed by the owner 2026-11-13 (checked). Nothing unpushed.
    - A1 DONE. A2: review fixes done; owner browser test still pending (steps: `#/try/L0007`, put ຂໍ ນີ້ ນ້ຳ ແນ່
      (khor nee nam nae) → the "Lao word order" note, its Lao now in the Lao font; build the word any order → "Read in
      this order"; Settings → "Spelling challenge"). Tests: `node scripts/grammar_test.mjs`.
@@ -101,6 +100,14 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    - Review round 2 (owner 2026-11-13: more subagent review before big UI changes): `docs/A7_PLAN.md` (readiness +
      10-step plan with a mockup gate at step 6) done; accessibility audit (`tmp/a6b/a11y.md`) and learning-design
      review (`tmp/a6b/learning.md`) running/landed. Next: static mockups (A7 step 6) for the owner.
+   - Letter/vowel cards: "Hear it in a word" (owner 2026-11-13): a recorded word from the lesson with the unit
+     highlighted per cluster (Chromium colours a mark with its base letter) + a pieces line when the highlight is
+     wider than the unit; `js/unit_word.js`. Pool words lack `units` in `get_lesson`, so only lesson words qualify.
+     Untested outside Chromium.
+   - Learning review (`tmp/a6b/learning.md`) open points for the owner: tone never explained (intro card + audio),
+     no listen-then-pick activity, no two-speaker conversation, no speaking practice, first build word/sentence
+     unexplained, build-sentence feedback does not mark the misplaced tile, shared respellings (◌ວ / ເ◌ົາ "ao",
+     ◌ອ◌ / ◌ໍ "aw"), bonus words tested without a sentence.
    - Next for the agent: after the owner answers, push A3/A5, then A7 (home, navigation, keyboard, thumb-zone
      layout, summary) per the agreed proposal; A8, A9.
    - Subagents: the owner wants subagents used where it makes sense (2026-11-13). Three personas ran A6 at sonnet.

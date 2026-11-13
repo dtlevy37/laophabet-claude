@@ -3,6 +3,9 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-13 (owner answers)
+- Letter and vowel cards show "Hear it in a word": a recorded lesson word with the unit highlighted and ▶
+  (`js/unit_word.js`). A4 hints on hosted (owner push). Review round 2: accessibility audit and learning-design review
+  (tmp reports; points in NOTES).
 - Hosted: A5 and A3 migrations pushed (owner go-ahead), checked. A4 sound hints applied to 33 rows (units V04 V15 V21
   V22 V36, rule R02, letters C01 C02 C09 C14, vowels, 18 word tips) in `20261113143534_a4_sound_hints.sql`, local
   only (hosted push left to the owner). `docs/A7_PLAN.md`: revamp readiness and step plan.
