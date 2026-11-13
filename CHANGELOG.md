@@ -3,6 +3,11 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-13 (owner answers)
+- L2 listen and pick (`js/activities/listen_pick.js`): hear a recorded word, pick its Lao from 3–4 real words (no
+  same-sound option); one per lesson in the closing block; logged with A3 detail. "Can't listen now" pauses
+  listening and autoplay for 10 minutes (stand-in: meaning question, logged with `swapped`); Settings shows and ends
+  the pause. A lesson saved in progress before this restarts once.
+- Key numbers in tile banks stay with their slot after a tile is used (owner 2026-11-13).
 - L1 clearer activities: first-time how-tos for build the word / sentence (`js/howto.js`, ◌ explained once);
   wrong sentences mark each placed tile ✓/✗; same-sound rule for sound options and build-the-word wrong tiles
   (session_test now checks it; it found ◌ວ / ເ◌ົາ and ◌ອ◌ / ◌ໍ tiles); unit cards say "Same sound as …".

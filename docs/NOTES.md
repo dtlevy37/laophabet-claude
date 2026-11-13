@@ -112,6 +112,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
      topbar wrapping at narrow widths / 200% zoom.
    - L1 BUILT 2026-11-13, owner browser test open (steps: fresh profile → `#/try/L0002` how-tos; `#/try/L0007`
      wrong sentence → ✓/✗ per tile; `#/try/L0010` ◌ອ◌ card "Same sound as ◌ໍ"). Next: L2 listen and pick.
+   - L2 BUILT 2026-11-13 with "Can't listen now", owner browser test open (`#/try/L0001` to the end: listen and
+     pick in the closing block; `#/try/L0002` "Can't listen now", then Settings → Audio). Caveat: in lessons 1–5 its
+     options include pool words the learner cannot read yet (existing pool rule). Next: A7 steps 0–5.
    - PLAN has learning slices L1–L5 (owner 2026-11-13; order L1 → L2 → A7 0–5 → L3 → A7 6–10 → L4 → L5).
      L5 design note `docs/L5_SPEAKING_DESIGN.md` (Fable agent): phases Say it → pitch overlay → recogniser only
      after validation; 7 owner questions in its section 10.

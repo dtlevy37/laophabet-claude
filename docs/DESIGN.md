@@ -74,7 +74,7 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Matching | tap pairs: Lao ↔ English, letter ↔ sound | recognition | words, units (needs 3+ pairs) | v1 (S8b) |
 | Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 (S8b, practice) |
 | Tone drill | see a syllable, pick its tone; later, apply the rule (class + live/dead + mark) | rules | words.tone_by_syllable, tone_derivation, rules | after the first tone-rule lesson (S9b) |
-| Listen and choose | hear audio, pick the word | listening | audio per word and sentence | v2 (needs audio) |
+| Listen and choose | hear a recorded word (autoplays once, ▶ replays), pick its Lao from 3–4 pool words; never an option with the same respelling as the answer; "Can't listen now" pauses it (and autoplay) for 10 minutes | recognition (listening) | `audio_url` on the word (bundle.js), pool words with respelling | v1 (L2, 2026-11-13): one per lesson in the closing block |
 | Dialogue reader | line by line, tap for translation, then comprehension questions | reading in context | dialogues, dialogue_lines, sentences | v2 |
 | Say it | hear, record yourself, play both back, grade yourself | speaking (self-graded) | audio | v2 |
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |

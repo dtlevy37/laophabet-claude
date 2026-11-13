@@ -103,7 +103,15 @@ L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10
 - [ ] **L2 Listen and pick.** A new activity: play a recorded word (or sentence), pick its Lao from 3–4 options
       (real words only; never a same-sound twin). Needs audio for the item and its options; recognition level.
       **Done when:** lessons with recorded words ask at least one listen-and-pick, and the answer is logged with
-      A3 detail.
+      A3 detail. (built 2026-11-13, local, not committed: js/activities/listen_pick.js, words only (the pool has no
+      sentences to offer); one per lesson always kept in the closing block, other recorded new words compete for
+      closing places, fallback a recorded recycled word; options are pool words, never the same respelling as the
+      answer, preferring the same onset/vowel/first letter; detail {form: listen, options, chosen, answer, auto,
+      heard}. Owner addition: "Can't listen now" pauses listening for 10 minutes per browser (settings.js
+      listenPausedUntil): no autoplay, listen and pick shown as Lao -> meaning (detail.swapped = 'cant_listen'),
+      Settings shows the pause with "Listen again now". session_test checks it on dumped audio
+      (tmp/bundles/audio.json); Playwright in tmp/l2. The plan now depends on audio: a resume record saved before
+      this change, or across a failed audio request or a newly added recording, restarts its lesson. Owner browser test open.)
 - [ ] **L3 Teaching tone.** Not necessarily at the first tone mark, but a proper lesson: what tone is, the pitch
       line legend, tone marks and consonant class in plain words, and compare/contrast pairs that differ only by
       tone, each with audio (candidates: ຂາວ khaao "white" vs ລາວ laao, owner idea; ໃກ້ "near" vs ໄກ "far", to

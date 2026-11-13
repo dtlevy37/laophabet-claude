@@ -13,9 +13,19 @@
 // L1: no sound question (unit_sound, unit_letter) offers two options with the same sound, and no build the word
 // offers a wrong tile with the sound of one of the word's pieces (◌ໍ / ◌ອ◌ "aw", ◌ວ / ເ◌ົາ "ao"). Sounds are compared on
 // the stored respelling (unitSoundRaw), not on the label in the learner's style.
+// L2: with the recorded audio applied (tmp/bundles/audio.json, get_item_audio's rows for every recorded id; dump:
+//   ids=$(echo "select string_agg(case when item_type='word' then item_id end, ',') || '|' || string_agg(case when
+//     item_type='sentence' then item_id end, ',') from public.item_audio" | docker exec -i supabase_db_laophabet-native
+//     psql -U postgres -At -q); w=${ids%|*}; s=${ids#*|}; echo "begin; set local role authenticated; select
+//     public.get_item_audio(string_to_array('$w', ','), string_to_array('$s', ',')) from (select set_config(
+//     'request.jwt.claims','{\"sub\":\"<any uuid>\",\"role\":\"authenticated\"}',true)) x; rollback;" |
+//     docker exec -i supabase_db_laophabet-native psql -U postgres -At -q > tmp/bundles/audio.json
+// ), a lesson with a recorded new word plans at least one listen and pick for every seed; its item is recorded, the
+// answer is among the options, every option is a data/words.csv word, and no two options sound alike (same
+// respelling: a same-sound twin cannot be told apart by ear).
 // Plans use the dry-run levels (a learner who has done the lessons before), as #/try/<id> does.
 import { register } from 'node:module'
-import { readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
@@ -37,6 +47,8 @@ const js = (p) => pathToFileURL(join(root, 'app/frontend/js', p)).href
 const { buildPlan, dryLevels } = await import(js('session.js'))
 const { activities } = await import(js('activities/index.js'))
 const { unitSoundRaw } = await import(js('activities/teach_card.js'))
+const { wordSoundKey } = await import(js('activities/listen_pick.js'))
+const { applyAudio } = await import(js('bundle.js'))
 
 // data/words.csv: word_id -> lao (the first two columns; no quoted fields there)
 const wordsCsv = new Map(
@@ -53,6 +65,10 @@ const bundles = readdirSync(dir)
   .sort()
   .map((f) => JSON.parse(readFileSync(join(dir, f), 'utf8')))
 if (!bundles.length) throw new Error(`no bundles in ${dir}`)
+const audioFile = join(dir, 'audio.json')
+const audioRows = existsSync(audioFile) ? JSON.parse(readFileSync(audioFile, 'utf8')) : null
+if (!audioRows) console.log('  (no audio.json: listen and pick is not checked)')
+for (const b of bundles) applyAudio(b, audioRows || [], (path) => `audio/${path}`)
 
 let errors = 0
 const failed = new Set() // a failure found with many seeds is reported once
@@ -103,6 +119,29 @@ for (const b of bundles) {
     }
   }
   if (b.items.some((x) => x.item_type === 'unit' && x.role === 'new' && sounds.get(x.item_id)) && !soundQs) fail('a new unit but no sound question')
+
+  // L2: listen and pick
+  if (audioRows) {
+    const recorded = b.items.some((x) => x.item_type === 'word' && x.role === 'new' && x.detail?.audio_url)
+    let none = 0
+    let example = null
+    for (let seed = 1; seed <= SEEDS; seed++) {
+      const lps = buildPlan(b, levels, seed, []).steps.filter((s) => s.activity === 'listen_pick')
+      if (!lps.length) none++
+      for (const s of lps) {
+        example ||= s
+        if (!s.item.detail?.audio_url) fail(`${lao(s)}: listen and pick on a word with no recording`)
+        if (!s.options.some((o) => o.id === s.answer)) fail(`${lao(s)}: listen and pick answer not among the options`)
+        if (s.options.length < 3 || s.options.length > 4) fail(`${lao(s)}: listen and pick with ${s.options.length} options`)
+        const keys = s.options.map((o) => wordSoundKey(o))
+        if (keys.some((k) => !k) || new Set(keys).size !== keys.length) fail(`${lao(s)}: listen and pick options sound alike: ${s.options.map((o) => `${o.lao}=${o.sound}`).join(' ')}`)
+        if (new Set(s.options.map((o) => o.lao)).size !== s.options.length) fail(`${lao(s)}: listen and pick: two options with the same Lao`)
+        for (const o of s.options) if (wordsCsv.get(o.id) !== o.lao) fail(`${lao(s)}: listen and pick option ${o.id} ${o.lao} is not a words.csv word`)
+      }
+    }
+    if (recorded && none) fail(`a recorded new word but no listen and pick (${none} of ${SEEDS} seeds)`)
+    if (example) console.log(`  listen_pick ${lao(example)}: ${example.options.map((o) => `${o.lao} ${o.sound}`).join(', ')}`)
+  }
 
   // S7e
   const recycledSentences = b.items.filter((it) => it.item_type === 'sentence' && it.role === 'recycle')
