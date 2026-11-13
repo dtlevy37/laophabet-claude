@@ -43,6 +43,12 @@ material"; the dry-run labelling; the writing stroke animation. Dark mode alread
 ## 2. Quick fixes (bugs, no design decision needed)
 - DONE 2026-11-13 (Playwright-checked at 768: badge inside the head row; dialog closes on a hash change): dry-run badge overlap (13: `.badge` is the absolutely positioned corner
   badge; `.badge.dry` is now static in the lesson head row); Settings dialog closes on a route change (14).
+- DONE 2026-11-13 (Playwright: L0007 dry run played to the end with keys only at 1280; L0010 fill in the blank shot
+  at 375 and 300): lesson keyboard (6): 1–9 option / bank tile, Enter primary button, Backspace last placed tile
+  (build the sentence), Space first play button, Esc leave dialog; focus moves into the stage after every draw;
+  corner number badges and one key line on mouse desktops only (`session.js` onKey/focusStage, styles.css). Option
+  wrap (9): Lao in options is nowrap, ✓/✗ sits in the corner, and `fitOptions` (dom.js) drops the grid to one
+  column when an option does not fit two to a row.
 - Not a bug: "words read" (11) is `session_summary` counting every Lao word read in questions, repeats included
   (`20261110120000_played_lesson.sql`). For A7: label it "Lao words read (with repeats)" or switch to distinct words
   (a new migration; stats stay in the DB).

@@ -15,6 +15,8 @@ Every change to the project is recorded here, newest first. Update it in the sam
   `db_sql.py` handles `word_notes` (bool type, `word_notes:<id>`), validation; notes for ເຂົ້າ and ສະບາຍດີ.
 - A6 UX review: three personas in Playwright; `docs/A6_UX_REVIEW.md` (findings, revamp proposal, owner questions).
   Quick fixes: dry-run badge no longer overlaps Sign out; Settings dialog closes on a route change.
+- Keyboard support in lessons and dry runs (A6 finding 6): 1–9, Enter, Space, Backspace, Esc; focus moves into the
+  lesson stage; key hints on desktop only. Lao options never wrap mid-word (finding 9; `dom.fitOptions`).
 - QUESTIONS: A2 rule claims, A4 sound checks and the owner's accent. NOTES: closed the stale slot-exclusion items
   (later lesson merges carried them; local and hosted match the CSV).
 

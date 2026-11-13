@@ -92,6 +92,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
      unverified (QUESTIONS). Open: pool words in `get_lesson` lack the note; the "translations are not literal" card.
    - A6 RUN: findings + revamp proposal in `docs/A6_UX_REVIEW.md` (4 owner questions). Quick fixes done and Playwright-checked:
      dry-run badge overlap, Settings dialog closes on route change. Agree it, then A7 builds it.
+   - Keyboard in lessons (1–9 option/tile, Enter primary, Space audio, Backspace undo tile, Esc leave; focus kept in
+     the stage; desktop-only key hints) and no-wrap Lao options (`dom.fitOptions`, one column when needed): built,
+     Playwright keys-only run of `#/try/L0007` passed; owner check: same route on desktop, `#/try/L0010` at 375px.
    - Next for the agent: after the owner answers, push A3/A5, then A7 (home, navigation, keyboard, thumb-zone
      layout, summary) per the agreed proposal; A8, A9.
    - Subagents: the owner wants subagents used where it makes sense (2026-11-13). Three personas ran A6 at sonnet.
