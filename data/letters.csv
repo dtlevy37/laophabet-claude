@@ -1,18 +1,18 @@
 letter_id,lao,unicode,kind,name_lao,name_gloss_en,ipa_initial,ipa_final,consonant_class,romanization_bgn,respelling,pron_tip,coverage_required,intro_word_id,source,confidence,notes
-C01,ກ,U+0E81,consonant,ໄກ່,chicken,k,k̚,mid,k,g (final k),"Unaspirated k with no puff of air, so English ears often hear it as g (as in 'gas'). As a final it is unreleased.",yes,W000018,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C02,ຂ,U+0E82,consonant,ໄຂ່,egg,kʰ,,high,kh,k,Aspirated k as in 'kite'. Same sound as ຄ; the class letter only changes the tone.,yes,W000006,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
+C01,ກ,U+0E81,consonant,ໄກ່,chicken,k,k̚,mid,k,g (final k),"A k with no puff of air, like the k in 'sky', so English ears often hear it as g (as in 'gas'). At the end of a syllable, stop the sound without letting the k pop out, like the k in 'backpack' said fast.",yes,W000018,SRC-WP-SCRIPT;SRC-SEASITE,verified,"A4 2026-11-13: hint revised, owner + formant check."
+C02,ຂ,U+0E82,consonant,ໄຂ່,egg,kʰ,,high,kh,k,"A k with a puff of air, as in 'kite'. Same sound as ຄ; the class letter only changes the tone. Not ກ (no puff).",yes,W000006,SRC-WP-SCRIPT;SRC-SEASITE,verified,"WP also lists /x/ as an initial variant. A4 2026-11-13: hint revised, owner + formant check."
 C03,ຄ,U+0E84,consonant,ຄວາຍ,water buffalo,kʰ,,low,kh,k,Aspirated k as in 'kite'. Same sound as ຂ.,yes,W000040,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
 C04,ງ,U+0E87,consonant,ງົວ,ox,ŋ,ŋ,low,ng,ng,"The 'ng' of 'singer', but it can start a word.",yes,W000012,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP gives ງົວ ox or ງູ snake as the name word
 C05,ຈ,U+0E88,consonant,ຈອກ,glass,tɕ,,mid,ch,j,Between English j and ch: like the j in 'jaw' but voiceless.,yes,W000005,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ຈົວ novice as the name word
 C06,ສ,U+0EAA,consonant,ເສືອ,tiger,s,,high,s,s,s as in 'saw'. Same sound as ຊ.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,Out of alphabetical order in the Unicode block (Thai position)
 C07,ຊ,U+0E8A,consonant,ຊ້າງ,elephant,s,,low,x,s,s as in 'saw'. Same sound as ສ.,yes,W000041,SRC-WP-SCRIPT;SRC-SEASITE,verified,BGN/PCGN romanizes it x
 C08,ຍ,U+0E8D,consonant,ຍຸງ,mosquito,ɲ,j,low,gn/ny,ny (final i/y),"At the start it is a nasal 'ny' (Spanish ñ, Russian 'nyet'). At the end of a syllable it is a y glide.",yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C09,ດ,U+0E94,consonant,ເດັກ,child,d,t̚,mid,d,d (final t),d as in 'deck'. As a final it is an unreleased t.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C09,ດ,U+0E94,consonant,ເດັກ,child,d,t̚,mid,d,d (final t),"d as in 'deck'. At the end of a syllable it is a t that stops without a puff, like the t in 'hot dog' said fast.",yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,"A4 2026-11-13: hint revised, owner + formant check."
 C10,ຕ,U+0E95,consonant,ຕາ,eye,t,,mid,t,dt,"Unaspirated t, like the t in 'stay' (no puff of air).",yes,W000067,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C11,ຖ,U+0E96,consonant,ຖົງ,bag,tʰ,,high,th,t,Aspirated t as in 'top' (not the 'th' of 'think'). Same sound as ທ.,yes,W000088,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C12,ທ,U+0E97,consonant,ທຸງ,flag,tʰ,,low,th,t,Aspirated t as in 'top' (not the 'th' of 'think'). Same sound as ຖ.,yes,W000010,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C13,ນ,U+0E99,consonant,ນົກ,bird,n,n,low,n,n,n as in 'no'.,yes,W000004,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-C14,ບ,U+0E9A,consonant,ແບ້,goat,b,p̚,mid,b,b (final p),b as in 'boy'. As a final it is an unreleased p.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+C14,ບ,U+0E9A,consonant,ແບ້,goat,b,p̚,mid,b,b (final p),"b as in 'boy'. At the end of a syllable it is a p that stops with the lips closed and no puff, like the p in 'top man' said fast.",yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,"A4 2026-11-13: hint revised, owner + formant check."
 C15,ປ,U+0E9B,consonant,ປາ,fish,p,,mid,p,bp,"Unaspirated p, like the p in 'spy' (no puff of air).",yes,W000024,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C16,ຜ,U+0E9C,consonant,ເຜິ້ງ,bee,pʰ,,high,ph,p,Aspirated p as in 'pie' (not an f). Same sound as ພ.,yes,W000046,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 C17,ຝ,U+0E9D,consonant,ຝົນ,rain,f,,high,f,f,f as in 'finch'. Same sound as ຟ.,yes,W000120,SRC-WP-SCRIPT;SRC-SEASITE,verified,Unicode name FO TAM is swapped relative to the Lao name (WP; compart confirms)

@@ -74,11 +74,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
-0. **Handoff, night of 2026-11-13 (owner asleep; agent + subagents). Nothing new is on the hosted DB.** Unpushed
-   local migrations, in order: `20261113040000_a5_word_notes.sql`, `20261113040409_a5_word_notes_content.sql`,
-   `20261113060000_a3_stats_capture.sql` (all applied locally). The frontend works with or without them (tested for
-   A3; A5 fields are optional). Push with `supabase db push --linked` (from `app/backend`) only after the owner
-   agrees A3's answers and the A5 notes.
+0. **Handoff 2026-11-13.** A3 and A5 migrations are on hosted (pushed 2026-11-13 with the owner's go-ahead,
+   checked). **Unpushed:** `20261113143534_a4_sound_hints.sql` (owner agreed the hints; the agent's push was blocked
+   by the permission system): the owner runs `supabase db push --linked` from `app/backend`.
    - A1 DONE. A2: review fixes done; owner browser test still pending (steps: `#/try/L0007`, put ຂໍ ນີ້ ນ້ຳ ແນ່
      (khor nee nam nae) → the "Lao word order" note, its Lao now in the Lao font; build the word any order → "Read in
      this order"; Settings → "Spelling challenge"). Tests: `node scripts/grammar_test.mjs`.
@@ -90,7 +88,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
      `scripts/browser/a3_play_lesson.js`.
    - A4: owner accent Midwest US (Iowa). Owner answers + formant measurements of the wife's takes in the audit's last
      section (hint per point). Open: owner agrees the hints (◌ິ "short ee" vs "bin"), then `db_sql.py change` the
-     unit teach texts and word pron_tips. Tool: `tmp/tools/phon/Scripts/python tmp/audio/formants.py`. Still needs the owner's
+     unit teach texts and word pron_tips: APPLIED (33 rows; table in the audit's last section). Tool:
+     `tmp/tools/phon/Scripts/python tmp/audio/formants.py`. Owner still to read the changed-rows list (PLAN Done-when). Still needs the owner's
      read-through of `docs/A4_SOUNDS_LIKE_AUDIT.md`, then `db_sql.py change`.
    - A5 BUILT LOCALLY: ເຂົ້າ (kao) and ສະບາຍດີ (sabaidee) cards show "How it is used" + Culture badge. Notes
      unverified (QUESTIONS). Open: pool words in `get_lesson` lack the note; the "translations are not literal" card.
@@ -99,6 +98,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    - Keyboard in lessons (1–9 option/tile, Enter primary, Space audio, Backspace undo tile, Esc leave; focus kept in
      the stage; desktop-only key hints) and no-wrap Lao options (`dom.fitOptions`, one column when needed): built,
      Playwright keys-only run of `#/try/L0007` passed; owner check: same route on desktop, `#/try/L0010` at 375px.
+   - Review round 2 (owner 2026-11-13: more subagent review before big UI changes): `docs/A7_PLAN.md` (readiness +
+     10-step plan with a mockup gate at step 6) done; accessibility audit (`tmp/a6b/a11y.md`) and learning-design
+     review (`tmp/a6b/learning.md`) running/landed. Next: static mockups (A7 step 6) for the owner.
    - Next for the agent: after the owner answers, push A3/A5, then A7 (home, navigation, keyboard, thumb-zone
      layout, summary) per the agreed proposal; A8, A9.
    - Subagents: the owner wants subagents used where it makes sense (2026-11-13). Three personas ran A6 at sonnet.
@@ -226,7 +228,6 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   hinted answers logged apart (they should count for letters, not for word knowledge). Not sliced yet.
 - ລາວ vs ຂາວ vowel length: data has ລາວ short (`law`) but ຂາວ long (`kaao`), both ◌າ+ວ. Wiktionary gives the pronoun
   short and the noun long. Needs a native speaker (in QUESTIONS).
-- ນ້ຳ (nam, water): keep the respelling "nam"; reword the pron_tip ("'num' as in 'number'").
 - pron_tip texts under "More" use English-style spellings and the word "aspirated": reword?
 - The "Read more on Wikipedia" links under "More" were written from memory and are unverified.
 - Stale notes on W000035 and W001415 still mention W000019 for the "enter" sense (the links are fixed).

@@ -289,3 +289,11 @@ blur F1, the reference speakers are from Michigan. Treat as support, not proof; 
 | ◌ຳ (ດຳ dam, ນ້ຳ nam) | o in "Tom" | "Tom" and "hum" tie for ດຳ; ນ້ຳ nearest "Tom"; same vowel in both | "o in 'Tom' (American), short" |
 | ບ / ດ | assume ບ/ດ | (not measured) | keep "b" / "d" |
 | short ◌ຸ | needs an example | (no take yet) | examples: ກຸ້ງ (gung, shrimp), ລຸງ (lung, uncle), ຝຸ່ນ (fun, dust) |
+
+**Applied 2026-11-13** (migration `20261113143534_a4_sound_hints.sql`, local DB only; respellings unchanged):
+unit cards V04, V15, V21, V22, V36 and recap rule R02 (◌ຳ cue now "the o in 'Tom'"); source tips C01, C02, C09, C14
+(puff/stop wording) and V04, V15, V21, V22, V36 (now unverified); word tips W000003, W000004 (ແມ່ນ, not in a lesson
+yet), W000006, W000009, W000011, W000018, W000019, W000020, W000033, W000072, W000084, W000090, W000218, W000389,
+W000538, W000539, W000550, W001426. Anchors as agreed above: ແ = "e in 'bed', held long, leaning towards the 'a' in
+'say'"; ◌ໍ/◌ອ◌ = "'aw' with rounded lips, halfway to 'oh'"; short ◌ິ = "a short 'ee', tighter than the i in 'bin'";
+◌ຳ = "the o in 'Tom' (American), short". Rows marked "ok" were left alone; section B not applied.
