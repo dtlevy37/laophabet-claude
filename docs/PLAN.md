@@ -90,20 +90,20 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
 ## Next: learning-design slices (owner 2026-11-13, order chosen by the agent)
 From the second review round (`tmp/a6b/learning.md`, `tmp/a6b/a11y.md`, `docs/A7_PLAN.md`). Working order:
 L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10 → L4 (= S7g) → L5 (design starts now).
-- [ ] **L1 Clearer activities.** (a) First build the word and first build the sentence get a one-line how-to (and a
+- [x] **L1 Clearer activities.** (a) First build the word and first build the sentence get a one-line how-to (and a
       ◌ label: "the circle marks where the consonant goes"), shown the first few times. (b) Wrong build the sentence
       marks the misplaced tile(s) in the learner's order, not only the right answer. (c) Same-sound rule: a sound
       question never offers an option that sounds the same as the answer (same respelling: ◌ໍ / ◌ອ◌ "aw", ◌ວ /
       ເ◌ົາ "ao"); cards of same-sound symbols say so. **Done when:** a beginner sees the how-to on the first build of
       lesson 2; a wrong sentence in `#/try/L0007` shows which tile was out of place; no sound question in L1–L11 has
-      two options with the same sound (checked by `session_test.mjs`). (built 2026-11-13, local, not committed:
+      two options with the same sound (checked by `session_test.mjs`). (owner passed 2026-11-13; built 2026-11-13:
       how-tos 3 times per browser (js/howto.js) plus the ◌ note once; ✓/✗ per placed tile on a wrong sentence;
       same-sound rule in multiple_choice and build_word wrong tiles, "Same sound as ◌ໍ." line on unit cards;
-      session_test checks it on re-dumped bundles; Playwright shots in tmp/l1. Owner browser test open.)
-- [ ] **L2 Listen and pick.** A new activity: play a recorded word (or sentence), pick its Lao from 3–4 options
+      session_test checks it on re-dumped bundles; Playwright shots in tmp/l1.)
+- [x] **L2 Listen and pick.** A new activity: play a recorded word (or sentence), pick its Lao from 3–4 options
       (real words only; never a same-sound twin). Needs audio for the item and its options; recognition level.
       **Done when:** lessons with recorded words ask at least one listen-and-pick, and the answer is logged with
-      A3 detail. (built 2026-11-13, local, not committed: js/activities/listen_pick.js, words only (the pool has no
+      A3 detail. (owner passed 2026-11-13; built 2026-11-13: js/activities/listen_pick.js, words only (the pool has no
       sentences to offer); one per lesson always kept in the closing block, other recorded new words compete for
       closing places, fallback a recorded recycled word; options are pool words, never the same respelling as the
       answer, preferring the same onset/vowel/first letter; detail {form: listen, options, chosen, answer, auto,
@@ -111,7 +111,15 @@ L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10
       listenPausedUntil): no autoplay, listen and pick shown as Lao -> meaning (detail.swapped = 'cant_listen'),
       Settings shows the pause with "Listen again now". session_test checks it on dumped audio
       (tmp/bundles/audio.json); Playwright in tmp/l2. The plan now depends on audio: a resume record saved before
-      this change, or across a failed audio request or a newly added recording, restarts its lesson. Owner browser test open.)
+      this change, or across a failed audio request or a newly added recording, restarts its lesson.)
+- [ ] **L1b Owner follow-ups (2026-11-13, from the L1/L2 browser test).** (a) A vowel's intro card says plainly
+      that the vowel is one unit (all its parts together, wherever they sit) and that the consonant in the ◌ is
+      said first, then the vowel; today this is only implied. (b) Activity mix: favour listen and pick (and other
+      quick recognition questions) in lessons; build the word / build the sentence are slower and harder, so use
+      them less in lessons and more in tests, quizzes and checkpoints (S8b practice). Repetition stays (same number
+      of checks, cheaper kinds). Owner said "might": confirm the split before changing the planner.
+      **Done when:** every vowel intro card carries the line (teach texts via `db_sql.py change`); the planner mix
+      is agreed and `session_test.mjs` checks it.
 - [ ] **L3 Teaching tone.** Not necessarily at the first tone mark, but a proper lesson: what tone is, the pitch
       line legend, tone marks and consonant class in plain words, and compare/contrast pairs that differ only by
       tone, each with audio (candidates: ຂາວ khaao "white" vs ລາວ laao, owner idea; ໃກ້ "near" vs ໄກ "far", to

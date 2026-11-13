@@ -33,7 +33,8 @@ early; stats come from the DB (S8 `learner_stats()` not built); A8/A9 come after
    `session_test.mjs`); split `settingsPanel()` from `openSettings()`; write the selector contract into the
    activity-module skill; add `--content-max`, `--radius` tokens. Done when tests pass and the keyboard dry run of
    L0007 plays to the end.
-1. **Settings route + spelling choice off the ກ card.** Done when `#/settings` is a scrollable page at 375/1280 and
+1. **Settings route + spelling choice off the ກ card + theme choice** (System / Light / Dark, `data-theme`; owner
+   2026-11-13 looked for a dark mode switch and found none: today it only follows the phone/OS setting). Done when `#/settings` is a scrollable page at 375/1280 and
    Back returns; the ກ card has no radios; the intro-card choice updates "Sounds like".
 2. **Slim header + lesson chrome** (header hidden in lessons; ✕, progress, counter; native header unchanged). Done
    when the header is one line at 375 and Esc still opens the leave dialog.
@@ -47,7 +48,8 @@ early; stats come from the DB (S8 `learner_stats()` not built); A8/A9 come after
    light/dark on a multiple-choice screen (right/wrong states), thumb zone current vs lower-half (375×667/812),
    sentence words chips vs inline popover, desktop 720 column vs wide + side rail at 1920. Done when the owner
    picks navigation, palette, sentence words and desktop width (recorded in DESIGN).
-7. **Look** (after 6): tokens, theme toggle, chosen palette, reduced-motion-safe flourish.
+7. **Look** (after 6): tokens, chosen palette, reduced-motion-safe flourish; Culture and Bonus badges with more
+   presence (owner 2026-11-13: "need more oomph").
 8. **Navigation shell** (after 6): `nav.js`, active tab on hashchange, hidden in lessons, Practice → Review until S8b.
 9. **Thumb zone + inline sentence words** (after 6): keep the info-after-answer rule; `countTaps` must still count.
 10. **Stats + missed list** (backend first): `learner_stats()` and `session_summary.missed` migrations, then UI.
