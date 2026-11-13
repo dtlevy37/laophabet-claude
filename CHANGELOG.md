@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 L1d/L1e review fixes (code-reviewer)
+- Planner: a new unit's sound → letter and a shared card's other meanings are reserved (never dropped by the kept
+  builds; the closing block may pass 8 by reserved and kept steps only). Lessons 6 and 7 have ◌ໍ ບ ດ ◌ີ back.
+  Dead `newMarks` removed. `piecesFirst` exported and tested.
+- Find the missing piece is logged as `recognition` (record_answers: a right recognition lifts to 2 at most), and
+  its wrong options are pieces of the same kind as the missing one when the pool has 2+. No migration.
+- Resume record stores `APP_VERSION` (now 2026.11.13-l1e.2); a record from another release is dropped.
+- Missed-ເຂົ້າ note softened to "“Hungry” is usually ຫິວເຂົ້າ (hiw kao), with ເຂົ້າ."; QUESTIONS asks the native when
+  bare ຫິວ is fine.
+- `session_test.mjs`: every new unit keeps its sound → letter, shared-card meanings asked, missing piece logged as
+  recognition and same-kind options, piecesFirst order.
+
 ## 2026-11-13 L1e Lesson order
 - Planner (`js/session.js`): every new core word that can be built is built in its own lesson's closing block
   (always kept; replaces its meaning → Lao there), so no word is first built in a later lesson. Long words

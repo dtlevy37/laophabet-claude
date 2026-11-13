@@ -29,7 +29,9 @@
 // ເຈົ້າຫິວເຂົ້າບໍ່? and ລາວຫິວເຂົ້າ need their pronoun; "Your answer" / "Right answer" alignment cases.
 // L1e: a word's first build is in the lesson that teaches it (a recycled word is built only when its own lesson
 // builds it for every seed), and a new long word (3+ syllables) gets find the missing piece before its full build;
-// find the missing piece is one pick (right completes the word, wrong ends it) and its options are real units.
+// find the missing piece is one pick (right completes the word, wrong ends it), logged as recognition, and its
+// options are real units, of the missing piece's kind where the pool allows; every new unit keeps its sound -> letter
+// and a shared card its other meaning; piecesFirst puts a missing piece before its build.
 // Plans use the dry-run levels (a learner who has done the lessons before), as #/try/<id> does.
 import { register } from 'node:module'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
@@ -56,7 +58,7 @@ const { activities } = await import(js('activities/index.js'))
 const { unitSoundRaw } = await import(js('activities/teach_card.js'))
 const { wordSoundKey } = await import(js('activities/listen_pick.js'))
 const { applyAudio } = await import(js('bundle.js'))
-const { fitDetail } = await import(js('session.js'))
+const { fitDetail, piecesFirst } = await import(js('session.js'))
 const {
   newState: bwNewState,
   tapTile: bwTap,
@@ -268,6 +270,10 @@ for (const b of bundles) {
       let st = bwNewState(false)
       if (bwTap(spec, st, right) !== 'placed') fail(`${w}: the missing piece was not placed`)
       let [ans] = bwAnswers(spec, st)
+      if (ans.direction !== 'recognition') fail(`${w}: find the missing piece is not logged as recognition`)
+      const kinds = spec.tiles.map((tl) => tl.kind)
+      const sameKind = (b.distractors.units || []).filter((u) => u.kind && u.kind === want.kind && !spec.pieces.some((p) => p.lao.replace(/◌/g, '') === u.lao.replace(/◌/g, ''))).length
+      if (want.kind && sameKind >= 4 && kinds.some((k) => k !== want.kind)) fail(`${w}: missing ${want.lao} (${want.kind}): a wrong tile of another kind although the pool has enough of its kind`)
       if (ans.correct !== true || ans.detail.mode !== 'missing' || ans.detail.pieces.length !== 1 || !ans.detail.pieces[0].found
         || ans.detail.given.length !== spec.pieces.length - 1) fail(`${w}: missing piece right: ${JSON.stringify(ans.detail)}`)
       st = bwNewState(false)
@@ -372,6 +378,38 @@ for (const b of bundles) {
     }
   }
   if (!longWords) fail('L1e: no long new word in the bundles (expected ສະບາຍດີ in L0008)')
+
+  // The kept builds never push out a new unit's second form (sound -> letter) or a shared card's other meaning.
+  for (const b of bundles) {
+    const units = b.items.filter((x) => x.item_type === 'unit' && x.role === 'new' && activities.multiple_choice.build(
+      { ...x, shown: [{ item_type: 'unit', item_id: x.item_id }] }, b.distractors, () => 0.5, { form: 'unit_letter' }))
+    for (let seed = 1; seed <= 50; seed++) {
+      const steps = buildPlan(b, dryLevels(b), seed, []).steps
+      for (const u of units) {
+        if (!steps.some((s) => s.form === 'unit_letter' && shows(s, u.item_id))) fail(`L1e: new unit ${u.detail?.lao ?? u.item_id} has no sound -> letter in ${b.lesson.lesson_id}`)
+      }
+      for (const s of steps.filter((x) => x.activity === 'teach_card' && x.item?.item_type === 'word' && (x.item.shown || []).length > 1 && x.item.role === 'new')) {
+        // its check plus one Lao -> meaning per other meaning
+        const asked = steps.filter((y) => y.form === 'word_meaning' && y.item === s.item).length
+        if (asked < s.item.shown.length) fail(`L1e: ${lao(s)}: ${asked} Lao -> meaning for ${s.item.shown.length} meanings in ${b.lesson.lesson_id}`)
+      }
+    }
+  }
+
+  // piecesFirst: a build planned before its missing piece swaps with it, whatever lies between
+  const X = { item_id: 'W1' }
+  const Y = { item_id: 'W2' }
+  const order = piecesFirst([
+    { activity: 'build_word', item: X, tag: 'build' },
+    { activity: 'listen_pick', item: Y, tag: 'listen' },
+    { activity: 'build_word', item: X, missing: 2, tag: 'missing' },
+  ]).map((x) => x.tag).join(' ')
+  if (order !== 'missing listen build') fail(`piecesFirst: ${order}`)
+  const kept = piecesFirst([
+    { activity: 'build_word', item: X, missing: 0, tag: 'missing' },
+    { activity: 'build_word', item: X, tag: 'build' },
+  ]).map((x) => x.tag).join(' ')
+  if (kept !== 'missing build') fail(`piecesFirst moved a right order: ${kept}`)
 }
 
 console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')

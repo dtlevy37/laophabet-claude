@@ -65,6 +65,9 @@ Romanization in brackets; sentence ids for the agent. All composed sentences are
   ເຂົ້າ? Or should the replies be ຫິວເຂົ້າ (hiw kao) / ບໍ່ຫິວເຂົ້າ (baw hiw kao)? Lesson 9's new card "Pronouns are
   often left out" uses ບໍ່ຫິວ as its example. (Pool sentences ເດັກນ້ອຍຫິວ, ຍັງບໍ່ ຂ້ອຍຫິວ, ຂ້ອຍກິນຫຼາຍເພາະຫິວ now
   end in ເຂົ້າ.)
+- Feedback note (L1d c): when a learner builds ລາວຫິວ (lao hiw) for ລາວຫິວເຂົ້າ (lao hiw kao, "he is hungry"), the app
+  says "“Hungry” is usually ຫິວເຂົ້າ (hiw kao)". Is "usually" right? ເຈົ້າຫິວບໍ່? (jao hiw baw?, S000000114) and the
+  reply ຫິວ (hiw, S000002892) are in the app with bare ຫິວ: when is bare ຫິວ fine?
 - L11: ສີນີ້ຂາວ / ດຳ / ດີ (S000002893–5; or ສີນີ້ງາມ "beautiful"?), ລາວຂາຍເຂົ້າ (S000002896), ແກ້ວນີ້ນ້ອຍ (S000002898).
   ຂໍແກ້ວນ້ອຍແນ່ (S000002897): "a small glass" or "a little glassful"? Asked "what colour?", ສີຂາວ or just ຂາວ?
   You said ນີ້ຂາວ (nee khao) fits a wall's colour and ນີ້ມັນສີຂາວ (nee man sii khao) an object in hand: lesson 11

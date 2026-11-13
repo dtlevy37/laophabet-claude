@@ -32,10 +32,10 @@ and L1e are pending (list below).
 6. L1c/L1d (deployed, `#/try/L0002`, `#/try/L0009`, `#/try/L0007`): slot board, slips stay green, Check early,
    Your answer / Right answer, "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line.
    Decide: fold R03 into the ເ◌ົາ card?
-   Missed-ເຂົ້າ note: on `#/try/L0009` build ລາວຫິວເຂົ້າ as ລາວ ຫິວ, Check: "“Hungry” needs ເຂົ້າ after it: ຫິວເຂົ້າ".
+   Missed-ເຂົ້າ note: on `#/try/L0009` build ລາວຫິວເຂົ້າ as ລາວ ຫິວ, Check: "“Hungry” is usually ຫິວເຂົ້າ (hiw kao), with ເຂົ້າ".
 7. L1e (`#/try/L0008`): in the closing block every new word is built; ສະບາຍດີ (sabaidee, hello) first gets
-   "Find the missing piece of the word" (one tap decides), later the full build. Lessons 6 and 7 now drop some
-   sound → letter closing questions (the kept builds fill the 8 places): fine, or raise the cap?
+   "Find the missing piece of the word" (one tap decides), later the full build. Closing blocks are now longer
+   (lesson 6: 10 closing questions): every new unit keeps its sound → letter.
 8. S10r: bigger record button and the "common name or nickname" prompt (built, untested).
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
@@ -68,7 +68,7 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   `advance`/`again(spec)`, summary and keyboard. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`;
   re-dump them after any lesson merge).
 - `js/activities/`: `multiple_choice.js` (null when it cannot fill 3 options), `build_sentence.js`, `fill_blank.js`,
-  `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
+  `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, recognition, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
 - `js/learn.js` lesson list and reader. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from

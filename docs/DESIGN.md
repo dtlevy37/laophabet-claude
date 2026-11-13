@@ -204,9 +204,10 @@ extra columns.
 | new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
 | recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 
-- **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8;
-  the builds of new words, find the missing piece, fill in the blank on new sentences and one listen and pick are
-  always kept, so they can push the rest out).
+- **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8
+  optional ones). Always kept, even past 8: each new unit's sound → letter, a shared card's other meanings, the
+  builds of new words, find the missing piece (logged as recognition: a lucky pick never lifts a word to level 3),
+  fill in the blank on new sentences and one listen and pick.
   Then every question missed on the first try comes back until answered right once (at most twice each).
 - **Questions on words test meaning, never the English-letter spelling** (kao / kaao look alike); questions on
   units test the sound, labelled exactly as on the unit's teach card.
