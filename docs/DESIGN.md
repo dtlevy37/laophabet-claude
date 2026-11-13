@@ -293,13 +293,14 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   (initial consonants only). Every place that shows a respelling goes through `respell()`. Known gap: `pron_tip`
   texts (under "More") are stored prose and may quote English-style spellings.
 - **Lesson 1 opens with one intro card** (app text, not lesson content): Lao has sounds English lacks, so the
-  English letters are only hints. **The transliteration choice sits on the first letter card (ກ)**, under the
-  hint, so the learner chooses with a real example in front of them and sees "Sounds like" change; it says the
-  choice can be changed in Settings (user, 2026-11-09). Other display choices are introduced the same way, on the
+  English letters are only hints. **The transliteration choice sits on that intro card** (A7 step 1; it was on the
+  first letter card ກ, user 2026-11-09), with ກ and its "Sounds like" as the example, so the learner sees "Sounds
+  like" change as they choose; it says the choice can be changed in Settings. Other display choices are introduced the same way, on the
   card where they first matter.
 - **Rule and recap cards** show their text with the Lao parts enlarged in the Lao font (LESSON_RULES decision 18).
-- **Settings** (top bar; `js/settings.js`, remembered per browser for now): transliteration style, Lao font, spaces
-  between words. Move to the learner's profile when there is a home screen (S8).
+- **Settings** (`#/settings`, a page linked from the top bar; `js/settings.js`, remembered per browser for now):
+  light or dark (System / Light / Dark, `html[data-theme]`; A7 step 1), transliteration style, Lao font, spaces
+  between words, audio, activities, keyboard. Move to the learner's profile when there is a home screen (S8).
 - **"Read more" links** under "More": Wikipedia pages for the terms used there (aspiration, vowel length, tones,
   IPA for Lao, the Lao script). They open in a new tab.
 - Internal IDs (L0001, W000018) are never shown to learners. A lesson is "Lesson 1" at most (user, 2026-11-09).

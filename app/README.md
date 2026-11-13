@@ -138,10 +138,11 @@ frontend/
   js/review.js           native: the review screen
   js/recorder.js         microphone recording (raw takes)
   js/record.js           native: recording mode (#/record); app.js has the native home (#/, #/record, #/review)
-  js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards
+  js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards,
+                         #/settings (settings.js showSettings), #/write
   js/session.js          #/lesson/L0001: planner + runner of a lesson session; same-day resume
-  js/summary.js          the session's end screens (summary, dry-run end, failures)
                          (localStorage record); #/try/L0001 dry run (nothing recorded)
+  js/summary.js          the session's end screens (summary, dry-run end, failures)
   js/audio.js            audioButton(detail): play + report chips (null without audio_url); autoplay(detail) once on
                          new word/sentence cards (setting `autoplay`); stopAudio(); one shared player
   js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog),
@@ -150,7 +151,7 @@ frontend/
                          fill_blank.js (one gap, one logical choice; recycled sentences, recall)
                          build_word.js (pieces in spoken order; recycled words, new tone marks)
   js/bundle.js           get_lesson cache
-  js/settings.js  translit.js  tone.js    learner display settings, respelling styles, tone pictures
+  js/settings.js  translit.js  tone.js    learner settings (page #/settings, theme), respelling styles, tone pictures
   js/howto.js            first-time how-to lines on build the word / build the sentence (L1; per browser)
   js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)
 ```

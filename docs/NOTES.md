@@ -18,15 +18,14 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 1 (`docs/A7_PLAN.md`; step 0 built 2026-11-13), then A7 steps 2–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 2 (`docs/A7_PLAN.md`; steps 0–1 built 2026-11-13), then A7 steps 3–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
 1. Phone: `#/read/L0001` ກ card "Hear it in a word" ກິນ (gin, "eat").
 2. Phone width: `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.
-3. Dark mode (OS setting until A7 step 1): dark text on the blue button; locked lessons dashed; progress bar
-   visible; focus ring when tabbing.
+3. Dark mode: dark text on the blue button; locked lessons dashed; progress bar visible; focus ring when tabbing.
 4. Play-test lessons 5–11 (`#/try/L0005` … `#/try/L0011`), including S7h (untaught real words as wrong options).
 5. Letter writing `#/write` (S7w): owner said "still feels weird"; waiting for their notes. Phone untested.
 6. L1c/L1d (deployed, `#/try/L0002`, `#/try/L0009`, `#/try/L0007`): slot board, slips stay green, Check early,
@@ -37,6 +36,9 @@ and L1e are pending (list below).
    "Find the missing piece of the word" (one tap decides), later the full build. Closing blocks are now longer
    (lesson 6: 10 closing questions): every new unit keeps its sound → letter.
 8. S10r: bigger record button and the "common name or nickname" prompt (built, untested).
+9. A7 step 1: Settings (top bar) opens `#/settings` as a page; "Light or dark" System / Light / Dark switches at
+   once and is kept after a reload; ← Back returns. `#/read/L0001/1` (or a new lesson 1): the intro card has the
+   sound-spelling choice with ກ and "Sounds like" (k ↔ g as you pick); the ກ card has no radios.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
@@ -73,7 +75,9 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, recognition, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
-- `js/learn.js` lesson list and reader. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from
+- `js/learn.js` lesson list, reader, `#/settings` route (Back = history.back when opened from the app).
+  Theme: `settings.js` `theme` sets `html[data-theme]`; `styles.css` has the dark tokens twice (device dark unless
+  `light`, and `[data-theme='dark']`): change both. Browser check: `scripts/browser/a7_shots.js`. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from
   `node scripts/strokes_build.js --png` (overrides `scripts/strokes_overrides.json`).
 - `js/activities/compare.js` Your answer / Right answer alignment (build word and sentence). Alternates (L1c d):
   `sentence_json.alternates` = another live sentence with the same English minus pronouns only (`drops_only`).

@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 1: settings page, sound spelling on the intro card, light/dark
+- Settings is a page, `#/settings` (`settings.js` `showSettings`, routed in `learn.js`), scrolling like any other;
+  ← Back goes back in history when opened from the app, else home. The top bar's Settings is a link. The dialog
+  (`openSettings`) is gone.
+- New "Light or dark" choice: System / Light / Dark (setting `theme`, per browser). Light or Dark sets
+  `html[data-theme]`, which beats the device setting (`styles.css`: dark tokens under `prefers-color-scheme: dark`
+  for `:root:not([data-theme='light'])`, and again for `[data-theme='dark']`). The palette is unchanged.
+- The sound-spelling choice moved off the ກ card onto lesson 1's intro card, with ກ and "Sounds like" as the
+  example; picking a style rewrites that "Sounds like" in place (no fake hashchange). `intro_style_1` reworded
+  ("This letter, the first you will learn, ..."). DESIGN Presentation updated.
+- A running lesson reopened from another screen gets its keys back (`showSession` re-adds the listeners; they
+  were lost after a visit to another screen).
+- Strings: `settings_back`, `settings_theme`, `settings_theme_system|light|dark` (learner only, no `lo`).
+- `scripts/browser/a7_shots.js`: 375/1280, light/dark shots of home, settings, the intro card and a lesson step, with
+  checks (Back, theme beats device, intro choice updates "Sounds like", no radios on the ກ card, Esc).
+
 ## 2026-11-13 A7 step 0: groundwork (no visible change)
 - `js/summary.js`: the end screens (summary, dry-run end, failed, save failed) moved out of `session.js`; they take
   callbacks, so summary.js knows nothing of the running session. `buildPlan` / `dryLevels` stay in session.js.
