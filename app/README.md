@@ -150,6 +150,7 @@ frontend/
                          build_word.js (pieces in spoken order; recycled words, new tone marks)
   js/bundle.js           get_lesson cache
   js/settings.js  translit.js  tone.js    learner display settings, respelling styles, tone pictures
+  js/howto.js            first-time how-to lines on build the word / build the sentence (L1; per browser)
   js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)
 ```
 

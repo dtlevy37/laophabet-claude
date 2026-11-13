@@ -96,7 +96,10 @@ L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10
       question never offers an option that sounds the same as the answer (same respelling: ◌ໍ / ◌ອ◌ "aw", ◌ວ /
       ເ◌ົາ "ao"); cards of same-sound symbols say so. **Done when:** a beginner sees the how-to on the first build of
       lesson 2; a wrong sentence in `#/try/L0007` shows which tile was out of place; no sound question in L1–L11 has
-      two options with the same sound (checked by `session_test.mjs`).
+      two options with the same sound (checked by `session_test.mjs`). (built 2026-11-13, local, not committed:
+      how-tos 3 times per browser (js/howto.js) plus the ◌ note once; ✓/✗ per placed tile on a wrong sentence;
+      same-sound rule in multiple_choice and build_word wrong tiles, "Same sound as ◌ໍ." line on unit cards;
+      session_test checks it on re-dumped bundles; Playwright shots in tmp/l1. Owner browser test open.)
 - [ ] **L2 Listen and pick.** A new activity: play a recorded word (or sentence), pick its Lao from 3–4 options
       (real words only; never a same-sound twin). Needs audio for the item and its options; recognition level.
       **Done when:** lessons with recorded words ask at least one listen-and-pick, and the answer is logged with

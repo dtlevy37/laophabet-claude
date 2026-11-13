@@ -10,6 +10,9 @@
 // wrong tiles never share a letter with the word; a new tone mark gets a build the word in its lesson.
 // S7h: every fill in the blank option is a data/words.csv word with that spelling; lesson 5 can blank ແລ້ວ in
 // ລາວກິນເຂົ້າ __ (S000002877) with untaught real words among the options.
+// L1: no sound question (unit_sound, unit_letter) offers two options with the same sound, and no build the word
+// offers a wrong tile with the sound of one of the word's pieces (◌ໍ / ◌ອ◌ "aw", ◌ວ / ເ◌ົາ "ao"). Sounds are compared on
+// the stored respelling (unitSoundRaw), not on the label in the learner's style.
 // Plans use the dry-run levels (a learner who has done the lessons before), as #/try/<id> does.
 import { register } from 'node:module'
 import { readdirSync, readFileSync } from 'node:fs'
@@ -33,6 +36,7 @@ const root = resolve(import.meta.dirname, '..')
 const js = (p) => pathToFileURL(join(root, 'app/frontend/js', p)).href
 const { buildPlan, dryLevels } = await import(js('session.js'))
 const { activities } = await import(js('activities/index.js'))
+const { unitSoundRaw } = await import(js('activities/teach_card.js'))
 
 // data/words.csv: word_id -> lao (the first two columns; no quoted fields there)
 const wordsCsv = new Map(
@@ -51,7 +55,10 @@ const bundles = readdirSync(dir)
 if (!bundles.length) throw new Error(`no bundles in ${dir}`)
 
 let errors = 0
+const failed = new Set() // a failure found with many seeds is reported once
 const fail = (msg) => {
+  if (failed.has(msg)) return
+  failed.add(msg)
   errors++
   console.log(`  FAIL ${msg}`)
 }
@@ -73,6 +80,29 @@ for (const b of bundles) {
   if (a && a.steps.length !== buildPlan(b, levels, 777, []).steps.length + missed.length) fail('replays not appended')
 
   console.log('  ' + one.steps.map((s) => `${s.activity}${s.form ? ':' + s.form : ''}(${lao(s)})`).join(' · '))
+
+  // L1: the same-sound rule, over many seeds. unit id -> stored sound, from the pool and the lesson's own units.
+  const sounds = new Map()
+  for (const u of [...(b.distractors.units || []), ...b.items.filter((x) => x.item_type === 'unit').map((x) => x.detail)]) {
+    if (u?.unit_id) sounds.set(u.unit_id, unitSoundRaw(u).toLowerCase().replace(/[^a-z]/g, ''))
+  }
+  let soundQs = 0
+  for (let seed = 1; seed <= SEEDS; seed++) {
+    for (const s of buildPlan(b, levels, seed, []).steps) {
+      if (s.activity === 'multiple_choice' && s.item.item_type === 'unit') {
+        soundQs++
+        const heard = s.options.map((o) => sounds.get(o.id))
+        if (heard.some((x) => !x)) fail(`${lao(s)}: an option with no known sound`)
+        if (new Set(heard).size !== heard.length) fail(`${lao(s)} ${s.form}: two options sound the same: ${s.options.map((o) => `${o.lao}=${sounds.get(o.id)}`).join(' ')}`)
+      }
+      if (s.activity === 'build_word') {
+        const own = new Set(s.pieces.map((p) => sounds.get(p.unit_id)).filter(Boolean))
+        const extra = s.tiles.filter((tl) => !s.pieces.some((p) => p.lao === tl.lao))
+        for (const tl of extra) if (own.has(sounds.get(tl.unit_id))) fail(`${lao(s)}: wrong tile ${tl.lao} sounds like a piece of the word`)
+      }
+    }
+  }
+  if (b.items.some((x) => x.item_type === 'unit' && x.role === 'new' && sounds.get(x.item_id)) && !soundQs) fail('a new unit but no sound question')
 
   // S7e
   const recycledSentences = b.items.filter((it) => it.item_type === 'sentence' && it.role === 'recycle')

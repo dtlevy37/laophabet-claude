@@ -110,6 +110,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
      ◌ອ◌ / ◌ໍ "aw"), bonus words tested without a sentence.
    - Accessibility quick fixes done (axe 0 on the checked screens; native screens smoke-tested). Left for the revamp:
      topbar wrapping at narrow widths / 200% zoom.
+   - L1 BUILT 2026-11-13, owner browser test open (steps: fresh profile → `#/try/L0002` how-tos; `#/try/L0007`
+     wrong sentence → ✓/✗ per tile; `#/try/L0010` ◌ອ◌ card "Same sound as ◌ໍ"). Next: L2 listen and pick.
    - PLAN has learning slices L1–L5 (owner 2026-11-13; order L1 → L2 → A7 0–5 → L3 → A7 6–10 → L4 → L5).
      L5 design note `docs/L5_SPEAKING_DESIGN.md` (Fable agent): phases Say it → pitch overlay → recogniser only
      after validation; 7 owner questions in its section 10.

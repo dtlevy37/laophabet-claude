@@ -3,6 +3,10 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-13 (owner answers)
+- L1 clearer activities: first-time how-tos for build the word / sentence (`js/howto.js`, ◌ explained once);
+  wrong sentences mark each placed tile ✓/✗; same-sound rule for sound options and build-the-word wrong tiles
+  (session_test now checks it; it found ◌ວ / ເ◌ົາ and ◌ອ◌ / ◌ໍ tiles); unit cards say "Same sound as …".
+  Bundles in tmp/bundles re-dumped.
 - Accessibility fixes (audit `tmp/a6b/a11y.md`): dark-mode button text, locked-lesson contrast, control borders,
   hidden h1 per screen, focus-visible ring, progress track, lang="lo" on all Lao (`dom.laoText`), 44px targets,
   "Keyboard shortcuts in lessons" setting, feedback scrolled into view + persistent live region. axe 126 → 0.
