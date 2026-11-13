@@ -32,7 +32,7 @@ owner's check or answer comes in.
       lessons; build the word / sentence less in lessons, more in practice (S8b). Same number of checks. Owner said
       "might": confirm the split first. **Done when:** vowel cards carry the line (`db_sql.py change`); the mix is
       agreed and `session_test.mjs` checks it.
-- [ ] **L1d Teaching notes.** *Built 2026-11-13 (R03 in L0002, R04 in L0009 after ຫິວນ້ຳ, not ບໍ່ຫິວ: kept there, owner left it to the agent; pushed). Left: missed-ເຂົ້າ feedback in the L1c compare view; S000002879, S000002888, S000002892 wait on QUESTIONS.* (a) Rule card "some vowels are written before (or around) the consonant, but you say the
+- [ ] **L1d Teaching notes.** *Built 2026-11-13 (R03 in L0002, R04 in L0009 after ຫິວນ້ຳ, not ບໍ່ຫິວ: kept there, owner left it to the agent; pushed). Missed-ເຂົ້າ note in the compare view built and pushed (`PAIR_NOTES` in `compare.js`); owner check pending. Left: S000002879, S000002888, S000002892 wait on QUESTIONS.* (a) Rule card "some vowels are written before (or around) the consonant, but you say the
       consonant first" at ເ◌ົາ in lesson 2. (b) Rule card "pronouns are often left out" at ບໍ່ຫິວ (bor hiw, "not
       hungry") in lesson 9. (c) ຫິວ (hiw) culture note and missed-ເຂົ້າ feedback ("hungry needs ເຂົ້າ"): bare ຂ້ອຍຫິວ
       sounds incomplete (native, 2026-11-13). Review bare-ຫິວ sentences: S000002892 ຫິວ and S000002888 ບໍ່ຫິວ

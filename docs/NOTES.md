@@ -18,8 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-Owner browser check of L1c/L1d/L1b(a) (all pushed 2026-11-13). Then the missed-ເຂົ້າ note in `js/activities/compare.js` (W000072 without W000019
-after it), L1e, A7 steps 0–5, L3, A7 steps 6–10, L4, L5.
+Owner browser check of L1c/L1d/L1b(a) (all pushed 2026-11-13). Then L1e, A7 steps 0–5, L3, A7 steps 6–10, L4, L5.
 
 ## Waiting on the owner
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
@@ -32,6 +31,7 @@ after it), L1e, A7 steps 0–5, L3, A7 steps 6–10, L4, L5.
 6. L1c/L1d (deployed, `#/try/L0002`, `#/try/L0009`, `#/try/L0007`): slot board, slips stay green, Check early,
    Your answer / Right answer, "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line.
    Decide: fold R03 into the ເ◌ົາ card?
+   Missed-ເຂົ້າ note: on `#/try/L0009` build ລາວຫິວເຂົ້າ as ລາວ ຫິວ, Check: "“Hungry” needs ເຂົ້າ after it: ຫິວເຂົ້າ".
 7. S10r: bigger record button and the "common name or nickname" prompt (built, untested).
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
@@ -71,6 +71,7 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   `node scripts/strokes_build.js --png` (overrides `scripts/strokes_overrides.json`).
 - `js/activities/compare.js` Your answer / Right answer alignment (build word and sentence). Alternates (L1c d):
   `sentence_json.alternates` = another live sentence with the same English minus pronouns only (`drops_only`).
+  Word-pair notes (`PAIR_NOTES`: ຫິວ needs ເຂົ້າ after it) show under the compare rows.
   build_word detail keys: `taps`, `early`, `pieces[].found`; A3 stats must not count `found: false` as clean.
 - Known gap: pool words in `get_lesson` lack `units` and usage notes.
 

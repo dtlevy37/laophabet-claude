@@ -61,7 +61,7 @@ const {
   answersFor: bwAnswers,
 } = await import(js('activities/build_word.js'))
 const { judge: bsJudge, leftOut: bsLeftOut } = await import(js('activities/build_sentence.js'))
-const { align: cmpAlign, kindOf: cmpKind } = await import(js('activities/compare.js'))
+const { align: cmpAlign, kindOf: cmpKind, pairNotes } = await import(js('activities/compare.js'))
 
 // data/words.csv: word_id -> lao (the first two columns; no quoted fields there)
 const wordsCsv = new Map(
@@ -284,6 +284,23 @@ for (const b of bundles) {
   ]
   for (const [y, r, want] of cases) if (cols(y, r) !== want) fail(`align ${y.join(' ')}: ${cols(y, r)}, want ${want}`)
   if (cmpKind({ you: null, right: 'ກ' }) !== 'missing' || cmpKind({ you: 'ກ', right: 'ຂ' }) !== 'swap') fail('compare kinds')
+}
+
+// L1d (c): missed ເຂົ້າ after ຫິວ (W000072 then W000019 in the answer) gets the "hungry needs ເຂົ້າ" note
+{
+  const w = (lao, word_id, position) => ({ lao, word_id, position })
+  const heHungry = [w('ລາວ', 'W000031', 1), w('ຫິວ', 'W000072', 2), w('ເຂົ້າ', 'W000019', 3)]
+  const info = new Map([['W000072', { respelling: 'hiw' }], ['W000019', { respelling: 'kao' }]])
+  const keys = (placed, words = heHungry) => pairNotes(words, placed, info).map((n) => n.key).join(',')
+  const n = pairNotes(heHungry, ['ລາວ', 'ຫິວ'], info)[0]
+  if (!n || n.key !== 'cmp_pair_hiw_kao' || n.pair.lao !== 'ຫິວເຂົ້າ' || n.pair.sound !== 'hiw kao' || n.next.lao !== 'ເຂົ້າ')
+    fail(`pair note for ລາວ ຫິວ: ${JSON.stringify(n)}`)
+  if (keys(['ລາວ', 'ຫິວ', 'ນ້ຳ']) !== 'cmp_pair_hiw_kao') fail('pair note: ຫິວ ນ້ຳ for ຫິວເຂົ້າ')
+  if (keys(['ລາວ', 'ເຂົ້າ', 'ຫິວ']) !== 'cmp_pair_hiw_kao') fail('pair note: ເຂົ້າ before ຫິວ')
+  if (keys(['ຫິວ', 'ເຂົ້າ', 'ລາວ'])) fail('pair note shown although ເຂົ້າ follows ຫິວ')
+  if (keys(['ລາວ', 'ເຂົ້າ'])) fail('pair note shown without ຫິວ in the answer')
+  const thirsty = [w('ລາວ', 'W000031', 1), w('ຫິວ', 'W000072', 2), w('ນ້ຳ', 'W000011', 3)]
+  if (keys(['ລາວ', 'ຫິວ'], thirsty)) fail('pair note shown for ຫິວນ້ຳ (the answer has no ເຂົ້າ after ຫິວ)')
 }
 
 console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')

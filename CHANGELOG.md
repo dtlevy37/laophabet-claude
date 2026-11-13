@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 L1d (c) missed-ເຂົ້າ note
+- Compare view (build the sentence): `PAIR_NOTES` table in `js/activities/compare.js`; when the answer has ຫິວ
+  (W000072) followed by ເຂົ້າ (W000019) and yours has ຫິວ without ເຂົ້າ after it, a note under the rows:
+  "“Hungry” needs ເຂົ້າ after it: ຫິວເຂົ້າ (hiw kao). On its own it sounds unfinished." String `cmp_pair_hiw_kao`
+  (en only). `session_test.mjs` covers it. Frontend only, no migration.
+
 ## 2026-11-13 R03 as a lead-in (owner)
 - R03 "Written first, said second" moved before V35 ເ◌ົາ in L0002 and reworded as a lead-in; vowel cards
   V04 V03 V05 V21 V01 V35 keep a short reminder only. Migrations `20261113195331_lesson_l0002`, `20261113195332_vowel_cards_short_reminder`
