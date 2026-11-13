@@ -1,0 +1,3 @@
+word_id,usage_note,culture,source,confidence,notes
+W000001,"Literally ""be well"": the everyday greeting for both hello and goodbye. It is said with the palms pressed together at the chest and a slight bow, the ນົບ (nop).",true,SRC-AGENT,unverified,A5 first note. ນົບ checked on English Wiktionary (verb: salute with palms pressed together); not in words.csv.
+W000019,"Rice, and by extension a meal: ກິນເຂົ້າ (gin kao, ""eat rice"") means ""have a meal"". The general word for food is ອາຫານ (aa-haan).",true,SRC-AGENT,unverified,A5 first note. ກິນ (W000018) and ອາຫານ (W000028) are in words.csv; ກິນເຂົ້າ is not a row of its own.

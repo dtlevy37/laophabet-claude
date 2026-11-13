@@ -44,6 +44,11 @@ Revision 2 (2026-11-10, PLAN S7c + S7f):
     (as it already carried sentence_words); rows missing from the CSVs are retired. Explicit prefixes work too
     (word_categories:W000018, sentence_slots:S000002870, word_units:W000018).
   - check: lesson_items.role must be new | recycle | example | bonus (the DB check constraint).
+
+Revision 3 (2026-11-13, PLAN A5): optional pool table word_notes (word_id, usage_note, culture, ...; schema
+  migration ..._a5_word_notes.sql). A word id carries its word_notes row in change and lesson migrations, like
+  word_categories (`--name x change W000001` writes the note; prefix word_notes:W000001 for the note alone).
+  Column type "bool": CSV true/false (empty = null), emitted as SQL true/false.
 """
 import argparse
 import csv
@@ -57,8 +62,8 @@ MIGRATIONS = os.path.join("app", "backend", "supabase", "migrations")
 SEEDS = os.path.join("app", "backend", "supabase", "seeds")
 
 
-def spec(cols, ints=()):
-    return {c: ("int" if c in ints else "text") for c in cols.split(",")}
+def spec(cols, ints=(), bools=()):
+    return {c: ("int" if c in ints else "bool" if c in bools else "text") for c in cols.split(",")}
 
 
 # name -> (primary key, {column: type}). Column order = CSV header = migration columns (without
@@ -93,6 +98,8 @@ TABLES = {
         "word_id,categories,source,confidence,notes")),
     "sentence_slots": (["sentence_id", "position"], spec(
         "sentence_id,position,accepts,exclude_word_ids,source,confidence,notes", ints=["position"])),
+    "word_notes": (["word_id"], spec(
+        "word_id,usage_note,culture,source,confidence,notes", bools=["culture"])),
     "lessons": (["lesson_id"], spec(
         "lesson_id,lesson_order,title_en,kind,summary_en,source,confidence,notes", ints=["lesson_order"])),
     "units": (["unit_id"], spec(
@@ -103,11 +110,11 @@ TABLES = {
         "lesson_id,position,item_type,item_id,role,notes", ints=["position"])),
 }
 LESSON_TABLES = ["lessons", "units", "rules", "lesson_items"]   # optional files; never seeded or refreshed
-OPTIONAL_POOL = ["word_categories", "sentence_slots"]            # hand-tagged; a missing file counts as empty
+OPTIONAL_POOL = ["word_categories", "sentence_slots", "word_notes"]           # hand-tagged; a missing file counts as empty
 POOL = [t for t in TABLES if t not in LESSON_TABLES]
 ROLES = {"new", "recycle", "example", "bonus"}                  # lesson_items.role (DB check constraint)
 # Tables that a word / sentence id carries along in lesson and change migrations: (table, key column).
-WORD_CHILDREN = [("word_units", "word_id"), ("word_categories", "word_id")]
+WORD_CHILDREN = [("word_units", "word_id"), ("word_categories", "word_id"), ("word_notes", "word_id")]
 SENTENCE_CHILDREN = [("sentence_words", "sentence_id"), ("sentence_slots", "sentence_id")]
 
 # (table, column, referenced table, referenced column)
@@ -122,6 +129,7 @@ FOREIGN_KEYS = [
     ("word_units", "word_id", "words", "word_id"),
     ("word_categories", "word_id", "words", "word_id"),
     ("sentence_slots", "sentence_id", "sentences", "sentence_id"),
+    ("word_notes", "word_id", "words", "word_id"),
     ("units", "intro_lesson_id", "lessons", "lesson_id"),
     ("rules", "intro_lesson_id", "lessons", "lesson_id"),
     ("lesson_items", "lesson_id", "lessons", "lesson_id"),
@@ -129,7 +137,8 @@ FOREIGN_KEYS = [
 NOT_NULL = {"words": ["lao"], "letters": ["lao"], "vowels": ["lao_pattern"], "sentences": ["lao"],
             "learning_order": ["item_type", "item_id"], "lessons": ["lesson_order", "title_en", "kind"],
             "units": ["kind", "role", "base_id"], "lesson_items": ["item_type", "item_id", "role"],
-            "word_units": ["unit_id"], "word_categories": ["categories"], "sentence_slots": ["accepts"]}
+            "word_units": ["unit_id"], "word_categories": ["categories"], "sentence_slots": ["accepts"],
+            "word_notes": ["culture"]}
 ITEM_TABLE = {"unit": ("units", "unit_id"), "rule": ("rules", "rule_id"),
               "word": ("words", "word_id"), "sentence": ("sentences", "sentence_id")}
 # Pool table -> (lock kind, column) for is_lesson_locked(); learning_order is never locked.
@@ -137,7 +146,8 @@ LOCK = {"templates": ("template", "template_id"), "words": ("word", "word_id"), 
         "vowels": ("vowel", "vowel_id"), "sentences": ("sentence", "sentence_id"),
         "sentence_words": ("sentence", "sentence_id"), "template_fillers": ("template", "template_id"),
         "tone_exceptions": ("word", "word_id"), "word_units": ("word", "word_id"),
-        "word_categories": ("word", "word_id"), "sentence_slots": ("sentence", "sentence_id")}
+        "word_categories": ("word", "word_id"), "sentence_slots": ("sentence", "sentence_id"),
+        "word_notes": ("word", "word_id")}
 
 
 # --- load and validate -------------------------------------------------------
@@ -148,6 +158,11 @@ def convert(value, typ, where, errors):
         return None
     if typ == "text":
         return value
+    if typ == "bool":
+        if value.strip().lower() in ("true", "false"):
+            return value.strip().lower() == "true"
+        errors.append(f"{where}: not true/false: {value!r}")
+        return None
     try:
         return int(value)
     except ValueError:
@@ -250,6 +265,8 @@ def locked(t):
 def lit(v):
     if v is None:
         return "null"
+    if isinstance(v, bool):
+        return "true" if v else "false"
     if isinstance(v, int):
         return str(v)
     return "'" + v.replace("'", "''") + "'"
@@ -362,7 +379,7 @@ def lesson_parts(t, lesson_id):
            "sentences": ("sentence_id", ref["sentence"]), "sentence_words": ("sentence_id", ref["sentence"]),
            "tone_exceptions": ("word_id", ref["word"]), "word_units": ("word_id", ref["word"]),
            "word_categories": ("word_id", ref["word_cat"]), "sentence_slots": ("sentence_id", ref["sentence"]),
-           "units": ("unit_id", ref["unit"]), "rules": ("rule_id", ref["rule"]),
+           "word_notes": ("word_id", ref["word"]), "units": ("unit_id", ref["unit"]), "rules": ("rule_id", ref["rule"]),
            "lesson_items": ("lesson_id", {lesson_id})}
     parts = []
     for name in TABLES:
@@ -380,7 +397,7 @@ def lesson_migration(root, data_dir, mig_dir, lesson_id, tables=None):
     les = parts[[n for n, _ in parts].index("lessons")][1][0]
     body = []
     scope = {"sentence_words": ref["sentence"], "sentence_slots": ref["sentence"], "word_units": ref["word"],
-             "word_categories": ref["word_cat"], "lesson_items": {lesson_id}}
+             "word_categories": ref["word_cat"], "word_notes": ref["word"], "lesson_items": {lesson_id}}
     for name, rows in parts:
         body += upsert(name, rows)
         if name in scope:

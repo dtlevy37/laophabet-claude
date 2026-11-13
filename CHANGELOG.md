@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 night (A2 review fixes; A3 and A5 built locally; A6 UX review)
+- A2 review fixes: rule notes and build-the-word hints put Lao in `lang="lo"` spans (`i18n.tParts`,
+  `grammar.noteParts`); tone marks in build the word are logged wrong only after a wrong tone-mark tap (plus, in
+  strict order, a slip at their step); `isToneMark` used in `finish`; the describer rule needs a noun before the
+  describer (pronoun ນີ້ / ລາວ cases no longer fire; checked against every bundle sentence); "usually" for ແລ້ວ.
+- A3 stats capture (subagent), local only: `review_log` gains attempt, question_id, role, known_options, detail;
+  `learner_sessions` gains tz, utc offset, app version, settings via new `set_session_client`; activities send their
+  detail (options, chosen, tiles, per-piece taps, mode, audio/info taps). Built on the proposed answers to the
+  design's open questions. Old-shape batches still accepted; new frontend tested against the old RPC.
+- A5 usage and culture notes (subagent), local only: `word_notes` table, `word_json` adds usage_note/culture,
+  `db_sql.py` handles `word_notes` (bool type, `word_notes:<id>`), validation; notes for ເຂົ້າ and ສະບາຍດີ.
+- A6 UX review: three personas in Playwright; `docs/A6_UX_REVIEW.md` (findings, revamp proposal, owner questions).
+  Quick fixes: dry-run badge no longer overlaps Sign out; Settings dialog closes on a route change.
+- QUESTIONS: A2 rule claims, A4 sound checks and the owner's accent. NOTES: closed the stale slot-exclusion items
+  (later lesson merges carried them; local and hosted match the CSV).
+
 ## 2026-11-13 (A2 gentler activities; A3 design; A4 audit; handoff)
 - A2 (frontend only, owner test pending): build the sentence's Check is enabled after one tile; build the word
   defaults to any order and then shows the reading order, with strict order as the setting "Spelling challenge"

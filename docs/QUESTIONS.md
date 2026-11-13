@@ -4,7 +4,7 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 (batches c1–c6, classifiers, tone-source disagreements) are parked in `_shelf/docs/NEEDS_HUMAN.md`.
 
 ## For the owner
-- (nothing open)
+- **A4 accent (sounds-like hints):** which English accent do you speak (US, UK, Australian, other)? Your hearing ແ as "ay in lay" suggests an accent whose 'lay' starts low, which would make some anchors work differently for you. (Full audit: `docs/A4_SOUNDS_LIKE_AUDIT.md`; please read it through.)
 
 ## For the native speaker
 - **Wife's answer, 2026-11-12 (context of "this is white")**: ນີ້ຂາວ (*nii khǎao*) is fine when talking about the colour of
@@ -108,3 +108,22 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   middle peak drawn up and back down the same line? (4) the shapes are Noto Sans Lao Looped; its ກ gor had two loops,
   so ກ alone was taken from the plain Noto Sans Lao. Do ຖ tor (loop at the top left) and the others look like
   normal school handwriting?
+- **Word-order notes (A2, shown when a learner builds a sentence in the wrong order)**: the app tells the learner
+  these rules. Are they right as stated, and is any of them misleading? (1) A describing word comes after the thing:
+  ນ້ຳນີ້ (nam nee, "this water"), not ນີ້ນ້ຳ; ແກ້ວນ້ອຍ (gaew noy, "small glass"). (2) ບໍ່ (bor, "not") goes before the
+  word it negates: ບໍ່ດີ (bor dee, "not good"). (3) As a question word ບໍ່ goes at the very end: ດີບໍ່? (dee bor, "is
+  it good?"). (4) ແນ່ (nae, softening "please") goes at the end of a request: ຂໍນ້ຳແນ່ (khor nam nae, "may I have some
+  water"). (5) ແລ້ວ (laew, "already") usually comes after the word it belongs to: ກິນແລ້ວ (gin laew, "ate already").
+  Also: would ນ້ຳດີນີ້ (nam dee nee) be read as "this good water"? The app does not call that order wrong.
+- **Sounds-like hints (A4 audit, `docs/A4_SOUNDS_LIKE_AUDIT.md`)**, please say each word aloud for the owner:
+  1. **ແ vs ເ:** in ແລ້ວ (laew, "already"), ແນ່ (nae, request softener) and ແກ້ວ (gaew, "glass"), is the vowel closer to English "bed" said long, or to "cat"? Please say a ແ◌ word and a ເ◌ word side by side so the owner can hear the gap. (The existing lesson 5 question about ແລ້ວ and 'cat' can be merged into this one.)
+  2. **◌ໍ / ◌ອ◌:** in ບໍ່ (baw, "not"), ຂໍ (kaw, "may I have") and ນອນ (nawn, "sleep"), is the vowel nearer an open "ah" with rounded lips, or nearer "oh"? Does it sound like ບໍ່ when the owner says "baw" in their own accent?
+  3. **Short ◌ິ:** in ກິນ (gin, "eat") and ດິນ (din, "earth"), does English "gin"/"din" sound right, or does the vowel need to be tighter (nearer "keen"/"deen" but short)?
+  4. **ດຳ (dam, "black"):** is the vowel the same as in ນ້ຳ (nam, "water"), i.e. the "u" of "hum", not English "dam"?
+  5. **ບ/ປ and ດ/ຕ:** when the owner says English "boy" and "deck", do they sound like ບ/ດ or like ປ/ຕ to her? (This decides whether the ບ/ດ cards need "a full, buzzing b/d".)
+  6. **Short ◌ຸ** (for later): is it like the "u" in "put", or tighter?
+- **Usage notes (A5, shown on the word cards)**: are these right, and is anything missing or odd? (1) ສະບາຍດີ
+  (sa-baai-dii): "Literally 'be well': the everyday greeting for both hello and goodbye. It is said with the palms
+  pressed together at the chest and a slight bow, the ນົບ (nop)." Is it used for goodbye as much as for hello? (2)
+  ເຂົ້າ (kao, "rice"): "Rice, and by extension a meal: ກິນເຂົ້າ (gin kao, 'eat rice') means 'have a meal'. The general
+  word for food is ອາຫານ (aa-haan)."

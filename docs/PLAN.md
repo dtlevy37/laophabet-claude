@@ -44,12 +44,17 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
       slots, text in strings.json. **Done when:** ຂໍນີ້ນ້ຳແນ່ (khor nee nam nae) in lesson 7 shows the describer note.
       (2026-11-13: built by a subagent, frontend only: build_sentence.js, build_word.js, new grammar.js (5 rules incl.
       ແນ່ and ແລ້ວ), settings `spellingOrder`; `scripts/grammar_test.mjs` passes. Playwright saw Check enable after
-      one tile and the reading-order line; the rule note on screen is untested. Owner browser test pending.)
+      one tile and the reading-order line; the rule note on screen is untested. Owner browser test pending.
+      2026-11-13 night: review fixes done (Lao spans in rule notes via `tParts`, tone-mark logging, rule 1 nouns
+      only, "usually" for ແລ້ວ, rule claims in QUESTIONS).)
 - [ ] **A3 Stats capture audit** (before more people play: data not logged now is lost). `review_log` has item,
       activity, direction, first-try correct, latency, level. Add what SRS and "weakest items" need: the answer
       chosen and the options shown (confusion pairs, e.g. ດ vs ບ), replay vs first ask, audio played, hint used,
       and per-piece results for build the word (letter-level credit). **Done when:** a design note in DESIGN is
-      agreed and the migration logs it. (2026-11-13: draft in `docs/A3_STATS_DESIGN.md`, 4 owner questions.)
+      agreed and the migration logs it. (2026-11-13: draft in `docs/A3_STATS_DESIGN.md`, 4 owner questions.
+      Night of 2026-11-13: BUILT LOCALLY on the proposed answers, not pushed: `20261113060000_a3_stats_capture.sql`,
+      `tests/a3_stats_capture_test.sql`, new `set_session_client` RPC; new frontend is safe against the old hosted
+      RPC (tested). Waits for the owner's answers, then `supabase db push --linked`.)
 - [ ] **A4 "Sounds like" review.** Audit every unit card text and word pron_tip against IPA, for US, UK and
       Australian ears; prefer two anchors plus a warning ("not the a in 'cat' for most Americans"); mark doubtful
       ones in QUESTIONS for the owner's wife. (2026-11-13: audit done, `docs/A4_SOUNDS_LIKE_AUDIT.md`.) Known bad: ແ◌ (ɛː) "a in 'cat'" → nearer "eh" held long, mouth open
@@ -60,12 +65,18 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
       literal. First notes: ສະບາຍດີ (sabaidee: "be well", the universal greeting, said with the hands together and
       a slight bow, the ນົບ nop); ເຂົ້າ (kao: rice, and by extension a meal; ກິນເຂົ້າ "eat rice" = "have a meal";
       ອາຫານ aahaan is "food"). Unverified until the owner's wife checks. **Done when:** both cards show the note
-      with the badge.
+      with the badge. (Night of 2026-11-13: BUILT LOCALLY, not pushed: `word_notes` table + `word_json`
+      (`20261113040000_a5_word_notes.sql`), content `20261113040409_a5_word_notes_content.sql` from
+      `data/word_notes.csv` via `db_sql.py change word_notes:<id>`; card shows "How it is used" + Culture badge
+      (Playwright on L0002/L0008). Notes unverified. Follow-up: pool words in `get_lesson` lack the note, so the ⓘ
+      dialog from a sentence chip in a later lesson shows none. The one-off "translations are not literal" card is
+      not built (needs a merged-lesson change).)
 - [ ] **A6 UX review round.** Subagents play the app in a headless browser (Playwright: `tmp/tools/pw`, `scripts/browser/`) at
       375, 768 and 1280 px as three personas (absolute beginner, returning learner on a phone, impatient desktop
       user), with screenshots; plus the owner's notes. Output: one findings list and a revamp proposal in DESIGN
       (screens, navigation, look). Needs a running backend and a test account (owner's choice: local Docker or a
-      throwaway account on hosted). **Done when:** the owner has agreed the revamp proposal.
+      throwaway account on hosted). **Done when:** the owner has agreed the revamp proposal. (Night of 2026-11-13:
+      review RUN, proposal written: `docs/A6_UX_REVIEW.md`, 4 owner questions; awaiting agreement.)
 - [ ] **A7 Revamp: home and sections.** Home with sections instead of the long lesson list: Continue (next lesson,
       one tap), Review, Letters and sounds, My words, Write. Stats on home (streak, accuracy, letters and words known;
       absorbs S8). Lesson list collapsed around the next lesson. Content preview as a dialog on desktop and a sheet

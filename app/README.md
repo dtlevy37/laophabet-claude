@@ -26,6 +26,8 @@ app/
 | `supabase/migrations/20261111010000_list_lessons_covers.sql` | S7a extra: `list_lessons` adds `covers` (a done lesson's new items). |
 | `supabase/migrations/20261112211502_s7h_untaught_options.sql` | S7h: replaces `get_lesson` (adds `distractors.untaught`). |
 | `supabase/migrations/20261111020000_activity_data_bonus.sql` | S7c + S7f: tables `word_units`, `word_categories`, `sentence_slots` (locked down like the other content tables); `lesson_items.role` allows `bonus`; internal helper `word_cats(word_id)` (category union over the word's spelling, verb safety rule; not callable by app users); replaces `get_lesson` and `list_lessons` (additive changes, below). |
+| `supabase/migrations/20261113040000_a5_word_notes.sql` | A5: content table `word_notes` (word_id, usage_note, culture bool, source, confidence, notes; locked down like the other content tables; rows from `db_sql.py` only); `word_json` adds `usage_note`, `culture`, `note_confidence`. Test: `tests/a5_word_notes_test.sql`. |
+| `supabase/migrations/20261113060000_a3_stats_capture.sql` | A3 stats capture (docs/A3_STATS_DESIGN.md): `review_log` gains `attempt`, `question_id`, `role`, `known_options`, `detail`; `learner_sessions` gains `tz`, `utc_offset_min`, `app_version`, `settings`; replaces `record_answers` (same signature, old payloads still accepted); new `set_session_client`; internal helpers `review_id_list_ok`, `review_detail_ok`, `review_known_options` (not callable by app users). Test: `tests/a3_stats_capture_test.sql`. |
 | `tests/s6a_played_lesson_test.sql` | Paste-in SQL check for S6a (one throwaway user; prints check / got / expected). |
 | `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `scripts/db_sql.py` (never by hand). |
 | `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
@@ -56,12 +58,18 @@ Since `..._s7h_untaught_options.sql` (S7h): `distractors.untaught` is `[{word_id
 cats}]`: every other live word with a word_categories row (no `function` in its cats, no pool word's spelling).
 Fill in the blank draws wrong options from it at random only when the pool's safe distractors run short.
 
+Since `20261113040000_a5_word_notes.sql` (A5): an item's word detail (not the pool's word objects) has `usage_note` (English
+with Lao words in it, or null), `culture` (true/false, null without a note) and `note_confidence`. The teach card
+shows the note under the meaning, with a "Culture" badge when `culture` is true.
+
 ### `list_lessons()` (signed-in users)
 Returns `[{lesson_id, lesson_order, title_en, kind, summary_en, new_items, state, completed_at, last_accuracy}]` by lesson order. `state` follows the `start_lesson` rule: `done` (the caller completed it), `open` (lesson 1, a lesson the caller has started, or the one after a completed lesson), else `locked`. `completed_at` is the first completion; `last_accuracy` is the first-try accuracy (0–100, or null) of the caller's latest completed session of that lesson. Since `20261111010000_list_lessons_covers.sql` each row also has `covers`: for a done lesson, its new items in teaching order `[{item_type, lao, en}]` (unit: lao; word: lao + gloss; sentence: lao + English; rule: name), else null. The lesson list shows them so a learner can pick a lesson to review. Since `20261111020000_activity_data_bonus.sql` each row also has `bonus`: for a done lesson, its bonus words in teaching order (`[]` when none), else null; `covers` and `new_items` count core items only.
 
 ### Learner progress (S5)
 - `start_lesson(lesson_id, local_day)` → `{session_id}`. `local_day` is the learner's calendar date (within 14 h of UTC). Lesson 1 is always open; a later lesson needs the previous one completed (or this learner started it before).
 - `record_answers(session_id, answers)` → `{saved, levels}`. Up to 200 answers per call, each `{answer_id (client uuid), item_type, item_id, activity, direction show|recognition|recall, correct, latency_ms, lao_word_ids}`. Teach cards are sent as `show` with no `correct`. Replayed `answer_id`s are skipped, so the client can resend a batch after a dropped connection. Levels never go down: show → 1, recognition right → 2, recall right → 3 (one step at a time from below). Optional `first_try` (default true): send `false` when a missed question is asked again. Such answers still count for levels and words read, but not for the summary's `answers`, `correct` and `accuracy`. It is trusted client input and affects only the learner's own accuracy.
+- Since A3 (`20261113060000_a3_stats_capture.sql`) each answer may also carry `attempt` (0 first ask, n = nth replay), `question_id` (one uuid for the rows of one question), `role` (`primary` | `pair` | `part` | `context`) and `detail` (an object of at most 2 KB: options shown, chosen, build-the-word pieces and mode, audio plays, info opens; id lists of at most 20; unknown keys kept). All optional; a bad shape is rejected with 22023. The server stores `known_options`: the wrong options shown that the learner had at level ≥ 1 (0 = weak evidence; logged only, levels unchanged).
+- `set_session_client(session_id, client)` → `{saved}`: `{tz, utc_offset_min, app_version, settings}` for the session, written once (a second call returns `saved: false`). The client calls it after `start_lesson` and ignores a failure.
 - `complete_lesson(session_id)` → summary `{answers, correct, accuracy, words_read, new_items, level_ups, streak, ...}`, computed from `review_log` (DESIGN "Session summary"). Calling it again returns the same summary.
 - Streak = consecutive `local_day`s with a completed session, ending at that session's day.
 
@@ -155,6 +163,10 @@ sent again with the next step, and the server skips `answer_id`s it already has.
 flushed, `complete_lesson` runs, and the summary screen shows what it returned. If saving fails the learner gets a
 retry; nothing is lost while the page stays open. A running session is kept in memory, so a settings change or a
 visit to the lesson list does not start a second one; a page reload does (resume comes in S7b).
+Stats capture (A3): `advance()` in session.js stamps each step's answers with `question_id`, `attempt`, `role` and a
+`detail` (the activity's own: options, chosen, tiles, pieces, mode; plus the audio and info taps the runner counts on
+the step), and fills a teach card's `latency_ms` with its time on screen. After `start_lesson` it sends
+`set_session_client` (time zone, `js/version.js` `APP_VERSION`, display settings) and only logs a failure.
 Local: copy `config.example.js` to `config.js`, fill it in, then open `frontend/index.html` with VS Code Live Server (serve the `frontend` folder as root).
 
 Netlify: set **Base directory** to `app/frontend`, leave the publish directory as set in `netlify.toml`, and add env vars `SUPABASE_URL` and `SUPABASE_ANON_KEY`. The build command only writes `config.js` from them.

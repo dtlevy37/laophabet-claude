@@ -9,7 +9,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   running the local Supabase itself (`supabase status` / `migration up` from `app/backend`, SQL through
   `docker exec -i <supabase_db container> psql -U postgres`; there is no `psql` on PATH) and the lesson runner
   (`scripts/next_lesson.ps1`). First use of each should be treated as a test.
-- **Content pool:** 1425 words, 2816 sentences, 30 templates. Pipeline clean (0 errors, the usual 8 warnings).
+- **Content pool:** 1425 words, 2816 sentences, 30 templates. Pipeline clean (0 errors, the usual 11 warnings).
 - **Lessons merged: 11** (5–11 built 2026-11-12 by subagents, each curriculum-reviewed; entries below). Earlier: L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
   (nam, water), bonus ຂາ (kaa, leg) and ຂາວ (kaao, white). L0004 was rebuilt in place 2026-11-12
   (`20261112195124_lesson_l0004.sql`, then `20261112204059_lesson_l0004.sql` adding ຂາວ as bonus at the owner's
@@ -43,18 +43,13 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   (jaan, plate; W000629). Recycles ລາວ, ເຂົ້າ, ບໍ່, ນ້ຳ, ສະບາຍດີ. Sentences: S000002886 ລາວຫິວເຂົ້າ, S000002887
   ເຈົ້າຫິວເຂົ້າບໍ່? + S000002888 ບໍ່ຫິວ., S000001170 ເຈົ້າຫິວນ້ຳບໍ່? (existing, resegmented ຫິວ + ນ້ຳ; W000621 ຫິວນ້ຳ
   not taught, its tag removed) + S000002889 ຫິວນ້ຳ. "Yes, I'm thirsty" (composed), S000000007 ເຈົ້າສະບາຍດີບໍ່? (existing).
-  Lessons 9 and 10 may swap (path note). **Pending:** slot edits on merged-lesson sentences S000002870 s1 and
-  S000002879 s3 (exclude ຫິວ), S000002880/S000002881 s2 (accept number for ຫ້າ) need a `db_sql.py change`.
+  Lessons 9 and 10 may swap (path note). (Slot edits carried by later merges; DB matches the CSV.)
 - **L0010 "I, and the conversation"** merged 2026-11-12 (`20261112214853_lesson_l0010.sql`, not applied; no flags, no
   budget warnings): new V22 ◌ອ◌; core ຂ້ອຍ (khoy, I; W000006), ນອນ (non, sleep; W000033); bonus ນ້ອຍ (noy, small;
   W000090). Recycles ຫິວ, ເຂົ້າ, ກິນ, ແລ້ວ, ສະບາຍດີ, ລາວ, ເຈົ້າ, ບໍ່. Sentences: S000000113 ຂ້ອຍຫິວເຂົ້າ, S000000008
   ຂ້ອຍສະບາຍດີ (existing), S000002891 ລາວນອນແລ້ວ "He's asleep already" (composed), then the target conversation
   contiguous (S7g): S000000001 (lines 1–2), S000002887 (line 3, repeated as 4b, listed once), S000002892 ຫິວ. (4a,
   composed), S000002888 (5a), S000002890 ຂ້ອຍກິນເຂົ້າແລ້ວ (5b, composed). Lessons 9 and 10 may swap (path note).
-  **Pending:** ນ້ອຍ (W000090, also the name Noy) added to exclude_word_ids on 38 slots of earlier sentences
-  (S000000023, S000000024, S000002870, S000002872, S000002874, S000002877, S000002878, S000002879, S000002880,
-  S000002881, S000002882, S000002883, S000002884, S000000004, S000000001, S000000003, S000002885, S000002886,
-  S000002887, S000002888, S000000007, S000001170, S000002889): needs a `db_sql.py change`.
 - **L0011 "Colours, selling, small"** merged 2026-11-12 (`20261112215850_lesson_l0011.sql`, not applied; flags
   `--max-words 5 --no-new-letters`; budget warnings: 6 new words, weight 6): no new units; core ສີ (sii, colour;
   W000536), ຂາວ (khao, white; W000538), ດຳ (dam, black; W000539), ຂາຍ (khaai, sell; W000084), ແກ້ວ (kaew, glass;
@@ -64,9 +59,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   block; the owner may split it there after play-testing. New `lesson_tool.py --no-new-letters` flag (check/merge):
   a lesson with no new units or rules; its new words need not use something new. ສີ tagged object|action (ສີເຂົ້າ mill
   rice), ດຳ quality|action (ດຳນ້ຳ dive), so neither is a wrong option in a verb gap; ສີ pron_tip no longer compares
-  ສີ່ four. **Pending:** ດຳ W000539 and ຂາວ W000538 (names Dam, Khao) added to exclude_word_ids on the 47 earlier slots
-  that exclude ນ້ອຍ (S000000001, S000000003, S000000004, S000000007, S000000008, S000000023, S000000024, S000000113,
-  S000001170, S000002870, S000002872, S000002874, S000002877–S000002892): needs a `db_sql.py change`.
+  ສີ່ four.
 - **Backend hosted 2026-11-12:** Supabase project `nerttltntbwhpvticuwe` (Laophabet-v2, Postgres 17), linked from
   `app/backend`. All migrations through `20261113000000` plus the seeds were pushed by the agent (`supabase db push
   --linked --include-seed`); counts match local. Applied migrations are now frozen: write new ones. The local
@@ -81,33 +74,27 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
-0. **Handoff 2026-11-13 (session cleared here). Owner's play-test notes → PLAN slices A1–A9, order agreed.**
-   - A1 lesson audio: DONE (owner test passed on the deployed site).
-   - A2 gentler activities: BUILT, committed and pushed (Netlify deploys it); owner browser test pending; frontend only. Owner
-     browser steps: `#/try/L0007` (dry run): build the sentence enables Check after one tile; put ຂໍ ນີ້ ນ້ຳ ແນ່
-     (khor nee nam nae) → wrong-answer feedback shows the "Lao word order" describer note; build the word accepts
-     pieces in any order and then shows "Read in this order: …"; Settings → "Spelling challenge" restores strict
-     order. Rule texts in strings.json (`rule_*`, `bw_slip_*`, `bw_prewritten`) are agent-written, unverified.
-     Code review findings not yet fixed: see "A2 review" below. Tests: `node scripts/grammar_test.mjs`.
-   - A3 stats logging: DESIGN DRAFT in `docs/A3_STATS_DESIGN.md`, not agreed. Next session: ask the owner the 4
-     questions in its section 7, move the agreed note into DESIGN, then build (migration to hosted BEFORE the
-     frontend). Line numbers in it predate A2.
-   - A4 sounds-like: RESEARCH DONE, nothing applied: `docs/A4_SOUNDS_LIKE_AUDIT.md` (74 hints: 4 wrong, 15
-     misleading). Needs: the owner's English accent (US/UK/AU?), owner read-through, native questions to
-     QUESTIONS.md, then `db_sql.py change` for units/words pron_tip. Respelling changes ("dam" → "dum" etc.) are the
-     owner's decision.
-   - A5–A9 not started. A6 UX review: Playwright is ready (`tmp/tools/pw`, `scripts/browser/a1_smoke.js` shows the
-     sign-in pattern); A7 must also review where the audio ▶/⚑ buttons sit.
-   - **A2 review (code-reviewer 2026-11-13, no blocker), fix next session:** [major] rule notes and bw hints put
-     Lao into plain `<p>` text via `t()` placeholders `{ex}`/`{w}`/`{v}` (build_sentence.js ~254, build_word.js ~98
-     and ~213): no `lang="lo"`, so the Lao font setting is ignored; build with `h()` and Lao spans. [minor] any-order
-     mode: a slip is stored by step, so an unrelated wrong tap can mark the tone mark found at that step as wrong
-     (build_word.js ~164); log the tone mark correct only if found without a slip, or store the piece with the slip.
-     [minor] `finish` uses `p.kind === 'tone-mark'` but `isToneMark` also accepts `T\d` ids: use `isToneMark` in
-     both (build_word.js 38, 158). [minor] grammar.js rule 1 may fire wrongly when ນີ້ is a pronoun ("this one",
-     e.g. ຂໍນີ້); restrict to noun + ນີ້/adjective and test against every bundle sentence. [minor]
-     `rule_already_after`: say "usually" (ແລ້ວ also means "then"). [nit] add the rule-note claims to QUESTIONS.
-   - Subagents: the owner wants subagents used for tasks where it makes sense (2026-11-13).
+0. **Handoff, night of 2026-11-13 (owner asleep; agent + subagents). Nothing new is on the hosted DB.** Unpushed
+   local migrations, in order: `20261113040000_a5_word_notes.sql`, `20261113040409_a5_word_notes_content.sql`,
+   `20261113060000_a3_stats_capture.sql` (all applied locally). The frontend works with or without them (tested for
+   A3; A5 fields are optional). Push with `supabase db push --linked` (from `app/backend`) only after the owner
+   agrees A3's answers and the A5 notes.
+   - A1 DONE. A2: review fixes done; owner browser test still pending (steps: `#/try/L0007`, put ຂໍ ນີ້ ນ້ຳ ແນ່
+     (khor nee nam nae) → the "Lao word order" note, its Lao now in the Lao font; build the word any order → "Read in
+     this order"; Settings → "Spelling challenge"). Tests: `node scripts/grammar_test.mjs`.
+   - A3 BUILT LOCALLY on the proposed answers to the 4 questions in `docs/A3_STATS_DESIGN.md` §7 (log only for weak
+     evidence; no "left" row; writing not logged; letter credit only for weakest/FSRS). Ask the owner; then push.
+     Analysis: filter `review_log.role = 'primary'` or group by `question_id`. Browser driver:
+     `scripts/browser/a3_play_lesson.js`.
+   - A4: questions copied into QUESTIONS (owner: accent; native: 6 sound checks). Still needs the owner's
+     read-through of `docs/A4_SOUNDS_LIKE_AUDIT.md`, then `db_sql.py change`.
+   - A5 BUILT LOCALLY: ເຂົ້າ (kao) and ສະບາຍດີ (sabaidee) cards show "How it is used" + Culture badge. Notes
+     unverified (QUESTIONS). Open: pool words in `get_lesson` lack the note; the "translations are not literal" card.
+   - A6 RUN: findings + revamp proposal in `docs/A6_UX_REVIEW.md` (4 owner questions). Quick fixes done and Playwright-checked:
+     dry-run badge overlap, Settings dialog closes on route change. Agree it, then A7 builds it.
+   - Next for the agent: after the owner answers, push A3/A5, then A7 (home, navigation, keyboard, thumb-zone
+     layout, summary) per the agreed proposal; A8, A9.
+   - Subagents: the owner wants subagents used where it makes sense (2026-11-13). Three personas ran A6 at sonnet.
    New native takes later: `python scripts/audio_publish.py fetch`, `process`, `upload --linked`, `migration`,
    then `supabase db push --linked` (bucket exists now). Check the level of the first ~5 takes before a long
    session (owner idea).

@@ -1,7 +1,36 @@
-# A3 Stats capture: design note (draft 2026-11-13, NOT agreed, not built)
+# A3 Stats capture: design note (draft 2026-11-13; built locally on the proposed answers, awaiting owner agreement)
 
 Written by a planning subagent from the code as of commit 67c877e (before A2). Line numbers may have moved after
-A2 (build_word any-order mode, build_sentence Check). Owner answers to section 7 are needed before building.
+A2 (build_word any-order mode, build_sentence Check).
+
+**Status (2026-11-13):** built and applied to the LOCAL DB only (migration `20261113060000_a3_stats_capture.sql`,
+test `app/backend/tests/a3_stats_capture_test.sql`, browser check `scripts/browser/a3_play_lesson.js`), on the
+proposed answers to section 7. Not pushed to the hosted DB; awaiting the owner's agreement. Once agreed, move it into
+DESIGN. What changed from the draft while building:
+- **Session info via a new RPC, not a new `start_lesson` argument.** `set_session_client(p_session, p_client)` writes
+  `{tz, utc_offset_min, app_version, settings}` once per session; the client calls it after `start_lesson` and ignores
+  a failure. Reason: the frontend deploys before the migration, and a `start_lesson` call with an unknown argument
+  would fail on the older hosted DB and block every lesson; a missing `set_session_client` only loses metadata.
+  `settings` = `{translit, spaces, autoplay, spellingOrder, font}` (spellingOrder and font added: they change
+  difficulty and reading). S8b `start_practice` should call the same RPC.
+- **`detail.answer`** added (multiple choice: the option id; fill in the blank: the word id; build the sentence: the
+  sentence's word ids), so `known_options` excludes the answer also on pair and context rows.
+- **Audio and info counts are taken by the runner** (session.js counts taps on `.audio-btn` and on info openers inside
+  the step), not by each activity, so teach cards get `{audio, info}` without changing teach_card.js. A teach card's
+  `latency_ms` is its time on screen, also set by the runner.
+- **known_options for build the word / build the sentence** counts the tiles that are not pieces / not the sentence's
+  words; it is computed for every row with options or tiles (also pair, part and context rows), null for teach cards.
+- **A detail that would not fit** (an id list over 20, or over ~1.9 KB) is cut on the client (`cut: true`, lists
+  dropped) so a bad detail never blocks a session's save; the server still rejects a malformed one with 22023.
+  Build the word keeps at most 20 wrong taps per piece and 20 stray taps. The client also drops ids that do not look
+  like content ids, and estimates the size as the server measures it (jsonb text has a space after ':' and ',').
+- **Secondary rows repeat the question's detail** (pair, part, context rows carry the same detail and their own
+  known_options): analysis that counts questions or sums known_options filters `role = 'primary'` (or groups by
+  `question_id`).
+- `set_session_client` is also sent on resume (write-once, so it only fills a session whose first call failed).
+- Built on the proposed answers: Q1 weak evidence logged only (one marked line in `record_answers` to change);
+  Q2 no "left" row; Q3 letter writing not logged; Q4 letter credit only at read time from `detail.pieces`, never a
+  level. The build-the-word mode is logged as `detail.mode` ('strict' | 'any').
 
 ## 1. Gaps today
 - The chosen answer is dropped: multiple choice keeps `st.picked` but sends only `correct`
@@ -106,5 +135,9 @@ rows (derived at read time); half-answered questions (Q2); letter writing (Q3); 
 4. Letter credit derived from word answers: may it raise a letter's level ("letters known"), or only feed
    weakest/FSRS (proposed)?
 
-**Done when:** this note is agreed (move it into DESIGN); the migration is applied locally; a played lesson 1
+**Done when:** this note is agreed (pending); the migration is applied locally (done 2026-11-13); a played lesson 1
+produces `detail`, `attempt` and `question_id` on every row type (done: browser runs of L0001-L0006 plus a strict-mode L0004
+and a second L0001: 391 rows in 8 sessions, none missing); an old-shape batch is still accepted (done: test section 2).
+
+Original line: this note is agreed (move it into DESIGN); the migration is applied locally; a played lesson 1
 produces `detail`, `attempt` and `question_id` on every row type; an old-shape batch is still accepted.

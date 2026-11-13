@@ -69,6 +69,9 @@ check('ແລ້ວ ດີ -> already note', same(keys(notes), ['rule_already_af
 const goodWater = sentence('W000011', 'W000016', 'W000002')
 notes = ruleNotes(goodWater, laos('W000002', 'W000016', 'W000011'), info)
 check('ດີ ນີ້ ນ້ຳ -> one describer note', same(keys(notes), ['rule_describer_after']), notes)
+// ນີ້ is a pronoun there, so ດີ after it is a predicate, not a describer of a thing (A2 review).
+notes = ruleNotes(goodWater, laos('W000011', 'W000002', 'W000016'), info)
+check('ນ້ຳ ດີ ນີ້ -> no describer note (pronoun ນີ້)', !keys(notes).includes('rule_describer_after'), notes)
 check('no info -> no describer note', ruleNotes(water, laos('W000009', 'W000016', 'W000011', 'W001426')).length === 0)
 
 // The data above still matches lesson 7's bundle (when one has been saved).
