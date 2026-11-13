@@ -2,6 +2,19 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 3: home Continue card and compact path
+- New `js/home.js` (`showHome`, replaces learn.js's lesson list): a Continue card (the lesson running in memory or
+  saved for resume today on this device, `session.js` `resumableLesson`, else the first open lesson; "Continue" or
+  "Start", button on the right), then the path: done lessons one line each (✓, tap to play again, "Review" for the
+  cards), open lessons other than the Continue card's, the next 2 locked, the rest folded under "{n} more lessons";
+  "Practice writing letters" as a link row. Only `list_lessons` and the local resume record are used.
+- Removed from home: the "Letters / Words / Sentences / Rules / Bonus" lines under done lessons (`covers`; the RPC
+  still returns them) and the done date. CSS for the old list removed.
+- Strings: `home_continue_label`, `home_next_label`, `home_all_done`, `home_continue`, `home_more_lessons`,
+  `home_review`, `home_review_label`, `lesson_done_short`.
+- Checked: with 5 lessons done, home is 700px tall at 375×700 (light and dark), and a lesson left part-way shows
+  "Continue" after a reload (`a7_shots.js`).
+
 ## 2026-11-13 A7 steps 0–2: review fixes (code-reviewer)
 - The header hides only on a real lesson route: `learn.js` `isLessonRoute()` (the router's own parse) replaces
   app.js's looser regex, so `#/lesson/foo` (which shows the lesson list) keeps the header.

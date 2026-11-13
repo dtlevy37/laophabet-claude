@@ -105,6 +105,41 @@ async function setTheme(page, theme) {
     check(`${width} no console errors`, !real.length, real.join(' | '))
     await page.close()
   }
+  // A7 step 3: home fits one 375×700 screen (the test learner should have 5 lessons done: play them with
+  // a3_play_lesson.js first)
+  for (const mode of ['light', 'dark']) {
+    const page = await browser.newPage({ viewport: { width: 375, height: 700 }, colorScheme: 'light' })
+    await page.goto(BASE)
+    await setTheme(page, mode === 'dark' ? 'dark' : 'system')
+    await page.reload()
+    await page.fill('input[type=email]', email)
+    await page.fill('input[type=password]', password)
+    await page.locator('form button[type=submit], form button.primary').first().click()
+    await page.waitForSelector('.continue-card')
+    await page.waitForTimeout(500)
+    await page.screenshot({ path: `${OUT}/home_375x700_${mode}.png` })
+    const done = await page.locator('.path-row.done').count()
+    const height = await page.evaluate(() => document.documentElement.scrollHeight)
+    check(`home ${mode}: ${done} done lessons in one 375×700 screen`, height <= 700, `${height}px`)
+    if (mode === 'light') {
+      // a lesson left part-way shows as Continue (the resume record), also after a reload
+      const href = await page.locator('.continue-card a.btn').getAttribute('href')
+      await page.goto(BASE + href)
+      await page.waitForSelector('.stage')
+      await page.locator('.stage .actions button.primary').click()
+      await page.waitForTimeout(300)
+      await page.locator('.lesson-close').click()
+      await page.locator('dialog[open] button.link').click()
+      await page.waitForSelector('.continue-card')
+      await page.reload()
+      await page.waitForSelector('.continue-card')
+      await page.waitForTimeout(300)
+      const label = (await page.locator('.continue-card a.btn').textContent()).trim()
+      check('home: a lesson left part-way shows Continue', label === 'Continue', label)
+      await page.screenshot({ path: `${OUT}/home_continue_375x700.png` })
+    }
+    await page.close()
+  }
   // review fixes: a malformed lesson hash keeps the header; settings focuses its h1; Enter goes on after a pick on
   // the intro card; signing out from Settings lands the next sign-in at home
   {

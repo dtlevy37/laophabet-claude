@@ -18,7 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 3 (`docs/A7_PLAN.md`; steps 0–2 built 2026-11-13), then A7 steps 4–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 4 (`docs/A7_PLAN.md`; steps 0–3 built 2026-11-13), then A7 step 5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
@@ -42,6 +42,11 @@ and L1e are pending (list below).
 10. A7 step 2 (phone and desktop): the header is one line, "Laophabet" and Settings; email and Sign out are at the
    end of Settings (Account). In a lesson (`#/lesson/…`, `#/try/…`) there is no header: ✕ top left (Leave dialog),
    progress bar, "1 / 34" counter; Esc still asks to leave. Natives' recording header is unchanged (untested).
+11. A7 step 3 home (phone): a Continue card (next lesson, or "Lesson n · in progress" with Continue after leaving
+   a lesson part-way today), done lessons one line each with ✓ and Review, the next 2 locked, "{n} more lessons"
+   folded, Practice writing letters. With 5 done it fits one phone screen. Decide: the lesson on the Continue card is
+   not repeated in the path (so the list goes 5, 7, 8); and the old "Letters / Words" lines under done lessons are
+   gone from home.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
@@ -78,7 +83,8 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, recognition, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
-- `js/learn.js` lesson list, reader, `#/settings` route (Back = history.back when opened from the app).
+- `js/home.js` home (#/): Continue card (`session.js` `resumableLesson`) and the compact path.
+- `js/learn.js` reader, `#/settings` route (Back = history.back when opened from the app).
   Theme: `settings.js` `theme` sets `html[data-theme]`; `styles.css` has the dark tokens twice (device dark unless
   `light`, and `[data-theme='dark']`): change both. Browser check: `scripts/browser/a7_shots.js`. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from
   `node scripts/strokes_build.js --png` (overrides `scripts/strokes_overrides.json`).
