@@ -87,6 +87,32 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
 - [ ] **A9 My words.** Every word seen or known, with its card info and personal stats (times seen, first-try
       accuracy, last seen, level); needs a per-item stats RPC. Leads into S8b practice of the weakest items.
 
+## Next: learning-design slices (owner 2026-11-13, order chosen by the agent)
+From the second review round (`tmp/a6b/learning.md`, `tmp/a6b/a11y.md`, `docs/A7_PLAN.md`). Working order:
+L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10 → L4 (= S7g) → L5 (design starts now).
+- [ ] **L1 Clearer activities.** (a) First build the word and first build the sentence get a one-line how-to (and a
+      ◌ label: "the circle marks where the consonant goes"), shown the first few times. (b) Wrong build the sentence
+      marks the misplaced tile(s) in the learner's order, not only the right answer. (c) Same-sound rule: a sound
+      question never offers an option that sounds the same as the answer (same respelling: ◌ໍ / ◌ອ◌ "aw", ◌ວ /
+      ເ◌ົາ "ao"); cards of same-sound symbols say so. **Done when:** a beginner sees the how-to on the first build of
+      lesson 2; a wrong sentence in `#/try/L0007` shows which tile was out of place; no sound question in L1–L11 has
+      two options with the same sound (checked by `session_test.mjs`).
+- [ ] **L2 Listen and pick.** A new activity: play a recorded word (or sentence), pick its Lao from 3–4 options
+      (real words only; never a same-sound twin). Needs audio for the item and its options; recognition level.
+      **Done when:** lessons with recorded words ask at least one listen-and-pick, and the answer is logged with
+      A3 detail.
+- [ ] **L3 Teaching tone.** Not necessarily at the first tone mark, but a proper lesson: what tone is, the pitch
+      line legend, tone marks and consonant class in plain words, and compare/contrast pairs that differ only by
+      tone, each with audio (candidates: ຂາວ khaao "white" vs ລາວ laao, owner idea; ໃກ້ "near" vs ໄກ "far", to
+      verify; ເຂົ້າ "rice" vs ເຂົ່າ "knee" once both are taught). A hear-and-pick-the-pitch check. Pairs need the
+      native speaker to record both words. **Done when:** the tone lesson is merged with at least two recorded
+      pairs and a pitch check.
+- [ ] **L4 Conversations** = S7g below, with two voices when a second speaker records; context-driven learning.
+- [ ] **L5 Speaking practice.** Design note first (written by a Fable agent, owner 2026-11-13): options from
+      record-and-compare with a pitch overlay (all in the browser) to automatic judging (speech recognition with Lao
+      support, pronunciation scoring), privacy, cost, accuracy on the native takes. **Done when:** the owner agrees
+      the design note; build slices follow.
+
 ## Working order (before 2026-11-12 notes)
 1. Mobile lesson frame: done (phone test passed 2026-11-11)
 2. S7f: done 2026-11-12

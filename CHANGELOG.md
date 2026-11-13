@@ -3,6 +3,7 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-13 (owner answers)
+- PLAN: learning slices L1–L5 and their order. L5 speaking design note (research on Lao speech recognition).
 - Letter and vowel cards show "Hear it in a word": a recorded lesson word with the unit highlighted and ▶
   (`js/unit_word.js`). A4 hints on hosted (owner push). Review round 2: accessibility audit and learning-design review
   (tmp reports; points in NOTES).

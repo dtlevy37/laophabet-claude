@@ -108,6 +108,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
      no listen-then-pick activity, no two-speaker conversation, no speaking practice, first build word/sentence
      unexplained, build-sentence feedback does not mark the misplaced tile, shared respellings (◌ວ / ເ◌ົາ "ao",
      ◌ອ◌ / ◌ໍ "aw"), bonus words tested without a sentence.
+   - PLAN has learning slices L1–L5 (owner 2026-11-13; order L1 → L2 → A7 0–5 → L3 → A7 6–10 → L4 → L5).
+     L5 design note `docs/L5_SPEAKING_DESIGN.md` (Fable agent): phases Say it → pitch overlay → recogniser only
+     after validation; 7 owner questions in its section 10.
    - Next for the agent: after the owner answers, push A3/A5, then A7 (home, navigation, keyboard, thumb-zone
      layout, summary) per the agreed proposal; A8, A9.
    - Subagents: the owner wants subagents used where it makes sense (2026-11-13). Three personas ran A6 at sonnet.
