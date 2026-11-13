@@ -2,6 +2,21 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 steps 0–2: review fixes (code-reviewer)
+- The header hides only on a real lesson route: `learn.js` `isLessonRoute()` (the router's own parse) replaces
+  app.js's looser regex, so `#/lesson/foo` (which shows the lesson list) keeps the header.
+- Slim header: the brand shrinks (ellipsis) and the links never clip; at very narrow widths they wrap.
+- Settings: a failed Sign out shows the generic error (the button is the retry); the page focuses its h1
+  (tabindex -1) when drawn.
+- Signing out resets the hash to `#/` (replaceState) and Settings' Back memory (`resetRoutes`), so the next sign-in
+  lands at home.
+- Lesson head: the counter is `aria-hidden`; the progress bar's label says "step {n} of {total}"
+  (`session_progress_n`, replaces `session_progress`).
+- Keys: Enter on a focused radio or checkbox (the lesson 1 intro card's sound spelling) goes on; other keys stay
+  with the control.
+- `a7_shots.js` checks all of these (native-as-learner at 320 with `NATIVE_EMAIL` / `NATIVE_PASSWORD`, a local
+  native account).
+
 ## 2026-11-13 A7 step 2: slim header and lesson chrome
 - Learner header (`app.js` `showLearnerTopbar`): one line, the brand and Settings (plus a native's way back to
   review). Hidden on `#/lesson/…` and `#/try/…` (`syncTopbar`, on render and every hashchange). The native header

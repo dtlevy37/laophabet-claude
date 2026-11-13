@@ -105,6 +105,55 @@ async function setTheme(page, theme) {
     check(`${width} no console errors`, !real.length, real.join(' | '))
     await page.close()
   }
+  // review fixes: a malformed lesson hash keeps the header; settings focuses its h1; Enter goes on after a pick on
+  // the intro card; signing out from Settings lands the next sign-in at home
+  {
+    const page = await browser.newPage({ viewport: { width: 375, height: 812 }, colorScheme: 'light' })
+    await page.goto(BASE)
+    await page.fill('input[type=email]', email)
+    await page.fill('input[type=password]', password)
+    await page.locator('form button[type=submit], form button.primary').first().click()
+    await page.waitForTimeout(2000)
+    await page.goto(BASE + '#/lesson/foo')
+    await page.waitForTimeout(1200)
+    check('#/lesson/foo keeps the header', await page.locator('#topbar header').isVisible())
+    await page.goto(BASE + '#/settings')
+    await page.waitForSelector('.settings-page')
+    check('settings focuses its h1', await page.evaluate(() => document.activeElement?.tagName === 'H1'))
+    await page.goto(BASE + '#/try/L0001')
+    await page.waitForSelector('.style-choice input[type=radio]')
+    await page.locator('.style-choice input[type=radio]').nth(1).check()
+    await page.locator('.style-choice input[type=radio]').nth(1).focus()
+    await page.keyboard.press('Enter')
+    await page.waitForTimeout(300)
+    check('Enter after a pick on the intro card goes on', (await page.locator('.style-choice').count()) === 0)
+    await setTheme(page, 'system') // also puts the spelling back to standard
+    await page.goto(BASE + '#/settings')
+    await page.waitForSelector('.settings-page')
+    await page.locator('.settings-page button', { hasText: 'Sign out' }).click()
+    await page.waitForSelector('input[type=email]')
+    check('sign out from Settings resets the hash', (await page.evaluate(() => location.hash)) === '#/')
+    await page.close()
+  }
+  // a native viewing as a learner at 320 (NATIVE_EMAIL / NATIVE_PASSWORD, a local native account): the header's
+  // links (the Lao way back, Settings) are not clipped
+  if (process.env.NATIVE_EMAIL) {
+    const page = await browser.newPage({ viewport: { width: 320, height: 700 }, colorScheme: 'light' })
+    await page.goto(BASE)
+    await page.evaluate(() => localStorage.setItem('laophabet.view', 'learner'))
+    await page.fill('input[type=email]', process.env.NATIVE_EMAIL)
+    await page.fill('input[type=password]', process.env.NATIVE_PASSWORD)
+    await page.locator('form button[type=submit], form button.primary').first().click()
+    await page.waitForTimeout(2500)
+    await page.screenshot({ path: `${OUT}/native_learner_320.png` })
+    const link = page.locator('#topbar a[href="#/settings"]')
+    const clipped = await link.evaluate((a) => {
+      const r = a.getBoundingClientRect()
+      return r.right > document.documentElement.clientWidth || a.scrollWidth > a.clientWidth + 1
+    }).catch(() => true)
+    check('native as learner at 320: Settings not clipped', !clipped)
+    await page.close()
+  }
   await browser.close()
   console.log(checks.join('\n'))
   process.exit(checks.some((c) => c.startsWith('FAIL')) ? 1 : 0)
