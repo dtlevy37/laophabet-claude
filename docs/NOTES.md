@@ -81,6 +81,13 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
+0. **S10r wife's first-session feedback** (owner, 2026-11-12; not yet built, nothing else reported):
+   (a) DONE, untested: record button bigger (`.rec-big`, full width, 64px; start and stop; shared with review.js).
+   (b) Open, owner wants short steps: as many questions per screen as fit comfortably, no scrollbar where possible.
+   Her session was recordings plus 2 questions per word (natural? / name?), 1 per sentence. Owner wants all questions
+   asked in one go per item, not split in two paths (my "double work" reading was wrong; ask what exactly was split).
+   (c) DONE, untested: name prompt now "common name or nickname" (`rec_name_q`; Lao wording unverified, ask her).
+   (d) Context matters for some phrases, see QUESTIONS (ນີ້ຂາວ vs ນີ້ມັນສີຂາວ): check lesson sentences that use this pattern.
 0. **S10r recording mode built, browser untested** (2026-11-12, migration `20261113000000_s10r_recording_mode.sql`,
    applied locally). The owner deploys hosted Supabase + Netlify (an iPhone allows the microphone only on https,
    so the LAN address cannot record) and pushes all migrations. Then on the deployed site: sign up as native,

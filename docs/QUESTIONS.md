@@ -7,6 +7,10 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 - (nothing open)
 
 ## For the native speaker
+- **Wife's answer, 2026-11-12 (context of "this is white")**: ນີ້ຂາວ (*nii khǎao*) is fine when talking about the colour of
+  something like a wall; if you are holding an object you say ນີ້ມັນສີຂາວ (*nii man sǐi khǎao*). Spelling written from the
+  owner's romanization, `unverified`. To do: look through the lesson sentences for this "this is <colour>" pattern and
+  decide whether any need the ມັນສີ form or a context note. She says phrases generally depend on what you want to say.
 - ເຕ້ຍ W001427 "short (in height), low" (owner asked, 2026-11-12; not on Wiktionary): reading tia˥˨ high-falling, and the sentences ລາວເຕ້ຍ S000002899, ພໍ່ເຕ້ຍ S000002900.
 - ເຂົາ (W000160): the owner has only heard it as "they/them", with ລາວ as the everyday "he/she". The gloss was changed
   from Wiktionary's "he; she; they" to "they; (more formal) he; she". Is that right for Vientiane speech?
