@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 L1e Lesson order
+- Planner (`js/session.js`): every new core word that can be built is built in its own lesson's closing block
+  (always kept; replaces its meaning → Lao there), so no word is first built in a later lesson. Long words
+  (3+ `syllables`) first get "find the missing piece", always before the full build (`piecesFirst`).
+- `build_word.js` variant `spec.missing`: every piece in its slot but one; pick it from the piece and 2–3 wrong pool
+  pieces (same rules as a full build); one tap decides. Still activity `build_word` (recall); detail
+  `{mode: 'missing', tiles, pieces: [the missing piece], given, taps}` (no migration). String `bw_q_missing`.
+- `APP_VERSION` 2026.11.13-l1e. DESIGN lesson-session rows updated. `session_test.mjs` asserts no first build
+  outside the word's own lesson, a missing-piece question before the build of every long new word, and the
+  variant's judging and options. Side effect: lessons 6 and 7 lose some sound → letter closing questions (cap 8).
+
 ## 2026-11-13 L1d (c) missed-ເຂົ້າ note
 - Compare view (build the sentence): `PAIR_NOTES` table in `js/activities/compare.js`; when the answer has ຫິວ
   (W000072) followed by ເຂົ້າ (W000019) and yours has ຫິວ without ເຂົ້າ after it, a note under the rows:

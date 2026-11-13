@@ -70,7 +70,7 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Multiple choice | unit: sound → pick letter, letter → pick sound; word: Lao → pick meaning (recognition), meaning → pick Lao (recall). The check right after a card is this activity (the separate "Spot it" with the card visible was dropped 2026-11-10) | recognition or recall | bundle items; pool units (lao, sound) and pool words (lao, gloss_en) from `get_lesson` | v1 (S6c) |
 | Build the sentence | put word tiles in order to match the English | recall, word order | `sentence_json.words` (position, word_id, lao), english; extra tiles from pool words | v1 (S7a) |
 | Fill in the blank | sentence with one gap; pick the word from tiles; exactly one option is logically valid (see "Fill in the blank: one logical choice") | recall in context | `sentence_json.slots`, pool words with `cats` (new, S7c) | v1 (S7e) |
-| Build the word | meaning and sound shown; tap the pieces in spoken order (consonant, vowel, final, tone mark); the assembled word appears when right | spelling, where vowels sit | `word_units` (new, generated; S7c), pool units | v1 (S7d) |
+| Build the word | meaning and sound shown; tap the pieces in spoken order (consonant, vowel, final, tone mark); the assembled word appears when right. Variant "find the missing piece" (L1e): every piece in place but one, pick it from 3–4 pieces, one tap decides | spelling, where vowels sit | `word_units` (new, generated; S7c), pool units | v1 (S7d) |
 | Matching | tap pairs: Lao ↔ English, letter ↔ sound | recognition | words, units (needs 3+ pairs) | v1 (S8b) |
 | Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 (S8b, practice) |
 | Tone drill | see a syllable, pick its tone; later, apply the rule (class + live/dead + mark) | rules | words.tone_by_syllable, tone_derivation, rules | after the first tone-rule lesson (S9b) |
@@ -197,14 +197,16 @@ extra columns.
 | Item | Steps |
 |---|---|
 | new unit | teach card, then one check (sound → letter or letter → sound). A same-sound pair (C13 + C13f) is one card and one check; both ids are sent as shown. A unit with no sound of its own (tone mark) gets its check in the closing block: the first new word carrying it is built (build the word) instead of meaning → Lao, and the tone mark is logged as a recognition answer (S7d) |
-| new word | teach card, then Lao → meaning. Homographs on one card (ລາວ) accept either meaning, and no option is another word with the same spelling |
+| new word | teach card, then Lao → meaning. Homographs on one card (ລາວ) accept either meaning, and no option is another word with the same spelling. In the closing block it is built (build the word): a word's first build is in the lesson that teaches it (L1e, owner 2026-11-13); a long word (3+ syllables) first gets find the missing piece. A word that cannot be built gets meaning → Lao |
 | bonus word (S7f) | teach card labelled "Bonus word", then Lao → meaning; nothing in the closing block (recall waits for practice) |
 | new rule / recap | card only |
 | recycled word | no card; one question: build the word if the learner's level is ≥ 2 (S7d), else meaning → Lao at level ≥ 2 when it cannot be built, else Lao → meaning |
 | new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
 | recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 
-- **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8).
+- **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8;
+  the builds of new words, find the missing piece, fill in the blank on new sentences and one listen and pick are
+  always kept, so they can push the rest out).
   Then every question missed on the first try comes back until answered right once (at most twice each).
 - **Questions on words test meaning, never the English-letter spelling** (kao / kaao look alike); questions on
   units test the sound, labelled exactly as on the unit's teach card.

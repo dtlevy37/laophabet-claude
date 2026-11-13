@@ -41,7 +41,7 @@ owner's check or answer comes in.
       (e) "This is white" (native): ນີ້ຂາວ (nee khao) fits a wall's colour; for an object in hand ນີ້ມັນສີຂາວ (nee man
       sii khao). Check lesson sentences with this pattern. **Done when:** rule cards in lessons 2 and 9, English rows
       changed, pushed with the owner's go-ahead.
-- [ ] **L1e Lesson order.** A word's first build (or hardest check) is in the lesson that teaches it (ສະບາຍດີ and
+- [ ] **L1e Lesson order.** *Built and pushed 2026-11-13; owner check pending.* A word's first build (or hardest check) is in the lesson that teaches it (ສະບາຍດີ and
       ຫິວ were first built in lesson 9). Long words (3+ syllables) get "find the missing piece" before a full build.
       **Done when:** `session_test.mjs` asserts no first build outside the word's own lesson and long words get a
       missing-piece question.

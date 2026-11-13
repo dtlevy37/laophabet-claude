@@ -27,6 +27,9 @@
 // a found piece goes to its own slot, and Check before complete is a wrong, early answer; in lesson 9 ສະບາຍດີບໍ່? is
 // also right for ເຈົ້າສະບາຍດີບໍ່? (S000000007, needs bundles dumped after the l1c_sentence_alternates migration) while
 // ເຈົ້າຫິວເຂົ້າບໍ່? and ລາວຫິວເຂົ້າ need their pronoun; "Your answer" / "Right answer" alignment cases.
+// L1e: a word's first build is in the lesson that teaches it (a recycled word is built only when its own lesson
+// builds it for every seed), and a new long word (3+ syllables) gets find the missing piece before its full build;
+// find the missing piece is one pick (right completes the word, wrong ends it) and its options are real units.
 // Plans use the dry-run levels (a learner who has done the lessons before), as #/try/<id> does.
 import { register } from 'node:module'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
@@ -108,7 +111,7 @@ for (const b of bundles) {
   if (!a || strip(a.steps) !== strip(c.steps)) fail('the same seed and missed list gave different plans')
   if (a && a.steps.length !== buildPlan(b, levels, 777, []).steps.length + missed.length) fail('replays not appended')
 
-  console.log('  ' + one.steps.map((s) => `${s.activity}${s.form ? ':' + s.form : ''}(${lao(s)})`).join(' · '))
+  console.log('  ' + one.steps.map((s) => `${s.activity}${s.form ? ':' + s.form : ''}${Number.isInteger(s.missing) ? ':missing' : ''}(${lao(s)})`).join(' · '))
 
   // L1: the same-sound rule, over many seeds. unit id -> stored sound, from the pool and the lesson's own units.
   const sounds = new Map()
@@ -217,7 +220,7 @@ for (const b of bundles) {
 
   // L1c (a, b, e) on every build the word of the lesson's plan: a wrong tap then every piece is right in the end,
   // with the slip and every tap in detail; a found piece goes to its own slot; Check before complete is wrong.
-  for (const spec of one.steps.filter((s) => s.activity === 'build_word')) {
+  for (const spec of one.steps.filter((s) => s.activity === 'build_word' && !Number.isInteger(s.missing))) {
     const w = lao(spec)
     const pieceTile = (st, n) =>
       spec.tiles.findIndex((tl, ti) => tl.lao === spec.pieces[n].lao && !st.placed.includes(ti))
@@ -246,6 +249,36 @@ for (const b of bundles) {
       const [ans] = bwAnswers(spec, st)
       if (ans.correct !== false || !ans.detail.early || ans.detail.pieces.filter((p) => p.found).length !== 1) fail(`${w}: Check before complete is not a wrong, early answer`)
       if (bwTap(spec, st, pieceTile(st, 1)) !== null) fail(`${w}: a tap after Check was taken`)
+    }
+  }
+
+  // L1e: find the missing piece, on every one in the lesson's plans
+  for (let seed = 1; seed <= 20; seed++) {
+    for (const spec of buildPlan(b, levels, seed, []).steps.filter((s) => Number.isInteger(s.missing))) {
+      const w = lao(spec)
+      const want = spec.pieces[spec.missing]
+      const right = spec.tiles.findIndex((tl) => tl.lao === want.lao)
+      const wrong = spec.tiles.findIndex((tl) => tl.lao !== want.lao)
+      if (right < 0 || spec.tiles.length < 3) fail(`${w}: missing piece not among ${spec.tiles.length} tiles`)
+      if (new Set(spec.tiles.map((tl) => tl.lao)).size !== spec.tiles.length) fail(`${w}: missing piece: two tiles with the same Lao`)
+      const letters = new Set(spec.pieces.map((p) => p.lao.replace(/◌/g, '')))
+      if (spec.tiles.some((tl) => tl.lao !== want.lao && letters.has(tl.lao.replace(/◌/g, '')))) fail(`${w}: missing piece: a wrong tile shares a letter with the word`)
+      const units = new Set([...(b.distractors.units || []).map((u) => u.unit_id), ...spec.pieces.map((p) => p.unit_id)])
+      if (spec.tiles.some((tl) => !units.has(tl.unit_id))) fail(`${w}: missing piece: a tile that is not a pool unit`)
+      let st = bwNewState(false)
+      if (bwTap(spec, st, right) !== 'placed') fail(`${w}: the missing piece was not placed`)
+      let [ans] = bwAnswers(spec, st)
+      if (ans.correct !== true || ans.detail.mode !== 'missing' || ans.detail.pieces.length !== 1 || !ans.detail.pieces[0].found
+        || ans.detail.given.length !== spec.pieces.length - 1) fail(`${w}: missing piece right: ${JSON.stringify(ans.detail)}`)
+      st = bwNewState(false)
+      if (bwCheck(spec, st)) fail(`${w}: Check taken in find the missing piece`)
+      if (wrong >= 0) {
+        bwTap(spec, st, wrong)
+        ;[ans] = bwAnswers(spec, st)
+        if (ans.correct !== false || ans.detail.pieces[0].found || !ans.detail.pieces[0].wrong.includes(spec.tiles[wrong].unit_id)) fail(`${w}: a wrong pick is not a wrong answer`)
+        if (bwTap(spec, st, right) !== null) fail(`${w}: a tap after a wrong pick was taken`)
+      }
+      if (!fitDetail(ans.detail).given) fail(`${w}: fitDetail drops given`)
     }
   }
 
@@ -301,6 +334,44 @@ for (const b of bundles) {
   if (keys(['ລາວ', 'ເຂົ້າ'])) fail('pair note shown without ຫິວ in the answer')
   const thirsty = [w('ລາວ', 'W000031', 1), w('ຫິວ', 'W000072', 2), w('ນ້ຳ', 'W000011', 3)]
   if (keys(['ລາວ', 'ຫິວ'], thirsty)) fail('pair note shown for ຫິວນ້ຳ (the answer has no ເຂົ້າ after ຫິວ)')
+}
+
+// L1e: a word's first build is in the lesson that teaches it; long words get find the missing piece first.
+{
+  const intro = new Map() // word id -> the bundle that teaches it (role new or bonus)
+  for (const b of bundles) for (const it of b.items) if (it.item_type === 'word' && it.role !== 'recycle') intro.set(it.item_id, b)
+  const fullBuild = (s) => s.activity === 'build_word' && !Number.isInteger(s.missing)
+  // a card can stand for two words (ລາວ he/she and Lao): a step on it counts for each
+  const shows = (s, id) => s.item.item_id === id || (s.item.shown || []).some((x) => x.item_id === id)
+  const builtInOwn = new Map() // word id -> built in its own lesson for every seed
+  const ownBuilds = (id) => {
+    if (builtInOwn.has(id)) return builtInOwn.get(id)
+    const b = intro.get(id)
+    let ok = !!b
+    for (let seed = 1; ok && seed <= 50; seed++) ok = buildPlan(b, dryLevels(b), seed, []).steps.some((s) => fullBuild(s) && shows(s, id))
+    builtInOwn.set(id, ok)
+    return ok
+  }
+  let longWords = 0
+  for (const b of bundles) {
+    const levels = dryLevels(b)
+    for (let seed = 1; seed <= 50; seed++) {
+      const steps = buildPlan(b, levels, seed, []).steps
+      for (const s of steps.filter(fullBuild)) {
+        const it = b.items.find((x) => x.item_type === 'word' && x.item_id === s.item.item_id)
+        if (it?.role === 'recycle' && !ownBuilds(it.item_id)) fail(`L1e: ${lao(s)} first built in ${b.lesson.lesson_id}, not in its own lesson ${intro.get(it.item_id)?.lesson.lesson_id ?? '(no bundle)'}`)
+      }
+      for (const it of b.items.filter((x) => x.item_type === 'word' && x.role === 'new')) {
+        const build = steps.findIndex((s) => fullBuild(s) && shows(s, it.item_id))
+        if (build < 0 && activities.build_word.build({ ...it, shown: [] }, b.distractors, () => 0.5)) fail(`L1e: new word ${it.detail.lao} is not built in ${b.lesson.lesson_id}`)
+        if ((it.detail?.syllables || []).length < 3) continue
+        if (seed === 1) longWords++
+        const miss = steps.findIndex((s) => Number.isInteger(s.missing) && shows(s, it.item_id))
+        if (miss < 0 || build < 0 || miss > build) fail(`L1e: long word ${it.detail.lao} in ${b.lesson.lesson_id}: missing piece at ${miss}, full build at ${build}`)
+      }
+    }
+  }
+  if (!longWords) fail('L1e: no long new word in the bundles (expected ສະບາຍດີ in L0008)')
 }
 
 console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')

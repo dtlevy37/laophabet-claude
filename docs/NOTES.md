@@ -18,7 +18,8 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-Owner browser check of L1c/L1d/L1b(a) (all pushed 2026-11-13). Then L1e, A7 steps 0–5, L3, A7 steps 6–10, L4, L5.
+A7 step 0 (`docs/A7_PLAN.md`), then A7 steps 1–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+and L1e are pending (list below).
 
 ## Waiting on the owner
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
@@ -32,13 +33,16 @@ Owner browser check of L1c/L1d/L1b(a) (all pushed 2026-11-13). Then L1e, A7 step
    Your answer / Right answer, "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line.
    Decide: fold R03 into the ເ◌ົາ card?
    Missed-ເຂົ້າ note: on `#/try/L0009` build ລາວຫິວເຂົ້າ as ລາວ ຫິວ, Check: "“Hungry” needs ເຂົ້າ after it: ຫິວເຂົ້າ".
-7. S10r: bigger record button and the "common name or nickname" prompt (built, untested).
+7. L1e (`#/try/L0008`): in the closing block every new word is built; ສະບາຍດີ (sabaidee, hello) first gets
+   "Find the missing piece of the word" (one tap decides), later the full build. Lessons 6 and 7 now drop some
+   sound → letter closing questions (the kept builds fill the 8 places): fine, or raise the cap?
+8. S10r: bigger record button and the "common name or nickname" prompt (built, untested).
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
 ## Decisions in force
 - One curriculum lesson = one app lesson; the planner (`js/session.js`) builds the screens. Card, check, next card;
-  a closing mixed block; missed questions replayed until right once. Completed = reached the end, no pass mark;
+  a closing mixed block (every new word built there, L1e; long words get find the missing piece first); missed questions replayed until right once. Completed = reached the end, no pass mark;
   summary accuracy counts first tries. A check after a card is recognition (level 2). Repetition is intended.
 - A done lesson links to "Review lesson material": read-only cards. Resume is same-device only. No offline.
 - Fill in the blank offers exactly one logical choice (DESIGN). A new sentence is also blanked in its own lesson.
@@ -64,7 +68,7 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   `advance`/`again(spec)`, summary and keyboard. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`;
   re-dump them after any lesson merge).
 - `js/activities/`: `multiple_choice.js` (null when it cannot fill 3 options), `build_sentence.js`, `fill_blank.js`,
-  `build_word.js` (pieces from `units`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
+  `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
 - `js/learn.js` lesson list and reader. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from
