@@ -76,8 +76,9 @@ owner's check or answer comes in.
       "More", open in the ⓘ sheet; the ◌ note on the first 3 build-the-word questions with a ◌ tile); step 6 decided by the owner (`A7_PLAN.md`
       "Step 6 decided"); step 7 (Look: Lao blue + red is the default palette, Colours choice Lao / Indigo + saffron /
       Teal + gold via `html[data-palette]`, theme and palette set in index.html's head before the first paint, solid
-      Bonus and Culture badges with a reduced-motion-safe pop, brand dot, streak in the warm colour). Next: step 8,
-      the navigation shell.
+      Bonus and Culture badges with a reduced-motion-safe pop, brand dot, streak in the warm colour); step 8 (model B,
+      no tab bar: home = Continue card + tiles; Lessons (`#/lessons`, the path, "5 of 11 done") and Write live; Review,
+      Letters and sounds, My words, Notes greyed "Soon", not focusable). Next: step 9, thumb zone + inline words.
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and

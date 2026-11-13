@@ -1,6 +1,7 @@
-// A7 browser check: screenshots of the settings page, lesson 1's intro card and the lesson chrome at 375 and 1280
-// wide, light and dark, plus a few assertions (Back from settings, the theme choice beats the device setting, the
-// intro card's sound-spelling choice rewrites "Sounds like", the ກ card has no radios, the header in lessons).
+// A7 browser check: screenshots of home, the Lessons page, the settings page, lesson 1's intro card and the lesson
+// chrome at 375 and 1280 wide, light and dark, plus a few assertions (home's tiles, greyed tiles not focusable,
+// Lessons → Back, Back from settings, the theme choice beats the device setting, the intro card's sound-spelling
+// choice rewrites "Sounds like", the ກ card has no radios, the header in lessons).
 // Dark shots run with the device in light mode and Settings on Dark, so they also prove the choice wins.
 // Setup: as a3_play_lesson.js (playwright in tmp/tools/pw, app/frontend served on :5500, scripts/local_test_user.sh).
 // Run: NODE_PATH=tmp/tools/pw/node_modules node scripts/browser/a7_shots.js a1smoke@test.local smoke-test-pass-1
@@ -43,6 +44,22 @@ async function setTheme(page, theme) {
       await shot('home', false)
       const topbarH = await page.locator('#topbar header').evaluate((e) => e.getBoundingClientRect().height).catch(() => 0)
       check(`${width} ${mode} topbar height`, topbarH > 0 && topbarH <= 64, `${Math.round(topbarH)}px`)
+      // A7 step 8: the tiles (Lessons and Write live, 4 greyed), the columns, Lessons → #/lessons → Back
+      const live = await page.locator('.tiles a.tile').evaluateAll((as) => as.map((a) => a.getAttribute('href')))
+      check(`${width} ${mode} live tiles`, live.join(' ') === '#/lessons #/write', live.join(' '))
+      const status = (await page.locator('.tiles a.tile[href="#/lessons"] .tile-sub').textContent().catch(() => '')) || ''
+      check(`${width} ${mode} Lessons tile status`, /^\d+ of \d+ done$/.test(status.trim()), status)
+      const cols = await page.locator('.tiles').evaluate((e) => getComputedStyle(e).gridTemplateColumns.split(' ').length)
+      check(`${width} ${mode} tile columns`, width < 500 ? cols === 2 : cols === 3, `${cols}`)
+      await page.locator('.tiles a.tile[href="#/lessons"]').click()
+      await page.waitForSelector('.path')
+      await page.waitForTimeout(300)
+      await shot('lessons')
+      check(`${width} ${mode} Lessons page focuses its h1`, await page.evaluate(() => document.activeElement?.tagName === 'H1'))
+      check(`${width} ${mode} header shown on Lessons`, await page.locator('#topbar header').isVisible())
+      await page.locator('main .page-head button').click()
+      await page.waitForSelector('.tiles')
+      check(`${width} ${mode} Lessons Back returns home`, (await page.evaluate(() => location.hash)) === '#/')
       // settings: open from the header, scroll, Back
       await page.locator('#topbar a[href="#/settings"]').click()
       await page.waitForSelector('.settings-page')
@@ -118,9 +135,29 @@ async function setTheme(page, theme) {
     await page.waitForSelector('.continue-card')
     await page.waitForTimeout(500)
     await page.screenshot({ path: `${OUT}/home_375x700_${mode}.png` })
-    const done = await page.locator('.path-row.done').count()
+    const status = (await page.locator('.tiles a.tile[href="#/lessons"] .tile-sub').textContent()).trim()
     const height = await page.evaluate(() => document.documentElement.scrollHeight)
-    check(`home ${mode}: ${done} done lessons in one 375×700 screen`, height <= 700, `${height}px`)
+    check(`home ${mode}: tiles present`, (await page.locator('.tiles .tile').count()) === 6)
+    check(`home ${mode} (${status}) in one 375×700 screen`, height <= 700, `${height}px`)
+    // greyed tiles: aria-disabled, not links, never reached by Tab
+    const soon = page.locator('.tiles .tile.soon')
+    const soonOk = await soon.evaluateAll((els) => els.length === 4 && els.every((e) => e.getAttribute('aria-disabled') === 'true' && !e.hasAttribute('href') && e.tabIndex < 0))
+    check(`home ${mode}: 4 greyed tiles, aria-disabled, not focusable`, soonOk)
+    const reached = []
+    await page.evaluate(() => document.activeElement?.blur())
+    for (let i = 0; i < 20; i++) {
+      await page.keyboard.press('Tab')
+      reached.push(await page.evaluate(() => (document.activeElement?.closest('.tile.soon') ? 'SOON' : document.activeElement?.getAttribute('href') || document.activeElement?.tagName)))
+    }
+    check(`home ${mode}: Tab never reaches a greyed tile`, !reached.includes('SOON') && reached.includes('#/lessons'), [...new Set(reached)].join(' '))
+    // a direct #/lessons (a reload): Back goes home by hash
+    await page.goto(BASE + '#/lessons')
+    await page.reload()
+    await page.waitForSelector('.path')
+    await page.screenshot({ path: `${OUT}/lessons_375x700_${mode}.png` })
+    await page.locator('main .page-head button').click()
+    await page.waitForSelector('.continue-card')
+    check(`direct #/lessons ${mode}: Back goes home`, (await page.evaluate(() => location.hash)) === '#/')
     if (mode === 'light') {
       // a lesson left part-way shows as Continue (the resume record), also after a reload
       const href = await page.locator('.continue-card a.btn').getAttribute('href')
@@ -135,7 +172,16 @@ async function setTheme(page, theme) {
       await page.waitForSelector('.continue-card')
       await page.waitForTimeout(300)
       const label = (await page.locator('.continue-card a.btn').textContent()).trim()
+      const top = (await page.locator('.continue-card .continue-label').textContent()).trim()
       check('home: a lesson left part-way shows Continue', label === 'Continue', label)
+      check('home: ... and "in progress"', /in progress/i.test(top), top)
+      check('home: the Continue card is above the tiles', await page.evaluate(() => !!(document.querySelector('.continue-card').compareDocumentPosition(document.querySelector('.tiles')) & Node.DOCUMENT_POSITION_FOLLOWING)))
+      await page.locator('.tiles a.tile[href="#/lessons"]').click()
+      await page.waitForSelector('.path')
+      check('lessons: the lesson left part-way is the current row', (await page.locator('.path-row.current a.path-link').getAttribute('href')) === href)
+      await page.screenshot({ path: `${OUT}/lessons_continue_375x700.png` })
+      await page.goBack()
+      await page.waitForSelector('.continue-card')
       await page.screenshot({ path: `${OUT}/home_continue_375x700.png` })
     }
     await page.close()

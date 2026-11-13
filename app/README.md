@@ -138,8 +138,8 @@ frontend/
   js/review.js           native: the review screen
   js/recorder.js         microphone recording (raw takes)
   js/record.js           native: recording mode (#/record); app.js has the native home (#/, #/record, #/review)
-  js/learn.js            learner routes: #/ home (home.js: Continue card, compact path), #/read/L0001 read-only cards,
-                         #/settings (settings.js showSettings), #/write
+  js/learn.js            learner routes: #/ home (home.js: Continue card, section tiles), #/lessons (lessons.js:
+                         the compact path), #/read/L0001 read-only cards, #/settings (settings.js showSettings), #/write
   js/session.js          #/lesson/L0001: planner + runner of a lesson session; same-day resume
                          (localStorage record); #/try/L0001 dry run (nothing recorded)
   js/summary.js          the session's end screens (summary, dry-run end, failures)

@@ -2,6 +2,23 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 8: home tiles and Lessons page
+- Navigation model B (owner, step 6), no tab bar. Home (`#/`) is the Continue card, then a grid of section tiles
+  (2 columns on a phone, 3 from 560px): Lessons (`#/lessons`, status "{done} of {total} done" counted from the
+  `list_lessons` rows) and Write (`#/write`) are links; Review, Letters and sounds, My words and Notes are greyed
+  (dashed, muted, "Soon" written out), `role=link` + `aria-disabled`, no href, not focusable. (`home.js`,
+  `styles.css`)
+- New `js/lessons.js`: the `#/lessons` page holds the compact path moved from home (done ✓ + Review, open lessons,
+  the next 2 locked, the rest folded), with ← Back like Settings (history.back when opened from home, else `#/`)
+  and the h1 focused. The lesson to pick up is now listed and outlined (`aria-current`), since there is no Continue
+  card on this page. `nextLesson()` is shared with home's Continue card. Route in `learn.js`. (`lessons.js`,
+  `learn.js`)
+- Strings: `home_lessons_status`, `home_sections`, `home_soon`, `home_tile_*`, `lessons_back` (English only);
+  `home_all_done` now points to Lessons. Unused `.write-entry` and `.path-title` styles removed.
+- Tests: `scripts/browser/a7_shots.js` checks the tiles, the Lessons tile status, 2/3 columns, greyed tiles not
+  reached by Tab, Lessons → Back (from home and direct), "in progress" on Continue, the current row on `#/lessons`;
+  shots `home_*` and `lessons_*` at 375/1280 light and dark and 375×700.
+
 ## 2026-11-13 A7 step 7: Lao palette, colour themes, badges
 - Palette: Lao blue + red (the owner's step 6 choice) is the default, light and dark, from the step 6 mockup tokens;
   the old blue is gone. New tokens `--warm` (brand red) and `--on-warm`; the warm colour is only for the brand dot

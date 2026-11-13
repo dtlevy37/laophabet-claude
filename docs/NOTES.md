@@ -18,8 +18,8 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 8, the navigation shell (`docs/A7_PLAN.md`; steps 0–7 built 2026-11-13, step 6 decided in "Step 6
-decided"), L3, A7 steps 9–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 9, thumb zone + inline sentence words (`docs/A7_PLAN.md`; steps 0–8 built 2026-11-13, step 6 decided in
+"Step 6 decided"), L3, A7 step 10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
@@ -44,10 +44,8 @@ and L1e are pending (list below).
    end of Settings (Account). In a lesson (`#/lesson/…`, `#/try/…`) there is no header: ✕ top left (Leave dialog),
    progress bar, "1 / 34" counter; Esc still asks to leave. Natives' recording header is unchanged (untested).
 11. A7 step 3 home (phone): a Continue card (next lesson, or "Lesson n · in progress" with Continue after leaving
-   a lesson part-way today), done lessons one line each with ✓ and Review, the next 2 locked, "{n} more lessons"
-   folded, Practice writing letters. With 5 done it fits one phone screen. Decide: the lesson on the Continue card is
-   not repeated in the path (so the list goes 5, 7, 8); and the old "Letters / Words" lines under done lessons are
-   gone from home.
+   a lesson part-way today). The path itself moved to `#/lessons` in step 8 (item 15); the old "Letters / Words"
+   lines under done lessons are gone.
 12. A7 step 4: finish `#/lesson/L0001`: the summary says "Lao words read (with repeats)" and has Back home and
    Next lesson (blue, right); Next lesson opens lesson 2, and so does Enter (it has the focus). Home's Continue
    card picks the lesson left most recently, a lesson not done before a done one played again.
@@ -61,6 +59,12 @@ and L1e are pending (list below).
    green ✓ / red ✗ in every colour theme. `#/read/L0007/14` (ດາວ, daao, "star"): a solid "★ Bonus word" badge that
    pops in; `#/read/L0002/5` (ເຂົ້າ, khao, "rice"): a solid "✦ Culture" badge. With
    "reduce motion" on in the device, the badges just appear.
+15. A7 step 8 (phone and desktop, light and dark): home `#/` is the Continue card, then 6 tiles (2 columns on a
+   phone, 3 on desktop): Lessons ("n of 11 done") and Write are live; Review, Letters and sounds, My words and Notes
+   are greyed with "Soon", do nothing on tap and are skipped by Tab. Lessons opens `#/lessons`: the path (done ✓ +
+   Review, the lesson to play now outlined, the next 2 locked, the rest folded); ← Back returns home. Leave a lesson
+   part-way: home says "Lesson n · in progress" / Continue, and that lesson is outlined on `#/lessons`. Decide: tile
+   order and wording.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
@@ -97,7 +101,9 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, recognition, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
-- `js/home.js` home (#/): Continue card (`session.js` `resumableLesson`) and the compact path.
+- `js/home.js` home (#/): Continue card and the section tiles (live: Lessons, Write; the rest greyed "Soon").
+  `js/lessons.js` `#/lessons`: the compact path, `nextLesson()` (`session.js` `resumableLesson`; shared with home).
+  Browser check of both: `scripts/browser/a7_shots.js`.
 - `js/learn.js` reader, `#/settings` route (Back = history.back when opened from the app).
   Theme: `settings.js` `theme` sets `html[data-theme]`; `styles.css` has the dark tokens twice (device dark unless
   `light`, and `[data-theme='dark']`): change both. Browser check: `scripts/browser/a7_shots.js`. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from

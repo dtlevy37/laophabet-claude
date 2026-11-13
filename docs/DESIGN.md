@@ -310,6 +310,11 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   / Light / Dark). Both are remembered per browser and set in index.html's `<head>` before the first paint. Every
   text token is at least 4.5:1 on the page and card backgrounds. Bonus and Culture badges are solid pills (accent
   and warm) with a mark (★, ✦) and a one-time pop that is off under reduced motion.
+- **Home and navigation** (owner 2026-11-13, A7 step 6, model B; built in step 8). No tab bar. Home is the
+  "Next lesson" / Continue card, then a grid of section tiles (2 columns on a phone, 3 on wider screens): **Lessons**
+  (`#/lessons`, the lesson path with Back to home; its tile says "5 of 11 done", counted from `list_lessons`) and
+  **Write** are live; **Review**, **Letters and sounds**, **My words** and **Notes** are greyed with "Soon" (not links,
+  not focusable) until built. The slim header shows on home and these pages and is hidden in lessons.
 - **"Read more" links** under "More": Wikipedia pages for the terms used there (aspiration, vowel length, tones,
   IPA for Lao, the Lao script). They open in a new tab.
 - Internal IDs (L0001, W000018) are never shown to learners. A lesson is "Lesson 1" at most (user, 2026-11-09).
