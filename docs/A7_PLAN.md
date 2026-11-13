@@ -57,3 +57,29 @@ early; stats come from the DB (S8 `learner_stats()` not built); A8/A9 come after
 Contract notes: nav and ✕ belong to the runner, never to an activity; activities do not know lesson vs practice;
 inline words must not show a popover on the gap/answer before Check; new strings in `strings.json` (`lo` for
 native screens); mockups stay in `tmp/`.
+
+## Step 6 choices (mockups built 2026-11-13; waiting on the owner)
+Open `tmp/mockups/a7/index.html` (static pages on the real `styles.css`; real Lao from lessons 1–11; home numbers are
+marked "Sample"). Screenshots: `tmp/mockups/a7/shots/*.png`; re-render with
+`NODE_PATH=tmp/tools/pw/node_modules node tmp/mockups/a7/shoot.js`. Recommendations are the agent's; the owner decides.
+1. **Navigation:** A = bottom tab bar (Learn · Practice · Write · Me; top bar on desktop) vs B = slim header + home
+   tiles; both hide all navigation in a lesson. Shots `nav_{a,b}_{home_375,lesson_375,home_1280}`.
+   **Recommend B:** only Learn and Write exist today, so tabs would lead to thin pages, and a fixed bar costs 56px on
+   a 667px phone; switch to A when Practice (S8b) and A8–A10 exist.
+2. **Palette:** today's blue (reference), Lao blue + red, Indigo + saffron, Teal + gold; each light and dark, on a
+   wrong and a right answer and on home. Shots `pal_{current,lao,indigo,teal}_{wrong,right,home}_{light,dark}`.
+   **Recommend Indigo + saffron:** neither its brand colour nor its warm colour can be mistaken for the green "right"
+   or the red "wrong" (Lao red sits next to "wrong"; teal next to "right"); Lao blue is the close second.
+3. **Sentence words:** today's chip row vs underlined words with a popover (word, sound, meaning, ▶, open the card).
+   Shots `words_chips_375`, `words_inline_375`, `words_inline_pop_375`.
+   **Recommend inline + popover:** the Lao sentence stays the main text and the learner taps the word they are
+   reading; the chip row (two lines at 375) goes. Tiles stay in build the sentence.
+4. **Desktop width at 1920:** the 720px column vs a wide layout (content up to 820px + a 320px rail: lesson progress,
+   words in this lesson, keys; on home: stats and sections). Shots `desk_{column,wide}_{lesson,home}_1920`.
+   **Recommend wide + rail:** the column leaves about 60% of a 1920 screen empty, and the rail shows the lesson's
+   words without scrolling; options and feedback stay at 600px so lines do not stretch.
+
+Also shown: **home tiles** greyed "soon" vs hidden (`home_{greyed,hidden}_375`): recommend **hidden until built**
+(no dead taps, home stays one screen); **thumb zone** today vs options in the lower half at 375×667 and 375×812
+(`thumb_{current,lower}_{idle,wrong}_{667,812}`): recommend **lower half** (options in thumb reach, the prompt stays
+on top, the answered state still fits at 667).

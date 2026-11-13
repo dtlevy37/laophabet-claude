@@ -23,6 +23,8 @@ L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
+**A7 step 6 choices:** open `tmp/mockups/a7/index.html` and pick navigation, palette, sentence words and desktop
+width (plus home tiles and thumb zone); options and recommendations in `docs/A7_PLAN.md` "Step 6 choices".
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
 1. Phone: `#/read/L0001` ກ card "Hear it in a word" ກິນ (gin, "eat").
 2. Phone width: `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.
