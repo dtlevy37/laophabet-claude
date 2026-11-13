@@ -81,6 +81,15 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
+0. **Owner's play-test notes 2026-11-12 → PLAN slices A1–A9** (order agreed). A1 pushed to hosted 2026-11-13; waiting
+   for the owner's test on the deployed site, then tick it and go on to A2. A4 research done:
+   `tmp/a4_sounds_like_audit.md` (asks which English accent the owner speaks). New native takes later: `python
+   scripts/audio_publish.py fetch|process|upload --linked|migration` (push the migration after the upload, the bucket exists now).
+   Tools (git-ignored): ffmpeg in `tmp/tools/ffmpeg-*/bin`, Playwright in `tmp/tools/pw` (npm i playwright@1.56.1).
+   Local test learner: `bash scripts/local_test_user.sh` (a1smoke@test.local / smoke-test-pass-1); browser smoke
+   test `scripts/browser/a1_smoke.js` (header has the setup). Local DB: the CLI wrote `supabase/.temp/postgres-version` = 17 when
+   linking; it was moved to `postgres-version.hosted` so local starts on 15 again (data is 15).
+   Owner idea (2026-11-13): have a native record ~5 takes first and check the level before a long session.
 0. **S10r wife's first-session feedback** (owner, 2026-11-12; not yet built, nothing else reported):
    (a) DONE, untested: record button bigger (`.rec-big`, full width, 64px; start and stop; shared with review.js).
    (b) Open, owner wants short steps: as many questions per screen as fit comfortably, no scrollbar where possible.

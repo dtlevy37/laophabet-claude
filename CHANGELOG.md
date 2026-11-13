@@ -2,6 +2,20 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 (A1 lesson audio; plan A1–A9)
+- Owner's play-test notes turned into PLAN slices A1–A9 (order agreed).
+- A1: the 67 takes by the owner's wife (verified native, credit "Na") are lesson audio. `scripts/audio_publish.py`
+  trims silence and applies a linear gain toward −18 LUFS (no compression; takes were about −44 LUFS), MP3 96 kb/s,
+  uploads them to the public bucket `audio` and writes the `item_audio` migration. Schema migration
+  `20261113020000_a1_lesson_audio.sql`: `item_audio`, `get_item_audio`, `learner_reports`, `report_content`.
+  Content migration `20261113032217_lesson_audio.sql`. Both pushed to hosted; the files are uploaded.
+- Frontend: bundles carry `audio_url`; play + ⚑ report chips (shared player); autoplay once on new word/sentence
+  cards (setting); "Voice: Na" credit on cards.
+- Tests: `app/backend/tests/a1_audio_test.sql` (local, passed); `scripts/browser/a1_smoke.js` (Playwright, local,
+  passed); `scripts/local_test_user.sh` recreates the local test learner.
+- Local Supabase: `.temp/postgres-version` (17, written by `link`) moved aside so local starts on Postgres 15.
+- A4 research report in `tmp/a4_sounds_like_audit.md` (not applied).
+
 ## 2026-11-12 (hosted 403 fix)
 - After sign-up the hosted site returned 403: the new hosted project grants no select/insert/update on public
   tables to `authenticated` by default (local does). Migration `20261113010000_explicit_table_grants.sql` grants
