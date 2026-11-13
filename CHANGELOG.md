@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 R03 as a lead-in (owner)
+- R03 "Written first, said second" moved before V35 ເ◌ົາ in L0002 and reworded as a lead-in; vowel cards
+  V04 V03 V05 V21 V01 V35 keep a short reminder only. Migrations `20261113195331_lesson_l0002`, `20261113195332_vowel_cards_short_reminder`
+  (local). New slice A10 Notes section.
+
 ## 2026-11-13 L1c, L1d, L1b(a) built (subagents)
 - L1c: build the word slot board, Check early, slips stay green (kept in detail), compare view (`compare.js`),
   pronoun-drop alternates via `sentence_json.alternates` (migration `20261113190300`, test `tests/l1c_sentence_alternates_test.sql`).

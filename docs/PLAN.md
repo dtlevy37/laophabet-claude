@@ -67,6 +67,12 @@ owner's check or answer comes in.
       Review, Letters and sounds, My words, Write; stats on home (absorbs S8); dark mode with a System/Light/Dark
       switch (step 1); Culture/Bonus badges with more oomph (step 7). Also: where ▶ / ⚑ sit; topbar wrapping at
       narrow widths and 200% zoom.
+- [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
+      (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
+      Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
+      `word_notes` by intro lesson vs the learner's progress). Principle: the app teaches; explanations are short but
+      informative and come before the thing they explain. **Done when:** a learner with lessons 1–9 done sees R03,
+      R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
 - [ ] **A8 Letters and sounds.** Every taught symbol with card info, examples from known words, audio; links into
       writing practice; vowels join writing practice.
 - [ ] **A9 My words.** Every word seen, with card info and personal stats; needs a per-item stats RPC. Leads into S8b.

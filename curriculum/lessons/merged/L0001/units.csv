@@ -1,4 +1,4 @@
 unit_id,teach_en,notes
 C01,"ກ is a consonant. At the start of a syllable it is an unaspirated k, said with no puff of air, so English ears often hear a g (as in 'gas').",From letters.csv C01 pron_tip (verified); wording by agent.
-V04,"A short 'ee', tighter than the i in 'bin'. Written above the consonant, but said after it. A vowel is one unit, wherever its parts sit, and the consonant it goes with is always said first.",From vowels.csv V04 pron_tip (verified); wording by agent.
+V04,"A short 'ee', tighter than the i in 'bin'. Written above the consonant, but said after it.",From vowels.csv V04 pron_tip (verified); wording by agent. Owner 2026-11-13: consonant-first line moved to the R03 lead-in card; unit card keeps a short reminder.
 C13f,"ນ at the end of a syllable is n, as in 'sun'. (At the start of a syllable it is also n, as in 'no'.)",From letters.csv C13 (ipa_final n; verified); wording by agent.

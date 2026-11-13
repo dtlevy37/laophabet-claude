@@ -44,7 +44,7 @@ early; stats come from the DB (S8 `learner_stats()` not built); A8/A9 come after
 5. **Audio hierarchy + build-the-word how-to** (keep `.audio-btn`). Done when no ⚑ on a card face, reports still
    work from ⓘ, Space still plays.
 6. **Mockup gate (no app change):** static `tmp/mockups/a7/*.html` using the real `styles.css`: home (Continue,
-   dummy stats marked as such, path, tiles greyed vs hidden), navigation A vs B (home + in-lesson), 2–3 palettes
+   dummy stats marked as such, path, tiles greyed vs hidden; tiles include Notes, A10), navigation A vs B (home + in-lesson), 2–3 palettes
    light/dark on a multiple-choice screen (right/wrong states), thumb zone current vs lower-half (375×667/812),
    sentence words chips vs inline popover, desktop 720 column vs wide + side rail at 1920. Done when the owner
    picks navigation, palette, sentence words and desktop width (recorded in DESIGN).
