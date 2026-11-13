@@ -3,6 +3,7 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-13 (owner answers)
+- A3 agreed (weak evidence: log only); summary added to DESIGN "Stats capture (A3)"; PLAN A3 ticked.
 - Lesson primary button on the right (thumb reach). A3 answers 2–4 recorded (as built); A6 proposal point 4 changed:
   keep repetition, streamline the UX. A4: owner accent Midwest US.
 

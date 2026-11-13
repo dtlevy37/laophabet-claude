@@ -47,14 +47,14 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
       one tile and the reading-order line; the rule note on screen is untested. Owner browser test pending.
       2026-11-13 night: review fixes done (Lao spans in rule notes via `tParts`, tone-mark logging, rule 1 nouns
       only, "usually" for ແລ້ວ, rule claims in QUESTIONS).)
-- [ ] **A3 Stats capture audit** (before more people play: data not logged now is lost). `review_log` has item,
+- [x] **A3 Stats capture audit** (before more people play: data not logged now is lost). `review_log` has item,
       activity, direction, first-try correct, latency, level. Add what SRS and "weakest items" need: the answer
       chosen and the options shown (confusion pairs, e.g. ດ vs ບ), replay vs first ask, audio played, hint used,
       and per-piece results for build the word (letter-level credit). **Done when:** a design note in DESIGN is
       agreed and the migration logs it. (2026-11-13: draft in `docs/A3_STATS_DESIGN.md`, 4 owner questions.
       Night of 2026-11-13: BUILT LOCALLY on the proposed answers, not pushed: `20261113060000_a3_stats_capture.sql`,
       `tests/a3_stats_capture_test.sql`, new `set_session_client` RPC; new frontend is safe against the old hosted
-      RPC (tested). Waits for the owner's answers, then `supabase db push --linked`.)
+      RPC (tested). Owner agreed 2026-11-13 (weak evidence: log only); summary in DESIGN. Hosted push pending.)
 - [ ] **A4 "Sounds like" review.** Audit every unit card text and word pron_tip against IPA, for US, UK and
       Australian ears; prefer two anchors plus a warning ("not the a in 'cat' for most Americans"); mark doubtful
       ones in QUESTIONS for the owner's wife. (2026-11-13: audit done, `docs/A4_SOUNDS_LIKE_AUDIT.md`.) Known bad: ແ◌ (ɛː) "a in 'cat'" → nearer "eh" held long, mouth open

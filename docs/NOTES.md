@@ -82,7 +82,7 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
    - A1 DONE. A2: review fixes done; owner browser test still pending (steps: `#/try/L0007`, put ຂໍ ນີ້ ນ້ຳ ແນ່
      (khor nee nam nae) → the "Lao word order" note, its Lao now in the Lao font; build the word any order → "Read in
      this order"; Settings → "Spelling challenge"). Tests: `node scripts/grammar_test.mjs`.
-   - Owner 2026-11-13: A3 answers 2–4 agreed as built; Q1 explained, awaiting a reply. Primary lesson button moved
+   - Owner 2026-11-13: A3 agreed as built (all 4 answers; Q1 = log only), moved into DESIGN. Primary lesson button moved
      to the right (done). Repetition in lessons is intended: do not cut it, streamline the UX instead.
    - A3 BUILT LOCALLY on the proposed answers to the 4 questions in `docs/A3_STATS_DESIGN.md` §7 (log only for weak
      evidence; no "left" row; writing not logged; letter credit only for weakest/FSRS). Ask the owner; then push.

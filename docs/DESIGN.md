@@ -265,6 +265,19 @@ every number from `review_log`, `learner_items` and sessions, and RPCs return th
   - new items learned (lessons), items that moved up a level, and the streak including today.
   - One encouraging line chosen by thresholds. Never shaming: a low score gets "these will come back soon" framing.
 
+### Stats capture (A3, agreed with the owner 2026-11-13)
+Full note: `docs/A3_STATS_DESIGN.md` (schema, payload per activity, RPC contract, queries). In short: every
+`review_log` row carries `attempt` (0 = first ask, n = nth replay), `question_id` (rows of one question share it),
+`role` (primary, pair, part, context) and `detail` (options shown, answer chosen, tiles, per-piece taps, build-the-word
+mode, audio and info taps; ≤ 2 KB). The server computes `known_options` (wrong options shown that the learner already
+had at level ≥ 1). Sessions store time zone, app version and settings (`set_session_client`). Decisions:
+- Weak evidence (`known_options = 0`, e.g. the only readable option was the answer): logged only; the level still
+  rises as before. S9 (FSRS) may weigh it less later.
+- Leaving mid-question logs nothing. Letter writing is not tracked.
+- Letter credit derived from word answers is a signal for weakest items and FSRS, never "letters known": a letter
+  counts as known only after a letter-only question.
+- Analysis filters `role = 'primary'` or groups by `question_id` (secondary rows repeat the question's detail).
+
 ## Presentation
 - Lao script is always the main text. Respelling and IPA can be toggled; respelling fades as the learner advances
   (a setting, default on for the first lessons).

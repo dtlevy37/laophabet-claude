@@ -133,9 +133,9 @@ rows (derived at read time); half-answered questions (Q2); letter writing (Q3); 
 3. Letter writing: not tracked (owner: probably not needed).
 4. Letter credit from word answers: a signal (feeds weakest/FSRS), never "letters known" until a letter-only
    question confirms it. As built.
-1. Weak-evidence answers (`known_options = 0`): still open, explained to the owner 2026-11-13; built as "log only".
+1. Weak-evidence answers (`known_options = 0`): log only (option A), as built. Agreed 2026-11-13; summary in DESIGN "Stats capture (A3)".
 
-**Done when:** this note is agreed (pending); the migration is applied locally (done 2026-11-13); a played lesson 1
+**Done when:** this note is agreed (done 2026-11-13); the migration is applied locally (done 2026-11-13); a played lesson 1
 produces `detail`, `attempt` and `question_id` on every row type (done: browser runs of L0001-L0006 plus a strict-mode L0004
 and a second L0001: 391 rows in 8 sessions, none missing); an old-shape batch is still accepted (done: test section 2).
 
