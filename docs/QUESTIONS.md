@@ -1,137 +1,75 @@
 # Questions
 
-Doubts only a person can settle. The agent appends; the owner clears what is handled. Older word-list review items
-(batches c1–c6, classifiers, tone-source disagreements) are parked in `_shelf/docs/NEEDS_HUMAN.md`.
+Doubts only a person can settle. The agent appends; the owner clears what is handled (answers go into the data,
+PLAN or DESIGN, then the question is deleted). Parked word-list items: `_shelf/docs/NEEDS_HUMAN.md`.
 
 ## For the owner
-- (nothing open; A4 accent answered: Midwest US, Iowa)
+- A6 proposal (`docs/A6_UX_REVIEW.md` §4): agree it as a whole? Brand colour (deep blue + warm red)? Phone bottom bar
+  with 4 tabs, Practice opening Review until S8b?
+- A7 step plan (`docs/A7_PLAN.md`): agree it?
+- A4: read the changed-rows list (last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
+- L1b: confirm the activity mix (fewer builds in lessons, more in practice).
+- ◌ິ bug: device, browser, Settings → Lao font, and where it showed.
+- S10r: what exactly felt split into two paths in the wife's session?
+- ຂາວ / ລາວ as the first tone pair: in the tone lesson (L3) or a recap card? (Depends on ລາວ being long.)
 
 ## For the native speaker
-- **Wife's answer, 2026-11-12 (context of "this is white")**: ນີ້ຂາວ (*nii khǎao*) is fine when talking about the colour of
-  something like a wall; if you are holding an object you say ນີ້ມັນສີຂາວ (*nii man sǐi khǎao*). Spelling written from the
-  owner's romanization, `unverified`. To do: look through the lesson sentences for this "this is <colour>" pattern and
-  decide whether any need the ມັນສີ form or a context note. She says phrases generally depend on what you want to say.
-- ເຕ້ຍ W001427 "short (in height), low" (owner asked, 2026-11-12; not on Wiktionary): reading tia˥˨ high-falling, and the sentences ລາວເຕ້ຍ S000002899, ພໍ່ເຕ້ຍ S000002900.
-- ເຂົາ (W000160): the owner has only heard it as "they/them", with ລາວ as the everyday "he/she". The gloss was changed
-  from Wiktionary's "he; she; they" to "they; (more formal) he; she". Is that right for Vientiane speech?
-- Composed lesson sentences to confirm: ກິນເຂົ້າ "to eat (a meal)" (S000002870), ລາວກິນເຂົ້າ "He eats. / She eats."
-  (lesson 3), ເຂົາກິນເຂົ້າ "They eat." (S000002871, held for a later lesson).
-- ລາວ "he, she" (W000031) is recorded with a short vowel (law, "lao") and ລາວ "Lao" (W000058) with a long one
-  (laːw, "laao"), per Wiktionary. Is the pronoun really shorter in normal speech? The lesson 3 card shows one
-  respelling ("lao") for both, and the ◌າ card avoids the word "long" because of this.
-  **Being asked 2026-11-12** (the owner's wife). The owner leans to long "laao" by the spelling rules, which would
-  make ຂາວ (kaao, white) / ລາວ (laao, he/she) a pair differing only in first consonant and tone. Ready to apply:
-  `python tmp/laao_change.py` (word row + 166 sentences).
-- Lesson 4 (composed): is ກິນນ້ຳ the everyday way to say "drink water" (versus ດື່ມນ້ຳ)? Is ລາວຂາວ natural for "he/she is
-  fair-skinned"? Would anyone say ເຂົ້າຂາວ for white rice, or only ເຂົ້າຈ້າວ (S000002875, taken out of the lesson)? Is ລາວກິນນ້ຳ natural? Does ◌ຳ in ນ້ຳ sound like the "um" in "hum", and is "nam" a fair spelling of it?
-- Lesson 5 (composed): are ລາວກິນເຂົ້າແລ້ວ "He/She has eaten already" (S000002877) and ລາວກິນນ້ຳແລ້ວ "He/She has had some
-  water already" (S000002878) natural? Is the bare reply ກິນແລ້ວ "I've eaten (already)" (S000000024) natural? Tags to
-  confirm: ແລ້ວ (W000020) as a function word (never blanked), ແກ້ວ (W000218) as an object; in the blank __ ແລ້ວ only
-  nouns (ນ້ຳ, ຂາ, ແກ້ວ) are offered as wrong options: does any of them make a sensible reply? Does ແ in ແລ້ວ sound like the
-  a in "cat", held long?
-- Tone of ເຂົ້າ (low-falling) and ເກົ້າ (high-falling) as stored: do they match Vientiane speech?
-- **ບໍ່ vs ບໍ** (question marker): Wiktionary has only ບໍ່ for both "no" and the question sense; other sources often write
-  the question marker without the tone mark. The data uses ບໍ່ for both. Which is right?
-- Lesson 6 softener: ແນ່ (W001426, nae, newly drafted, IPA by agent) or ແດ່ (W000308, dae): which is everyday Vientiane
-  speech for softening a request, and how is each spelled? Is ຂໍນ້ຳແນ່ "Could I have some water?" (S000002880) /
-  ຂໍເຂົ້າແນ່ "Could I have some rice?" (S000002881) natural?
-- Does bare ຂໍນ້ຳ (khor nam, "water please"; S000000012) sound abrupt without a softener?
-- Is ຫິວເຂົ້າ (hiu khao) the normal way to say "hungry"? (needed in lesson 9)
-- Lesson 6 question word: in ກິນເຂົ້າແລ້ວບໍ່? "Have you eaten yet?" (S000000023), is the question word written ບໍ່ (with
-  the tone mark, as the data has it) or unmarked ບໍ, and is it said differently from ບໍ່ "not"?
-- Lesson 6 (composed): is ລາວບໍ່ກິນເຂົ້າ "He/She doesn't eat" (S000002879) natural?
-- Lesson 6 tags: ບໍ່ (W000003) and ແນ່ (W001426) as function words; ຂໍ (W000009) as a verb with no verb class; ບ້ານ
-  (W000049) as a place.
-- Fill in the blank hazard: ນ້ຳ (Nam) and ແກ້ວ (Kaew) are also common personal names, so they can make sense in any
-  subject slot (ນ້ຳບໍ່ກິນເຂົ້າ "Nam doesn't eat"). They are now excluded in S000002879, S000000023 and S000000024 slot 1.
-  Are there other pool words (ຂາວ, ບ້ານ ...) that are common names or nicknames?
-- Lesson 7 (composed): does ດີແລ້ວ (dee leo, S000002882) mean "That's fine. / That's good." (agreeing, or "good enough,
-  stop")? Is ນ້ຳນີ້ດີ (nam nee dee, "This water is good", S000002883) natural, or would one say ນ້ຳນີ້ແຊບ / ນ້ຳນີ້ສະອາດ?
-  Is ຂໍນ້ຳນີ້ແນ່ (khor nam nee nae, "Could I have this water?", S000002884) natural, or is a classifier needed
-  (ຂໍນ້ຳແກ້ວນີ້ແນ່)? ບໍ່ດີ (bor dee, "Not good", S000000004, existing) as a bare reply.
-- Lesson 7: is ດາວ (dao, star; W000546) also a common personal name (Dao)? It is excluded from subject slots as one.
-  Tags: ດາວ and ດິນ (din, soil; W000550) as objects (ດິນ not place), ນີ້ (nee, this; W000016) as a function word.
-- Lesson 7 tones and lengths: ດີ (dee, good) is stored low-rising (diː˩(˧)); is that how it is said in Vientiane?
-  ດິນ (din, soil) is short and ດາວ (dao, star) long, per Wiktionary: do they sound that way?
-- Lesson 8 conversation: ສະບາຍດີ (sabaidee, "Hello", S000000001) / ສະບາຍດີ / ສະບາຍດີບໍ່? (sabaidee bor?, "How are
-  you?", S000000003) / ສະບາຍດີ (sabaidee, "I'm well", S000002885, composed). Is the bare ສະບາຍດີ the normal reply to
-  ສະບາຍດີບໍ່?, or is ສະບາຍດີ ຂອບໃຈ (sabaidee khop jai, "I'm well, thank you") more usual? Does answering a hello with
-  the same ສະບາຍດີ sound natural? Is ສະບາຍດີບໍ່? natural on its own, or is ເຈົ້າສະບາຍດີບໍ່? (jao sabaidee bor?) expected?
-  Is the question marker here ບໍ່ or ບໍ (see the ບໍ່ vs ບໍ items above)?
-- Lesson 8 sounds: is there an audible catch (glottal stop) at the end of ສະ (sa) in ສະບາຍດີ, as the cut-off card (R01)
-  says, or does it run into the next syllable in normal speech? Does final ຍ in ບາຍ (baai) / ຂາຍ (khaai, sell) sound
-  like the y at the end of "bye"?
-- Lesson 8 tags: ສະບາຍ (W000512) and ສະບາຍດີ (W000001) as qualities (states), ຂາຍ (W000084) as a verb with no verb
-  class. In the one-word blanks for "Hello" / "I'm well", ດີ (dee, good) and ສະບາຍ (sabai, well) are accepted as
-  answers: is either a sensible one-word reply to ສະບາຍດີບໍ່?
-- Lesson 9 (composed): are ລາວຫິວເຂົ້າ (lao hiu khao, "He/She is hungry", S000002886), ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiu khao
-  bor?, "Are you hungry?", S000002887) and the bare reply ບໍ່ຫິວ. (bor hiu, "Not hungry", S000002888) natural, or does
-  the reply need more (ບໍ່ຫິວເທື່ອ, ຂ້ອຍບໍ່ຫິວ)? Is ເຈົ້າຫິວນ້ຳບໍ່? (jao hiu nam bor?, "Are you thirsty?", S000001170,
-  existing) natural?
-- Lesson 9 thirst: is ຫິວນ້ຳ (hiu nam) the everyday Vientiane word for "thirsty", or ຢາກນ້ຳ (yaak nam)? The reply to
-  "Are you thirsty?" is ຫິວນ້ຳ. (hiu nam, "Yes, I'm thirsty", S000002889): would a bare ຫິວ. (hiu) also work as that
-  reply, or does it only ever mean "hungry"?
-- Lesson 9: would anyone say ລາວຫິວກິນ (lao hiu kin, "he's hungry to eat")? ກິນ is kept out of the ຫິວ __ blanks in
-  case it would.
-- Lesson 9 register: is ເຈົ້າ (jao, "you") polite enough with strangers and older people (shop staff, a waiter), or
-  would one say ທ່ານ (thaan) or a kin term (ເອື້ອຍ, ອ້າຍ)? Tag: ເຈົ້າ (W000005) is tagged person|function (it is also the
-  polite "yes"), so it is never a wrong option.
-- Lesson 9 sounds: does ຈ (jor) in ເຈົ້າ / ຈານ sound between the j in "jaw" and the ch in "chew", as the card says?
-- Lesson 10 (composed): is the bare reply ຫິວ. (hiu, "Yes, I'm hungry. / Hungry.", S000002892) natural as the answer to
-  ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiu khao bor?, "Are you hungry?"), or would one say ຫິວເຂົ້າ / ຫິວແລ້ວ / ເຈົ້າ ຫິວ?
-- Lesson 10 (composed): ຂ້ອຍກິນເຂົ້າແລ້ວ (khoy kin khao leo, "I've eaten already", S000002890) is the last line of the
-  conversation, after ບໍ່ຫິວ (bor hiu, "Not hungry"). Is the full form natural there, or would one just say ກິນແລ້ວ
-  (kin leo, "Eaten already")?
-- Lesson 10 (composed): does ລາວນອນແລ້ວ (lao non leo, S000002891) mean "He's asleep already" (now the English), or
-  "He has gone to bed" (which we think is ເຂົ້ານອນແລ້ວ, khao non leo)?
-- Lesson 10 register: ຂ້ອຍ (khoy, "I", W000006) is labelled colloquial on Wiktionary. Is it fine with strangers and
-  older people, or is ຂ້າພະເຈົ້າ / a kin term expected? Also confirm ຂ້ອຍຫິວເຂົ້າ (S000000113) and ຂ້ອຍສະບາຍດີ
-  (S000000008), both existing and unverified.
-- Lesson 10: ນ້ອຍ (noy, "small", W000090) is treated as a common personal name (Noy), so it is kept out of subject and
-  person slots (exclude_word_ids, 38 earlier slots updated). Is that right? Also: ນ້ອຍ is a wrong option in
-  ກິນ __ (kin __) blanks; is "ກິນນ້ອຍ" ever said, or only ກິນໜ້ອຍ (kin noy, "eat a little")? Tags: ຂ້ອຍ person,
-  ນອນ action (no verb class), ນ້ອຍ quality.
-- **Lesson 11 (L0011)**, all composed by the agent: ສີນີ້ຂາວ (sii nee khao, "This colour is white"; S000002893),
-  ສີນີ້ດຳ (sii nee dam, "This colour is black"; S000002894), ສີນີ້ດີ (sii nee dee, "This colour is good"; S000002895;
-  the pool has ສີນີ້ງາມ "beautiful": which is more natural?), ລາວຂາຍເຂົ້າ (lao khaai khao, "She sells rice";
-  S000002896), ແກ້ວນີ້ນ້ອຍ (kaew nee noy, "This glass is small"; S000002898). (1) Asked "what colour?", do people
-  answer with the bare ສີຂາວ (sii khao) or just ຂາວ (khao)? (2) ຂໍແກ້ວນ້ອຍແນ່ (khor kaew noy nae; S000002897): does it
-  mean "Could I have a small glass?", or is it heard as "a little glass(ful)" / something else? (3) ເຂົ້າຂາວ (khao
-  khao, "white rice"; S000002875, not used in any lesson): real, or is plain rice always ເຂົ້າຈ້າວ (khao jaao)?
-  (4) Are ດຳ (Dam) and ຂາວ (Khao) common nicknames? Both are now kept out as wrong options wherever a name could fit
-  (W000539, W000538 in exclude_word_ids). (5) Does ສີ (sii, colour) have an impolite or rude sense to avoid? The agent
-  tagged it with the verb sense "to rub; to mill (rice)" (ສີເຂົ້າ) and ດຳ with "to dive" (ດຳນ້ຳ): right?
-- **Letter writing (`#/write`)**: the stroke paths come from a font, not from a handwriting model. Please check on the
-  screen, letter by letter: (1) does each letter start where a Lao writer starts it (the app starts at the loop;
-  ກ gor starts bottom left; ມ mor starts top left; ອ or starts at the curl bottom left) and run in the right
-  direction? (2) is every consonant really one stroke without lifting the pen? (3) ພ por, ຟ for, ຜ por, ຝ for: is the
-  middle peak drawn up and back down the same line? (4) the shapes are Noto Sans Lao Looped; its ກ gor had two loops,
-  so ກ alone was taken from the plain Noto Sans Lao. Do ຖ tor (loop at the top left) and the others look like
-  normal school handwriting?
-- **Word-order notes (A2, shown when a learner builds a sentence in the wrong order)**: the app tells the learner
-  these rules. Are they right as stated, and is any of them misleading? (1) A describing word comes after the thing:
-  ນ້ຳນີ້ (nam nee, "this water"), not ນີ້ນ້ຳ; ແກ້ວນ້ອຍ (gaew noy, "small glass"). (2) ບໍ່ (bor, "not") goes before the
-  word it negates: ບໍ່ດີ (bor dee, "not good"). (3) As a question word ບໍ່ goes at the very end: ດີບໍ່? (dee bor, "is
-  it good?"). (4) ແນ່ (nae, softening "please") goes at the end of a request: ຂໍນ້ຳແນ່ (khor nam nae, "may I have some
-  water"). (5) ແລ້ວ (laew, "already") usually comes after the word it belongs to: ກິນແລ້ວ (gin laew, "ate already").
-  Also: would ນ້ຳດີນີ້ (nam dee nee) be read as "this good water"? The app does not call that order wrong.
-- **Sounds-like hints (A4 audit, `docs/A4_SOUNDS_LIKE_AUDIT.md`)**, please say each word aloud for the owner:
-  1. **ແ vs ເ:** in ແລ້ວ (laew, "already"), ແນ່ (nae, request softener) and ແກ້ວ (gaew, "glass"), is the vowel closer to English "bed" said long, or to "cat"? Please say a ແ◌ word and a ເ◌ word side by side so the owner can hear the gap. (The existing lesson 5 question about ແລ້ວ and 'cat' can be merged into this one.)
-  2. **◌ໍ / ◌ອ◌:** in ບໍ່ (baw, "not"), ຂໍ (kaw, "may I have") and ນອນ (nawn, "sleep"), is the vowel nearer an open "ah" with rounded lips, or nearer "oh"? Does it sound like ບໍ່ when the owner says "baw" in their own accent?
-  3. **Short ◌ິ:** in ກິນ (gin, "eat") and ດິນ (din, "earth"), does English "gin"/"din" sound right, or does the vowel need to be tighter (nearer "keen"/"deen" but short)?
-  4. **ດຳ (dam, "black"):** is the vowel the same as in ນ້ຳ (nam, "water"), i.e. the "u" of "hum", not English "dam"?
-  5. **ບ/ປ and ດ/ຕ:** when the owner says English "boy" and "deck", do they sound like ບ/ດ or like ປ/ຕ to her? (This decides whether the ບ/ດ cards need "a full, buzzing b/d".)
-  6. **Short ◌ຸ** (for later): is it like the "u" in "put", or tighter?
-- **Usage notes (A5, shown on the word cards)**: are these right, and is anything missing or odd? (1) ສະບາຍດີ
-  (sa-baai-dii): "Literally 'be well': the everyday greeting for both hello and goodbye. It is said with the palms
-  pressed together at the chest and a slight bow, the ນົບ (nop)." Is it used for goodbye as much as for hello? (2)
-  ເຂົ້າ (kao, "rice"): "Rice, and by extension a meal: ກິນເຂົ້າ (gin kao, 'eat rice') means 'have a meal'. The general
-  word for food is ອາຫານ (aa-haan)."
-- **Hunger, pronouns and tense (owner's play-test, 2026-11-13).** ANSWERED (1), 2026-11-13: ຂ້ອຍຫິວ alone sounds
-  incomplete ("hungry for what?"); say ຫິວເຂົ້າ / ຫິວນ້ຳ. (2) and (3) still open. (1) Is ຂ້ອຍຫິວ (khoy hiw, "I'm hungry") alone
-  natural, or would you wonder "hungry for what?" and expect ຂ້ອຍຫິວເຂົ້າ (khoy hiw khao)? Lessons already use bare
-  ຫິວ as a reply: ຫິວ (hiw, "hungry") answering ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiw khao baw, "are you hungry?"), ບໍ່ຫິວ (baw
-  hiw, "not hungry"), and ເດັກນ້ອຍຫິວ (dek noy hiw, "the little child is hungry"). (2) ລາວບໍ່ກິນເຂົ້າ (lao baw gin
-  khao): "he doesn't eat (meals)", "he isn't eating", or "he hasn't eaten"? We use ຂ້ອຍຍັງບໍ່ກິນເຂົ້າ (khoy nyang baw
-  gin khao) for "I haven't eaten yet". (3) Is ສະບາຍດີບໍ່? (sabaidee baw, "how are you?", no "you") as natural as
-  ເຈົ້າສະບາຍດີບໍ່? (jao sabaidee baw)? When is the pronoun dropped, and when would dropping it sound odd?
+Romanization in brackets; sentence ids for the agent. All composed sentences are the agent's own and unverified.
+
+**Sounds and spelling**
+- ລາວ "he, she" (W000031): short (law) as Wiktionary has it, or long "laao" like ລາວ "Lao" (W000058) and ຂາວ (khaao,
+  white)? The owner leans long. If long: `python tmp/laao_change.py --write` (word + 166 sentences), then drop the
+  short/long wording on the lesson 3 card.
+- Question marker: ບໍ່ (with tone mark, as the data has it) or ບໍ? Is it said differently from ບໍ່ (bor) "not"?
+- Softener: ແນ່ (nae, W001426) or ແດ່ (dae, W000308): which is everyday Vientiane speech?
+- Vowels, say each aloud for the owner: (1) ແ in ແລ້ວ (laew), ແນ່ (nae), ແກ້ວ (gaew): closer to "bed" held long, or
+  "cat"? Say a ແ word next to a ເ word. (2) ◌ໍ / ◌ອ◌ in ບໍ່ (bor), ຂໍ (khor), ນອນ (non): open "ah" with rounded lips,
+  or nearer "oh"? (3) Short ◌ິ in ກິນ (gin), ດິນ (din): like "gin", or tighter, a short "ee"? (4) ດຳ (dam, black):
+  same vowel as ນ້ຳ (nam, water)? (5) Short ◌ຸ (later): "u" in "put", or tighter?
+- Consonants: do English "boy" / "deck" sound like ບ/ດ or like ປ/ຕ to her? Is ຈ (jor) between "j" in "jaw" and "ch"
+  in "chew"? Does final ຍ in ບາຍ (baai) / ຂາຍ (khaai) sound like the end of "bye"? Is there a catch at the end of ສະ
+  (sa) in ສະບາຍດີ, as card R01 says?
+- Tones and lengths as stored: ເຂົ້າ (khao, rice) low-falling, ເກົ້າ (gao, nine) high-falling, ດີ (dee) low-rising;
+  ດິນ (din) short, ດາວ (dao) long. Right for Vientiane?
+- ເຕ້ຍ (tia, W001427) "short (in height)": high-falling? Sentences ລາວເຕ້ຍ S000002899, ພໍ່ເຕ້ຍ S000002900.
+
+**Meaning and register**
+- ເຂົາ (kao, W000160): gloss now "they; (more formal) he; she". Right for Vientiane?
+- ເຈົ້າ (jao, you) and ຂ້ອຍ (khoy, I): polite enough with strangers and elders, or ທ່ານ / ຂ້າພະເຈົ້າ / kin terms?
+- ຫິວນ້ຳ (hiw nam) or ຢາກນ້ຳ (yaak nam) for "thirsty"? Can bare ຫິວ (hiw) answer "are you thirsty?"
+- Would anyone say ລາວຫິວກິນ (lao hiw gin)? Is ກິນນ້ອຍ (gin noy) ever said, or only ກິນໜ້ອຍ (gin noy, eat a little)?
+- ສີ (sii, colour): any rude sense to avoid? Verb senses tagged: ສີເຂົ້າ (mill rice), ດຳນ້ຳ (dam nam, dive). Right?
+- Common names or nicknames among pool words? Treated as names: ນ້ຳ Nam, ແກ້ວ Kaew, ດາວ Dao, ນ້ອຍ Noy, ດຳ Dam, ຂາວ
+  Khao. Others (ບ້ານ ...)?
+- Usage notes (A5): ສະບາຍດີ (sabaidee) "be well", hello and goodbye, said with the ນົບ (nop): used for goodbye as
+  much as hello? ເຂົ້າ (khao) "rice, and by extension a meal; food in general is ອາຫານ (aahaan)": right?
+- Do bare ຂໍນ້ຳ (khor nam, S000000012) and ສະບາຍດີບໍ່? (sabaidee bor?) sound abrupt without ແນ່ / ເຈົ້າ? When is a
+  pronoun dropped, and when does dropping it sound odd?
+
+**Composed sentences: natural?**
+- L3–4: ກິນເຂົ້າ (S000002870), ລາວກິນເຂົ້າ, ເຂົາກິນເຂົ້າ (S000002871), ກິນນ້ຳ vs ດື່ມນ້ຳ for "drink water",
+  ລາວກິນນ້ຳ, ລາວຂາວ "fair-skinned", ເຂົ້າຂາວ vs ເຂົ້າຈ້າວ for white rice (S000002875).
+- L5: ລາວກິນເຂົ້າແລ້ວ (S000002877), ລາວກິນນ້ຳແລ້ວ (S000002878), bare reply ກິນແລ້ວ (S000000024).
+- L6: ລາວບໍ່ກິນເຂົ້າ (S000002879): "doesn't eat", "isn't eating" or "hasn't eaten"? ຂໍນ້ຳແນ່ (S000002880),
+  ຂໍເຂົ້າແນ່ (S000002881).
+- L7: ດີແລ້ວ (S000002882) "That's fine" or "good enough, stop"? ນ້ຳນີ້ດີ (S000002883) or ນ້ຳນີ້ແຊບ / ສະອາດ?
+  ຂໍນ້ຳນີ້ແນ່ (S000002884) or with a classifier (ຂໍນ້ຳແກ້ວນີ້ແນ່)? Bare ບໍ່ດີ (S000000004).
+- L8: is the bare ສະບາຍດີ the normal answer to ສະບາຍດີບໍ່?, or ສະບາຍດີ ຂອບໃຈ (khop jai)? Are ດີ or ສະບາຍ sensible
+  one-word replies?
+- L9–10: ລາວຫິວເຂົ້າ (S000002886), ເຈົ້າຫິວເຂົ້າບໍ່? (S000002887), replies ບໍ່ຫິວ (S000002888) and ຫິວ (S000002892):
+  fine in context, or ຫິວເຂົ້າ / ບໍ່ຫິວເທື່ອ? ເຈົ້າຫິວນ້ຳບໍ່? (S000001170). ຂ້ອຍກິນເຂົ້າແລ້ວ (S000002890) after ບໍ່ຫິວ,
+  or just ກິນແລ້ວ? ລາວນອນແລ້ວ (S000002891) "asleep already" or "gone to bed" (ເຂົ້ານອນແລ້ວ)? ຂ້ອຍຫິວເຂົ້າ
+  (S000000113), ຂ້ອຍສະບາຍດີ (S000000008).
+- L11: ສີນີ້ຂາວ / ດຳ / ດີ (S000002893–5; or ສີນີ້ງາມ "beautiful"?), ລາວຂາຍເຂົ້າ (S000002896), ແກ້ວນີ້ນ້ອຍ (S000002898).
+  ຂໍແກ້ວນ້ອຍແນ່ (S000002897): "a small glass" or "a little glassful"? Asked "what colour?", ສີຂາວ or just ຂາວ?
+
+**Rules the app states**
+- Word-order notes (A2): (1) a describing word comes after the thing (ນ້ຳນີ້ nam nee, ແກ້ວນ້ອຍ gaew noy); (2) ບໍ່ "not"
+  before the word it negates; (3) question ບໍ່ at the very end; (4) ແນ່ at the end of a request; (5) ແລ້ວ usually
+  after the word it belongs to. Right, or misleading? Would ນ້ຳດີນີ້ (nam dee nee) read as "this good water"?
+- Fill in the blank: in __ ແລ້ວ, do the wrong options ນ້ຳ, ຂາ, ແກ້ວ ever make a sensible reply?
+
+**Letter writing (`#/write`)**, check on screen letter by letter: (1) does each letter start where a Lao writer
+starts it (ກ bottom left, ມ top left, ອ at the curl) and run the right way? (2) is every consonant one stroke?
+(3) ພ ຟ ຜ ຝ: is the middle peak drawn up and back down the same line? (4) do ກ (plain Noto) and ຖ (loop top left)
+look like normal school handwriting?

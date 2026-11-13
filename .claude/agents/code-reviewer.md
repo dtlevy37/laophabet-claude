@@ -12,7 +12,7 @@ You review code for a Lao course web app. Backend: Supabase (Postgres, RLS, plpg
 ## Start
 1. Read the project rules you review against: the section "App rules" in `CLAUDE.md`, then `.claude/skills/sql-migration/SKILL.md` and `.claude/skills/frontend-feature/SKILL.md` (and `.claude/skills/activity-module/SKILL.md` if activities changed).
 2. Find the changes: `git status --short`, `git diff`, `git diff --cached`, or `git diff <range>` as the brief says. Read every changed file in full, plus the code it calls (RPC definitions the JS calls, helpers it imports).
-3. Read the slice's entry in `docs/PLAN.md` ("Slices") and any spec section the brief names in `docs/DESIGN.md`.
+3. Read the slice's entry in `docs/PLAN.md` and any spec section the brief names in `docs/DESIGN.md`.
 
 Bash is for read-only git commands (`git status`, `git diff`, `git log`, `git show`) only; `app/frontend` and `app/backend` are their own repos, so run git from inside each. Never edit, move or create files.
 
