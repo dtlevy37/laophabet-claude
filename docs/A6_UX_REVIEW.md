@@ -67,8 +67,11 @@ material"; the dry-run labelling; the writing stroke animation. Dark mode alread
    lower part (thumb zone). Desktop: primary button directly under the question; keyboard: 1–4 pick an option,
    Enter = Check/Continue, Space = play audio, Backspace = undo last tile, Esc = leave dialog; focus set on each
    render; small key hints on desktop. Fill-in-the-blank options never wrap a Lao word (one column when needed).
-4. **Less repetition, clearer first lessons.** Cap replays of one missed question at 2 per lesson; a lesson aims at
-   ≤ 25 steps (planner knob in `session.js`); the sound-spelling choice moves to onboarding (asked once, with an
+4. **Keep the repetition, make it feel lighter; clearer first lessons.** Owner 2026-11-13: repetition is the point
+   and learners sign up for it, so no replay cap or step target. Streamline the UX instead (a step counter, quick
+   transitions, Enter/number keys, less reading between questions); later, practice sessions (S8b) go straight to
+   questions without new material. Personas' "43 steps" for L0001 counts every teach card, question and replay as
+   one step, as the progress bar does. The sound-spelling choice moves to onboarding (asked once, with an
    example) and Settings; build the word gets a one-line "Tap the letters and vowel marks that make this word" and
    labels ◌ ("the circle marks where the consonant goes") the first time.
 5. **Summary.** Accuracy, new letters, new words (counted correctly), the missed items with their Lao / sound /
@@ -85,7 +88,7 @@ material"; the dry-run labelling; the writing stroke animation. Dark mode alread
 
 ## 4. Questions for the owner
 1. Agree the proposal as a whole, or which points to change?
-2. Replay cap (2 per missed question) and the ~25-step lesson target: OK?
+2. (Answered 2026-11-13: no replay cap, no step target; keep the repetition.) Primary button on the right: done.
 3. Brand colour: deep blue + warm red accent, or your own choice?
 4. Phone bottom bar with 4 tabs (Learn, Practice, Write, Me): OK, given Practice (S8b) is not built yet (the tab
    could open Review until then)?

@@ -2,6 +2,10 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 (owner answers)
+- Lesson primary button on the right (thumb reach). A3 answers 2–4 recorded (as built); A6 proposal point 4 changed:
+  keep repetition, streamline the UX. A4: owner accent Midwest US.
+
 ## 2026-11-13 night (A2 review fixes; A3 and A5 built locally; A6 UX review)
 - A2 review fixes: rule notes and build-the-word hints put Lao in `lang="lo"` spans (`i18n.tParts`,
   `grammar.noteParts`); tone marks in build the word are logged wrong only after a wrong tone-mark tap (plus, in

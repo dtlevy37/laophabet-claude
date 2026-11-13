@@ -128,12 +128,12 @@ skipped; latency splits Good/Easy.
 Tap timestamps, drag paths, coordinates, screen size, user agent, IP; distractors as "seen"; derived per-letter
 rows (derived at read time); half-answered questions (Q2); letter writing (Q3); no backfill.
 
-## 7. Open questions for the owner
-1. Weak-evidence answers (`known_options = 0`): log only (proposed), or also withhold the level rise?
-2. Leaving mid-question: log a "left" row as a weakness signal? (proposed: no)
-3. Letter writing `#/write`: log strokes/judge results now or later?
-4. Letter credit derived from word answers: may it raise a letter's level ("letters known"), or only feed
-   weakest/FSRS (proposed)?
+## 7. Owner answers (2026-11-13)
+2. No "left" row: agreed.
+3. Letter writing: not tracked (owner: probably not needed).
+4. Letter credit from word answers: a signal (feeds weakest/FSRS), never "letters known" until a letter-only
+   question confirms it. As built.
+1. Weak-evidence answers (`known_options = 0`): still open, explained to the owner 2026-11-13; built as "log only".
 
 **Done when:** this note is agreed (pending); the migration is applied locally (done 2026-11-13); a played lesson 1
 produces `detail`, `attempt` and `question_id` on every row type (done: browser runs of L0001-L0006 plus a strict-mode L0004

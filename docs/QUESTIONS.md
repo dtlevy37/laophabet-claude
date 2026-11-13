@@ -4,7 +4,7 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 (batches c1–c6, classifiers, tone-source disagreements) are parked in `_shelf/docs/NEEDS_HUMAN.md`.
 
 ## For the owner
-- **A4 accent (sounds-like hints):** which English accent do you speak (US, UK, Australian, other)? Your hearing ແ as "ay in lay" suggests an accent whose 'lay' starts low, which would make some anchors work differently for you. (Full audit: `docs/A4_SOUNDS_LIKE_AUDIT.md`; please read it through.)
+- (nothing open; A4 accent answered: Midwest US, Iowa)
 
 ## For the native speaker
 - **Wife's answer, 2026-11-12 (context of "this is white")**: ນີ້ຂາວ (*nii khǎao*) is fine when talking about the colour of
