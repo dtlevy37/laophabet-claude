@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 5: audio hierarchy and build-the-word how-to
+- `audio.js`: the play button is the only audio control next to the Lao (⚑ removed from `audioButton`); new
+  `audioExtras(detail)` ("Voice: <name>" and "⚑ Report a problem with this recording") replaces `audioCredit`.
+- `teach_card.js`: word cards put `audioExtras` at the end of "More" (open in the ⓘ sheet, folded on the lesson card);
+  sentence cards get a "More" holding it. The report dialog is unchanged and opens from there.
+- `build_word.js`: the "◌ is not a piece" note shows on the first 3 build-the-word questions that have a ◌ tile (was
+  once; A6 finding 10). `styles.css`: `.audio-btn` in the accent colour; `.audio-extras`, `.audio-report` small and
+  muted.
+- `scripts/browser/a7_audio.js`: keyboard dry run that checks no ⚑ on any card face, Space plays, and a report is sent
+  from an ⓘ sheet with a recording; screenshots `tmp/shots/a7/audio_*`. Passed on L0002 (375/1280, light/dark) and
+  L0007.
+
 ## 2026-11-13 A7 step 4: summary "Next lesson"
 - Summary (`summary.js`): "Next lesson" (primary, on the right) and "Back home" (secondary); with no next lesson
   (the last one, or the lookup failed) "Back home" is primary. The next lesson is found after `complete_lesson`

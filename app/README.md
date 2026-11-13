@@ -143,8 +143,9 @@ frontend/
   js/session.js          #/lesson/L0001: planner + runner of a lesson session; same-day resume
                          (localStorage record); #/try/L0001 dry run (nothing recorded)
   js/summary.js          the session's end screens (summary, dry-run end, failures)
-  js/audio.js            audioButton(detail): play + report chips (null without audio_url); autoplay(detail) once on
-                         new word/sentence cards (setting `autoplay`); stopAudio(); one shared player
+  js/audio.js            audioButton(detail): the play chip (null without audio_url); audioExtras(detail): voice
+                         credit + report link for a card's "More" (ⓘ sheet); autoplay(detail) once on new
+                         word/sentence cards (setting `autoplay`); stopAudio(); one shared player
   js/activities/         index.js (registry), teach_card.js (cards, also used by the viewer and the info dialog),
                          multiple_choice.js (unit and word questions)
                          build_sentence.js (word tiles in order; sentence items, recall)

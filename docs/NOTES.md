@@ -18,7 +18,8 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 5 (`docs/A7_PLAN.md`; steps 0–4 built 2026-11-13), L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 6, the mockup gate (`docs/A7_PLAN.md`; needs the owner; steps 0–5 built 2026-11-13), L3, A7 steps 7–10,
+L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
@@ -49,6 +50,10 @@ and L1e are pending (list below).
    gone from home.
 12. A7 step 4: finish `#/lesson/L0001`: the summary says "Lao words read (with repeats)" and has Back home and
    Next lesson (blue, right); Next lesson opens lesson 2.
+13. A7 step 5 (`#/try/L0002`, phone and desktop, light and dark): no ⚑ on any card; ▶ is blue. On the ເຂົ້າ (khao,
+   "rice") card open More: "Voice: Na" and "⚑ Report a problem with this recording" at the end. After an answer tap
+   ⓘ: the sheet shows the same at its end; Report opens "What is wrong with this recording?", Send says "Thank you".
+   Space plays. The first 3 build-the-word questions with a ◌ tile say "◌ is not a piece…" (a private window).
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
