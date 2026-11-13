@@ -73,8 +73,11 @@ owner's check or answer comes in.
       progress bar and "12 / 40"; email and Sign out on the settings page); review fixes; step 3 (home: Continue card
       + compact path, `home.js`); step 4 (summary: "Next lesson" primary, "Back home", "Lao words read (with
       repeats)"); step 5 (audio: ▶ is the one control on a card face, accent colour; voice credit and ⚑ report in
-      "More", open in the ⓘ sheet; the ◌ note on the first 3 build-the-word questions with a ◌ tile). Next: step 6,
-      the mockup gate (needs the owner).
+      "More", open in the ⓘ sheet; the ◌ note on the first 3 build-the-word questions with a ◌ tile); step 6 decided by the owner (`A7_PLAN.md`
+      "Step 6 decided"); step 7 (Look: Lao blue + red is the default palette, Colours choice Lao / Indigo + saffron /
+      Teal + gold via `html[data-palette]`, theme and palette set in index.html's head before the first paint, solid
+      Bonus and Culture badges with a reduced-motion-safe pop, brand dot, streak in the warm colour). Next: step 8,
+      the navigation shell.
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and

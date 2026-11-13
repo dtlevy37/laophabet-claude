@@ -18,13 +18,11 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 6, the mockup gate (`docs/A7_PLAN.md`; needs the owner; steps 0–5 built 2026-11-13), L3, A7 steps 7–10,
-L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 8, the navigation shell (`docs/A7_PLAN.md`; steps 0–7 built 2026-11-13, step 6 decided in "Step 6
+decided"), L3, A7 steps 9–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
-**A7 step 6 choices:** open `tmp/mockups/a7/index.html` and pick navigation, palette, sentence words and desktop
-width (plus home tiles and thumb zone); options and recommendations in `docs/A7_PLAN.md` "Step 6 choices".
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
 1. Phone: `#/read/L0001` ກ card "Hear it in a word" ກິນ (gin, "eat").
 2. Phone width: `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.
@@ -57,6 +55,12 @@ width (plus home tiles and thumb zone); options and recommendations in `docs/A7_
    "rice") card open More: "Voice: Na" and "⚑ Report a problem with this recording" at the end. After an answer tap
    ⓘ: the sheet shows the same at its end; Report opens "What is wrong with this recording?", Send says "Thank you".
    Space plays. The first 3 build-the-word questions with a ◌ tile say "◌ is not a piece…" (a private window).
+14. A7 step 7 (phone and desktop, light and dark): the app is Lao blue with a red brand dot by "Laophabet"; no
+   bright browser-blue links. Settings → Colours: Lao blue and red / Indigo and saffron / Teal and gold switch at
+   once, are kept after a reload with no flash of the wrong colours, and work with System / Light / Dark. Answers stay
+   green ✓ / red ✗ in every colour theme. `#/read/L0007/14` (ດາວ, daao, "star"): a solid "★ Bonus word" badge that
+   pops in; `#/read/L0002/5` (ເຂົ້າ, khao, "rice"): a solid "✦ Culture" badge. With
+   "reduce motion" on in the device, the badges just appear.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 

@@ -1,5 +1,5 @@
 {
-  "weeklyStopPct": 75,
+  "weeklyStopPct": 85,
   "fiveHourPausePct": 98,
   "pauseBufferSeconds": 360
 }

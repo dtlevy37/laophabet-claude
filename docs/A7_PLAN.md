@@ -58,7 +58,22 @@ Contract notes: nav and ✕ belong to the runner, never to an activity; activiti
 inline words must not show a popover on the gap/answer before Check; new strings in `strings.json` (`lo` for
 native screens); mockups stay in `tmp/`.
 
-## Step 6 choices (mockups built 2026-11-13; waiting on the owner)
+## Step 6 decided (owner 2026-11-13; supersedes the recommendations below where they differ)
+1. **Navigation = B with tiles.** Home: "Next lesson" (Continue) card stays at the top; below it tiles, and the
+   lessons themselves are a tile (the path moves behind a Lessons tile). Unbuilt tiles are shown **greyed** (not hidden).
+2. **Palette = Lao blue + red** is the new default; today's blue goes (too similar). Indigo + saffron and Teal + gold
+   are colour-theme options in Settings (CSS token swaps only), alongside System / Light / Dark.
+3. **Sentence words = inline + popover** (owner leaned popover, unsure it might feel annoying). Make it not annoying:
+   one tap opens a small bubble anchored under the word that never covers the sentence; tapping another word moves it,
+   tapping elsewhere closes it; no close button, no modal, no focus trap; never before Check on the gap/answer.
+4. **Desktop = wide + rail, but the rail never gives answers.** In a lesson the rail is a **lesson preview**: the Lao
+   words the lesson will show, new ones colour-coded, recycled ones labelled **"Review"** (not "again from before");
+   no meanings or sounds while checks are running. Home rail: stats and sections as mocked.
+5. **Thumb zone:** keep today's layout but move the answer choices toward the vertical centre and let them use more of
+   the middle (bigger targets); the Continue/Next button stays where it is. On phone-sized / touch screens hide the
+   keyboard-shortcut hints.
+
+## Step 6 choices (mockups built 2026-11-13; decided above)
 Open `tmp/mockups/a7/index.html` (static pages on the real `styles.css`; real Lao from lessons 1–11; home numbers are
 marked "Sample"). Screenshots: `tmp/mockups/a7/shots/*.png`; re-render with
 `NODE_PATH=tmp/tools/pw/node_modules node tmp/mockups/a7/shoot.js`. Recommendations are the agent's; the owner decides.

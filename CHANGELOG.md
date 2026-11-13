@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 7: Lao palette, colour themes, badges
+- Palette: Lao blue + red (the owner's step 6 choice) is the default, light and dark, from the step 6 mockup tokens;
+  the old blue is gone. New tokens `--warm` (brand red) and `--on-warm`; the warm colour is only for the brand dot
+  in the learner header, the streak on the summary and the Culture badge, never for an answer state (wrong stays
+  `--danger`, a darker red, with ✗). Links use `--accent` instead of the browser's blue. (`styles.css`, `app.js`,
+  `summary.js`)
+- Settings → Colours: Lao blue and red / Indigo and saffron / Teal and gold, each with a swatch; stored as
+  `palette` in `laophabet.settings`, set as `html[data-palette]` (CSS token swaps for light and dark), independent
+  of System / Light / Dark. A small inline script in index.html's head sets `data-theme` and `data-palette` before
+  the first paint (no flash). (`settings.js`, `index.html`, `strings.json`: `settings_palette*`, English only)
+- Badges: "★ Bonus word" is a solid accent pill; "✦ Culture" a solid warm pill (the note keeps its accent edge: a red edge would look like the "wrong" feedback); both pop
+  in once with a light sweep, off under `prefers-reduced-motion`. (`styles.css`, `teach_card.js`)
+- Every text token is at least 4.5:1 on `--bg` and `--card` in all six sets (checked with a script).
+- Tests: new `scripts/browser/a7_look.js` (shots of every palette, light and dark, at 375 and 1280; palette before
+  the modules; reduced motion); `a7_shots.js` background colours updated.
+
 ## 2026-11-13 A7 steps 3-4: review fixes
 - Home's Continue card (`session.js` `resumableLesson`, now given list_lessons rows): of the lessons with a usable
   resume record, a lesson not done before a done one played again, then the most recently saved (the record now

@@ -299,8 +299,17 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   card where they first matter.
 - **Rule and recap cards** show their text with the Lao parts enlarged in the Lao font (LESSON_RULES decision 18).
 - **Settings** (`#/settings`, a page linked from the top bar; `js/settings.js`, remembered per browser for now):
-  light or dark (System / Light / Dark, `html[data-theme]`; A7 step 1), transliteration style, Lao font, spaces
+  light or dark (System / Light / Dark, `html[data-theme]`; A7 step 1), colours (below), transliteration style, Lao font, spaces
   between words, audio, activities, keyboard. Move to the learner's profile when there is a home screen (S8).
+- **Palette and colour themes** (owner 2026-11-13, A7 step 6; built in step 7). The default palette is **Lao blue +
+  red**: a deep Lao-flag blue as the accent (buttons, links, focus, progress) and the flag's red as the warm brand
+  colour, used only for the brand dot, the streak and the Culture badge, never for an answer state. Right is green
+  and wrong is a different, darker red, and both always carry ✓ / ✗ or text, so the brand red is never read as
+  "wrong". Settings → Colours offers **Indigo + saffron** and **Teal + gold** as alternatives (`html[data-palette]`;
+  CSS token swaps only, each with a light and a dark set). The colour theme is independent of light or dark (System
+  / Light / Dark). Both are remembered per browser and set in index.html's `<head>` before the first paint. Every
+  text token is at least 4.5:1 on the page and card backgrounds. Bonus and Culture badges are solid pills (accent
+  and warm) with a mark (★, ✦) and a one-time pop that is off under reduced motion.
 - **"Read more" links** under "More": Wikipedia pages for the terms used there (aspiration, vowel length, tones,
   IPA for Lao, the Lao script). They open in a new tab.
 - Internal IDs (L0001, W000018) are never shown to learners. A lesson is "Lesson 1" at most (user, 2026-11-09).
