@@ -71,7 +71,8 @@ owner's check or answer comes in.
       activity-module skill, `--content-max` / `--radius`); step 1 (`#/settings` page, sound-spelling choice on the
       lesson 1 intro card, System / Light / Dark); step 2 (slim one-line header, hidden in lessons; lessons show ✕,
       progress bar and "12 / 40"; email and Sign out on the settings page); review fixes; step 3 (home: Continue card
-      + compact path, `home.js`).
+      + compact path, `home.js`); step 4 (summary: "Next lesson" primary, "Back home", "Lao words read (with
+      repeats)").
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and

@@ -18,7 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 4 (`docs/A7_PLAN.md`; steps 0–3 built 2026-11-13), then A7 step 5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 5 (`docs/A7_PLAN.md`; steps 0–4 built 2026-11-13), L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
@@ -47,6 +47,8 @@ and L1e are pending (list below).
    folded, Practice writing letters. With 5 done it fits one phone screen. Decide: the lesson on the Continue card is
    not repeated in the path (so the list goes 5, 7, 8); and the old "Letters / Words" lines under done lessons are
    gone from home.
+12. A7 step 4: finish `#/lesson/L0001`: the summary says "Lao words read (with repeats)" and has Back home and
+   Next lesson (blue, right); Next lesson opens lesson 2.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 

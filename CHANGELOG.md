@@ -2,6 +2,15 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 4: summary "Next lesson"
+- Summary (`summary.js`): "Next lesson" (primary, on the right) and "Back home" (secondary); with no next lesson
+  (the last one, or the lookup failed) "Back home" is primary. The next lesson is found after `complete_lesson`
+  with one `list_lessons` call (`session.js` `nextLesson`: the next in lesson order, not locked; best effort).
+- "Words read" relabelled "Lao words read (with repeats)". Strings `summary_next`, `summary_home` (replace
+  `summary_continue`).
+- `scripts/browser/a7_summary.js`: plays a real lesson to its summary, screenshots 375/1280 light/dark, taps Next
+  lesson; L0001 → `#/lesson/L0002` with a step on screen.
+
 ## 2026-11-13 A7 step 3: home Continue card and compact path
 - New `js/home.js` (`showHome`, replaces learn.js's lesson list): a Continue card (the lesson running in memory or
   saved for resume today on this device, `session.js` `resumableLesson`, else the first open lesson; "Continue" or
