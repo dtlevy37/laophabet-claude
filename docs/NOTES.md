@@ -74,6 +74,28 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
+**Owner browser tests (open; deployed site; a fresh browser profile or private window shows the first-time hints).
+Tick or delete each line when done.**
+1. A2 word-order note: `#/try/L0007`, build ຂໍ ນີ້ ນ້ຳ ແນ່ (khor nee nam nae) → "Lao word order" note, Lao in the Lao
+   font. Build the word: pieces in any order → "Read in this order". Settings → "Spelling challenge" → strict order.
+2. L1 how-tos: `#/try/L0002` → first build the word shows the how-to + the ◌ line; first build the sentence its how-to.
+3. L1 marks: `#/try/L0007`, a sentence in the wrong order → ✓ / ✗ on each placed tile above the answer.
+4. L1 same sound: `#/try/L0010` ◌ອ◌ card says "Same sound as ◌ໍ"; `#/try/L0003` ◌ວ card "Same sound as ເ◌ົາ".
+5. L2 listen and pick: `#/try/L0001` to the end → plays by itself, ▶ replays, a wrong pick shows "You heard …".
+6. L2 pause: `#/try/L0002` "Can't listen now" → no listening questions or autoplay; Settings → Audio shows "paused
+   until …" and "Listen again now".
+7. Letter cards: `#/read/L0001` ກ card → "Hear it in a word" ກິນ (kin) with ກ highlighted and ▶; also on a phone.
+8. Keyboard (desktop): `#/try/L0007` with 1–9, Enter, Space, Backspace, Esc; numbers in a tile bank stay put after a
+   tile is used. Settings → "Keyboard shortcuts in lessons" off → only Esc works.
+9. Phone layout: `#/try/L0010` at phone width → fill-in-the-blank options never break a Lao word; Next/Continue on
+   the right.
+10. Culture notes (A5): `#/read/L0002` ເຂົ້າ and `#/read/L0008` ສະບາຍດີ cards → "How it is used" + Culture badge.
+11. Accessibility look: dark mode (phone or OS setting) → dark text on the blue button; locked lessons dashed, not
+    faded; visible progress bar; a focus ring when tabbing.
+12. Sound hints (A4): ແ◌ card in `#/read/L0005` → "e in 'bed' … leaning towards the 'a' in 'say'".
+13. Older, still open: letter writing `#/write` (S7w, "still feels weird"), play-test of lessons 5–11, S7h untaught
+    wrong options in fill in the blank.
+
 0. **Handoff 2026-11-13.** A3 and A5 migrations are on hosted (pushed 2026-11-13 with the owner's go-ahead,
    checked). A4 hints `20261113143534_a4_sound_hints.sql` pushed by the owner 2026-11-13 (checked). Nothing unpushed.
    - A1 DONE. A2: review fixes done; owner browser test still pending (steps: `#/try/L0007`, put ຂໍ ນີ້ ນ້ຳ ແນ່

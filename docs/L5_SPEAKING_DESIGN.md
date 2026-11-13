@@ -230,6 +230,18 @@ ones that matter. This gives hundreds of known-wrong cases without recording any
    takes arrive?
 7. A male voice for the model: is a second speaker likely before L4?
 
+## 11. Owner answers (2026-11-13)
+1. Phase 1 "Say it" first: yes.
+2. More recordings: yes. The wife records second takes (normal pronunciation; nobody mispronounces on purpose:
+   wrong-word negatives come from comparing her take of one word against another word) and labels the owner's
+   attempts.
+3. Speaking cards are part of lessons; learners can opt out and back in via Settings.
+4. No self-grade: the point is hearing yourself next to the native audio. Log takes and plays only.
+5. Voice must not leave our client/server for now (phase 3 off). Google/Microsoft only after the owner understands
+   the architecture, services, libraries and costs (a later explainer).
+6. Keeping the owner's own takes in the private bucket for the experiments: yes.
+7. A male voice: not for 1–2 months (the wife's father and brother).
+
 ## Sources (all read 2026-11-13)
 - [E1] Self-assessment: low-proficiency learners overestimate most; learners rate their own speech better than
   others' — https://pmc.ncbi.nlm.nih.gov/articles/PMC7006902 ; https://iastatedigitalpress.com/psllt/article/17581/galley/16238/view

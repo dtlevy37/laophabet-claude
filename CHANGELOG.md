@@ -3,6 +3,7 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-13 (owner answers)
+- NOTES: one list of open owner browser tests. L5: owner answers recorded (§11).
 - L2 listen and pick (`js/activities/listen_pick.js`): hear a recorded word, pick its Lao from 3–4 real words (no
   same-sound option); one per lesson in the closing block; logged with A3 detail. "Can't listen now" pauses
   listening and autoplay for 10 minutes (stand-in: meaning question, logged with `swapped`); Settings shows and ends
