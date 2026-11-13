@@ -127,3 +127,10 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   pressed together at the chest and a slight bow, the ນົບ (nop)." Is it used for goodbye as much as for hello? (2)
   ເຂົ້າ (kao, "rice"): "Rice, and by extension a meal: ກິນເຂົ້າ (gin kao, 'eat rice') means 'have a meal'. The general
   word for food is ອາຫານ (aa-haan)."
+- **Hunger, pronouns and tense (owner's play-test, 2026-11-13).** (1) Is ຂ້ອຍຫິວ (khoy hiw, "I'm hungry") alone
+  natural, or would you wonder "hungry for what?" and expect ຂ້ອຍຫິວເຂົ້າ (khoy hiw khao)? Lessons already use bare
+  ຫິວ as a reply: ຫິວ (hiw, "hungry") answering ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiw khao baw, "are you hungry?"), ບໍ່ຫິວ (baw
+  hiw, "not hungry"), and ເດັກນ້ອຍຫິວ (dek noy hiw, "the little child is hungry"). (2) ລາວບໍ່ກິນເຂົ້າ (lao baw gin
+  khao): "he doesn't eat (meals)", "he isn't eating", or "he hasn't eaten"? We use ຂ້ອຍຍັງບໍ່ກິນເຂົ້າ (khoy nyang baw
+  gin khao) for "I haven't eaten yet". (3) Is ສະບາຍດີບໍ່? (sabaidee baw, "how are you?", no "you") as natural as
+  ເຈົ້າສະບາຍດີບໍ່? (jao sabaidee baw)? When is the pronoun dropped, and when would dropping it sound odd?

@@ -120,6 +120,38 @@ L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10
       of checks, cheaper kinds). Owner said "might": confirm the split before changing the planner.
       **Done when:** every vowel intro card carries the line (teach texts via `db_sql.py change`); the planner mix
       is agreed and `session_test.mjs` checks it.
+- [ ] **L1c Answers and feedback (owner play-test 2026-11-13).** (a) Build the word lets you press Check before all
+      pieces are placed, as build the sentence does. (b) Right in the end = green: slips along the way (a wrong tile
+      tapped and taken back) no longer show red when the final answer is right; they stay in `review_log` (A3).
+      (c) A wrong answer shows "Your answer" over "Right answer", lined up word by word: the right answer's
+      missing/misplaced words highlighted, the wrong part of yours highlighted, and a [missing] gap where you left a
+      word out. (d) Accept an equally right answer: a build/fill answer that is another sentence with the same
+      meaning (ສະບາຍດີບໍ່? for "How are you?" when the target is ເຈົ້າສະບາຍດີບໍ່?) counts as right with a note
+      ("also right; ເຈົ້າ adds 'you'"); ເຈົ້າ is then tested where the pronoun cannot be left out (contrast ຂ້ອຍ /
+      ເຈົ້າ / ລາວ, or fill in the blank). (e) Slot board in build the word when strict order is off: one slot per
+      piece in reading position; a tapped piece drops into its own slot (ນ to the last, ກ to the first, ◌ິ above
+      it), so the word assembles as it will be read. **Done when:** each of (a)–(e) works on `#/try/L0007` and
+      `#/try/L0009`, `session_test.mjs` covers (b) and (d), and A3 detail still records every tap.
+- [ ] **L1d Teaching notes (owner play-test 2026-11-13).** (a) Its own rule card, as direct as the "Lao has sounds
+      English does not" intro: "Some vowels are written before the consonant (or around it), but you always say
+      the consonant first", at the first such vowel (ເ◌ົາ in lesson 2, ເຂົ້າ khao "rice"); not a badge. (b) Rule
+      card "Pronouns are often left out": everyday Lao drops ຂ້ອຍ / ເຈົ້າ / ລາວ when context makes it clear, and that
+      is normal, not sloppy; at the first pronoun-less sentence (ບໍ່ຫິວ baw hiw "not hungry", lesson 9). (c) ຫິວ
+      (hiw) note and the missed-ເຂົ້າ feedback ("hungry needs ເຂົ້າ: Lao says what you are hungry for") only after
+      the native speaker answers QUESTIONS (lessons already accept bare ຫິວ). (d) English fixes: S000002881
+      "Could I have some rice, please?" (ແນ່ = the please); S000002889 and S000002892 drop "Yes,"; S000002879 per
+      QUESTIONS (2). **Done when:** the rule cards are in lessons 2 and 9 (new rule rows + `db_sql.py change`), the
+      English rows are changed, pushed with the owner's go-ahead.
+- [ ] **L1e Lesson order and review (owner play-test 2026-11-13).** New content is presented in a deliberate order:
+      a word is first built (or first gets its hardest check) in the lesson that teaches it, never first in a later
+      lesson (ສະບາຍດີ sabaidee and ຫິວ hiw were first built in lesson 9). Review items are semi-random and later
+      chosen by spacing and the learner's stats (S9 FSRS). Long words (3+ syllables, e.g. ສະບາຍດີ) get "find the
+      missing piece" (one piece blanked, pick it from real options) before a full build. Joins L1b (b), the
+      activity mix. **Done when:** `session_test.mjs` asserts no word's first build is outside its own lesson, and
+      long words get a missing-piece question.
+- [ ] **Bug: ◌ິ drawn off to the right of its circle** on the owner's screen (other above-vowels fine). Not
+      reproduced in headless Chrome with Noto Sans Lao Looped / Noto Sans Lao / Noto Serif Lao / Leelawadee UI
+      (`tmp/vowel_glyph.png`). Need: device, browser, Settings → Lao font, and where it showed.
 - [ ] **L3 Teaching tone.** Not necessarily at the first tone mark, but a proper lesson: what tone is, the pitch
       line legend, tone marks and consonant class in plain words, and compare/contrast pairs that differ only by
       tone, each with audio (candidates: ຂາວ khaao "white" vs ລາວ laao, owner idea; ໃກ້ "near" vs ໄກ "far", to
