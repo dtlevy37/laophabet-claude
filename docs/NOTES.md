@@ -88,7 +88,9 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
      evidence; no "left" row; writing not logged; letter credit only for weakest/FSRS). Ask the owner; then push.
      Analysis: filter `review_log.role = 'primary'` or group by `question_id`. Browser driver:
      `scripts/browser/a3_play_lesson.js`.
-   - A4: owner accent is Midwest US (Iowa): pick anchors for that accent first. Native: 6 sound checks in QUESTIONS. Still needs the owner's
+   - A4: owner accent Midwest US (Iowa). Owner answers + formant measurements of the wife's takes in the audit's last
+     section (hint per point). Open: owner agrees the hints (◌ິ "short ee" vs "bin"), then `db_sql.py change` the
+     unit teach texts and word pron_tips. Tool: `tmp/tools/phon/Scripts/python tmp/audio/formants.py`. Still needs the owner's
      read-through of `docs/A4_SOUNDS_LIKE_AUDIT.md`, then `db_sql.py change`.
    - A5 BUILT LOCALLY: ເຂົ້າ (kao) and ສະບາຍດີ (sabaidee) cards show "How it is used" + Culture badge. Notes
      unverified (QUESTIONS). Open: pool words in `get_lesson` lack the note; the "translations are not literal" card.

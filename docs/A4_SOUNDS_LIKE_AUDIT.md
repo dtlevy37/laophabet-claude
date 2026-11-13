@@ -272,3 +272,20 @@ The voiced/plain/puff three-way contrast is ບ/ປ/ພ and ດ/ຕ/ທ. It is t
 5. **ບ/ປ and ດ/ຕ:** when the owner says English "boy" and "deck", do they sound like ບ/ດ or like ປ/ຕ to her? (This decides whether the ບ/ດ cards need "a full, buzzing b/d".)
 6. **Short ◌ຸ** (for later): is it like the "u" in "put", or tighter?
 7. **For the owner:** which English accent do you speak (US, UK, Australian, other)? Your hearing ແ as "ay in lay" suggests an accent whose 'lay' starts low, which would make some anchors work differently for you.
+
+## Owner answers and measurements (2026-11-13)
+The owner (Midwest US, Iowa) answered from their own hearing; the agent then measured the wife's 33 word takes
+(`tmp/audio/formants.py`: Praat via parselmouth in `tmp/tools/phon`; F1/F2 of the vowel nucleus, normalised on her
+own ີ /iː/ and າ /aː/, compared with Hillenbrand et al. 1995 adult female American English means). Caveats: one
+speaker, one take per word, phone mic, automatic tracking (ກິນ gin and ຈານ jaan look like tracking errors), nasals
+blur F1, the reference speakers are from Michigan. Treat as support, not proof; the audio is the real signal.
+
+| Point | Owner | Measured (nearest English vowels) | Hint to use |
+|---|---|---|---|
+| ແ◌ (ແລ້ວ laew, ແນ່ nae, ແກ້ວ gaew, ແມ່ນ maen) | e in "bed", with a flash of the letter-name A | between "bed" and "cat" (Michigan "cat" is raised), F2 high, ແນ່/ແມ່ນ lean towards the letter A | "e in 'bed', held long, leaning towards the 'a' in 'say'" |
+| ◌ໍ (ບໍ່ baw, ຂໍ kaw) | o in "not", nearer "aw" / "oh" | back and rounded: between "law" and "oh"; NOT the unrounded Midwest "not" | "'aw' with rounded lips, halfway to 'oh'" |
+| ◌ອ◌ (ນອນ nawn, ຂ້ອຍ, ນ້ອຍ) | nawn more "ah" | no more open than ບໍ່ in her takes (if anything closer to "oh"); the nasals may colour it | same hint as ◌ໍ; native check |
+| short ◌ິ (ດິນ din, ຫິວ hiw) | i in "bin" | nearer "ee" (bee) than "i" (bin): tighter than English "bin" | "short 'ee', tighter than the i in 'bin'" (owner to agree) |
+| ◌ຳ (ດຳ dam, ນ້ຳ nam) | o in "Tom" | "Tom" and "hum" tie for ດຳ; ນ້ຳ nearest "Tom"; same vowel in both | "o in 'Tom' (American), short" |
+| ບ / ດ | assume ບ/ດ | (not measured) | keep "b" / "d" |
+| short ◌ຸ | needs an example | (no take yet) | examples: ກຸ້ງ (gung, shrimp), ລຸງ (lung, uncle), ຝຸ່ນ (fun, dust) |
