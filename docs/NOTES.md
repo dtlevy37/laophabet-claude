@@ -18,7 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 0 (`docs/A7_PLAN.md`), then A7 steps 1–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
+A7 step 1 (`docs/A7_PLAN.md`; step 0 built 2026-11-13), then A7 steps 2–5, L3, A7 steps 6–10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
 and L1e are pending (list below).
 
 ## Waiting on the owner
@@ -65,7 +65,9 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
 ## Code map (frontend)
 - `js/session.js`: `planLesson`, `buildPlan(bundle, levels, seed, missed)` (resume), `dryLevels` (`#/try/`),
-  `advance`/`again(spec)`, summary and keyboard. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`;
+  `advance`/`again(spec)`, keyboard. End screens (summary, dry-run end, failures) in `js/summary.js`. Selector
+  contract (classes keys and A3 tap counts rely on): activity-module skill. Keyboard dry run:
+  `scripts/browser/a7_keys.js`. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`;
   re-dump them after any lesson merge).
 - `js/activities/`: `multiple_choice.js` (null when it cannot fill 3 options), `build_sentence.js`, `fill_blank.js`,
   `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, recognition, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).

@@ -67,6 +67,8 @@ owner's check or answer comes in.
       Review, Letters and sounds, My words, Write; stats on home (absorbs S8); dark mode with a System/Light/Dark
       switch (step 1); Culture/Bonus badges with more oomph (step 7). Also: where ▶ / ⚑ sit; topbar wrapping at
       narrow widths and 200% zoom.
+      **Built, owner check pending:** step 0 (groundwork: `summary.js`, `settingsPanel()`, selector contract in the
+      activity-module skill, `--content-max` / `--radius`).
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and

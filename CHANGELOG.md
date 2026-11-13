@@ -2,6 +2,16 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 0: groundwork (no visible change)
+- `js/summary.js`: the end screens (summary, dry-run end, failed, save failed) moved out of `session.js`; they take
+  callbacks, so summary.js knows nothing of the running session. `buildPlan` / `dryLevels` stay in session.js.
+- `settings.js`: `settingsPanel(onChange)` (the controls) split from `openSettings()` (the dialog).
+- activity-module skill: the selector contract (`.stage`, `.actions` `button.primary`, `button.mc-option`,
+  `.bs-bank > button`, `.bs-line > button.bs-tile`, `.audio-btn`, `.info-btn` / `.info-icon`, `.feedback`).
+- `styles.css`: `--content-max` (720px) and `--radius` (12px) tokens, used by `.card`, `.back-home` and the 12px corners.
+- `scripts/browser/a7_keys.js`: plays a dry run to its end with the keyboard only, and checks Esc opens the leave
+  dialog.
+
 ## 2026-11-13 L1d/L1e review fixes (code-reviewer)
 - Planner: a new unit's sound → letter and a shared card's other meanings are reserved (never dropped by the kept
   builds; the closing block may pass 8 by reserved and kept steps only). Lessons 6 and 7 have ◌ໍ ບ ດ ◌ີ back.

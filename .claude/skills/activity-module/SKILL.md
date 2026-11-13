@@ -34,6 +34,24 @@ export default {
   The runner may call `render` again for the same spec (a settings change redraws the screen).
 - The same module serves lessons and practice sessions. It never knows which one it is in.
 
+## The selector contract (do not rename)
+The runner (`session.js`) finds an activity's controls by class: the keyboard (`onKey`, `focusStage`, A6) and the
+A3 tap counts (`countTaps`) depend on these names, and the browser drivers in `scripts/browser/` use them too.
+A renamed class breaks keys and stats silently (nothing fails, the numbers just stop). Keep them on the elements
+they mark today:
+| Selector | What it marks | Used by |
+|---|---|---|
+| `.stage` | the runner's box that `render` draws into (the runner makes it) | keys, focus, tap counts |
+| `.stage > .actions` (last child) with `button.primary` | the step's Next / Check / Continue | Enter, focus, the frame's pinned button (CSS) |
+| `button.mc-option` | an option (multiple choice, fill in the blank, listen and pick) | keys 1–9, focus |
+| `.bs-bank > button` | a tile still in the bank (build the sentence / word); a used tile leaves a ghost in its place, so key n stays slot n | keys 1–9, focus |
+| `.bs-line > button.bs-tile` | a placed tile that can be taken back | Backspace |
+| `.audio-btn` | a play button (the first one on the stage is Space) | Space, tap count `audio` |
+| `.info-btn`, or a button containing `.info-icon` | an info opener (info icon, word chip) | tap count `info` |
+| `.feedback` (`.feedback-head`) | the answer's feedback panel | scrolled into view, first line announced |
+Nav, ✕, progress and counter belong to the runner, never to an activity; an activity does not know whether it
+runs in a lesson or practice.
+
 ## The answer objects
 `done(answers)` takes an array (one card can teach two items; the intro card reports none), each:
 ```js

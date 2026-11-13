@@ -139,7 +139,8 @@ frontend/
   js/recorder.js         microphone recording (raw takes)
   js/record.js           native: recording mode (#/record); app.js has the native home (#/, #/record, #/review)
   js/learn.js            learner routes: #/ lesson list (done / open / locked), #/read/L0001 read-only cards
-  js/session.js          #/lesson/L0001: planner + runner of a lesson session, summary screen; same-day resume
+  js/session.js          #/lesson/L0001: planner + runner of a lesson session; same-day resume
+  js/summary.js          the session's end screens (summary, dry-run end, failures)
                          (localStorage record); #/try/L0001 dry run (nothing recorded)
   js/audio.js            audioButton(detail): play + report chips (null without audio_url); autoplay(detail) once on
                          new word/sentence cards (setting `autoplay`); stopAudio(); one shared player
