@@ -81,10 +81,36 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
   passed the owner's browser test 2026-11-12. S7f (bonus label, lesson 4 rebuild) passed 2026-11-12.
 
 ## Next steps
-0. **Owner's play-test notes 2026-11-12 → PLAN slices A1–A9** (order agreed). A1 pushed to hosted 2026-11-13; waiting
-   for the owner's test on the deployed site, then tick it and go on to A2. A4 research done:
-   `tmp/a4_sounds_like_audit.md` (asks which English accent the owner speaks). New native takes later: `python
-   scripts/audio_publish.py fetch|process|upload --linked|migration` (push the migration after the upload, the bucket exists now).
+0. **Handoff 2026-11-13 (session cleared here). Owner's play-test notes → PLAN slices A1–A9, order agreed.**
+   - A1 lesson audio: DONE (owner test passed on the deployed site).
+   - A2 gentler activities: BUILT, committed and pushed (Netlify deploys it); owner browser test pending; frontend only. Owner
+     browser steps: `#/try/L0007` (dry run): build the sentence enables Check after one tile; put ຂໍ ນີ້ ນ້ຳ ແນ່
+     (khor nee nam nae) → wrong-answer feedback shows the "Lao word order" describer note; build the word accepts
+     pieces in any order and then shows "Read in this order: …"; Settings → "Spelling challenge" restores strict
+     order. Rule texts in strings.json (`rule_*`, `bw_slip_*`, `bw_prewritten`) are agent-written, unverified.
+     Code review findings not yet fixed: see "A2 review" below. Tests: `node scripts/grammar_test.mjs`.
+   - A3 stats logging: DESIGN DRAFT in `docs/A3_STATS_DESIGN.md`, not agreed. Next session: ask the owner the 4
+     questions in its section 7, move the agreed note into DESIGN, then build (migration to hosted BEFORE the
+     frontend). Line numbers in it predate A2.
+   - A4 sounds-like: RESEARCH DONE, nothing applied: `docs/A4_SOUNDS_LIKE_AUDIT.md` (74 hints: 4 wrong, 15
+     misleading). Needs: the owner's English accent (US/UK/AU?), owner read-through, native questions to
+     QUESTIONS.md, then `db_sql.py change` for units/words pron_tip. Respelling changes ("dam" → "dum" etc.) are the
+     owner's decision.
+   - A5–A9 not started. A6 UX review: Playwright is ready (`tmp/tools/pw`, `scripts/browser/a1_smoke.js` shows the
+     sign-in pattern); A7 must also review where the audio ▶/⚑ buttons sit.
+   - **A2 review (code-reviewer 2026-11-13, no blocker), fix next session:** [major] rule notes and bw hints put
+     Lao into plain `<p>` text via `t()` placeholders `{ex}`/`{w}`/`{v}` (build_sentence.js ~254, build_word.js ~98
+     and ~213): no `lang="lo"`, so the Lao font setting is ignored; build with `h()` and Lao spans. [minor] any-order
+     mode: a slip is stored by step, so an unrelated wrong tap can mark the tone mark found at that step as wrong
+     (build_word.js ~164); log the tone mark correct only if found without a slip, or store the piece with the slip.
+     [minor] `finish` uses `p.kind === 'tone-mark'` but `isToneMark` also accepts `T\d` ids: use `isToneMark` in
+     both (build_word.js 38, 158). [minor] grammar.js rule 1 may fire wrongly when ນີ້ is a pronoun ("this one",
+     e.g. ຂໍນີ້); restrict to noun + ນີ້/adjective and test against every bundle sentence. [minor]
+     `rule_already_after`: say "usually" (ແລ້ວ also means "then"). [nit] add the rule-note claims to QUESTIONS.
+   - Subagents: the owner wants subagents used for tasks where it makes sense (2026-11-13).
+   New native takes later: `python scripts/audio_publish.py fetch`, `process`, `upload --linked`, `migration`,
+   then `supabase db push --linked` (bucket exists now). Check the level of the first ~5 takes before a long
+   session (owner idea).
    Tools (git-ignored): ffmpeg in `tmp/tools/ffmpeg-*/bin`, Playwright in `tmp/tools/pw` (npm i playwright@1.56.1).
    Local test learner: `bash scripts/local_test_user.sh` (a1smoke@test.local / smoke-test-pass-1); browser smoke
    test `scripts/browser/a1_smoke.js` (header has the setup). Local DB: the CLI wrote `supabase/.temp/postgres-version` = 17 when
@@ -162,6 +188,8 @@ in `CHANGELOG.md` and git). Slices: `docs/PLAN.md`.
 - `js/write.js` (grid, step flow), `js/writing/pad.js` (SVG pad, pointer input, animation), `js/writing/score.js`
   (pure judges: `createTracer`, `scorePart`, `scoreLetter`). Data: `data/strokes.json`, rebuilt with
   `node scripts/strokes_build.js --png` (sheet in `tmp/strokes/`; corrections in `scripts/strokes_overrides.json`).
+- `js/grammar.js`: pure rule-note detection for wrong word order (A2), test `scripts/grammar_test.mjs`.
+  `js/audio.js`: shared player, `audioButton`, `autoplay`, report dialog (A1). `js/bundle.js` adds `audio_url`.
 - `js/learn.js`: lesson list and the read-only viewer. `js/bundle.js`: `get_lesson` cache.
 
 ## Lesson building (what worked for lessons 3–4)

@@ -24,7 +24,7 @@ Lessons 1–4 are merged. Detail is in `CHANGELOG.md` and git.
 A full revamp of the site is allowed. Order agreed 2026-11-12: A1 → A9 as listed. Owner choices: all of the wife's
 takes go live (no listening gate) but learners can report bad or wrong audio; build the word defaults to any order
 with strict order opt-in; the UX review runs on local Docker with throwaway accounts.
-- [ ] **A1 Wife's audio in lessons** (high priority). All her takes are approved in bulk; a "report this audio"
+- [x] **A1 Wife's audio in lessons** (high priority). All her takes are approved in bulk; a "report this audio"
       button (bad quality / wrong word / other) logs to a learner reports table the owner reads. A script trims silence and evens loudness (raw takes) and copies them to a learner-readable
       `audio` bucket; `item_audio` table; `get_lesson` puts `audio_url` on words and sentences; `audio.js` already
       renders the button. Plays once by itself on a new word's card. **Done when:** on the deployed site every
@@ -35,21 +35,24 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
       Playwright on local: lesson 1 reader shows ▶ and "Voice: Na" on ກິນ, the MP3 loads and the report dialog opens.
       Takes were very quiet (about −44 LUFS): about +25–32 dB of linear gain, no compression; W000512 and W000082
       had sound at the very start. Owner listened 2026-11-13: sound OK. Pushed to hosted 2026-11-13 (migrations,
-      then `upload --linked`; 67 rows, 67 files). Waiting for the owner's test on the deployed site.)
+      then `upload --linked`; 67 rows, 67 files). Owner test on the deployed site passed 2026-11-13.)
 - [ ] **A2 Gentler activities.** (a) Build the sentence/word: Check is always enabled; a wrong count is just a
       mistake. (b) Build the word: default "find all the pieces" in any order, then the word assembles and shows the
       reading order once; strict spelling order becomes an opt-in challenge (setting, or bonus round). (c) Mistakes
       that break a Lao rule get a rule note: first rules are "describer after the thing" (ນ້ຳນີ້ nam nee "this water",
       not ນີ້ນ້ຳ), "ບໍ່ before the verb", "question ບໍ່ at the end". Detected from word categories and sentence
       slots, text in strings.json. **Done when:** ຂໍນີ້ນ້ຳແນ່ (khor nee nam nae) in lesson 7 shows the describer note.
+      (2026-11-13: built by a subagent, frontend only: build_sentence.js, build_word.js, new grammar.js (5 rules incl.
+      ແນ່ and ແລ້ວ), settings `spellingOrder`; `scripts/grammar_test.mjs` passes. Playwright saw Check enable after
+      one tile and the reading-order line; the rule note on screen is untested. Owner browser test pending.)
 - [ ] **A3 Stats capture audit** (before more people play: data not logged now is lost). `review_log` has item,
       activity, direction, first-try correct, latency, level. Add what SRS and "weakest items" need: the answer
       chosen and the options shown (confusion pairs, e.g. ດ vs ບ), replay vs first ask, audio played, hint used,
       and per-piece results for build the word (letter-level credit). **Done when:** a design note in DESIGN is
-      agreed and the migration logs it.
+      agreed and the migration logs it. (2026-11-13: draft in `docs/A3_STATS_DESIGN.md`, 4 owner questions.)
 - [ ] **A4 "Sounds like" review.** Audit every unit card text and word pron_tip against IPA, for US, UK and
       Australian ears; prefer two anchors plus a warning ("not the a in 'cat' for most Americans"); mark doubtful
-      ones in QUESTIONS for the owner's wife. Known bad: ແ◌ (ɛː) "a in 'cat'" → nearer "eh" held long, mouth open
+      ones in QUESTIONS for the owner's wife. (2026-11-13: audit done, `docs/A4_SOUNDS_LIKE_AUDIT.md`.) Known bad: ແ◌ (ɛː) "a in 'cat'" → nearer "eh" held long, mouth open
       wider than ເ◌ (eː, "ay" in "lay" without the glide). Changes via `db_sql.py change`. **Done when:** every
       taught unit has a reviewed hint and the owner has read the list.
 - [ ] **A5 Usage and culture notes.** A word gets an optional `usage_note` (how it is really used vs its literal
@@ -58,7 +61,7 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
       a slight bow, the ນົບ nop); ເຂົ້າ (kao: rice, and by extension a meal; ກິນເຂົ້າ "eat rice" = "have a meal";
       ອາຫານ aahaan is "food"). Unverified until the owner's wife checks. **Done when:** both cards show the note
       with the badge.
-- [ ] **A6 UX review round.** Subagents play the app in a headless browser (Playwright; Chromium is installed) at
+- [ ] **A6 UX review round.** Subagents play the app in a headless browser (Playwright: `tmp/tools/pw`, `scripts/browser/`) at
       375, 768 and 1280 px as three personas (absolute beginner, returning learner on a phone, impatient desktop
       user), with screenshots; plus the owner's notes. Output: one findings list and a revamp proposal in DESIGN
       (screens, navigation, look). Needs a running backend and a test account (owner's choice: local Docker or a
@@ -66,7 +69,8 @@ with strict order opt-in; the UX review runs on local Docker with throwaway acco
 - [ ] **A7 Revamp: home and sections.** Home with sections instead of the long lesson list: Continue (next lesson,
       one tap), Review, Letters and sounds, My words, Write. Stats on home (streak, accuracy, letters and words known;
       absorbs S8). Lesson list collapsed around the next lesson. Content preview as a dialog on desktop and a sheet
-      on phone. Dark mode. Sentence words: tappable inline vs tiles under the sentence (decide in A6).
+      on phone. Dark mode. Sentence words: tappable inline vs tiles under the sentence (decide in A6). Review where the
+      audio ▶ / ⚑ buttons sit (owner 2026-11-13).
 - [ ] **A8 Letters and sounds.** Every taught symbol (consonants, vowels, tone marks, finals) with its card info,
       examples from known words and audio; links into writing practice; vowels join writing practice.
 - [ ] **A9 My words.** Every word seen or known, with its card info and personal stats (times seen, first-try

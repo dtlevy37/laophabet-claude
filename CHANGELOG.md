@@ -2,6 +2,16 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 (A2 gentler activities; A3 design; A4 audit; handoff)
+- A2 (frontend only, owner test pending): build the sentence's Check is enabled after one tile; build the word
+  defaults to any order and then shows the reading order, with strict order as the setting "Spelling challenge"
+  (`spellingOrder`); new `js/grammar.js` adds rule notes for wrong word order (describer after the thing, ບໍ່
+  placement, question ບໍ່ at the end, ແນ່, ແລ້ວ); test `scripts/grammar_test.mjs`. Code review findings are listed in
+  NOTES (not fixed).
+- `docs/A3_STATS_DESIGN.md`: stats-logging design draft (not agreed). `docs/A4_SOUNDS_LIKE_AUDIT.md`: sounds-like
+  audit (not applied).
+- NOTES rewritten as a handoff for a fresh session.
+
 ## 2026-11-13 (A1 lesson audio; plan A1–A9)
 - Owner's play-test notes turned into PLAN slices A1–A9 (order agreed).
 - A1: the 67 takes by the owner's wife (verified native, credit "Na") are lesson audio. `scripts/audio_publish.py`
