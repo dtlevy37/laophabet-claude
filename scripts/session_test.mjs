@@ -412,5 +412,50 @@ for (const b of bundles) {
   if (kept !== 'missing build') fail(`piecesFirst moved a right order: ${kept}`)
 }
 
+// A7 steps 3-4 review: the summary's next lesson is the lowest order above this one that is not locked (orders may
+// have gaps); home's Continue picks a usable resume record, a lesson not done before a done one replayed, then newest.
+{
+  const { pickNextLesson, resumableLesson } = await import(js('session.js'))
+  const { APP_VERSION } = await import(js('version.js'))
+  const rows = [
+    { lesson_id: 'A', lesson_order: 1, state: 'done' },
+    { lesson_id: 'C', lesson_order: 4, state: 'open' },
+    { lesson_id: 'B', lesson_order: 3, state: 'locked' },
+    { lesson_id: 'D', lesson_order: 6, state: 'open' },
+  ]
+  const nextOf = (o) => pickNextLesson(rows, o)?.lesson_id ?? null
+  if (nextOf(1) !== 'C' || nextOf(4) !== 'D' || nextOf(6) !== null) fail(`pickNextLesson: ${nextOf(1)} ${nextOf(4)} ${nextOf(6)}`)
+
+  const d = new Date()
+  const p2 = (n) => String(n).padStart(2, '0')
+  const today = `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}`
+  const rec = (at, extra = {}) => ({ v: 1, app: APP_VERSION, at, day: today, sessionId: 'x', seed: 1, planned: 3, levels: [], step: 1, missed: [], pending: [], ...extra })
+  const store = new Map()
+  const saved = globalThis.localStorage
+  globalThis.localStorage = { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => store.set(k, v), removeItem: (k) => store.delete(k) }
+  const put = (id, r) => store.set(`laophabet.resume.u.${id}`, JSON.stringify(r))
+  const pick = () => resumableLesson('u', [
+    { lesson_id: 'L1', state: 'done' },
+    { lesson_id: 'L2', state: 'done' },
+    { lesson_id: 'L4', state: 'open' },
+    { lesson_id: 'L5', state: 'open' },
+  ])
+  put('L1', rec(100)) // replayed done L1 and left, then started L4 and left
+  put('L4', rec(200))
+  if (pick() !== 'L4') fail(`resumableLesson: replayed done L1 beat L4: ${pick()}`)
+  put('L1', rec(300)) // a done lesson is still second to one not done, even when newer
+  if (pick() !== 'L4') fail('resumableLesson: a newer done lesson beat an open one')
+  put('L5', rec(250)) // two not done: the newer
+  if (pick() !== 'L5') fail('resumableLesson: not the newest open lesson')
+  put('L5', rec(400, { day: '2000-01-01' })) // yesterday's record does not count
+  put('L4', rec(500, { pending: [{}] })) // nor one resume() would throw away
+  if (pick() !== 'L1') fail(`resumableLesson: a stale or broken record counted: ${pick()}`)
+  store.clear()
+  put('L1', rec(undefined)) // a record from before `at` counts as oldest
+  put('L2', rec(10))
+  if (pick() !== 'L2') fail(`resumableLesson: a record without at: ${pick()}`)
+  globalThis.localStorage = saved
+}
+
 console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')
 process.exit(errors ? 1 : 0)

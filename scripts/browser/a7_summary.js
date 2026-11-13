@@ -1,5 +1,6 @@
 // A7 step 4 check: play a real lesson (default L0001) to its summary, screenshot the summary at 375 and 1280, light
-// and dark, then tap "Next lesson" and check the next lesson opens (#/lesson/L0002 with a step on screen).
+// and dark, then press Enter (the primary "Next lesson" has the focus; review fix) and check the next lesson opens
+// (#/lesson/L0002 with a step on screen).
 // Setup: as a3_play_lesson.js (playwright in tmp/tools/pw, app/frontend served on :5500, scripts/local_test_user.sh).
 // Run: NODE_PATH=tmp/tools/pw/node_modules node scripts/browser/a7_summary.js a1smoke@test.local smoke-test-pass-1 L0001 L0002
 const { chromium } = require('playwright')
@@ -46,14 +47,15 @@ require('fs').mkdirSync(OUT, { recursive: true })
     }
   }
   const buttons = await page.locator('.summary-actions a').allTextContents()
-  await page.locator('.summary-actions a.primary').click()
+  const focused = await page.evaluate(() => !!document.activeElement?.matches('.summary-actions a.primary'))
+  await page.keyboard.press('Enter')
   await page.waitForTimeout(1500)
   const hash = await page.evaluate(() => location.hash)
   const playing = (await page.locator('.stage').count()) > 0
-  console.log(`summary buttons: ${buttons.join(' | ')}; after the primary: ${hash}, a step on screen: ${playing}`)
+  console.log(`summary buttons: ${buttons.join(' | ')}; primary focused: ${focused}; after Enter: ${hash}, a step on screen: ${playing}`)
   if (errors.length) console.log('page errors:', errors.join(' | '))
   await browser.close()
-  process.exit(hash === `#/lesson/${expected}` && playing && !errors.length ? 0 : 1)
+  process.exit(focused && hash === `#/lesson/${expected}` && playing && !errors.length ? 0 : 1)
 })().catch((e) => {
   console.error(e)
   process.exit(1)

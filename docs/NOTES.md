@@ -49,7 +49,8 @@ and L1e are pending (list below).
    not repeated in the path (so the list goes 5, 7, 8); and the old "Letters / Words" lines under done lessons are
    gone from home.
 12. A7 step 4: finish `#/lesson/L0001`: the summary says "Lao words read (with repeats)" and has Back home and
-   Next lesson (blue, right); Next lesson opens lesson 2.
+   Next lesson (blue, right); Next lesson opens lesson 2, and so does Enter (it has the focus). Home's Continue
+   card picks the lesson left most recently, a lesson not done before a done one played again.
 13. A7 step 5 (`#/try/L0002`, phone and desktop, light and dark): no ⚑ on any card; ▶ is blue. On the ເຂົ້າ (khao,
    "rice") card open More: "Voice: Na" and "⚑ Report a problem with this recording" at the end. After an answer tap
    ⓘ: the sheet shows the same at its end; Report opens "What is wrong with this recording?", Send says "Thank you".

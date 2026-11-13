@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 steps 3-4: review fixes
+- Home's Continue card (`session.js` `resumableLesson`, now given list_lessons rows): of the lessons with a usable
+  resume record, a lesson not done before a done one played again, then the most recently saved (the record now
+  keeps `at`). One validity test, `recordFits`, is shared with `resume()`.
+- Summary: its primary button ("Next lesson", else "Back home") gets the focus, so Enter takes it; the DOM order
+  stays the visual order. "Next lesson" is the lowest lesson order above this one that is not locked
+  (`pickNextLesson`), and the `list_lessons` call is raced against 3 s so the summary never hangs on "Saving…".
+- Home: no "Lessons" heading when the only open lesson is on the Continue card.
+- Strings removed (unused): `lesson_done_on`, `lesson_read_cards`, `covers_letters/words/sentences/rules/bonus`.
+- Tests: `session_test.mjs` covers `pickNextLesson` and `resumableLesson`; `a7_summary.js` presses Enter on the
+  summary instead of clicking. Selector contract note on end-screen focus (activity-module skill).
+
 ## 2026-11-13 A7 step 5: audio hierarchy and build-the-word how-to
 - `audio.js`: the play button is the only audio control next to the Lao (⚑ removed from `audioButton`); new
   `audioExtras(detail)` ("Voice: <name>" and "⚑ Report a problem with this recording") replaces `audioCredit`.

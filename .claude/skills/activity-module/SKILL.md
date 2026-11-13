@@ -49,6 +49,8 @@ they mark today:
 | `.audio-btn` | a play button (the first one on the stage is Space) | Space, tap count `audio` |
 | `.info-btn`, or a button containing `.info-icon` | an info opener (info icon, word chip) | tap count `info` |
 | `.feedback` (`.feedback-head`) | the answer's feedback panel | scrolled into view, first line announced |
+The end screens (`summary.js`) have no stage, so the keys stay out: the runner focuses their `.actions .primary`
+when it draws them, and Enter is the browser's own (A7 steps 3-4 review).
 Nav, ✕, progress and counter belong to the runner, never to an activity; an activity does not know whether it
 runs in a lesson or practice.
 
