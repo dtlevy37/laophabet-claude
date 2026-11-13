@@ -19,7 +19,7 @@ L1b–L1e → A7 steps 0–5 → L3 → A7 steps 6–10 → L4 → L5. Owner-gat
 owner's check or answer comes in.
 
 ## Learning slices (owner 2026-11-13)
-- [ ] **L1c Answers and feedback.** *Built 2026-11-13, local DB only; migration `20261113190300` not pushed; owner browser check pending.* (a) Build the word: Check before all pieces are placed. (b) Right in the end =
+- [ ] **L1c Answers and feedback.** *Built and pushed 2026-11-13; owner browser check pending.* (a) Build the word: Check before all pieces are placed. (b) Right in the end =
       green: slips (wrong tile tapped and taken back) no longer show red; they stay in `review_log`. (c) A wrong
       answer shows "Your answer" over "Right answer", aligned word by word, differences highlighted, a [missing] gap
       for a left-out word. (d) Accept an equally right answer (ສະບາຍດີບໍ່? sabaidee bor? for "How are you?" when the
@@ -27,12 +27,12 @@ owner's check or answer comes in.
       dropped. (e) Build the word, any order: one slot per piece in reading position; a tapped piece drops into its
       slot. **Done when:** (a)–(e) work on `#/try/L0007` and `#/try/L0009`, `session_test.mjs` covers (b) and (d),
       and A3 detail still records every tap.
-- [ ] **L1b Vowel line and activity mix.** *(a) built 2026-11-13 (local only); (b) waits on the owner's split.* (a) Every vowel intro card says the vowel is one unit (all its parts,
+- [ ] **L1b Vowel line and activity mix.** *(a) built and pushed 2026-11-13; (b) waits on the owner's split.* (a) Every vowel intro card says the vowel is one unit (all its parts,
       wherever they sit) and the consonant is said first. (b) Favour listen and pick and other quick recognition in
       lessons; build the word / sentence less in lessons, more in practice (S8b). Same number of checks. Owner said
       "might": confirm the split first. **Done when:** vowel cards carry the line (`db_sql.py change`); the mix is
       agreed and `session_test.mjs` checks it.
-- [ ] **L1d Teaching notes.** *Built 2026-11-13 (R03 in L0002, R04 in L0009 after ຫິວນ້ຳ, not ບໍ່ຫິວ; local only, not pushed). Left: missed-ເຂົ້າ feedback in the L1c compare view; S000002879, S000002888, S000002892 wait on QUESTIONS.* (a) Rule card "some vowels are written before (or around) the consonant, but you say the
+- [ ] **L1d Teaching notes.** *Built 2026-11-13 (R03 in L0002, R04 in L0009 after ຫິວນ້ຳ, not ບໍ່ຫິວ: kept there, owner left it to the agent; pushed). Left: missed-ເຂົ້າ feedback in the L1c compare view; S000002879, S000002888, S000002892 wait on QUESTIONS.* (a) Rule card "some vowels are written before (or around) the consonant, but you say the
       consonant first" at ເ◌ົາ in lesson 2. (b) Rule card "pronouns are often left out" at ບໍ່ຫິວ (bor hiw, "not
       hungry") in lesson 9. (c) ຫິວ (hiw) culture note and missed-ເຂົ້າ feedback ("hungry needs ເຂົ້າ"): bare ຂ້ອຍຫິວ
       sounds incomplete (native, 2026-11-13). Review bare-ຫິວ sentences: S000002892 ຫິວ and S000002888 ບໍ່ຫິວ

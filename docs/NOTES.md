@@ -18,8 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-Owner: check L1c/L1d/L1b(a) locally or agree to push (8 migrations `20261113190300`–`20261113190645` and the
-frontend commit are unpushed). Then the missed-ເຂົ້າ note in `js/activities/compare.js` (W000072 without W000019
+Owner browser check of L1c/L1d/L1b(a) (all pushed 2026-11-13). Then the missed-ເຂົ້າ note in `js/activities/compare.js` (W000072 without W000019
 after it), L1e, A7 steps 0–5, L3, A7 steps 6–10, L4, L5.
 
 ## Waiting on the owner
@@ -30,9 +29,9 @@ after it), L1e, A7 steps 0–5, L3, A7 steps 6–10, L4, L5.
    visible; focus ring when tabbing.
 4. Play-test lessons 5–11 (`#/try/L0005` … `#/try/L0011`), including S7h (untaught real words as wrong options).
 5. Letter writing `#/write` (S7w): owner said "still feels weird"; waiting for their notes. Phone untested.
-6. L1c/L1d (local, `#/try/L0002`, `#/try/L0009`, `#/try/L0007`): slot board, slips stay green, Check early,
+6. L1c/L1d (deployed, `#/try/L0002`, `#/try/L0009`, `#/try/L0007`): slot board, slips stay green, Check early,
    Your answer / Right answer, "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line.
-   Decide: R04 at ຫິວນ້ຳ or ບໍ່ຫິວ; fold R03 into the ເ◌ົາ card?
+   Decide: fold R03 into the ເ◌ົາ card?
 7. S10r: bigger record button and the "common name or nickname" prompt (built, untested).
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
