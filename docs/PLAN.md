@@ -138,7 +138,10 @@ L1 → L2 → A7 steps 0–5 → L3 → A7 mockup gate (step 6) and steps 7–10
       card "Pronouns are often left out": everyday Lao drops ຂ້ອຍ / ເຈົ້າ / ລາວ when context makes it clear, and that
       is normal, not sloppy; at the first pronoun-less sentence (ບໍ່ຫິວ baw hiw "not hungry", lesson 9). (c) ຫິວ
       (hiw) note and the missed-ເຂົ້າ feedback ("hungry needs ເຂົ້າ: Lao says what you are hungry for") only after
-      the native speaker answers QUESTIONS (lessons already accept bare ຫິວ). (d) English fixes: S000002881
+      the native speaker answers QUESTIONS (lessons already accept bare ຫິວ). ANSWERED 2026-11-13: ຂ້ອຍຫິວ alone
+      sounds incomplete ("hungry for what?"), so build both the culture note on the ຫິວ card and the missed-ເຂົ້າ
+      feedback, and review bare-ຫິວ sentences: S000002892 ຫິວ and S000002888 ບໍ່ຫິວ (replies, context given: ask if
+      fine), S000000268 ເດັກນ້ອຍຫິວ, S000001655 ຍັງບໍ່ ຂ້ອຍຫິວ, S000000192 ຂ້ອຍກິນຫຼາຍເພາະຫິວ (likely add ເຂົ້າ or retire). (d) English fixes: S000002881
       "Could I have some rice, please?" (ແນ່ = the please); S000002889 and S000002892 drop "Yes,"; S000002879 per
       QUESTIONS (2). **Done when:** the rule cards are in lessons 2 and 9 (new rule rows + `db_sql.py change`), the
       English rows are changed, pushed with the owner's go-ahead.

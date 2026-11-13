@@ -79,6 +79,8 @@ Tick or delete each line when done.**
 Passed 2026-11-13: A2 note and any-order build, L1 how-tos / ✓✗ marks / same-sound cards, L2 listen and pick and
 pause, letter cards (desktop), keyboard, culture notes, A4 hints. Follow-ups filed: PLAN L1b (vowel = one unit,
 consonant said first; activity mix), A7 step 1 theme choice, A7 step 7 badge oomph.
+Owner play-test notes filed as PLAN L1c (answers/feedback), L1d (rule cards, ຫິວ note: native speaker says bare
+ຂ້ອຍຫິວ is incomplete), L1e (lesson order, missing-piece), ◌ິ bug (need device/font). Next: L1c, then L1d, L1e.
 1. Letter cards on a phone: `#/read/L0001` ກ card "Hear it in a word" ກິນ (kin, "eat").
 2. Phone layout: `#/try/L0010` at phone width → fill-in-the-blank options never break a Lao word; Next on the right.
 3. Accessibility look in dark mode (only via the phone/OS dark setting until A7 step 1 adds a switch): dark text on

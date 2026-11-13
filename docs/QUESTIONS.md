@@ -127,7 +127,8 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
   pressed together at the chest and a slight bow, the ນົບ (nop)." Is it used for goodbye as much as for hello? (2)
   ເຂົ້າ (kao, "rice"): "Rice, and by extension a meal: ກິນເຂົ້າ (gin kao, 'eat rice') means 'have a meal'. The general
   word for food is ອາຫານ (aa-haan)."
-- **Hunger, pronouns and tense (owner's play-test, 2026-11-13).** (1) Is ຂ້ອຍຫິວ (khoy hiw, "I'm hungry") alone
+- **Hunger, pronouns and tense (owner's play-test, 2026-11-13).** ANSWERED (1), 2026-11-13: ຂ້ອຍຫິວ alone sounds
+  incomplete ("hungry for what?"); say ຫິວເຂົ້າ / ຫິວນ້ຳ. (2) and (3) still open. (1) Is ຂ້ອຍຫິວ (khoy hiw, "I'm hungry") alone
   natural, or would you wonder "hungry for what?" and expect ຂ້ອຍຫິວເຂົ້າ (khoy hiw khao)? Lessons already use bare
   ຫິວ as a reply: ຫິວ (hiw, "hungry") answering ເຈົ້າຫິວເຂົ້າບໍ່? (jao hiw khao baw, "are you hungry?"), ບໍ່ຫິວ (baw
   hiw, "not hungry"), and ເດັກນ້ອຍຫິວ (dek noy hiw, "the little child is hungry"). (2) ລາວບໍ່ກິນເຂົ້າ (lao baw gin
