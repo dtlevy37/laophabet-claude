@@ -297,6 +297,10 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   first letter card ກ, user 2026-11-09), with ກ and its "Sounds like" as the example, so the learner sees "Sounds
   like" change as they choose; it says the choice can be changed in Settings. Other display choices are introduced the same way, on the
   card where they first matter.
+- **Thumb zone** (owner 2026-11-13, A7 step 9): on a question the answer options sit in the middle of the space
+  left under the prompt, with bigger targets; the feedback takes the space under them and moves them up only when
+  it does not fit. Continue / Next / Check stays pinned on the right. Keyboard-shortcut hints (the key line, the
+  option numbers) show only on a desktop with a mouse and a window at least 561px wide.
 - **Rule and recap cards** show their text with the Lao parts enlarged in the Lao font (LESSON_RULES decision 18).
 - **Settings** (`#/settings`, a page linked from the top bar; `js/settings.js`, remembered per browser for now):
   light or dark (System / Light / Dark, `html[data-theme]`; A7 step 1), colours (below), transliteration style, Lao font, spaces

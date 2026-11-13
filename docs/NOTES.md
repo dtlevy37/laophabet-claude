@@ -18,9 +18,18 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-A7 step 9, thumb zone + inline sentence words (`docs/A7_PLAN.md`; steps 0–8 built 2026-11-13, step 6 decided in
-"Step 6 decided"), L3, A7 step 10, L4, L5. Owner browser checks of L1c/L1d/L1b(a)
-and L1e are pending (list below).
+Steps 7–8 review findings, fix first:
+- (major) The "All lessons" links (`learn.js:110` backToList, `summary.js:8` and `:28`/`:36`, `write.js:90`
+  backHome) still go to `#/`, which is now the tiles. Point them at `#/lessons`.
+- (minor) `learn.js:51-59`: the Lessons Back guesses `prev === '#/'`. Use `location.hash = '#/'` or record the
+  previous route on hashchange.
+- (minor) `home.js` soonTile: drop `role=link` + `aria-disabled` (plain text is enough, "Soon" is in the name); fix
+  the head comment.
+- (minor) `index.html` inline script: wrap it in an IIFE so `var s` is not global.
+
+Then: A7 step 9 part B, inline sentence words with a popover (`docs/A7_PLAN.md` "Step 6 decided" item 3; the thumb zone
+is built as 9a), then the desktop rail with the lesson preview, L3, A7 step 10, L4, L5. Owner browser checks
+of L1c/L1d/L1b(a) and L1e are pending (list below).
 
 ## Waiting on the owner
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
@@ -65,6 +74,10 @@ and L1e are pending (list below).
    Review, the lesson to play now outlined, the next 2 locked, the rest folded); ← Back returns home. Leave a lesson
    part-way: home says "Lesson n · in progress" / Continue, and that lesson is outlined on `#/lessons`. Decide: tile
    order and wording.
+16. A7 step 9a thumb zone (phone 375×667 and 375×812, and desktop): on a question (`#/try/L0009`) the four answer
+   boxes sit in the middle of the space under the prompt and are taller; after an answer the feedback appears under
+   them and they stay put unless it does not fit; Continue stays bottom right. Phone: no "Keys: …" line and no small
+   numbers on the options; desktop with a mouse: both still shown.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
@@ -95,7 +108,7 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 - `js/session.js`: `planLesson`, `buildPlan(bundle, levels, seed, missed)` (resume), `dryLevels` (`#/try/`),
   `advance`/`again(spec)`, keyboard. End screens (summary, dry-run end, failures) in `js/summary.js`. Selector
   contract (classes keys and A3 tap counts rely on): activity-module skill. Keyboard dry run:
-  `scripts/browser/a7_keys.js`. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`;
+  `scripts/browser/a7_keys.js`; thumb zone (options centred, step fits, key hints): `scripts/browser/a7_thumb.js`. Test: `node scripts/session_test.mjs` (bundles in `tmp/bundles/`;
   re-dump them after any lesson merge).
 - `js/activities/`: `multiple_choice.js` (null when it cannot fill 3 options), `build_sentence.js`, `fill_blank.js`,
   `build_word.js` (pieces from `units`; `spec.missing` = find the missing piece, recognition, detail `mode: 'missing'`), `listen_pick.js`, `teach_card.js` (`cardItems`, `unitSound`, `openInfo`).

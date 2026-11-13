@@ -2,6 +2,19 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 A7 step 9a: thumb zone
+- Answer options (multiple choice, listen and pick, fill in the blank) sit in the middle of the free space under
+  the prompt and are taller (`clamp(56px, 11dvh, 88px)`; one-column options `clamp(56px, 8dvh, 72px)`). The
+  feedback now sits in a `.mc-after` slot under the options; the options box grows from its height and the slot from
+  zero, so idle they are centred and after an answer they stay put unless the feedback needs more room, then move up
+  just enough. Continue / Next / Check unchanged. (`styles.css`, `multiple_choice.js`, `listen_pick.js`,
+  `fill_blank.js`)
+- Answered fill in the blank puts its options back to 56px so the tall feedback (word chips) fits wherever it
+  fitted before; a check against the old stylesheet found no answered step that scrolls now and did not before.
+- Keyboard hints (the key line and option numbers) now need a mouse and a window at least 561px wide. (`styles.css`)
+- Test: new `scripts/browser/a7_thumb.js` (375x667, 375x812, 1280x800, light and dark: options centred, key hints,
+  answered steps that scroll compared with the old stylesheet via `BASE_CSS`); shots `tmp/shots/a7/thumb_*`.
+
 ## 2026-11-13 A7 step 8: home tiles and Lessons page
 - Navigation model B (owner, step 6), no tab bar. Home (`#/`) is the Continue card, then a grid of section tiles
   (2 columns on a phone, 3 from 560px): Lessons (`#/lessons`, status "{done} of {total} done" counted from the

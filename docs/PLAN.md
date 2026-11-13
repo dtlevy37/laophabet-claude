@@ -78,7 +78,9 @@ owner's check or answer comes in.
       Teal + gold via `html[data-palette]`, theme and palette set in index.html's head before the first paint, solid
       Bonus and Culture badges with a reduced-motion-safe pop, brand dot, streak in the warm colour); step 8 (model B,
       no tab bar: home = Continue card + tiles; Lessons (`#/lessons`, the path, "5 of 11 done") and Write live; Review,
-      Letters and sounds, My words, Notes greyed "Soon", not focusable). Next: step 9, thumb zone + inline words.
+      Letters and sounds, My words, Notes greyed "Soon", not focusable); step 9a (thumb zone: options centred in the
+      free space with bigger targets, Continue unchanged; key hints hidden on touch and under 561px). Next: step 9 part B,
+      inline sentence words with a popover.
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
