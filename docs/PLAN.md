@@ -93,6 +93,7 @@ There is one transliteration (the stored "respelling", shown in the learner's st
       hint button (spelling-only types left out when spelling is off). Not a gate; the result lists the words to
       review and feeds practice. **Done when:** an RPC returns a checkpoint bundle for a section and records answers.
 - [x] **H5 Checkpoints, UI.** *Built 2026-11-14: `#/checkpoint/S01`, a card on the lesson list, `planCheckpoint`, summary with the words to look at again. Owner browser check pending.*
+- [x] **A12a Active time per session.** *Built 2026-11-14 (local; `learner_sessions.active_ms`, `set_session_active`, `active_time.js`). Views, queries and a one-page report wait until there is data.*
 - [~] **H6 More listening.** *Started 2026-11-14: up to two listen and pick per lesson (was one), listening in every checkpoint and review. More when the recordings grow.* Audio on more question types as recordings arrive (60+ recorded by 2026-11-14; more
       coming); no transliteration by default.
 

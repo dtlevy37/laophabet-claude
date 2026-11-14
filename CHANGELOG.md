@@ -13,7 +13,10 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - H6: up to two listen and pick per lesson.
 - Natives: thank-you pause every 20 items, the "left" number removed from recording. Lao strings unverified.
 - Review: pick 2, 5 or 10 minutes; the Review tile no longer shows "{n} to review". About page (`#/about`).
-- Migrations `20261114130000`-`20261114160000` are local only: push after the owner agrees.
+- A12 (data collection only): `learner_sessions.active_ms`, the gaps between taps capped at 60 s, reported with
+  `set_session_active` after each saved batch and before completing (migration `20261114170000`). Views, queries and a
+  report are left for later.
+- Migrations `20261114130000`-`20261114170000` are local only: push after the owner agrees (migrations first, then the frontend).
 
 ## 2026-11-14 Show password, lesson-feel plan
 - Sign-in and sign-up: "Show password" checkbox under the password field (`auth_show_password`, Lao string unverified).

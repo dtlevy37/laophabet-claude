@@ -580,5 +580,15 @@ for (const b of bundles) {
     }
   }
 }
+// A12: active time counts the gaps between taps, each capped at a minute; only the unsent part is reported.
+{
+  const { newClock, tick, unsent } = await import(js('active_time.js'))
+  const c = newClock(0)
+  tick(c, 5000) // 5 s
+  tick(c, 5000 + 3 * 60000) // a 3 minute pause counts as 60 s
+  if (c.ms !== 65000) fail(`A12: active ms ${c.ms}, expected 65000`)
+  c.sent = 40000
+  if (unsent(c) !== 25000) fail(`A12: unsent ${unsent(c)}, expected 25000`)
+}
 console.log(errors ?`\n${errors} failure(s)` : '\nall checks passed')
 process.exit(errors ? 1 : 0)
