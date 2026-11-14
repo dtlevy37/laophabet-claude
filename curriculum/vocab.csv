@@ -1,29 +1,29 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
 W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,11
 W000002,ດີ,adjective,good,basics,,42
-W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,318
-W000004,ແມ່ນ,verb; particle,"yes, that's right; to be",basics,,66
-W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,213
-W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,736
+W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,321
+W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,67
+W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,214
+W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,738
 W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
 W000009,ຂໍ,verb,"ask for, request; may I have",requests,,86
 W000010,ຂໍໂທດ,interjection; verb,"sorry, excuse me",greetings,,5
-W000011,ນ້ຳ,noun,water; liquid,food,W000218,40
+W000011,ນ້ຳ,noun,water; liquid,food,W000218,43
 W000012,ຫ້ອງ,noun; classifier,room,places,W000012,34
 W000013,ຫ້ອງນ້ຳ,noun,"bathroom, toilet",places,W000012,12
 W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
-W000016,ນີ້,pronoun; adverb,this; here,basics,,397
+W000016,ນີ້,pronoun; adverb,this; here,basics,,398
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
 W000018,ກິນ,verb,eat; (colloquial) drink,food,,124
-W000019,ເຂົ້າ,noun,"rice, food",food,W000419,53
+W000019,ເຂົ້າ,noun,"rice, food",food,W000419,54
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,116
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
-W000023,ມີ,verb,have; there is/are,basics,,244
+W000023,ມີ,verb,have; there is/are,basics,,247
 W000024,ໄປ,verb,go,basics,,173
-W000025,ມາ,verb,come,basics,,69
+W000025,ມາ,verb,come,basics,,70
 W000026,ຫຍັງ,particle (interrogative),what; something,questions,,52
 W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
@@ -88,7 +88,7 @@ W000086,ເງິນ,noun,money; silver,shopping,W000297,14
 W000087,ແພງ,adjective,expensive,shopping,,29
 W000088,ຖືກ,adjective; verb,cheap; correct,shopping,,6
 W000089,ໃຫຍ່,adjective,big,describing,,49
-W000090,ນ້ອຍ,adjective,"small, little",describing,,26
+W000090,ນ້ອຍ,adjective,"small, little",describing,,27
 W000091,ຫຼາຍ,adverb; adjective,"very; many, much",describing,,198
 W000092,ຮ້ອນ,adjective,hot,describing,,26
 W000093,ເຢັນ,adjective,cold; cool,describing,,12
@@ -216,7 +216,7 @@ W000214,ໝາກມ່ວງ,noun,mango,food,W000284,13
 W000215,ຕຳໝາກຫຸ່ງ,noun,papaya salad,food,W000629,6
 W000216,ອາຫານເຊົ້າ,noun,breakfast,food,,3
 W000217,ເຂົ້າແລງ,noun,dinner,food,,2
-W000218,ແກ້ວ,noun; classifier,glass; bottle,food,W000218,5
+W000218,ແກ້ວ,noun; classifier,glass; bottle,food,W000218,7
 W000219,ຈອກ,noun; classifier,cup; glass,food,W000219,9
 W000220,ຊ່ວຍ,verb,help,basics,,6
 W000221,ຮູ້ຈັກ,verb,know (a person or place),basics,,4
@@ -821,7 +821,7 @@ W000819,ພະຍາຍາມ,verb,try; make an effort,verbs,,2
 W000820,ຕັດສິນໃຈ,verb,decide; make up one's mind,verbs,,2
 W000821,ອະທິບາຍ,verb,explain,verbs,,2
 W000822,ສະແດງ,verb,show; display; perform,verbs,,2
-W000823,ບໍ່ມີ,verb phrase,not have; there is no,function,,10
+W000823,ບໍ່ມີ,verb phrase,not have; there is no,function,,12
 W000824,ບໍ່ໄດ້,adverb; verb phrase,cannot; did not; not allowed,function,,4
 W000825,ຍັງບໍ່,adverb,not yet; (question) yet?,function,,3
 W000826,ເພາະວ່າ,conjunction,because,function,,7

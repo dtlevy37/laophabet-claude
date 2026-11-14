@@ -1,0 +1,14 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0012-S001,1,action,W000018|W000019|W000025,SRC-AGENT,unverified,Tagged by the agent; __ ນ້ຳ ບໍ່: other verbs (ກິນ eat water) also fit so excluded
+L0012-S002,1,function,W000003|W000004|W000005|W000016|W000020,SRC-AGENT,unverified,Tagged by the agent; function slot: other function words that can precede ນ້ຳ excluded
+L0012-S003,2,function,W000003|W000004|W000005|W000016|W000020,SRC-AGENT,unverified,Tagged by the agent; function slot: negation phrase between subject and noun
+L0012-S004,2,action|motion,W000018|W000019|W000023,SRC-AGENT,unverified,Tagged by the agent; ເຈົ້າ __ ບໍ່: other verbs also fit so excluded
+L0012-S005,2,function,W000003|W000005|W000016|W000020|W000823,SRC-AGENT,unverified,Tagged by the agent; ນີ້ __ ນ້ຳ: copula; ບໍ່ມີ also fits so excluded
+L0012-S006,2,action,W000018|W000019|W000025,SRC-AGENT,unverified,Tagged by the agent; ຂ້ອຍ __ ແກ້ວ ນ້ອຍ: other verbs excluded
+L0012-S007,1,action,W000018|W000019|W000025,SRC-AGENT,unverified,Tagged by the agent; __ ເຂົ້າ ບໍ່: ກິນ also fits so excluded
+S000000005,1,function,W000003|W000005|W000016|W000020|W000823,SRC-AGENT,unverified,Tagged by the agent; function slot before the question particle
+S000000006,2,function,W000003|W000005|W000016|W000020|W000823,SRC-AGENT,unverified,Tagged by the agent; function slot after ບໍ່
+S000000031,2,action,W000018|W000019|W000025,SRC-AGENT,unverified,Tagged by the agent; ເຈົ້າ __ ນ້ຳ ບໍ່: ກິນ also fits so excluded
+S000000032,2,action,W000018|W000019|W000025,SRC-AGENT,unverified,Tagged by the agent; ບໍ່ __: any verb negated fits so other verbs excluded
+S000000035,1,action|motion,W000018|W000019|W000023,SRC-AGENT,unverified,Tagged by the agent; __ ນີ້: ກິນ ນີ້ or ເຂົ້າ ນີ້ also fit so excluded
+S000000047,2,action|motion,W000018|W000019|W000023,SRC-AGENT,unverified,Tagged by the agent; ລາວ __ ແລ້ວ: other verbs also fit so excluded

@@ -143,3 +143,26 @@ L0011,15,word,W000009,recycle,earlier word 'ask for'; used in the next sentence
 L0011,16,word,W001426,recycle,earlier word 'please (softener)'; used in the next sentence
 L0011,17,sentence,S000002897,new,'Could I have a small glass?' (composed)
 L0011,18,sentence,S000002898,new,'This glass is small' (composed)
+L0012,1,unit,C20,new,initial ມ
+L0012,2,unit,C20f,new,"final ◌ມ; shown with C20 as one card (same-sound pair, like C13 and C13f)"
+L0012,3,word,W000023,new,'have; there is': the first word with ມ
+L0012,4,word,W000011,recycle,earlier word 'water'; used in the next sentence
+L0012,5,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentence
+L0012,6,sentence,S000002901,new,'Is there water?' (composed)
+L0012,7,sentence,S000000032,new,"'No, there isn't.' (existing; the reply)"
+L0012,8,word,W000823,new,'not have; there is no': ບໍ່ + ມີ said as one
+L0012,9,sentence,S000002902,new,'There isn't any water.' (composed)
+L0012,10,word,W000006,recycle,earlier word 'I'; used in the next sentence
+L0012,11,word,W000218,recycle,earlier word 'glass'; used in the next sentence
+L0012,12,word,W000025,new,'come'
+L0012,13,word,W000005,recycle,earlier word 'you'; used in the next sentence
+L0012,14,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0012,15,word,W000020,recycle,earlier word 'already; done'; used in the next sentence
+L0012,16,sentence,S000000047,new,'He/She has arrived.' (existing)
+L0012,17,sentence,S000002904,new,'Are you coming?' (composed)
+L0012,18,word,W000004,new,'that's right; to be' (not taught as 'yes')
+L0012,19,word,W000016,recycle,earlier word 'this'; used in the next sentence
+L0012,20,sentence,S000002905,new,'This is water.' (composed)
+L0012,21,word,W000090,recycle,earlier word 'small'; used in the next sentence
+L0012,22,sentence,S000002906,new,'I have a small glass.' (composed)
+L0012,23,word,W000630,bonus,'fork'; bonus word with the final ມ; never used in a sentence

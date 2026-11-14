@@ -4,8 +4,10 @@ State, next step, what waits on the owner, decisions in force, code map. Keep it
 goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people in `docs/QUESTIONS.md`.
 
 ## State (2026-11-13)
-- **Content:** 1425 words, 2816 sentences. Pipeline clean (0 errors, the usual 11 warnings).
-- **Lessons merged: 11.** L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
+- **Content:** 1427 words, 2848 sentences. Pipeline clean (0 errors, the usual 11 warnings).
+- **Lessons merged: 12** (L0012 ມ: ມີ ມາ ບໍ່ມີ ແມ່ນ, bonus ສ້ອມ fork; local only, not on hosted; effort 28.8 pts; sentences
+  unverified, native questions in QUESTIONS.md "Lesson 12").
+- **Lessons 1-11:** L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
   (nam, water) · L0005 ແລ້ວ (laew, already) · L0006 ຂໍ ບໍ່ ແນ່ (khor/bor/nae: may I have, not, softener) · L0007
   ດີ ນີ້ (dee/nee: good, this) · L0008 ສະບາຍດີ (sabaidee, hello) · L0009 ຫິວ ເຈົ້າ (hiw/jao: hungry, you) · L0010
   ຂ້ອຍ ນອນ (khoy/non: I, sleep) + first conversation · L0011 colours, ຂາຍ (khaai, sell), ນ້ອຍ (noy, small).

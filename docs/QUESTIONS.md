@@ -85,3 +85,9 @@ Romanization in brackets; sentence ids for the agent. All composed sentences are
 starts it (ກ bottom left, ມ top left, ອ at the curl) and run the right way? (2) is every consonant one stroke?
 (3) ພ ຟ ຜ ຝ: is the middle peak drawn up and back down the same line? (4) do ກ (plain Noto) and ຖ (loop top left)
 look like normal school handwriting?
+
+**Lesson 12 (agent-composed, unverified)**
+- ມີນ້ຳບໍ່? (S000002901) / ບໍ່ມີ (S000000032) / ບໍ່ມີນ້ຳ (S000002902): natural question and answer?
+- ຂ້ອຍມີແກ້ວນ້ອຍ (S000002906): natural, or is a classifier or ໜຶ່ງ expected?
+- ເຈົ້າມາບໍ່? (S000002904) for "Are you coming?": natural, or another final particle?
+- ນີ້ແມ່ນນ້ຳ (S000002905): normal, or would you say ນີ້ນ້ຳ? Is ແມ່ນ also "yes" in daily speech?

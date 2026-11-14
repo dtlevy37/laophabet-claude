@@ -1,0 +1,24 @@
+position,item_type,item_id,role,notes
+1,unit,C20,new,initial ມ
+2,unit,C20f,new,"final ◌ມ; shown with C20 as one card (same-sound pair, like C13 and C13f)"
+3,word,W000023,new,'have; there is': the first word with ມ
+4,word,W000011,recycle,earlier word 'water'; used in the next sentence
+5,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentence
+6,sentence,S000002901,new,'Is there water?' (composed)
+7,sentence,S000000032,new,"'No, there isn't.' (existing; the reply)"
+8,word,W000823,new,'not have; there is no': ບໍ່ + ມີ said as one
+9,sentence,S000002902,new,'There isn't any water.' (composed)
+10,word,W000006,recycle,earlier word 'I'; used in the next sentence
+11,word,W000218,recycle,earlier word 'glass'; used in the next sentence
+12,word,W000025,new,'come'
+13,word,W000005,recycle,earlier word 'you'; used in the next sentence
+14,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+15,word,W000020,recycle,earlier word 'already; done'; used in the next sentence
+16,sentence,S000000047,new,'He/She has arrived.' (existing)
+17,sentence,S000002904,new,'Are you coming?' (composed)
+18,word,W000004,new,'that's right; to be' (not taught as 'yes')
+19,word,W000016,recycle,earlier word 'this'; used in the next sentence
+20,sentence,S000002905,new,'This is water.' (composed)
+21,word,W000090,recycle,earlier word 'small'; used in the next sentence
+22,sentence,S000002906,new,'I have a small glass.' (composed)
+23,word,W000630,bonus,'fork'; bonus word with the final ມ; never used in a sentence

@@ -1,0 +1,6 @@
+word_id,categories,source,confidence,notes
+W000023,action,SRC-AGENT,unverified,Tagged by the agent
+W000025,action|motion,SRC-AGENT,unverified,Tagged by the agent
+W000004,function,SRC-AGENT,unverified,Tagged by the agent
+W000823,function,SRC-AGENT,unverified,Tagged by the agent
+W000630,object,SRC-AGENT,unverified,Tagged by the agent; fork is an eating tool not food

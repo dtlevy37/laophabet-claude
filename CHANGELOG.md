@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Lesson 12: have, come, be (local, not on hosted)
+- L0012 ມ (initial + final shown as one card): ມີ, ມາ, ບໍ່ມີ, ແມ່ນ; bonus ສ້ອມ "fork"; 7 sentences (S000002901, 02, 04, 05, 06
+  composed and unverified; S000000032, S000000047 reused). S000002903/907 are drafted but unused. Trimmed to 28.8 effort
+  points (migrations `20261114190015` then `20261114190140_lesson_l0012` rebuild). ແມ່ນ gloss is now "that's right; to be"
+  (owner: not taught as "yes"); ບໍ່ມີ tip says it is ບໍ່ + ມີ said together. Blank exclusions widened for function-word slots.
+
 ## 2026-11-14 Mobile: pinned button hidden under the phone's bottom toolbar
 - Owner (Galaxy S10+): Next / Submit not visible at the bottom, in lessons and forms. Lesson frame height now comes from
   the visible viewport (`js/viewport.js` sets `--app-h`; CSS falls back to 100dvh); scrolling pages get 56px room at
