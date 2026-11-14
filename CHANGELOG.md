@@ -2,6 +2,13 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Owner feedback: wording, discard, layout, greyed letters, speaker
+- Build-a-sentence: "Build the sentence in Lao" and a how-to that says Lao order differs from English.
+- Leave dialog: "Start over" and "Leave and discard progress" (clears the resume record, drops the session).
+- Build-a-word: "= word" kept together, taller line (fixes overlap with the green line on short phones).
+- `learner_units_locked()` (migration `20261114130000`, unapplied) and greyed tiles on `#/letters`.
+- Speaker button: SVG icon, tinted fill, 26px icon in the same 44px button.
+
 ## 2026-11-14 A8 Letters and sounds, A9 My words, S8b Review
 - Plan `docs/A8_A9_REVIEW_PLAN.md`. Built by three parallel subagents, code-reviewed, review findings fixed.
 - A8: `learner_units()` {units, remaining}; `#/letters` grouped tiles, a consonant's initial and final as one bare-letter

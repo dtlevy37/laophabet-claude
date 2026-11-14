@@ -30,6 +30,7 @@ is built as 9a), then the desktop rail with the lesson preview, L3, A7 step 10, 
 of L1c/L1d/L1b(a) and L1e are pending (list below).
 
 ## Waiting on the owner
+**Owner feedback round 2026-11-14 (built, untested in a browser; not pushed):** (a) build-a-sentence wording now "Build the sentence in Lao" and the how-to no longer says "in the order of the English"; (b) Leave dialog has "Start over" and "Leave and discard progress" (real lessons only); (c) build-a-word "= word" no longer overlaps the green line on short phones (`.bw-equals`, line-height); (d) `#/letters` shows unreached tiles greyed (new RPC `learner_units_locked`, migration `20261114130000`, **not applied anywhere yet**: local Supabase was not running; hosted push needs the owner's OK; until then the screen just shows no greyed tiles); (e) speaker is an SVG with a tinted button and a bigger icon (26px in the same 44px button).
 **Browser tests** (deployed site; a private window shows the first-time hints). Delete a line when done.
 1. Phone: `#/read/L0001` ກ card "Hear it in a word" ກິນ (gin, "eat").
 2. Phone width: `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.
