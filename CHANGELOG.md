@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 ລາວ "he/she" is long (laao)
+- Owner decision (rhymes with ຂາວ khaao, same sound as ລາວ "Lao"): W000031 respelling/IPA and 173 sentences changed to
+  `laao` / `laːw˧˥`; migration `20261114183134_laao_pronoun.sql` (also inserts W001427 ເຕ້ຍ, which had never been
+  migrated). Local only, not on hosted. Q0001 still asked online so the wife can confirm. Owner also said: question
+  marker sounds exactly like ບໍ່ "not" (Q0003), ແນ່ is the normal Vientiane softener (Q0004).
+
 ## 2026-11-14 Native questions, word suggestions, register field (local only, not on hosted)
 - N1: `open_questions` / `question_answers`, RPCs `next_open_question`, `answer_open_question`,
   `open_question_counts`, owner view `open_question_consensus`; 16 seeded questions from `data/open_questions.csv`
