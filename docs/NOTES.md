@@ -22,8 +22,9 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 **A8 Letters and sounds, A9 My words, S8b Review** built 2026-11-14 on the local stack (plan and contracts:
 `docs/A8_A9_REVIEW_PLAN.md`); on hosted and deployed. Owner: browser items 17–19. Then A11 (no ◌ on final consonants).
 
-**Planned next (owner agreed 2026-11-14):** PLAN "Lesson feel and checkpoints" H1–H6, in that order (hint ladder,
-effort budget, spelling opt-in, checkpoints, more listening). Show-password on sign-in/sign-up is built, untested in a browser.
+**H1–H6, A12a, show password, review time, About, native pause** built and on hosted + deployed 2026-11-14 (migrations up to
+`20261114170000` applied, so none may be edited). Owner browser check pending. H6 (more listening) continues as recordings arrive.
+A12 analysis (views, queries, report) waits for data: `learner_sessions.active_ms` and `review_log` already collect it.
 
 AL1 alpha readiness (PLAN): on hosted and deployed 2026-11-14; owner check pending, then the owner's sons sign up. Read their answers and notes in the dashboard (`learner_intake`, `app_feedback`).
 Browser check: `scripts/browser/alpha_check.js`.
