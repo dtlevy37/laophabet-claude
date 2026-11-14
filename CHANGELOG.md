@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-15 Natives: gaps-first recording queue, shorter recording screen, suggestion audio
+- `next_recording_item()` orders items nobody has a take of (published `item_audio` or another native's recording) before covered ones; migration `20261115000000` (local only).
+- Same migration: storage select policy so natives can read `{uid}/suggestion/...` in the private `recordings` bucket; `#/confirm` plays it via a signed URL (`cf_play`).
+- Recording tips: three lines (loud and clear in quiet; words slower with pronunciation and tone; sentences natural but unrushed), once per page load, at most 3 times in all. Per-item "say it..." line removed.
+
 ## 2026-11-14 Mobile layout fixes + "Choose, then Check" setting (frontend only)
 - Build sentence/word: the line under the tiles no longer cuts through wrapped tiles (flex children shrank below their
   content); the answered feedback no longer repeats the Lao sentence/word (sound, audio, info stay).

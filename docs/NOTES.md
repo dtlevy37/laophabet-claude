@@ -23,13 +23,18 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 ## Decisions in force (UI)
 - `confirm` setting (device): pick-one questions select then Check (`activities/choice.js`). Any future activity where each tap is the answer (match the tiles) ignores it and has no Check, ever (owner 2026-11-14).
 
+## Open: font size on mobile (owner 2026-11-14, no change made yet)
+- Owner's phone layout is good overall but fonts may be a few points too large once sentences get longer. Idea: shrink
+  slightly (Lao tiles `.bs-tile .lao` 2rem, `.mc-option .lao` 2.2rem, `.bs-answer` 2rem, `.glyph`, `.lao` 2rem base).
+  Decide with several tester agents (screenshots at phone widths with the longest sentences), not by eye. Do not change until then.
+
 ## Next step
 **N1 native open questions, N2 word suggestions, R1 register field** built 2026-11-14 on the local stack only
 (migrations `20261114175000`–`20261114190140`, all on hosted since the owner's push 2026-11-14, with the ລາວ long change and L0012).
 Next: owner tests on Netlify (mobile button fix on the S10+, native screens, lesson 12 `#/try/L0012`); wife answers `#/questions`
 (16 seeded, Q0001–Q0016, `data/open_questions.csv`, `scripts/questions_tool.py`); mark natives verified in
 `reviewer_trust`; then apply answers (ລາວ long/short first) and remove them from QUESTIONS.md; then lessons 12 (ມ) and
-13 (ອ). Open: other natives cannot play a suggester's audio (needs a signed-URL RPC); the registers are blank on all
+13 (ອ). Recording queue now serves uncovered items first (migration `20261115000000`, local only until pushed with the owner's OK; also lets natives play suggestion audio in `#/confirm`, untested in a browser). Record tips show once per page load, max 3 times total (localStorage `rec_tips_count`). Open: the registers are blank on all
 existing rows; question text is English (+ Lao only if `label_lao`); the Lao UI strings are unreviewed. Owner path
 notes (lesson 20+) come later. Owner browser steps: sign in as a native; `#/` shows 5 entries; `#/questions`,
 `#/suggest`, `#/confirm` (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js`
