@@ -602,7 +602,7 @@ function main() {
     const parts = []
     final.forEach((pts, si) => {
       const L = len(pts)
-      const count = ov.parts?.[si] ?? (L > 150 ? 3 : L > 60 ? 2 : 1)
+      const count = ov.parts?.[si] ?? 1 // one part per stroke (owner, 2026-11-13: no finer split)
       const cuts = Array.isArray(count) ? count : splitPoints(pts, count)
       let from = 0
       for (const c of [...cuts, pts.length - 1]) parts.push({ stroke: si, from, to: c }), (from = c)

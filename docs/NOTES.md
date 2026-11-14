@@ -31,7 +31,8 @@ of L1c/L1d/L1b(a) and L1e are pending (list below).
 2. Phone width: `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.
 3. Dark mode: dark text on the blue button; locked lessons dashed; progress bar visible; focus ring when tabbing.
 4. Play-test lessons 5–11 (`#/try/L0005` … `#/try/L0011`), including S7h (untaught real words as wrong options).
-5. Letter writing `#/write` (S7w): owner said "still feels weird"; waiting for their notes. Phone untested.
+5. Letter writing `#/write` (S7w): 2026-11-13 owner notes applied: no part splitting (watch, trace, from memory only;
+   `parts` overrides still work) and ກ drawn with its loops. Waiting for their next look. Phone untested.
 6. L1c/L1d (deployed, `#/try/L0002`, `#/try/L0009`, `#/try/L0007`): slot board, slips stay green, Check early,
    Your answer / Right answer, "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line.
    Decide: fold R03 into the ເ◌ົາ card?

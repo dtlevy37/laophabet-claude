@@ -2,6 +2,10 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-13 Writing: fewer steps, looped ກ
+- `strokes_build.js` no longer splits strokes into parts (one part per stroke), so `#/write` is watch, trace, from
+  memory. ກ uses the looped font like the other letters (override removed). strokes_test passes.
+
 ## 2026-11-14 AL1 alpha readiness
 - "All lessons" links (reader, reader Finish, lesson failure screens) go to `#/lessons`, not the home tiles; Write's
   back link reads "Back home"; the Lessons page's Back always goes home. Review fixes: greyed tiles are plain text

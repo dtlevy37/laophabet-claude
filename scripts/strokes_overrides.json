@@ -1,9 +1,5 @@
 {
   "_comment": "Hand corrections for scripts/strokes_build.js. See its header for the fields.",
-  "ກ": {
-    "font": "plain",
-    "_why": "The looped font draws this letter with two loops; the everyday shape has none."
-  },
   "ອ": {
     "reverse": [
       0
