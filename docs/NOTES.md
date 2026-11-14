@@ -5,7 +5,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 
 ## State (2026-11-13)
 - **Content:** 1427 words, 2848 sentences. Pipeline clean (0 errors, the usual 11 warnings).
-- **Lessons merged: 12** (L0012 ມ: ມີ ມາ ບໍ່ມີ ແມ່ນ, bonus ສ້ອມ fork; local only, not on hosted; effort 28.8 pts; sentences
+- **Lessons merged: 12** (L0012 ມ: ມີ ມາ ບໍ່ມີ ແມ່ນ, bonus ສ້ອມ fork; on hosted (owner pushed 2026-11-14); effort 28.8 pts; sentences
   unverified, native questions in QUESTIONS.md "Lesson 12").
 - **Lessons 1-11:** L0001 ກິນ (gin, eat) · L0002 ເຂົ້າ (kao, rice) · L0003 ລາວ (lao, he/she) · L0004 ◌ຳ, ນ້ຳ
   (nam, water) · L0005 ແລ້ວ (laew, already) · L0006 ຂໍ ບໍ່ ແນ່ (khor/bor/nae: may I have, not, softener) · L0007
@@ -22,8 +22,8 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 
 ## Next step
 **N1 native open questions, N2 word suggestions, R1 register field** built 2026-11-14 on the local stack only
-(migrations `20261114175000`–`20261114183000`; NOT on hosted, NOT pushed: a frontend push would deploy native screens
-whose RPCs hosted lacks). Next: owner agrees `supabase db push --linked` and the push; wife answers `#/questions`
+(migrations `20261114175000`–`20261114190140`, all on hosted since the owner's push 2026-11-14, with the ລາວ long change and L0012).
+Next: owner tests on Netlify (mobile button fix on the S10+, native screens, lesson 12 `#/try/L0012`); wife answers `#/questions`
 (16 seeded, Q0001–Q0016, `data/open_questions.csv`, `scripts/questions_tool.py`); mark natives verified in
 `reviewer_trust`; then apply answers (ລາວ long/short first) and remove them from QUESTIONS.md; then lessons 12 (ມ) and
 13 (ອ). Open: other natives cannot play a suggester's audio (needs a signed-URL RPC); the registers are blank on all
