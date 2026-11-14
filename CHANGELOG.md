@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Mobile: pinned button hidden under the phone's bottom toolbar
+- Owner (Galaxy S10+): Next / Submit not visible at the bottom, in lessons and forms. Lesson frame height now comes from
+  the visible viewport (`js/viewport.js` sets `--app-h`; CSS falls back to 100dvh); scrolling pages get 56px room at
+  the bottom on phones. Verified only in emulation; owner to confirm on the S10+.
+
 ## 2026-11-14 ລາວ "he/she" is long (laao)
 - Owner decision (rhymes with ຂາວ khaao, same sound as ລາວ "Lao"): W000031 respelling/IPA and 173 sentences changed to
   `laao` / `laːw˧˥`; migration `20261114183134_laao_pronoun.sql` (also inserts W001427 ເຕ້ຍ, which had never been
