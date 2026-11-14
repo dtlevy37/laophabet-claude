@@ -1,3 +1,4 @@
 {
-  "liveServer.settings.root": "/app/frontend"
+  "liveServer.settings.root": "/app/frontend",
+  "liveServer.settings.port": 5501
 }

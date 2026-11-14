@@ -2,6 +2,16 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 A8 Letters and sounds, A9 My words, S8b Review
+- Plan `docs/A8_A9_REVIEW_PLAN.md`. Built by three parallel subagents, code-reviewed, review findings fixed.
+- A8: `learner_units()` {units, remaining}; `#/letters` grouped tiles, a consonant's initial and final as one bare-letter
+  tile (owner: no ◌ before a final), detail = card, example words (link to My words), writing link.
+- A9: `learner_words()`, `learner_word(id)` (null when unreached), `learner_counts()` for the home tiles; `#/words`
+  search, filters, per-word stats and examples.
+- S8b: `practice_status()`, `start_practice(day)` (get_lesson-shaped bundle, up to 12 ranked items, fixed-interval
+  boxes), `complete_practice(session)`; `planPractice` in session.js; `#/practice`; home Review tile.
+- PLAN: A11 no ◌ on final consonants (owner), not built.
+
 ## 2026-11-14 Teach cards: less text, spelling choice in lesson 2
 - Lesson 1 opens with "Lao has its own sounds" only (text shortened). "How should we write the sounds?" is its own
   card in lesson 2 after ຂ: ກ and ຂ side by side in both styles, the chosen row marked, then the radios.

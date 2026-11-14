@@ -10,7 +10,9 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
   ດີ ນີ້ (dee/nee: good, this) · L0008 ສະບາຍດີ (sabaidee, hello) · L0009 ຫິວ ເຈົ້າ (hiw/jao: hungry, you) · L0010
   ຂ້ອຍ ນອນ (khoy/non: I, sleep) + first conversation · L0011 colours, ຂາຍ (khaai, sell), ນ້ອຍ (noy, small).
   Path notes: 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
-- **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); every migration is pushed, nothing pending. Netlify
+- **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17). **Not pushed:** `20261114004907_n_card_text` and the
+  A8/A9/S8b migrations `20261114100000`, `..110000`, `..120000`. Push the DB before the frontend: the new home tiles
+  call `learner_counts` and `practice_status`. Netlify
   serves the frontend; `config.production.js` is copied to `config.js` by the build unless `SUPABASE_URL` /
   `SUPABASE_ANON_KEY` env vars are set. Local Docker DB is still Postgres 15 (`supabase/.temp/postgres-version`
   moved to `postgres-version.hosted` so local starts on 15); move it to 17 some time.
@@ -18,6 +20,10 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
+**A8 Letters and sounds, A9 My words, S8b Review** built 2026-11-14 on the local stack (plan and contracts:
+`docs/A8_A9_REVIEW_PLAN.md`); committed, not pushed. Owner: agree the hosted push (DB first, then git push =
+Netlify deploy), then browser items 17–19. Then A11 (no ◌ on final consonants).
+
 AL1 alpha readiness (PLAN): on hosted and deployed 2026-11-14; owner check pending, then the owner's sons sign up. Read their answers and notes in the dashboard (`learner_intake`, `app_feedback`).
 Browser check: `scripts/browser/alpha_check.js`.
 
@@ -74,6 +80,14 @@ of L1c/L1d/L1b(a) and L1e are pending (list below).
    them and they stay put unless it does not fit; Continue stays bottom right. Phone: no "Keys: …" line and no small
    numbers on the options; desktop with a mouse: both still shown.
 
+17. A8 `#/letters` (home tile "n letters and sounds"): Consonants / Vowels / Tone marks; ນ (n) is one tile for both
+   roles, its page lists start and end sounds, examples (tap → My words), "Practice writing". New learner: empty state.
+18. A9 `#/words` (tile "n words"): search (Lao, respelling, English), All / Needs work / Newest; a word's page shows
+   its card, ▶, notes, "Right x of n first tries", example sentences you know. Decide: "Needs work" = under 70% first
+   tries (one miss puts a new word there).
+19. S8b Review (`#/practice`, tile "n to review" / greyed "Opens after lesson 1"): no teach cards, mixed questions,
+   ✕ → "End the review?" ends on the summary; Review again / Back home; lessons never marked done by a review.
+
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
 ## Decisions in force
@@ -112,6 +126,10 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 - `js/home.js` home (#/): Continue card and the section tiles (live: Lessons, Write; the rest greyed "Soon").
   `js/lessons.js` `#/lessons`: the compact path, `nextLesson()` (`session.js` `resumableLesson`; shared with home).
   Browser check of both: `scripts/browser/a7_shots.js`.
+- A8/A9/S8b: `js/letters.js` (`learner_units`), `js/words.js` (`learner_words`, `learner_word`), home counts one
+  `learner_counts` call; `js/practice.js` tile + `planPractice` / practice runner branch in `session.js`
+  (`start_practice`, `complete_practice`). SQL tests `app/backend/tests/a8_*.sql`, `a9_*.sql`, `s8b_*.sql` (rolled
+  back; run with docker exec psql). Browser: `scripts/browser/s8b_practice.js`.
 - `js/learn.js` reader, `#/settings` route (Back = history.back when opened from the app).
   Theme: `settings.js` `theme` sets `html[data-theme]`; `styles.css` has the dark tokens twice (device dark unless
   `light`, and `[data-theme='dark']`): change both. Browser check: `scripts/browser/a7_shots.js`. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from

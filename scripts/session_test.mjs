@@ -457,5 +457,79 @@ for (const b of bundles) {
   globalThis.localStorage = saved
 }
 
+// ------------------------------------------------------------------ S8b practice plans
+// A practice bundle in start_practice's shape is built from the lesson bundles: a learner who has done lessons
+// 1..n has reached every unit, word and sentence of those lessons (no rules; tone marks are never sent), at a random
+// level 1-3, in a random practice order; the pool is lesson n's (start_practice uses the furthest completed lesson's
+// get_lesson distractors). Checks over many seeds: no teach card; never one item twice in a row; a level-1 unit or
+// word gets recognition only; a word at level >= 2 starts with recall where meaning -> Lao can be built; at most 12
+// items, at most 3 questions per item and 20 answers, at least 15 once 8 items can be asked about; no item below
+// level 1; the same seed gives the same plan. noRepeat moves or drops a step that would repeat its item.
+{
+  const { planPractice, noRepeat } = await import(js('session.js'))
+  console.log('== practice (S8b)')
+  const KEY = (x) => `${x.item_type}:${x.item_id}`
+  const lcg = (seed) => {
+    let a = seed >>> 0
+    return () => ((a = (Math.imul(a, 1664525) + 1013904223) >>> 0) / 4294967296)
+  }
+  const lengths = []
+  for (const b of bundles) {
+    const order = b.lesson.lesson_order
+    const reached = new Map()
+    for (const o of bundles.filter((x) => x.lesson.lesson_order <= order)) {
+      for (const it of o.items) {
+        if (it.item_type === 'rule' || (it.item_type === 'unit' && it.detail?.kind === 'tone-mark')) continue
+        if (!reached.has(KEY(it))) reached.set(KEY(it), it)
+      }
+    }
+    const lens = []
+    for (let seed = 1; seed <= SEEDS; seed++) {
+      const r = lcg(seed * 7919 + order)
+      const all = [...reached.values()].map((it) => ({ it, k: r() })).sort((x, y) => x.k - y.k)
+      const items = all.slice(0, 12).map(({ it }, n) => ({ position: n + 1, item_type: it.item_type, item_id: it.item_id, role: 'review', detail: it.detail }))
+      const levels = all.map(({ it }) => ({ item_type: it.item_type, item_id: it.item_id, level: 1 + Math.floor(r() * 3) }))
+      const pb = { lesson: { kind: 'practice' }, items, distractors: b.distractors, levels }
+      const lv = new Map(levels.map((l) => [`${l.item_type}:${l.item_id}`, l.level]))
+      const plan = buildPlan(pb, levels, seed, [], planPractice)
+      const again = buildPlan(pb, levels, seed, [], planPractice)
+      if (strip(plan.steps) !== strip(again.steps)) fail(`practice ${order}: the same seed gave different plans`)
+      const steps = plan.steps
+      lens.push(steps.length)
+      const ids = steps.map((s) => KEY(s.item))
+      const distinct = new Set(ids)
+      if (steps.some((s) => s.activity === 'teach_card')) fail(`practice ${order}: a teach card`)
+      if (distinct.size > 12) fail(`practice ${order}: ${distinct.size} items (max 12)`)
+      if (steps.length > 20) fail(`practice ${order}: ${steps.length} answers (max 20)`)
+      if (distinct.size >= 8 && steps.length < 15) fail(`practice ${order}: only ${steps.length} answers from 8 items`)
+      for (const k of distinct) if (ids.filter((x) => x === k).length > 3) fail(`practice ${order}: ${k} asked more than 3 times`)
+      if (distinct.size > 1) ids.forEach((k, i) => i && k === ids[i - 1] && fail(`practice ${order}: ${k} twice in a row`))
+      for (const s of steps) {
+        const level = lv.get(KEY(s.item)) || 0
+        if (level < 1) fail(`practice ${order}: ${KEY(s.item)} at level 0`)
+        if (level === 1 && s.item.item_type !== 'sentence' && s.direction !== 'recognition') {
+          fail(`practice ${order}: level-1 ${KEY(s.item)} got ${s.activity} (${s.direction})`)
+        }
+      }
+      for (const k of distinct) {
+        const first = steps.find((s) => KEY(s.item) === k)
+        if (first.item.item_type !== 'word' || (lv.get(k) || 0) < 2 || first.direction === 'recall') continue
+        if (activities.multiple_choice.build(first.item, b.distractors, () => 0.5, { form: 'word_lao' })) {
+          fail(`practice ${order}: level-${lv.get(k)} ${k} starts with ${first.activity}:${first.form || ''} (recognition)`)
+        }
+      }
+    }
+    lengths.push(`${order}: ${Math.min(...lens)}-${Math.max(...lens)}`)
+  }
+  console.log(`  answers per plan (lessons done: min-max) ${lengths.join(' · ')}`)
+  const st = (id) => ({ item: { item_type: 'word', item_id: id } })
+  const order = (list) => noRepeat(list).map((s) => s.item.item_id).join('')
+  if (order([st('A'), st('A'), st('B')]) !== 'ABA') fail(`noRepeat AAB -> ${order([st('A'), st('A'), st('B')])}`)
+  if (order([st('A'), st('B'), st('B')]) !== 'AB') fail(`noRepeat ABB -> ${order([st('A'), st('B'), st('B')])} (no place after B's first: dropped)`)
+  if (order([st('A'), st('B'), st('C'), st('C')]) !== 'ABC') fail(`noRepeat ABCC -> ${order([st('A'), st('B'), st('C'), st('C')])}`)
+  if (order([st('B'), st('A'), st('C'), st('B'), st('B')]) !== 'BABCB') fail(`noRepeat BACBB -> ${order([st('B'), st('A'), st('C'), st('B'), st('B')])}`)
+  if (order([st('A'), st('A')]) !== 'A') fail('noRepeat AA should drop the second A')
+}
+
 console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')
 process.exit(errors ? 1 : 0)

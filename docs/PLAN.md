@@ -94,9 +94,17 @@ owner's check or answer comes in.
       `word_notes` by intro lesson vs the learner's progress). Principle: the app teaches; explanations are short but
       informative and come before the thing they explain. **Done when:** a learner with lessons 1–9 done sees R03,
       R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
-- [ ] **A8 Letters and sounds.** Every taught symbol with card info, examples from known words, audio; links into
+- [ ] **A11 No ◌ on final consonants** (owner 2026-11-14). A final-role consonant unit (C13f ◌ນ and every other
+      `role = final` consonant) is shown as the bare letter (ນ) everywhere learners see it: teach cards, build-the-word
+      tiles and pieces lines ("ກ + ◌ິ + ນ"), compare rows, ⓘ sheets, Letters and sounds. ◌ means "a consonant goes
+      here", so before a final it wrongly suggests the letter never starts a word (ນອນ non, "sleep"). Keep ◌ for vowels
+      and tone marks. Display rule in the client only (one helper, used wherever `units.lao` is shown); data unchanged.
+      Check the build-the-word ◌ note (A7 step 5) and tile matching still work when an initial and a final tile read
+      the same (ນອນ). **Done when:** no learner screen shows ◌ before a consonant; `session_test.mjs` asserts it for
+      the build-word pieces; ນອນ (non, "sleep") builds correctly with two ນ tiles.
+- [ ] **A8 Letters and sounds.** *Built 2026-11-14 (local; `learner_units()`, `#/letters`, plan `docs/A8_A9_REVIEW_PLAN.md`); owner check pending; migration not on hosted.* Every taught symbol with card info, examples from known words, audio; links into
       writing practice; vowels join writing practice.
-- [ ] **A9 My words.** Every word seen, with card info and personal stats; needs a per-item stats RPC. Leads into S8b.
+- [ ] **A9 My words.** *Built 2026-11-14 (local; `learner_words()`, `learner_word(id)`, `learner_counts()`, `#/words`); owner check pending; migration not on hosted.* Every word seen, with card info and personal stats; needs a per-item stats RPC. Leads into S8b.
 - [ ] **S7g Conversations.** Design note first: `dialogues` / `dialogue_lines` (ordered sentence ids, speaker A/B), a
       `dialogue` lesson item, a conversation card, fill in the blank on its lines. Lessons 8 and 10 carry their lines as
       ordinary sentences until then. **Done when:** lesson 10 shows its conversation as one card with a fill in the
@@ -113,7 +121,7 @@ owner's check or answer comes in.
       `reviewer_trust` (README "Native verification").
 - [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known); settings move to the
       learner's profile (proposed, not agreed). Mostly absorbed by A7 step 10.
-- [ ] **S8b Practice:** `practice_items(limit)` (due, then weak, then oldest; bonus words included), practice mode
+- [ ] **S8b Practice** = the home Review tile. *Built 2026-11-14 (local; `practice_status`, `start_practice`, `complete_practice`, `#/practice`, fixed intervals 0/1/3/7/14/30 days until S9); owner check pending; migration not on hosted. After lesson 1 alone a review is 10–11 answers.* Was: `practice_items(limit)` (due, then weak, then oldest; bonus words included), practice mode
       (recall first, no teach cards), `complete_practice` summary, due count on home; matching and flashcards.
       **Done when:** a learner with lesson 1 done can run a practice session and see its summary.
 - [ ] **S9 FSRS:** design note first. Open points: client JS module vs plpgsql; outcome → rating (recognition at
