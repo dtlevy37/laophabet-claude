@@ -20,6 +20,9 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Audio:** the wife's 67 takes are live (A1). Recording mode `#/record` (S10r) is on the deployed site.
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
+## Decisions in force (UI)
+- `confirm` setting (device): pick-one questions select then Check (`activities/choice.js`). Any future activity where each tap is the answer (match the tiles) ignores it and has no Check, ever (owner 2026-11-14).
+
 ## Next step
 **N1 native open questions, N2 word suggestions, R1 register field** built 2026-11-14 on the local stack only
 (migrations `20261114175000`–`20261114190140`, all on hosted since the owner's push 2026-11-14, with the ລາວ long change and L0012).

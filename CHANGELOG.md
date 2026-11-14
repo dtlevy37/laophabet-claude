@@ -2,6 +2,14 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Mobile layout fixes + "Choose, then Check" setting (frontend only)
+- Build sentence/word: the line under the tiles no longer cuts through wrapped tiles (flex children shrank below their
+  content); the answered feedback no longer repeats the Lao sentence/word (sound, audio, info stay).
+- Info dialog: ✕ pinned top right (sticky, 44px) besides the bottom Close. Tone-mark glyph (lesson 2) gets room under its label.
+- Recap table ("One shape, three vowels"): header row, shaded alternating rows, borders.
+- New per-device setting `confirm` (default off): pick-one questions (multiple choice, listen and pick, fill in the blank)
+  select on tap and submit with Check. Helper `activities/choice.js`; tile-matching activities never use it.
+
 ## 2026-11-14 Lesson 12: have, come, be (local, not on hosted)
 - L0012 ມ (initial + final shown as one card): ມີ, ມາ, ບໍ່ມີ, ແມ່ນ; bonus ສ້ອມ "fork"; 7 sentences (S000002901, 02, 04, 05, 06
   composed and unverified; S000000032, S000000047 reused). S000002903/907 are drafted but unused. Trimmed to 28.8 effort
