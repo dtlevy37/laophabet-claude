@@ -2,6 +2,20 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 AL1 alpha readiness
+- "All lessons" links (reader, reader Finish, lesson failure screens) go to `#/lessons`, not the home tiles; Write's
+  back link reads "Back home"; the Lessons page's Back always goes home. Review fixes: greyed tiles are plain text
+  (no `role=link`/`aria-disabled`); index.html's theme script is an IIFE.
+- Optional sign-up questions (`js/intake.js`, shown once to learners with no `learner_intake` row): Lao spoken and
+  read, Thai, goals, reasons (+ note), age range; "Skip for now", or an empty form, stores `skipped`. Migration
+  `20261114000230_alpha_intake_feedback.sql`: `learner_intake` + `save_learner_intake(p jsonb)`, `app_feedback` +
+  `send_feedback(...)`. Test `tests/alpha_intake_feedback_test.sql` passed locally.
+- Settings → Send feedback (`#/feedback`, `js/feedback.js`): kind + message; route, app version, browser and window
+  size go with it. `dom.js` `checks()`.
+- A repeated SIGNED_IN for the same user no longer re-renders the screen (it could wipe a half-filled form).
+- `LAO_UI_REVIEW.md` and `export_lao_review.py` moved out of the served frontend to `docs/` and `scripts/`.
+- Browser check `scripts/browser/alpha_check.js` (8 checks pass locally). Not yet on hosted.
+
 ## 2026-11-13 A7 step 9a: thumb zone
 - Answer options (multiple choice, listen and pick, fill in the blank) sit in the middle of the free space under
   the prompt and are taller (`clamp(56px, 11dvh, 88px)`; one-column options `clamp(56px, 8dvh, 72px)`). The

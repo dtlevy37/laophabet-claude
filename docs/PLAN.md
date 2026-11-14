@@ -18,6 +18,13 @@ activities · A3 stats capture · L1 clearer activities · L2 listen and pick.
 L1b–L1e → A7 steps 0–5 → L3 → A7 steps 6–10 → L4 → L5. Owner-gated slices (A4–A6, S7h, S7w, S10r) close when the
 owner's check or answer comes in.
 
+## Alpha (owner 2026-11-14: the owner's sons test the app)
+- [ ] **AL1 Alpha readiness.** *Built 2026-11-14; migration not pushed yet.* "All lessons" links go to `#/lessons`;
+      optional sign-up questions (`learner_intake`: Lao spoken and read, Thai, goals, reasons, age range; Skip
+      stores `skipped`); Settings → Send feedback (`app_feedback`); `LAO_UI_REVIEW.md` and its script moved out of
+      the served frontend. **Done when:** the migration is on hosted, a new learner on the deployed site sees the
+      questions once, and a feedback message reaches `app_feedback`.
+
 ## Learning slices (owner 2026-11-13)
 - [ ] **L1c Answers and feedback.** *Built and pushed 2026-11-13; owner browser check pending.* (a) Build the word: Check before all pieces are placed. (b) Right in the end =
       green: slips (wrong tile tapped and taken back) no longer show red; they stay in `review_log`. (c) A wrong
@@ -117,9 +124,8 @@ owner's check or answer comes in.
       lesson content first; feedback on words and units, one `feedback` shape keyed by `(item_type, item_id)`; owner
       views with verified reviewers marked; export → agent decisions → migration (source `native review <ids>`);
       learner reports feed the same queue.
-- [ ] **S11 Deploy leftovers:** password reset; Auth > URL configuration for the Netlify URL; email sending (built-in
-      mailer is rate-limited); move `LAO_UI_REVIEW.md` and `scripts/export_lao_review.py` out of the frontend repo
-      (Netlify serves them) and fix the script path.
+- [ ] **S11 Deploy leftovers:** password reset; email sending (built-in
+      mailer is rate-limited) (moving the Lao review files is done, AL1).
 
 ## Small fixes and unsliced ideas
 - Stale notes on W000035 and W001415 still mention W000019 for the "enter" sense.

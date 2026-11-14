@@ -18,14 +18,10 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-Steps 7–8 review findings, fix first:
-- (major) The "All lessons" links (`learn.js:110` backToList, `summary.js:8` and `:28`/`:36`, `write.js:90`
-  backHome) still go to `#/`, which is now the tiles. Point them at `#/lessons`.
-- (minor) `learn.js:51-59`: the Lessons Back guesses `prev === '#/'`. Use `location.hash = '#/'` or record the
-  previous route on hashchange.
-- (minor) `home.js` soonTile: drop `role=link` + `aria-disabled` (plain text is enough, "Soon" is in the name); fix
-  the head comment.
-- (minor) `index.html` inline script: wrap it in an IIFE so `var s` is not global.
+AL1 alpha readiness (PLAN): built and tested locally. Push `20261114000230_alpha_intake_feedback.sql` to hosted
+**before** the frontend (the feedback page needs the RPC; the intake gate skips itself on a read error), then
+the owner's sons sign up. Read their answers and notes in the dashboard (`learner_intake`, `app_feedback`).
+Browser check: `scripts/browser/alpha_check.js`.
 
 Then: A7 step 9 part B, inline sentence words with a popover (`docs/A7_PLAN.md` "Step 6 decided" item 3; the thumb zone
 is built as 9a), then the desktop rail with the lesson preview, L3, A7 step 10, L4, L5. Owner browser checks

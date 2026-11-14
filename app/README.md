@@ -105,6 +105,9 @@ Natives (`profiles.role = 'native'`) open `#/record`. Once: `set_voice_consent(p
 ### Lesson audio and learner reports (A1, migration `20261113020000_a1_lesson_audio.sql`)
 `item_audio(item_type word|sentence, item_id, storage_path, recording_id, speaker_credit, duration_ms, approved_at, retired_at)`: the takes learners hear, one active row per item. Files live in the public bucket `audio`. Rows and files come only from `scripts/audio_publish.py` (`fetch` → `process` → `upload --linked|--local` → `migration`). It picks each item's newest natural take from verified natives (`reviewer_trust.native_verified_at`) with voice consent, trims the silence, applies a linear gain toward −18 LUFS (true peak ≤ −1.5 dB, at most +33 dB, with no compressor) and writes MP3 96 kb/s. RLS is on with no policies. Read through `get_item_audio(p_word_ids text[], p_sentence_ids text[])` → `[{item_type, item_id, audio_id, path, credit, duration_ms}]`; `bundle.js` sets `audio_url`, `audio_id` and `audio_credit` on every matching detail of a lesson bundle. `learner_reports` (own-row select) is filled by `report_content(p_item_type, p_item_id, p_kind audio_quality|audio_wrong|audio_other|content_wrong|other, p_note, p_audio_id)` → `{id, updated}`. There is one open report per learner, item and kind (a repeat updates it), and at most 50 a day. The owner reads the table and sets `resolved_at`/`resolution` by hand. Test: `backend/tests/a1_audio_test.sql`.
 
+### Learner intake and app feedback (alpha, migration `20261114000230_alpha_intake_feedback.sql`)
+`learner_intake(user_id, lao_speaking none|few_words|phrases|simple_talk|fluent, lao_reading none|some_letters|slowly|well, thai none|speaks|reads, goals text[] read|speak|listen|write, reasons text[] family|partner|heritage|travel|living|work|friends|curiosity|other, reason_note, age_range under_13…65_plus, skipped)`: optional answers a learner gives once after sign-up (`js/intake.js`; `app.js` shows it to a learner with no row; a read error skips it). Own-row select; written by `save_learner_intake(p jsonb)` → `{saved}` (replaces the row). `app_feedback(id client uuid, user_id, kind bug|confusing|lao|idea|other, message ≤2000, route, app_version, user_agent, viewport, resolved_at, resolution)`: Settings → Send feedback (`#/feedback`, `js/feedback.js`). No client read; written by `send_feedback(p_id, p_kind, p_message, p_route, p_app_version, p_user_agent, p_viewport)` → `{id}` (a repeated id is stored once; 30 a day). The owner reads both tables in the dashboard. Test: `backend/tests/alpha_intake_feedback_test.sql`.
+
 ### Latest changes (migration `..0400`)
 Birth date replaces age range; every question is optional (the all-answered check is dropped, so a review row can be empty); register gains `vulgar`; reviews gain `is_slang`, `multiple_meanings`, `meanings_notes`; `submit_review` has a new signature. The accent question already offers free text when the person is not from Vientiane (stored in `profiles.region`).
 
@@ -121,7 +124,7 @@ on conflict (user_id) do update set native_verified_at = now(), notes = excluded
 The view `sentence_feedback` (not visible to app users) lists every review with `verified_native`.
 
 ## Interface languages
-Every on-screen string lives in `frontend/js/strings.json` as `{lo, en}`. Natives see `lo`, learners see `en`; the login screen has a ພາສາລາວ / English toggle, and the sign-up role cards are labelled in both. Strings with no `lo` are learner-only. **The Lao is AI-invented and unreviewed.** Run `python frontend/scripts/export_lao_review.py` to produce `frontend/LAO_UI_REVIEW.md`, a table to hand to a native reviewer; apply corrections in `strings.json`. Technical errors are logged to the browser console and shown to users only as a generic message.
+Every on-screen string lives in `frontend/js/strings.json` as `{lo, en}`. Natives see `lo`, learners see `en`; the login screen has a ພາສາລາວ / English toggle, and the sign-up role cards are labelled in both. Strings with no `lo` are learner-only. **The Lao is AI-invented and unreviewed.** Run `python scripts/export_lao_review.py` (repo root) to produce `docs/LAO_UI_REVIEW.md`, a table to hand to a native reviewer; apply corrections in `strings.json`. Technical errors are logged to the browser console and shown to users only as a generic message.
 
 Reviewers focus on the Lao itself. The English meaning is hidden unless the person said at onboarding that they understand some English, and then only behind a "show English" link. The "English meaning is very different" error option appears only while the English is shown.
 
@@ -175,7 +178,7 @@ Local: copy `config.example.js` to `config.js`, fill it in, then open `frontend/
 
 Netlify: set **Base directory** to `app/frontend`, leave the publish directory as set in `netlify.toml`, and add env vars `SUPABASE_URL` and `SUPABASE_ANON_KEY`. The build command only writes `config.js` from them.
 
-Lao-text review: `python frontend/scripts/export_lao_review.py`, edit `js/strings.json`.
+Lao-text review: `python scripts/export_lao_review.py` (repo root), edit `js/strings.json`.
 
 ## Not yet tested
 Nothing here has been run against a live Supabase project. The seed generator was run against the real CSVs; the SQL and front end have not been executed, so run `supabase db reset` locally and try the page in a browser first.
