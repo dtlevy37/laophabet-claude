@@ -35,6 +35,14 @@ user's spellings), tones not shown; it is for the owner's reading only and never
 
 Lao answers "yes" by repeating the verb, so no separate word for "yes" is needed.
 
+## Sections and checkpoints (owner, 2026-11-14)
+- A section is a run of lessons that ends at a natural topic boundary with a few sentences of dialogue or story. The
+  loose size is about 15 lessons; the hard cap is 25-30. Plan new lessons so a section lands near 15.
+- Its checkpoint (`sections` table, `#/checkpoint/<id>`) asks the hardest form of the section's items with no hints.
+  It is never a gate: 70% or more marks the section done, less lists what to look at again.
+- S01 = lessons 1-10 (ends with the conversation in lesson 10). Lesson 11 starts the next section. A section's
+  boundaries are set in a hand-written migration until a CSV for sections exists.
+
 ## Lessons 1–4 (already built)
 
 | Lesson | Letters | Core words | Sentences |

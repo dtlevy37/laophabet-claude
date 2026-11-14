@@ -553,5 +553,32 @@ for (const b of bundles) {
     b.spelling = true
   }
 }
+// H4: a checkpoint plans one hardest-form question per item, none with a hint, within the effort budget; with
+// Spelling practice off none is a build the word. Items stand in for start_checkpoint's: every item of lessons 1-10.
+{
+  const { planCheckpoint, CHECKPOINT_BUDGET, effort } = await import(js('session.js'))
+  console.log('== H4 checkpoint plan')
+  const sec = bundles.filter((b) => Number(b.lesson.lesson_order) <= 10)
+  const last = sec[sec.length - 1]
+  const seen = new Set()
+  const items = []
+  for (const b of sec) for (const it of b.items) {
+    const k = `${it.item_type}:${it.item_id}`
+    if (!['unit', 'word', 'sentence'].includes(it.item_type) || seen.has(k) || !it.detail) continue
+    seen.add(k)
+    items.push({ ...it, role: 'review' })
+  }
+  const levels = dryLevels({ ...last, items })
+  for (const spelling of [false, true]) {
+    for (let seed = 1; seed <= 30; seed++) {
+      const cp = { lesson: { kind: 'checkpoint' }, items, distractors: last.distractors, levels, spelling }
+      const steps = buildPlan(cp, levels, seed, [], planCheckpoint).steps
+      if (steps.length < 15) fail(`H4: only ${steps.length} questions (spelling ${spelling}, seed ${seed})`)
+      if (steps.some((s) => !s.noHint)) fail('H4: a checkpoint question allows a hint')
+      if (!spelling && steps.some((s) => s.activity === 'build_word')) fail('H4: a build with Spelling practice off')
+      if (steps.reduce((n, s) => n + effort(s), 0) > CHECKPOINT_BUDGET + 2) fail('H4: over the checkpoint budget')
+    }
+  }
+}
 console.log(errors ?`\n${errors} failure(s)` : '\nall checks passed')
 process.exit(errors ? 1 : 0)

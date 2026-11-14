@@ -2,6 +2,19 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Lesson feel: hints, effort budget, spelling opt-in, checkpoints, review time, About
+- H1: Hint button (fill in the blank: English then transliteration; listen and pick and Lao/meaning questions:
+  transliteration); `review_log.hinted`; a hinted right answer lifts an item to level 2 at most (migration
+  `20261114140000`, with level 4 "Spelled": build the word from recall at level 3).
+- H2: lessons are counted in effort points (BUDGET 30; card .25, quick .5, fill 1, sentence 1.5, build 1.5); a recycled
+  word is never built in a lesson. `scripts/measure_lessons.mjs`.
+- H3: Spelling practice (`profiles.spelling_on`, Settings and a sign-up question, default off; migration `20261114150000`).
+- H4/H5: sections and checkpoints (migration `20261114160000`; `#/checkpoint/S01`, card on the lesson list).
+- H6: up to two listen and pick per lesson.
+- Natives: thank-you pause every 20 items, the "left" number removed from recording. Lao strings unverified.
+- Review: pick 2, 5 or 10 minutes; the Review tile no longer shows "{n} to review". About page (`#/about`).
+- Migrations `20261114130000`-`20261114160000` are local only: push after the owner agrees.
+
 ## 2026-11-14 Show password, lesson-feel plan
 - Sign-in and sign-up: "Show password" checkbox under the password field (`auth_show_password`, Lao string unverified).
 - PLAN: new section "Lesson feel and checkpoints" (H1 hint ladder, H2 effort budget, H3 spelling opt-in, H4/H5

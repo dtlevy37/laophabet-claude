@@ -87,13 +87,13 @@ There is one transliteration (the stored "respelling", shown in the learner's st
       level "spelled" (a badge, outside "words known") is earned by spelling a word from recall. **Done when:** the
       planner output differs by the setting in `session_test.mjs`, the setting follows the account, and a word can
       reach level 3 without any build.
-- [ ] **H4 Checkpoints, backend.** A `sections` concept (lessons grouped by topic, each ending with a short dialogue
+- [x] **H4 Checkpoints, backend.** *Built 2026-11-14 (local; migration `20261114160000`, not on hosted; `sections`, `section_results`, `list_checkpoints`, `start_checkpoint`, `complete_checkpoint`; the first section row S01 = lessons 1-10 is inserted by hand, owner to confirm).* A `sections` concept (lessons grouped by topic, each ending with a short dialogue
       or story; target about 15 lessons, hard cap 25–30; put it in `CURRICULUM_PATH.md` and the lesson-build brief).
       A checkpoint planner: items from the section's lessons weighted to the lowest levels, hardest forms only, no
       hint button (spelling-only types left out when spelling is off). Not a gate; the result lists the words to
       review and feeds practice. **Done when:** an RPC returns a checkpoint bundle for a section and records answers.
-- [ ] **H5 Checkpoints, UI,** and the first checkpoint when its section is complete.
-- [ ] **H6 More listening.** Audio on more question types as recordings arrive (60+ recorded by 2026-11-14; more
+- [x] **H5 Checkpoints, UI.** *Built 2026-11-14: `#/checkpoint/S01`, a card on the lesson list, `planCheckpoint`, summary with the words to look at again. Owner browser check pending.*
+- [~] **H6 More listening.** *Started 2026-11-14: up to two listen and pick per lesson (was one), listening in every checkpoint and review. More when the recordings grow.* Audio on more question types as recordings arrive (60+ recorded by 2026-11-14; more
       coming); no transliteration by default.
 
 ## App slices

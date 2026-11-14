@@ -28,6 +28,9 @@ app/
 | `supabase/migrations/20261111020000_activity_data_bonus.sql` | S7c + S7f: tables `word_units`, `word_categories`, `sentence_slots` (locked down like the other content tables); `lesson_items.role` allows `bonus`; internal helper `word_cats(word_id)` (category union over the word's spelling, verb safety rule; not callable by app users); replaces `get_lesson` and `list_lessons` (additive changes, below). |
 | `supabase/migrations/20261113040000_a5_word_notes.sql` | A5: content table `word_notes` (word_id, usage_note, culture bool, source, confidence, notes; locked down like the other content tables; rows from `db_sql.py` only); `word_json` adds `usage_note`, `culture`, `note_confidence`. Test: `tests/a5_word_notes_test.sql`. |
 | `supabase/migrations/20261113060000_a3_stats_capture.sql` | A3 stats capture (_shelf/docs/A3_STATS_DESIGN.md): `review_log` gains `attempt`, `question_id`, `role`, `known_options`, `detail`; `learner_sessions` gains `tz`, `utc_offset_min`, `app_version`, `settings`; replaces `record_answers` (same signature, old payloads still accepted); new `set_session_client`; internal helpers `review_id_list_ok`, `review_detail_ok`, `review_known_options` (not callable by app users). Test: `tests/a3_stats_capture_test.sql`. |
+| `supabase/migrations/20261114140000_h1_hinted_level4.sql` | H1/H3: `review_log.hinted` (a hinted right answer lifts an item to level 2 at most); level 4 "Spelled" (build the word from recall at level 3); replaces `record_answers` (same signature). |
+| `supabase/migrations/20261114150000_h3_spelling_pref.sql` | H3: `profiles.spelling_on` (Spelling practice, default off; column update granted to `authenticated`). |
+| `supabase/migrations/20261114160000_h4_checkpoints.sql` | H4: `sections`, `section_results`, `learner_sessions.section_id` and kind `checkpoint`; RPCs `list_checkpoints()`, `start_checkpoint(p_section_id, p_local_day)` (bundle in `get_lesson`'s shape, up to 40 items, lowest level first), `complete_checkpoint(p_session, p_planned)` (summary + `passed`, `missed`; passed needs 70% and 80% of the planned questions). S01 = lessons 1-10, inserted by hand. |
 | `tests/s6a_played_lesson_test.sql` | Paste-in SQL check for S6a (one throwaway user; prints check / got / expected). |
 | `supabase/migrations/<stamp>_lesson_<id>.sql`, `<stamp>_<change>.sql` | Content migrations written by `scripts/db_sql.py` (never by hand). |
 | `supabase/seeds/` | Initial import of the pool tables, written by `db_sql.py seed` (2,810 sentences, 1,424 words at time of writing). |
@@ -192,3 +195,6 @@ Lao-text review: `python scripts/export_lao_review.py` (repo root), edit `js/str
 
 ## Not yet tested
 Nothing here has been run against a live Supabase project. The seed generator was run against the real CSVs; the SQL and front end have not been executed, so run `supabase db reset` locally and try the page in a browser first.
+
+
+Client modules added with H1-H6: `activities/hint.js` (hint tiers; `spec.noHint` in checkpoints), `prefs.js` (account preferences; `spelling_on` is read apart from the profile row), `native_pause.js` (thank-you screen every 20 items for natives), `about.js` (`#/about`), `practice.js` (review length 2/5/10 minutes), `session.js` `planCheckpoint` and the `#/checkpoint/<section>` route.
