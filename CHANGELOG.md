@@ -14,7 +14,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
   size go with it. `dom.js` `checks()`.
 - A repeated SIGNED_IN for the same user no longer re-renders the screen (it could wipe a half-filled form).
 - `LAO_UI_REVIEW.md` and `export_lao_review.py` moved out of the served frontend to `docs/` and `scripts/`.
-- Browser check `scripts/browser/alpha_check.js` (8 checks pass locally). Not yet on hosted.
+- Browser check `scripts/browser/alpha_check.js` (8 checks pass locally). Migration pushed to hosted by the owner; frontend deployed.
 
 ## 2026-11-13 A7 step 9a: thumb zone
 - Answer options (multiple choice, listen and pick, fill in the blank) sit in the middle of the free space under

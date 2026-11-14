@@ -18,9 +18,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
-AL1 alpha readiness (PLAN): built and tested locally. Push `20261114000230_alpha_intake_feedback.sql` to hosted
-**before** the frontend (the feedback page needs the RPC; the intake gate skips itself on a read error), then
-the owner's sons sign up. Read their answers and notes in the dashboard (`learner_intake`, `app_feedback`).
+AL1 alpha readiness (PLAN): on hosted and deployed 2026-11-14; owner check pending, then the owner's sons sign up. Read their answers and notes in the dashboard (`learner_intake`, `app_feedback`).
 Browser check: `scripts/browser/alpha_check.js`.
 
 Then: A7 step 9 part B, inline sentence words with a popover (`docs/A7_PLAN.md` "Step 6 decided" item 3; the thumb zone

@@ -19,7 +19,7 @@ L1b–L1e → A7 steps 0–5 → L3 → A7 steps 6–10 → L4 → L5. Owner-gat
 owner's check or answer comes in.
 
 ## Alpha (owner 2026-11-14: the owner's sons test the app)
-- [ ] **AL1 Alpha readiness.** *Built 2026-11-14; migration not pushed yet.* "All lessons" links go to `#/lessons`;
+- [ ] **AL1 Alpha readiness.** *Built 2026-11-14; on hosted and deployed; owner check pending.* "All lessons" links go to `#/lessons`;
       optional sign-up questions (`learner_intake`: Lao spoken and read, Thai, goals, reasons, age range; Skip
       stores `skipped`); Settings → Send feedback (`app_feedback`); `LAO_UI_REVIEW.md` and its script moved out of
       the served frontend. **Done when:** the migration is on hosted, a new learner on the deployed site sees the
