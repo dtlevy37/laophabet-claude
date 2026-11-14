@@ -2,6 +2,16 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Teach cards: less text, spelling choice in lesson 2
+- Lesson 1 opens with "Lao has its own sounds" only (text shortened). "How should we write the sounds?" is its own
+  card in lesson 2 after ຂ: ກ and ຂ side by side in both styles, the chosen row marked, then the radios.
+- Unit cards: the hint sits under "Sounds like"; "Hear it in a word" is smaller and drops the "ກ + ◌ິ + ◌ນ" line.
+  Teach text (units, rules, the spelling card) shows one sentence per line, left-aligned.
+- Content (`20261114004615_card_text_trim`, hosted; `20261114004907_n_card_text`, local only): ◌ິ anchor "bin" ->
+  "been" (unit, vowel, ກິນ ຫິວ ດິນ tips); vowel cards trimmed to one point per sentence; the one-unit line is on R03
+  only; ນ reads "As in the word 'no'." Fixes units V03 V21 V05 V01 V04, whose shorter text never reached the DB
+  (`vowel_cards_short_reminder` changed only `vowels`).
+
 ## 2026-11-13 Writing: fewer steps, looped ກ
 - `strokes_build.js` no longer splits strokes into parts (one part per stroke), so `#/write` is watch, trace, from
   memory. ກ uses the looped font like the other letters (override removed). strokes_test passes.

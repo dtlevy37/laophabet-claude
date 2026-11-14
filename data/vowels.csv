@@ -2,7 +2,7 @@ vowel_id,lao_pattern,form,length,sound_group,ipa,romanization_bgn,respelling,pro
 V01,◌ະ,open,short,a,aʔ,a,a,"Short 'a' cut off sharply, as in 'uh-oh'.",yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V02,◌ັ◌,closed,short,a,a,a,a,Short 'a' before a final consonant (like 'u' in 'hut').,yes,W000026,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V03,◌າ,both,long,aa,aː,a,aa,Long 'a' as in 'father'.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V04,◌ິ,both,short,i,i,i,i,"A short 'ee', tighter than the i in 'bin'.",yes,W000018,SRC-WP-SCRIPT;SRC-SEASITE,unverified,"A4 2026-11-13: hint revised, owner + formant check."
+V04,◌ິ,both,short,i,i,i,i,"A short 'ee', shorter than the ee in 'been'.",yes,W000018,SRC-WP-SCRIPT;SRC-SEASITE,unverified,"A4 2026-11-13: hint revised, owner + formant check. Owner 2026-11-13: 'bin' anchor replaced (the i in 'bin' is 'ih', not 'ee')."
 V05,◌ີ,both,long,ii,iː,i,ii,Long 'ee' as in 'see'.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V06,◌ຶ,both,short,ɯ,ɯ,u,eu,No English equivalent: say 'oo' without rounding the lips (lips spread). Short.,yes,W000039,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V07,◌ື,both,long,ɯɯ,ɯː,u,eu,"Long unrounded 'oo' (lips spread), held.",yes,W000021,SRC-WP-SCRIPT;SRC-SEASITE,verified,
