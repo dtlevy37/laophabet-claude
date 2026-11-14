@@ -69,19 +69,19 @@ is 65 of 307 steps (10–12 per lesson in L10–11); quick checks are only 5–9
 the learner and count for less (never a miss); no hard gate on checkpoints; spelling is opt-in; listening is never
 optional; levels: 3 = recalled (everyone), top = spelled from recall (spelling opt-in only, a badge, not in "known").
 There is one transliteration (the stored "respelling", shown in the learner's style), so one hint tier for it.
-- [ ] **H1 Hint ladder.** Default minimal, a Hint button, each press reveals the next tier. Fill in the blank: Lao
+- [x] **H1 Hint ladder.** *Built 2026-11-14 (local; migration `20261114140000`, not on hosted yet).* Default minimal, a Hint button, each press reveals the next tier. Fill in the blank: Lao
       only, then English, then transliteration. Listen and pick: Lao options only, then transliteration. Build the
       sentence: English shown, hint = transliteration. Lao → meaning: hint = transliteration on the options. New
       `hinted` flag in `record_answers` (new migration); a hinted right answer counts for less (never lifts a word
       to level 3; first-try accuracy for the item is not counted), not a miss. New words and level-1 words start with
       the hint open; the `translit` setting caps the tiers. **Done when:** each activity above shows the default and
       the hint steps, the flag reaches the DB, and a hinted answer cannot raise a word to level 3.
-- [ ] **H2 Lesson effort budget.** Weighted length, about 30 points loose cap (card 0.25, quick check 0.5, fill in
+- [x] **H2 Lesson effort budget.** *Built 2026-11-14 (`session.js` BUDGET/effort; `scripts/measure_lessons.mjs`).* Weighted length, about 30 points loose cap (card 0.25, quick check 0.5, fill in
       the blank 1, build the sentence 1.5, build the word 1.5, more for long words); the planner trims optional
       closing questions to fit, never first checks, retries of misses or the one listen and pick. Weights to tune.
       **Done when:** `tmp/measure.mjs` (move it to `scripts/`) shows L6–11 at about 30 points and `session_test.mjs`
       passes.
-- [ ] **H3 Spelling opt-in.** Settings toggle "Spelling" (account, asked once in onboarding, default off). Off: no
+- [x] **H3 Spelling opt-in.** *Built 2026-11-14 (local; migration `20261114150000`, not on hosted yet; `profiles.spelling_on`, Settings and sign-up question).* Settings toggle "Spelling" (account, asked once in onboarding, default off). Off: no
       build the word, no find the missing piece, a new word gets its card and meaning check, a new tone mark just its
       card. On: one build when a word is introduced; the rest of the builds move to practice and checkpoints. Top
       level "spelled" (a badge, outside "words known") is earned by spelling a word from recall. **Done when:** the

@@ -87,6 +87,7 @@ const audioFile = join(dir, 'audio.json')
 const audioRows = existsSync(audioFile) ? JSON.parse(readFileSync(audioFile, 'utf8')) : null
 if (!audioRows) console.log('  (no audio.json: listen and pick is not checked)')
 for (const b of bundles) applyAudio(b, audioRows || [], (path) => `audio/${path}`)
+for (const b of bundles) b.spelling = true // the build the word checks below are for learners with Spelling practice on (H3); the H2/H3 block turns it off
 
 let errors = 0
 const failed = new Set() // a failure found with many seeds is reported once
@@ -531,5 +532,26 @@ for (const b of bundles) {
   if (order([st('A'), st('A')]) !== 'A') fail('noRepeat AA should drop the second A')
 }
 
-console.log(errors ? `\n${errors} failure(s)` : '\nall checks passed')
+// H2/H3: Spelling practice off plans no build the word or find the missing piece (a recycled word never gets one);
+// on, only a new word is built in a lesson; with it off every lesson stays within the effort budget.
+{
+  const { effort, BUDGET } = await import(js('session.js'))
+  console.log('== H2/H3 spelling and effort budget')
+  for (const b of bundles) {
+    for (let seed = 1; seed <= 50; seed++) {
+      b.spelling = false
+      const off = buildPlan(b, dryLevels(b), seed, []).steps
+      if (off.some((s) => s.activity === 'build_word')) fail(`H3: ${b.lesson.lesson_id} plans a build with Spelling practice off`)
+      const points = off.reduce((n, s) => n + effort(s), 0)
+      if (points > BUDGET) fail(`H2: ${b.lesson.lesson_id} is ${points} points (seed ${seed}), over ${BUDGET}`)
+      b.spelling = true
+      for (const s of buildPlan(b, dryLevels(b), seed, []).steps.filter((x) => x.activity === 'build_word')) {
+        const it = b.items.find((x) => x.item_type === 'word' && x.item_id === s.item.item_id)
+        if (it?.role === 'recycle') fail(`H3: ${b.lesson.lesson_id} builds the recycled word ${lao(s)}`)
+      }
+    }
+    b.spelling = true
+  }
+}
+console.log(errors ?`\n${errors} failure(s)` : '\nall checks passed')
 process.exit(errors ? 1 : 0)

@@ -26,7 +26,7 @@ climbs a ladder per learner, and an activity may only use items at or above the 
 | 1 | introduced | a teach card was shown (glyph or word, sound, meaning, explanation, example); it stays reachable through the info icon | the teach card itself; then recognition activities (the first one comes right after the card, with the card gone) |
 | 2 | recognised | answered correctly in a recognition activity | Lao → meaning or sound: matching, multiple choice, flashcards (front = Lao) |
 | 3 | recalled | answered correctly in a recall activity | meaning → Lao: multiple choice with close distractors, fill in the blank, build the word, build the sentence, flashcards (front = English) |
-| 4 | in use | read correctly inside phrases, sentences and dialogues over several days | dialogues, longer reading, spaced reviews only |
+| 4 | spelled (owner 2026-11-14) | a word built from recall (build the word, no hint) once it is at level 3; only learners with Spelling on can reach it; a badge, not part of "words known" | spaced reviews |
 
 - A lesson teaches each new item (level 0 → 1) and checks it straight away (a right answer → level 2), then mixes
   the new items with recycled items at levels 2–3 (see "Lesson session"). Recall activities for a new item normally
