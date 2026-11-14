@@ -100,6 +100,10 @@ def main():
     batch_rows = []
     for path in a.batches:
         rows, bcols = read(path)
+        if "register" in cols and "register" not in bcols:   # optional in drafts; blank = not assessed
+            bcols = bcols + ["register"]
+            for r in rows:
+                r["register"] = ""
         if bcols != cols:
             sys.exit(f"{path}: header differs from {a.words}")
         batch_rows.extend(rows)
@@ -169,6 +173,10 @@ def main():
         new = []
         for fpath in files:
             rows, fcols = read(fpath)
+            if "register" in ecols and "register" not in fcols:   # optional in drafts
+                fcols = fcols + ["register"]
+                for r in rows:
+                    r["register"] = ""
             if fcols != ecols:
                 problems.append(f"{fpath}: header differs from {path}")
                 continue

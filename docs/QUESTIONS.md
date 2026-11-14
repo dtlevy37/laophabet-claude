@@ -14,6 +14,7 @@ PLAN or DESIGN, then the question is deleted). Parked word-list items: `_shelf/d
 - ຂາວ / ລາວ as the first tone pair: in the tone lesson (L3) or a recap card? (Depends on ລາວ being long.)
 
 ## For the native speaker
+Several of these are now also asked online as Q-ids (`data/open_questions.csv`, screen `#/questions`; answers are read in the DB view `open_question_consensus`). Lines stay here until the owner clears them after applying the answers.
 Romanization in brackets; sentence ids for the agent. All composed sentences are the agent's own and unverified.
 
 **Sounds and spelling**

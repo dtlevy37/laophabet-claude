@@ -29,6 +29,7 @@ LAO_RE = re.compile(r"^[຀-໿\s|?!.,()«»\"'\-◌_…]*$")
 PUNCT = set("?!.,;:()«»\"'…")
 INVISIBLE = {"​": "ZWSP", "‌": "ZWNJ", "‍": "ZWJ", "﻿": "BOM", " ": "NBSP"}
 CONFIDENCE = {"verified", "derived", "unverified"}
+REGISTER = {"formal", "neutral", "casual", "slang"}   # blank = not assessed
 TONES = {"low-rising", "high-rising", "mid", "low-falling", "high-falling"}
 CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}
 WORD_REQUIRED = ["word_id", "lao", "ipa", "respelling", "syllables", "pos", "gloss_en", "pron_tip", "confidence"]
@@ -61,6 +62,10 @@ def read_many(paths, data_cols, label):
     out = []
     for p in paths:
         rows, cols = read(p)
+        if "register" in data_cols and "register" not in cols:   # register is optional in drafts (blank = not assessed)
+            cols = cols + ["register"]
+            for r in rows:
+                r["register"] = ""
         if cols != data_cols:
             problem(f"{p}: header differs from data/{label}.csv")
         for i, r in enumerate(rows, 2):
@@ -135,6 +140,8 @@ def main():
                 problem(f"{w} {wid}: empty {c}")
         if r.get("confidence") and r["confidence"] not in CONFIDENCE:
             problem(f"{w} {wid}: confidence '{r['confidence']}'")
+        if (r.get("register") or "").strip() not in REGISTER | {""}:
+            problem(f"{w} {wid}: register '{r['register']}' not in {sorted(REGISTER)} (or blank)")
         if r.get("confidence") in ("verified", "derived") and not r.get("source"):
             problem(f"{w} {wid}: confidence {r['confidence']} without a source")
         for c in ("lao", "syllables"):
@@ -204,6 +211,8 @@ def main():
                 problem(f"{w} {sid}: empty {c}")
         if r.get("confidence") and r["confidence"] not in CONFIDENCE:
             problem(f"{w} {sid}: confidence '{r['confidence']}'")
+        if (r.get("register") or "").strip() not in REGISTER | {""}:
+            problem(f"{w} {sid}: register '{r['register']}' not in {sorted(REGISTER)} (or blank)")
         plain = "".join(ch for ch in r.get("lao", "") if ch not in PUNCT and not ch.isspace())
         spaced = "".join(ch for ch in r.get("lao_spaced", "") if ch not in PUNCT and not ch.isspace())
         if plain != spaced:

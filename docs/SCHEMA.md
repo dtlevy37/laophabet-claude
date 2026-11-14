@@ -36,7 +36,8 @@ Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syl
   - WP's lead figure of 33 is unreconciled.
 - **Tone marks: 4**, of which 2 are common.
 - **Unicode Lao block:** 82 assigned (compart) or 83 (WP, with U+0ECE).
-- **words.csv**: word_id, lao, ipa, respelling, syllables, tone_by_syllable, tone_derivation (per syllable: class, syllable type, vowel length, tone mark), pos, classifier_word_id, classifier_type, classifier_confidence, component_word_ids, gloss_en, freq_rank, topic, tier (30|100|300|600|extra), intro_order, new_letter_ids, new_vowel_ids, pron_tip
+- **words.csv**: word_id, lao, ipa, respelling, syllables, tone_by_syllable, tone_derivation (per syllable: class, syllable type, vowel length, tone mark), pos, classifier_word_id, classifier_type, classifier_confidence, component_word_ids, gloss_en, freq_rank, topic, tier (30|100|300|600|extra), intro_order, new_letter_ids, new_vowel_ids, pron_tip, source, confidence, notes, register
+  - `register` (also on sentences.csv, appended at the end of the header; added by slice R1): `formal` (textbook, written or ceremonial speech), `neutral` (fine anywhere), `casual` (how people say it in daily speech with friends and family, versus the textbook form), `slang` (everyday words that dictionaries often lack). Blank = not assessed, which is the default and is valid everywhere; existing rows stay blank. Any other value is a validation error (`validate_data.py`, `check_drafts.py`, `db_sql.py check`, and a DB check constraint). **The agent sets it only with a source** (a native speaker's suggestion or a cited reference, named in `source`/`notes`), never from its own judgement. The learner card shows a small tag only for casual, slang and formal.
   - `syllables`: the written syllables separated by `|`, e.g. `ສະ|ບາຍ|ດີ`.
   - `tone_by_syllable`: tone names separated by `|`, in the same order.
   - `component_word_ids`: for compounds, the IDs of the parts separated by `|`, in written order (ຫ້ອງນ້ຳ = ຫ້ອງ + ນ້ຳ). Empty for simple words. Approved by the user 2026-10-09.
@@ -49,7 +50,8 @@ Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syl
     - `classifier_confidence`: verified | derived | unverified, with the same meaning as `confidence` but for the classifier assignment only. Required whenever classifier_type is set. The row's `confidence` keeps describing the word itself (spelling, IPA, tone). Classifier sources and caveats go in `notes`, prefixed `Classifier:`.
     - App queries: "count N of X" = X + N + classifier(X); "which X?" = classifier(X) + ໃດ; "nouns taught with classifier C" = reverse lookup on classifier_word_id. Templates TPL27–TPL30 teach these patterns.
   - `freq_rank`: a **usefulness rank by judgement**, not corpus frequency (user decision, 2026-10-09). There is no reliable, segmented open Lao frequency list.
-- **sentences.csv**: sentence_id, lao, lao_spaced, ipa, respelling, english, target_word_id, template_id
+- **sentences.csv**: sentence_id, lao, lao_spaced, ipa, respelling, english, target_word_id, template_id, source, confidence, notes, word_overrides, register
+  - `register`: same four values and rules as for words (see the words.csv `register` entry); a sentence's register is how a native would say that whole sentence.
   - `lao`: standard orthography, written without spaces between words.
   - `lao_spaced`: the same sentence with a space between words, for learners (user request, 2026-10-09). It is not traditional, so learner material shows it as a reading aid. Word boundaries must match `sentence_words.csv`.
 - **sentence_words.csv**: sentence_id, position, word_id

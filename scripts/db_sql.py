@@ -75,7 +75,7 @@ TABLES = {
     "words": (["word_id"], spec(
         "word_id,lao,ipa,respelling,syllables,tone_by_syllable,tone_derivation,pos,classifier_word_id,classifier_type,"
         "classifier_confidence,component_word_ids,gloss_en,freq_rank,topic,tier,intro_order,new_letter_ids,new_vowel_ids,"
-        "pron_tip,source,confidence,notes", ints=["freq_rank", "intro_order"])),
+        "pron_tip,source,confidence,notes,register", ints=["freq_rank", "intro_order"])),
     "letters": (["letter_id"], spec(
         "letter_id,lao,unicode,kind,name_lao,name_gloss_en,ipa_initial,ipa_final,consonant_class,romanization_bgn,"
         "respelling,pron_tip,coverage_required,intro_word_id,source,confidence,notes")),
@@ -83,7 +83,7 @@ TABLES = {
         "vowel_id,lao_pattern,form,length,sound_group,ipa,romanization_bgn,respelling,pron_tip,coverage_required,"
         "intro_word_id,source,confidence,notes")),
     "sentences": (["sentence_id"], spec(
-        "sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides")),
+        "sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides,register")),
     "sentence_words": (["sentence_id", "position"], spec(
         "sentence_id,position,word_id,source,confidence,notes", ints=["position"])),
     "template_fillers": (["template_id", "slot_name", "word_id"], spec(
@@ -112,6 +112,7 @@ TABLES = {
 LESSON_TABLES = ["lessons", "units", "rules", "lesson_items"]   # optional files; never seeded or refreshed
 OPTIONAL_POOL = ["word_categories", "sentence_slots", "word_notes"]           # hand-tagged; a missing file counts as empty
 POOL = [t for t in TABLES if t not in LESSON_TABLES]
+REGISTERS = {"formal", "neutral", "casual", "slang"}             # words/sentences.register (DB check); blank -> null
 ROLES = {"new", "recycle", "example", "bonus"}                  # lesson_items.role (DB check constraint)
 # Tables that a word / sentence id carries along in lesson and change migrations: (table, key column).
 WORD_CHILDREN = [("word_units", "word_id"), ("word_categories", "word_id"), ("word_notes", "word_id")]
@@ -201,6 +202,8 @@ def load(data_dir):
                 elif key in seen:
                     errors.append(f"{name}.csv:{lineno}: duplicate primary key {key}")
                 seen.add(key)
+                if name in ("words", "sentences") and row["register"] is not None and row["register"] not in REGISTERS:
+                    errors.append(f"{name}.csv:{lineno}: register {row['register']!r} not in {sorted(REGISTERS)}")
                 for c in NOT_NULL.get(name, []):
                     if row[c] is None:
                         errors.append(f"{name}.csv:{lineno}: {c} is empty")

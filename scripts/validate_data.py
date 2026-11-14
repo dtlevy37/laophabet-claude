@@ -58,6 +58,7 @@ TABLES = {
 CAT_RE = re.compile(r"^[a-z][a-z_]*$")
 FUNCTION, ACTION = "function", "action"
 CONFIDENCE = {"verified", "derived", "unverified"}
+REGISTER = {"formal", "neutral", "casual", "slang"}   # words/sentences; blank or absent = not assessed
 TONES = {"low-rising", "high-rising", "mid", "low-falling", "high-falling"}
 TIERS = {"30", "100", "300", "600", "extra"}
 CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}
@@ -106,6 +107,8 @@ def load(data_dir, name):
             err(f"{name}.csv line {i}: confidence '{r.get('confidence', '')}' not in {sorted(CONFIDENCE)}")
         if not r.get("source", "") and r.get("confidence") != "unverified":
             err(f"{name}.csv line {i}: no source but confidence is {r.get('confidence')}")
+        if name in ("words", "sentences") and (r.get("register") or "").strip() not in REGISTER | {""}:
+            err(f"{name}.csv line {i}: register '{r.get('register')}' not in {sorted(REGISTER)} (or blank)")
     return rows, list(cols)
 
 

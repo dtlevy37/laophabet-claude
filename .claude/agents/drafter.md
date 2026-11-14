@@ -24,6 +24,7 @@ Do not read SCHEMA.md or the data files whole. Grep `curriculum/vocab.csv` (word
   - No entry: source `SRC-AGENT:knowledge`, confidence `unverified`, your own IPA, notes `Not on Wiktionary; IPA by agent`.
   - Compounds of known words: skip the fetch (they are usually missing) and build the IPA from the components.
 - Leave tone_by_syllable, tone_derivation, new_letter_ids and new_vowel_ids empty (a script fills them). The IPA must have the same number of syllables as `syllables`, with correct tone letters: low-rising ˩(˧), high-rising ˧˥, mid ˧, low-falling ˧˩, high-falling ˥˨.
+- `register` (optional last column; the header may omit it): leave blank. Fill only when given a native suggestion or a cited source (formal|neutral|casual|slang).
 - `pron_tip`: one or two plain sentences for an English speaker, comparing to English sounds where honest, and saying what the tone does.
 - Nouns (any `;`-separated pos part starting with "noun", or "proper noun"; pronouns are not nouns) need classifier_type `specific|self|measure|none`, classifier_word_id (required for specific; the word's own ID for self; empty for none), classifier_confidence, and the classifier source or caveats in notes prefixed `Classifier: `. Non-nouns leave all three empty.
 - Quote any field that contains a comma. No invisible characters (zero-width spaces, no-break spaces).

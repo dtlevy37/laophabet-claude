@@ -98,6 +98,22 @@ There is one transliteration (the stored "respelling", shown in the learner's st
       coming); no transliteration by default.
 
 ## App slices
+- [ ] **N1 Native open questions** (owner 2026-11-14). *Built 2026-11-14 on the local stack (migrations 180000, 182000, 183000; `#/questions`); not on hosted; owner browser check pending.* Natives answer the questions now in `docs/QUESTIONS.md` online;
+      several natives may answer the same question and the owner sees the consensus. Tables `open_questions`
+      (from `data/open_questions.csv` through a script-written migration) and `question_answers` (one row per native
+      and question, editable); RPCs `next_open_question`, `answer_open_question`, `open_question_counts`; owner view
+      `open_question_consensus` (counts per choice, verified natives marked). Natives never see other answers.
+      **Done when:** two native test accounts answer the same question and the view shows both; a native sees the
+      "Questions for you" screen (`#/questions`) in Lao UI strings.
+- [ ] **N2 Native word suggestions** (owner 2026-11-14). *Built 2026-11-14 on the local stack (181000, 183000; `#/suggest`, `#/confirm`); not on hosted; voice upload untested; other natives cannot play the audio yet (needs a signed-URL RPC).* Natives suggest common everyday words that dictionaries miss
+      (cultural or casual, e.g. a word for "yes"): Lao, own romanization, English, when used, register, example,
+      optional voice. Other natives confirm or disagree (consensus). Tables `word_suggestions`,
+      `word_suggestion_votes`; queue only, nothing reaches lessons except through `draft-content` with source
+      `native suggestion` (unverified until confirmed). **Done when:** a native submits a suggestion, a second native
+      confirms it, and the owner view `word_suggestion_consensus` shows both.
+- [x] **R1 Register field.** *Built 2026-11-14 (migration 175000, local only, not on hosted); tag not yet seen in a browser.* `register` (formal, neutral, casual, slang; blank = not assessed) on words and sentences:
+      CSVs, scripts, SCHEMA, DB columns, learner card shows a small tag only for casual, slang or formal.
+      **Done when:** pipeline clean, a word set to `casual` shows the tag on its card.
 - [ ] **A4 "Sounds like" review.** Hints applied and pushed (`20261113143534_a4_sound_hints.sql`; table in the last
       section of `docs/A4_SOUNDS_LIKE_AUDIT.md`). **Done when:** the owner has read the changed-rows list.
 - [ ] **A5 Usage and culture notes.** Built and on hosted; owner check passed 2026-11-13. Left: pool words in

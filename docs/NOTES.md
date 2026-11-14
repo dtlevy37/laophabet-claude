@@ -19,6 +19,17 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
+**N1 native open questions, N2 word suggestions, R1 register field** built 2026-11-14 on the local stack only
+(migrations `20261114175000`–`20261114183000`; NOT on hosted, NOT pushed: a frontend push would deploy native screens
+whose RPCs hosted lacks). Next: owner agrees `supabase db push --linked` and the push; wife answers `#/questions`
+(16 seeded, Q0001–Q0016, `data/open_questions.csv`, `scripts/questions_tool.py`); mark natives verified in
+`reviewer_trust`; then apply answers (ລາວ long/short first) and remove them from QUESTIONS.md; then lessons 12 (ມ) and
+13 (ອ). Open: other natives cannot play a suggester's audio (needs a signed-URL RPC); the registers are blank on all
+existing rows; question text is English (+ Lao only if `label_lao`); the Lao UI strings are unreviewed. Owner path
+notes (lesson 20+) come later. Owner browser steps: sign in as a native; `#/` shows 5 entries; `#/questions`,
+`#/suggest`, `#/confirm` (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js`
+(local accounts n1a/n1b/n1l@test.local, password smoke-test-pass-1).
+
 **A8 Letters and sounds, A9 My words, S8b Review** built 2026-11-14 on the local stack (plan and contracts:
 `docs/A8_A9_REVIEW_PLAN.md`); on hosted and deployed. Owner: browser items 17–19. Then A11 (no ◌ on final consonants).
 

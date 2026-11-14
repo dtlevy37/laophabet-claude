@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Native questions, word suggestions, register field (local only, not on hosted)
+- N1: `open_questions` / `question_answers`, RPCs `next_open_question`, `answer_open_question`,
+  `open_question_counts`, owner view `open_question_consensus`; 16 seeded questions from `data/open_questions.csv`
+  via `scripts/questions_tool.py`; native screen `#/questions`. Natives never see each other's answers.
+- N2: `word_suggestions` / `word_suggestion_votes`, RPCs `suggest_word`, `next_suggestion_to_confirm`,
+  `vote_word_suggestion`, `my_word_suggestions`, owner view `word_suggestion_consensus`; screens `#/suggest`,
+  `#/confirm`. Review fixes in `20261114183000` (no suggester id leak, closed suggestions not votable, cap lock).
+- R1: `register` (formal/neutral/casual/slang, blank = not assessed) on words and sentences: CSVs, scripts, SCHEMA,
+  migration `20261114175000`, tag on cards. Lao UI strings for all of these are unverified AI text.
+- Migrations `20261114175000`–`20261114183000`.
+
 ## 2026-11-14 Lesson feel: hints, effort budget, spelling opt-in, checkpoints, review time, About
 - H1: Hint button (fill in the blank: English then transliteration; listen and pick and Lao/meaning questions:
   transliteration); `review_log.hinted`; a hinted right answer lifts an item to level 2 at most (migration
