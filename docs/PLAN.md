@@ -102,9 +102,9 @@ owner's check or answer comes in.
       Check the build-the-word ◌ note (A7 step 5) and tile matching still work when an initial and a final tile read
       the same (ນອນ). **Done when:** no learner screen shows ◌ before a consonant; `session_test.mjs` asserts it for
       the build-word pieces; ນອນ (non, "sleep") builds correctly with two ນ tiles.
-- [ ] **A8 Letters and sounds.** *Built 2026-11-14 (local; `learner_units()`, `#/letters`, plan `docs/A8_A9_REVIEW_PLAN.md`); owner check pending; migration not on hosted.* Every taught symbol with card info, examples from known words, audio; links into
+- [ ] **A8 Letters and sounds.** *Built 2026-11-14 (local; `learner_units()`, `#/letters`, plan `docs/A8_A9_REVIEW_PLAN.md`); on hosted; owner check pending.* Every taught symbol with card info, examples from known words, audio; links into
       writing practice; vowels join writing practice.
-- [ ] **A9 My words.** *Built 2026-11-14 (local; `learner_words()`, `learner_word(id)`, `learner_counts()`, `#/words`); owner check pending; migration not on hosted.* Every word seen, with card info and personal stats; needs a per-item stats RPC. Leads into S8b.
+- [ ] **A9 My words.** *Built 2026-11-14 (local; `learner_words()`, `learner_word(id)`, `learner_counts()`, `#/words`); on hosted; owner check pending.* Every word seen, with card info and personal stats; needs a per-item stats RPC. Leads into S8b.
 - [ ] **S7g Conversations.** Design note first: `dialogues` / `dialogue_lines` (ordered sentence ids, speaker A/B), a
       `dialogue` lesson item, a conversation card, fill in the blank on its lines. Lessons 8 and 10 carry their lines as
       ordinary sentences until then. **Done when:** lesson 10 shows its conversation as one card with a fill in the
@@ -121,7 +121,7 @@ owner's check or answer comes in.
       `reviewer_trust` (README "Native verification").
 - [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known); settings move to the
       learner's profile (proposed, not agreed). Mostly absorbed by A7 step 10.
-- [ ] **S8b Practice** = the home Review tile. *Built 2026-11-14 (local; `practice_status`, `start_practice`, `complete_practice`, `#/practice`, fixed intervals 0/1/3/7/14/30 days until S9); owner check pending; migration not on hosted. After lesson 1 alone a review is 10–11 answers.* Was: `practice_items(limit)` (due, then weak, then oldest; bonus words included), practice mode
+- [ ] **S8b Practice** = the home Review tile. *Built 2026-11-14 (local; `practice_status`, `start_practice`, `complete_practice`, `#/practice`, fixed intervals 0/1/3/7/14/30 days until S9); on hosted; owner check pending. After lesson 1 alone a review is 10–11 answers.* Was: `practice_items(limit)` (due, then weak, then oldest; bonus words included), practice mode
       (recall first, no teach cards), `complete_practice` summary, due count on home; matching and flashcards.
       **Done when:** a learner with lesson 1 done can run a practice session and see its summary.
 - [ ] **S9 FSRS:** design note first. Open points: client JS module vs plpgsql; outcome → rating (recognition at

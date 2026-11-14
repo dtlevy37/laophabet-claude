@@ -10,9 +10,8 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
   ດີ ນີ້ (dee/nee: good, this) · L0008 ສະບາຍດີ (sabaidee, hello) · L0009 ຫິວ ເຈົ້າ (hiw/jao: hungry, you) · L0010
   ຂ້ອຍ ນອນ (khoy/non: I, sleep) + first conversation · L0011 colours, ຂາຍ (khaai, sell), ນ້ອຍ (noy, small).
   Path notes: 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
-- **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17). **Not pushed:** `20261114004907_n_card_text` and the
-  A8/A9/S8b migrations `20261114100000`, `..110000`, `..120000`. Push the DB before the frontend: the new home tiles
-  call `learner_counts` and `practice_status`. Netlify
+- **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); every migration is pushed (owner, 2026-11-14), nothing
+  pending. Netlify
   serves the frontend; `config.production.js` is copied to `config.js` by the build unless `SUPABASE_URL` /
   `SUPABASE_ANON_KEY` env vars are set. Local Docker DB is still Postgres 15 (`supabase/.temp/postgres-version`
   moved to `postgres-version.hosted` so local starts on 15); move it to 17 some time.
@@ -21,8 +20,7 @@ goes in `CHANGELOG.md` and git; slices in `docs/PLAN.md`; questions for people i
 
 ## Next step
 **A8 Letters and sounds, A9 My words, S8b Review** built 2026-11-14 on the local stack (plan and contracts:
-`docs/A8_A9_REVIEW_PLAN.md`); committed, not pushed. Owner: agree the hosted push (DB first, then git push =
-Netlify deploy), then browser items 17–19. Then A11 (no ◌ on final consonants).
+`docs/A8_A9_REVIEW_PLAN.md`); on hosted and deployed. Owner: browser items 17–19. Then A11 (no ◌ on final consonants).
 
 AL1 alpha readiness (PLAN): on hosted and deployed 2026-11-14; owner check pending, then the owner's sons sign up. Read their answers and notes in the dashboard (`learner_intake`, `app_feedback`).
 Browser check: `scripts/browser/alpha_check.js`.
