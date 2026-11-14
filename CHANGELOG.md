@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-14 Show password, lesson-feel plan
+- Sign-in and sign-up: "Show password" checkbox under the password field (`auth_show_password`, Lao string unverified).
+- PLAN: new section "Lesson feel and checkpoints" (H1 hint ladder, H2 effort budget, H3 spelling opt-in, H4/H5
+  checkpoints, H6 more listening) with the 2026-11-14 measurements. No code for H1–H6 yet.
+
 ## 2026-11-14 Owner feedback: wording, discard, layout, greyed letters, speaker
 - Build-a-sentence: "Build the sentence in Lao" and a how-to that says Lao order differs from English.
 - Leave dialog: "Start over" and "Leave and discard progress" (clears the resume record, drops the session).

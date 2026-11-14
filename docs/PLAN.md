@@ -63,6 +63,39 @@ owner's check or answer comes in.
       "Say it" in lessons with a Settings opt-out, no self-grade, voice never leaves our client/server). Next: write
       the phase 1 build slice.
 
+## Lesson feel and checkpoints (owner 2026-11-14)
+Measured 2026-11-14 (`tmp/measure.mjs`, L1–11, dry-run levels): L1–5 are 13–22 steps, L6–11 are 29–42; build the word
+is 65 of 307 steps (10–12 per lesson in L10–11); quick checks are only 5–9 per lesson. Decisions: hints are chosen by
+the learner and count for less (never a miss); no hard gate on checkpoints; spelling is opt-in; listening is never
+optional; levels: 3 = recalled (everyone), top = spelled from recall (spelling opt-in only, a badge, not in "known").
+There is one transliteration (the stored "respelling", shown in the learner's style), so one hint tier for it.
+- [ ] **H1 Hint ladder.** Default minimal, a Hint button, each press reveals the next tier. Fill in the blank: Lao
+      only, then English, then transliteration. Listen and pick: Lao options only, then transliteration. Build the
+      sentence: English shown, hint = transliteration. Lao → meaning: hint = transliteration on the options. New
+      `hinted` flag in `record_answers` (new migration); a hinted right answer counts for less (never lifts a word
+      to level 3; first-try accuracy for the item is not counted), not a miss. New words and level-1 words start with
+      the hint open; the `translit` setting caps the tiers. **Done when:** each activity above shows the default and
+      the hint steps, the flag reaches the DB, and a hinted answer cannot raise a word to level 3.
+- [ ] **H2 Lesson effort budget.** Weighted length, about 30 points loose cap (card 0.25, quick check 0.5, fill in
+      the blank 1, build the sentence 1.5, build the word 1.5, more for long words); the planner trims optional
+      closing questions to fit, never first checks, retries of misses or the one listen and pick. Weights to tune.
+      **Done when:** `tmp/measure.mjs` (move it to `scripts/`) shows L6–11 at about 30 points and `session_test.mjs`
+      passes.
+- [ ] **H3 Spelling opt-in.** Settings toggle "Spelling" (account, asked once in onboarding, default off). Off: no
+      build the word, no find the missing piece, a new word gets its card and meaning check, a new tone mark just its
+      card. On: one build when a word is introduced; the rest of the builds move to practice and checkpoints. Top
+      level "spelled" (a badge, outside "words known") is earned by spelling a word from recall. **Done when:** the
+      planner output differs by the setting in `session_test.mjs`, the setting follows the account, and a word can
+      reach level 3 without any build.
+- [ ] **H4 Checkpoints, backend.** A `sections` concept (lessons grouped by topic, each ending with a short dialogue
+      or story; target about 15 lessons, hard cap 25–30; put it in `CURRICULUM_PATH.md` and the lesson-build brief).
+      A checkpoint planner: items from the section's lessons weighted to the lowest levels, hardest forms only, no
+      hint button (spelling-only types left out when spelling is off). Not a gate; the result lists the words to
+      review and feeds practice. **Done when:** an RPC returns a checkpoint bundle for a section and records answers.
+- [ ] **H5 Checkpoints, UI,** and the first checkpoint when its section is complete.
+- [ ] **H6 More listening.** Audio on more question types as recordings arrive (60+ recorded by 2026-11-14; more
+      coming); no transliteration by default.
+
 ## App slices
 - [ ] **A4 "Sounds like" review.** Hints applied and pushed (`20261113143534_a4_sound_hints.sql`; table in the last
       section of `docs/A4_SOUNDS_LIKE_AUDIT.md`). **Done when:** the owner has read the changed-rows list.
