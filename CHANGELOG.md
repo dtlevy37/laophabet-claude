@@ -2,6 +2,9 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-15 N3 cleanup: one recorder per item
+- `record.js` uses one recorder that moves under the edit box (relabelled "Record your version") for "I'd say it differently" and back; `recorder.js` gains `setLabel`. Same flow for natives; driver `n3_record.js` checks the move.
+
 ## 2026-11-15 N3 one recording flow for natives
 - Record (`#/record`) absorbs Check sentences: record = natural; "I'd say it differently" (editable box starting with
   the text, then record your version); "I'm not sure what this is supposed to mean" (skip with reason

@@ -93,6 +93,11 @@ const UID = `(select id from auth.users where email='${EMAIL}')`
   const lao2 = await current()
   await page.locator('section:not([hidden]) > .item-links button.link').first().click()
   const ta = page.locator('textarea.lao-input')
+  const label = async () => (await page.locator('.recorder:visible .rec-big').textContent()).trim()
+  check('one recorder, moved under the box', (await page.locator('.recorder').count()) === 1 && (await label()) !== '● ' + '', await label())
+  await page.locator('.own-links button').nth(1).click() // back to the original
+  check('back to the original: recorder back under the Lao', (await page.locator('section:not([hidden]) > .recorder + .item-links').count()) === 1)
+  await page.locator('section:not([hidden]) > .item-links button.link').first().click()
   check('own box starts with the original', (await ta.inputValue()) === lao2)
   await ta.fill(lao2 + 'ແດ່')
   await record()
