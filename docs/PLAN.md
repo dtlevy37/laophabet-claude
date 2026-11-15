@@ -1,189 +1,101 @@
 # Plan
 
-Open slices in working order. One slice at a time; each has a "Done when" line; tick it when the owner's check
-passes, then move it to the Done line. Detail of finished slices is in `CHANGELOG.md` and git. Design:
-`docs/DESIGN.md`. State and next step: `docs/NOTES.md`.
+Open work only, in working order. One slice at a time; each has a "Done when" line. A slice that is built leaves this
+file: its record goes in `CHANGELOG.md`, and anything the owner still has to try goes in `docs/NOTES.md` "Waiting on
+the owner". Design: `docs/DESIGN.md`.
 
 Cross-cutting rule not in CLAUDE.md: **native status is self-declared; feedback is unverified until the owner
 verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL). Privileged roles live in a table
 users cannot write.
 
-## Done
-S1–S6c (scripts, backend, lesson 1, reader, progress, session runner, multiple choice) · S7a build the sentence ·
-S7b session comfort (resume, leave dialog, dry run `#/try/`) · S7c activity data · S7d build the word · S7e fill in
-the blank · S7f bonus words · lessons 1–11 merged · hosted Supabase + Netlify · A1 wife's audio · A2 gentler
-activities · A3 stats capture · L1 clearer activities · L2 listen and pick.
-
 ## Working order
-L1b–L1e → A7 steps 0–5 → L3 → A7 steps 6–10 → L4 → L5. Owner-gated slices (A4–A6, S7h, S7w, S10r) close when the
-owner's check or answer comes in.
+Owner checks of what is built, then A7 rest, A11, A10, L3, L4, L5. Owner-gated slices (A4, S7w, S10r) close when
+the owner's check or answer comes in.
 
-## Alpha (owner 2026-11-14: the owner's sons test the app)
-- [ ] **AL1 Alpha readiness.** *Built 2026-11-14; on hosted and deployed; owner check pending.* "All lessons" links go to `#/lessons`;
-      optional sign-up questions (`learner_intake`: Lao spoken and read, Thai, goals, reasons, age range; Skip
-      stores `skipped`); Settings → Send feedback (`app_feedback`); `LAO_UI_REVIEW.md` and its script moved out of
-      the served frontend. **Done when:** the migration is on hosted, a new learner on the deployed site sees the
-      questions once, and a feedback message reaches `app_feedback`.
-
-## Learning slices (owner 2026-11-13)
-- [ ] **L1c Answers and feedback.** *Built and pushed 2026-11-13; owner browser check pending.* (a) Build the word: Check before all pieces are placed. (b) Right in the end =
-      green: slips (wrong tile tapped and taken back) no longer show red; they stay in `review_log`. (c) A wrong
-      answer shows "Your answer" over "Right answer", aligned word by word, differences highlighted, a [missing] gap
-      for a left-out word. (d) Accept an equally right answer (ສະບາຍດີບໍ່? sabaidee bor? for "How are you?" when the
-      target is ເຈົ້າສະບາຍດີບໍ່?) with a note ("also right; ເຈົ້າ adds 'you'"); test ເຈົ້າ where the pronoun cannot be
-      dropped. (e) Build the word, any order: one slot per piece in reading position; a tapped piece drops into its
-      slot. **Done when:** (a)–(e) work on `#/try/L0007` and `#/try/L0009`, `session_test.mjs` covers (b) and (d),
-      and A3 detail still records every tap.
-- [ ] **L1b Vowel line and activity mix.** *(a) built and pushed 2026-11-13; (b) waits on the owner's split.* (a) Every vowel intro card says the vowel is one unit (all its parts,
-      wherever they sit) and the consonant is said first. (b) Favour listen and pick and other quick recognition in
-      lessons; build the word / sentence less in lessons, more in practice (S8b). Same number of checks. Owner said
-      "might": confirm the split first. **Done when:** vowel cards carry the line (`db_sql.py change`); the mix is
-      agreed and `session_test.mjs` checks it.
-- [ ] **L1d Teaching notes.** *Built 2026-11-13 (R03 in L0002, R04 in L0009 after ຫິວນ້ຳ, not ບໍ່ຫິວ: kept there, owner left it to the agent; pushed). Missed-ເຂົ້າ note in the compare view built and pushed (`PAIR_NOTES` in `compare.js`); owner check pending. Left: S000002879, S000002888, S000002892 wait on QUESTIONS.* (a) Rule card "some vowels are written before (or around) the consonant, but you say the
-      consonant first" at ເ◌ົາ in lesson 2. (b) Rule card "pronouns are often left out" at ບໍ່ຫິວ (bor hiw, "not
-      hungry") in lesson 9. (c) ຫິວ (hiw) culture note and missed-ເຂົ້າ feedback ("hungry needs ເຂົ້າ"): bare ຂ້ອຍຫິວ
-      sounds incomplete (native, 2026-11-13). Review bare-ຫິວ sentences: S000002892 ຫິວ and S000002888 ບໍ່ຫິວ
-      (replies; ask if fine), S000000268, S000001655, S000000192 (add ເຂົ້າ or retire). (d) English fixes: S000002881
-      "Could I have some rice, please?"; S000002889 and S000002892 drop "Yes,"; S000002879 per QUESTIONS.
-      (e) "This is white" (native): ນີ້ຂາວ (nee khao) fits a wall's colour; for an object in hand ນີ້ມັນສີຂາວ (nee man
-      sii khao). Check lesson sentences with this pattern. **Done when:** rule cards in lessons 2 and 9, English rows
-      changed, pushed with the owner's go-ahead.
-- [ ] **L1e Lesson order.** *Built and pushed 2026-11-13; owner check pending.* A word's first build (or hardest check) is in the lesson that teaches it (ສະບາຍດີ and
-      ຫິວ were first built in lesson 9). Long words (3+ syllables) get "find the missing piece" before a full build.
-      **Done when:** `session_test.mjs` asserts no first build outside the word's own lesson and long words get a
-      missing-piece question.
-- [ ] **Bug: ◌ິ drawn right of its circle** on the owner's screen; not reproduced in headless Chrome with any Lao font
-      (`tmp/vowel_glyph.png`). Needs device, browser, Settings → Lao font, and where it showed.
+## Lessons
+- [ ] **L1b (b) activity mix.** Favour listen and pick and other quick recognition in lessons; build the word /
+      sentence less in lessons, more in practice. Same number of checks. Owner said "might": confirm the split first
+      (QUESTIONS). **Done when:** the mix is agreed and `session_test.mjs` checks it.
+- [ ] **L1d leftovers.** S000002879, S000002888, S000002892 wait on QUESTIONS. "This is white": ນີ້ຂາວ (nee khao) fits a
+      wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an object in hand; check lesson sentences with this pattern.
+- [ ] **Bug: ◌ິ drawn right of its circle** on the owner's screen; not reproduced in headless Chrome with any Lao font.
+      Needs device, browser, Settings → Lao font, and where it showed.
 - [ ] **L3 Teaching tone.** A proper lesson: what tone is, the pitch line legend, tone marks and consonant class in
-      plain words, recorded pairs that differ only by tone (ຂາວ khaao "white" vs ລາວ laao, if ລາວ is long; ໃກ້ "near"
-      vs ໄກ "far", to verify; ເຂົ້າ "rice" vs ເຂົ່າ "knee" once both are taught), and a hear-and-pick-the-pitch check.
+      plain words, recorded pairs that differ only by tone (ຂາວ khaao "white" vs ລາວ laao; ໃກ້ "near" vs ໄກ "far", to
+      verify; ເຂົ້າ "rice" vs ເຂົ່າ "knee" once both are taught), and a hear-and-pick-the-pitch check.
       **Done when:** merged with at least two recorded pairs and a pitch check.
-- [ ] **L4 Conversations** = S7g, with two voices when a second speaker records.
+- [ ] **L4 Conversations** = S7g (below), with two voices when a second speaker records.
 - [ ] **L5 Speaking practice.** Design `docs/L5_SPEAKING_DESIGN.md`; owner answered its questions 2026-11-13 (phase 1
       "Say it" in lessons with a Settings opt-out, no self-grade, voice never leaves our client/server). Next: write
       the phase 1 build slice.
-
-## Lesson feel and checkpoints (owner 2026-11-14)
-Measured 2026-11-14 (`tmp/measure.mjs`, L1–11, dry-run levels): L1–5 are 13–22 steps, L6–11 are 29–42; build the word
-is 65 of 307 steps (10–12 per lesson in L10–11); quick checks are only 5–9 per lesson. Decisions: hints are chosen by
-the learner and count for less (never a miss); no hard gate on checkpoints; spelling is opt-in; listening is never
-optional; levels: 3 = recalled (everyone), top = spelled from recall (spelling opt-in only, a badge, not in "known").
-There is one transliteration (the stored "respelling", shown in the learner's style), so one hint tier for it.
-- [x] **H1 Hint ladder.** *Built 2026-11-14 (local; migration `20261114140000`, not on hosted yet).* Default minimal, a Hint button, each press reveals the next tier. Fill in the blank: Lao
-      only, then English, then transliteration. Listen and pick: Lao options only, then transliteration. Build the
-      sentence: English shown, hint = transliteration. Lao → meaning: hint = transliteration on the options. New
-      `hinted` flag in `record_answers` (new migration); a hinted right answer counts for less (never lifts a word
-      to level 3; first-try accuracy for the item is not counted), not a miss. New words and level-1 words start with
-      the hint open; the `translit` setting caps the tiers. **Done when:** each activity above shows the default and
-      the hint steps, the flag reaches the DB, and a hinted answer cannot raise a word to level 3.
-- [x] **H2 Lesson effort budget.** *Built 2026-11-14 (`session.js` BUDGET/effort; `scripts/measure_lessons.mjs`).* Weighted length, about 30 points loose cap (card 0.25, quick check 0.5, fill in
-      the blank 1, build the sentence 1.5, build the word 1.5, more for long words); the planner trims optional
-      closing questions to fit, never first checks, retries of misses or the one listen and pick. Weights to tune.
-      **Done when:** `tmp/measure.mjs` (move it to `scripts/`) shows L6–11 at about 30 points and `session_test.mjs`
-      passes.
-- [x] **H3 Spelling opt-in.** *Built 2026-11-14 (local; migration `20261114150000`, not on hosted yet; `profiles.spelling_on`, Settings and sign-up question).* Settings toggle "Spelling" (account, asked once in onboarding, default off). Off: no
-      build the word, no find the missing piece, a new word gets its card and meaning check, a new tone mark just its
-      card. On: one build when a word is introduced; the rest of the builds move to practice and checkpoints. Top
-      level "spelled" (a badge, outside "words known") is earned by spelling a word from recall. **Done when:** the
-      planner output differs by the setting in `session_test.mjs`, the setting follows the account, and a word can
-      reach level 3 without any build.
-- [x] **H4 Checkpoints, backend.** *Built 2026-11-14 (local; migration `20261114160000`, not on hosted; `sections`, `section_results`, `list_checkpoints`, `start_checkpoint`, `complete_checkpoint`; the first section row S01 = lessons 1-10 is inserted by hand, owner to confirm).* A `sections` concept (lessons grouped by topic, each ending with a short dialogue
-      or story; target about 15 lessons, hard cap 25–30; put it in `CURRICULUM_PATH.md` and the lesson-build brief).
-      A checkpoint planner: items from the section's lessons weighted to the lowest levels, hardest forms only, no
-      hint button (spelling-only types left out when spelling is off). Not a gate; the result lists the words to
-      review and feeds practice. **Done when:** an RPC returns a checkpoint bundle for a section and records answers.
-- [x] **H5 Checkpoints, UI.** *Built 2026-11-14: `#/checkpoint/S01`, a card on the lesson list, `planCheckpoint`, summary with the words to look at again. Owner browser check pending.*
-- [x] **A12a Active time per session.** *Built 2026-11-14 (local; `learner_sessions.active_ms`, `set_session_active`, `active_time.js`). Views, queries and a one-page report wait until there is data.*
-- [~] **H6 More listening.** *Started 2026-11-14: up to two listen and pick per lesson (was one), listening in every checkpoint and review. More when the recordings grow.* Audio on more question types as recordings arrive (60+ recorded by 2026-11-14; more
-      coming); no transliteration by default.
+- [~] **H6 More listening.** Audio on more question types as recordings arrive; no transliteration by default.
+- [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log`; waits
+      for data.
 
 ## App slices
-- [ ] **N1 Native open questions** (owner 2026-11-14). *Built 2026-11-14 on the local stack (migrations 180000, 182000, 183000; `#/questions`); not on hosted; owner browser check pending.* Natives answer the questions now in `docs/QUESTIONS.md` online;
-      several natives may answer the same question and the owner sees the consensus. Tables `open_questions`
-      (from `data/open_questions.csv` through a script-written migration) and `question_answers` (one row per native
-      and question, editable); RPCs `next_open_question`, `answer_open_question`, `open_question_counts`; owner view
-      `open_question_consensus` (counts per choice, verified natives marked). Natives never see other answers.
-      **Done when:** two native test accounts answer the same question and the view shows both; a native sees the
-      "Questions for you" screen (`#/questions`) in Lao UI strings.
-- [ ] **N2 Native word suggestions** (owner 2026-11-14). *Built 2026-11-14 on the local stack (181000, 183000; `#/suggest`, `#/confirm`); not on hosted; voice upload untested; other natives cannot play the audio yet (needs a signed-URL RPC).* Natives suggest common everyday words that dictionaries miss
-      (cultural or casual, e.g. a word for "yes"): Lao, own romanization, English, when used, register, example,
-      optional voice. Other natives confirm or disagree (consensus). Tables `word_suggestions`,
-      `word_suggestion_votes`; queue only, nothing reaches lessons except through `draft-content` with source
-      `native suggestion` (unverified until confirmed). **Done when:** a native submits a suggestion, a second native
-      confirms it, and the owner view `word_suggestion_consensus` shows both.
-- [x] **R1 Register field.** *Built 2026-11-14 (migration 175000, local only, not on hosted); tag not yet seen in a browser.* `register` (formal, neutral, casual, slang; blank = not assessed) on words and sentences:
-      CSVs, scripts, SCHEMA, DB columns, learner card shows a small tag only for casual, slang or formal.
-      **Done when:** pipeline clean, a word set to `casual` shows the tag on its card.
-- [ ] **A4 "Sounds like" review.** Hints applied and pushed (`20261113143534_a4_sound_hints.sql`; table in the last
-      section of `docs/A4_SOUNDS_LIKE_AUDIT.md`). **Done when:** the owner has read the changed-rows list.
-- [ ] **A5 Usage and culture notes.** Built and on hosted; owner check passed 2026-11-13. Left: pool words in
-      `get_lesson` lack the note (ⓘ from a sentence chip shows none); the one-off "translations are not literal" card
-      (needs a merged-lesson change). Notes unverified (QUESTIONS).
-- [ ] **A6 UX review.** Proposal in `docs/A6_UX_REVIEW.md` §3. **Done when:** the owner agrees it (questions 1, 3, 4).
-- [ ] **A7 Revamp: home and sections.** Steps 0–10 in `docs/A7_PLAN.md` (mockup gate at step 6). Home: Continue,
-      Review, Letters and sounds, My words, Write; stats on home (absorbs S8); dark mode with a System/Light/Dark
-      switch (step 1); Culture/Bonus badges with more oomph (step 7). Also: where ▶ / ⚑ sit; topbar wrapping at
-      narrow widths and 200% zoom.
-      **Built, owner check pending:** step 0 (groundwork: `summary.js`, `settingsPanel()`, selector contract in the
-      activity-module skill, `--content-max` / `--radius`); step 1 (`#/settings` page, sound-spelling choice on the
-      lesson 1 intro card, System / Light / Dark); step 2 (slim one-line header, hidden in lessons; lessons show ✕,
-      progress bar and "12 / 40"; email and Sign out on the settings page); review fixes; step 3 (home: Continue card
-      + compact path, `home.js`); step 4 (summary: "Next lesson" primary, "Back home", "Lao words read (with
-      repeats)"); step 5 (audio: ▶ is the one control on a card face, accent colour; voice credit and ⚑ report in
-      "More", open in the ⓘ sheet; the ◌ note on the first 3 build-the-word questions with a ◌ tile); step 6 decided by the owner (`A7_PLAN.md`
-      "Step 6 decided"); step 7 (Look: Lao blue + red is the default palette, Colours choice Lao / Indigo + saffron /
-      Teal + gold via `html[data-palette]`, theme and palette set in index.html's head before the first paint, solid
-      Bonus and Culture badges with a reduced-motion-safe pop, brand dot, streak in the warm colour); step 8 (model B,
-      no tab bar: home = Continue card + tiles; Lessons (`#/lessons`, the path, "5 of 11 done") and Write live; Review,
-      Letters and sounds, My words, Notes greyed "Soon", not focusable); step 9a (thumb zone: options centred in the
-      free space with bigger targets, Continue unchanged; key hints hidden on touch and under 561px). Next: step 9 part B,
-      inline sentence words with a popover.
+- [ ] **A7 rest.** (1) *Inline sentence words with a popover* (owner 2026-11-13): the chip row goes; each word in the
+      sentence is underlined; one tap opens a small bubble under the word that never covers the sentence, tapping
+      another word moves it, tapping elsewhere closes it; no close button, no modal, no focus trap; never on the
+      gap/answer before Check. Touches three activities via `chips()`; `countTaps` must still count. (2) *Desktop wide
+      layout + rail* (content up to 820px + a 320px rail; options and feedback stay at 600px). In a lesson the rail is
+      a lesson preview: the Lao words the lesson will show, new ones colour-coded, recycled ones labelled "Review";
+      no meanings or sounds while checks are running. Home rail: stats and sections. (3) *Stats strip and missed
+      list* (backend first): `learner_stats()` (streak, letters known, words known; absorbs S8) and
+      `session_summary.missed` (first-try misses from `review_log`), then the home strip and the summary list.
+      Also: topbar wrapping at narrow widths and 200% zoom. Contract: nav and ✕ belong to the runner, never to an
+      activity; new strings in `strings.json`.
+      **Done when:** (1) works on a phone and keys still count; (2) a 1920 screen shows the rail without giving
+      answers; (3) home shows the streak and counts from the DB and a summary lists the missed items.
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
-      `word_notes` by intro lesson vs the learner's progress). Principle: the app teaches; explanations are short but
-      informative and come before the thing they explain. **Done when:** a learner with lessons 1–9 done sees R03,
-      R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
+      `word_notes` by intro lesson vs the learner's progress). **Done when:** a learner with lessons 1–9 done sees
+      R03, R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
 - [ ] **A11 No ◌ on final consonants** (owner 2026-11-14). A final-role consonant unit (C13f ◌ນ and every other
       `role = final` consonant) is shown as the bare letter (ນ) everywhere learners see it: teach cards, build-the-word
       tiles and pieces lines ("ກ + ◌ິ + ນ"), compare rows, ⓘ sheets, Letters and sounds. ◌ means "a consonant goes
       here", so before a final it wrongly suggests the letter never starts a word (ນອນ non, "sleep"). Keep ◌ for vowels
-      and tone marks. Display rule in the client only (one helper, used wherever `units.lao` is shown); data unchanged.
-      Check the build-the-word ◌ note (A7 step 5) and tile matching still work when an initial and a final tile read
-      the same (ນອນ). **Done when:** no learner screen shows ◌ before a consonant; `session_test.mjs` asserts it for
-      the build-word pieces; ນອນ (non, "sleep") builds correctly with two ນ tiles.
-- [ ] **A8 Letters and sounds.** *Built 2026-11-14 (local; `learner_units()`, `#/letters`, plan `docs/A8_A9_REVIEW_PLAN.md`); on hosted; owner check pending.* Every taught symbol with card info, examples from known words, audio; links into
-      writing practice; vowels join writing practice.
-- [ ] **A9 My words.** *Built 2026-11-14 (local; `learner_words()`, `learner_word(id)`, `learner_counts()`, `#/words`); on hosted; owner check pending.* Every word seen, with card info and personal stats; needs a per-item stats RPC. Leads into S8b.
+      and tone marks. Client display rule only (one helper, used wherever `units.lao` is shown); data unchanged.
+      Check the build-the-word ◌ note and tile matching when an initial and a final tile read the same (ນອນ).
+      **Done when:** no learner screen shows ◌ before a consonant; `session_test.mjs` asserts it for the build-word
+      pieces; ນອນ (non, "sleep") builds correctly with two ນ tiles.
+- [ ] **A4 "Sounds like" review.** Hints are applied (table in the last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
+      **Done when:** the owner has read the changed-rows list.
+- [ ] **A5 leftovers.** Pool words in `get_lesson` lack the usage note (ⓘ from a sentence chip shows none); the
+      one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified (QUESTIONS).
 - [ ] **S7g Conversations.** Design note first: `dialogues` / `dialogue_lines` (ordered sentence ids, speaker A/B), a
       `dialogue` lesson item, a conversation card, fill in the blank on its lines. Lessons 8 and 10 carry their lines as
       ordinary sentences until then. **Done when:** lesson 10 shows its conversation as one card with a fill in the
       blank on one line.
-- [ ] **S7h Untaught real words as wrong options.** Built 2026-11-12, owner test pending. **Done when:** a fill in the
-      blank on ແລ້ວ in S000002877 (lesson 5 bundle) offers only real words, untaught ones among them; lesson 6 has a
-      fill in the blank on a recycled sentence.
-- [ ] **S7w Letter writing.** Built; desktop passed with fixes, owner finds it "weird", notes to come. **Done when:**
-      on a phone two letters can be completed with a finger; a careless trace fails; ຂ drawn for ຊ is refused; a
-      finished letter shows a tick. Later: vowels, tone marks, ໜ ໝ; use in lessons; progress in the DB.
-- [ ] **S10r Recording mode.** Built and deployed. Open from the wife's first session: (b) as many questions per
-      screen as fit, no scrollbar; ask all questions for an item in one go (ask the owner what exactly felt split).
-      Then: check takes (`recording_feedback` view, bucket `recordings`), her view of the Lao UI text, verify her in
-      `reviewer_trust` (README "Native verification").
-- [ ] **S8 Home and stats:** `learner_stats()` RPC (streak, letters known, words known); settings move to the
-      learner's profile (proposed, not agreed). Mostly absorbed by A7 step 10.
-- [ ] **S8b Practice** = the home Review tile. *Built 2026-11-14 (local; `practice_status`, `start_practice`, `complete_practice`, `#/practice`, fixed intervals 0/1/3/7/14/30 days until S9); on hosted; owner check pending. After lesson 1 alone a review is 10–11 answers.* Was: `practice_items(limit)` (due, then weak, then oldest; bonus words included), practice mode
-      (recall first, no teach cards), `complete_practice` summary, due count on home; matching and flashcards.
-      **Done when:** a learner with lesson 1 done can run a practice session and see its summary.
+- [ ] **S7w Letter writing.** Owner finds it "weird", notes to come. **Done when:** on a phone two letters can be
+      completed with a finger; a careless trace fails; ຂ drawn for ຊ is refused; a finished letter shows a tick.
+      Later: vowels, tone marks, ໜ ໝ; use in lessons; progress in the DB.
+- [ ] **S10r Recording mode, open items from the wife's first session:** (b) as many questions per screen as fit, no
+      scrollbar; ask all questions for an item in one go (ask the owner what exactly felt split). Then: check takes
+      (`recording_feedback` view, bucket `recordings`), her view of the Lao UI text, verify her in `reviewer_trust`
+      (README "Native verification").
 - [ ] **S9 FSRS:** design note first. Open points: client JS module vs plpgsql; outcome → rating (recognition at
       reduced weight, recall by latency, wrong = Again); card granularity and direction; the ladder gates activity
       types, FSRS decides timing, no demotion; daily session capped; later fit weights from `review_log`.
+      **Owner direction 2026-11-15 (proposed, not built; Opus may review the design note):**
+      - Mastery comes from FSRS stability, so a word cannot be proven "known" until weeks after introduction. The
+        0-4 ladder level stays the activity gate (no demotion); "words known" and the home stats switch to stability
+        once it exists. Seen (level >= 1) is a badge only.
+      - A lesson counts as one review event per item per day, so in-session repeats do not inflate stability.
+      - Spelled (level 4) stays a badge; it may count as an Easy rating, giving a bigger stability jump.
+      - Write side: update stability/difficulty/last_review_at/reps/lapses per answer (in or beside `record_answers`).
+        Read side: retrievability computed on the fly in `practice_items` and the stats RPCs. plpgsql, matching the
+        stats-in-DB rule. Tiers use stability, not retrievability, so they do not flicker.
+      - Proposed tiers (guesses, to be checked against a simulated schedule; computed at read time, so retunable
+        without a migration): learning < 4 days; familiar 4-14; strong 14-30; known 30+ (about 3-5 weeks, 4-5
+        successful spaced reviews).
+      - Existing learners have no stability: replay `review_log` through the formula, or start from zero.
 - [ ] **S9b Tone drill:** after L3.
 - [ ] **S10 Native feedback:** review RPCs and the `recordings` insert policy require `role = 'native'`; queue
       lesson content first; feedback on words and units, one `feedback` shape keyed by `(item_type, item_id)`; owner
       views with verified reviewers marked; export → agent decisions → migration (source `native review <ids>`);
       learner reports feed the same queue.
-- [ ] **S11 Deploy leftovers:** password reset; email sending (built-in
-      mailer is rate-limited) (moving the Lao review files is done, AL1).
+- [ ] **S11 Deploy leftovers:** password reset; email sending (built-in mailer is rate-limited).
 
 ## Small fixes and unsliced ideas
 - Stale notes on W000035 and W001415 still mention W000019 for the "enter" sense.
@@ -191,5 +103,5 @@ There is one transliteration (the stored "respelling", shown in the learner's st
 - Bonus words are tested without a sentence (learning review).
 - "Lock in" a new word (owner): ask each piece's sound before the word's card; the word appears at the end.
 - Respelling hint on meaning → Lao questions (owner): hinted answers count for letters, not for word knowledge.
-- After lesson 11: ມີ, ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່ around a second conversation (ordering food).
+- After lesson 12: ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່ around a second conversation (ordering food).
 - Later: admin role and in-app owner tools, PWA/offline, analytics on drop-off and difficulty, trust scores.

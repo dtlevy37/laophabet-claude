@@ -4,9 +4,6 @@ Doubts only a person can settle. The agent appends; the owner clears what is han
 PLAN or DESIGN, then the question is deleted). Parked word-list items: `_shelf/docs/NEEDS_HUMAN.md`.
 
 ## For the owner
-- A6 proposal (`docs/A6_UX_REVIEW.md` §4): agree it as a whole? Brand colour (deep blue + warm red)? Phone bottom bar
-  with 4 tabs, Practice opening Review until S8b?
-- A7 step plan (`docs/A7_PLAN.md`): agree it?
 - A4: read the changed-rows list (last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
 - L1b: confirm the activity mix (fewer builds in lessons, more in practice).
 - ◌ິ bug: device, browser, Settings → Lao font, and where it showed.
@@ -18,11 +15,7 @@ Several of these are now also asked online as Q-ids (`data/open_questions.csv`, 
 Romanization in brackets; sentence ids for the agent. All composed sentences are the agent's own and unverified.
 
 **Sounds and spelling**
-- ລາວ "he, she" (W000031): short (law) as Wiktionary has it, or long "laao" like ລາວ "Lao" (W000058) and ຂາວ (khaao,
-  white)? The owner leans long. If long: `python tmp/laao_change.py --write` (word + 166 sentences), then drop the
-  short/long wording on the lesson 3 card.
-- Question marker: ບໍ່ (with tone mark, as the data has it) or ບໍ? Is it said differently from ບໍ່ (bor) "not"?
-- Softener: ແນ່ (nae, W001426) or ແດ່ (dae, W000308): which is everyday Vientiane speech?
+- ລາວ "he, she" (W000031): the owner chose long (laao, applied everywhere; Q0001 online). Wife to confirm it is long like ລາວ "Lao" and ຂາວ (khaao, white). Then drop the short/long wording on the lesson 3 card if it is still there.
 - Vowels, say each aloud for the owner: (1) ແ in ແລ້ວ (laew), ແນ່ (nae), ແກ້ວ (gaew): closer to "bed" held long, or
   "cat"? Say a ແ word next to a ເ word. (2) ◌ໍ / ◌ອ◌ in ບໍ່ (bor), ຂໍ (khor), ນອນ (non): open "ah" with rounded lips,
   or nearer "oh"? (3) Short ◌ິ in ກິນ (gin), ດິນ (din): like "gin", or tighter, a short "ee"? (4) ດຳ (dam, black):

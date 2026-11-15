@@ -34,20 +34,36 @@ design and the lesson path; the agent builds the app slices and the lessons.
   steps (route, what to click, what they should see). Say "untested" for anything nobody has run.
 - **Review:** run the `code-reviewer` agent when a slice changes SQL or more than about 150 lines of JS, and
   `curriculum-reviewer` before merging a lesson. Skip both for small changes.
-- **When a slice is done:** tick it in PLAN, update NOTES (only open work, decisions in force, next step), add a
-  `CHANGELOG.md` entry (write-only, never read it on startup), then commit all three repos with
+- **When a slice is done:** update the docs per "Keeping the docs current" below, then commit all three repos with
   `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/checkpoint.ps1 -Message "<what>" -Push`.
 - Never force-push or rewrite history. Avoid `git stash`, `git checkout -- <file>` and `git restore`: compare with
   `git diff` or `git show HEAD:<path>` instead.
 - Every Lao example shown to the owner in chat carries a romanization and the English.
 
+## Keeping the docs current
+Stale docs make agents re-check and redo finished work, so every doc has one job and finished work leaves it **in the
+same commit that finishes the work**, not later.
+- **`CHANGELOG.md` is the only record of what was built or decided, and when.** Write-only: never read it on startup.
+- **`docs/PLAN.md` and `docs/QUESTIONS.md` hold open items only.** When a slice is built, delete its PLAN entry (do not
+  tick it or mark it "built"). If the owner still has to try it, add one line to NOTES "Waiting on the owner". When an
+  answer comes in, apply it to the data or DESIGN and delete the question.
+- **`docs/NOTES.md` is orientation, not history:** state that cannot be read off a command, "Waiting on the owner",
+  decisions in force, the code map, recipes. Keep it under about 150 lines. A finished item leaves it, except as a
+  decision in force or a code-map line.
+- **Do not record what a command shows:** hosted migration state, counts, git state, test results. Name the command.
+  Do not write migration ids, dates or "built / pushed / local only" in PLAN, NOTES or this file.
+- **One-off plan or review docs** (`A7_PLAN.md` style): once built, fold anything still open into PLAN, then delete the
+  doc. A decision that must outlive the slice goes in DESIGN, SCHEMA or LESSON_RULES.
+- **Before you commit:** read the PLAN, NOTES and QUESTIONS entries for the slice you touched, and delete or correct
+  anything the change made false. If you find stale text while working, fix it then.
+
 ## App rules
 - **The DB is the source of truth for content.** Content rows reach it only through migrations written by
   `scripts/lesson_tool.py merge` or `scripts/db_sql.py` (`lesson`, `change`, `refresh`), never by hand. Schema and
   RPC migrations are hand-written (`sql-migration` skill). Never edit a migration that has been applied to a hosted
-  DB: write a new one. Hosted since 2026-11-12 (Supabase project `nerttltntbwhpvticuwe`, linked in `app/backend`):
-  every migration up to `20261113010000` is applied there, so none of them may be edited, and lessons can no longer be
-  withdrawn. Push with `supabase db push --linked` after the owner agrees.
+  DB: write a new one. The hosted DB is the linked Supabase project in `app/backend`; run
+  `supabase migration list --linked` to see what is applied there. Lessons cannot be withdrawn once hosted. Push with
+  `supabase db push --linked` after the owner agrees.
 - **Data access:** the client reads content only through RPCs (content tables have RLS on and no read policies).
   Writes go through `security definer` RPCs with `set search_path = public`, an `auth.uid()` check, and execute
   revoked from `public, anon`. Learner data lives in app tables with own-row RLS.

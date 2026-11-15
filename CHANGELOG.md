@@ -2,6 +2,14 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-15 Docs cleanup: finished work leaves PLAN, NOTES and QUESTIONS
+- Deleted `A6_UX_REVIEW.md` (proposal decided in A7 step 6 and built in steps 1-9a; its open parts are in PLAN A7 rest),
+  `A7_PLAN.md` (steps 0-9a built; the still-open steps 9b, rail and 10 moved into PLAN A7 rest) and
+  `A8_A9_REVIEW_PLAN.md` (A8, A9, S8b built and on hosted; contracts live in the migrations and app/README).
+- PLAN: removed built slices (L1c, L1e, AL1, H1-H5, A12a, R1, N1, N2, A8, A9, S8b, S7h, A6, the Done line); NOTES keeps
+  only state, the owner's browser checks, decisions and the code map; QUESTIONS dropped the A6/A7 agree-the-plan items
+  and the answered question-marker, softener and ລາວ-change instructions.
+
 ## 2026-11-15 Natives: gaps-first recording queue, shorter recording screen, suggestion audio
 - `next_recording_item()` orders items nobody has a take of (published `item_audio` or another native's recording) before covered ones; migration `20261115000000` (local only).
 - Same migration: storage select policy so natives can read `{uid}/suggestion/...` in the private `recordings` bucket; `#/confirm` plays it via a signed URL (`cf_play`).
