@@ -20,8 +20,8 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `app_feedback` in the dashboard; browser check `scripts/browser/alpha_check.js`).
 2. The wife answers `#/questions` (16 seeded, Q0001–Q0016, `data/open_questions.csv`, `scripts/questions_tool.py`);
    mark natives verified in `reviewer_trust`; apply answers (ລາວ long/short first) and clear them from QUESTIONS.md.
-   Natives' browser steps: sign in as a native; `#/` shows 5 entries; `#/questions`, `#/suggest`, `#/confirm` (second
-   native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
+   Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
+   (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
 3. Then lesson 13 (ອ) and the PLAN order (A7 rest, A11, A10, L3). Owner path notes (lesson 20+) come later.
 - Open: the registers are blank on all existing rows; question text is English (+ Lao only if `label_lao`); the Lao UI
@@ -45,7 +45,6 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line. Decide: fold R03 into the ເ◌ົາ
   card? Missed-ເຂົ້າ note: on `#/try/L0009` build ລາວຫິວເຂົ້າ as ລາວ ຫິວ, Check: "“Hungry” is usually ຫິວເຂົ້າ".
 - L1e (`#/try/L0008`): every new word is built in the closing block; ສະບາຍດີ first gets "Find the missing piece".
-- S10r: bigger record button and the "common name or nickname" prompt.
 - Settings (`#/settings`): Light or dark and Colours (Lao blue and red / Indigo and saffron / Teal and gold) switch at
   once, persist after reload with no flash, answers stay green/red in every theme. The intro card of a new lesson 1 has
   the sound-spelling choice. Natives' recording header is unchanged.
@@ -71,6 +70,10 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   effort budget, spelling opt-in, checkpoint `#/checkpoint/S01`, sign-in password toggle, `#/about`.
 - Choose-then-Check setting (`confirm`) and the lesson 12 screens.
 - Natives: `#/confirm` plays a suggestion's audio; `#/record` serves items nobody has recorded first.
+- N3 one recording flow (as a native, phone): `#/` welcome line once, Record "Start here", Message the team, learner
+  view link at the bottom; `#/record`: English under the Lao; Record -> style row (tap again unselects) -> Save and
+  next; Save + more details; "I'd say it differently" (box starts with the text); "not sure what it means"; Skip.
+  `#/review` opens Record. Driver `scripts/browser/n3_record.js`.
 
 Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
@@ -95,8 +98,8 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   meaning with `word_overrides`. W000020 ແລ້ວ shows all three senses on its card.
 - Still wanted, not placed: ໄປ (bpai, go), ເຂົາ (kao, they) / ເກົ້າ (gao, nine) once ເຂົ້າ is solid (decision 15).
 - Recording: words and sentences only, one take, words deliberate, sentences natural but a little slow; never build a
-  sentence from word clips. "Is this natural?" before recording; a native's own wording (`spoken_lao`) needs owner
-  review. Explicit consent, optional credit. Conversations: every speaker records both sides; one voice until a
+  sentence from word clips. Recording the text = natural; "I'd say it differently" records the native's own wording
+  (`spoken_lao`, needs owner review). Flow and questions: DESIGN "Native recording flow". Explicit consent, optional credit. Conversations: every speaker records both sides; one voice until a
   second native records.
 - Letter writing: separate area, static stroke file, nothing in the DB yet; the whole-letter judge passes only when
   the wanted letter is the best match. Tuning knobs: `TUNING` in `js/writing/score.js`; test

@@ -240,6 +240,24 @@ Nothing in the content tables changes for audio.
   `js/recorder.js`) are new modules; `record_answers` needs no change.
 - Recording order for the native speaker: units, words and sentences of the merged lessons first.
 
+### Native recording flow (owner, 2026-11-15; N3)
+One screen per item (`#/record`); Check sentences (`#/review`) is retired and opens Record. Recording is the main path,
+and every extra piece of information sits behind a yes/no branch, so nothing beyond the take is required.
+- **Item:** the Lao, the English meaning always under it (also for natives without English), a big Record button.
+  Recording the text as shown means it is natural.
+- **"I'd say it differently":** a box with the text to edit; the native records their own version (`spoken_lao`, owner
+  review). In that branch, "I'm not sure what this is supposed to mean" is a skip the owner follows up in person
+  (`skip_reason = unclear_meaning`). A plain Skip has no reason.
+- **After a take:** a style row, Formal / Everyday / Casual / Slang / Rude in that order (toggle buttons, at most one,
+  a second tap unselects, optional). Always for words; for a sentence only when one of its words is not "Everyday" in
+  the data or in a native's answer (`ask_register`). Then "Save + more details" or "Save and next".
+- **More details (optional):** words: used as a person's name or nickname (nicknames count: ນ້ຳ nam "water", ຂາວ
+  khao "white"), how common, where said (all over Laos / mostly Vientiane / other regions / old-fashioned); words and
+  sentences: another meaning (+ what), English meaning right (+ what it should say), anything else.
+- Rude words and sentences are recorded too (a native may skip); the course teaches them at the very end.
+- Native home: a one-time welcome line, Record marked "Start here", Questions and Confirm hidden when empty, Suggest,
+  Message the team (`#/message`, the feedback form in Lao), the learner view link at the bottom.
+
 ## Practice sessions (user, 2026-10-24)
 Lessons introduce material; practice sessions make the learner recall what they already know.
 - **No new items and no teach cards.** The info icon still opens any item's teach card.

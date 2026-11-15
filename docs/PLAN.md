@@ -70,10 +70,18 @@ the owner's check or answer comes in.
 - [ ] **S7w Letter writing.** Owner finds it "weird", notes to come. **Done when:** on a phone two letters can be
       completed with a finger; a careless trace fails; ຂ drawn for ຊ is refused; a finished letter shows a tick.
       Later: vowels, tone marks, ໜ ໝ; use in lessons; progress in the DB.
-- [ ] **S10r Recording mode, open items from the wife's first session:** (b) as many questions per screen as fit, no
-      scrollbar; ask all questions for an item in one go (ask the owner what exactly felt split). Then: check takes
-      (`recording_feedback` view, bucket `recordings`), her view of the Lao UI text, verify her in `reviewer_trust`
-      (README "Native verification").
+- [ ] **S10r Recording mode, owner checks:** check takes (`recording_feedback` view, bucket `recordings`), verify the
+      wife in `reviewer_trust` (README "Native verification").
+- [ ] **N4 Native feedback report.** A script that lists, from `recording_feedback`: styles to apply to `register`,
+      original -> own version pairs (`spoken_lao`), the "not sure what it means" list, names/nicknames, other
+      meanings, English corrections, comments; with each native's region and verified flag. **Done when:** one run
+      prints every N3 answer, grouped, and the owner can turn it into `db_sql.py` changes or QUESTIONS lines.
+- [ ] **N5 Lao UI text review.** Export every native-facing string (`strings.json` keys with `lo`) as a sheet for the
+      wife; apply her fixes. **Done when:** every `lo` string has been seen by a native and the `_note` says so.
+- [ ] **N6 Native polish before invites.** Rewrite the 16 open questions in plain Lao with examples, not terms
+      (`data/open_questions.csv`, `questions_tool.py migration`); Suggest a word: English optional, only word, example
+      and voice visible, the rest under "More details"; onboarding asks an age range, not a date of birth.
+      **Done when:** a native without English can answer every question and send a suggestion.
 - [ ] **S9 FSRS:** design note first. Open points: client JS module vs plpgsql; outcome → rating (recognition at
       reduced weight, recall by latency, wrong = Again); card granularity and direction; the ladder gates activity
       types, FSRS decides timing, no demotion; daily session capped; later fit weights from `review_log`.

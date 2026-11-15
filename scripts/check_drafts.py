@@ -29,7 +29,7 @@ LAO_RE = re.compile(r"^[຀-໿\s|?!.,()«»\"'\-◌_…]*$")
 PUNCT = set("?!.,;:()«»\"'…")
 INVISIBLE = {"​": "ZWSP", "‌": "ZWNJ", "‍": "ZWJ", "﻿": "BOM", " ": "NBSP"}
 CONFIDENCE = {"verified", "derived", "unverified"}
-REGISTER = {"formal", "neutral", "casual", "slang"}   # blank = not assessed
+REGISTER = {"formal", "neutral", "casual", "slang", "rude"}   # blank = not assessed
 TONES = {"low-rising", "high-rising", "mid", "low-falling", "high-falling"}
 CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}
 WORD_REQUIRED = ["word_id", "lao", "ipa", "respelling", "syllables", "pos", "gloss_en", "pron_tip", "confidence"]

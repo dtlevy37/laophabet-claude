@@ -112,7 +112,7 @@ TABLES = {
 LESSON_TABLES = ["lessons", "units", "rules", "lesson_items"]   # optional files; never seeded or refreshed
 OPTIONAL_POOL = ["word_categories", "sentence_slots", "word_notes"]           # hand-tagged; a missing file counts as empty
 POOL = [t for t in TABLES if t not in LESSON_TABLES]
-REGISTERS = {"formal", "neutral", "casual", "slang"}             # words/sentences.register (DB check); blank -> null
+REGISTERS = {"formal", "neutral", "casual", "slang", "rude"}             # words/sentences.register (DB check); blank -> null
 ROLES = {"new", "recycle", "example", "bonus"}                  # lesson_items.role (DB check constraint)
 # Tables that a word / sentence id carries along in lesson and change migrations: (table, key column).
 WORD_CHILDREN = [("word_units", "word_id"), ("word_categories", "word_id"), ("word_notes", "word_id")]

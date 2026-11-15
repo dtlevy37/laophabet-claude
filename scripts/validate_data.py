@@ -58,7 +58,7 @@ TABLES = {
 CAT_RE = re.compile(r"^[a-z][a-z_]*$")
 FUNCTION, ACTION = "function", "action"
 CONFIDENCE = {"verified", "derived", "unverified"}
-REGISTER = {"formal", "neutral", "casual", "slang"}   # words/sentences; blank or absent = not assessed
+REGISTER = {"formal", "neutral", "casual", "slang", "rude"}   # words/sentences; blank or absent = not assessed
 TONES = {"low-rising", "high-rising", "mid", "low-falling", "high-falling"}
 TIERS = {"30", "100", "300", "600", "extra"}
 CLASSIFIER_TYPES = {"specific", "self", "measure", "none"}

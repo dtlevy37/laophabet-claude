@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-15 N3 one recording flow for natives
+- Record (`#/record`) absorbs Check sentences: record = natural; "I'd say it differently" (editable box starting with
+  the text, then record your version); "I'm not sure what this is supposed to mean" (skip with reason
+  `unclear_meaning`); plain Skip. English always shown under the Lao. After a take: style row Formal / Everyday /
+  Casual / Slang / Rude (toggles, optional; words always, sentences when `ask_register`), then "Save and next" or
+  "Save + more details" (name or nickname, how common, where said, another meaning, English right, comment).
+- `#/review` opens Record; `js/review.js` and its strings deleted (tables and RPCs kept, unused).
+- Native home: one-time welcome line, Record "Start here", Questions/Confirm hidden at 0 (Confirm shows "n waiting"),
+  Message the team (`#/message`, feedback form, now with Lao strings), learner view link moved from the header.
+- Migration `20261115224500_n3_one_recording_flow.sql`: `register` gains `rude` (also in validate_data, check_drafts,
+  db_sql); `item_recordings` style and detail columns; `save_recording` + `p_register`; `save_recording_details`;
+  `ask_register`; skip reasons. Test `app/backend/tests/n3_recording_test.sql`; browser `scripts/browser/n3_record.js`.
+- Lao UI strings added by the agent (unverified): rec_differently, rec_own_*, rec_unclear, rec_style_*, style_*, det_*,
+  freq_*, where_*, native_welcome, native_start_here, native_message_*, cf_waiting, register_rude, feedback_*.
+  Fixed register_slang ພາສາແສງ -> ພາສາສະແລງ.
+
 ## 2026-11-15 Docs cleanup: finished work leaves PLAN, NOTES and QUESTIONS
 - Deleted `A6_UX_REVIEW.md` (proposal decided in A7 step 6 and built in steps 1-9a; its open parts are in PLAN A7 rest),
   `A7_PLAN.md` (steps 0-9a built; the still-open steps 9b, rail and 10 moved into PLAN A7 rest) and

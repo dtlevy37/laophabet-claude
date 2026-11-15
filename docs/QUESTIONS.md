@@ -7,7 +7,6 @@ PLAN or DESIGN, then the question is deleted). Parked word-list items: `_shelf/d
 - A4: read the changed-rows list (last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
 - L1b: confirm the activity mix (fewer builds in lessons, more in practice).
 - ◌ິ bug: device, browser, Settings → Lao font, and where it showed.
-- S10r: what exactly felt split into two paths in the wife's session?
 - ຂາວ / ລາວ as the first tone pair: in the tone lesson (L3) or a recap card? (Depends on ລາວ being long.)
 
 ## For the native speaker
