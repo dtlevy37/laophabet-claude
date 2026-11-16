@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-15 Writing: "looks like" feedback names both letters
+- The "looks like" miss showed only the other letter's glyph, so ຂ drawn wobbly read "looks more like ຊ", which learners
+  took for the same letter. It now gives sound and name word for both: "looks more like ຊ (s, as in ຊ້າງ 'elephant'),
+  not ຂ (k, as in ໄຂ່ 'egg')". `strokes_build.js` adds `name`, `gloss`, `sound` per letter from `letters.csv`
+  (geometry unchanged).
+
 ## 2026-11-15 N3 cleanup: one recorder per item
 - `record.js` uses one recorder that moves under the edit box (relabelled "Record your version") for "I'd say it differently" and back; `recorder.js` gains `setLabel`. Same flow for natives; driver `n3_record.js` checks the move.
 

@@ -7,7 +7,7 @@
 //         scripts/assets/NotoSansLao-Regular.ttf (same licence; letters with "font": "plain" in the overrides)
 //         scripts/strokes_overrides.json, hand corrections per letter:
 //           {"font": "plain", "reverse": [stroke indexes], "order": [stroke indexes], "parts": [count or [cut indexes] per stroke]}
-//         data/letters.csv (letter ids)
+//         data/letters.csv (letter ids, name word, gloss and sound for the "looks like" feedback)
 // Writes  app/frontend/data/strokes.json
 //         tmp/strokes/sheet.png with --png (every letter: glyph in grey, strokes green -> red, start dot blue)
 //
@@ -545,7 +545,9 @@ function main() {
   if (looped.unitsPerEm !== plain.unitsPerEm) throw new Error('the two fonts differ in unitsPerEm')
   const overrides = fs.existsSync(OVERRIDES) ? JSON.parse(fs.readFileSync(OVERRIDES, 'utf8')) : {}
   const rows = fs.readFileSync(path.join(ROOT, 'data', 'letters.csv'), 'utf8').split(/\r?\n/).slice(1).map((l) => l.split(','))
-  let letters = rows.filter((r) => r[3] === 'consonant' && [...r[1]].length === 1).map((r) => ({ id: r[0], ch: r[1] }))
+  // columns: 0 letter_id, 1 lao, 3 kind, 4 name_lao, 5 name_gloss_en, 10 respelling (none of these hold a comma)
+  // sound is the respelling without its "(final ...)" note, so feedback can say which letter a drawing looked like
+  let letters = rows.filter((r) => r[3] === 'consonant' && [...r[1]].length === 1).map((r) => ({ id: r[0], ch: r[1], name: r[4] || '', gloss: r[5] || '', sound: (r[10] || '').replace(/\s*\(.*\)\s*$/, '') }))
   if (only) letters = letters.filter((l) => only.includes(l.ch))
 
   const sPx = PX_PER_EM / looped.unitsPerEm
@@ -607,7 +609,7 @@ function main() {
       let from = 0
       for (const c of [...cuts, pts.length - 1]) parts.push({ stroke: si, from, to: c }), (from = c)
     })
-    out.letters[g.ch] = { id: g.id, strokes: final, parts }
+    out.letters[g.ch] = { id: g.id, name: g.name, gloss: g.gloss, sound: g.sound, strokes: final, parts }
     cells.push({ g, img, W, H, strokes, graph })
     console.log(`${g.id} ${g.ch}  strokes ${final.length} (${final.map((s) => Math.round(len(s))).join(', ')})  parts ${parts.length}  nodes ${graph.nodes.length} edges ${graph.edges.length}`)
   }
