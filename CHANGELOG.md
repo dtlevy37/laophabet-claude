@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-15 Writing: sound and example word on the practice screen
+- `#/write/<id>` shows "Sound: g", one reached word with the letter highlighted (blue, underlined), its romanization,
+  meaning and ▶ when it has audio. `letters.js` `letterHint` reads the learner_units cache; no hint when no word is
+  reached yet. Nothing is shown if the load fails.
+
 ## 2026-11-15 Writing: "looks like" feedback names both letters
 - The "looks like" miss showed only the other letter's glyph, so ຂ drawn wobbly read "looks more like ຊ", which learners
   took for the same letter. It now gives sound and name word for both: "looks more like ຊ (s, as in ຊ້າງ 'elephant'),
