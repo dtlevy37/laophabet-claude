@@ -7,6 +7,10 @@ Every change to the project is recorded here, newest first. Update it in the sam
   took for the same letter. It now gives sound and name word for both: "looks more like ຊ (s, as in ຊ້າງ 'elephant'),
   not ຂ (k, as in ໄຂ່ 'egg')". `strokes_build.js` adds `name`, `gloss`, `sound` per letter from `letters.csv`
   (geometry unchanged).
+- `score.js`: a drawing already within `LETTER_MAX` of the wanted letter fails as "looks like" only when the other
+  letter is 20% closer (`LETTER_MARGIN_CLOSE` 1.2; was 10%). Near-ties with a look-alike no longer fail a passable
+  drawing. `strokes_test.js`: careful 98.5→99.4%, sloppy 48.5→51.2%, other letter accepted 0.52→0.81% (limit 1%;
+  1.3 broke it at 1.47%).
 
 ## 2026-11-15 N3 cleanup: one recorder per item
 - `record.js` uses one recorder that moves under the edit box (relabelled "Record your version") for "I'd say it differently" and back; `recorder.js` gains `setLabel`. Same flow for natives; driver `n3_record.js` checks the move.
