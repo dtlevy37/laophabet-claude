@@ -18,9 +18,10 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 ## Next step
 1. Owner tests the list below on Netlify; the owner's sons sign up for the alpha (read `learner_intake`,
    `app_feedback` in the dashboard; browser check `scripts/browser/alpha_check.js`).
-2. The wife answers `#/questions` (16 seeded, Q0001–Q0016, `data/open_questions.csv`, `scripts/questions_tool.py`);
-   mark natives verified in `reviewer_trust`; apply answers (ລາວ long/short first) and clear them from QUESTIONS.md.
-   Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
+2. The wife (Na, verified native) answered Q0001–Q0016 and recorded every lesson 1–12 sentence as natural. To do:
+   PLAN "Apply native answers", publish her new takes (`audio_publish.py`), owner items in QUESTIONS. Any new native
+   question follows "How to ask the native speaker" (QUESTIONS.md top); online ones go through
+   `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
 3. Then lesson 13 (ອ) and the PLAN order (A7 rest, A11, A10, L3). Owner path notes (lesson 20+) come later.

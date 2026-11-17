@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 Native answers round 1 (Na): questions cleaned up
+- Na answered Q0001–Q0016 online: ລາວ long; question ບໍ່ with tone mark, same sound as "not"; ແນ່ and ແດ່ both said;
+  ແ long ("sounds like cat saying meeeow"); ◌ໍ between "ah" and "oh"; ◌ິ like "gin"; English b/d = ບ/ດ; tones: "I
+  cannot see tone or don't know the tone"; ຫິວນ້ຳ and ຢາກນ້ຳ both; bare ຂໍນ້ຳ a little abrupt; bare ຫິວ fine as a
+  reply; ລາວບໍ່ກິນເຂົ້າ = not hungry now or sick; ດີແລ້ວ either sense; ສີນີ້ຂາວ / ສີນີ້ດີ natural; ເຂົາ mostly "they".
+- She recorded 20 more takes (lesson 12 sentences and words, style "neutral" on 12 words), all as natural. With
+  the earlier takes, every lesson 1–12 sentence is recorded as natural.
+- QUESTIONS.md rewritten: answered items removed, "How to ask the native speaker" rules added (owner first, no
+  English-sound comparisons, no tone names, one thing per question), sound-alike checks moved to the owner (listen to
+  her takes). Data changes listed in PLAN "Apply native answers"; not applied yet.
+
 ## 2026-11-15 Writing: sound and example word on the practice screen
 - `#/write/<id>` shows "Sound: g", one reached word with the letter highlighted (blue, underlined), its romanization,
   meaning and ▶ when it has audio. `letters.js` `letterHint` reads the learner_units cache; no hint when no word is

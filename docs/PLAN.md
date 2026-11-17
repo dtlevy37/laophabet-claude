@@ -16,8 +16,21 @@ the owner's check or answer comes in.
 - [ ] **L1b (b) activity mix.** Favour listen and pick and other quick recognition in lessons; build the word /
       sentence less in lessons, more in practice. Same number of checks. Owner said "might": confirm the split first
       (QUESTIONS). **Done when:** the mix is agreed and `session_test.mjs` checks it.
-- [ ] **L1d leftovers.** S000002879, S000002888, S000002892 wait on QUESTIONS. "This is white": ນີ້ຂາວ (nee khao) fits a
-      wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an object in hand; check lesson sentences with this pattern.
+- [ ] **Apply native answers (Na, 2026-11-17).** From `open_question_consensus` and her takes; one `db_sql.py change`.
+      (1) W000031 ລາວ "he, she": long confirmed (Q0001); drop "awaiting native confirmation" from notes. (2) W000160
+      ເຂົາ gloss "they" (Q0016: mostly "they"; drop "(more formal) he; she"). (3) S000002879 ລາວບໍ່ກິນເຂົ້າ English →
+      "He isn't eating. / She isn't eating." (Q0013: not hungry now, or sick and cannot eat; not a habit).
+      (4) S000000012 bare ຂໍນ້ຳ is "a little abrupt" (Q0011): note it, keep it out of lessons (lessons use ຂໍນ້ຳແນ່).
+      (5) W001426 ແນ່ / W000308 ແດ່: both said in Vientiane (Q0004); ແນ່ stays the taught one. (6) `register` =
+      neutral on the 12 words she tagged (N3 style row; source her recording). (7) Confidence of the sentences she
+      recorded as natural: per the owner's answer (QUESTIONS "For the owner"). Also settled, no change: question ບໍ່
+      keeps its tone mark and sounds like ບໍ່ "not" (Q0002, Q0003); bare ຫິວ / ບໍ່ຫິວ are fine replies (Q0012, so
+      S000002888 and S000002892 stay); ສີນີ້ຂາວ and ສີນີ້ດີ are natural (Q0015); ດີແລ້ວ is either "that's fine" or
+      "enough", by tone of voice (Q0014); ຫິວນ້ຳ and ຢາກນ້ຳ both said (Q0010). Her 20 new takes (lesson 12, words) wait
+      for `audio_publish.py` + a push. **Done when:** the change migration is applied locally and the rows show the new
+      text.
+- [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
+      object in hand; check lesson sentences with this pattern.
 - [ ] **Bug: ◌ິ drawn right of its circle** on the owner's screen; not reproduced in headless Chrome with any Lao font.
       Needs device, browser, Settings → Lao font, and where it showed.
 - [ ] **L3 Teaching tone.** A proper lesson: what tone is, the pitch line legend, tone marks and consonant class in
@@ -62,7 +75,8 @@ the owner's check or answer comes in.
 - [ ] **A4 "Sounds like" review.** Hints are applied (table in the last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
       **Done when:** the owner has read the changed-rows list.
 - [ ] **A5 leftovers.** Pool words in `get_lesson` lack the usage note (ⓘ from a sentence chip shows none); the
-      one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified (QUESTIONS).
+      one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified; the ສະບາຍດີ
+      and ເຂົ້າ notes are asked in QUESTIONS.
 - [ ] **S7g Conversations.** Design note first: `dialogues` / `dialogue_lines` (ordered sentence ids, speaker A/B), a
       `dialogue` lesson item, a conversation card, fill in the blank on its lines. Lessons 8 and 10 carry their lines as
       ordinary sentences until then. **Done when:** lesson 10 shows its conversation as one card with a fill in the
@@ -70,8 +84,7 @@ the owner's check or answer comes in.
 - [ ] **S7w Letter writing.** Owner finds it "weird", notes to come. **Done when:** on a phone two letters can be
       completed with a finger; a careless trace fails; ຂ drawn for ຊ is refused; a finished letter shows a tick.
       Later: vowels, tone marks, ໜ ໝ; use in lessons; progress in the DB.
-- [ ] **S10r Recording mode, owner checks:** check takes (`recording_feedback` view, bucket `recordings`), verify the
-      wife in `reviewer_trust` (README "Native verification").
+- [ ] **S10r Recording mode, owner checks:** check takes (`recording_feedback` view, bucket `recordings`).
 - [ ] **N4 Native feedback report.** A script that lists, from `recording_feedback`: styles to apply to `register`,
       original -> own version pairs (`spoken_lao`), the "not sure what it means" list, names/nicknames, other
       meanings, English corrections, comments; with each native's region and verified flag. **Done when:** one run
