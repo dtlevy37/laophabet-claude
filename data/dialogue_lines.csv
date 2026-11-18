@@ -5,8 +5,10 @@ D0001,3,1,A,S000000003,SRC-AGENT:lesson,unverified,How are you?
 D0001,4,1,B,S000002885,SRC-AGENT:lesson,unverified,I'm well
 D0002,1,1,A,S000000001,SRC-AGENT:lesson,unverified,Hello
 D0002,2,1,B,S000000001,SRC-AGENT:lesson,unverified,Hello
-D0002,3,1,A,S000002887,SRC-AGENT:lesson,unverified,Are you hungry?
-D0002,4,1,B,S000002892,SRC-AGENT:lesson,unverified,"Yes, hungry (repeats the verb)"
-D0002,4,2,B,S000002887,SRC-AGENT:lesson,unverified,Are you hungry?
-D0002,5,1,A,S000002888,SRC-AGENT:lesson,unverified,Not hungry
-D0002,5,2,A,S000002890,SRC-AGENT:lesson,unverified,I've eaten already
+D0002,3,1,A,S000000007,SRC-AGENT:lesson,unverified,How are you? (with you; owner 2026-11-17)
+D0002,4,1,B,S000000008,SRC-AGENT:lesson,unverified,I'm well (with I; owner 2026-11-17)
+D0002,5,1,A,S000002887,SRC-AGENT:lesson,unverified,Are you hungry?
+D0002,6,1,B,S000002892,SRC-AGENT:lesson,unverified,"Yes, hungry (repeats the verb)"
+D0002,6,2,B,S000002887,SRC-AGENT:lesson,unverified,Are you hungry?
+D0002,7,1,A,S000002888,SRC-AGENT:lesson,unverified,Not hungry
+D0002,7,2,A,S000002890,SRC-AGENT:lesson,unverified,I've eaten already

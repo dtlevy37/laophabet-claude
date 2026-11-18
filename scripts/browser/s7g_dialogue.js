@@ -1,4 +1,5 @@
-// S7g check: on #/try/<lesson> the conversation card (.dialogue, one turn per line, A left / B right) and then fill
+// S7g check: on #/try/<lesson> the conversation card (.dialogue, one turn per line, A left / B right; sound and English
+// hidden until a turn's Reveal) and then fill
 // in the blank on its lines with the conversation above (.dlg-context). Screenshots to tmp/shots/s7g-*.png (phone
 // 375x812 light, then dark, and desktop 1280x900). Fails on page errors or when no conversation card or line blank
 // is reached.
@@ -30,6 +31,14 @@ async function run(browser, tag, viewport, theme) {
     if (!card && (await page.locator('.stage .dialogue:not(.dlg-context)').count())) {
       card = await page.locator('.stage .dialogue .dlg-line').count()
       await page.screenshot({ path: `tmp/shots/s7g-${tag}-card.png`, fullPage: true })
+      // Lao first: no sound or English visible until a turn's Reveal (convoAids off by default)
+      const shownAids = await page.locator('.stage .dlg-aid:visible').count()
+      const reveals = await page.locator('.stage .dlg-reveal').count()
+      if (shownAids || reveals !== card) errors.push(`card: ${shownAids} aids visible, ${reveals} Reveal buttons for ${card} turns`)
+      await page.locator('.stage .dlg-reveal').nth(2).click()
+      const after = await page.locator('.stage .dlg-line').nth(2).locator('.dlg-aid:visible').count()
+      if (after !== 2) errors.push(`Reveal on turn 3 showed ${after} aids, expected sound + English`)
+      await page.screenshot({ path: `tmp/shots/s7g-${tag}-card-revealed.png`, fullPage: true })
     }
     const inBlank = await page.locator('.stage .dlg-context').count()
     const open = await page.locator('.stage button.mc-option:not([disabled])').count()

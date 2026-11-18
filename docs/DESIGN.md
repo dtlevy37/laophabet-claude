@@ -240,8 +240,12 @@ extra columns.
 - **Show first:** every line's sentence is a sentence item before the dialogue in its lesson or in an earlier lesson
   (`lesson_tool.py check`), so readability, bonus and blank checks, cards, recording and progress all stay on the
   sentence. Nothing is recorded against the dialogue itself; a line's blank records its word and sentence as usual.
+- **Lao first** (owner, 2026-11-17): the card and the turns above a blank show only the Lao and ▶; a turn's sound
+  and English appear on its Reveal (a reveal, not a hint: nothing is tested, nothing is logged). The setting "Show
+  sound and English in conversations right away" (`convoAids`, default off) shows them at once. A blank's own line
+  keeps the hint tiers.
 - **In a lesson:** the card (no autoplay; ▶ per sentence), then fill in the blank per distinct sentence in line
-  order, at most 5, each showing the two turns before it (smaller, with English) and the earlier sentences of the
+  order, at most 6, each showing the two turns before it (smaller; English on Reveal or after the answer) and the earlier sentences of the
   same turn. A line is not blanked where its answer would be a bare gap (a one-word opening line) or sits in the
   context above (B's ສະບາຍດີ under A's); its sentence is blanked at a later line, or keeps its own fill in the blank
   when it never qualifies. These questions are always kept. The card records nothing (`shown: []`).

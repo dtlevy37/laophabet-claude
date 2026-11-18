@@ -30,6 +30,8 @@ user's spellings), tones not shown; it is for the owner's reading only and never
 |---|---|---|---|
 | A | ສະບາຍດີ | sabaidee | Hello |
 | B | ສະບາຍດີ | sabaidee | Hello! |
+| A | ເຈົ້າສະບາຍດີບໍ່? | jao sabaidee bor? | How are you? |
+| B | ຂ້ອຍສະບາຍດີ | khoy sabaidee | I'm well. |
 | A | ເຈົ້າຫິວເຂົ້າບໍ່? | jao hiu khao bor? | Are you hungry? |
 | B | ຫິວ. ເຈົ້າຫິວເຂົ້າບໍ່? | hiu. jao hiu khao bor? | Yes, hungry. Are you hungry? |
 | A | ບໍ່ຫິວ. ຂ້ອຍກິນເຂົ້າແລ້ວ | bor hiu. khoy kin khao leo | No. I've eaten already. |

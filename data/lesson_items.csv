@@ -125,7 +125,7 @@ L0010,16,sentence,S000002887,recycle,"conversation line 3, speaker A: Are you hu
 L0010,17,sentence,S000002892,new,"conversation line 4 (first part), speaker B: 'I'm hungry' (composed); Lao answers yes by repeating the verb"
 L0010,18,sentence,S000002888,recycle,"conversation line 5 (first part), speaker A: Not hungry (lesson 9)"
 L0010,19,sentence,S000002890,new,"conversation line 5 (second part), speaker A: 'I've eaten already' (composed); the payoff of the conversation"
-L0010,20,dialogue,D0002,new,"the full target conversation (S7g): lines 1-5 as one card, then fill in the blank on its lines"
+L0010,20,dialogue,D0002,new,"the full target conversation (S7g) with the pronoun greeting (owner 2026-11-17): lines 1-7 as one card, then fill in the blank on its lines"
 L0010,21,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
 L0011,1,word,W000536,new,'colour'; no new letters (lesson 11 uses known letters only)
 L0011,2,word,W000016,recycle,earlier word 'this'; used in the colour sentences and later ones

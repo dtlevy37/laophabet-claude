@@ -2,6 +2,14 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 Conversations: Lao first, pronoun greeting in lesson 10
+- Owner: conversation turns show only the Lao and ▶; Reveal (per turn) shows the sound and English. Setting
+  "Show sound and English in conversations right away" (`convoAids`, default off). The turns above a line's blank
+  work the same way and reveal on the answer. Sentence teach cards are unchanged.
+- D0002 gains ເຈົ້າສະບາຍດີບໍ່? / ຂ້ອຍສະບາຍດີ (S000000007, S000000008) as lines 3-4 (7 lines; owner). Lesson 8 keeps its
+  greeting without pronouns (ເຈົ້າ comes in lesson 9, ຂ້ອຍ in 10). Conversation blank cap 5 -> 6 so the payoff line
+  stays in the conversation. Migration `lesson_l0010` (second rebuild).
+
 ## 2026-11-17 No blank without context
 - Owner: lesson 8 asked "Pick the missing word" on ສະບາຍດີ alone. A one-word sentence is no longer a fill in the
   blank outside a conversation (`fill_blank.js` build; the planner passes `inDialogue` for conversation lines). Test

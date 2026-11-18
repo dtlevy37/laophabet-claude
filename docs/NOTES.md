@@ -82,8 +82,9 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - A7 inline words (`#/try/L0007`, a sentence card): Lao words underlined; tap → bubble under the sentence (meaning,
   sound, ⓘ); another word moves it; tap elsewhere or Esc closes it. Build-the-sentence: no tappable words until Check.
   Home strip: day streak, letters known, words known. A lesson summary lists "Missed on the first try".
-- S7g conversations (`#/try/L0010`, after ຂ້ອຍກິນເຂົ້າແລ້ວ): one card "Conversation: Are you hungry?" with 5 turns, A left
-  and B right, ▶ per sentence, words tappable; then "Complete the conversation" blanks on its lines with the turns
+- S7g conversations (`#/try/L0010`, after ຂ້ອຍກິນເຂົ້າແລ້ວ): one card "Conversation: Are you hungry?" with 7 turns, A left
+  and B right, Lao and ▶ only, Reveal shows a turn's sound and English (Settings: "Show sound and English in
+  conversations right away" shows them all); then "Complete the conversation" blanks on its lines with the turns
   before shown above. Same in `#/try/L0008` (Hello). `#/read/L0010` shows the card. Play `#/lesson/L0010` for real
   once: the summary must save (no "could not save"). Driver `scripts/browser/s7g_dialogue.js`.
 - H7 (`#/try/L0002`): "What does this word mean?" (ເຂົ້າ khao, rice) plays once with a ▶ under the word; with "Play
