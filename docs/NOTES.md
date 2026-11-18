@@ -18,7 +18,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 ## Next step
 1. Owner tests the list below on Netlify; the owner's sons sign up for the alpha (read `learner_intake`,
    `app_feedback` in the dashboard; browser check `scripts/browser/alpha_check.js`).
-2. The wife (Na, verified native) answers Q0017–Q0034 online; apply them and clear QUESTIONS. Any new native
+2. The wife (Na, verified native) answers Q0017–Q0043 online; apply them and clear QUESTIONS. Any new native
    question follows "How to ask the native speaker" (QUESTIONS.md top); online ones go through
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
@@ -29,8 +29,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- Push the round 3 native questions (Q0035–Q0043) to hosted with `supabase db push --linked` when you agree. The S10+
-  font checklist is in PLAN A13.
+- S10+ font checklist (before or after the fix): PLAN A13.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
   `#/letters` greys unreached tiles; the speaker is an SVG in a tinted button.

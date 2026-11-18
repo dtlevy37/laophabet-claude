@@ -15,7 +15,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
 - PLAN: new slices A13–A22 and L6 (lesson titles), A7 rest split into A7a (height first) and A7b (rails, on hold),
   review notes added to L3, L5, H6, N5, N6 and S9; the review folder deleted (findings live in PLAN; the report is
   in git history).
-- Q0035–Q0043 added to `data/open_questions.csv` with migration `native_questions_round3` (applied locally).
+- Q0035–Q0043 added to `data/open_questions.csv` with migration `native_questions_round3`; pushed to hosted 2026-11-18.
 
 ## 2026-11-17 App review with simulated users (analysis only, no app changes)
 - Seven review agents (new learner, polyglot, English–Lao bilingual, education PhD, UX phones, UX large screens,
