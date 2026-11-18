@@ -2,6 +2,11 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 No blank without context
+- Owner: lesson 8 asked "Pick the missing word" on ສະບາຍດີ alone. A one-word sentence is no longer a fill in the
+  blank outside a conversation (`fill_blank.js` build; the planner passes `inDialogue` for conversation lines). Test
+  over every lesson in `session_test.mjs`. Lesson 8 loses that one question.
+
 ## 2026-11-17 S7g conversations
 - Schema `s7g_dialogues`: lesson tables `dialogues` (D + 4 digits) and `dialogue_lines` (line_no, part, speaker A-D,
   sentence_id), `lesson_items.item_type` `dialogue`, `lesson_locked` covers line sentences, internal

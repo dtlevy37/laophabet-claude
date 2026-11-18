@@ -101,6 +101,8 @@ Drawing letters by hand is practised to fix their shapes for reading. Typing Lao
 **Rule:** exactly one option makes a sensible Lao sentence. A distractor that could
 also fit, even with another sense or as a stretch, is a defect, because it marks a correct reading wrong. Example:
 `ລາວ ກິນ __` with answer ເຂົ້າ: ນ້ຳ may never be an option; ຂາ "leg" and ຂາວ "white" may.
+**No blank without context** (owner, 2026-11-17): a one-word sentence (ສະບາຍດີ) is never blanked on its own, since
+the gap would be the whole sentence. Only a conversation blanks it, with the turns above as context.
 
 **Approach: categories on words, accepted categories on slots** (brief option 2, with the slot data per sentence
 rather than per verb). Each word is tagged once and each blankable slot once, so the work grows with the content

@@ -580,6 +580,13 @@ for (const b of bundles) {
     }
   }
 }
+// A one-word sentence is never a fill in the blank outside a conversation (the gap would be the whole sentence).
+for (const b of bundles) {
+  for (let seed = 1; seed <= 30; seed++) {
+    const bad = buildPlan(b, dryLevels(b), seed, []).steps.find((s) => s.activity === 'fill_blank' && !s.dialogue && (s.item.detail?.words || []).length < 2)
+    if (bad) fail(`${b.lesson.lesson_id}: fill in the blank on the one-word sentence ${bad.item.detail?.lao} with no context`)
+  }
+}
 // S7g: a lesson with a dialogue item plans its conversation card, then at least one fill in the blank on its lines
 // with the conversation above it (earlier lines as context; the first line has none); a recycled line sentence asks
 // nothing on its own, and no line sentence gets a second, context-free fill in the blank.
@@ -608,6 +615,7 @@ for (const b of bundles) {
       if (blanks.some((s) => [...s.dialogue.before.flatMap((l) => l.parts), ...s.dialogue.earlier].some((p) => p.sentence_id === s.item.item_id)))
         fail(`S7g ${id}: a blank whose sentence is shown just above it`)
       const blanked = new Set(blanks.map((s) => s.item.item_id))
+
       if (steps.some((s) => s.activity === 'fill_blank' && !s.dialogue && blanked.has(s.item.item_id)))
         fail(`S7g ${id}: a line sentence also has a fill in the blank outside the conversation`)
     }
