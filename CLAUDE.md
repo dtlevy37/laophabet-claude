@@ -13,7 +13,7 @@ design and the lesson path; the agent builds the app slices and the lessons.
 | `data/*.csv` | Working copy of the content (words, sentences, units, lessons). Big: grep it, never read a file whole. |
 | `scripts/` | Content and repo tooling. Usage is in each script's docstring. |
 | `curriculum/` | Lesson drafts, merged lesson folders, the generated brief, `vocab.csv` (word index for grep) |
-| `docs/` | `NOTES.md` (state, next step, code map), `PLAN.md` (open slices), `DESIGN.md` (app spec), `SCHEMA.md` (data columns, tone convention, IDs), `LESSON_RULES.md`, `CURRICULUM_PATH.md` (agreed lesson order), `QUESTIONS.md` (for the native speaker and the owner) |
+| `docs/` | `NOTES.md` (state, next step, code map), `PLAN.md` (open slices), `DESIGN.md` (app spec), `SCHEMA.md` (data columns, tone convention, IDs), `LESSON_RULES.md`, `SOUND_HINTS.md` (sounds-like anchors), `CURRICULUM_PATH.md` (agreed lesson order), `QUESTIONS.md` (for the native speaker and the owner) |
 | `tmp/` | Scratch, git-ignored |
 | `_shelf/` | Parked word-list growth and research material. Leave it alone unless the owner asks for it. |
 

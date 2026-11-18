@@ -21,15 +21,8 @@ answer. Before a question goes to a native, online or here:
 6. **Options must cover the real answers**, plus free text. If the answer is a meaning, ask for it in free text.
 
 ## For the owner
-- A4: read the changed-rows list (last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
-- **Listen and judge** (her takes are in the app: `#/words`, tap a word, ▶). For each, which English sound is closest
-  for a Midwest ear? The answer fixes the "sounds like" hints.
-  - ແ in ແລ້ວ (laew, already), ແກ້ວ (gaew, glass): "bed" held long, or "cat"? She said only that it is long.
-  - ◌ໍ in ບໍ່ (bor, not), ຂໍ (khor, ask for): she said "between" open "ah" with round lips and "oh".
-  - ດຳ (dam, black) vs ນ້ຳ (nam, water): same vowel?
-  - ຈ in ເຈົ້າ (jao, you): "j" in "jaw", "ch" in "chew", or between?
-  - Final ຍ in ສະບາຍດີ (sabaidee, hello): like the end of "bye"?
-  - ສະ (sa) in ສະບາຍດີ: a short catch (stop) after the "a", as card R01 says?
+- ຈ in ເຈົ້າ (jao, you): the card says between the j in "jaw" and the ch in "chew"; owner leans to "j" and will
+  check with their wife. If "j", change the C05 card and `letters.csv` tip (`docs/SOUND_HINTS.md`).
 
 ## For the native speaker
 **Asked online** (`#/questions`, Q0017–Q0034, `data/open_questions.csv`; answers in `open_question_consensus`):

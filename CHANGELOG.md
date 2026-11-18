@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 A4 sounds-like review closed
+- Owner confirmed the applied anchors (ແ "bed" leaning to "say", ◌ໍ rounded "aw" towards "oh", ◌ຳ "Tom" in ດຳ and
+  ນ້ຳ, final ຍ "bye", R01 catch in ສະ, ບ/ດ "boy"/"deck" per the owner's wife). Short ◌ິ stays "short ee" (IPA /i/). Hints are
+  approximate; the recording carries the sound. ຈ left open for the owner.
+- `docs/A4_SOUNDS_LIKE_AUDIT.md` replaced by `docs/SOUND_HINTS.md` (agreed anchors + proposals for untaught units).
+
 ## 2026-11-17 Stale-docs sweep; "clean up after yourself" rule
 - CLAUDE.md: owner rule to remove every trace of an item once answered/resolved/built, grep before commit.
 - Fixed: NOTES (registers line, stale QUESTIONS pointer), LESSON_RULES 24 (ແດ່ answered), CURRICULUM_PATH (answered

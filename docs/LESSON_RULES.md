@@ -53,6 +53,8 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    app converts it for display (`app/frontend/js/translit.js`). So a teach text never names a respelling letter as
    the sound ("sounds like g"): it cues with an English example word and describes the sound, e.g. "Like the k in
    'sky': a k with no puff of air." Never write respellings of Lao words inside teach texts, titles or summaries.
+   Hints are approximate (the recording carries the sound): agreed anchors and proposals for later units are in
+   `docs/SOUND_HINTS.md`.
 
 14. **Lesson 3 is ລາວ** (user, 2026-11-09): ລ, ◌າ, final ວ; the word ລາວ as "he, she" (the everyday word; W000031)
    with "Lao" (W000058) on the same card; first full sentence ລາວກິນເຂົ້າ. A first lesson-3 draft with ເຂົາ and ເກົ້າ

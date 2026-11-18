@@ -9,7 +9,7 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then A7 rest, A11, A10, L3, L4, L5. Owner-gated slices (A4, S7w, S10r) close when
+Owner checks of what is built, then A7 rest, A11, A10, L3, L4, L5. Owner-gated slices (S7w, S10r) close when
 the owner's check or answer comes in.
 
 ## Lessons
@@ -81,8 +81,6 @@ the owner's check or answer comes in.
       Check the build-the-word ◌ note and tile matching when an initial and a final tile read the same (ນອນ).
       **Done when:** no learner screen shows ◌ before a consonant; `session_test.mjs` asserts it for the build-word
       pieces; ນອນ (non, "sleep") builds correctly with two ນ tiles.
-- [ ] **A4 "Sounds like" review.** Hints are applied (table in the last section of `docs/A4_SOUNDS_LIKE_AUDIT.md`).
-      **Done when:** the owner has read the changed-rows list.
 - [ ] **A5 leftovers.** Pool words in `get_lesson` lack the usage note (ⓘ from a sentence chip shows none); the
       one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified; the ສະບາຍດີ
       and ເຂົ້າ notes are asked in QUESTIONS.
