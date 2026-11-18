@@ -2,6 +2,10 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 Desktop rails decided
+- Owner: the lesson side rail is scrapped for now; the navigation rail on non-lesson pages on wide screens becomes
+  PLAN A7b (after A7a). DESIGN "Home and navigation" updated.
+
 ## 2026-11-18 Review cut into PLAN slices; owner decisions; native questions round 3
 - Owner decisions on the review: ຈ is "j" in both romanization styles; ◌ອຍ is "oy"; prompts use the "Pick the …" set;
   feedback puts 🔊 on the right and ⓘ on the left; Lao → meaning questions play the sound after the answer, not

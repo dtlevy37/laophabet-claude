@@ -10,9 +10,9 @@ users cannot write.
 
 ## Working order
 Owner checks of what is built, then (owner 2026-11-18, from the November app review): A13 font fix, A14 quick
-fixes, A15 spaced-review fix, A16 answer layout and summary, A7a height first, A17 conversations, L5 phase 1, A18
-Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later: A20, A21, A22. On hold until
-the owner has thought them through: A7b (desktop rails) and prior-knowledge features (DESIGN "Who it is for").
+fixes, A15 spaced-review fix, A16 answer layout and summary, A7a height first, A7b navigation rail, A17
+conversations, L5 phase 1, A18 Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later:
+A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
@@ -132,16 +132,15 @@ the owner has thought them through: A7b (desktop rails) and prior-knowledge feat
       - A 2×2 grid for meaning options when the glosses fit; single-letter options at about 3rem.
       **Done when:** at 1280×720 and at 200% zoom on 1440×900, every question and its feedback show the prompt
       without scrolling, and at 1440×900 the options start within 32px of the prompt.
-- [ ] **A7b Desktop rails (on hold, owner 2026-11-18: needs more thought).** Inputs for that talk:
-      - A lesson rail (the lesson's words, new ones marked, recycled ones labelled "Review") needs about 1200px: no
-        rail from 1024 to 1199, and `min-width` so 200% zoom drops it.
-      - While a question is unanswered it must collapse to a progress line ("3 new · 4 review · step 12 of 40"):
-        in many activities the Lao form is the answer.
-      - New vs review in the accent colour with "New" / "Review" pills, never green or red. The key list could live
-        there. `<aside aria-label="This lesson">` after the stage, no live-region chatter.
-      - A navigation rail on non-lesson pages (Home, Lessons, Review, Letters, My words, Write, Settings) was
-        suggested, against DESIGN's "No tab bar". It would allow list + detail on My words and Letters, and
-        two-column Settings.
+- [ ] **A7b Desktop navigation rail** (owner 2026-11-18; DESIGN "Home and navigation").
+      - On wide screens (`min-width: 1024px`, so 200% zoom drops it), every non-lesson page gets a slim left rail:
+        Home, Lessons, Review, Letters, My words, Write, Notes, Settings. Sections not built yet are greyed with
+        "Soon", like the home tiles. The current page is marked (accent colour plus `aria-current="page"`).
+      - Phones and narrow windows keep today's model: home tiles and the slim header, no tab bar.
+      - Lessons show no rail (the runner owns nav and ✕). `<nav aria-label="Sections">` before the main content;
+        new strings in `strings.json`.
+      **Done when:** at 1440×900 you can go from Letters to My words in one click; at 360px and at 200% zoom on
+      1440×900 no rail shows; a lesson never shows it.
 - [ ] **A17 Conversations.**
       - Compact: ▶ inline after the Lao, Reveal on the same row, bubbles `max-width: 75%`; a 6-line dialogue fits at
         1440×900 before Reveal.
@@ -280,4 +279,7 @@ the owner has thought them through: A7b (desktop rails) and prior-knowledge feat
 - After lesson 12: ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່ around a second conversation (ordering food).
 - Prior knowledge (on hold, owner 2026-11-18, to talk through): the intake's "speak Lao" / "read Thai" answers change
   nothing (`intake.js:8`); a "Brisk" pace setting; "Thai readers:" notes. Not for now (DESIGN "Who it is for").
+- Lesson side rail (the lesson's words beside the stage on wide screens): scrapped for now (owner 2026-11-18). If it
+  comes back: in many activities the Lao is the answer, so it must collapse while a question is unanswered.
+- With the A7b rail: list + detail side by side on My words and Letters, and two-column Settings.
 - Later: admin role and in-app owner tools, PWA/offline, analytics on drop-off and difficulty, trust scores.
