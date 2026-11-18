@@ -23,7 +23,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Then lesson 13 (ອ) and the PLAN order (A7 rest, A11, A10, L3). Owner path notes (lesson 20+) come later.
+3. Then lesson 13 (ອ) and the PLAN order (A7 rest, A10, L3). Owner path notes (lesson 20+) come later.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 - **Font size on mobile** (owner 2026-11-14): fonts may be a few points too large once sentences get longer. Idea:
@@ -35,6 +35,10 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
   `#/letters` greys unreached tiles; the speaker is an SVG in a tinted button.
+- Native onboarding (`#/` as a new native, or a profile with no `onboarded_at`): "Your age" shows six ranges, no date
+  field; its Lao (`age_*`, `profile_age`) is unverified until the wife has seen it (`docs/LAO_UI_REVIEW.md`).
+- A11: a final consonant shows as the bare letter (no ◌). Open lesson 1 (ກິນ): the ກ + ◌ິ + ນ pieces line and the
+  build-the-word tiles show plain ນ; `#/letters` final ນ card heading too; a vowel tile still shows ◌ິ.
 - Phone (S10+): Next / Submit visible above the bottom toolbar, in lessons and forms.
 - `#/read/L0001` ກ card "Hear it in a word" ກິນ (gin, "eat").
 - `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.

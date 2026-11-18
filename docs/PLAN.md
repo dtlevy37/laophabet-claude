@@ -9,7 +9,7 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then A7 rest, A11, A10, L3, L4, L5. Owner-gated slices (S7w, S10r) close when
+Owner checks of what is built, then A7 rest, A10, L3, L4, L5. Owner-gated slices (S7w, S10r) close when
 the owner's check or answer comes in.
 
 ## Lessons
@@ -46,14 +46,6 @@ the owner's check or answer comes in.
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
       `word_notes` by intro lesson vs the learner's progress). **Done when:** a learner with lessons 1–9 done sees
       R03, R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
-- [ ] **A11 No ◌ on final consonants** (owner 2026-11-14). A final-role consonant unit (C13f ◌ນ and every other
-      `role = final` consonant) is shown as the bare letter (ນ) everywhere learners see it: teach cards, build-the-word
-      tiles and pieces lines ("ກ + ◌ິ + ນ"), compare rows, ⓘ sheets, Letters and sounds. ◌ means "a consonant goes
-      here", so before a final it wrongly suggests the letter never starts a word (ນອນ non, "sleep"). Keep ◌ for vowels
-      and tone marks. Client display rule only (one helper, used wherever `units.lao` is shown); data unchanged.
-      Check the build-the-word ◌ note and tile matching when an initial and a final tile read the same (ນອນ).
-      **Done when:** no learner screen shows ◌ before a consonant; `session_test.mjs` asserts it for the build-word
-      pieces; ນອນ (non, "sleep") builds correctly with two ນ tiles.
 - [ ] **A5 leftovers.** Pool words in `get_lesson` lack the usage note (ⓘ from a sentence chip shows none); the
       one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified; the ສະບາຍດີ
       and ເຂົ້າ notes are asked in QUESTIONS.
@@ -69,7 +61,7 @@ the owner's check or answer comes in.
       wife; apply her fixes. **Done when:** every `lo` string has been seen by a native and the `_note` says so.
 - [ ] **N6 Native polish before invites.** Rewrite the 16 open questions in plain Lao with examples, not terms
       (`data/open_questions.csv`, `questions_tool.py migration`); Suggest a word: English optional, only word, example
-      and voice visible, the rest under "More details"; onboarding asks an age range, not a date of birth.
+      and voice visible, the rest under "More details".
       **Done when:** a native without English can answer every question and send a suggestion.
 - [ ] **S9 FSRS:** design note first. Open points: client JS module vs plpgsql; outcome → rating (recognition at
       reduced weight, recall by latency, wrong = Again); card granularity and direction; the ladder gates activity

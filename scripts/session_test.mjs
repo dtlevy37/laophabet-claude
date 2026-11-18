@@ -218,6 +218,34 @@ for (const b of bundles) {
       if (wrong.length !== extras || wrong.some((tl) => letters.has(tl.lao.replace(/◌/g, '')))) fail(`${it.detail.lao}: a wrong tile shares a letter`)
     }
   }
+
+  // A11: no ◌ before a consonant in the build-word pieces or tiles (final ◌ນ shows as ນ); vowels and marks keep it.
+  // ນອນ (non, "sleep") builds with two ນ tiles, in any order and in strict order.
+  {
+    const circleConsonant = /^◌[ກ-ຮ]$/
+    const pool = b.distractors
+    for (const it of b.items.filter((x) => x.item_type === 'word')) {
+      const spec = bw.build({ ...it, shown: [] }, pool, () => 0.5)
+      if (spec && [...spec.pieces, ...spec.tiles].some((p) => circleConsonant.test(p.lao))) fail(`A11: ${it.detail.lao}: a ◌ before a consonant in the pieces or tiles`)
+    }
+    const non = { item_type: 'word', item_id: 'W000033', shown: [], detail: { word_id: 'W000033', lao: 'ນອນ', units: [
+      { unit_id: 'C13', lao: 'ນ' }, { unit_id: 'V22', lao: '◌ອ◌' }, { unit_id: 'C13f', lao: '◌ນ' } ] } }
+    const spec = bw.build(non, { units: [{ unit_id: 'C01', lao: 'ກ', kind: 'consonant' }, { unit_id: 'C02', lao: 'ຂ', kind: 'consonant' }, { unit_id: 'V03', lao: '◌າ', kind: 'vowel' }, { unit_id: 'C08f', lao: '◌ຍ', kind: 'consonant' }] }, () => 0.5)
+    if (!spec) fail('A11: ນອນ cannot be built')
+    else {
+      if (spec.pieces.map((p) => p.lao).join('|') !== 'ນ|◌ອ◌|ນ') fail(`A11: ນອນ pieces are ${spec.pieces.map((p) => p.lao).join('|')}`)
+      if (spec.tiles.filter((tl) => tl.lao === 'ນ').length !== 2) fail('A11: ນອນ does not have two ນ tiles')
+      for (const strict of [false, true]) {
+        const st = bwNewState(strict)
+        // tap each piece's tile in turn, taking the last unused tile that reads the same (any tile may serve any slot)
+        for (const p of strict ? spec.pieces : [...spec.pieces].reverse()) {
+          const ti = spec.tiles.map((tl, k) => k).reverse().find((k) => spec.tiles[k].lao === p.lao && !st.placed.includes(k))
+          bwTap(spec, st, ti)
+        }
+        if (st.placed.length !== 3 || st.slips.size) fail(`A11: ນອນ did not build (${strict ? 'strict' : 'any order'}): placed ${st.placed.length}`)
+      }
+    }
+  }
   const newMark = b.items.some((it) => it.item_type === 'unit' && it.role === 'new' && it.detail?.kind === 'tone-mark')
   if (newMark && !one.steps.some((s) => s.activity === 'build_word')) fail('a new tone mark but no build the word')
 

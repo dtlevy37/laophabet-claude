@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 N6 part: onboarding asks an age range
+- Native onboarding shows six age ranges (under 18, 18-29, 30-44, 45-59, 60+, prefer not to say) instead of a date of
+  birth. Migration `n6_profile_age_range` adds `profiles.age_range`, backfills it from any `birth_date`, and removes
+  `birth_date` from the client's update grant. The `birth_date` column and its data are kept, unused.
+
+## 2026-11-17 A11 No ◌ on final consonants
+- Owner (2026-11-14): a final-role consonant (◌ນ, ◌ວ, ◌ຍ, ◌ມ ...) shows as the bare letter. One helper `unitLao` in
+  `dom.js` (only "◌" + one consonant loses the ◌; vowels and tone marks keep it), used by teach cards (glyph, pieces
+  line, same-sound line, ◌ note), build the word (pieces, tiles, compare), multiple choice and the summary lists.
+  Build the word matches pieces by the shown Lao, so ນອນ builds with two interchangeable ນ tiles. Data unchanged.
+  `session_test.mjs` asserts it.
+
 ## 2026-11-17 Conversations: Lao first, pronoun greeting in lesson 10
 - Owner: conversation turns show only the Lao and ▶; Reveal (per turn) shows the sound and English. Setting
   "Show sound and English in conversations right away" (`convoAids`, default off). The turns above a line's blank
