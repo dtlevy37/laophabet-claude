@@ -81,12 +81,13 @@ L0008,4,unit,C08f,new,final ຍ (y glide); initial role is a later unit
 L0008,5,word,W000512,new,'well; comfortable'; uses all three new units and R01
 L0008,6,word,W000002,recycle,earlier word; second part of the next word
 L0008,7,word,W000001,new,'hello'; kept together with ສະບາຍ (owner)
-L0008,8,sentence,S000000001,new,"conversation lines 1 and 2, speakers A and B: Hello (existing, verified); S7g will carry the real conversation"
+L0008,8,sentence,S000000001,new,"conversation lines 1 and 2, speakers A and B: Hello (existing, verified)"
 L0008,9,word,W000003,recycle,earlier word (question marker); used in the next sentence
 L0008,10,sentence,S000000003,new,"conversation line 3, speaker A: How are you? (existing, unverified)"
 L0008,11,sentence,S000002885,new,"conversation line 4, speaker B: I'm well (composed, unverified)"
-L0008,12,word,W000031,recycle,"earlier word 'he, she'; shown before the bonus word (ລາວຂາຍເຂົ້າ comes in lesson 11)"
-L0008,13,word,W000084,bonus,'sell'; bonus word (LESSON_RULES decision 21): readable with known letters plus final ຍ; never in a sentence
+L0008,12,dialogue,D0001,new,"the conversation (S7g): lines 1-4 as one card, then fill in the blank on its lines"
+L0008,13,word,W000031,recycle,"earlier word 'he, she'; shown before the bonus word (ລາວຂາຍເຂົ້າ comes in lesson 11)"
+L0008,14,word,W000084,bonus,'sell'; bonus word (LESSON_RULES decision 21): readable with known letters plus final ຍ; never in a sentence
 L0009,1,unit,C25,new,new letter (initial h role only)
 L0009,2,word,W000072,new,'hungry'; uses the new letter
 L0009,3,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
@@ -119,12 +120,13 @@ L0010,11,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
 L0010,12,sentence,S000002891,new,'He's asleep already' (composed)
 L0010,13,word,W000005,recycle,earlier word 'you'; used in the conversation
 L0010,14,word,W000003,recycle,earlier word (not; question marker); used in the conversation
-L0010,15,sentence,S000000001,recycle,"conversation lines 1 and 2, speakers A and B: Hello (existing, verified); S7g will carry the real conversation"
-L0010,16,sentence,S000002887,recycle,"conversation line 3, speaker A: Are you hungry? (lesson 9); repeated as line 4 (second part), speaker B; listed once until S7g"
+L0010,15,sentence,S000000001,recycle,"conversation lines 1 and 2, speakers A and B: Hello (existing, verified)"
+L0010,16,sentence,S000002887,recycle,"conversation line 3, speaker A: Are you hungry? (lesson 9); repeated as line 4 (second part), speaker B"
 L0010,17,sentence,S000002892,new,"conversation line 4 (first part), speaker B: 'I'm hungry' (composed); Lao answers yes by repeating the verb"
 L0010,18,sentence,S000002888,recycle,"conversation line 5 (first part), speaker A: Not hungry (lesson 9)"
 L0010,19,sentence,S000002890,new,"conversation line 5 (second part), speaker A: 'I've eaten already' (composed); the payoff of the conversation"
-L0010,20,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
+L0010,20,dialogue,D0002,new,"the full target conversation (S7g): lines 1-5 as one card, then fill in the blank on its lines"
+L0010,21,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
 L0011,1,word,W000536,new,'colour'; no new letters (lesson 11 uses known letters only)
 L0011,2,word,W000016,recycle,earlier word 'this'; used in the colour sentences and later ones
 L0011,3,word,W000538,new,"'white'; bonus word in lesson 4, now core"

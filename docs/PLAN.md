@@ -25,7 +25,8 @@ the owner's check or answer comes in.
       ຂາວ / ລາວ (both already taught) is the recap example there, on a card with a table (word, meaning, tone, ▶),
       like the vowel card with three sounds.
       **Done when:** merged with at least two recorded pairs and a pitch check.
-- [ ] **L4 Conversations** = S7g (below), with two voices when a second speaker records.
+- [ ] **L4 Two voices in conversations.** Conversations are built (DESIGN "Conversations"); when a second native
+      records, speaker B's lines play their take. **Done when:** lesson 10's card plays A and B in different voices.
 - [ ] **L5 Speaking practice.** Design `docs/L5_SPEAKING_DESIGN.md`; owner answered its questions 2026-11-13 (phase 1
       "Say it" in lessons with a Settings opt-out, no self-grade, voice never leaves our client/server). Next: write
       the phase 1 build slice.
@@ -56,10 +57,6 @@ the owner's check or answer comes in.
 - [ ] **A5 leftovers.** Pool words in `get_lesson` lack the usage note (ⓘ from a sentence chip shows none); the
       one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified; the ສະບາຍດີ
       and ເຂົ້າ notes are asked in QUESTIONS.
-- [ ] **S7g Conversations.** Design note first: `dialogues` / `dialogue_lines` (ordered sentence ids, speaker A/B), a
-      `dialogue` lesson item, a conversation card, fill in the blank on its lines. Lessons 8 and 10 carry their lines as
-      ordinary sentences until then. **Done when:** lesson 10 shows its conversation as one card with a fill in the
-      blank on one line.
 - [ ] **S7w Letter writing.** Owner finds it "weird", notes to come. **Done when:** on a phone two letters can be
       completed with a finger; a careless trace fails; ຂ drawn for ຊ is refused; a finished letter shows a tick.
       Later: vowels, tone marks, ໜ ໝ; use in lessons; progress in the DB.
@@ -98,6 +95,8 @@ the owner's check or answer comes in.
 - [ ] **S11 Deploy leftovers:** password reset; email sending (built-in mailer is rate-limited).
 
 ## Small fixes and unsliced ideas
+- `list_lessons` counts a `dialogue` item in `new_items` and gives done lessons an empty `covers` row for it
+  (no client reads either yet): filter `item_type <> 'dialogue'` when list_lessons is next touched.
 - Stale notes on W000035 and W001415 still mention W000019 for the "enter" sense.
 - The "Read more on Wikipedia" links under "More" were written from memory; verify.
 - Bonus words are tested without a sentence (learning review).

@@ -82,6 +82,10 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - A7 inline words (`#/try/L0007`, a sentence card): Lao words underlined; tap → bubble under the sentence (meaning,
   sound, ⓘ); another word moves it; tap elsewhere or Esc closes it. Build-the-sentence: no tappable words until Check.
   Home strip: day streak, letters known, words known. A lesson summary lists "Missed on the first try".
+- S7g conversations (`#/try/L0010`, after ຂ້ອຍກິນເຂົ້າແລ້ວ): one card "Conversation: Are you hungry?" with 5 turns, A left
+  and B right, ▶ per sentence, words tappable; then "Complete the conversation" blanks on its lines with the turns
+  before shown above. Same in `#/try/L0008` (Hello). `#/read/L0010` shows the card. Play `#/lesson/L0010` for real
+  once: the summary must save (no "could not save"). Driver `scripts/browser/s7g_dialogue.js`.
 - H7 (`#/try/L0002`): "What does this word mean?" (ເຂົ້າ khao, rice) plays once with a ▶ under the word; with "Play
   Lao aloud automatically" off it stays silent until ▶.
 
@@ -134,6 +138,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   (reads `.mc-option`, `.bs-line .bs-tile`, `.feedback-head`: renaming them drops the answer from reports).
   Sentence words: `teach_card.js` `inlineSentence()` (`.word-btn`, `.word-bubble`; countTaps counts `.word-btn`).
   Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js`, `h7_check.js` (frontend on :5500).
+- Conversations (S7g): `session.js` `dialogueBlanks` + the dialogue branch of `planLesson`; `teach_card.js`
+  `dialogueBody` / `dialogueLine`; `fill_blank.js` `spec.dialogue`. Data `data/dialogues.csv`, `dialogue_lines.csv`.
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
 - `js/home.js` home (#/): Continue card and the section tiles. `js/lessons.js` `#/lessons`: the compact path,

@@ -580,6 +580,42 @@ for (const b of bundles) {
     }
   }
 }
+// S7g: a lesson with a dialogue item plans its conversation card, then at least one fill in the blank on its lines
+// with the conversation above it (earlier lines as context; the first line has none); a recycled line sentence asks
+// nothing on its own, and no line sentence gets a second, context-free fill in the blank.
+{
+  console.log('== S7g conversations')
+  const withDialogue = bundles.filter((b) => b.items.some((it) => it.item_type === 'dialogue'))
+  if (!withDialogue.some((b) => b.lesson.lesson_id === 'L0010')) fail('S7g: no dialogue in the L0010 bundle (re-dump it)')
+  for (const b of withDialogue) {
+    const id = b.lesson.lesson_id
+    const d = b.items.find((it) => it.item_type === 'dialogue')
+    const lineIds = new Set((d.detail?.lines || []).flatMap((l) => (l.parts || []).map((p) => p.sentence_id)))
+    for (let seed = 1; seed <= 50; seed++) {
+      const steps = buildPlan(b, dryLevels(b), seed, []).steps
+      const card = steps.findIndex((s) => s.activity === 'teach_card' && s.item.item_type === 'dialogue')
+      if (card < 0) {
+        fail(`S7g ${id}: no conversation card`)
+        break
+      }
+      const blanks = steps.filter((s) => s.activity === 'fill_blank' && s.dialogue)
+      if (!blanks.length) fail(`S7g ${id}: no fill in the blank on a conversation line`)
+      if (steps.indexOf(blanks[0]) !== card + 1) fail(`S7g ${id}: the first line blank does not follow the card`)
+      if (blanks.some((s) => !lineIds.has(s.item.item_id))) fail(`S7g ${id}: a blank on a sentence that is not a line`)
+      if (blanks.slice(1).some((s) => !s.dialogue.before.length)) fail(`S7g ${id}: a later line blank without context`)
+      if (steps.some((s) => (s.item?.shown || []).some((x) => x.item_type === 'dialogue')))
+        fail(`S7g ${id}: a card reports a dialogue as shown (record_answers rejects it)`)
+      if (blanks.some((s) => [...s.dialogue.before.flatMap((l) => l.parts), ...s.dialogue.earlier].some((p) => p.sentence_id === s.item.item_id)))
+        fail(`S7g ${id}: a blank whose sentence is shown just above it`)
+      const blanked = new Set(blanks.map((s) => s.item.item_id))
+      if (steps.some((s) => s.activity === 'fill_blank' && !s.dialogue && blanked.has(s.item.item_id)))
+        fail(`S7g ${id}: a line sentence also has a fill in the blank outside the conversation`)
+    }
+    const steps = buildPlan(b, dryLevels(b), 1, []).steps
+    console.log(`  ${id}: card + ${steps.filter((s) => s.dialogue).length} line blanks (` +
+      steps.filter((s) => s.dialogue).map((s) => s.item.detail.lao).join(' ') + `), ${steps.length} steps`)
+  }
+}
 // A12: active time counts the gaps between taps, each capped at a minute; only the unsent part is reported.
 {
   const { newClock, tick, unsent } = await import(js('active_time.js'))

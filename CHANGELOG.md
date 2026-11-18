@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 S7g conversations
+- Schema `s7g_dialogues`: lesson tables `dialogues` (D + 4 digits) and `dialogue_lines` (line_no, part, speaker A-D,
+  sentence_id), `lesson_items.item_type` `dialogue`, `lesson_locked` covers line sentences, internal
+  `dialogue_json`, `get_lesson` returns it as the dialogue item's detail (levels also cover line sentences).
+- Content: D0001 "Hello" (4 lines) in lesson 8 at position 12, D0002 "Are you hungry?" (5 lines, the target
+  conversation) in lesson 10 at position 20; later items move down one. Lesson rebuild migrations L0008, L0010.
+  Lines reuse existing sentences; all unverified as before.
+- Scripts: `db_sql.py` revision 4 (tables, checks, lesson refs, `change D0001`); `lesson_tool.py` revision 3
+  (item type `dialogue`; every line's sentence shown before the dialogue); runner prompt explains conversations.
+- App: conversation card (`teach_card.js`, A left / B right with letter badges, words tappable, ▶ per sentence) and
+  fill in the blank on its lines with the turns before shown above (`fill_blank.js` `spec.dialogue`; planner
+  `dialogueBlanks`, at most 5; no blank on a one-word opening line or under the same sentence). A line sentence
+  that is blanked in the conversation gives up its own fill in the blank. The card records nothing (a `dialogue`
+  answer would make `record_answers` reject the batch; found by the code review). Tests: `backend/tests/s7g_dialogues_test.sql`, S7g block in
+  `session_test.mjs`, `scripts/browser/s7g_dialogue.js` (phone, dark, desktop).
+
 ## 2026-11-17 U1 settings sheet, U2 report from any screen, A7 inline words + stats, H7 meaning-question audio
 - U1: ⚙ in the top bar and lesson header opens Settings as a sheet (`js/chrome.js`); closing redraws the current
   screen (in a lesson, the current question, no answer counted); Esc closes the sheet first. The top-bar Settings

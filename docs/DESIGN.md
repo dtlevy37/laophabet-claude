@@ -75,7 +75,7 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
 | Flashcards | self-graded (again / hard / good / easy); Lao front first, English front later | recognition, then recall | words, sentences | v1 (S8b, practice) |
 | Tone drill | see a syllable, pick its tone; later, apply the rule (class + live/dead + mark) | rules | words.tone_by_syllable, tone_derivation, rules | after the first tone-rule lesson (S9b) |
 | Listen and choose | hear a recorded word (autoplays once, ▶ replays), pick its Lao from 3–4 pool words; never an option with the same respelling as the answer; "Can't listen now" pauses it (and autoplay) for 10 minutes | recognition (listening) | `audio_url` on the word (bundle.js), pool words with respelling | v1 (L2, 2026-11-13): one per lesson in the closing block |
-| Dialogue reader | line by line, tap for translation, then comprehension questions | reading in context | dialogues, dialogue_lines, sentences | v2 |
+| Conversation | one card with every line (speaker A left, B right; tap a word for its meaning, ▶ per line), then fill in the blank on its lines with the turns before shown above (see "Conversations") | reading in context | `dialogue_json` (lines → parts → sentence_json) | v1 (S7g) |
 | Say it | hear, record yourself, play both back, grade yourself | speaking (self-graded) | audio | v2 |
 | Speech recognition | app grades pronunciation | speaking | Lao ASR (very hard; not planned) | later / maybe never |
 | Letter writing | draw a letter with a finger on a pad: watch it drawn, trace each part, trace the whole, draw each part from memory, draw the whole from memory (see "Letter writing" below) | letter shape (helps reading) | `data/strokes.json` (static file, built by `scripts/strokes_build.js`) | separate practice area `#/write` (S7w, 2026-11-11); not in lessons yet |
@@ -203,6 +203,7 @@ extra columns.
 | recycled word | no card; one question: build the word if the learner's level is ≥ 2 (S7d), else meaning → Lao at level ≥ 2 when it cannot be built, else Lao → meaning |
 | new sentence | reading card (Lao, meaning, underlined words: tap for a bubble), then build the sentence (from S7a) |
 | recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
+| conversation (S7g) | conversation card, then fill in the blank on its lines in order (below). A sentence that is a line of the lesson's conversation gets its fill in the blank there instead: a recycled line asks nothing on its own, a new line keeps its card and build the sentence |
 
 - **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8
   optional ones). Always kept, even past 8: each new unit's sound → letter, a shared card's other meanings, the
@@ -228,6 +229,22 @@ extra columns.
   the page is open).
 - **Authoring review:** `#/read/L0005` shows any lesson's cards without a session (and from S7b can dry-run the
   questions without recording), so a new lesson can be reviewed after `supabase db reset` without replaying 1–4.
+
+### Conversations (S7g; LESSON_RULES decision 23)
+- **Data:** `dialogues` (D + 4 digits, title_en, topic) and `dialogue_lines` (dialogue_id, line_no, part, speaker A-D,
+  sentence_id). A line is one speaker's turn; `part` orders the sentences in it (ຫິວ. ເຈົ້າຫິວເຂົ້າບໍ່? is one turn of
+  two sentences). The same sentence may sit on several lines. Lesson tables: written by `db_sql.py` lesson / change
+  migrations only, read through `get_lesson` (an item of type `dialogue` has `dialogue_json` as its detail).
+- **Show first:** every line's sentence is a sentence item before the dialogue in its lesson or in an earlier lesson
+  (`lesson_tool.py check`), so readability, bonus and blank checks, cards, recording and progress all stay on the
+  sentence. Nothing is recorded against the dialogue itself; a line's blank records its word and sentence as usual.
+- **In a lesson:** the card (no autoplay; ▶ per sentence), then fill in the blank per distinct sentence in line
+  order, at most 5, each showing the two turns before it (smaller, with English) and the earlier sentences of the
+  same turn. A line is not blanked where its answer would be a bare gap (a one-word opening line) or sits in the
+  context above (B's ສະບາຍດີ under A's); its sentence is blanked at a later line, or keeps its own fill in the blank
+  when it never qualifies. These questions are always kept. The card records nothing (`shown: []`).
+- **Later:** two voices when a second native records (PLAN L4); a conversation may come back as `recycle` in a later
+  lesson (same card and blanks).
 
 ## Audio and speaking hooks (2026-11-10; LESSON_RULES decision 12)
 Nothing in the content tables changes for audio.
@@ -361,7 +378,6 @@ A lesson is content, not a script of screens: the app turns it into activities b
    "ao" sounds need telling apart, the user will decide later.
 2. **Confusable sets** for multiple choice distractors (ບ ປ ພ ຟ, ດ ຕ, ຍ ຢ, ຂ ຄ ...): a small data table, once
    lessons pass about 10.
-3. Dialogues table (planned in SCHEMA.md) and when the first dialogue appears.
 
 ## Decisions log
 - 2026-11-10 (user, fill in the blank): the approach in "Fill in the blank: one logical choice" and the S7a/S7c/S7e

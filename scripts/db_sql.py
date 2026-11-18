@@ -49,6 +49,11 @@ Revision 3 (2026-11-13, PLAN A5): optional pool table word_notes (word_id, usage
   migration ..._a5_word_notes.sql). A word id carries its word_notes row in change and lesson migrations, like
   word_categories (`--name x change W000001` writes the note; prefix word_notes:W000001 for the note alone).
   Column type "bool": CSV true/false (empty = null), emitted as SQL true/false.
+
+Revision 4 (2026-11-17, PLAN S7g): lesson tables dialogues (D + 4 digits) and dialogue_lines (dialogue_id,
+  line_no, part, speaker A-D, sentence_id; schema migration ..._s7g_dialogues.sql). A lesson_items row may be
+  item_type dialogue. A dialogue's sentences count as the lesson's sentences (lesson_refs, view lesson_locked), so
+  a lesson migration carries them; `change D0001` writes the dialogue and its lines (missing lines retired).
 """
 import argparse
 import csv
@@ -106,10 +111,14 @@ TABLES = {
         "unit_id,kind,role,base_id,lao,teach_en,intro_lesson_id,source,confidence,notes")),
     "rules": (["rule_id"], spec(
         "rule_id,name_en,teach_en,intro_lesson_id,source,confidence,notes")),
+    "dialogues": (["dialogue_id"], spec(
+        "dialogue_id,title_en,topic,source,confidence,notes")),
+    "dialogue_lines": (["dialogue_id", "line_no", "part"], spec(
+        "dialogue_id,line_no,part,speaker,sentence_id,source,confidence,notes", ints=["line_no", "part"])),
     "lesson_items": (["lesson_id", "position"], spec(
         "lesson_id,position,item_type,item_id,role,notes", ints=["position"])),
 }
-LESSON_TABLES = ["lessons", "units", "rules", "lesson_items"]   # optional files; never seeded or refreshed
+LESSON_TABLES = ["lessons", "units", "rules", "dialogues", "dialogue_lines", "lesson_items"]   # optional files; never seeded or refreshed
 OPTIONAL_POOL = ["word_categories", "sentence_slots", "word_notes"]           # hand-tagged; a missing file counts as empty
 POOL = [t for t in TABLES if t not in LESSON_TABLES]
 REGISTERS = {"formal", "neutral", "casual", "slang", "rude"}             # words/sentences.register (DB check); blank -> null
@@ -134,14 +143,19 @@ FOREIGN_KEYS = [
     ("units", "intro_lesson_id", "lessons", "lesson_id"),
     ("rules", "intro_lesson_id", "lessons", "lesson_id"),
     ("lesson_items", "lesson_id", "lessons", "lesson_id"),
+    ("dialogue_lines", "dialogue_id", "dialogues", "dialogue_id"),
+    ("dialogue_lines", "sentence_id", "sentences", "sentence_id"),
 ]
 NOT_NULL = {"words": ["lao"], "letters": ["lao"], "vowels": ["lao_pattern"], "sentences": ["lao"],
             "learning_order": ["item_type", "item_id"], "lessons": ["lesson_order", "title_en", "kind"],
             "units": ["kind", "role", "base_id"], "lesson_items": ["item_type", "item_id", "role"],
+            "dialogues": ["title_en"], "dialogue_lines": ["speaker", "sentence_id"],
             "word_units": ["unit_id"], "word_categories": ["categories"], "sentence_slots": ["accepts"],
             "word_notes": ["culture"]}
 ITEM_TABLE = {"unit": ("units", "unit_id"), "rule": ("rules", "rule_id"),
-              "word": ("words", "word_id"), "sentence": ("sentences", "sentence_id")}
+              "word": ("words", "word_id"), "sentence": ("sentences", "sentence_id"),
+              "dialogue": ("dialogues", "dialogue_id")}
+SPEAKERS = {"A", "B", "C", "D"}                                  # dialogue_lines.speaker (DB check constraint)
 # Pool table -> (lock kind, column) for is_lesson_locked(); learning_order is never locked.
 LOCK = {"templates": ("template", "template_id"), "words": ("word", "word_id"), "letters": ("letter", "letter_id"),
         "vowels": ("vowel", "vowel_id"), "sentences": ("sentence", "sentence_id"),
@@ -222,6 +236,18 @@ def load(data_dir):
             errors.append(f"lesson_items {r['lesson_id']}/{r['position']}: unknown item_type {r['item_type']!r}")
         elif r["item_id"] not in ids[r["item_type"]]:
             errors.append(f"lesson_items {r['lesson_id']}/{r['position']}: {r['item_type']} {r['item_id']} not found")
+    for r in tables["dialogues"]:
+        if not re.fullmatch(r"D\d{4}", r["dialogue_id"] or ""):
+            errors.append(f"dialogues {r['dialogue_id']}: id must be D + 4 digits")
+    turns = {}
+    for r in tables["dialogue_lines"]:
+        if r["speaker"] not in SPEAKERS:
+            errors.append(f"dialogue_lines {r['dialogue_id']}/{r['line_no']}: speaker {r['speaker']!r} not in {sorted(SPEAKERS)}")
+        if (r["line_no"] or 0) < 1 or (r["part"] or 0) < 1:
+            errors.append(f"dialogue_lines {r['dialogue_id']}/{r['line_no']}: line_no and part start at 1")
+        who = turns.setdefault((r["dialogue_id"], r["line_no"]), r["speaker"])
+        if who != r["speaker"]:
+            errors.append(f"dialogue_lines {r['dialogue_id']}/{r['line_no']}: one speaker per line")
     bases = {r["letter_id"] for r in tables["letters"]} | {r["vowel_id"] for r in tables["vowels"]}
     for r in tables["units"]:
         if r["base_id"] not in bases:
@@ -245,7 +271,9 @@ def lesson_refs(t, lesson_ids=None):
     """Rows used by the given lessons (all lessons if None), as {kind: set of ids}. Mirrors view lesson_locked."""
     items = [r for r in t["lesson_items"] if lesson_ids is None or r["lesson_id"] in lesson_ids]
     pick = lambda typ: {r["item_id"] for r in items if r["item_type"] == typ}
+    dialogues = pick("dialogue")
     sents, words = pick("sentence"), pick("word")
+    sents |= {r["sentence_id"] for r in t["dialogue_lines"] if r["dialogue_id"] in dialogues}
     words |= {r["word_id"] for r in t["sentence_words"] if r["sentence_id"] in sents}
     templates = set()
     for r in t["sentences"]:
@@ -257,7 +285,7 @@ def lesson_refs(t, lesson_ids=None):
     units = pick("unit") if lesson_ids is not None else {r["unit_id"] for r in t["units"]}
     bases = {r["base_id"] for r in t["units"] if r["unit_id"] in units}
     return {"sentence": sents, "word": words, "template": templates, "letter": bases, "vowel": bases,
-            "unit": units, "rule": pick("rule")}
+            "unit": units, "rule": pick("rule"), "dialogue": dialogues}
 
 
 def locked(t):
@@ -383,6 +411,7 @@ def lesson_parts(t, lesson_id):
            "tone_exceptions": ("word_id", ref["word"]), "word_units": ("word_id", ref["word"]),
            "word_categories": ("word_id", ref["word_cat"]), "sentence_slots": ("sentence_id", ref["sentence"]),
            "word_notes": ("word_id", ref["word"]), "units": ("unit_id", ref["unit"]), "rules": ("rule_id", ref["rule"]),
+           "dialogues": ("dialogue_id", ref["dialogue"]), "dialogue_lines": ("dialogue_id", ref["dialogue"]),
            "lesson_items": ("lesson_id", {lesson_id})}
     parts = []
     for name in TABLES:
@@ -400,7 +429,8 @@ def lesson_migration(root, data_dir, mig_dir, lesson_id, tables=None):
     les = parts[[n for n, _ in parts].index("lessons")][1][0]
     body = []
     scope = {"sentence_words": ref["sentence"], "sentence_slots": ref["sentence"], "word_units": ref["word"],
-             "word_categories": ref["word_cat"], "word_notes": ref["word"], "lesson_items": {lesson_id}}
+             "word_categories": ref["word_cat"], "word_notes": ref["word"], "lesson_items": {lesson_id},
+             "dialogue_lines": ref["dialogue"]}
     for name, rows in parts:
         body += upsert(name, rows)
         if name in scope:
@@ -416,7 +446,7 @@ def lesson_migration(root, data_dir, mig_dir, lesson_id, tables=None):
 def change_parts(t, ids):
     want = {name: set() for name in TABLES}
     shapes = [(r"W\d{6}", "words"), (r"S\d{9}", "sentences"), (r"L\d{4}", "lessons"), (r"R\d{2}", "rules"),
-              (r"V\d+", "vowels"), (r"TPL\w+", "templates"), (r"(C\d+|T\d|S\d|D\d)", "letters")]
+              (r"V\d+", "vowels"), (r"TPL\w+", "templates"), (r"D\d{4}", "dialogues"), (r"(C\d+|T\d|S\d|D\d)", "letters")]
     for raw in ids:
         name, _, iid = raw.rpartition(":")
         if not name:
@@ -429,7 +459,8 @@ def change_parts(t, ids):
     for child, _ in WORD_CHILDREN:
         want[child] |= want["words"]
     want["lesson_items"] |= want["lessons"]
-    children = [n for n, _ in SENTENCE_CHILDREN + WORD_CHILDREN] + ["lesson_items"]
+    want["dialogue_lines"] |= want["dialogues"]
+    children = [n for n, _ in SENTENCE_CHILDREN + WORD_CHILDREN] + ["lesson_items", "dialogue_lines"]
     first_col = {n: TABLES[n][0][0] for n in TABLES}
     parts, missing = [], []
     for name in TABLES:
@@ -446,7 +477,7 @@ def change_migration(root, data_dir, mig_dir, name, ids, note=""):
     t = load_or_exit(data_dir)
     parts, want = change_parts(t, ids)
     body = []
-    children = [n for n, _ in SENTENCE_CHILDREN + WORD_CHILDREN] + ["lesson_items"]
+    children = [n for n, _ in SENTENCE_CHILDREN + WORD_CHILDREN] + ["lesson_items", "dialogue_lines"]
     for tn, rows in parts:
         body += upsert(tn, rows)
         if tn in children:

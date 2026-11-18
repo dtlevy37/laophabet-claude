@@ -148,7 +148,7 @@ A second conversation target (ordering food: "I'd like…", "Do you have…?", "
 well. To be designed when lesson 10 is done.
 
 ## Work this plan still needs
-Conversations as canned content (lessons 8 and 10) are PLAN S7g; the bonus role (S7f) is built.
+Conversations are `dialogue` lesson items (D0001 in lesson 8, D0002 in lesson 10; DESIGN "Conversations").
 
 Budget flags the path needs on `lesson_tool.py check` / `merge` (to be confirmed when each lesson is built):
 lesson 6 and lesson 8 `--max-units 3`; lesson 8 also carries the cut-off card (R01), so `--max-weight` rises;

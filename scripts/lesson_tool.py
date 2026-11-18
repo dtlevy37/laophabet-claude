@@ -50,7 +50,7 @@ Data tables written by merge (all in data/):
   rules.csv         rule_id, name_en, teach_en, intro_lesson_id, source, confidence, notes
 Draft folder (default curriculum/lessons/drafts/next/):
   lesson.csv  one row: title_en, kind (letters|rule|words|sentences), summary_en, notes
-  items.csv   position, item_type (unit|rule|word|sentence), item_id, role (new|recycle|example|bonus), notes
+  items.csv   position, item_type (unit|rule|word|sentence|dialogue), item_id, role (new|recycle|example|bonus), notes
   units.csv   unit_id, teach_en, notes            (one row per new unit; required)
   rules.csv   rule_id, name_en, teach_en, notes   (one row per new rule; required)
 Hand-tagged before check (data/, real ids; run pipeline.sh after editing):
@@ -72,6 +72,12 @@ Words in a lesson must have a data/words.csv row (word_id); sentences must be in
 
 Revision 2 (2026-11-10, PLAN S7c + S7f): role bonus; budget as warnings; activity-data checks and the
 blank-option listing; check --merged; brief lists bonus candidates and earlier bonus words.
+
+Revision 3 (2026-11-17, PLAN S7g): item_type dialogue (DESIGN "Conversations"). The dialogue and its lines are
+written to data/dialogues.csv and data/dialogue_lines.csv before check (like a new word in words.csv; merge does
+not write them). check: the dialogue exists with at least two lines, and every line's sentence is shown first, as
+a sentence item earlier in this lesson or in an earlier lesson (show first, test later; this also keeps the
+readability, bonus and blank checks of the sentence items in force for every line).
 """
 import argparse
 import csv
@@ -85,7 +91,7 @@ from build_order import parse_syllable, role_units
 DEAD_RULE = "R01"
 FIRST_WORD = "ກິນ"
 FIRST_UNITS = {"C01", "V04", "C13", "C13f"}
-ITEM_TYPES = {"unit", "rule", "word", "sentence"}
+ITEM_TYPES = {"unit", "rule", "word", "sentence", "dialogue"}
 ROLES = {"new", "recycle", "example", "bonus"}
 POOL_ROLES = ("new", "bonus")    # words that enter the distractor pool (get_lesson)
 POOL_THROUGH = 5                 # lessons 1-5 share one pool (get_lesson: greatest(lesson_order, 5))
@@ -171,6 +177,11 @@ class World:
         self.items = read(os.path.join(data, "lesson_items.csv"), required=False)
         self.units = read(os.path.join(data, "units.csv"), required=False)
         self.rules = read(os.path.join(data, "rules.csv"), required=False)
+        self.dialogues = {r["dialogue_id"]: r for r in read(os.path.join(data, "dialogues.csv"), required=False)}
+        self.dialogue_lines = {}
+        for r in sorted(read(os.path.join(data, "dialogue_lines.csv"), required=False),
+                        key=lambda r: (int(r["line_no"] or 0), int(r["part"] or 0))):
+            self.dialogue_lines.setdefault(r["dialogue_id"], []).append(r)
         self.sig_cache = {}
         self.by_lao = {}
         for wid, w in self.words.items():
@@ -635,7 +646,7 @@ def check(world, draft, a):
     teach_u = {r["unit_id"]: r for r in draft["units.csv"]}
     teach_r = {r["rule_id"]: r for r in draft["rules.csv"]}
     new_units, new_rules, new_words, recycle_words, bonus_words, promoted = set(), set(), [], [], [], []
-    sents, seen = [], set()
+    sents, seen, dialogues = [], set(), []
     for i, it in enumerate(items, 2):
         t, iid, role = it["item_type"], it["item_id"].strip(), it["role"]
         ctx = f"items.csv line {i} ({t} {iid})"
@@ -644,6 +655,14 @@ def check(world, draft, a):
             continue
         if t not in ITEM_TYPES or role not in ROLES:
             err.append(f"{ctx}: item_type must be {sorted(ITEM_TYPES)}, role {sorted(ROLES)}")
+            continue
+        if t == "dialogue":
+            if iid not in world.dialogues:
+                err.append(f"{ctx}: not in dialogues.csv (write the dialogue and its lines first)")
+            elif role not in ("new", "recycle"):
+                err.append(f"{ctx}: a dialogue is new or recycle")
+            else:
+                dialogues.append((ctx, iid, int(it["position"])))
             continue
         if role == "bonus" and t != "word":
             err.append(f"{ctx}: role bonus is for words only")
@@ -700,6 +719,9 @@ def check(world, draft, a):
                 sents.append((ctx, iid, role))
                 if world.sentences[iid].get("confidence") == "unverified":
                     warn.append(f"{ctx}: sentence is unverified (needs native review)")
+    err += dialogue_errors(world, dialogues, [(int(it["position"]), it["item_id"].strip()) for it in items
+                                              if it["item_type"] == "sentence" and (it["position"] or "").strip().isdigit()],
+                           world.used_sents)
     for w in sorted(set(bonus_words) & (set(new_words) | set(recycle_words))):
         err.append(f"word {w} {world.lao(w)}: listed as bonus and as another role in the same lesson")
     for u in new_units:
@@ -785,12 +807,31 @@ def check(world, draft, a):
     return err, warn, new_units, new_rules, new_words, lines
 
 
+def dialogue_errors(world, dialogues, sentence_items, shown_before):
+    """dialogues: [(ctx, dialogue_id, position)]; sentence_items: [(position, sentence_id)] of this lesson;
+    shown_before: sentence ids listed by earlier lessons. Every line's sentence must be shown before the dialogue."""
+    err = []
+    for ctx, did, pos in dialogues:
+        lines = world.dialogue_lines.get(did, [])
+        if len({r["line_no"] for r in lines}) < 2:
+            err.append(f"{ctx}: a dialogue needs at least two lines in dialogue_lines.csv")
+        earlier = {s for p, s in sentence_items if p < pos} | shown_before
+        for r in lines:
+            sid = r["sentence_id"]
+            if sid not in world.sentences:
+                err.append(f"{ctx}: line {r['line_no']} sentence {sid} is not in sentences.csv")
+            elif sid not in earlier:
+                err.append(f"{ctx}: line {r['line_no']} sentence {sid} {world.sentences[sid]['lao']} is not shown first "
+                           "(list it as a sentence item before the dialogue, or in an earlier lesson)")
+    return err
+
+
 def check_merged(world):
     """Activity data and the bonus rule over every merged lesson. Returns (errors, warnings, lines)."""
     err, warn, lines = [], [], []
     if world.categories is None:
         return ["data/categories.csv is missing (PLAN S7c)"], [], []
-    core, bonus = set(), set()
+    core, bonus, shown = set(), set(), set()
     for les in sorted(world.lessons, key=lambda r: int(r["lesson_order"])):
         lid, n = les["lesson_id"], int(les["lesson_order"])
         its = sorted((it for it in world.items if it["lesson_id"] == lid), key=lambda it: int(it["position"] or 0))
@@ -798,6 +839,10 @@ def check_merged(world):
         core |= {w for w, r in words if r == "new"}
         bonus |= {w for w, r in words if r == "bonus"}
         sents = [(it["item_id"], it["role"]) for it in its if it["item_type"] == "sentence"]
+        err += dialogue_errors(world, [(f"{lid} {it['item_id']}", it["item_id"], int(it["position"])) for it in its
+                                       if it["item_type"] == "dialogue"],
+                               [(int(it["position"]), it["item_id"]) for it in its if it["item_type"] == "sentence"], shown)
+        shown |= {sid for sid, _ in sents}
         for sid, _ in sents:
             bad = [w for w in world.sent_words.get(sid, []) if w in bonus - core]
             if bad:

@@ -1,0 +1,3 @@
+dialogue_id,title_en,topic,source,confidence,notes
+D0001,Hello,greetings,SRC-AGENT:lesson,unverified,"lesson 8 (S7g); CURRICULUM_PATH lesson 8 mini-conversation"
+D0002,Are you hungry?,food,SRC-AGENT:lesson,unverified,"lesson 10 (S7g); CURRICULUM_PATH target conversation; Lao answers yes by repeating the verb"

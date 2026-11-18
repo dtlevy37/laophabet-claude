@@ -84,7 +84,9 @@ All four are written by `lesson_tool.py merge`, one lesson at a time.
     source, confidence, notes. A position with no row is never blanked.
   - Agent tags are `SRC-AGENT`, `unverified`. Written into data/ with real ids after `merge_words.py`.
 - Teaching texts are agent-written: `source` SRC-AGENT:lesson, `confidence` unverified.
-- **dialogues.csv**: dialogue_id (D + 4 digits), topic, title_en, intro_lesson_id. **dialogue_lines.csv**: dialogue_id, line_no, speaker (A|B|...), sentence_id.
+- **dialogues.csv**: dialogue_id (D + 4 digits), title_en, topic, source, confidence, notes. **dialogue_lines.csv**:
+  dialogue_id, line_no, part, speaker (A|B|C|D), sentence_id, source, confidence, notes. Lesson tables (like lessons and
+  units): never seeded or pool-refreshed; a lesson item `dialogue D0001` carries them. DESIGN "Conversations".
 - Learner progress (spaced repetition state per learner and item) lives only in Postgres, not in CSV.
 - **In the DB** (migration `..0700`, 2026-10-19): the same columns plus `updated_at` (trigger) and `retired_at`
   on every content table; rows are retired, never deleted. Allowed values of kind/role/item_type are CHECK

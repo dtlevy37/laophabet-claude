@@ -105,7 +105,7 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    in lesson 4; lesson 11 makes it core.
 23. **Conversations are canned content** (user, 2026-11-10): a fixed, ordered set of lines shown as a
    conversation, followed by fill in the blank (one logical answer) on those lines. First ones: lesson 8 (hello,
-   how are you) and lesson 10 (hello, are you hungry, I've eaten already). Needs PLAN S7g.
+   how are you) and lesson 10 (hello, are you hungry, I've eaten already). Data and planner: DESIGN "Conversations".
 24. **Real spoken Lao over tidy Lao** (user, 2026-11-10): teach the natural form even when slightly irregular,
    when the sentence is real and useful. A request is ຂໍ … ແນ່ (the softener the user hears; the native confirmed
    2026-11-17 that ແດ່ is also said, but ແນ່ is the one taught).
@@ -148,7 +148,7 @@ further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is
 1. **Phrases** (about lesson 5 on): noun + describing word (ປາໃຫຍ່), verb + noun (ກິນປາ).
 2. **Simple sentences:** pronoun + verb (+ object), with ບໍ່.
 3. **Question and answer pairs:** ບໍ / question words; e.g. ເຈົ້າໄປໃສ? / ໄປນາ.
-4. **Dialogues:** 4–6 lines on a topic (weather, school, market, family). Needs the dialogue tables below.
+4. **Dialogues:** 4–6 lines on a topic (weather, school, market, family): a `dialogue` lesson item (DESIGN "Conversations").
 - Sources of sentences: existing sentences.csv first (a sentence fits a lesson when every word in it is
   readable by then); then new composed ones, which stay `unverified` until a native speaker reviews them.
 
@@ -166,7 +166,7 @@ further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is
 5. **Review the first ~10–20 lessons with the user** and tune budget, weights and the runner prompt.
 6. **Gaps are filled per lesson:** a lesson word with no words.csv row is drafted in that lesson's run (drafting
    workflow), as are new phrases and sentences.
-7. **Dialogues:** add the tables and a `dialogue` item type once Q&A pairs exist.
+7. **Dialogues:** the `dialogues` / `dialogue_lines` tables and the `dialogue` item type (S7g).
 8. **Postgres:** schema and import for all data tables, lessons and the app-side learner tables.
 9. Later: grow vocabulary and lessons from the database (Phase 7 resumes as needed).
 
