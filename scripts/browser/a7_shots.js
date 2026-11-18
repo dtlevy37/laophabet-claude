@@ -60,8 +60,9 @@ async function setTheme(page, theme) {
       await page.locator('main .page-head button').click()
       await page.waitForSelector('.tiles')
       check(`${width} ${mode} Lessons Back returns home`, (await page.evaluate(() => location.hash)) === '#/')
-      // settings: open from the header, scroll, Back
-      await page.locator('#topbar a[href="#/settings"]').click()
+      // settings: ⚙ in the header opens the sheet (U1); its "all settings" link opens the page; Back
+      await page.locator('#topbar button[aria-label="Settings"]').click()
+      await page.locator('dialog.sheet a[href="#/settings"]').click()
       await page.waitForSelector('.settings-page')
       await shot('settings')
       const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor)

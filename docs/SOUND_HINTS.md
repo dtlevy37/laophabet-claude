@@ -16,7 +16,7 @@ real sound. Keep hints short and in plain words (an English example word, "a puf
 | ບ, ດ | the b in "boy", the d in "deck" (owner's wife) |
 | final ◌ຍ (ສະບາຍດີ sabaidee "hello") | the y at the end of "bye" |
 | ສະ in ສະບາຍດີ | ends in a short catch (R01); not always audible in speech, keep the hint |
-| ຈ (ເຈົ້າ jao "you") | card says between the j in "jaw" and the ch in "chew"; owner leans to "j", open in `docs/QUESTIONS.md` |
+| ຈ (ເຈົ້າ jao "you") | the j in "jaw" (owner: just the j sound, no mention of ch) |
 
 ## Proposed hints for units not yet taught (unverified; use when a lesson needs them)
 

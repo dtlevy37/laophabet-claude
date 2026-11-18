@@ -30,44 +30,16 @@ the owner's check or answer comes in.
       "Say it" in lessons with a Settings opt-out, no self-grade, voice never leaves our client/server). Next: write
       the phase 1 build slice.
 - [~] **H6 More listening.** Audio on more question types as recordings arrive; no transliteration by default.
-- [ ] **H7 Sound on "what does this mean?"** (owner 2026-11-17). Lao -> meaning questions play the word's or sentence's
-      recording once when they appear and show a ▶ to replay it. Same switch as teach cards: the existing `autoplay`
-      setting (`settings.js`; label `settings_autoplay` to read like "Play Lao aloud automatically"); ▶ shows either
-      way. Items with no recording stay silent. **Done when:** on `#/try/L0002` a meaning question with a recorded
-      word plays once, ▶ replays, and with the setting off it stays silent until ▶.
 - [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log`; waits
       for data.
 
 ## App slices
-- [ ] **U1 Settings from anywhere** (owner 2026-11-17). A way into Settings from the top bar of every screen and from
-      the lesson chrome. Feature first; ⚙ or ☰ (maybe per device) is left to the later UI review by subagents. In a lesson it opens Settings as a sheet over the lesson (no route change, the lesson
-      state stays); closing it re-renders the current screen so a changed setting (romanization style, Lao font,
-      spaces, theme, autoplay, Choose-then-Check) shows at once, without counting as an answer. Esc closes the sheet
-      before it asks to leave. **Done when:** mid-question in `#/try/L0005`, changing the romanization style and
-      closing the sheet shows the new style on the same question, and the lesson continues where it was.
-- [ ] **U2 ⚑ Report from any screen** (owner 2026-11-17, like Duolingo). A ⚑ in the lesson chrome and the top bar
-      opens one dialog: what is wrong (Lao is wrong / English is wrong / audio / my answer should be right / app bug /
-      other), an optional note, Send. It attaches what is on screen without the learner typing it: route, lesson and
-      step, activity type, item ids, the options shown, the learner's answer, the relevant settings, app version and
-      viewport. Backend: `app_feedback` gains a `context jsonb` (size-capped) and kinds for the new choices; the card's
-      "More → ⚑ Report a problem" (`report_content`) folds into this dialog. Screenshot: not in v1 (the context is
-      enough to rebuild the screen and a capture library is heavy); revisit if reports turn out hard to read.
-      Supersedes the 2026-11-14 "no ⚑ on cards" choice (the flag lives in the chrome, not on each card).
-      **Done when:** a report sent from a fill-in-the-blank question in `#/try/L0010` shows in `app_feedback` with
-      the lesson, step, item ids, options and the learner's answer, and the dialog works on a phone width.
-- [ ] **A7 rest.** (1) *Inline sentence words with a popover* (owner 2026-11-13): the chip row goes; each word in the
-      sentence is underlined; one tap opens a small bubble under the word that never covers the sentence, tapping
-      another word moves it, tapping elsewhere closes it; no close button, no modal, no focus trap; never on the
-      gap/answer before Check. Touches three activities via `chips()`; `countTaps` must still count. (2) *Desktop wide
-      layout + rail* (content up to 820px + a 320px rail; options and feedback stay at 600px). In a lesson the rail is
-      a lesson preview: the Lao words the lesson will show, new ones colour-coded, recycled ones labelled "Review";
-      no meanings or sounds while checks are running. Home rail: stats and sections. (3) *Stats strip and missed
-      list* (backend first): `learner_stats()` (streak, letters known, words known; absorbs S8) and
-      `session_summary.missed` (first-try misses from `review_log`), then the home strip and the summary list.
-      Also: topbar wrapping at narrow widths and 200% zoom. Contract: nav and ✕ belong to the runner, never to an
-      activity; new strings in `strings.json`.
-      **Done when:** (1) works on a phone and keys still count; (2) a 1920 screen shows the rail without giving
-      answers; (3) home shows the streak and counts from the DB and a summary lists the missed items.
+- [ ] **A7 rest: desktop wide layout + rail** (content up to 820px + a 320px rail; options and feedback stay at 600px).
+      In a lesson the rail is a lesson preview: the Lao words the lesson will show, new ones colour-coded, recycled
+      ones labelled "Review"; no meanings or sounds while checks are running. Home rail: stats (`learner_stats`) and
+      sections. Also check the topbar (now with ⚑ ⚙) at 200% zoom. Contract: nav and ✕ belong to the runner, never to
+      an activity; new strings in `strings.json`.
+      **Done when:** a 1920 screen shows the rail without giving answers, and the topbar holds at 200% zoom.
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and

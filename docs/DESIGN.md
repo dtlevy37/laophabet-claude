@@ -201,7 +201,7 @@ extra columns.
 | bonus word (S7f) | teach card labelled "Bonus word", then Lao → meaning; nothing in the closing block (recall waits for practice) |
 | new rule / recap | card only |
 | recycled word | no card; one question: build the word if the learner's level is ≥ 2 (S7d), else meaning → Lao at level ≥ 2 when it cannot be built, else Lao → meaning |
-| new sentence | reading card (Lao, meaning, word chips), then build the sentence (from S7a) |
+| new sentence | reading card (Lao, meaning, underlined words: tap for a bubble), then build the sentence (from S7a) |
 | recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 
 - **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8

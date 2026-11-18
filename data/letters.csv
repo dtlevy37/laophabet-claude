@@ -3,7 +3,7 @@ C01,ກ,U+0E81,consonant,ໄກ່,chicken,k,k̚,mid,k,g (final k),"A k with no 
 C02,ຂ,U+0E82,consonant,ໄຂ່,egg,kʰ,,high,kh,k,"A k with a puff of air, as in 'kite'. Same sound as ຄ; the class letter only changes the tone. Not ກ (no puff).",yes,W000006,SRC-WP-SCRIPT;SRC-SEASITE,verified,"WP also lists /x/ as an initial variant. A4 2026-11-13: hint revised, owner + formant check."
 C03,ຄ,U+0E84,consonant,ຄວາຍ,water buffalo,kʰ,,low,kh,k,Aspirated k as in 'kite'. Same sound as ຂ.,yes,W000040,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also lists /x/ as an initial variant
 C04,ງ,U+0E87,consonant,ງົວ,ox,ŋ,ŋ,low,ng,ng,"The 'ng' of 'singer', but it can start a word.",yes,W000012,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP gives ງົວ ox or ງູ snake as the name word
-C05,ຈ,U+0E88,consonant,ຈອກ,glass,tɕ,,mid,ch,j,Between English j and ch: like the j in 'jaw' but voiceless.,yes,W000005,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ຈົວ novice as the name word
+C05,ຈ,U+0E88,consonant,ຈອກ,glass,tɕ,,mid,ch,j,Like the j in 'jaw'.,yes,W000005,SRC-WP-SCRIPT;SRC-SEASITE,verified,WP also gives ຈົວ novice as the name word. Tip wording: owner 2026-11-17 (the j sound; no mention of ch).
 C06,ສ,U+0EAA,consonant,ເສືອ,tiger,s,,high,s,s,s as in 'saw'. Same sound as ຊ.,yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,Out of alphabetical order in the Unicode block (Thai position)
 C07,ຊ,U+0E8A,consonant,ຊ້າງ,elephant,s,,low,x,s,s as in 'saw'. Same sound as ສ.,yes,W000041,SRC-WP-SCRIPT;SRC-SEASITE,verified,BGN/PCGN romanizes it x
 C08,ຍ,U+0E8D,consonant,ຍຸງ,mosquito,ɲ,j,low,gn/ny,ny (final i/y),"At the start it is a nasal 'ny' (Spanish ñ, Russian 'nyet'). At the end of a syllable it is a y glide.",yes,W000001,SRC-WP-SCRIPT;SRC-SEASITE,verified,

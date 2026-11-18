@@ -50,8 +50,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   the sound-spelling choice. Natives' recording header is unchanged.
 - Lesson chrome: no header in a lesson; ✕ top left (Leave dialog), progress bar, "1 / 34"; Esc asks to leave.
 - Summary (`#/lesson/L0001`): "Lao words read (with repeats)", Back home, Next lesson (blue, right; Enter too).
-- Audio (`#/try/L0002`): no ⚑ on cards; on the ເຂົ້າ card More has "Voice: Na" and "⚑ Report a problem"; ⓘ sheet has
-  the same; Report → Send says "Thank you"; Space plays. First 3 build-the-word questions with a ◌ tile say "◌ is not
+- Audio (`#/try/L0002`): on the ເຂົ້າ card More has "Voice: Na" and "⚑ Report a problem" (opens the U2 dialog with
+  "audio" chosen); ⓘ sheet has the same; Space plays. First 3 build-the-word questions with a ◌ tile say "◌ is not
   a piece…" (private window).
 - Badges: `#/read/L0007/14` (ດາວ) solid "★ Bonus word"; `#/read/L0002/5` (ເຂົ້າ) "✦ Culture"; with reduce motion on,
   they just appear.
@@ -74,6 +74,16 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   view link at the bottom; `#/record`: English under the Lao; Record -> style row (tap again unselects) -> Save and
   next; Save + more details; "I'd say it differently" (box starts with the text); "not sure what it means"; Skip.
   `#/review` opens Record. Driver `scripts/browser/n3_record.js`.
+- U1 ⚙ (top bar and lesson header): Settings opens as a sheet; in `#/try/L0005` mid-question switch the romanization,
+  Close: same question, same counter, new style; Esc closes the sheet, not the lesson. "Account, feedback and all
+  settings" link opens `#/settings` (the top-bar Settings link is gone). Decide: ⚙ or ☰ (later UI review).
+- U2 ⚑ (top bar and lesson header): pick what is wrong, note optional, Send → "Thank you"; on `#/try/L0010` after a
+  fill-in-the-blank, the `app_feedback.context` column holds lesson, step, item, options and your answer. Phone width.
+- A7 inline words (`#/try/L0007`, a sentence card): Lao words underlined; tap → bubble under the sentence (meaning,
+  sound, ⓘ); another word moves it; tap elsewhere or Esc closes it. Build-the-sentence: no tappable words until Check.
+  Home strip: day streak, letters known, words known. A lesson summary lists "Missed on the first try".
+- H7 (`#/try/L0002`): "What does this word mean?" (ເຂົ້າ khao, rice) plays once with a ▶ under the word; with "Play
+  Lao aloud automatically" off it stays silent until ▶.
 
 
 ## Decisions in force
@@ -119,12 +129,17 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   alignment; alternates: `sentence_json.alternates` = another live sentence with the same English minus pronouns only;
   `PAIR_NOTES` word-pair notes), `choice.js`. build_word detail keys: `taps`, `early`, `pieces[].found`; A3 stats must
   not count `found: false` as clean.
+- `js/chrome.js` ⚑ ⚙ buttons and the settings sheet (`openSettingsSheet(onClose)`, redraws on close); `js/report.js`
+  the report dialog (`send_feedback` with `p_context`); the lesson's context is built in `session.js` from the stage
+  (reads `.mc-option`, `.bs-line .bs-tile`, `.feedback-head`: renaming them drops the answer from reports).
+  Sentence words: `teach_card.js` `inlineSentence()` (`.word-btn`, `.word-bubble`; countTaps counts `.word-btn`).
+  Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js`, `h7_check.js` (frontend on :5500).
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
 - `js/home.js` home (#/): Continue card and the section tiles. `js/lessons.js` `#/lessons`: the compact path,
   `nextLesson()` (`session.js` `resumableLesson`; shared with home). Browser check: `scripts/browser/a7_shots.js`.
-- `js/letters.js` (`learner_units`), `js/words.js` (`learner_words`, `learner_word`), home counts one `learner_counts`
-  call; `js/practice.js` + `planPractice` / practice runner branch in `session.js` (`start_practice`,
+- `js/letters.js` (`learner_units`), `js/words.js` (`learner_words`, `learner_word`), home strip one `learner_stats`
+  call (wraps `learner_counts`); summary missed list from `session_summary.missed`; `js/practice.js` + `planPractice` / practice runner branch in `session.js` (`start_practice`,
   `complete_practice`). SQL tests `app/backend/tests/a8_*.sql`, `a9_*.sql`, `s8b_*.sql` (rolled back; run with docker
   exec psql). Browser: `scripts/browser/s8b_practice.js`.
 - `js/learn.js` reader, `#/settings` route (Back = history.back when opened from the app). Theme: `settings.js` `theme`

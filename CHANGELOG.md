@@ -2,6 +2,29 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 U1 settings sheet, U2 report from any screen, A7 inline words + stats, H7 meaning-question audio
+- U1: ⚙ in the top bar and lesson header opens Settings as a sheet (`js/chrome.js`); closing redraws the current
+  screen (in a lesson, the current question, no answer counted); Esc closes the sheet first. The top-bar Settings
+  link is replaced by the sheet's "Account, feedback and all settings" link; no sheet on `#/settings` itself.
+- U2: ⚑ in the top bar and lesson header opens one report dialog (`js/report.js`): six kinds, optional note, and the
+  screen's context (route, lesson, step, activity, item ids, options, the learner's answer, settings, version,
+  viewport), trimmed to 12 KB UTF-8 on the client. Migration `u2_report_context`: `app_feedback.context jsonb`
+  (≤ 16 KB), new kinds, `send_feedback` with `p_context` (7-arg version dropped). The card's More → Report uses it.
+- A7 (1): sentence words inline and underlined, tap → bubble under the sentence (`inlineSentence()` replaces
+  `chips()`); never on the answer before Check; Esc closes the bubble before the leave dialog; countTaps counts it.
+- A7 (3): migration `a7_stats_missed`: `learner_stats(p_local_day)` (streak, letters, words) for the home strip;
+  `session_summary.missed` (first-try misses) listed on lesson and practice summaries. Topbar wraps under 400px.
+  Desktop wide layout + rail stays in PLAN.
+- H7: Lao → meaning questions play the word once (autoplay setting, now "Play Lao aloud automatically") with a ▶
+  to replay; never on meaning → Lao; no ▶ while "Can't listen now" is on.
+- Code review (sonnet): fixed the report size check (bytes, not characters), the duplicate sheet on `#/settings`, a
+  double redraw after the sheet's link, and the ▶ under "Can't listen now".
+- Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js`, `h7_check.js`; `a7_shots.js` follows the new ⚙.
+
+## 2026-11-17 ຈ hint: the j sound
+- Owner: ຈ (as in ເຈົ້າ jao, "you") is the j sound; no mention of ch. C05 card "The j in 'jaw'." and `letters.csv`
+  tip "Like the j in 'jaw'."; migration `c05_j_hint`; QUESTIONS "For the owner" item removed; SOUND_HINTS updated.
+
 ## 2026-11-17 A4 sounds-like review closed
 - Owner confirmed the applied anchors (ແ "bed" leaning to "say", ◌ໍ rounded "aw" towards "oh", ◌ຳ "Tom" in ດຳ and
   ນ້ຳ, final ຍ "bye", R01 catch in ສະ, ບ/ດ "boy"/"deck" per the owner's wife). Short ◌ິ stays "short ee" (IPA /i/). Hints are

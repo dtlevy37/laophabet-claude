@@ -20,10 +20,6 @@ answer. Before a question goes to a native, online or here:
    "Would you say this?", "What does this mean?", "What would you say instead?", "Is this word also a name?".
 6. **Options must cover the real answers**, plus free text. If the answer is a meaning, ask for it in free text.
 
-## For the owner
-- ຈ in ເຈົ້າ (jao, you): the card says between the j in "jaw" and the ch in "chew"; owner leans to "j" and will
-  check with their wife. If "j", change the C05 card and `letters.csv` tip (`docs/SOUND_HINTS.md`).
-
 ## For the native speaker
 **Asked online** (`#/questions`, Q0017–Q0034, `data/open_questions.csv`; answers in `open_question_consensus`):
 meanings of ລາວນອນແລ້ວ (laao non laew, asleep / gone to bed) and ຂໍແກ້ວນ້ອຍແນ່ (khor gaew noy nae); ສີເຂົ້າ (sii
