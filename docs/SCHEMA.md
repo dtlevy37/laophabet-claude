@@ -52,6 +52,9 @@ Tone is **not** part of the respelling; it is shown from `tone_by_syllable`. Syl
   - `freq_rank`: a **usefulness rank by judgement**, not corpus frequency (user decision, 2026-10-09). There is no reliable, segmented open Lao frequency list.
 - **sentences.csv**: sentence_id, lao, lao_spaced, ipa, respelling, english, target_word_id, template_id, source, confidence, notes, word_overrides, register
   - `register`: same four values and rules as for words (see the words.csv `register` entry); a sentence's register is how a native would say that whole sentence.
+  - A composed sentence becomes `verified` when a verified native records it as natural (owner 2026-11-17): `source`
+    names the take (`NATIVE-REC:<recording id>`), `notes` keeps the composition note and says the English is the
+    agent's. A take with "I'd say it differently" does not verify the original.
   - `lao`: standard orthography, written without spaces between words.
   - `lao_spaced`: the same sentence with a space between words, for learners (user request, 2026-10-09). It is not traditional, so learner material shows it as a reading aid. Word boundaries must match `sentence_words.csv`.
 - **sentence_words.csv**: sentence_id, position, word_id

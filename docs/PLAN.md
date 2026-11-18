@@ -22,8 +22,9 @@ the owner's check or answer comes in.
       "He isn't eating. / She isn't eating." (Q0013: not hungry now, or sick and cannot eat; not a habit).
       (4) S000000012 bare ຂໍນ້ຳ is "a little abrupt" (Q0011): note it, keep it out of lessons (lessons use ຂໍນ້ຳແນ່).
       (5) W001426 ແນ່ / W000308 ແດ່: both said in Vientiane (Q0004); ແນ່ stays the taught one. (6) `register` =
-      neutral on the 12 words she tagged (N3 style row; source her recording). (7) Confidence of the sentences she
-      recorded as natural: per the owner's answer (QUESTIONS "For the owner"). Also settled, no change: question ບໍ່
+      neutral on the 12 words she tagged (N3 style row; source her recording). (7) Sentences a verified native recorded as
+      natural become `verified` (owner 2026-11-17), source naming the take; the English stays the agent's (say so in
+      notes). Also settled, no change: question ບໍ່
       keeps its tone mark and sounds like ບໍ່ "not" (Q0002, Q0003); bare ຫິວ / ບໍ່ຫິວ are fine replies (Q0012, so
       S000002888 and S000002892 stay); ສີນີ້ຂາວ and ສີນີ້ດີ are natural (Q0015); ດີແລ້ວ is either "that's fine" or
       "enough", by tone of voice (Q0014); ຫິວນ້ຳ and ຢາກນ້ຳ both said (Q0010). Her 20 new takes (lesson 12, words) wait

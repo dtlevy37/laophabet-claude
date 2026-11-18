@@ -25,9 +25,6 @@ answer. Before a question goes to a native, online or here:
 - ◌ິ bug: device, browser, Settings → Lao font, and where it showed.
 - ຂາວ / ລາວ as the first tone pair: in the tone lesson (L3) or a recap card? (ລາວ is now confirmed long, so the pair
   works.)
-- **Sentences Na recorded as natural** (all lesson 1–12 sentences): does that make a composed sentence `verified`
-  (source: native recording), or keep `unverified` with a note? Decides the confidence step in PLAN "Apply native
-  answers".
 - **Listen and judge** (her takes are in the app: `#/words`, tap a word, ▶). For each, which English sound is closest
   for a Midwest ear? The answer fixes the "sounds like" hints.
   - ແ in ແລ້ວ (laew, already), ແກ້ວ (gaew, glass): "bed" held long, or "cat"? She said only that it is long.
