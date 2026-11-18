@@ -85,6 +85,9 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
         checkboxes.
       - "He is hungry. / She is hungry." stacks as two bold sentences in prompts: one line, "He/She is hungry."
       - The "Complete the conversation" heading is clipped under the dry-run pill on desktop feedback.
+      - Lessons list (`#/lessons`) on phones: titles clipped by the Review link (let `.path-name` wrap to 2 lines, or
+        make Review an icon button with an aria-label); "N more lessons" is unstyled blue text (give it a ▸ / ▾
+        disclosure); the colour emoji 🔒 sits among flat line icons (use a monochrome SVG lock in `--muted`).
       **Done when:** the right word in a gap is never red; on a 360px phone a wrong build shows the whole right answer
       without sideways scroll; `#/practice` has a visible exit; ກິນເຂົ້າ. (kin khao, "have a meal") on its sentence
       card has tappable words.
