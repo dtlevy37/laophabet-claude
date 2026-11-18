@@ -48,6 +48,7 @@ large-screen layout) or after alpha feedback, with briefs adjusted to what chang
 5. UX, phones (+ font-size sweep)
 6. UX, large screens (blind pass, then critiques the A7 plan)
 7. Rendering bug hunter
+8. Visual designer, blunt (added 2026-11-18: the UX briefs judged function, so nobody gave a verdict on looks)
 
 Seven was judged enough. More personas from the same model tend to repeat each other; spend extra budget on a
 later, targeted round instead.

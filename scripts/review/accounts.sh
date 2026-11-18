@@ -4,9 +4,9 @@
 #   capture accounts: review_<device>@test.local   (one per device in scripts/browser/review_capture.js)
 #   agent accounts:   review_agent<n>@test.local    (one per review agent, n = 1..AGENTS)
 # Password for all: review-pass-1. Never touches the hosted project.
-# Usage: bash scripts/review/accounts.sh [AGENTS=7]
+# Usage: bash scripts/review/accounts.sh [AGENTS=8]
 set -euo pipefail
-AGENTS="${1:-7}"
+AGENTS="${1:-8}"
 cd "$(dirname "$0")/../../app/backend"
 KEY=$(supabase status -o json 2>/dev/null | python -c "import json,sys;print(json.load(sys.stdin)['SERVICE_ROLE_KEY'])")
 API=http://127.0.0.1:54321/auth/v1/admin/users
