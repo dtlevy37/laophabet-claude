@@ -11,6 +11,8 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    word. Vowels, tone marks and rules count as items in their own right, not as extras alongside consonants.
 3. **No review lessons.** Every lesson re-shows earlier material (recycled words, phrases, sentences), and the app
    offers other activities such as flashcard review.
+   Every word of a lesson's sentences and dialogue lines is also a word item of that lesson (new, recycle, example or
+   bonus), because sentence chips open that item's card. `lesson_tool.py check` and `check --merged` enforce it.
 4. **Spaced repetition is the app's job** and should track how well each learner knows each item (some words stick,
    others don't). The data gives the order and the item IDs. The scheduler is app-side (see "App side" below).
 5. **Lesson 1 is ກິນ "eat"** (changed 2026-10-24 from ລາວ). Its units are ກ (initial) + ◌ິ + final ນ: a plain live

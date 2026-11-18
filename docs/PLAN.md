@@ -9,8 +9,7 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then A7 rest, A10, L3, L4, L5. Owner-gated slices (S7w, S10r) close when
-the owner's check or answer comes in.
+Owner checks of what is built, then A7 rest, A10, L3, L4, L5.
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
@@ -46,13 +45,15 @@ the owner's check or answer comes in.
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
       `word_notes` by intro lesson vs the learner's progress). **Done when:** a learner with lessons 1–9 done sees
       R03, R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
-- [ ] **A5 leftovers.** Pool words in `get_lesson` lack the usage note (ⓘ from a sentence chip shows none); the
-      one-off "translations are not literal" card (needs a merged-lesson change). Notes are unverified; the ສະບາຍດີ
-      and ເຂົ້າ notes are asked in QUESTIONS.
-- [ ] **S7w Letter writing.** Owner finds it "weird", notes to come. **Done when:** on a phone two letters can be
-      completed with a finger; a careless trace fails; ຂ drawn for ຊ is refused; a finished letter shows a tick.
-      Later: vowels, tone marks, ໜ ໝ; use in lessons; progress in the DB.
-- [ ] **S10r Recording mode, owner checks:** check takes (`recording_feedback` view, bucket `recordings`).
+- [ ] **A5 leftovers.** The one-off "translations are not literal" card (needs a merged-lesson change). Notes are
+      unverified; the ສະບາຍດີ and ເຂົ້າ notes are asked in QUESTIONS.
+- [ ] **S7w2 Letter writing, next (scoped, not built).** Two parts, in this order:
+      1. A single trace card when a letter is first introduced in a lesson (the learner traces that letter once,
+         right there; the full `#/write` routine stays in its own area).
+      2. Vowels and tone marks in `#/write` (stroke data, scoring, grid), plus ໜ ໝ; progress in the DB only if the
+         owner wants it.
+      Needs a design pass first (activity module or teach-card extension; whether its answer goes through
+      `record_answers`). **Done when:** scoped into a build slice with a "Done when".
 - [ ] **N4 Native feedback report.** A script that lists, from `recording_feedback`: styles to apply to `register`,
       original -> own version pairs (`spoken_lao`), the "not sure what it means" list, names/nicknames, other
       meanings, English corrections, comments; with each native's region and verified flag. **Done when:** one run

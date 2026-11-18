@@ -44,7 +44,6 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - `#/try/L0010` fill-in-the-blank options never break a Lao word; Next on the right.
 - Dark mode: dark text on the blue button; locked lessons dashed; progress bar visible; focus ring when tabbing.
 - Play-test lessons 5–12 (`#/try/L0005` … `#/try/L0012`), including S7h (untaught real words as wrong options).
-- Letter writing `#/write`: no part splitting; ກ drawn with its loops. Phone untested.
 - L1c/L1d (`#/try/L0002`, `L0009`, `L0007`): slot board, slips stay green, Check early, Your answer / Right answer,
   "Also right!" on ສະບາຍດີບໍ່?, rule cards R03/R04, ຫິວ culture note, vowel card line. Decide: fold R03 into the ເ◌ົາ
   card? Missed-ເຂົ້າ note: on `#/try/L0009` build ລາວຫິວເຂົ້າ as ລາວ ຫິວ, Check: "“Hungry” is usually ຫິວເຂົ້າ".
@@ -157,7 +156,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   sets `html[data-theme]`; `styles.css` has the dark tokens twice (device dark unless `light`, and
   `[data-theme='dark']`): change both. `js/write.js`, `js/writing/pad.js`, `js/writing/score.js`; strokes from
   `node scripts/strokes_build.js --png` (overrides `scripts/strokes_overrides.json`).
-- Known gap: pool words in `get_lesson` lack `units` and usage notes.
+- Pool words in `get_lesson` are slim (no `units`, no usage note). That is fine: every word a lesson's sentences use
+  is also a word item of that lesson (new, recycle or bonus) with full detail, and sentence chips read that.
 
 ## Recipes and gotchas
 - Lessons: `build-lesson` skill. `db_sql.py` options go before the mode (`--name x change <ids>`). A sentences-only

@@ -62,7 +62,8 @@ status: counts so far. brief: state plus candidates for the next lesson (markdow
 does not grow with the number of lessons (lists are capped by --top; the full state stays in data/).
 lookup / can-read: answer single questions about the taught state without reading the tables.
 check: validates the draft; exit 1 on any error. check --merged: the activity-data checks (option rule,
-categories, slots) and the bonus-in-sentence rule over every merged lesson; exit 1 on any error.
+categories, slots), the bonus-in-sentence rule and the sentence-words-are-lesson-word-items rule over every merged
+lesson; exit 1 on any error.
 merge: check, validate data/ against the DB spec (db_sql.load), append to data/, assign the next lesson_id
 (L + 4 digits), write the lesson migration app/backend/supabase/migrations/<stamp>_lesson_<id>.sql
 (db_sql.lesson_migration, from the CSVs just written; it carries the lesson's word_units, word_categories and
@@ -770,6 +771,9 @@ def check(world, draft, a):
         missing = [w for w in ws if w not in words_now and w not in bon]
         if missing:
             err.append(f"{ctx}: words not yet taught: " + " ".join(f"{w} {world.lao(w)}" for w in missing))
+    draft_words = {it["item_id"].strip() for it in items if it["item_type"] == "word"}
+    dlg_sents = [r["sentence_id"] for _, did, _ in dialogues for r in world.dialogue_lines.get(did, [])]
+    err += sentence_word_item_errors(world, "items.csv", [s for _, s, _ in sents] + dlg_sents, draft_words)
     # budget: a guideline (decision 26), so warnings only; the fixed lesson 1 stays an error
     if first:
         lao_new = {nfc(world.words[w]["lao"]) for w in new_words}
@@ -826,6 +830,19 @@ def dialogue_errors(world, dialogues, sentence_items, shown_before):
     return err
 
 
+def sentence_word_item_errors(world, label, sentence_ids, word_items):
+    """Every word of a lesson's sentences (sentence items and dialogue lines) must itself be a word item of that
+    lesson (new, recycle, example or bonus). The app's sentence chips open the card from the lesson's own word items;
+    a word outside them would open a slim card without sound details or usage note. Recycle the word to fix."""
+    err = []
+    for sid in sorted(set(sentence_ids)):
+        out = [w for w in world.sent_words.get(sid, []) if w not in word_items]
+        if out:
+            err.append(f"{label} {sid}: word(s) not listed as a word item of this lesson (add as recycle): "
+                       + " ".join(f"{w} {world.lao(w)}" for w in out))
+    return err
+
+
 def check_merged(world):
     """Activity data and the bonus rule over every merged lesson. Returns (errors, warnings, lines)."""
     err, warn, lines = [], [], []
@@ -843,6 +860,9 @@ def check_merged(world):
                                        if it["item_type"] == "dialogue"],
                                [(int(it["position"]), it["item_id"]) for it in its if it["item_type"] == "sentence"], shown)
         shown |= {sid for sid, _ in sents}
+        dlg_sents = [r["sentence_id"] for it in its if it["item_type"] == "dialogue"
+                     for r in world.dialogue_lines.get(it["item_id"], [])]
+        err += sentence_word_item_errors(world, lid, [sid for sid, _ in sents] + dlg_sents, {w for w, _ in words})
         for sid, _ in sents:
             bad = [w for w in world.sent_words.get(sid, []) if w in bonus - core]
             if bad:

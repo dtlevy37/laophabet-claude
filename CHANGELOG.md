@@ -2,6 +2,16 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 S7w and S10r closed by the owner
+- S7w letter writing: owner tested the tweaked `#/write` and passed it; the "weird" note is withdrawn. Scoped next
+  (not built): one trace card when a letter is first introduced, and later vowels and tone marks (PLAN S7w2).
+- S10r recording mode: owner checked the wife's new takes; the owner gate is removed.
+
+## 2026-11-17 Check: sentence words are lesson word items
+- `lesson_tool.py check` and `check --merged` fail when a word in a lesson's sentences or dialogue lines is not also a
+  word item of that lesson (new, recycle, example, bonus). Sentence chips rely on it for the full word card; all merged
+  lessons pass. A5's pool-word gap was closed as not real.
+
 ## 2026-11-17 N6 part: onboarding asks an age range
 - Native onboarding shows six age ranges (under 18, 18-29, 30-44, 45-59, 60+, prefer not to say) instead of a date of
   birth. Migration `n6_profile_age_range` adds `profiles.age_range`, backfills it from any `birth_date`, and removes
