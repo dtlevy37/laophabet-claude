@@ -28,5 +28,12 @@ older stranger (owner thinks aunt/uncle words, such as ລຸງ lung / ປ້�
 how are you?); ສີຂາວ or ຂາວ for "what colour?"; bare ຫິວ (hiw) for "thirsty?"; ສະບາຍດີ when leaving; which pool words
 are names; the ___ແລ້ວ blank options; four letter-writing checks. Apply the answers, then delete this paragraph.
 
+**Asked online, round 3** (Q0035–Q0043, from the November app review; locally seeded, hosted after
+`supabase db push --linked`; answers feed PLAN A19 and N5): what ກິນເຂົ້າ (kin khao) alone means; ມີນ້ຳບໍ່? (mii nam
+baw?) in a shop, "have" or "is there"; ລາວມາແລ້ວ (laao maa laew) here or on the way; ກິນນ້ຳ (kin nam) to anyone or
+only family; hands together for ສະບາຍດີ with a friend; how to ask back after ຂ້ອຍສະບາຍດີ (khoy sa-baai-dii); ທຳມະດາ
+or ກັນເອງ as the casual label; ເຈົ້າ (jao) or ທ່ານ (than) in the app; bare ຫິວ (hiw) for "hungry?". Apply the
+answers, then delete this paragraph.
+
 **Record and listen** (her take settles it; nothing to answer)
 - ເຕ້ຍ (tia, "short in height", W001427) and ລາວເຕ້ຍ (S000002899), ພໍ່ເຕ້ຍ (S000002900): record when they come up.

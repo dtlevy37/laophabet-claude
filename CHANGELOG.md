@@ -2,6 +2,25 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 Review cut into PLAN slices; owner decisions; native questions round 3
+- Owner decisions on the review: ຈ is "j" in both romanization styles; ◌ອຍ is "oy"; prompts use the "Pick the …" set;
+  feedback puts 🔊 on the right and ⓘ on the left; Lao → meaning questions play the sound after the answer, not
+  before; speaking moves ahead of A10; the question word in Lao UI text is ບໍ່; no first-run guide; conversation
+  speakers get made-up names (or a credited native's own); the target learner knows no Lao and no Thai (DESIGN
+  "Who it is for"), so prior-knowledge features are on hold; desktop rails on hold; "known" is left to S9 (FSRS).
+- PLAN: new slices A13–A22 and L6 (lesson titles), A7 rest split into A7a (height first) and A7b (rails, on hold),
+  review notes added to L3, L5, H6, N5, N6 and S9; the review folder deleted (findings live in PLAN; the report is
+  in git history).
+- Q0035–Q0043 added to `data/open_questions.csv` with migration `native_questions_round3` (applied locally).
+
+## 2026-11-17 App review with simulated users (analysis only, no app changes)
+- Seven review agents (new learner, polyglot, English–Lao bilingual, education PhD, UX phones, UX large screens,
+  rendering bug hunter) worked from a shared set of about 1,500 screenshots on 6 devices. The report with ranked
+  candidate slices, A7 inputs and the owner's notes assessed is `docs/review_2026-11/REPORT.md`.
+- Likely cause of the S10+ vowel-mark bug: the default Lao font (Leelawadee UI) exists only on Windows. Fix
+  proposed, not built.
+- Reusable tooling: `scripts/review/` (README, `accounts.sh`, agent briefs) and `scripts/browser/review_capture.js`.
+
 ## 2026-11-17 Word bubble opens on mouseover on desktop
 - Sentence word bubbles (`teach_card.js` `inlineSentence`) open on hover where there is a mouse; a click pins the
   bubble; touch screens keep tap.

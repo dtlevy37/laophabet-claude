@@ -3,6 +3,10 @@
 Scope: what the learner does in the app and what data each activity needs. The data project (this folder)
 supplies the content; the app chooses activities per learner. See `docs/LESSON_RULES.md` for lesson rules.
 
+## Who it is for (owner 2026-11-18)
+People who know no Lao and no Thai. No heritage-speaker or Thai-reader paths for now: the intake's answers are
+stored for stats only, and features that depend on prior knowledge wait until the owner decides.
+
 ## Curriculum lesson, app lesson, session (user, 2026-11-10)
 Three things share the word "lesson"; keep them apart.
 - **Curriculum lesson** (L0001; LESSON_RULES): the linguistic content. An ordered list of items (units, rules, words,

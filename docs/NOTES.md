@@ -23,15 +23,14 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Then lesson 13 (ອ) and the PLAN order (A7 rest, A10, L3). Owner path notes (lesson 20+) come later.
+3. Then lesson 13 (ອ) and the PLAN working order. Owner path notes (lesson 20+) come later.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
-- **Font size on mobile** (owner 2026-11-14): fonts may be a few points too large once sentences get longer. Idea:
-  shrink slightly (`.bs-tile .lao` 2rem, `.mc-option .lao` 2.2rem, `.bs-answer` 2rem, `.glyph`, `.lao` 2rem base).
-  Decide with several tester agents (screenshots at phone widths with the longest sentences). Do not change until then.
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- Push the round 3 native questions (Q0035–Q0043) to hosted with `supabase db push --linked` when you agree. The S10+
+  font checklist is in PLAN A13.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
   `#/letters` greys unreached tiles; the speaker is an SVG in a tinted button.
@@ -160,6 +159,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   is also a word item of that lesson (new, recycle or bonus) with full detail, and sentence chips read that.
 
 ## Recipes and gotchas
+- **App review with simulated users:** `scripts/review/README.md` (accounts, `scripts/browser/review_capture.js`,
+  agent briefs). The first run's findings became PLAN A7a/b and A13–A22.
 - Lessons: `build-lesson` skill. `db_sql.py` options go before the mode (`--name x change <ids>`). A sentences-only
   `merge_words.py` needs a header-only words file. Change a merged lesson in place: edit `data/lesson_items.csv` /
   `lessons.csv` and `curriculum/lessons/merged/<id>/`, `lesson_tool.py check --merged`, `pipeline.sh`,
