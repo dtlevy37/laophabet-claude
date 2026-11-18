@@ -10,7 +10,7 @@ users cannot write.
 
 ## Working order
 Owner checks of what is built, then (owner 2026-11-18, from the November app review): A13 font fix, A14 quick
-fixes, A15 spaced-review fix, A16 answer layout and summary, A7a height first, A7b navigation rail, A17
+fixes, A23 visual polish, A15 spaced-review fix, A16 answer layout and summary, A7a height first, A7b navigation rail, A17
 conversations, L5 phase 1, A18 Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later:
 A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
@@ -87,10 +87,45 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       - The "Complete the conversation" heading is clipped under the dry-run pill on desktop feedback.
       - Lessons list (`#/lessons`) on phones: titles clipped by the Review link (let `.path-name` wrap to 2 lines, or
         make Review an icon button with an aria-label); "N more lessons" is unstyled blue text (give it a ▸ / ▾
-        disclosure); the colour emoji 🔒 sits among flat line icons (use a monochrome SVG lock in `--muted`).
+        disclosure). The emoji 🔒 is replaced in A23's icon set.
       **Done when:** the right word in a gap is never red; on a 360px phone a wrong build shows the whole right answer
       without sideways scroll; `#/practice` has a visible exit; ກິນເຂົ້າ. (kin khao, "have a meal") on its sentence
       card has tappable words.
+- [ ] **A23 Visual polish** (owner 2026-11-18; from a visual-design review whose verdict was "plain but decent, not
+      amateur, but a dozen browser-default tells"). CSS and small JS only; no redesign. Before A16, so A16 builds on
+      these buttons and icons.
+      - `accent-color: var(--accent)` on `:root` (today only `.session-progress`, `styles.css:176`), so radios and
+        checkboxes everywhere (settings, the L2 card, intake, login) use the palette, not browser blue.
+      - Interaction states (today `styles.css` has no `:active` and no `transition`): a shared 120–200ms colour ease and
+        a 1px pressed shift on `button`, `a.btn`, `.tile`, `.path-link`, `.word-row`; hover border and pressed tint on
+        `.mc-option` and `.bs-tile`; a darker pressed primary. Motion only under `prefers-reduced-motion:
+        no-preference`.
+      - Phones (≤760px): the page card stops halfway down a grey screen. Let it fill the screen (no top/bottom border,
+        `min-height`, or the body takes `--card`), and drop the `.card.narrow` 48px top margin there.
+      - Buttons: base `button` / `a.btn` get the `--control-border` edge (3:1; secondary buttons look disabled today)
+        and a `--card` fill; a new `button.secondary`. Underlined links only inside running text: "← Back" becomes a
+        chevron icon + label, the Leave dialog's Leave and Start over become secondary buttons and "Leave and discard
+        progress" `button.danger` (`session.js:1222-1230`), lessons-list "Review" a small secondary button.
+      - One icon set: `js/icons.js` with inline SVGs in the speaker's style (24px box, 2px stroke, `currentColor`):
+        close, flag, gear, play, check, x, info, lock, chevron-left. They replace the text glyphs and the emoji
+        (`chrome.js:38,52`, `session.js:1031`, `teach_card.js:601,648,661`, `lessons.js` lock and ▶ / ✓; ⚙ draws
+        like a sun on Windows). Every icon-only control is one `button.icon-btn` (44px circle); the speaker becomes a
+        true 44px circle matching ⓘ.
+      - Tokens: a type scale (`--fs-xs .75rem` … `--fs-2xl 2rem`; today 24 sizes), one page-title style on every page,
+        a 4px spacing grid (`--sp-1` … `--sp-6`), two radii (8px small, 12px cards) plus pill and circle (today six).
+        Map existing values onto them; little visual change per screen. Lao display sizes stay with A18.
+      - Home tiles: equal row heights (`grid-auto-rows: 1fr`), the tile title "Letters"; "Notes (Soon)" as one muted
+        line under the grid until it ships.
+      - Teach card text: keep it left-aligned, cap at about 30em centred, 1rem with line-height 1.6, so it reads as a
+        caption under the glyph.
+      - Dark mode: a slightly deeper fill for primary buttons (e.g. `--accent-fill: #6f97f5`, still ≥4.5:1 with
+        `--on-accent`); `#86abff` stays for text and borders.
+      - Brand: the dot-and-wordmark on login and sign-up too, and a favicon and app icon (none in `index.html`).
+      - Later, if wanted: loading skeletons instead of "Loading…"; a hidden `#/kit` page showing every component in
+        light and dark, so drift does not come back.
+      **Done when:** no browser-blue control, underlined button-link or emoji/text-glyph icon is left (grep and one
+      screen per page at 360 and 1440); options and buttons visibly react to a press; a phone page reaches the screen
+      bottom; `styles.css` font sizes and radii come from the tokens.
 - [ ] **A15 Spaced-review fix** (SQL). `practice_queue`'s box counts every right first ask, so several right answers
       in one lesson send a new word 7–30 days out and the 1- and 3-day reviews never happen. Count at most one success
       per item per local day; a hinted right answer is neither a success nor a lapse. Add a small view: per lesson,
@@ -117,10 +152,17 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
         g, k; the chosen row highlighted with a check; one muted line under each) and drop the radio list.
       - Sentence ⓘ sheet: drop the word list the bubbles already show; keep notes, rules, Report. Word and letter ⓘ
         stay as they are.
+      - Panel look (visual review): today a white box with a 6px stripe and a black head (`styles.css:224-227`). Tint
+        `.feedback.ok` / `.miss` with the state colour (about 10%), a full 1px border in that colour instead of the
+        stripe, the head in the state colour with a filled-circle ✓ / ✗ icon (A23 set); the same tint on
+        `.mc-option.right`. Keep the text marks for colour-blind learners.
       - Summary: ✕ ⚑ ⚙ like the lesson; "You learned" (new letters and words with ▶, plus "You can now read:" with a
         lesson sentence); count role pairs like C13/C13f as one letter; `summary_words_read` "Lao words read";
-        `summary_missed` "Coming back for practice", each missed item a row (Lao, sound, gloss, 🔊, ⓘ), and a
-        secondary "Practise these now" button.
+        `summary_missed` "Coming back for practice", each missed item a row (Lao, sound, gloss, 🔊, ⓘ) using the
+        `.word-row` component, no default bullets (`summary.js:80-85`), and a secondary "Practise these now" button.
+        The stats as a 2×2 grid in one box, styled like `.home-stats` (today a 1-2-1 stack on phones). A completion
+        mark: one large ✓ in a filled `--ok` circle above the title, with a short pop under reduced-motion rules; no
+        confetti or characters.
       **Done when:** every question type shows Lao → sound → meaning in the panel with one 🔊 on the right and ⓘ in
       the same place (one screen of each type at 360 and 1440); no screen has two speakers for the same Lao; lesson
       1's summary lists ກ ◌ິ ນ ກິນ once each, with sound.
@@ -142,6 +184,8 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       - Phones and narrow windows keep today's model: home tiles and the slim header, no tab bar.
       - Lessons show no rail (the runner owns nav and ✕). `<nav aria-label="Sections">` before the main content;
         new strings in `strings.json`.
+      - The desktop header sits far from the content (brand at x=16, icons at x=1400, content a 720px column): keep
+        the full-width bar but align its contents to the content column (`max-width: var(--content-max)`).
       **Done when:** at 1440×900 you can go from Letters to My words in one click; at 360px and at 200% zoom on
       1440×900 no rail shows; a lesson never shows it.
 - [ ] **A17 Conversations.**

@@ -2,6 +2,14 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 Visual-design review (one agent) and PLAN A23
+- A blunt visual-designer agent (new brief `scripts/review/briefs/8_visual_design.md`) judged the app "plain but
+  decent, not amateur", held back by browser-default tells: no pressed or hover states, browser-blue radios,
+  underlined links used as buttons, mixed emoji and text-glyph icons, phone pages that stop halfway down the screen,
+  faint secondary buttons, 24 font sizes and 6 radii.
+- Owner agreed: new slice A23 Visual polish, before A16; the feedback-panel tint and the summary grid, list and
+  completion mark go into A16; the desktop header alignment into A7b; the A14 lock item moves to A23's icon set.
+
 ## 2026-11-18 Desktop rails decided
 - Owner: the lesson side rail is scrapped for now; the navigation rail on non-lesson pages on wide screens becomes
   PLAN A7b (after A7a). DESIGN "Home and navigation" updated.

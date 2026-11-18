@@ -159,7 +159,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 
 ## Recipes and gotchas
 - **App review with simulated users:** `scripts/review/README.md` (accounts, `scripts/browser/review_capture.js`,
-  agent briefs). The first run's findings became PLAN A7a/b and A13–A22.
+  agent briefs). The first run's findings became PLAN A7a/b and A13–A23 (A23 from the visual-design agent, run alone).
 - Lessons: `build-lesson` skill. `db_sql.py` options go before the mode (`--name x change <ids>`). A sentences-only
   `merge_words.py` needs a header-only words file. Change a merged lesson in place: edit `data/lesson_items.csv` /
   `lessons.csv` and `curriculum/lessons/merged/<id>/`, `lesson_tool.py check --merged`, `pipeline.sh`,
