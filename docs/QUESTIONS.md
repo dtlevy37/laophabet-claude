@@ -1,7 +1,8 @@
 # Questions
 
-Doubts only a person can settle. The agent appends; the owner clears what is handled (answers go into the data,
-PLAN or DESIGN, then the question is deleted). Parked word-list items: `_shelf/docs/NEEDS_HUMAN.md`.
+Open doubts only a person can settle. The agent appends, and the agent deletes a question in the same commit that
+applies its answer (to the data, PLAN, DESIGN or LESSON_RULES; online ones are also retired in
+`data/open_questions.csv`). Parked word-list items: `_shelf/docs/NEEDS_HUMAN.md`.
 
 ## How to ask the native speaker (owner, 2026-11-17)
 The first round (Q0001–Q0016) went badly: some questions were the owner's to answer, and some were too confusing to

@@ -105,8 +105,8 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    conversation, followed by fill in the blank (one logical answer) on those lines. First ones: lesson 8 (hello,
    how are you) and lesson 10 (hello, are you hungry, I've eaten already). Needs PLAN S7g.
 24. **Real spoken Lao over tidy Lao** (user, 2026-11-10): teach the natural form even when slightly irregular,
-   when the sentence is real and useful. A request is ຂໍ … ແນ່ (the softener the user hears; the pool has ແດ່:
-   native-speaker question).
+   when the sentence is real and useful. A request is ຂໍ … ແນ່ (the softener the user hears; the native confirmed
+   2026-11-17 that ແດ່ is also said, but ແນ່ is the one taught).
 25. **The cut-off (dead syllable) card is one brief line** (user, 2026-11-10), first needed for ສະ in lesson 8.
    No rule to memorise (decision 11).
 26. **The budget is a guideline, not a hard rule** (user, 2026-11-10). Its purpose is to avoid overloading a

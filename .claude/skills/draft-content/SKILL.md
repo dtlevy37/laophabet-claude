@@ -49,7 +49,8 @@ bash scripts/pipeline.sh
 - check_drafts must report 0 problems; fix by hand or send back to the drafter. A deliberate homograph needs
   `--allow-homograph <lao>` on both scripts. A sentences-only merge needs a header-only words file as the
   positional argument.
-- Read the drafter's "least sure" list. Doubtful readings or tones go in `docs/QUESTIONS.md`.
+- Read the drafter's "least sure" list. Doubts go in `docs/QUESTIONS.md`, written to its "How to ask the native
+  speaker" rules (owner first; never ask a native about tones or English sound-alikes).
 - **Tags:** replace the placeholder ids in the two tag files with the real ones (words: `tmp/merge_map.csv`;
   sentences: the merge numbers them in file order from the next free S id; check with grep on
   `data/sentences.csv`), confirm each slot position against `data/sentence_words.csv`, then append the rows to

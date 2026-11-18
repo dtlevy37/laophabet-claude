@@ -29,7 +29,7 @@ Task: create exactly ONE new lesson (the next one), the one docs/CURRICULUM_PATH
 7. Run: python scripts/lesson_tool.py merge  (same flags)
    Merge also writes the lesson's SQL migration (app/backend/supabase/migrations/<stamp>_lesson_<id>.sql) for the owner to review. Never edit, apply or delete migration files, and never connect to a database.
 
-8. Native-speaker questions: append every doubt about a sentence, a spelling, a reading, or a softener to the "For the native speaker" section of docs/QUESTIONS.md (under "Composed sentences" or the fitting topic; one short line per lesson, with the ids and romanization). Ask only what a native speaker can answer: no category-tag questions. CURRICULUM_PATH.md "For the native speaker" lists some already; add the ones this lesson raises.
+8. Questions: follow "How to ask the native speaker" at the top of docs/QUESTIONS.md. Do not ask whether a composed sentence is natural (the native's recording answers that). Put a real doubt about a meaning or a word choice under "For the owner" in docs/QUESTIONS.md as one plain line with the ids, Lao, romanization and English; the owner decides whether it goes to the native. Never ask about tones or English sound-alikes.
 
 9. Append a 3-5 line entry to CHANGELOG.md (do not read the rest of it): lesson id and title, new units/rules, core words, bonus words, recycled items, sentences used or composed, budget warnings, anything doubtful. Touch docs/NOTES.md only to update the lesson list line under "State" and to add a decision that stays in force. Do not commit; the runner commits. Do not edit docs/PLAN.md or docs/CURRICULUM_PATH.md.
 

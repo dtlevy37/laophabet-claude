@@ -24,7 +24,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
 3. Then lesson 13 (ອ) and the PLAN order (A7 rest, A11, A10, L3). Owner path notes (lesson 20+) come later.
-- Open: the registers are blank on all existing rows; question text is English (+ Lao only if `label_lao`); the Lao UI
+- Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 - **Font size on mobile** (owner 2026-11-14): fonts may be a few points too large once sentences get longer. Idea:
   shrink slightly (`.bs-tile .lao` 2rem, `.mc-option .lao` 2.2rem, `.bs-answer` 2rem, `.glyph`, `.lao` 2rem base).
@@ -75,7 +75,6 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   next; Save + more details; "I'd say it differently" (box starts with the text); "not sure what it means"; Skip.
   `#/review` opens Record. Driver `scripts/browser/n3_record.js`.
 
-Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
 
 ## Decisions in force
 - One curriculum lesson = one app lesson; the planner (`js/session.js`) builds the screens. Card, check, next card;

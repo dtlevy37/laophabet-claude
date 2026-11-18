@@ -41,6 +41,11 @@ design and the lesson path; the agent builds the app slices and the lessons.
 - Every Lao example shown to the owner in chat carries a romanization and the English.
 
 ## Keeping the docs current
+**Clean up after yourself (owner rule).** The moment anything is answered, resolved, decided or built, remove or
+correct every place that still treats it as open, in the same commit: QUESTIONS (and retire the online question in
+`data/open_questions.csv`), PLAN, NOTES, LESSON_RULES, CURRICULUM_PATH, data `notes` ("awaiting ..."), skill and
+runner prompts, code comments. Before committing, grep for the item (its id, its Lao, its key words) to find them.
+
 Stale docs make agents re-check and redo finished work, so every doc has one job and finished work leaves it **in the
 same commit that finishes the work**, not later.
 - **`CHANGELOG.md` is the only record of what was built or decided, and when.** Write-only: never read it on startup.

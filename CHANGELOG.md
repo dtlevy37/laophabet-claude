@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 Stale-docs sweep; "clean up after yourself" rule
+- CLAUDE.md: owner rule to remove every trace of an item once answered/resolved/built, grep before commit.
+- Fixed: NOTES (registers line, stale QUESTIONS pointer), LESSON_RULES 24 (ແດ່ answered), CURRICULUM_PATH (answered
+  native list, built S7f work), runner prompt step 8 and draft-content skill (new question rules), QUESTIONS header
+  (agent deletes on apply). Online Q0001–Q0016 retired (`n1_retire_round1`, pushed; her answers kept).
+
 ## 2026-11-17 Planned: U1 settings from anywhere, U2 ⚑ report from any screen
 - Owner ideas written as PLAN slices (not built). U2 replaces the per-card report; no screenshot in v1.
 

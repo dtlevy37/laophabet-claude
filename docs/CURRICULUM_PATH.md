@@ -1,7 +1,8 @@
 # Curriculum path, lessons 1–11 and beyond (agreed by the user, 2026-11-10)
 
-This is the lesson order to build. The rules behind it are LESSON_RULES decisions 20–25. All Lao sentences here
-are composed by the agent and unverified until the native speaker reviews them. Romanization is informal (the
+This is the lesson order to build. The rules behind it are LESSON_RULES decisions 20–25. Lao sentences here were
+composed by the agent; those used in lessons 1–12 were recorded as natural by the native speaker (verified
+2026-11-17), later ones are unverified until she records them. Romanization is informal (the
 user's spellings), tones not shown; it is for the owner's reading only and never goes into teach texts.
 
 ## Principles (from this conversation)
@@ -146,21 +147,8 @@ Each needs one or two new letters:
 A second conversation target (ordering food: "I'd like…", "Do you have…?", "I like Lao food") fits these words
 well. To be designed when lesson 10 is done.
 
-## For the native speaker
-- The softener: *nae* (ແນ່) or *dae* (ແດ່), which is everyday Vientiane speech, and how each is spelled. Does
-  ຂໍນ້ຳ *khor nam* sound abrupt without it?
-- All sentences and both conversations above.
-- ຫິວເຂົ້າ *hiu khao* as the normal way to say "hungry".
-
-## Work this plan needs (slices S7f and S7g in PLAN)
-- **Content:** withdraw and rebuild lesson 4 (still allowed: nothing is hosted); draft a row for ແນ່ *nae* as a
-  softener, and rows for ສີຂາວ, ສີດຳ if wanted as words; new sentences for lessons 5–11; the two conversations
-  (lessons 8 and 10).
-- **Scripts/schema (S7f):** a `bonus` role for lesson items (`lesson_tool.py`, `db_sql.py`, the
-  `lesson_items.role` check in the DB, `get_lesson`); the rule "every new word uses something new" relaxed for a
-  bonus word turning core; the runner prompt follows this path and its per-lesson budgets.
-- **App (S7f, S7g):** the bonus label in lessons; bonus words in the practice pool; conversations as canned
-  content with fill in the blank after them.
+## Work this plan still needs
+Conversations as canned content (lessons 8 and 10) are PLAN S7g; the bonus role (S7f) is built.
 
 Budget flags the path needs on `lesson_tool.py check` / `merge` (to be confirmed when each lesson is built):
 lesson 6 and lesson 8 `--max-units 3`; lesson 8 also carries the cut-off card (R01), so `--max-weight` rises;
