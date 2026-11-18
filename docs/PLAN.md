@@ -39,6 +39,22 @@ the owner's check or answer comes in.
       for data.
 
 ## App slices
+- [ ] **U1 Settings from anywhere** (owner 2026-11-17). A ⚙ in the top bar of every screen, and in the lesson chrome
+      next to the progress bar. In a lesson it opens Settings as a sheet over the lesson (no route change, the lesson
+      state stays); closing it re-renders the current screen so a changed setting (romanization style, Lao font,
+      spaces, theme, autoplay, Choose-then-Check) shows at once, without counting as an answer. Esc closes the sheet
+      before it asks to leave. **Done when:** mid-question in `#/try/L0005`, changing the romanization style and
+      closing the sheet shows the new style on the same question, and the lesson continues where it was.
+- [ ] **U2 ⚑ Report from any screen** (owner 2026-11-17, like Duolingo). A ⚑ in the lesson chrome and the top bar
+      opens one dialog: what is wrong (Lao is wrong / English is wrong / audio / my answer should be right / app bug /
+      other), an optional note, Send. It attaches what is on screen without the learner typing it: route, lesson and
+      step, activity type, item ids, the options shown, the learner's answer, the relevant settings, app version and
+      viewport. Backend: `app_feedback` gains a `context jsonb` (size-capped) and kinds for the new choices; the card's
+      "More → ⚑ Report a problem" (`report_content`) folds into this dialog. Screenshot: not in v1 (the context is
+      enough to rebuild the screen and a capture library is heavy); revisit if reports turn out hard to read.
+      Supersedes the 2026-11-14 "no ⚑ on cards" choice (the flag lives in the chrome, not on each card).
+      **Done when:** a report sent from a fill-in-the-blank question in `#/try/L0010` shows in `app_feedback` with
+      the lesson, step, item ids, options and the learner's answer, and the dialog works on a phone width.
 - [ ] **A7 rest.** (1) *Inline sentence words with a popover* (owner 2026-11-13): the chip row goes; each word in the
       sentence is underlined; one tap opens a small bubble under the word that never covers the sentence, tapping
       another word moves it, tapping elsewhere closes it; no close button, no modal, no focus trap; never on the

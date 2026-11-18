@@ -2,6 +2,9 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 Planned: U1 settings from anywhere, U2 ⚑ report from any screen
+- Owner ideas written as PLAN slices (not built). U2 replaces the per-card report; no screenshot in v1.
+
 ## 2026-11-17 Native answers applied, her new takes live, round-2 questions online
 - Change migration `native_answers_round1` (16 words, 42 sentences): ເຂົາ gloss "they"; S000002879 English "He
   isn't eating."; ລາວ long verified (NATIVE-Q0001); notes on ຂໍນ້ຳ (abrupt), ແນ່ / ແດ່ (both said); register
