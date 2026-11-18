@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 Native answers applied, her new takes live, round-2 questions online
+- Change migration `native_answers_round1` (16 words, 42 sentences): ເຂົາ gloss "they"; S000002879 English "He
+  isn't eating."; ລາວ long verified (NATIVE-Q0001); notes on ຂໍນ້ຳ (abrupt), ແນ່ / ແດ່ (both said); register
+  neutral on the 12 words she tagged; every sentence she recorded as natural is `verified` (source
+  `NATIVE-REC:<take id>`; English stays the agent's). All live lesson sentences are now verified.
+- Audio: her 20 new takes processed (all at -18 LUFS, gain 23-30 dB, noise floor about -54 dB or lower, no clipped
+  edges), uploaded, migration `lesson_audio_round2` (87 takes).
+- Online questions Q0017–Q0034 (`n1_questions_round2`), written to the new "How to ask" rules.
+- All three pushed to hosted. Owner answers: lessons keep the current activity mix (L1b dropped); word-order cards
+  are right; ຂາວ / ລາວ recap goes in the tone lesson as a table card; ◌ິ bug seen on the S10+ (also a "hat" mark);
+  politeness of ເຈົ້າ / ຂ້ອຍ asked of Na. New slice H7 (sound on Lao -> meaning questions).
+
 ## 2026-11-17 Native answers round 1 (Na): questions cleaned up
 - Na answered Q0001–Q0016 online: ລາວ long; question ບໍ່ with tone mark, same sound as "not"; ແນ່ and ແດ່ both said;
   ແ long ("sounds like cat saying meeeow"); ◌ໍ between "ah" and "oh"; ◌ິ like "gin"; English b/d = ບ/ດ; tones: "I

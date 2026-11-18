@@ -12,14 +12,13 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
   `config.production.js` is copied to `config.js` by the build unless `SUPABASE_URL` / `SUPABASE_ANON_KEY` env vars
   are set. Local Docker DB is still Postgres 15 (`supabase/.temp/postgres-version` moved to
   `postgres-version.hosted`); move it to 17 some time.
-- **Audio:** the wife's 67 takes are live. Recording mode `#/record` is on the deployed site.
+- **Audio:** the wife's takes are live (count: `item_audio` rows). Recording mode `#/record` is on the deployed site.
 - **Not yet proven:** the unattended lesson runner `scripts/next_lesson.ps1` in the post-2026-11-11 setup.
 
 ## Next step
 1. Owner tests the list below on Netlify; the owner's sons sign up for the alpha (read `learner_intake`,
    `app_feedback` in the dashboard; browser check `scripts/browser/alpha_check.js`).
-2. The wife (Na, verified native) answered Q0001–Q0016 and recorded every lesson 1–12 sentence as natural. To do:
-   PLAN "Apply native answers", publish her new takes (`audio_publish.py`), owner items in QUESTIONS. Any new native
+2. The wife (Na, verified native) answers Q0017–Q0034 online; apply them and clear QUESTIONS. Any new native
    question follows "How to ask the native speaker" (QUESTIONS.md top); online ones go through
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
@@ -89,6 +88,8 @@ Owner decisions and answers are listed in `docs/QUESTIONS.md` "For the owner".
   style), so one hint tier for it.
 - `confirm` setting (device): pick-one questions select then Check (`activities/choice.js`). Any activity where each tap
   is the answer (match the tiles) ignores it and has no Check, ever (owner 2026-11-14).
+- Activity mix (owner 2026-11-17): lessons keep their current share of build-the-word / build-the-sentence.
+- A sentence a verified native recorded as natural is `verified` (SCHEMA, sentences.csv).
 - A done lesson links to "Review lesson material": read-only cards. Resume is same-device only. No offline.
 - Fill in the blank offers exactly one logical choice (DESIGN). A new sentence is also blanked in its own lesson.
   Untaught wrong options (S7h) are real words only, never a tone-mark or vowel-length twin of a word on screen.
