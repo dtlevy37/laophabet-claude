@@ -39,8 +39,8 @@ the owner's check or answer comes in.
       for data.
 
 ## App slices
-- [ ] **U1 Settings from anywhere** (owner 2026-11-17). A ⚙ in the top bar of every screen, and in the lesson chrome
-      next to the progress bar. In a lesson it opens Settings as a sheet over the lesson (no route change, the lesson
+- [ ] **U1 Settings from anywhere** (owner 2026-11-17). A way into Settings from the top bar of every screen and from
+      the lesson chrome. Feature first; ⚙ or ☰ (maybe per device) is left to the later UI review by subagents. In a lesson it opens Settings as a sheet over the lesson (no route change, the lesson
       state stays); closing it re-renders the current screen so a changed setting (romanization style, Lao font,
       spaces, theme, autoplay, Choose-then-Check) shows at once, without counting as an answer. Esc closes the sheet
       before it asks to leave. **Done when:** mid-question in `#/try/L0005`, changing the romanization style and
