@@ -2,6 +2,10 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-17 Word bubble opens on mouseover on desktop
+- Sentence word bubbles (`teach_card.js` `inlineSentence`) open on hover where there is a mouse; a click pins the
+  bubble; touch screens keep tap.
+
 ## 2026-11-17 S7w and S10r closed by the owner
 - S7w letter writing: owner tested the tweaked `#/write` and passed it; the "weird" note is withdrawn. Scoped next
   (not built): one trace card when a letter is first introduced, and later vowels and tone marks (PLAN S7w2).
