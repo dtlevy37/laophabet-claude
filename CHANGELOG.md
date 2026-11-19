@@ -2,6 +2,26 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Native answers round 2 (Na), her new takes processed, "uses something new" is a warning
+- `lesson_tool.py check`: a new word that uses no new unit or rule is now a warning, not an error (owner: later
+  lessons may add words only to build sentences). LESSON_RULES, DESIGN, CLAUDE.md and the runner prompt say so.
+- Na answered Q0017–Q0036 online; change migration `native_answers_round2`:
+  - Sentence English: ລາວນອນແລ້ວ "He's asleep now."; ມີນ້ຳບໍ່? and ມີມ້າບໍ່? carry both "Is there" and "Do you have".
+  - ເຂົ້າ gloss "rice; a meal".
+  - The ສະບາຍດີ note now says it's for meeting, not goodbye.
+  - ເຈົ້າ / ຂ້ອຍ are fine with an older stranger.
+  - "Are you thirsty?" is answered with ຂ້ອຍຫິວນ້ຳ, not bare ຫິວ; those two sentences are now verified.
+  - S000002908–2910, which she recorded as natural, are now verified.
+  - Notes record the mill-rice (ສີເຂົ້າ) and dive (ດຳນ້ຳ) senses, that ສີ has no rude sense, and her ສີຂາວ answer.
+- New category `name` (Q0029: ນ້ຳ ແກ້ວ ດາວ ນ້ອຍ ດຳ ຂາວ ມີ ດີ ສີ are names; ບ້ານ is not). Every slot that accepts
+  `person` also accepts `name`, so a name is never a wrong option where a person fits. ___ແລ້ວ (S000000024):
+  ນ້ຳ and ແກ້ວ are options again (Q0030).
+- The writing checks Q0031–Q0034 came back unsure. Owner: ask how a letter is written only through the writing pad,
+  with her strokes recorded (new PLAN N7). Na: strokes start at the bottom left, always, even if that means
+  retracing. Online Q0017–Q0036 retired (`n1_retire_round2`). Q0037–Q0043 are still open.
+- Audio: 20 new takes processed (ເຂົ່າ, ມ້າ, S000002908–2910 and 15 later words; all -18 LUFS, gain 20–27 dB).
+  Not uploaded until the owner listens.
+
 ## 2026-11-19 Lesson 13 "Same sounds, different melody"
 - L0013: rules R05 (tone table: ຂາວ/ລາວ, ເຂົ້າ/ເຂົ່າ, ມາ/ມ້າ) and R06 (recap: one mark ◌້, two melodies: ເຂົ້າ, ນ້ຳ,
   ມ້າ); core words ເຂົ່າ knee and ມ້າ horse; composed sentences S000002908 ມ້າກິນນ້ຳ, S000002909 ມ້າມາແລ້ວ (its blank

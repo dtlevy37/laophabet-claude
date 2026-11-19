@@ -31,12 +31,10 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
-- [ ] **A19 rest: content fixes waiting on Na** (Q0035–Q0043). The romanization, rule, hint and sentence fixes
+- [ ] **A19 rest: content fixes waiting on Na** (Q0037–Q0043). The romanization, rule, hint and sentence fixes
       that needed no answer are built.
-      - The ຫິວ note (lesson 9) says bare ຫິວ sounds unfinished, then lesson 10 teaches it: rewrite after Q0043, and
-        drop its stale Q0010 reference.
-      - Sentence-card English: S000002870 ກິນເຂົ້າ. "To eat (a meal)." (after Q0035); S000002901 (after Q0036);
-        S000000047 "He's / She's here." (after Q0037).
+      - The ຫິວ note (lesson 9) says bare ຫິວ sounds unfinished, then lesson 10 teaches it: rewrite after Q0043.
+      - Sentence-card English: S000000047 "He's / She's here." (after Q0037).
       - The ກິນ gloss "eat; (colloquial) drink" → "eat; drink" (after Q0038). The W000001 note: "often said with the
         palms together and a slight bow, the ນົບ (nop), especially to older people" (after Q0039); keep its
         romanization out of Standard cards (W000019's note was made Lao-only).
@@ -59,7 +57,7 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       **Done when:** no multiple-choice question mixes consonants and vowels, and a lesson with overdue items opens
       with them.
 - [ ] **A5 leftovers.** The one-off "translations are not literal" card (needs a merged-lesson change). Notes are
-      unverified; the ສະບາຍດີ and ເຂົ້າ notes are asked in QUESTIONS.
+      unverified; the ສະບາຍດີ and ເຂົ້າ notes now follow Na's answers (Q0022, Q0028).
 - [ ] **S7w2 Letter writing, next (scoped, not built).** Two parts, in this order:
       1. A single trace card when a letter is first introduced in a lesson (the learner traces that letter once,
          right there; the full `#/write` routine stays in its own area).
@@ -67,6 +65,13 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
          owner wants it.
       Needs a design pass first (activity module or teach-card extension; whether its answer goes through
       `record_answers`). **Done when:** scoped into a build slice with a "Done when".
+- [ ] **N7 Native stroke capture** (owner 2026-11-19). A "how do you write this letter?" question type for natives:
+      the prompt, then the writing pad (`js/writing/pad.js`) on a blank grid, and her strokes saved (points, order,
+      timing) in a native-only table for analysis. Then `strokes_build.js` takes start, direction and order from her
+      captures. Na's general rule, for the builder now: **strokes start at the bottom left, always, even when that
+      means retracing a line** (the builder currently starts at the loop). Q0031–Q0034 (the writing checks she
+      could not answer in words) are retired; ask writing questions only this way. **Done when:** Na can write
+      ກ ມ ອ on the native question screen, the captures are in the DB, and a script prints them per letter.
 - [ ] **N4 Native feedback report.** A script that lists, from `recording_feedback`: styles to apply to `register`,
       original -> own version pairs (`spoken_lao`), the "not sure what it means" list, names/nicknames, other
       meanings, English corrections, comments; with each native's region and verified flag. **Done when:** one run

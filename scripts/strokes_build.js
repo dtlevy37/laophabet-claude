@@ -13,7 +13,8 @@
 //
 // How: each glyph outline is rasterised, thinned to a one-pixel skeleton (Zhang-Suen), and the skeleton is read as
 // a graph. At every junction the two smoothest branches are joined, which turns the graph into pen strokes. A stroke
-// starts at its loop (Lao letters are written from the loop outwards) unless the overrides say otherwise.
+// starts at its loop (Lao letters are written from the loop outwards) unless the overrides say otherwise. The native
+// speaker (2026-11-19) says strokes start at the bottom left, always, even when that means retracing: PLAN N7.
 // No dependencies: the TTF parser, rasteriser and PNG writer are in this file.
 //
 // Accuracy: the geometry is `derived` from the font. Stroke order and direction are the agent's work (`unverified`);

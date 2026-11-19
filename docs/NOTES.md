@@ -18,7 +18,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 ## Next step
 1. Owner tests the list below on Netlify; the owner's sons sign up for the alpha (read `learner_intake`,
    `app_feedback` in the dashboard; browser check `scripts/browser/alpha_check.js`).
-2. The wife (Na, verified native) answers Q0017–Q0043 online; apply them and clear QUESTIONS. Any new native
+2. The wife (Na, verified native) answers Q0037–Q0043 online; apply them and clear QUESTIONS. Any new native
    question follows "How to ask the native speaker" (QUESTIONS.md top); online ones go through
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
@@ -29,12 +29,13 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- Lesson 13 tone (`#/lesson/L0013`, 360px), after Na records ເຂົ່າ knee, ມ້າ horse and S000002908-2910 (her takes
-  also mark the sentences natural) and the owner checks them: the tone table card (marks in the accent colour, sitting
+- Na's 20 new takes (lesson 13's ເຂົ່າ knee, ມ້າ horse, S000002908-2910, and 15 later words) are processed in
+  `tmp/audio/out/`, not uploaded: the owner listens, then `audio_publish.py upload --linked`, `upload --local`,
+  `migration`, `supabase db push --linked`.
+- Lesson 13 tone (`#/lesson/L0013`, 360px), once those takes are live: the tone table card (marks in the accent colour, sitting
   on their letters; five columns fit), then after each new word's card 4 pair questions (hear → Lao, hear →
   meaning; two options, each with its tone picture), then the reading checks. Without both words of a pair
-  recorded, the pair questions are left out. Doubts: ກິນ for a horse drinking (vs ດື່ມ), ມີມ້າບໍ່? "is there /
-  do you have a horse?".
+  recorded, the pair questions are left out.
 - A20 sentence order and progress (`#/lesson/L0011`, 360px): each new sentence plays its card, then fill in the
   blank, then build, in a row; miss a few: the bar never moves back, and after it is full the line under it reads
   "Retry missed exercises: 1 of N". ✕ → the dialog says the place is kept for 3 days; leave mid-lesson, come back

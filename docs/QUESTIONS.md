@@ -19,17 +19,11 @@ answer. Before a question goes to a native, online or here:
 5. **One thing per question**, in plain words: show the Lao, say what we think it means, then ask a direct question:
    "Would you say this?", "What does this mean?", "What would you say instead?", "Is this word also a name?".
 6. **Options must cover the real answers**, plus free text. If the answer is a meaning, ask for it in free text.
+7. **How a letter is written** (owner, 2026-11-19): never in words. Prompt "how do you write this letter?" and give
+   her the writing pad, recording her strokes (PLAN N7). Until N7 exists, do not ask.
 
 ## For the native speaker
-**Asked online** (`#/questions`, Q0017–Q0034, `data/open_questions.csv`; answers in `open_question_consensus`):
-meanings of ລາວນອນແລ້ວ (laao non laew, asleep / gone to bed) and ຂໍແກ້ວນ້ອຍແນ່ (khor gaew noy nae); ສີເຂົ້າ (sii
-khao, mill rice), ດຳນ້ຳ (dam nam, dive), a rude sense of ສີ (sii), ເຂົ້າ (khao) as "a meal"; "you" and "I" with an
-older stranger (owner thinks aunt/uncle words, such as ລຸງ lung / ປ້າ paa); her answer to ສະບາຍດີບໍ່? (sabaidee bor?,
-how are you?); ສີຂາວ or ຂາວ for "what colour?"; bare ຫິວ (hiw) for "thirsty?"; ສະບາຍດີ when leaving; which pool words
-are names; the ___ແລ້ວ blank options; four letter-writing checks. Apply the answers, then delete this paragraph.
-
-**Asked online, round 3** (Q0035–Q0043, from the November app review; answers feed PLAN A19 and N5): what ກິນເຂົ້າ (kin khao) alone means; ມີນ້ຳບໍ່? (mii nam
-baw?) in a shop, "have" or "is there"; ລາວມາແລ້ວ (laao maa laew) here or on the way; ກິນນ້ຳ (kin nam) to anyone or
+**Asked online, round 3** (Q0037–Q0043, from the November app review; answers feed PLAN A19 and N5): ລາວມາແລ້ວ (laao maa laew) here or on the way; ກິນນ້ຳ (kin nam) to anyone or
 only family; hands together for ສະບາຍດີ with a friend; how to ask back after ຂ້ອຍສະບາຍດີ (khoy sa-baai-dii); ທຳມະດາ
 or ກັນເອງ as the casual label; ເຈົ້າ (jao) or ທ່ານ (than) in the app; bare ຫິວ (hiw) for "hungry?". Apply the
 answers, then delete this paragraph.

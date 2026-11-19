@@ -93,7 +93,8 @@ Drawing letters by hand is practised to fix their shapes for reading. Typing Lao
   Nothing is recorded in the DB; a per-device tick marks finished letters. When it joins lessons it becomes an
   activity module and its answers go through `record_answers` like any other.
 - **Stroke data** is computed once by `scripts/strokes_build.js` (centre lines of the font's glyphs, one stroke per
-  letter starting at the loop, cut into 2–3 parts) and shipped as `app/frontend/data/strokes.json`. It is keyed by
+  letter starting at the loop, cut into 2–3 parts; Na says strokes start at the bottom left, always, even if
+  that means retracing: PLAN N7) and shipped as `app/frontend/data/strokes.json`. It is keyed by
   letter, so lesson data never changes for it. Geometry is `derived`; stroke order and direction are `unverified`.
 - **Steps per letter:** watch → trace each part → trace the whole → each part from memory (the rest shown) → the
   whole from memory. A failed from-memory step can be retried; after two misses "Show me" replays the animation.
@@ -394,7 +395,8 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
 ## What a lesson must contain (for the lesson runner)
 A lesson is content, not a script of screens: the app turns it into activities by the ladder above.
 - **New items** (role `new`): units and rules, each with `teach_en`; 1–3 words, each readable with what has been
-  taught, each using something new from this or the previous lesson.
+  taught, preferably each using something new from this or the previous lesson
+  (a warning in `check`; word-only lessons that build sentences are fine).
 - **Recycled items** (role `recycle`): at least 3 earlier words, so old material stays fresh.
 - **Phrases or sentences** (item_type `sentence`): 1–3 that are readable at this point, once any exist. They are
   used for fill in the blank, build the sentence and reading.

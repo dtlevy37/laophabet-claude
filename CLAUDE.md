@@ -93,8 +93,8 @@ same commit that finishes the work**, not later.
 - Lessons are built one at a time: `lesson_tool.py brief` → draft → `check` → `merge` (writes the CSVs and the lesson
   migration). Use the `build-lesson` skill; new words and sentences go through `draft-content`. The lesson order is
   `docs/CURRICULUM_PATH.md` and the rules are `docs/LESSON_RULES.md` (authoritative).
-- In short: about 3–4 new items per lesson; every word is readable with what has been taught; every new word uses
-  something new; at least 3 recycled words; sentences as early as realistic.
+- In short: about 3–4 new items per lesson; every word is readable with what has been taught; a new word should use
+  something new (a warning, not a must); at least 3 recycled words; sentences as early as realistic.
 - Content is drafted only when a lesson needs it. Every word has 2+ example sentences, tone data, IPA and a
   pronunciation tip. Hard cap: 3000 rows in `data/words.csv`.
 - After any change to `data/`, run `bash scripts/pipeline.sh` (tones, build order, validation, DB check).

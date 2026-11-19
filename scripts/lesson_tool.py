@@ -763,7 +763,9 @@ def check(world, draft, a):
     if fresh and not a.no_new_letters:
         for w in new_words:
             if w not in promoted and w not in tabled and not (world.word_sig(w)[0] & fresh):
-                err.append(f"word {w} {world.lao(w)}: uses no unit or rule from this or the previous lesson")
+                # A warning, not an error (owner 2026-11-19): later lessons may add words for new sentences
+                # with no new letter, vowel or mark.
+                warn.append(f"word {w} {world.lao(w)}: uses no unit or rule from this or the previous lesson")
     for ctx, s, _ in sents:
         ws = world.sent_words.get(s, [])
         bon = [w for w in ws if w in bonus_now]

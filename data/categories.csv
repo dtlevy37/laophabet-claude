@@ -15,3 +15,4 @@ action,Verbs (every verb also lists one or more verb classes),ກິນ (eat)
 consume,Verb class: takes food or drink as its object,ກິນ (eat)
 motion,Verb class: going or moving somewhere,ເຂົ້າ (enter)
 function,"Particles, negation, question words, classifiers; never an option (may be blanked: the slot lists function in accepts)",
+name,"Also a person's name or nickname (native, Q0029); never a wrong option where a person fits","ນ້ຳ (Nam), ຂາວ (Khao)"

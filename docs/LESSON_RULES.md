@@ -139,7 +139,9 @@ further. `lesson_tool.py brief` still ranks candidates each lesson; the chain is
   | Rule lesson | the rule + at most 1 unit | 1–2 words that show the rule | words that contrast the rule |
 
   Weights: consonant 1, vowel pattern 1.5, tone mark or rule 2, word 1. A lesson's new-item weight is about 4–5.
-- **Every new word contains at least one new unit or rule** of that lesson or the previous one, so new letters get practice.
+- **A new word should contain at least one new unit or rule** of that lesson or the previous one, so new letters get
+  practice. A preference, not a must (owner, 2026-11-19): a lesson may add words only to build new sentences, with no
+  new letter, vowel or mark. `check` warns.
 - **Word choice:** only readable words (signature ⊆ units learned so far). The usefulness weight favours words that
   build sentences: pronouns, core verbs, ບໍ່, question words, ແມ່ນ, ນີ້, ມີ, then everyday nouns. Category in
   common_words.csv gives a first weight; the agent can adjust single words.
