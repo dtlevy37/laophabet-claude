@@ -14,6 +14,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
   nothing, due from the start of the learner's local day (owner); new owner-only view `review_retention_by_lesson`.
   Test `app/backend/tests/a15_spaced_review_test.sql`.
 - L6: owner approved the lesson titles for lessons 1–12 (listed in PLAN L6).
+- Read-only lesson cards (`#/read/...`): Next sits on the right, also on the first card (owner, after the S10+ check).
 
 ## 2026-11-18 Visual-design review (one agent) and PLAN A23
 - A blunt visual-designer agent (new brief `scripts/review/briefs/8_visual_design.md`) judged the app "plain but
