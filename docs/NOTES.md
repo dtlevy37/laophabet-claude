@@ -29,10 +29,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- Na's 20 new takes (lesson 13's ເຂົ່າ knee, ມ້າ horse, S000002908-2910, and 15 later words) are processed in
-  `tmp/audio/out/`, not uploaded: the owner listens, then `audio_publish.py upload --linked`, `upload --local`,
-  `migration`, `supabase db push --linked`.
-- Lesson 13 tone (`#/lesson/L0013`, 360px), once those takes are live: the tone table card (marks in the accent colour, sitting
+- Lesson 13 tone (`#/lesson/L0013`, 360px): the tone table card (marks in the accent colour, sitting
   on their letters; five columns fit), then after each new word's card 4 pair questions (hear → Lao, hear →
   meaning; two options, each with its tone picture), then the reading checks. Without both words of a pair
   recorded, the pair questions are left out.

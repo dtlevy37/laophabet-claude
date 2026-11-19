@@ -20,7 +20,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
   with her strokes recorded (new PLAN N7). Na: strokes start at the bottom left, always, even if that means
   retracing. Online Q0017–Q0036 retired (`n1_retire_round2`). Q0037–Q0043 are still open.
 - Audio: 20 new takes processed (ເຂົ່າ, ມ້າ, S000002908–2910 and 15 later words; all -18 LUFS, gain 20–27 dB).
-  Not uploaded until the owner listens.
+  The owner listened and approved; uploaded, migration `lesson_audio_round3`. All three migrations pushed to hosted.
 
 ## 2026-11-19 Lesson 13 "Same sounds, different melody"
 - L0013: rules R05 (tone table: ຂາວ/ລາວ, ເຂົ້າ/ເຂົ່າ, ມາ/ມ້າ) and R06 (recap: one mark ◌້, two melodies: ເຂົ້າ, ນ້ຳ,
