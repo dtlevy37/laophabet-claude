@@ -5,7 +5,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 `docs/QUESTIONS.md`).
 
 ## State (2026-11-15)
-- **Content:** 1427 words, 2848 sentences, 12 lessons merged (next: 13, ອ). Pipeline clean (0 errors, the usual 11
+- **Content:** 1427 words, 2848 sentences, 12 lessons merged (next: 13, tone; then 14, ອ). Pipeline clean (0 errors, the usual 11
   warnings). Path notes: lessons 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
 - **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); what is applied is `supabase migration list --linked`.
   Netlify serves the frontend;
@@ -23,7 +23,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Then lesson 13 (ອ) and the PLAN working order. Owner path notes (lesson 20+) come later.
+3. Then lesson 13 (tone, PLAN L3), lesson 14 (ອ) and the PLAN working order. Owner path notes (lesson 20+) come later.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 

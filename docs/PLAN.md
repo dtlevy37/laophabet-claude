@@ -9,26 +9,22 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18): L3 as lesson 13 (ອ moves to 14), then more
+Owner checks of what is built, then (owner 2026-11-18): lesson 13 (L3 tone; ອ moves to 14), then more
 lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
       object in hand; check lesson sentences with this pattern.
-- [ ] **L3 Teaching tone.** A proper lesson: what tone is, the pitch line legend, tone marks and consonant class in
-      plain words, recorded pairs that differ only by tone (ຂາວ khaao "white" vs ລາວ laao; ໃກ້ "near" vs ໄກ "far", to
-      verify; ເຂົ້າ "rice" vs ເຂົ່າ "knee" once both are taught), and a hear-and-pick-the-pitch check. Owner 2026-11-17:
-      ຂາວ / ລາວ (both already taught) is the recap example there, on a card with a table (word, meaning, tone, ▶),
-      like the vowel card with three sounds. From the November review:
-      - A first-time caption under the tone picture ("Lao words have a melody. This line shows it: ກິນ (kin, 'eat')
-        starts low and rises a little. Listen and copy it."), then the short tone name on later cards. This could
-        ship before L3.
-      - A ◌້ recap card (LESSON_RULES decision 18): one mark, two melodies, ເຂົ້າ (khao, "rice") low-falling vs ນ້ຳ
-        (nam, "water") high-falling.
-      - "Which melody?" (hear a known word, pick its tone picture) as the pitch check.
-      - Later, a "How tones work" sheet under Letters: class × syllable type, only cells the learner has reached, one
-        taught word each with ▶.
-      **Done when:** merged with at least two recorded pairs and a pitch check.
+- [ ] **L3 Teaching tone (lesson 13).** The app side is built (tone table rule card, tone-pair questions, listen
+      for meaning; DESIGN "Activities"). Next: build lesson 13 with build-lesson. Agreed shape (owner 2026-11-18):
+      a rule card R05 (what tone is; the first-time caption: "Lao words have a melody. This line shows it ...") whose
+      rows are word ids, so it renders as the tone table (Lao with the mark highlighted, sound, meaning, tone
+      picture, ▶): ເຂົ້າ kao "rice" W000019 / ເຂົ່າ kao "knee" W000724, ມາ maa "come" W000025 / ມ້າ maa "horse"
+      W000562, and the ຂາວ / ລາວ (white / he) and ◌້ (ເຂົ້າ rice vs ນ້ຳ water, decision 18) recaps. New core words
+      ເຂົ່າ and ມ້າ; the planner adds the pair questions after each card. Consonant class: one line under "More" only;
+      classes get their own lesson soon (with ຄ, not right after this one). Na records ເຂົ່າ and ມ້າ (the pair
+      questions need both words of a pair recorded). Later, a "How tones work" sheet under Letters.
+      **Done when:** lesson 13 is merged and two pairs play their pair questions with recordings.
 - [ ] **L4 Two voices in conversations.** Conversations are built (DESIGN "Conversations"); when a second native
       records, speaker B's lines play their take. **Done when:** lesson 10's card plays A and B in different voices.
 - [ ] **L5 Speaking practice.** Design `docs/L5_SPEAKING_DESIGN.md`; owner answered its questions 2026-11-13 (phase 1
@@ -37,8 +33,7 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       the learner says it aloud, then hears B's recording (no recording of the learner, no grading). Slow playback
       (0.75×, `playbackRate`) on sentence and conversation ▶.
 - [~] **H6 More listening.** Audio on more question types as recordings arrive; no transliteration by default.
-      Next type (owner 2026-11-18): hear a word with no text shown, pick its meaning (listening comprehension, kept
-      apart from reading; see DESIGN "Answer panel").
+      Listen for meaning is built (L3) but planned only for tone pairs; next: use it for every recorded word.
 - [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log` (start
       from the view `review_retention_by_lesson`); waits for data.
 

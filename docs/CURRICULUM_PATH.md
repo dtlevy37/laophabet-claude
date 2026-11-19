@@ -134,6 +134,12 @@ Lao answers "yes" by repeating the verb, so no separate word for "yes" is needed
   - ສີນີ້ດີ *see nee dee* "This colour is good"
 - Five words is over the usual budget; split in two if it plays long.
 
+## Lesson 13: tone (owner 2026-11-18)
+No new letters. New words ເຂົ່າ *kao* "knee" and ມ້າ *maa* "horse", each paired with a known word that differs only
+by tone (ເຂົ້າ "rice", ມາ "come"); details in PLAN L3. ອ (below) moves to lesson 14. Consonant classes come soon
+after as their own lesson, with ຄ (the ເຂົ້າ / ເຂົ່າ / ເຂົາ / ເຄົາ "rice / knee / they / beard" set fits there),
+not straight after lesson 13.
+
 ## After lesson 11 (order not fixed yet)
 Each needs one or two new letters:
 

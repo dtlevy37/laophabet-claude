@@ -2,6 +2,20 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 L3 tone lesson, app side
+- Lesson 13 becomes the tone lesson (owner 2026-11-18); ອ moves to 14; consonant classes get their own lesson soon
+  after, with ຄ, not straight after 13. The tone-picture quiz ("Which melody?") was dropped: the owner wants melody
+  learned with meaning, not memorised.
+- `get_lesson` pool words carry `tones` (migration `l3_pool_tones`).
+- Tone table: a rule card whose rows are word ids shows Lao (tone mark highlighted), sound, meaning, tone picture, ▶
+  (`teach_card.js` toneTable; `tone.js` markedLao, toneStrip; `.tone-mk` one accent colour for every mark).
+- Tone twins (same sound, different spelling; `listen_pick` toneTwins). Listen and pick may offer one known twin;
+  new activity `listen_meaning` (hear, pick the meaning). Tone pictures are the first hint tier of both; the answer
+  panel shows the answer's tone picture.
+- Lesson planner: a new word with a known, recorded twin gets hear → Lao and hear → meaning for both words, two
+  options each with tone pictures, after its card and before its reading check (`tonePairSteps`). Practice adds
+  listen for meaning for words with a twin. "Can't listen now" covers it.
+
 ## 2026-11-19 A20 sentence order and honest progress
 - Planner: a new sentence plays reading card → fill in the blank → build the sentence in a row (owner 2026-11-18; the
   blank used to wait for the closing block). The gap is a word already shown; one word is the gap of at most 2 blanks

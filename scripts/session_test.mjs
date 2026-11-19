@@ -58,7 +58,7 @@ const js = (p) => pathToFileURL(join(root, 'app/frontend/js', p)).href
 const { buildPlan, dryLevels } = await import(js('session.js'))
 const { activities } = await import(js('activities/index.js'))
 const { unitSoundRaw } = await import(js('activities/teach_card.js'))
-const { wordSoundKey } = await import(js('activities/listen_pick.js'))
+const { wordSoundKey, toneTwins } = await import(js('activities/listen_pick.js'))
 const { applyAudio } = await import(js('bundle.js'))
 const { fitDetail, piecesFirst } = await import(js('session.js'))
 const {
@@ -155,7 +155,9 @@ for (const b of bundles) {
         if (!s.options.some((o) => o.id === s.answer)) fail(`${lao(s)}: listen and pick answer not among the options`)
         if (s.options.length < 3 || s.options.length > 4) fail(`${lao(s)}: listen and pick with ${s.options.length} options`)
         const keys = s.options.map((o) => wordSoundKey(o))
-        if (keys.some((k) => !k) || new Set(keys).size !== keys.length) fail(`${lao(s)}: listen and pick options sound alike: ${s.options.map((o) => `${o.lao}=${o.sound}`).join(' ')}`)
+        const twinIds = new Set(toneTwins(s.item.detail, b.distractors).map((w) => w.word_id))
+        const dupKeys = s.options.filter((o, i) => keys.indexOf(wordSoundKey(o)) !== i)
+        if (keys.some((k) => !k) || dupKeys.some((o) => o.id !== s.answer && !twinIds.has(o.id)) || dupKeys.length > 1) fail(`${lao(s)}: listen and pick options sound alike: ${s.options.map((o) => `${o.lao}=${o.sound}`).join(' ')}`)
         if (new Set(s.options.map((o) => o.lao)).size !== s.options.length) fail(`${lao(s)}: listen and pick: two options with the same Lao`)
         for (const o of s.options) if (wordsCsv.get(o.id) !== o.lao) fail(`${lao(s)}: listen and pick option ${o.id} ${o.lao} is not a words.csv word`)
       }
@@ -702,6 +704,44 @@ for (const b of bundles) {
   if (c.ms !== 65000) fail(`A12: active ms ${c.ms}, expected 65000`)
   c.sent = 40000
   if (unsent(c) !== 25000) fail(`A12: unsent ${unsent(c)}, expected 25000`)
+}
+// Tone twins and the tone pair / meaning forms (pure, fake data)
+{
+  const { default: lp } = await import(js('activities/listen_pick.js'))
+  const lm = activities.listen_meaning
+  const w = (word_id, lao, gloss_en, respelling, tones) => ({ word_id, lao, gloss_en, respelling, tones })
+  const pool = { words: [w('W1', 'ເຂົ່າ', 'knee', 'kao', ['low-falling']), w('W2', 'ເຂົ້າ', 'rice', 'kao', ['high-falling']), w('W3', 'ລາວ', 'Laos', 'laao', ['mid']), w('W4', 'ກິນ', 'eat; consume', 'gin', ['mid']), w('W5', 'ນ້ຳ', 'water', 'nam', ['high-falling']), w('W6', 'ມາ', 'come', 'maa', ['mid']), w('W7', 'ບ້ານ', 'house', 'baan', ['high-falling'])] }
+  const mk = (id, lao, gloss, resp, tones, audio = 'x.mp3') => ({ item_type: 'word', item_id: id, shown: [{ item_type: 'word', item_id: id }], detail: { word_id: id, lao, gloss_en: gloss, glosses: [gloss], respelling: resp, tones, audio_url: audio } })
+  const rice = mk('W2', 'ເຂົ້າ', 'rice', 'kao', ['high-falling'])
+  const tw = toneTwins(rice.detail, pool)
+  if (tw.length !== 1 || tw[0].lao !== 'ເຂົ່າ') fail('toneTwins: expected only ເຂົ່າ for ເຂົ້າ')
+  const he = { word_id: 'W9', lao: 'ລາວ', respelling: 'laao' }
+  if (toneTwins(he, pool).length) fail('toneTwins: a same-spelling homograph must not be a twin')
+  const pair = lp.build(rice, pool, Math.random, { pair: true, twin: 'W1' })
+  if (!pair || pair.options.length !== 2 || !pair.graphs || !pair.pair) fail('listen_pick pair form')
+  const normal = lp.build(rice, pool, () => 0.5, { levels: new Map([['word:W1', 1]]) })
+  if (!normal || !normal.options.some((o) => o.lao === 'ເຂົ່າ')) fail('listen_pick normal form should offer a known twin')
+  const unseen = lp.build(rice, pool, () => 0.5)
+  if (!unseen || unseen.options.some((o) => o.lao === 'ເຂົ່າ')) fail('listen_pick must not offer a twin the learner has not been shown')
+  if (lp.build(mk('W4', 'ກິນ', 'eat', 'gin', ['mid']), pool, Math.random, { pair: true })) fail('pair form without a twin must be null')
+  const m = lm.build(rice, pool, () => 0.5)
+  if (!m || m.options.length < 3 || m.options.length > 4 || new Set(m.options.map((o) => o.gloss)).size !== m.options.length) fail('listen_meaning normal form')
+  const mp = lm.build(rice, pool, Math.random, { pair: true, twin: 'W1' })
+  if (!mp || mp.options.length !== 2 || !mp.graphs) fail('listen_meaning pair form')
+  const noAudio = mk('W2', 'ເຂົ້າ', 'rice', 'kao', ['high-falling'], null)
+  if (lp.build(noAudio, pool) || lm.build(noAudio, pool) || lm.build(noAudio, pool, Math.random, { pair: true, twin: 'W1' })) fail('no audio must give null')
+  // planner: tonePairSteps (L3) on the new word ເຂົ່າ with the known twin ເຂົ້າ
+  const { tonePairSteps } = await import(js('session.js'))
+  const rp = { words: pool.words.map((x) => ({ ...x, audio_url: 'x.mp3' })) }
+  const knee = mk('W1', 'ເຂົ່າ', 'knee', 'kao', ['low-falling'])
+  const steps = tonePairSteps(knee, rp, new Map([['word:W2', 1]]), () => 0.3)
+  const acts = steps.map((x) => x.activity).join(',')
+  if (acts !== 'listen_pick,listen_pick,listen_meaning,listen_meaning') fail(`tonePairSteps order: ${acts}`)
+  if (!steps.every((x) => x.graphs && x.options.length === 2)) fail('tonePairSteps: every question is a pair with graphs')
+  if (steps.some((x, i) => i && x.item.item_id === steps[i - 1].item.item_id)) fail('tonePairSteps: same word twice in a row')
+  if (tonePairSteps(knee, rp, new Map(), () => 0.3).length) fail('tonePairSteps: an unknown twin must give none')
+  if (tonePairSteps(knee, pool, new Map([['word:W2', 1]]), () => 0.3).length) fail('tonePairSteps: an unrecorded twin must give none')
+  console.log('  tone twin / pair / meaning pure tests ran')
 }
 console.log(errors ?`\n${errors} failure(s)` : '\nall checks passed')
 process.exit(errors ? 1 : 0)
