@@ -1,0 +1,16 @@
+position,item_type,item_id,role,notes
+1,unit,C01f,new,"final ກ: the same k, cut off"
+2,word,W000022,new,'want (to)': the first word with final ກ; its note says so
+3,word,W000006,recycle,earlier word 'I'; used in the next sentences
+4,word,W000018,recycle,earlier word 'eat'; used in the next sentence
+5,sentence,S000000028,new,'I want to eat.' (existing; verified)
+6,word,W000005,recycle,earlier word 'you'; used in the next sentence
+7,word,W000024,recycle,earlier word 'go'; used in the next sentences
+8,word,W000015,recycle,earlier word 'where'; used in the next sentence
+9,sentence,S000002017,new,'Where do you want to go?' (existing)
+10,word,W000013,recycle,earlier word 'bathroom'; used in the next sentence
+11,sentence,S000002927,new,'I want to go to the bathroom.' (composed)
+12,word,W000275,new,'more; again': final ກ again
+13,word,W000114,recycle,earlier word 'take'; used in the next sentence
+14,sentence,S000000494,new,'(I'll take) more.' (existing)
+15,word,W000044,bonus,'child (son or daughter)'; bonus word with final ກ (core in lesson 25); never in a sentence

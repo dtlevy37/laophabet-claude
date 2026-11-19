@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Lessons 20–25 (section S03, getting by)
+- Built to CURRICULUM_PATH: L0020 I don't understand (ເຂົ້າໃຈ, ຮູ້; bonus ອ່ານ), L0021 I want to go (final ກ;
+  ຢາກ, ອີກ; bonus ລູກ), L0022 After the meal (ອີ່ມ, ຈ່າຍ, ໄດ້; conversation D0004, 4 lines), L0023 My mother (ແມ່,
+  ອ້າຍ, ນ້ອງ), L0024 Going to school (◌ຽ◌; ຮຽນ, ໂຮງຮຽນ, ດຽວນີ້, ອ່ານ), L0025 My friend (ໝູ່, ເຮົາ, ລູກ).
+- New sentences S000002927–S000002933 (composed, unverified; S000002933 ເຈົ້າມີນ້ອງບໍ່? added so ນ້ອງ has one in
+  L0023). Word notes for ເຂົ້າໃຈ, ຢາກ (final ກ), ໄດ້ (after the verb), ແມ່ (possessor after; ແມ່ນ look-alike), ນ້ອງ
+  (ນ້ອຍ look-alike), ໂຮງຮຽນ. Categories and slots tagged (batch S03t); blank exclusions for ລາວ "Lao", ສະບາຍດີ
+  "hello", ໃໝ່ / ຮ້ອນ in shop talk.
+- Final ກ got a one-line card (the app cannot fold it into the ຢາກ card yet: PLAN L6).
+- Curriculum review: ◌ຽ◌ card corrected (nothing is written above the consonant), wording fixes; migration
+  s03_review_fixes. Lessons applied locally, not hosted.
+
 ## 2026-11-19 Bonus words in lessons 2–19; reorder proposal (owner)
 - 13 bonus words (owner): numbers as soon as readable (ເກົ້າ 9 in L2, ສີ່ 4 in L8, ສາມ 3 in L12, ຮ້ອຍ 100 in L14,
   ສິບ 10 in L16) and letter reinforcers (ແຂນ arm L6, ຈ່າຍ pay L10, ເຂົ້າຈີ່ bread L11, ແມວ cat L13, ອີ່ມ full L14,

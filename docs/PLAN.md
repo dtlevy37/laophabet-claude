@@ -13,6 +13,11 @@ Owner checks of what is built (lesson 13, the tone lesson, once Na's takes are i
 lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
+- [ ] **L6 A final letter folded into its first word's card.** The owner wanted final ກ (lesson 21) to have no card
+  of its own: the ຢາກ card would show it. teach_card.js `cardItems` folds a final unit only into its initial's
+  card (same-sound letters). Add an opt-in fold (e.g. a unit item whose next item is a word using it, flagged in
+  the lesson data) and retire L0021's C01f card text. Done when: `#/lesson/L0021` opens on the ຢາກ card, which
+  names final ກ, and C01f is still recorded as shown.
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
       object in hand; check lesson sentences with this pattern.
 - [ ] **L3b "How tones work" sheet** under Letters: class × syllable type, only the cells the learner has reached, one

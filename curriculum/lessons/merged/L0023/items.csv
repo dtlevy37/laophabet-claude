@@ -1,0 +1,18 @@
+position,item_type,item_id,role,notes
+1,word,W000042,new,'mother'; the word note: the person it belongs to comes after (mother + I) and the look-alike ແມ່ນ
+2,word,W000006,recycle,earlier word 'I'; used in the next sentences
+3,word,W000001,recycle,earlier word 'be well'; used in the next sentence
+4,sentence,S000000063,new,'My mother is well.' (existing)
+5,word,W000005,recycle,earlier word 'you'; used in the next sentences
+6,word,W000014,recycle,earlier word 'be at'; used in the next sentence
+7,word,W000015,recycle,earlier word 'where'; used in the next sentence
+8,sentence,S000000062,new,'Where is your mother?' (existing)
+9,word,W000016,recycle,earlier word 'this'; used in the next sentence
+10,word,W000004,recycle,earlier word 'is' (the look-alike of ແມ່); used in the next sentence
+11,sentence,S000002931,new,'This is my mother.' (composed): ແມ່ນ and ແມ່ side by side
+12,word,W000153,new,"'older brother'; bonus word in lesson 14, now core"
+13,word,W000023,recycle,earlier word 'have'; used in the next sentences
+14,word,W000003,recycle,earlier word 'question marker'; used in the next sentences
+15,sentence,S000000275,new,'Do you have an older brother?' (existing)
+16,word,W000155,new,'younger sibling'; the word note: the look-alike ນ້ອຍ 'small'
+17,sentence,S000002933,new,'Do you have a younger sibling?' (composed)

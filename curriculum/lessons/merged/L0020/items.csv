@@ -1,0 +1,11 @@
+position,item_type,item_id,role,notes
+1,word,W000035,new,"'understand'; known letters only; the word note says ເຂົ້າ as in rice, ໃຈ as in ຂອບໃຈ"
+2,word,W000003,recycle,earlier word 'not'; used in the next sentence
+3,sentence,S000000050,new,'I don't understand.' (existing; verified)
+4,word,W000005,recycle,earlier word 'you'; used in the next sentences
+5,sentence,S000000052,new,'Do you understand?' (existing)
+6,word,W000060,new,'know'; known letters only
+7,word,W000006,recycle,earlier word 'I'; used in the next sentence
+8,sentence,S000000091,new,'I don't know.' (existing)
+9,sentence,S000000092,new,'Do you know?' (existing)
+10,word,W000225,bonus,'read'; bonus word (core in lesson 24); never in a sentence

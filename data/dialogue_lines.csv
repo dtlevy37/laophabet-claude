@@ -22,3 +22,11 @@ D0003,5,1,C,S000002914,SRC-AGENT:lesson,unverified,We do (repeats the verb)
 D0003,6,1,A,S000000013,SRC-AGENT:lesson,unverified,Where's the bathroom?
 D0003,7,1,C,S000002924,SRC-AGENT:lesson,unverified,Over here
 D0003,8,1,A,S000000009,SRC-AGENT:lesson,unverified,Thanks
+D0004,1,1,A,S000002928,SRC-AGENT:lesson,unverified,Will you have more?
+D0004,2,1,B,S000000116,SRC-AGENT:lesson,unverified,I am full
+D0004,2,2,B,S000000009,SRC-AGENT:lesson,unverified,Thanks
+D0004,2,3,B,S000000420,SRC-AGENT:lesson,unverified,I will pay
+D0004,3,1,A,S000002929,SRC-AGENT:lesson,unverified,"No way! (refusing, as hosts do)"
+D0004,3,2,A,S000000420,SRC-AGENT:lesson,unverified,I will pay
+D0004,4,1,B,S000002930,SRC-AGENT:lesson,unverified,OK
+D0004,4,2,B,S000000009,SRC-AGENT:lesson,unverified,Thank you

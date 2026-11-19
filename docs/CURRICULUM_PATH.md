@@ -168,7 +168,7 @@ lesson 13; the class rule waits for the classes lesson.
 | A | ຂອບໃຈ. | khop jai | Thanks. |
 
 
-## Lessons 20–33: getting by (section S03; owner 2026-11-19)
+## Lessons 20–33: getting by (section S03; owner 2026-11-19; 20–25 built as L0020–L0025)
 Decided with the owner after an Opus review of the path (2026-11-19). **Lessons 1–19 stay as built**; the path is
 re-planned from lesson 20. Ideas behind it:
 - **Utility words earlier, symbols slower:** 10 new symbols over 14 lessons, about half the lessons word-only (W: no
@@ -179,8 +179,8 @@ re-planned from lesson 20. Ideas behind it:
   within about 4 lessons). Already shown as bonus in 1–19: numbers ເກົ້າ 9 (L2), ສີ່ 4 (L8), ຫ້າ 5 (L9), ສາມ 3 (L12),
   ຮ້ອຍ 100 (L14), ສິບ 10 (L16), ສອງ 2 (L18); also ຈ່າຍ pay (L10), ແມວ cat (L13), ອີ່ມ full and ອ້າຍ (L14), ປາ, ໄກ
   (L15), ໃກ້ (L16), ຈານ (L9).
-- **Final ກ has no card of its own** (owner): it is the same k, cut off. The first word card with it (ຢາກ) says so
-  and points to R01. Final ດ keeps a card (it changes: d at the start, t at the end).
+- **Final ກ has no card of its own** (owner): it is the same k, cut off. The ຢາກ word note says so. Built (L0021):
+  the app always shows a unit card, so final ກ has a one-line card too (folding it into the word card is PLAN L6). Final ດ keeps a card (it changes: d at the start, t at the end).
 - **Look-alikes get planned contrasts** (decision 15): ສີ່ four / ສີ colour, ນ້ອງ younger sibling / ນ້ອຍ small,
   ແມ່ mother / ແມ່ນ is, ໄກ far / ໃກ້ near / ໄກ່ chicken, ເກົ້າ nine / ເຂົ້າ rice. Keep ໝູ pork out while ໝູ່ friend
   is new.
@@ -208,7 +208,7 @@ Budget: lessons 23, 24, 28 and 32 carry 4 new core words (`--max-words 4`; owner
 
 **Conversations** (every line is a sentence item of its lesson or an earlier one):
 - D0004 "After the meal" (L22): ກິນອີກບໍ່? "Will you have more?" (?) · ຂ້ອຍອີ່ມແລ້ວ. ຂອບໃຈ. "I'm full. Thanks." ·
-  ຂ້ອຍຈ່າຍ. "I'll pay." · ບໍ່ໄດ້! ຂ້ອຍຈ່າຍ. "No way, I'll pay." (?) · ໄດ້. ຂອບໃຈ. "OK. Thank you."
+  ຂ້ອຍຈ່າຍ. "I'll pay." (built: part of the "I'm full" line) · ບໍ່ໄດ້! ຂ້ອຍຈ່າຍ. "No, you can't! I'll pay." (?) · ໄດ້. ຂອບໃຈ. "OK. Thank you."
 - D0005 "Visiting a friend" (L26): ສະບາຍດີ! ເຈົ້າໄປໃສ? · ໄປບ້ານໝູ່. "To a friend's house." (?) · ໄກບໍ່? "Is it far?" ·
   ບໍ່ໄກ. ຢູ່ໃກ້ໂຮງຮຽນ. "Not far. It's near the school." (?) · ເຈົ້າຢາກໄປບໍ່? "Do you want to come?" · ຢາກ! "Yes!"
 - D0006 "Eating out" (L33): ສະບາຍດີ. ເອົາຫຍັງ? "Hello. What will you have?" · ມີອາຫານລາວບໍ່? (S000002913) · ມີ. ·

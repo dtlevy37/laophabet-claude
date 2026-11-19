@@ -1,0 +1,15 @@
+position,item_type,item_id,role,notes
+1,word,W000045,new,'friend'; ໝ from lesson 19
+2,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+3,word,W000004,recycle,earlier word 'is'; used in the next sentence
+4,word,W000006,recycle,earlier word 'I'; used in the next sentence
+5,sentence,S000000066,new,'He/She is my friend.' (existing)
+6,word,W000032,new,'we'
+7,word,W000024,recycle,earlier word 'go'; used in the next sentence
+8,word,W000030,recycle,earlier word 'restaurant'; used in the next sentence
+9,sentence,S000000048,new,'Let's go to the restaurant.' (existing)
+10,word,W000044,new,"'child'; bonus word in lesson 21, now core"
+11,word,W000005,recycle,earlier word 'you'; used in the next sentence
+12,word,W000023,recycle,earlier word 'have'; used in the next sentence
+13,word,W000003,recycle,earlier word 'question marker'; used in the next sentence
+14,sentence,S000000065,new,'Do you have children?' (existing)

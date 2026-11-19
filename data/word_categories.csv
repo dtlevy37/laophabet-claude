@@ -86,3 +86,17 @@ W000205,food,SRC-AGENT,unverified,Tagged by the agent; ໄຂ່ egg
 W000147,number,SRC-AGENT,unverified,Tagged by the agent; ສິບ ten
 W000537,quality|name,SRC-AGENT,unverified,Tagged by the agent; ແດງ red; also a common personal name (Daeng)
 W000256,quality,SRC-AGENT,unverified,Tagged by the agent; ໃໝ່ new
+W000035,action,SRC-AGENT,unverified,Tagged by the agent; ເຂົ້າໃຈ understand: plain verb with no food/motion object so no verb class
+W000060,action,SRC-AGENT,unverified,Tagged by the agent; ຮູ້ know: plain verb with no verb class
+W000225,action,SRC-AGENT,unverified,Tagged by the agent; ອ່ານ read: takes text as object; no class available for that
+W000022,action,SRC-AGENT,unverified,Tagged by the agent; ຢາກ want to: verb that precedes another verb; no class
+W000275,function,SRC-AGENT,unverified,Tagged by the agent; ອີກ again or more: adverb so tagged function and never an option
+W000044,person,SRC-AGENT,unverified,Tagged by the agent; ລູກ child; not clearly a personal name so no name tag
+W000113,action|function,SRC-AGENT,unverified,Tagged by the agent; ໄດ້ can or get or OK: verb/auxiliary that fits many gaps so function keeps it out of options
+W000042,person,SRC-AGENT,unverified,Tagged by the agent; ແມ່ mother; kinship term not a personal name
+W000155,person,SRC-AGENT,unverified,Tagged by the agent; ນ້ອງ younger sibling; also an address term for a younger person but not a given name so no name tag
+W000062,action,SRC-AGENT,unverified,Tagged by the agent; ຮຽນ study or learn: plain verb with no class
+W000175,place,SRC-AGENT,unverified,Tagged by the agent; ໂຮງຮຽນ school
+W000063,time,SRC-AGENT,unverified,Tagged by the agent; ດຽວນີ້ now
+W000045,person,SRC-AGENT,unverified,Tagged by the agent; ໝູ່ friend; not a personal name
+W000032,person,SRC-AGENT,unverified,Tagged by the agent; ເຮົາ we: pronoun

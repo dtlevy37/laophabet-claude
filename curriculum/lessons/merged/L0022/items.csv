@@ -1,0 +1,18 @@
+position,item_type,item_id,role,notes
+1,word,W000073,new,"'full (after eating)'; bonus word in lesson 14, now core"
+2,word,W000006,recycle,earlier word 'I'; used in the next sentences
+3,word,W000020,recycle,earlier word 'already'; used in the next sentence
+4,sentence,S000000116,new,'I'm full.' (existing)
+5,word,W000233,new,"'pay'; bonus word in lesson 10, now core"
+6,sentence,S000000420,new,'I'll pay.' (existing)
+7,word,W000113,new,"'can; OK'; the word note: after the verb, ບໍ່ just before it"
+8,word,W000024,recycle,earlier word 'go'; used in the next sentence
+9,word,W000003,recycle,earlier word 'not'; used in the next sentences
+10,sentence,S000000198,new,'I can't go.' (existing)
+11,sentence,S000002929,new,"'No, you can't!' (composed; a line of the conversation)"
+12,sentence,S000002930,new,'OK.' (composed; a line of the conversation)
+13,word,W000018,recycle,earlier word 'eat'; used in the next sentence
+14,word,W000275,recycle,earlier word 'more'; used in the next sentence
+15,sentence,S000002928,new,'Will you have more?' (composed; the first line of the conversation)
+16,word,W000008,recycle,earlier word 'thank you'; in the conversation
+17,dialogue,D0004,new,"'After the meal' (CURRICULUM_PATH lesson 22): 4 lines, then fill in the blank on its lines"

@@ -302,3 +302,91 @@ L0019,13,sentence,S000000310,new,'She is in the hospital.' (existing)
 L0019,14,word,W000095,bonus,"'dog'; bonus word with ໝ (same sounds as ມາ 'come', a different melody); never in a sentence"
 L0019,15,word,W000142,bonus,'hour; o'clock'; bonus word with ໂ◌ and the final ງ; never in a sentence
 L0019,16,word,W000256,bonus,'new'; bonus word with ໝ (owner 2026-11-19); never in a sentence
+L0020,1,word,W000035,new,"'understand'; known letters only; the word note says ເຂົ້າ as in rice, ໃຈ as in ຂອບໃຈ"
+L0020,2,word,W000003,recycle,earlier word 'not'; used in the next sentence
+L0020,3,sentence,S000000050,new,'I don't understand.' (existing; verified)
+L0020,4,word,W000005,recycle,earlier word 'you'; used in the next sentences
+L0020,5,sentence,S000000052,new,'Do you understand?' (existing)
+L0020,6,word,W000060,new,'know'; known letters only
+L0020,7,word,W000006,recycle,earlier word 'I'; used in the next sentence
+L0020,8,sentence,S000000091,new,'I don't know.' (existing)
+L0020,9,sentence,S000000092,new,'Do you know?' (existing)
+L0020,10,word,W000225,bonus,'read'; bonus word (core in lesson 24); never in a sentence
+L0021,1,unit,C01f,new,"final ກ: the same k, cut off"
+L0021,2,word,W000022,new,'want (to)': the first word with final ກ; its note says so
+L0021,3,word,W000006,recycle,earlier word 'I'; used in the next sentences
+L0021,4,word,W000018,recycle,earlier word 'eat'; used in the next sentence
+L0021,5,sentence,S000000028,new,'I want to eat.' (existing; verified)
+L0021,6,word,W000005,recycle,earlier word 'you'; used in the next sentence
+L0021,7,word,W000024,recycle,earlier word 'go'; used in the next sentences
+L0021,8,word,W000015,recycle,earlier word 'where'; used in the next sentence
+L0021,9,sentence,S000002017,new,'Where do you want to go?' (existing)
+L0021,10,word,W000013,recycle,earlier word 'bathroom'; used in the next sentence
+L0021,11,sentence,S000002927,new,'I want to go to the bathroom.' (composed)
+L0021,12,word,W000275,new,'more; again': final ກ again
+L0021,13,word,W000114,recycle,earlier word 'take'; used in the next sentence
+L0021,14,sentence,S000000494,new,'(I'll take) more.' (existing)
+L0021,15,word,W000044,bonus,'child (son or daughter)'; bonus word with final ກ (core in lesson 25); never in a sentence
+L0022,1,word,W000073,new,"'full (after eating)'; bonus word in lesson 14, now core"
+L0022,2,word,W000006,recycle,earlier word 'I'; used in the next sentences
+L0022,3,word,W000020,recycle,earlier word 'already'; used in the next sentence
+L0022,4,sentence,S000000116,new,'I'm full.' (existing)
+L0022,5,word,W000233,new,"'pay'; bonus word in lesson 10, now core"
+L0022,6,sentence,S000000420,new,'I'll pay.' (existing)
+L0022,7,word,W000113,new,"'can; OK'; the word note: after the verb, ບໍ່ just before it"
+L0022,8,word,W000024,recycle,earlier word 'go'; used in the next sentence
+L0022,9,word,W000003,recycle,earlier word 'not'; used in the next sentences
+L0022,10,sentence,S000000198,new,'I can't go.' (existing)
+L0022,11,sentence,S000002929,new,"'No, you can't!' (composed; a line of the conversation)"
+L0022,12,sentence,S000002930,new,'OK.' (composed; a line of the conversation)
+L0022,13,word,W000018,recycle,earlier word 'eat'; used in the next sentence
+L0022,14,word,W000275,recycle,earlier word 'more'; used in the next sentence
+L0022,15,sentence,S000002928,new,'Will you have more?' (composed; the first line of the conversation)
+L0022,16,word,W000008,recycle,earlier word 'thank you'; in the conversation
+L0022,17,dialogue,D0004,new,"'After the meal' (CURRICULUM_PATH lesson 22): 4 lines, then fill in the blank on its lines"
+L0023,1,word,W000042,new,'mother'; the word note: the person it belongs to comes after (mother + I) and the look-alike ແມ່ນ
+L0023,2,word,W000006,recycle,earlier word 'I'; used in the next sentences
+L0023,3,word,W000001,recycle,earlier word 'be well'; used in the next sentence
+L0023,4,sentence,S000000063,new,'My mother is well.' (existing)
+L0023,5,word,W000005,recycle,earlier word 'you'; used in the next sentences
+L0023,6,word,W000014,recycle,earlier word 'be at'; used in the next sentence
+L0023,7,word,W000015,recycle,earlier word 'where'; used in the next sentence
+L0023,8,sentence,S000000062,new,'Where is your mother?' (existing)
+L0023,9,word,W000016,recycle,earlier word 'this'; used in the next sentence
+L0023,10,word,W000004,recycle,earlier word 'is' (the look-alike of ແມ່); used in the next sentence
+L0023,11,sentence,S000002931,new,'This is my mother.' (composed): ແມ່ນ and ແມ່ side by side
+L0023,12,word,W000153,new,"'older brother'; bonus word in lesson 14, now core"
+L0023,13,word,W000023,recycle,earlier word 'have'; used in the next sentences
+L0023,14,word,W000003,recycle,earlier word 'question marker'; used in the next sentences
+L0023,15,sentence,S000000275,new,'Do you have an older brother?' (existing)
+L0023,16,word,W000155,new,'younger sibling'; the word note: the look-alike ນ້ອຍ 'small'
+L0023,17,sentence,S000002933,new,'Do you have a younger sibling?' (composed)
+L0024,1,unit,V27,new,"vowel ◌ຽ◌, 'ee-a', before a final letter"
+L0024,2,word,W000062,new,'study; learn'
+L0024,3,word,W000172,recycle,earlier word 'hospital'; its ໂຮງ starts the next word
+L0024,4,word,W000175,new,'school': ໂຮງ 'building' + ຮຽນ 'study' (word note)
+L0024,5,word,W000155,recycle,earlier word 'younger sibling'; used in the next sentence
+L0024,6,word,W000006,recycle,earlier word 'I'; used in the next sentences
+L0024,7,word,W000014,recycle,earlier word 'be at'; used in the next sentences
+L0024,8,sentence,S000000278,new,'My younger sibling studies at school.' (existing)
+L0024,9,word,W000063,new,'now'
+L0024,10,word,W000005,recycle,earlier word 'you'; used in the next sentence
+L0024,11,word,W000015,recycle,earlier word 'where'; used in the next sentence
+L0024,12,sentence,S000000098,new,'Where are you now?' (existing; verified)
+L0024,13,word,W000225,new,"'read'; bonus word in lesson 20, now core"
+L0024,14,word,W000113,recycle,earlier word 'can'; used in the next sentence
+L0024,15,sentence,S000002932,new,'Now I can read.' (composed)
+L0025,1,word,W000045,new,'friend'; ໝ from lesson 19
+L0025,2,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0025,3,word,W000004,recycle,earlier word 'is'; used in the next sentence
+L0025,4,word,W000006,recycle,earlier word 'I'; used in the next sentence
+L0025,5,sentence,S000000066,new,'He/She is my friend.' (existing)
+L0025,6,word,W000032,new,'we'
+L0025,7,word,W000024,recycle,earlier word 'go'; used in the next sentence
+L0025,8,word,W000030,recycle,earlier word 'restaurant'; used in the next sentence
+L0025,9,sentence,S000000048,new,'Let's go to the restaurant.' (existing)
+L0025,10,word,W000044,new,"'child'; bonus word in lesson 21, now core"
+L0025,11,word,W000005,recycle,earlier word 'you'; used in the next sentence
+L0025,12,word,W000023,recycle,earlier word 'have'; used in the next sentence
+L0025,13,word,W000003,recycle,earlier word 'question marker'; used in the next sentence
+L0025,14,sentence,S000000065,new,'Do you have children?' (existing)

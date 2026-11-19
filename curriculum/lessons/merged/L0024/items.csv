@@ -1,0 +1,16 @@
+position,item_type,item_id,role,notes
+1,unit,V27,new,"vowel ◌ຽ◌, 'ee-a', before a final letter"
+2,word,W000062,new,'study; learn'
+3,word,W000172,recycle,earlier word 'hospital'; its ໂຮງ starts the next word
+4,word,W000175,new,'school': ໂຮງ 'building' + ຮຽນ 'study' (word note)
+5,word,W000155,recycle,earlier word 'younger sibling'; used in the next sentence
+6,word,W000006,recycle,earlier word 'I'; used in the next sentences
+7,word,W000014,recycle,earlier word 'be at'; used in the next sentences
+8,sentence,S000000278,new,'My younger sibling studies at school.' (existing)
+9,word,W000063,new,'now'
+10,word,W000005,recycle,earlier word 'you'; used in the next sentence
+11,word,W000015,recycle,earlier word 'where'; used in the next sentence
+12,sentence,S000000098,new,'Where are you now?' (existing; verified)
+13,word,W000225,new,"'read'; bonus word in lesson 20, now core"
+14,word,W000113,recycle,earlier word 'can'; used in the next sentence
+15,sentence,S000002932,new,'Now I can read.' (composed)
