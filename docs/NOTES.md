@@ -98,7 +98,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - Thumb zone (phone 375×667 and 375×812, desktop): answer boxes centred under the prompt, taller; feedback under them;
   Continue bottom right. Phone: no "Keys: …" line and no small numbers; desktop with a mouse: both shown.
 - A8 `#/letters`: Consonants / Vowels / Tone marks; ນ is one tile for both roles; its page lists start and end sounds,
-  examples (tap → My words), "Practice writing". New learner: empty state.
+  examples (tap → My words), "Practice writing". A new learner sees the full chart with nothing marked.
 - A9 `#/words`: search (Lao, respelling, English), All / Needs work / Newest; a word's page: card, ▶, notes, "Right x
   of n first tries", example sentences. Decide: "Needs work" = under 70% first tries.
 - S8b Review (`#/practice`): no teach cards, mixed questions, ✕ → "End the review?" ends on the summary; Review again /
