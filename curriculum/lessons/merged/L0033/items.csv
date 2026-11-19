@@ -1,0 +1,27 @@
+position,item_type,item_id,role,notes
+1,unit,C07,new,"ຊ: the s of 'saw', same sound as ສ"
+2,word,W000074,new,'delicious': the first word with ຊ
+3,word,W000028,recycle,earlier word 'food'; used in the next sentence
+4,word,W000016,recycle,earlier word 'this'; used in the next sentences
+5,sentence,S000000118,new,'This food is delicious.' (existing; a line of the conversation)
+6,word,W000075,recycle,earlier word 'fish'; used in the next sentence
+7,sentence,S000000120,new,'This fish is delicious.' (existing)
+8,word,W000163,new,'twenty': ຊ again
+9,word,W000085,recycle,earlier word 'price'; used in the next sentence
+10,word,W000202,recycle,earlier word 'thousand'; used in the next sentences
+11,word,W000297,recycle,earlier word 'kip'; used in the next sentences
+12,sentence,S000000294,new,"'It's 20,000 kip.' (existing)"
+13,sentence,S000002946,new,"'20,000 kip.' (composed; a line of the conversation)"
+14,word,W000132,bonus,"'slow': ຊ again; bonus word; never in a sentence"
+15,word,W000001,recycle,earlier word 'hello'; in the conversation
+16,word,W000114,recycle,earlier word 'take; want'; in the conversation
+17,word,W000026,recycle,earlier word 'what'; in the conversation
+18,word,W000023,recycle,earlier word 'have'; in the conversation
+19,word,W000058,recycle,earlier word 'Lao'; in the conversation
+20,word,W000003,recycle,earlier word 'not; question marker'; in the conversation
+21,word,W000011,recycle,earlier word 'water'; in the conversation
+22,word,W000113,recycle,earlier word 'can; OK'; in the conversation
+23,word,W000010,recycle,earlier word 'excuse me'; in the conversation
+24,word,W000017,recycle,earlier word 'how much'; in the conversation
+25,word,W000008,recycle,earlier word 'thank you'; in the conversation
+26,dialogue,D0006,new,"'Eating out' (CURRICULUM_PATH lesson 33): 8 lines, then fill in the blank on its lines"

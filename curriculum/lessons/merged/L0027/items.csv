@@ -1,0 +1,16 @@
+position,item_type,item_id,role,notes
+1,unit,C03,new,"ຄ: the k with a puff, same sound as ຂ"
+4,rule,R09,new,"two letters, one sound: ຂ and ຄ; the letter changes the melody"
+2,unit,V17,new,"◌ົ◌ short 'o', above the consonant, a final follows"
+3,word,W000040,new,'person': the first word with ຄ and ◌ົ◌
+5,word,W000016,recycle,earlier word 'this'; used in the next sentence
+6,word,W000002,recycle,earlier word 'good'; used in the next sentence
+7,sentence,S000000058,new,'This person is good.' (existing)
+8,word,W000058,recycle,earlier word 'Lao'; used in the next sentence
+9,sentence,S000002939,new,'Lao people.' (composed)
+10,word,W000209,new,'milk': ◌ົ◌ again
+11,word,W000096,new,"'cat'; bonus word in lesson 13, now core"
+12,word,W000018,recycle,earlier word 'eat; (colloquial) drink'; used in the next sentence
+13,sentence,S000002940,new,'The cat drinks milk.' (composed; owner idea)
+14,word,W000085,bonus,'price': ຄ again; bonus word (core in lesson 29); never in a sentence
+15,word,W000112,bonus,'six': ◌ົ◌ again; bonus word (a number); never in a sentence

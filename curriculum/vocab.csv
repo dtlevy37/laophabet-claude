@@ -1,35 +1,35 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
 W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,11
 W000002,ດີ,adjective,good,basics,,42
-W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,328
-W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,69
-W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,215
+W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,330
+W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,70
+W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,216
 W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,742
 W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
-W000009,ຂໍ,verb,"ask for, request; may I have",requests,,86
+W000009,ຂໍ,verb,"ask for, request; may I have",requests,,87
 W000010,ຂໍໂທດ,interjection; verb,"sorry, excuse me",greetings,,5
 W000011,ນ້ຳ,noun,water; liquid,food,W000218,45
 W000012,ຫ້ອງ,noun; classifier,room,places,W000012,34
 W000013,ຫ້ອງນ້ຳ,noun,"bathroom, toilet",places,W000012,13
-W000014,ຢູ່,verb,"be at, be located; live, stay",places,,363
-W000015,ໃສ,pronoun (interrogative),where,questions,,71
-W000016,ນີ້,pronoun; adverb,this; here,basics,,400
+W000014,ຢູ່,verb,"be at, be located; live, stay",places,,365
+W000015,ໃສ,pronoun (interrogative),where,questions,,72
+W000016,ນີ້,pronoun; adverb,this; here,basics,,401
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,127
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,128
 W000019,ເຂົ້າ,noun,rice; a meal,food,W000419,55
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,118
 W000021,ດື່ມ,verb,drink,food,,15
-W000022,ຢາກ,verb,want (to),basics,,71
+W000022,ຢາກ,verb,want (to),basics,,73
 W000023,ມີ,verb,have; there is/are,basics,,253
-W000024,ໄປ,verb,go,basics,,182
+W000024,ໄປ,verb,go,basics,,184
 W000025,ມາ,verb,come,basics,,72
-W000026,ຫຍັງ,particle (interrogative),what; something,questions,,52
+W000026,ຫຍັງ,particle (interrogative),what; something,questions,,53
 W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,33
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
 W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,13
-W000031,ລາວ,pronoun,"he, she",pronouns,,179
+W000031,ລາວ,pronoun,"he, she",pronouns,,180
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
 W000033,ນອນ,verb,sleep; lie down,home,,21
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
@@ -38,25 +38,25 @@ W000036,ມື້,noun,day,time,W000036,21
 W000037,ມື້ນີ້,noun,today,time,,42
 W000038,ມື້ອື່ນ,noun,tomorrow,time,,18
 W000039,ໜຶ່ງ,numeral,one,numbers,,49
-W000040,ຄົນ,noun; classifier,person; classifier for people,people,W000040,47
+W000040,ຄົນ,noun; classifier,person; classifier for people,people,W000040,48
 W000041,ຊື່,noun,name,people,W000041,6
 W000042,ແມ່,noun,mother,people,W000040,96
 W000043,ພໍ່,noun,father,people,W000040,50
 W000044,ລູກ,noun; classifier,child (son or daughter),people,W000040,23
-W000045,ໝູ່,noun,friend,people,W000040,16
+W000045,ໝູ່,noun,friend,people,W000040,17
 W000046,ໃຜ,pronoun (interrogative),who,questions,,10
 W000047,ສອງ,numeral,two,numbers,,76
 W000048,ເຮືອນ,noun,house,home,W000149,46
-W000049,ບ້ານ,noun,home; village,home,W000049,26
+W000049,ບ້ານ,noun,home; village,home,W000049,27
 W000050,ນັ້ນ,pronoun,that,basics,,26
-W000051,ໃກ້,adjective,near,places,,22
-W000052,ໄກ,adjective,far,places,,15
+W000051,ໃກ້,adjective,near,places,,23
+W000052,ໄກ,adjective,far,places,,16
 W000053,ເຫັນ,verb,see; think,senses,,9
 W000054,ເບິ່ງ,verb,"look at, watch",senses,,26
 W000055,ໄດ້ຍິນ,verb,hear,senses,,2
 W000056,ເວົ້າ,verb,"speak, say",language,,17
 W000057,ພາສາ,noun,language,language,W000057,4
-W000058,ລາວ,proper noun; noun,Laos; Lao (language/person),language,,21
+W000058,ລາວ,proper noun; noun,Laos; Lao (language/person),language,,22
 W000059,ພາສາລາວ,noun,Lao language,language,,23
 W000060,ຮູ້,verb,know,basics,,5
 W000061,ສາມ,numeral,three,numbers,,36
@@ -73,7 +73,7 @@ W000071,ສີ່,numeral,four,numbers,,11
 W000072,ຫິວ,adjective,hungry,food,,13
 W000073,ອີ່ມ,adjective; verb,full (after eating),food,,3
 W000074,ແຊບ,adjective,delicious,food,,36
-W000075,ປາ,noun,fish,food,W000097,17
+W000075,ປາ,noun,fish,food,W000097,19
 W000076,ໄກ່,noun,chicken,food,W000097,16
 W000077,ຊີ້ນ,noun,meat,food,W000661,16
 W000078,ເຂົ້າໜຽວ,noun,sticky rice,food,W000632,14
@@ -87,14 +87,14 @@ W000085,ລາຄາ,noun,price,shopping,,25
 W000086,ເງິນ,noun,money; silver,shopping,W000297,14
 W000087,ແພງ,adjective,expensive,shopping,,29
 W000088,ຖືກ,adjective; verb,cheap; correct,shopping,,6
-W000089,ໃຫຍ່,adjective,big,describing,,49
+W000089,ໃຫຍ່,adjective,big,describing,,51
 W000090,ນ້ອຍ,adjective,"small, little",describing,,27
 W000091,ຫຼາຍ,adverb; adjective,"very; many, much",describing,,198
 W000092,ຮ້ອນ,adjective,hot,describing,,26
 W000093,ເຢັນ,adjective,cold; cool,describing,,12
 W000094,ງາມ,adjective,beautiful,describing,,40
 W000095,ໝາ,noun,dog,animals,W000097,38
-W000096,ແມວ,noun,cat,animals,W000097,19
+W000096,ແມວ,noun,cat,animals,W000097,20
 W000097,ໂຕ,classifier,classifier for animals (and some objects),classifiers,,51
 W000098,ຍ່າງ,verb,walk,basics,,14
 W000099,ນັ່ງ,verb,sit,basics,,11
@@ -112,7 +112,7 @@ W000110,ເພາະ,conjunction,because,function,,9
 W000111,ຖ້າ,conjunction,if,function,,6
 W000112,ຫົກ,numeral,six,numbers,,4
 W000113,ໄດ້,verb; auxiliary,can; get; did,basics,,47
-W000114,ເອົາ,verb,take; want (to have),basics,,30
+W000114,ເອົາ,verb,take; want (to have),basics,,32
 W000115,ອັນ,noun; classifier,thing; general classifier,classifiers,W000115,12
 W000116,ອັນນີ້,pronoun,this (one),basics,,20
 W000117,ຢຸດ,verb,stop,basics,,4
@@ -145,7 +145,7 @@ W000143,ເວລາ,noun,time,time,,5
 W000144,ປີ,noun,year,time,W000144,18
 W000145,ເດືອນ,noun,month; moon,time,W000145,35
 W000146,ອາທິດ,noun,week,time,W000146,4
-W000147,ສິບ,numeral,ten,numbers,,14
+W000147,ສິບ,numeral,ten,numbers,,15
 W000148,ກ່ອນ,adverb; preposition,before; first,time,,21
 W000149,ຫຼັງ,noun; preposition; classifier,back; behind; after,places,,9
 W000150,ເດັກ,noun,child,people,W000040,43
@@ -161,7 +161,7 @@ W000159,ພວກເຮົາ,pronoun,we (plural),pronouns,,7
 W000160,ເຂົາ,pronoun,they,pronouns,,38
 W000161,ພວກເຂົາ,pronoun,they,pronouns,,6
 W000162,ໝໍ,noun,doctor,health,W000040,8
-W000163,ຊາວ,numeral,twenty,numbers,,4
+W000163,ຊາວ,numeral,twenty,numbers,,5
 W000164,ຕາ,noun,eye,body,W000319,3
 W000165,ມື,noun,hand,body,W000319,11
 W000166,ຕີນ,noun,foot,body,W000319,5
@@ -173,7 +173,7 @@ W000171,ຢາ,noun,medicine,health,W000705,10
 W000172,ໂຮງໝໍ,noun,hospital,places,W000838,7
 W000173,ເມື່ອຍ,adjective,tired,health,,7
 W000174,ຮ້ອຍ,numeral,hundred,numbers,,4
-W000175,ໂຮງຮຽນ,noun,school,places,W000838,17
+W000175,ໂຮງຮຽນ,noun,school,places,W000838,18
 W000176,ໂຮງແຮມ,noun,hotel,places,W000838,17
 W000177,ຕະຫຼາດ,noun,market,places,W000838,24
 W000178,ວັດ,noun,temple,places,W000178,15
@@ -200,14 +200,14 @@ W000198,ຮອດ,verb; preposition,arrive; until,directions,,12
 W000199,ຈາກ,preposition,from,directions,,32
 W000200,ກັບ,preposition; verb,with; return,function,,33
 W000201,ລ້ຽວ,verb,turn,directions,,10
-W000202,ພັນ,numeral,thousand,numbers,,9
+W000202,ພັນ,numeral,thousand,numbers,,11
 W000203,ໝູ,noun,pig; pork,food,W000097,5
 W000204,ງົວ,noun,cow; beef,food,W000097,6
 W000205,ໄຂ່,noun,egg,food,W000284,7
 W000206,ຜັກ,noun,vegetable,food,W000664,24
 W000207,ເຂົ້າຈີ່,noun,bread,food,W000992,6
 W000208,ເຝີ,noun,pho (noodle soup),food,W000419,13
-W000209,ນົມ,noun,milk,food,W000218,5
+W000209,ນົມ,noun,milk,food,W000218,6
 W000210,ເບຍ,noun,beer,food,W000425,5
 W000211,ເຜັດ,adjective,spicy,food,,12
 W000212,ສົ້ມ,adjective,sour,food,,10
@@ -295,7 +295,7 @@ W000293,ໂຊກດີ,interjection,good luck; goodbye,greetings,,3
 W000294,ລາກ່ອນ,interjection,goodbye,greetings,,2
 W000295,ຍິນດີ,adjective; interjection,glad; you're welcome,greetings,,2
 W000296,ບັນຫາ,noun,problem,basics,W000115,4
-W000297,ກີບ,noun,kip (currency),shopping,W000297,20
+W000297,ກີບ,noun,kip (currency),shopping,W000297,22
 W000298,ເຄື່ອງ,noun; classifier,things; stuff; goods,shopping,W000298,4
 W000299,ອາກາດ,noun,weather; air,weather,,9
 W000300,ໜາວ,adjective,cold (weather),weather,,7
@@ -627,7 +627,7 @@ W000625,ອາຫານລາວ,noun,Lao food,food,,3
 W000626,ອາຫານທະເລ,noun,seafood,food,,2
 W000627,ອາຫານຄ່ຳ,noun,dinner; evening meal,food,,2
 W000628,ຮ້ານກາເຟ,noun,coffee shop; cafe,food,W000029,8
-W000629,ຈານ,noun,plate; dish,food,W000601,8
+W000629,ຈານ,noun,plate; dish,food,W000601,9
 W000630,ສ້ອມ,noun,fork,food,W000115,2
 W000631,ໄມ້ຖູ່,noun,chopsticks,food,W000659,2
 W000632,ກະຕິບ,noun,sticky-rice basket (for serving),food,W000601,3
@@ -1424,5 +1424,6 @@ W001422,ບອກທາງ,verb,give directions; show the way,directions,,2
 W001423,ສູບ,verb,pump (air or water); smoke (a cigarette),transport,,2
 W001424,ທາງດ່ວນ,noun,expressway; motorway,transport,W000613,2
 W001425,ເຂົ້າ,verb,to enter; to go in,basics,,3
-W001426,ແນ່,particle,please (softens a request),function,,4
+W001426,ແນ່,particle,please (softens a request),function,,5
 W001427,ເຕ້ຍ,adjective,"short (in height), low",describing,,2
+W001428,ທ່ານໝໍ,noun,doctor (polite),health,W000040,2

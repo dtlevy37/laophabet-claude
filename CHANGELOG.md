@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Lessons 26–33 and section S03 (hosted with 20–25)
+- Built by sub-agents from a shared brief: L0026 Near or far? (R08 far / near / chicken tone card; conversation
+  D0005), L0027 People and pets (ຄ, ◌ົ◌, R09 ຂ/ຄ), L0028 Two, three, four, five (R10 counting people), L0029 Excuse
+  me (ທ, final ດ), L0030 What do you like? (◌ັ◌, ຫຍ), L0031 Big fish, L0032 Father, and thousands of kip (ພ), L0033
+  Eating out (ຊ; conversation D0006). Section S03 "Getting by" = lessons 20–33 (migration section_s03).
+- Content batch S03c: word W001428 ທ່ານໝໍ; sentences S000002934–S000002948; tags. Word notes ສີ່ / ສີ, ໃຫຍ່ / ນ້ອຍ,
+  ພໍ່ / ພໍ.
+- Curriculum review: ◌ົ◌ card no longer says a final always follows (ເຂົ້າ); L0027 card order (ຄ, ◌ົ◌, ຄົນ, then the
+  ຂ/ຄ card with ຂໍ and ຄົນ); D0005 gloss; migration s03b_review_fixes.
+- Lessons 20–33 pushed to the hosted DB (owner, 2026-11-19).
+
 ## 2026-11-19 Lessons 20–25 (section S03, getting by)
 - Built to CURRICULUM_PATH: L0020 I don't understand (ເຂົ້າໃຈ, ຮູ້; bonus ອ່ານ), L0021 I want to go (final ກ;
   ຢາກ, ອີກ; bonus ລູກ), L0022 After the meal (ອີ່ມ, ຈ່າຍ, ໄດ້; conversation D0004, 4 lines), L0023 My mother (ແມ່,

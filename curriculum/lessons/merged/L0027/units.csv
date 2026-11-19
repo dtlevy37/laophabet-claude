@@ -1,0 +1,3 @@
+unit_id,teach_en,notes
+C03,"ຄ is a k with a puff of air, as in 'kite': the same sound as ຂ.","From letters.csv C03 pron_tip (verified) and SOUND_HINTS C03. Kept to one line; R09 explains the two letters. Wording by agent."
+V17,"A short, tight 'oh', like the 'o' in 'boat' said very short. Written ◌ົ above the consonant, with a final letter after it, as in ຄົນ. In ເຂົ້າ the same mark is part of the 'ao' vowel.","From vowels.csv V17 pron_tip (verified: short o before a final consonant; ◌ົ above the consonant) and SOUND_HINTS V17. Shape checked against ຄົນ, ນົມ, ຫົກ. Wording by agent."

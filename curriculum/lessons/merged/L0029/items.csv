@@ -1,0 +1,16 @@
+position,item_type,item_id,role,notes
+1,unit,C12,new,"ທ: t with a puff, as in 'top'"
+2,unit,C09f,new,"final ດ: a cut-off t"
+3,word,W000010,new,"'sorry; excuse me': ທ and final ດ"
+4,sentence,S000000011,new,'Excuse me. / Sorry.' (existing)
+5,word,W000013,recycle,earlier word 'bathroom'; used in the next sentence
+6,word,W000014,recycle,earlier word 'be at'; used in the next sentence
+7,word,W000015,recycle,earlier word 'where'; used in the next sentence
+8,sentence,S000000014,new,"'Excuse me, where's the bathroom?' (existing)"
+9,word,W000017,new,'how much; how many': ທ again
+10,word,W000085,new,"'price'; bonus word in lesson 27, now core"
+11,sentence,S000000206,new,'What's the price?' (existing)
+12,word,W000233,recycle,earlier word 'pay'; used in the next sentence
+13,sentence,S000000421,new,'How much do I pay?' (existing)
+14,word,W001428,bonus,"'doctor (polite)': ທ again; bonus word (owner's word); never in a sentence"
+15,word,W000134,bonus,"'eight': final ດ again; bonus word (a number); never in a sentence"

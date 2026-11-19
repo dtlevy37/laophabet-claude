@@ -1,0 +1,46 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+S000002934,3,person|name|function|quality|place,,SRC-AGENT,unverified,"Tagged by the agent; ໄປ ບ້ານ __: whose or which house: a person or name (ບ້ານລາວ his house), ນີ້, a describing word (ບ້ານໃໝ່) or place"
+S000002935,2,action|consume|motion|quality|function|time|number,W000019|W000031|W000006,SRC-AGENT,unverified,"Tagged by the agent; ບໍ່ __: any verb or describing word after ບໍ່, as S000002929; ເຂົ້າ W000019, ລາວ and ຂ້ອຍ excluded"
+S000002936,2,quality|function|action|place,,SRC-AGENT,unverified,Tagged by the agent; ຢູ່ __ ໂຮງຮຽນ: near/far or a linking word (ໃນ); verbs (ຢູ່ຮຽນ) and place (a room at school) as stretch
+S000002937,2,action|consume|motion|quality|function|time,W000019|W000031,SRC-AGENT,unverified,Tagged by the agent; ເຈົ້າ __ ໄປ ບໍ່?: a verb or auxiliary before ໄປ (as S000002927); ເຂົ້າ W000019 excluded; ລາວ excluded (ເຈົ້າ ລາວ ໄປ ບໍ່? you and he?)
+S000002938,1,action|consume|motion|quality|function,W000019,SRC-AGENT,unverified,Tagged by the agent; one-word reply blanked only inside a conversation (as S000002930): verbs and describing words; ເຂົ້າ W000019 excluded
+S000002939,1,person|animal|plant|food|drink|body|clothing|object|place|name|function|action|consume|motion,,SRC-AGENT,unverified,"Tagged by the agent; __ ລາວ: X of Laos (ອາຫານລາວ) for any noun, or a verb + ລາວ 'him' (ມັກລາວ); numbers, describing words and times left as options"
+S000002940,3,food|drink|animal|plant|function,,SRC-AGENT,unverified,"Tagged by the agent; ແມວ ກິນ __: food or drink, or an animal or plant a cat eats; ແລ້ວ also fits"
+S000002940,1,person|animal|name|time|function,,SRC-AGENT,unverified,"Tagged by the agent; __ ກິນ ນົມ: a person, animal or name drinks milk; time (ດຽວນີ້) and ນີ້ as stretch"
+S000002941,2,animal|plant|food|drink|body|clothing|object|place|time|number|quality|action|consume|motion|function|name,W000031,SRC-AGENT,unverified,Tagged by the agent; ເອົາ __?: take or want almost anything (ເອົາປາ? ເອົາໃຫຍ່? ເອົາໄປ?); only people left as options; ລາວ W000031 excluded (take him?)
+S000002941,1,action|consume|motion|function|food|drink|animal|object|place|plant|clothing|body|time,W000031,SRC-AGENT,unverified,"Tagged by the agent; __ ຫຍັງ?: a verb (ກິນຫຍັງ) or what kind of X (ປາຫຍັງ, ມື້ຫຍັງ); people, names, numbers and describing words left as options; ລາວ excluded"
+S000002942,3,quality|function|number|food,,SRC-AGENT,unverified,"Tagged by the agent; ຂໍ ຈານ __ ແນ່: a describing word (ນ້ອຍ), ນີ້/ອີກ, a number, or a food (ຈານປາ a plate of fish)"
+S000002942,2,food|drink|object|place|clothing|plant|animal|person|name|body|function,,SRC-AGENT,unverified,"Tagged by the agent; ຂໍ __ ໃຫຍ່ ແນ່: ask for a big X: any noun; verbs, describing words, numbers and times left as options"
+S000002943,2,animal|plant|food|drink|body|clothing|object|place|time|number|quality|action|consume|motion|function|name,W000031,SRC-AGENT,unverified,"Tagged by the agent; ເອົາ __: I'll take X: almost anything (ເອົານີ້, ເອົາໃຫຍ່, ເອົາໄປ); only people left as options; ລາວ W000031 excluded"
+S000002944,3,quality|action|consume|motion|function,W000031|W000058,SRC-AGENT,unverified,Tagged by the agent; ປາ ນີ້ __: qualities and verbs as comment (as ນ້ຳນີ້ __); ລາວ (both) excluded
+S000002944,1,person|animal|plant|food|drink|body|clothing|object|place|name|function,,SRC-AGENT,unverified,"Tagged by the agent; __ ນີ້ ໃຫຍ່: this X is big: any noun or ອັນ; verbs, describing words, numbers and times left as options"
+S000002945,1,number,,SRC-AGENT,unverified,Tagged by the agent; __ ພັນ ກີບ: a number
+S000002945,2,number,,SRC-AGENT,unverified,Tagged by the agent; ສິບ __ ກີບ: a number (ສິບຫ້າ ກີບ)
+S000002946,1,number,,SRC-AGENT,unverified,Tagged by the agent; __ ພັນ ກີບ: a number
+S000002947,3,person|name|function|place,,SRC-AGENT,unverified,"Tagged by the agent; ລາວ ແມ່ນ __: he or she is X: a person, name, ລາວ 'Lao'"
+S000002948,1,place|object|animal|person|food|drink|body|name|clothing|plant|time|action|consume|motion|function,W000001,SRC-AGENT,unverified,Tagged by the agent; __ ຢູ່ ໃສ?: where is X (as S000000062); ສະບາຍດີ excluded
+S000000081,1,action|consume|motion|quality|function|time|number|food|drink,W000006|W000031|W000058|W000005|W000032,SRC-AGENT,unverified,"Tagged by the agent; __ ບໍ່?: yes/no question on a verb or describing word, or an offer (ປາບໍ່? ນ້ຳບໍ່?); pronouns and ລາວ excluded (ຂ້ອຍບໍ່? me?)"
+S000000080,4,place|function|quality|person|name,,SRC-AGENT,unverified,"Tagged by the agent; ບ້ານ ຂ້ອຍ ຢູ່ __: a place, ນີ້/ໃສ, near/far, or a person (ຢູ່ໝູ່ at a friend's) as S000000278"
+S000000078,3,place|function|quality|person|name,,SRC-AGENT,unverified,"Tagged by the agent; ຮ້ານອາຫານ ຢູ່ __: a place, ນີ້/ໃສ, near/far, or a person (at a friend's)"
+S000000079,3,place|function|quality|person|name,,SRC-AGENT,unverified,"Tagged by the agent; ຫ້ອງນ້ຳ ຢູ່ __ ບໍ່?: a place, ນີ້, near/far, or a person"
+S000000058,1,person|animal|plant|food|drink|body|clothing|object|place|name|time|function,,SRC-AGENT,unverified,"Tagged by the agent; __ ນີ້ ດີ: this X is good: any noun or time (ມື້ນີ້ດີ); verbs, describing words and numbers left as options"
+S000000131,3,number|quality|function,,SRC-AGENT,unverified,"Tagged by the agent; ເຮົາ ມີ __ ຄົນ: a number, or ຫຼາຍ 'many'"
+S000000279,3,person|name,,SRC-AGENT,unverified,Tagged by the agent; ຂ້ອຍ ມີ __ ສອງ ຄົນ: people counted with ຄົນ
+S000000279,4,number|quality|function,,SRC-AGENT,unverified,"Tagged by the agent; ຂ້ອຍ ມີ ນ້ອງ __ ຄົນ: a number, or ຫຼາຍ"
+S000000094,3,number|quality|function,,SRC-AGENT,unverified,"Tagged by the agent; ໝູ່ ຂ້ອຍ __ ຄົນ ມາ ແລ້ວ: a number, or ຫຼາຍ"
+S000000011,1,quality|action|consume|motion|function,W000019,SRC-AGENT,unverified,"Tagged by the agent; one-word utterance: verbs, describing words and greetings or particles (ສະບາຍດີ, ຂອບໃຈ); ເຂົ້າ W000019 excluded"
+S000000014,4,place|function|quality|person|name,,SRC-AGENT,unverified,"Tagged by the agent; ຂໍໂທດ ຫ້ອງນ້ຳ ຢູ່ __?: a place, ໃສ/ນີ້, near/far, or a person"
+S000000014,1,function|quality|time,,SRC-AGENT,unverified,"Tagged by the agent; __ ຫ້ອງນ້ຳ ຢູ່ ໃສ?: an opener (ຂໍໂທດ, ສະບາຍດີ, ເຈົ້າ) or a time (ດຽວນີ້)"
+S000000206,2,function|number|quality,,SRC-AGENT,unverified,"Tagged by the agent; ລາຄາ __?: a question word, a number (is it five?) or a describing word (ແພງ? expensive?)"
+S000000421,1,person|animal|plant|food|drink|body|clothing|object|place|time|quality|action|consume|motion|function|name,,SRC-AGENT,unverified,"Tagged by the agent; __ ເທົ່າໃດ?: how much is X, how X (ໃຫຍ່ເທົ່າໃດ), how much do you verb: nearly anything; only numbers left as options"
+S000000421,2,function|number|person|name|quality|time|food|drink|object,,SRC-AGENT,unverified,"Tagged by the agent; ຈ່າຍ __?: pay how much, pay him, pay a lot, pay tomorrow, pay (for) the fish; verbs, places, animals and body parts left as options"
+S000000109,2,action|consume|quality,W000019,SRC-AGENT,unverified,Tagged by the agent; ຂ້ອຍ __ ອາຫານ ລາວ: a verb (ມັກ ກິນ ເຮັດ ຢາກ); describing words as stretch (ຫິວ); ເຂົ້າ W000019 excluded
+S000000036,3,person|animal|plant|food|drink|body|clothing|object|place|name|time|function,,SRC-AGENT,unverified,"Tagged by the agent; ນີ້ ແມ່ນ __?: is this X: any noun, time or question word; verbs, numbers and describing words left as options"
+S000000064,1,person|animal|name|object|place|clothing|function|time|food|drink,,SRC-AGENT,unverified,"Tagged by the agent; __ ຂ້ອຍ ບໍ່ ຢູ່: my X is not here: a person, animal, name or thing; verbs, describing words, numbers and body parts left as options"
+S000000361,4,object|number|function,,SRC-AGENT,unverified,"Tagged by the agent; ລາຄາ ສອງ ພັນ __: a currency (ກີບ) or a number (ສອງພັນຫ້າ 2,500)"
+S000000361,3,number,,SRC-AGENT,unverified,"Tagged by the agent; ລາຄາ ສອງ __ ກີບ: a number word (ຮ້ອຍ, ພັນ)"
+S000000118,3,quality|action|consume|motion|function,W000031|W000058,SRC-AGENT,unverified,Tagged by the agent; ອາຫານ ນີ້ __: qualities and verbs as comment (as ນ້ຳນີ້ __); ລາວ (both) excluded
+S000000120,1,food|drink|animal|plant|function,,SRC-AGENT,unverified,"Tagged by the agent; __ ນີ້ ແຊບ: this X is delicious: a food, drink, animal or plant, or ອັນ"
+S000000120,3,quality|action|consume|motion|function,W000031|W000058,SRC-AGENT,unverified,Tagged by the agent; ປາ ນີ້ __: qualities and verbs as comment; ລາວ (both) excluded
+S000000294,4,object|number|function,,SRC-AGENT,unverified,Tagged by the agent; ລາຄາ ຊາວ ພັນ __: a currency (ກີບ) or a number
+S000000294,2,number,,SRC-AGENT,unverified,Tagged by the agent; ລາຄາ __ ພັນ ກີບ: a number

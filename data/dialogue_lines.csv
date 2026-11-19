@@ -30,3 +30,23 @@ D0004,3,1,A,S000002929,SRC-AGENT:lesson,unverified,"No way! (refusing, as hosts 
 D0004,3,2,A,S000000420,SRC-AGENT:lesson,unverified,I will pay
 D0004,4,1,B,S000002930,SRC-AGENT:lesson,unverified,OK
 D0004,4,2,B,S000000009,SRC-AGENT:lesson,unverified,Thank you
+D0005,1,1,A,S000000001,SRC-AGENT:lesson,unverified,Hello!
+D0005,1,2,A,S000000033,SRC-AGENT:lesson,unverified,Where are you going?
+D0005,2,1,B,S000002934,SRC-AGENT:lesson,unverified,To a friend's house.
+D0005,3,1,A,S000000081,SRC-AGENT:lesson,unverified,Is it far?
+D0005,4,1,B,S000002935,SRC-AGENT:lesson,unverified,It's not far.
+D0005,4,2,B,S000002936,SRC-AGENT:lesson,unverified,It's near the school.
+D0005,4,3,B,S000002937,SRC-AGENT:lesson,unverified,Do you want to come?
+D0005,5,1,A,S000002938,SRC-AGENT:lesson,unverified,"Yes, I'd love to!"
+D0006,1,1,A,S000000001,SRC-AGENT:lesson,unverified,Hello.
+D0006,1,2,A,S000002941,SRC-AGENT:lesson,unverified,What will you have?
+D0006,2,1,B,S000002913,SRC-AGENT:lesson,unverified,Do you have Lao food?
+D0006,3,1,A,S000002914,SRC-AGENT:lesson,unverified,We do.
+D0006,4,1,B,S000002943,SRC-AGENT:lesson,unverified,I'll have the fish.
+D0006,4,2,B,S000002915,SRC-AGENT:lesson,unverified,I'll have water.
+D0006,5,1,A,S000002930,SRC-AGENT:lesson,unverified,OK.
+D0006,6,1,B,S000000118,SRC-AGENT:lesson,unverified,This food is delicious!
+D0006,6,2,B,S000000011,SRC-AGENT:lesson,unverified,"Excuse me,"
+D0006,6,3,B,S000000206,SRC-AGENT:lesson,unverified,what's the price?
+D0006,7,1,A,S000002946,SRC-AGENT:lesson,unverified,"20,000 kip."
+D0006,8,1,B,S000000009,SRC-AGENT:lesson,unverified,Thank you!

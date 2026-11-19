@@ -3,3 +3,5 @@ D0001,Hello,greetings,SRC-AGENT:lesson,unverified,"lesson 8 (S7g); CURRICULUM_PA
 D0002,Are you hungry?,food,SRC-AGENT:lesson,unverified,"lesson 10 (S7g); CURRICULUM_PATH target conversation; Lao answers yes by repeating the verb"
 D0003,Where's the bathroom?,places,SRC-AGENT:lesson,unverified,"lesson 18; CURRICULUM_PATH outing conversation (owner 2026-11-19): meeting a friend, going to a restaurant, asking for the bathroom"
 D0004,After the meal,food,SRC-AGENT:lesson,unverified,"lesson 22; CURRICULUM_PATH D0004 (owner 2026-11-19): offering more food, being full, arguing over who pays"
+D0005,Visiting a friend,places,SRC-AGENT:lesson,unverified,"lesson 26; CURRICULUM_PATH D0005 (owner 2026-11-19): meeting someone on the way to a friend's house, asking if it is far"
+D0006,Eating out,food,SRC-AGENT:lesson,unverified,"lesson 33; CURRICULUM_PATH D0006 (owner 2026-11-19): ordering fish and water at a restaurant, praising the food, asking the price"

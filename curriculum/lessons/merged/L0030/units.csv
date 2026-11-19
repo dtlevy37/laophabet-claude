@@ -1,0 +1,3 @@
+unit_id,teach_en,notes
+V02,"A short 'a', like the 'u' in 'hut'. ◌ັ sits above the consonant, and a final letter always follows, as in ມັກ.","From vowels.csv V02 pron_tip (verified: short a before a final consonant, 'u' in 'hut') and SOUND_HINTS V02 (ok). Shape checked against ມັກ, ຫຍັງ (◌ັ above ຍ, the consonant before the final), ກັນ. Wording by agent."
+C29,"ຫຍ is one sound: the ny in 'canyon', said at the start of a word. The ຫ is not said, but it changes the word's melody, as in ໝ.","From letters.csv C29 pron_tip (verified: same sound as initial ຍ; silent ຫ, high class) and SOUND_HINTS C08/C28–C33 ('canyon'). Class not named; melody cue as the C31 ໝ card. Shape: in ຫຍັງ the vowel mark sits over the ຍ. Wording by agent."

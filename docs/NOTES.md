@@ -5,7 +5,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 `docs/QUESTIONS.md`).
 
 ## State (2026-11-15)
-- **Content:** 25 lessons merged (20–25 local only until the owner agrees to push; next: 26, far/near, CURRICULUM_PATH); counts: `bash scripts/pipeline.sh`. Pipeline clean (0 errors, the usual 11
+- **Content:** 33 lessons merged, sections S01–S03 (next: lesson 34, CURRICULUM_PATH "After S03": speak slowly, ວ + ໆ); counts: `bash scripts/pipeline.sh`. Pipeline clean (0 errors, the usual 11
   warnings). Path notes: lessons 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
 - **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); what is applied is `supabase migration list --linked`.
   Netlify serves the frontend;
@@ -23,17 +23,18 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Lessons 26–33 (section S03, CURRICULUM_PATH): build lesson 26 (word-only: far, near; comparison card).
-4. `node scripts/session_test.mjs` fails "practice 18/21/25: only 14 answers from 8 items" (practice plans after
-   those lessons come out short; 18 predates lessons 20–25). Look at `planPractice` or the test's threshold.
+3. Lessons after S03: plan them with the owner from CURRICULUM_PATH "After S03" (not yet laid out lesson by lesson).
+4. `node scripts/session_test.mjs` fails "practice N: only 13–14 answers from 8 items" for N = 18 and most
+   of 21–30 (practice plans come out short as the item pool grows; 18 predates lessons 20–33). Look at `planPractice` or the test's threshold.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- Lessons 20–25 (local; `supabase db push --linked` once you agree): play `#/lesson/L0020` … `L0025`. L0021's final
-  ກ has a one-line card (the app cannot fold a unit into a word card yet); L0022 ends with the 4-line conversation
-  "After the meal". QUESTIONS has an owner question on ນ້ອງ and Na's record list for these lessons.
+- Lessons 20–33 (section S03, hosted): play `#/lesson/L0020` … `L0033`. L0021's final ກ has a one-line card (the app
+  cannot fold a unit into a word card yet); L0022, L0026 and L0033 end with conversations; L0026 opens with the
+  far / near / chicken tone card; L0027 (ຄ, ◌ົ◌ and the ຂ/ຄ card) is the heaviest: split it if it feels long. After
+  L0033 the S03 checkpoint opens. QUESTIONS has an owner question on ນ້ອງ and Na's record lists.
 - Lessons 14–19 on the deployed site: play `#/lesson/L0014` … `L0019`. L0018 ends with the 8-line outing conversation,
   then fill in the blank on its lines. After L0019 the S02 checkpoint opens. Bonus words were added to lessons 2–19 (CHANGELOG).
 - Lesson 13 tone (`#/lesson/L0013`, 360px and desktop): the first tone card is ເຂົ້າ rice / ເຂົ່າ knee only, with a Tone mark column and the paragraph

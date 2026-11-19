@@ -168,7 +168,7 @@ lesson 13; the class rule waits for the classes lesson.
 | A | ຂອບໃຈ. | khop jai | Thanks. |
 
 
-## Lessons 20–33: getting by (section S03; owner 2026-11-19; 20–25 built as L0020–L0025)
+## Lessons 20–33: getting by (section S03; owner 2026-11-19; built as L0020–L0033)
 Decided with the owner after an Opus review of the path (2026-11-19). **Lessons 1–19 stay as built**; the path is
 re-planned from lesson 20. Ideas behind it:
 - **Utility words earlier, symbols slower:** 10 new symbols over 14 lessons, about half the lessons word-only (W: no
@@ -216,9 +216,9 @@ Budget: lessons 23, 24, 28 and 32 carry 4 new core words (`--max-words 4`; owner
   "Excuse me, how much is it?" · ຊາວພັນກີບ. "20,000 kip." · ຂອບໃຈ.
 - Word lessons may also bring back D0002 or D0003 as `recycle` items for repetition in context.
 
-**Build:** draft the missing rows first (`draft-content`: ທ່ານໝໍ, the "new" sentences, word notes for ເຂົ້າໃຈ, ໂຮງຮຽນ,
-ນ້ອງ/ນ້ອຍ, ແມ່/ແມ່ນ), then build one lesson at a time with `build-lesson`. After lesson 33, a hand-written `sections`
-migration for S03 (lessons 20–33).
+Built as planned, with these changes: L0022's conversation has 4 lines; L0023 adds ເຈົ້າມີນ້ອງບໍ່?; L0026 leaves out
+S000000079; L0028 adds S000000112 for ສີ່; L0031 has bonus ສູນ (zero); D0006 has 8 lines (a ໄດ້ "OK" turn keeps the
+speakers alternating). Section S03 = lessons 20–33 (migration section_s03).
 
 ## After S03 (by phrase payoff, about 1 symbol per lesson)
 - "Please speak slowly" first: ວ at the start of a syllable and ໆ (the repeat mark) give ເວົ້າ *wao* "speak" and

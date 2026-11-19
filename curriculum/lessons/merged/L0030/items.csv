@@ -1,0 +1,15 @@
+position,item_type,item_id,role,notes
+1,unit,V02,new,"◌ັ◌ short 'a', above the consonant, a final follows"
+2,word,W000069,new,'like': the first word with ◌ັ◌
+3,word,W000006,recycle,earlier word 'I'; used in the next sentence
+4,word,W000028,recycle,earlier word 'food'; used in the next sentence
+5,word,W000058,recycle,earlier word 'Lao'; used in the next sentence
+6,sentence,S000000109,new,'I like Lao food.' (existing)
+7,unit,C29,new,"ຫຍ: the ny of 'canyon'; ຫ not said"
+8,word,W000026,new,'what': ຫຍ and ◌ັ◌
+9,word,W000016,recycle,earlier word 'this'; used in the next sentence
+10,word,W000004,recycle,earlier word 'is'; used in the next sentence
+11,sentence,S000000036,new,'What is this?' (existing)
+12,word,W000114,recycle,earlier word 'take; want'; used in the next sentence
+13,sentence,S000002941,new,'What will you have?' (composed)
+14,word,W000279,bonus,"'together': ◌ັ◌ again; bonus word; never in a sentence"

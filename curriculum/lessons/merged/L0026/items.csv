@@ -1,0 +1,26 @@
+position,item_type,item_id,role,notes
+1,rule,R08,new,"comparison card: ໄກ far / ໃກ້ near / ໄກ່ chicken, same sounds, three melodies"
+2,word,W000052,new,"'far'; bonus word in lesson 15, now core"
+3,word,W000051,new,"'near'; bonus word in lesson 16, now core: the tone twin of ໄກ"
+4,word,W000076,bonus,"'chicken'; bonus word: the third melody on the card; never in a sentence"
+5,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentences
+6,sentence,S000000081,new,'Is it far?' (existing; a line of the conversation)
+7,sentence,S000002935,new,'It's not far.' (composed; a line of the conversation)
+8,word,W000049,recycle,earlier word 'home'; used in the next sentences
+9,word,W000006,recycle,earlier word 'I; my'; used in the next sentence
+10,word,W000014,recycle,earlier word 'be at'; used in the next sentences
+11,sentence,S000000080,new,'My home is far.' (existing)
+12,word,W000030,recycle,earlier word 'restaurant'; used in the next sentence
+13,sentence,S000000078,new,'The restaurant is near.' (existing)
+14,word,W000175,recycle,earlier word 'school'; used in the next sentence
+15,sentence,S000002936,new,'It's near the school.' (composed; a line of the conversation)
+16,word,W000024,recycle,earlier word 'go'; used in the next sentences
+17,word,W000045,recycle,earlier word 'friend'; used in the next sentence
+18,sentence,S000002934,new,'To a friend's house.' (composed; a line of the conversation)
+19,word,W000005,recycle,earlier word 'you'; used in the next sentence
+20,word,W000022,recycle,earlier word 'want'; used in the next sentences
+21,sentence,S000002937,new,'Do you want to come?' (composed; a line of the conversation)
+22,sentence,S000002938,new,"'Yes, I'd love to!' (composed; the last line of the conversation)"
+23,word,W000001,recycle,earlier word 'hello'; in the conversation
+24,word,W000015,recycle,earlier word 'where'; in the conversation
+25,dialogue,D0005,new,"'Visiting a friend' (CURRICULUM_PATH lesson 26): 5 lines, then fill in the blank on its lines"

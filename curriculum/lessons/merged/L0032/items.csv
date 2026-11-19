@@ -1,0 +1,15 @@
+position,item_type,item_id,role,notes
+1,unit,C18,new,"ພ: p with a puff, as in 'pie'"
+2,word,W000043,new,'father': the first word with ພ; word note: the look-alike ພໍ 'enough'
+3,word,W000006,recycle,earlier word 'I'; used in the next sentence
+4,word,W000003,recycle,earlier word 'not'; used in the next sentence
+5,word,W000014,recycle,earlier word 'be at'; used in the next sentence
+6,sentence,S000000064,new,'My father isn't here.' (existing)
+7,word,W000202,new,'thousand': ພ again
+8,word,W000297,new,'kip (currency)'
+9,word,W000085,recycle,earlier word 'price'; used in the next sentence
+10,word,W000047,recycle,earlier word 'two'; used in the next sentence
+11,sentence,S000000361,new,"'It's 2,000 kip.' (existing)"
+12,word,W000147,new,"'ten'; bonus word in lesson 16, now core"
+13,sentence,S000002945,new,"'10,000 kip.' (composed)"
+14,word,W000087,bonus,"'expensive': ພ again; bonus word; never in a sentence"

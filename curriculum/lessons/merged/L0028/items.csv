@@ -1,0 +1,18 @@
+position,item_type,item_id,role,notes
+1,word,W000047,new,"'two'; bonus word in lesson 18, now core"
+2,word,W000061,new,"'three'; bonus word in lesson 12, now core"
+3,word,W000071,new,"'four'; bonus word in lesson 8, now core; word note: the look-alike ສີ 'colour'"
+4,word,W000082,new,"'five'; bonus word in lesson 9, now core"
+5,rule,R10,new,"counting people: who, number, ຄົນ"
+6,word,W000006,recycle,earlier word 'I'; used in the next sentences
+7,word,W000023,recycle,earlier word 'have'; used in the next sentences
+8,word,W000155,recycle,earlier word 'younger sibling'; used in the next sentence
+9,word,W000040,recycle,earlier word 'person': the counting word for people
+10,sentence,S000000279,new,'I have two younger siblings.' (existing)
+11,word,W000045,recycle,earlier word 'friend'; used in the next sentences
+12,sentence,S000000112,new,'I have four friends.' (existing)
+13,word,W000025,recycle,earlier word 'come'; used in the next sentence
+14,word,W000020,recycle,earlier word 'already'; used in the next sentence
+15,sentence,S000000094,new,'Three of my friends have arrived.' (existing)
+16,word,W000032,recycle,earlier word 'we'; used in the next sentence
+17,sentence,S000000131,new,'There are five of us.' (existing)
