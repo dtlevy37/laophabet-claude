@@ -3,10 +3,12 @@
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
 ## 2026-11-18 A21a full alphabet on Letters
-- `#/letters` gets a "My letters / All letters" switch (device-local). All letters (`js/alphabet.js`, RPC
-  `alphabet_chart`): 27 consonants in traditional order with class, the 6 ຫ combinations, vowels as short/long
-  pairs, the 4 tone marks; "n of 27" counts; unlearned tiles greyed with their sound, learned ones link to their page.
-  Test `tests/a21a_alphabet.sql`. Split out of A21 at the owner's request.
+- `#/letters` shows the whole chart (`js/alphabet.js`, RPC `alphabet_chart`): 27 consonants in traditional order with
+  class, the 6 ຫ combinations, vowels as short/long pairs, the 4 tone marks; learned ones get ✓ and an accent edge,
+  "n of 27 consonants learned". Every tile opens its page at any time, to learn ahead (owner): reached letters keep
+  their teach-card page, others get a `letter_info` page (sound, class, tip, known example words); viewing writes no
+  progress. A first version with a My / All letters switch and locked tiles was replaced the same day at the owner's
+  request. Test `tests/a21a_alphabet.sql`.
 
 ## 2026-11-18 A17 conversations, A18 Lao sizes, A19 romanization and content fixes, L6 lesson titles
 - A17: compact conversation card (▶ inline after the Lao, Reveal on the row, bubbles 75%); speakers "Mali" and

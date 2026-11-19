@@ -149,8 +149,8 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
   nothing (`intake.js:8`); a "Brisk" pace setting; "Thai readers:" notes. Not for now (DESIGN "Who it is for").
 - Lesson side rail (the lesson's words beside the stage on wide screens): scrapped for now (owner 2026-11-18). If it
   comes back: in many activities the Lao is the answer, so it must collapse while a question is unanswered.
-- A21a leftovers: tone-mark tiles in "All letters" show the glyph only (the DB has no sound or name for T1–T4);
-  vowels are counted by written form ("of 36").
+- A21a leftovers: tone-mark tiles show the glyph only (the DB has no sound or name for T1–T4); vowels are counted
+  by written form ("of 36"); a letter's page lists only example words the learner has learned.
 - A18 leftovers: measure the Lao sizes again with the self-hosted Noto Sans Lao (non-Windows); lessons 1–12 have no
   5-word sentence, so the two-line rule was checked on a synthetic one. The Lao text size setting labels have no `lo`.
 - A17 leftover: "Show earlier lines" on a phone fill-in (the planner already passes only 2 context turns).

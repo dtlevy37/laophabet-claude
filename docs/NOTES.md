@@ -29,9 +29,9 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- A21a full alphabet (`#/letters`, 360px and desktop): "My letters / All letters" switch, remembered after a reload;
-  All letters shows 27 consonants in order with their class, 6 ຫ combinations, vowels in short/long pairs and 4 tone
-  marks, "n of 27" style counts; unlearned tiles greyed with their sound, learned ones open their page.
+- A21a full alphabet (`#/letters`, 360px and desktop): every consonant (27, in order, with class), the 6 ຫ
+  combinations, all vowels in short/long pairs and the 4 tone marks; learned ones carry ✓ and an accent edge, "5 of 27
+  consonants learned"; any tile opens its page, e.g. ຄ (not taught yet) shows its sound, class and tip.
 - A17 conversations (`#/try/L0010`, desktop then 360px): the 7-line card fits one 1440×900 screen; Mali left,
   Somphone right, ▶ after the Lao, Reveal on the same row; tap a name or ▶ to hear a line; "Play the conversation"
   plays every line, the playing bubble marked and kept in view (scroll away: it comes back ~2s after you stop);
@@ -68,7 +68,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - A15 spaced review (hosted): a word learned today shows as due in Review tomorrow morning, not a week later.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
-  `#/letters` greys unreached tiles; the speaker is an SVG in a tinted button.
+  the speaker is an SVG in a tinted button.
 - Native onboarding (`#/` as a new native, or a profile with no `onboarded_at`): "Your age" shows six ranges, no date
   field; its Lao (`age_*`, `profile_age`) is unverified until the wife has seen it (`docs/LAO_UI_REVIEW.md`).
 - A11: a final consonant shows as the bare letter (no ◌). Open lesson 1 (ກິນ): the ກ + ◌ິ + ນ pieces line and the
@@ -186,7 +186,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   layout: the `(hover: hover) and (pointer: fine)` and `max-height: 560px` blocks at the end of `styles.css`.
 - `js/home.js` home (#/): Continue card and the section tiles. `js/lessons.js` `#/lessons`: the compact path,
   `nextLesson()` (`session.js` `resumableLesson`; shared with home). Browser check: `scripts/browser/a7_shots.js`.
-- `js/letters.js` (`learner_units`; the "All letters" view is `js/alphabet.js`, RPC `alphabet_chart`), `js/words.js` (`learner_words`, `learner_word`), home strip one `learner_stats`
+- `js/letters.js` (`learner_units`; the chart is `js/alphabet.js`, RPCs `alphabet_chart`, `letter_info`), `js/words.js` (`learner_words`, `learner_word`), home strip one `learner_stats`
   call (wraps `learner_counts`); summary missed list from `session_summary.missed`; `js/practice.js` + `planPractice` / practice runner branch in `session.js` (`start_practice`,
   `complete_practice`). SQL tests `app/backend/tests/a8_*.sql`, `a9_*.sql`, `s8b_*.sql` (rolled back; run with docker
   exec psql). Browser: `scripts/browser/s8b_practice.js`.
