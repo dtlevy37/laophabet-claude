@@ -13,3 +13,4 @@ position,item_type,item_id,role,notes
 12,dialogue,D0001,new,"the conversation (S7g): lines 1-4 as one card, then fill in the blank on its lines"
 13,word,W000031,recycle,"earlier word 'he, she'; shown before the bonus word (ລາວຂາຍເຂົ້າ comes in lesson 11)"
 14,word,W000084,bonus,'sell'; bonus word (LESSON_RULES decision 21): readable with known letters plus final ຍ; never in a sentence
+15,word,W000071,bonus,'four'; bonus number (owner 2026-11-19); never in a sentence

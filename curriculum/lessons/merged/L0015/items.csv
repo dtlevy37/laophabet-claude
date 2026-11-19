@@ -16,3 +16,4 @@ position,item_type,item_id,role,notes
 15,sentence,S000002919,new,"'He's gone.' (composed)"
 16,word,W000075,bonus,"'fish'; bonus word with ປ; never in a sentence"
 17,word,W000052,bonus,"'far'; bonus word with ໄ◌; never in a sentence"
+18,word,W000205,bonus,'egg'; bonus word with ໄ◌ (owner 2026-11-19); never in a sentence

@@ -22,3 +22,4 @@ position,item_type,item_id,role,notes
 21,word,W000090,recycle,earlier word 'small'; used in the next sentence
 22,sentence,S000002906,new,'I have a small glass.' (composed)
 23,word,W000630,bonus,'fork'; bonus word with the final ມ; never used in a sentence
+24,word,W000061,bonus,'three'; bonus number with ມ (owner 2026-11-19); never in a sentence

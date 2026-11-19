@@ -17,3 +17,4 @@ position,item_type,item_id,role,notes
 16,word,W001426,recycle,earlier word 'please (softener)'; used in the next sentence
 17,sentence,S000002897,new,'Could I have a small glass?' (composed)
 18,sentence,S000002898,new,'This glass is small' (composed)
+19,word,W000207,bonus,"'bread'; bonus word (owner 2026-11-19): ເຂົ້າ + ຈີ່, opens food sentences later; never in a sentence"

@@ -16,3 +16,4 @@ position,item_type,item_id,role,notes
 15,sentence,S000002880,new,'could I have some water?' (composed)
 16,sentence,S000002881,new,'could I have some rice?' (composed)
 17,word,W000049,bonus,"'home; village'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence"
+18,word,W000388,bonus,'arm'; bonus word (owner 2026-11-19): body word next to ຂາ leg; never in a sentence

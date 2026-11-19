@@ -103,6 +103,11 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
    in a sentence, and available in practice alongside core words. A bonus word becomes core the first time a
    lesson uses it in a sentence: as we go when a lesson has room, or several at once in a lesson with no new
    letters (a review of letters that still brings new content). Needs the `bonus` role (PLAN S7f).
+   Choosing bonus words (owner, 2026-11-19): numbers as soon as each is readable (they need time to soak in);
+   otherwise words that reinforce the lesson's new letter or open alternate sentences later (bread, cat, egg). No
+   bonus for a word that turns core within about 4 lessons. A word that belongs to a later topic waits for it (ຂີ່
+   ride with vehicles, ໂຮງແຮມ hotel with directions). A word that differs from a current bonus word only by a tone
+   mark waits for its contrast lesson (ໄກ່ chicken with ໄກ / ໃກ້ far / near).
 22. **Lesson 4 changes** (user, 2026-11-10): the sentence ລາວຂາວ is removed; ຂາ is the lesson's bonus word; ຂາວ
    moves to lesson 11 with ສີ. Lessons 1–3 stay as they are. Amended 2026-11-12 (user): ຂາວ is also a bonus word
    in lesson 4; lesson 11 makes it core.

@@ -14,3 +14,4 @@ position,item_type,item_id,role,notes
 13,sentence,S000000310,new,'She is in the hospital.' (existing)
 14,word,W000095,bonus,"'dog'; bonus word with ໝ (same sounds as ມາ 'come', a different melody); never in a sentence"
 15,word,W000142,bonus,'hour; o'clock'; bonus word with ໂ◌ and the final ງ; never in a sentence
+16,word,W000256,bonus,'new'; bonus word with ໝ (owner 2026-11-19); never in a sentence

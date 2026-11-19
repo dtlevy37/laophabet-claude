@@ -2,6 +2,13 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Bonus words in lessons 2–19; reorder proposal (owner)
+- 13 bonus words (owner): numbers as soon as readable (ເກົ້າ 9 in L2, ສີ່ 4 in L8, ສາມ 3 in L12, ຮ້ອຍ 100 in L14,
+  ສິບ 10 in L16) and letter reinforcers (ແຂນ arm L6, ຈ່າຍ pay L10, ເຂົ້າຈີ່ bread L11, ແມວ cat L13, ອີ່ມ full L14,
+  ໄຂ່ egg L15, ແດງ red L18, ໃໝ່ new L19); categories tagged; migration bonus_words_l02_l19, hosted. Rule in
+  LESSON_RULES decision 21.
+- docs/REORDER_PROPOSAL.md (Opus review): keep 1–19, re-plan 20–33 as S03 with more word-only lessons; scope open.
+
 ## 2026-11-19 Section S02, tooth bonus, lessons 14–19 hosted (owner)
 - Section S02 "Going out" = lessons 11–19 (owner: a natural checkpoint after the hospital lesson); migration section_s02.
 - ແຂ້ວ tooth (W000384) is a bonus word in L0005 next to ແລ້ວ already / ແກ້ວ glass (owner). It was first put in L0019

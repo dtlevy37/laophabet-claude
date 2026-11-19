@@ -20,3 +20,4 @@ position,item_type,item_id,role,notes
 19,sentence,S000002890,new,"conversation line 5 (second part), speaker A: 'I've eaten already' (composed); the payoff of the conversation"
 20,dialogue,D0002,new,"the full target conversation (S7g) with the pronoun greeting (owner 2026-11-17): lines 1-7 as one card, then fill in the blank on its lines"
 21,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
+22,word,W000233,bonus,"'pay'; bonus word (owner 2026-11-19), core later in the S03 plan; never in a sentence"

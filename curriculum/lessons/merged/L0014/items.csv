@@ -15,3 +15,5 @@ position,item_type,item_id,role,notes
 14,sentence,S000002915,new,"'I'll have water.' (composed)"
 15,word,W000153,bonus,"'older brother'; bonus word with the silent ອ; never in a sentence"
 16,word,W000092,bonus,"'hot'; bonus word with ຮ; never in a sentence"
+17,word,W000174,bonus,'hundred'; bonus number with ຮ (owner 2026-11-19); never in a sentence
+18,word,W000073,bonus,"'full (after eating)'; bonus word with ອ (owner 2026-11-19), pairs with ຫິວ hungry; never in a sentence"

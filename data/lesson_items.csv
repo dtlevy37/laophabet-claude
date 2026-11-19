@@ -11,6 +11,7 @@ L0002,4,unit,T2,new,tone mark; taught as a change of melody only (no class rule 
 L0002,5,word,W000019,new,'rice' sense only; 'to enter' is the separate row W001425
 L0002,6,word,W000018,recycle,the only earlier word
 L0002,7,sentence,S000002870,new,first phrase: ກິນເຂົ້າ
+L0002,8,word,W000141,bonus,'nine'; bonus number (owner 2026-11-19: numbers as soon as readable); one letter away from ເຂົ້າ rice; never in a sentence
 L0003,1,unit,C23,new,ລ at the start of a syllable
 L0003,2,unit,V03,new,vowel written after the consonant
 L0003,3,unit,C24f,new,ວ at the end of a syllable
@@ -60,6 +61,7 @@ L0006,14,word,W000011,recycle,earlier word; used in the next sentence
 L0006,15,sentence,S000002880,new,'could I have some water?' (composed)
 L0006,16,sentence,S000002881,new,'could I have some rice?' (composed)
 L0006,17,word,W000049,bonus,'home; village'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new letter; never in a sentence
+L0006,18,word,W000388,bonus,'arm'; bonus word (owner 2026-11-19): body word next to ຂາ leg; never in a sentence
 L0007,1,unit,C09,new,new letter (initial role)
 L0007,2,unit,V05,new,long 'ee' vowel above the consonant
 L0007,3,word,W000002,new,'good'; uses both new units
@@ -89,6 +91,7 @@ L0008,11,sentence,S000002885,new,"conversation line 4, speaker B: I'm well (comp
 L0008,12,dialogue,D0001,new,"the conversation (S7g): lines 1-4 as one card, then fill in the blank on its lines"
 L0008,13,word,W000031,recycle,"earlier word 'he, she'; shown before the bonus word (ລາວຂາຍເຂົ້າ comes in lesson 11)"
 L0008,14,word,W000084,bonus,'sell'; bonus word (LESSON_RULES decision 21): readable with known letters plus final ຍ; never in a sentence
+L0008,15,word,W000071,bonus,'four'; bonus number (owner 2026-11-19); never in a sentence
 L0009,1,unit,C25,new,new letter (initial h role only)
 L0009,2,word,W000072,new,'hungry'; uses the new letter
 L0009,3,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
@@ -128,6 +131,7 @@ L0010,18,sentence,S000002888,recycle,"conversation line 5 (first part), speaker 
 L0010,19,sentence,S000002890,new,"conversation line 5 (second part), speaker A: 'I've eaten already' (composed); the payoff of the conversation"
 L0010,20,dialogue,D0002,new,"the full target conversation (S7g) with the pronoun greeting (owner 2026-11-17): lines 1-7 as one card, then fill in the blank on its lines"
 L0010,21,word,W000090,bonus,'small; little'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
+L0010,22,word,W000233,bonus,"'pay'; bonus word (owner 2026-11-19), core later in the S03 plan; never in a sentence"
 L0011,1,word,W000536,new,'colour'; no new letters (lesson 11 uses known letters only)
 L0011,2,word,W000016,recycle,earlier word 'this'; used in the colour sentences and later ones
 L0011,3,word,W000538,new,"'white'; bonus word in lesson 4, now core"
@@ -146,6 +150,7 @@ L0011,15,word,W000009,recycle,earlier word 'ask for'; used in the next sentence
 L0011,16,word,W001426,recycle,earlier word 'please (softener)'; used in the next sentence
 L0011,17,sentence,S000002897,new,'Could I have a small glass?' (composed)
 L0011,18,sentence,S000002898,new,'This glass is small' (composed)
+L0011,19,word,W000207,bonus,"'bread'; bonus word (owner 2026-11-19): ເຂົ້າ + ຈີ່, opens food sentences later; never in a sentence"
 L0012,1,unit,C20,new,initial ມ
 L0012,2,unit,C20f,new,"final ◌ມ; shown with C20 as one card (same-sound pair, like C13 and C13f)"
 L0012,3,word,W000023,new,'have; there is': the first word with ມ
@@ -169,6 +174,7 @@ L0012,20,sentence,S000002905,new,'This is water.' (composed)
 L0012,21,word,W000090,recycle,earlier word 'small'; used in the next sentence
 L0012,22,sentence,S000002906,new,'I have a small glass.' (composed)
 L0012,23,word,W000630,bonus,'fork'; bonus word with the final ມ; never used in a sentence
+L0012,24,word,W000061,bonus,'three'; bonus number with ມ (owner 2026-11-19); never in a sentence
 L0013,1,rule,R05,new,"the first tone card: what a melody is, ເຂົ້າ rice / ເຂົ່າ knee, the tone marks called out"
 L0013,2,word,W000724,new,"'knee': same sounds as ເຂົ້າ 'rice', a different melody (tone twin)"
 L0013,3,word,W000019,recycle,earlier word 'rice': the twin of ເຂົ່າ
@@ -184,6 +190,7 @@ L0013,12,sentence,S000002909,new,'The horse has come.' (composed): ມ້າ and
 L0013,13,word,W000023,recycle,earlier word 'have; there is'; used in the next sentence
 L0013,14,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentence
 L0013,15,sentence,S000002910,new,'Is there a horse?' (composed)
+L0013,16,word,W000096,bonus,'cat'; bonus word (owner 2026-11-19): an animal next to ມ້າ horse; never in a sentence
 L0014,1,unit,C26,new,silent first letter ອ (carries the vowel)
 L0014,2,word,W000028,new,'food': starts with the silent ອ
 L0014,3,word,W000058,recycle,earlier word 'Lao'; used in the next sentence
@@ -200,6 +207,8 @@ L0014,13,word,W000011,recycle,earlier word 'water'; used in the next sentence
 L0014,14,sentence,S000002915,new,'I'll have water.' (composed)
 L0014,15,word,W000153,bonus,'older brother'; bonus word with the silent ອ; never in a sentence
 L0014,16,word,W000092,bonus,'hot'; bonus word with ຮ; never in a sentence
+L0014,17,word,W000174,bonus,'hundred'; bonus number with ຮ (owner 2026-11-19); never in a sentence
+L0014,18,word,W000073,bonus,"'full (after eating)'; bonus word with ອ (owner 2026-11-19), pairs with ຫິວ hungry; never in a sentence"
 L0015,1,unit,C15,new,"ປ, p as in 'spy'"
 L0015,2,unit,V33,new,"vowel ໄ◌ 'ai', written first"
 L0015,3,word,W000024,new,'go': ປ with ໄ◌
@@ -217,6 +226,7 @@ L0015,14,word,W000020,recycle,earlier word 'already'; used in the next sentence
 L0015,15,sentence,S000002919,new,'He's gone.' (composed)
 L0015,16,word,W000075,bonus,'fish'; bonus word with ປ; never in a sentence
 L0015,17,word,W000052,bonus,'far'; bonus word with ໄ◌; never in a sentence
+L0015,18,word,W000205,bonus,'egg'; bonus word with ໄ◌ (owner 2026-11-19); never in a sentence
 L0016,1,unit,V34,new,"vowel ໃ◌, the same 'ai' as ໄ◌"
 L0016,2,word,W000015,new,'where': uses ໃ◌
 L0016,3,word,W000005,recycle,earlier word 'you'; used in the next sentence
@@ -231,6 +241,7 @@ L0016,11,word,W000008,new,"'thank you': ຂອບ ends in the closed p, ໃຈ u
 L0016,12,sentence,S000000009,new,"'Thank you!' (existing, verified; outing conversation line)"
 L0016,13,word,W000051,bonus,'near' (pairs with ໄກ 'far' from lesson 15); bonus word with ໃ◌; never in a sentence
 L0016,14,word,W000068,bonus,'give'; bonus word with ໃ◌; never in a sentence
+L0016,15,word,W000147,bonus,'ten'; bonus number with the final ບ (owner 2026-11-19); never in a sentence
 L0017,1,unit,C21,new,"ຢ, y as in 'young'"
 L0017,2,unit,V09,new,"vowel ◌ູ, long 'oo', under the letter"
 L0017,3,word,W000014,new,'be at; live': ຢ with ◌ູ
@@ -274,6 +285,7 @@ L0018,23,word,W000008,recycle,earlier word 'thank you'; used in the conversation
 L0018,24,dialogue,D0003,new,"the outing conversation (CURRICULUM_PATH lesson 18): 8 lines as one card, then fill in the blank on its lines"
 L0018,25,word,W000094,bonus,'beautiful'; bonus word with ງ at the start; never in a sentence
 L0018,26,word,W000047,bonus,'two'; bonus word with the final ງ; never in a sentence
+L0018,27,word,W000537,bonus,"'red'; bonus word with the final ງ (owner 2026-11-19), joins white and black; never in a sentence"
 L0019,1,unit,C31,new,"ໝ, the same m as ມ"
 L0019,2,word,W000162,new,'doctor': ໝ with the 'aw' vowel you know
 L0019,3,word,W000031,recycle,earlier word 'he; she'; used in the next sentences
@@ -289,3 +301,4 @@ L0019,12,sentence,S000000309,new,'Where is the hospital?' (existing)
 L0019,13,sentence,S000000310,new,'She is in the hospital.' (existing)
 L0019,14,word,W000095,bonus,"'dog'; bonus word with ໝ (same sounds as ມາ 'come', a different melody); never in a sentence"
 L0019,15,word,W000142,bonus,'hour; o'clock'; bonus word with ໂ◌ and the final ງ; never in a sentence
+L0019,16,word,W000256,bonus,'new'; bonus word with ໝ (owner 2026-11-19); never in a sentence

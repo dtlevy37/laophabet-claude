@@ -25,3 +25,4 @@ position,item_type,item_id,role,notes
 24,dialogue,D0003,new,"the outing conversation (CURRICULUM_PATH lesson 18): 8 lines as one card, then fill in the blank on its lines"
 25,word,W000094,bonus,"'beautiful'; bonus word with ງ at the start; never in a sentence"
 26,word,W000047,bonus,"'two'; bonus word with the final ງ; never in a sentence"
+27,word,W000537,bonus,"'red'; bonus word with the final ງ (owner 2026-11-19), joins white and black; never in a sentence"
