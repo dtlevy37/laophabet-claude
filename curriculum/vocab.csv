@@ -1,7 +1,7 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
 W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,11
 W000002,ດີ,adjective,good,basics,,42
-W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,322
+W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,323
 W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,67
 W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,214
 W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,738
@@ -9,21 +9,21 @@ W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
 W000009,ຂໍ,verb,"ask for, request; may I have",requests,,86
 W000010,ຂໍໂທດ,interjection; verb,"sorry, excuse me",greetings,,5
-W000011,ນ້ຳ,noun,water; liquid,food,W000218,43
+W000011,ນ້ຳ,noun,water; liquid,food,W000218,44
 W000012,ຫ້ອງ,noun; classifier,room,places,W000012,34
 W000013,ຫ້ອງນ້ຳ,noun,"bathroom, toilet",places,W000012,12
 W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
 W000015,ໃສ,pronoun (interrogative),where,questions,,69
 W000016,ນີ້,pronoun; adverb,this; here,basics,,398
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,124
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,125
 W000019,ເຂົ້າ,noun,"rice, food",food,W000419,54
-W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,116
+W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,117
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
-W000023,ມີ,verb,have; there is/are,basics,,248
+W000023,ມີ,verb,have; there is/are,basics,,249
 W000024,ໄປ,verb,go,basics,,173
-W000025,ມາ,verb,come,basics,,70
+W000025,ມາ,verb,come,basics,,71
 W000026,ຫຍັງ,particle (interrogative),what; something,questions,,52
 W000027,ເປັນ,verb,"be, become; be ill",basics,,73
 W000028,ອາຫານ,noun,food,food,W000629,31
@@ -560,7 +560,7 @@ W000558,ງູ,noun,snake,animals,W000097,5
 W000559,ຍຸງ,noun,mosquito,animals,W000097,3
 W000560,ເປັດ,noun,duck,animals,W000097,4
 W000561,ຄວາຍ,noun,water buffalo,animals,W000097,6
-W000562,ມ້າ,noun,horse,animals,W000097,2
+W000562,ມ້າ,noun,horse,animals,W000097,5
 W000563,ເບີໂທ,noun,phone number,basics,,2
 W000564,ທີ່ຢູ່,noun,address,basics,,2
 W000565,ຄຳ,noun,word,language,W000565,3

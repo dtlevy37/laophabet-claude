@@ -9,22 +9,15 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18): lesson 13 (L3 tone; ອ moves to 14), then more
+Owner checks of what is built (lesson 13, the tone lesson, once Na's takes are in), then lesson 14 (ອ) and more
 lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
       object in hand; check lesson sentences with this pattern.
-- [ ] **L3 Teaching tone (lesson 13).** The app side is built (tone table rule card, tone-pair questions, listen
-      for meaning; DESIGN "Activities"). Next: build lesson 13 with build-lesson. Agreed shape (owner 2026-11-18):
-      a rule card R05 (what tone is; the first-time caption: "Lao words have a melody. This line shows it ...") whose
-      rows are word ids, so it renders as the tone table (Lao with the mark highlighted, sound, meaning, tone
-      picture, ▶): ເຂົ້າ kao "rice" W000019 / ເຂົ່າ kao "knee" W000724, ມາ maa "come" W000025 / ມ້າ maa "horse"
-      W000562, and the ຂາວ / ລາວ (white / he) and ◌້ (ເຂົ້າ rice vs ນ້ຳ water, decision 18) recaps. New core words
-      ເຂົ່າ and ມ້າ; the planner adds the pair questions after each card. Consonant class: one line under "More" only;
-      classes get their own lesson soon (with ຄ, not right after this one). Na records ເຂົ່າ and ມ້າ (the pair
-      questions need both words of a pair recorded). Later, a "How tones work" sheet under Letters.
-      **Done when:** lesson 13 is merged and two pairs play their pair questions with recordings.
+- [ ] **L3b "How tones work" sheet** under Letters: class × syllable type, only the cells the learner has reached, one
+      taught word each with ▶. Goes with (or after) the consonant-class lesson. **Done when:** the sheet shows the
+      reached cells with a word and ▶ each.
 - [ ] **L4 Two voices in conversations.** Conversations are built (DESIGN "Conversations"); when a second native
       records, speaker B's lines play their take. **Done when:** lesson 10's card plays A and B in different voices.
 - [ ] **L5 Speaking practice.** Design `docs/L5_SPEAKING_DESIGN.md`; owner answered its questions 2026-11-13 (phase 1
@@ -33,7 +26,7 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       the learner says it aloud, then hears B's recording (no recording of the learner, no grading). Slow playback
       (0.75×, `playbackRate`) on sentence and conversation ▶.
 - [~] **H6 More listening.** Audio on more question types as recordings arrive; no transliteration by default.
-      Listen for meaning is built (L3) but planned only for tone pairs; next: use it for every recorded word.
+      Listen for meaning is built but planned only for tone pairs; next: use it for every recorded word.
 - [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log` (start
       from the view `review_retention_by_lesson`); waits for data.
 
@@ -113,7 +106,7 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       - From the November review: today one right tap, even on a replay with the same four options, raises a level
         and counts as "known", and a pick from four is logged as recall (`multiple_choice.js:109`). Decide in the
         design note whether replays (attempt > 0) may raise levels.
-- [ ] **S9b Tone drill:** after L3.
+- [ ] **S9b Tone drill:** can be built now that lesson 13 (tone) is merged; owner prefers melody learned with meaning, so check the design with the owner first.
 - [ ] **S10 Native feedback:** review RPCs and the `recordings` insert policy require `role = 'native'`; queue
       lesson content first; feedback on words and units, one `feedback` shape keyed by `(item_type, item_id)`; owner
       views with verified reviewers marked; export → agent decisions → migration (source `native review <ids>`);

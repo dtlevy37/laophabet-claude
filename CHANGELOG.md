@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Lesson 13 "Same sounds, different melody"
+- L0013: rules R05 (tone table: ຂາວ/ລາວ, ເຂົ້າ/ເຂົ່າ, ມາ/ມ້າ) and R06 (recap: one mark ◌້, two melodies: ເຂົ້າ, ນ້ຳ,
+  ມ້າ); core words ເຂົ່າ knee and ມ້າ horse; composed sentences S000002908 ມ້າກິນນ້ຳ, S000002909 ມ້າມາແລ້ວ (its blank
+  is skipped on purpose: no safe wrong option), S000002910 ມີມ້າບໍ່? (unverified).
+- lesson_tool check: a word listed in a new rule's tone table counts as using that rule.
+
 ## 2026-11-19 L3 tone lesson, app side
 - Lesson 13 becomes the tone lesson (owner 2026-11-18); ອ moves to 14; consonant classes get their own lesson soon
   after, with ຄ, not straight after 13. The tone-picture quiz ("Which melody?") was dropped: the owner wants melody

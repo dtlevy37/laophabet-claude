@@ -1,0 +1,4 @@
+sentence_id,lao,lao_spaced,ipa,respelling,english,target_word_id,template_id,source,confidence,notes,word_overrides,register
+L0013-S001,ມ້າກິນນ້ຳ.,ມ້າ ກິນ ນ້ຳ.,maː˥˨ kin˩(˧) nam˥˨,maa gin nam.,The horse drinks water.,W000562,,SRC-AGENT:composed,unverified,Composed by the agent for lesson 13 (tone: ມ້າ horse); not from a source. ກິນ for drinking is colloquial (taught in lesson 1 as eat; drink).,,
+L0013-S002,ມ້າມາແລ້ວ.,ມ້າ ມາ ແລ້ວ.,maː˥˨ maː˧˥ lɛːw˥˨,maa maa laew.,The horse has come.,W000562,,SRC-AGENT:composed,unverified,Composed by the agent for lesson 13: ມ້າ horse and ມາ come side by side (same sounds; the melody tells them apart); not from a source.,,
+L0013-S003,ມີມ້າບໍ່?,ມີ ມ້າ ບໍ່?,miː˧˥ maː˥˨ bɔː˧,mii maa baw?,Is there a horse?,W000562,,SRC-AGENT:composed,unverified,Composed by the agent for lesson 13 (pattern of S000002901 ມີນ້ຳບໍ່?); not from a source.,,

@@ -1,0 +1,4 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0013-S001,1,animal,W000031|W000058|W000006|W000005,SRC-AGENT,unverified,Tagged by the agent; __ ກິນນ້ຳ: people also drink water so pronouns are excluded
+L0013-S002,1,animal,W000031|W000058|W000006|W000005,SRC-AGENT,unverified,Tagged by the agent; __ ມາແລ້ວ: people also come so pronouns are excluded
+L0013-S003,2,animal|food|drink|object|person|place|body|plant|clothing,,SRC-AGENT,unverified,Tagged by the agent; ມີ __ ບໍ່: any thing one can have fits; the wrong options are verbs and qualities

@@ -758,9 +758,11 @@ def check(world, draft, a):
     fresh = {u for u in new_units | new_rules} | {i for _, i in world.prev_new}
     if a.no_new_letters and (new_units or new_rules):
         err.append("--no-new-letters: the draft lists new units or rules")
+    # A word that a new rule's tone table lists (teach_en rows that are word ids, L3) uses that rule.
+    tabled = {x.strip() for r in new_rules for x in (teach_r.get(r, {}).get("teach_en") or "").split(" || ")[1:]}
     if fresh and not a.no_new_letters:
         for w in new_words:
-            if w not in promoted and not (world.word_sig(w)[0] & fresh):
+            if w not in promoted and w not in tabled and not (world.word_sig(w)[0] & fresh):
                 err.append(f"word {w} {world.lao(w)}: uses no unit or rule from this or the previous lesson")
     for ctx, s, _ in sents:
         ws = world.sent_words.get(s, [])

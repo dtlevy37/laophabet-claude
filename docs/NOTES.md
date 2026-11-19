@@ -5,7 +5,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 `docs/QUESTIONS.md`).
 
 ## State (2026-11-15)
-- **Content:** 1427 words, 2848 sentences, 12 lessons merged (next: 13, tone; then 14, ອ). Pipeline clean (0 errors, the usual 11
+- **Content:** 1427 words, 2848 sentences, 13 lessons merged (next: 14, ອ). Pipeline clean (0 errors, the usual 11
   warnings). Path notes: lessons 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
 - **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); what is applied is `supabase migration list --linked`.
   Netlify serves the frontend;
@@ -23,12 +23,18 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Then lesson 13 (tone, PLAN L3), lesson 14 (ອ) and the PLAN working order. Owner path notes (lesson 20+) come later.
+3. Then lesson 14 (ອ) and the PLAN working order. Owner path notes (lesson 20+) come later.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- Lesson 13 tone (`#/lesson/L0013`, 360px), after Na records ເຂົ່າ knee, ມ້າ horse and S000002908-2910 (her takes
+  also mark the sentences natural) and the owner checks them: the tone table card (marks in the accent colour, sitting
+  on their letters; five columns fit), then after each new word's card 4 pair questions (hear → Lao, hear →
+  meaning; two options, each with its tone picture), then the reading checks. Without both words of a pair
+  recorded, the pair questions are left out. Doubts: ກິນ for a horse drinking (vs ດື່ມ), ມີມ້າບໍ່? "is there /
+  do you have a horse?".
 - A20 sentence order and progress (`#/lesson/L0011`, 360px): each new sentence plays its card, then fill in the
   blank, then build, in a row; miss a few: the bar never moves back, and after it is full the line under it reads
   "Retry missed exercises: 1 of N". ✕ → the dialog says the place is kept for 3 days; leave mid-lesson, come back
