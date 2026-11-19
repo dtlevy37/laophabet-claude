@@ -29,8 +29,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- Lesson 13 tone (`#/lesson/L0013`, 360px and desktop; needs `supabase db push --linked` of the l13_tone_cards
-  migration first): the first tone card is ເຂົ້າ rice / ເຂົ່າ knee only, with a Tone mark column and the paragraph
+- Lesson 13 tone (`#/lesson/L0013`, 360px and desktop): the first tone card is ເຂົ້າ rice / ເຂົ່າ knee only, with a Tone mark column and the paragraph
   as wide as the table; ມາ come / ມ້າ horse get their own card before horse; tone pictures sit in a box with a
   dashed middle line (low→mid and mid→high now look different). Then after each new word's card 4 pair questions (hear → Lao, hear →
   meaning; two options, each with its tone picture), then the reading checks. Without both words of a pair
