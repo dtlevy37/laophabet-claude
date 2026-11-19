@@ -29,6 +29,9 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- A21a full alphabet (`#/letters`, 360px and desktop): "My letters / All letters" switch, remembered after a reload;
+  All letters shows 27 consonants in order with their class, 6 ຫ combinations, vowels in short/long pairs and 4 tone
+  marks, "n of 27" style counts; unlearned tiles greyed with their sound, learned ones open their page.
 - A17 conversations (`#/try/L0010`, desktop then 360px): the 7-line card fits one 1440×900 screen; Mali left,
   Somphone right, ▶ after the Lao, Reveal on the same row; tap a name or ▶ to hear a line; "Play the conversation"
   plays every line, the playing bubble marked and kept in view (scroll away: it comes back ~2s after you stop);
@@ -183,7 +186,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   layout: the `(hover: hover) and (pointer: fine)` and `max-height: 560px` blocks at the end of `styles.css`.
 - `js/home.js` home (#/): Continue card and the section tiles. `js/lessons.js` `#/lessons`: the compact path,
   `nextLesson()` (`session.js` `resumableLesson`; shared with home). Browser check: `scripts/browser/a7_shots.js`.
-- `js/letters.js` (`learner_units`), `js/words.js` (`learner_words`, `learner_word`), home strip one `learner_stats`
+- `js/letters.js` (`learner_units`; the "All letters" view is `js/alphabet.js`, RPC `alphabet_chart`), `js/words.js` (`learner_words`, `learner_word`), home strip one `learner_stats`
   call (wraps `learner_counts`); summary missed list from `session_summary.missed`; `js/practice.js` + `planPractice` / practice runner branch in `session.js` (`start_practice`,
   `complete_practice`). SQL tests `app/backend/tests/a8_*.sql`, `a9_*.sql`, `s8b_*.sql` (rolled back; run with docker
   exec psql). Browser: `scripts/browser/s8b_practice.js`.
