@@ -14,7 +14,7 @@ Every change to the project is recorded here, newest first. Update it in the sam
   style choice is the table; panel tint and border. Summary: ✕ ⚑ ⚙ head, done mark, 2×2 stats, "You learned" and
   "You can now read:", missed items as rows, and "Practise these now".
 - Backend: `start_practice(p_local_day, p_items jsonb default null)` practises given items (migration
-  `a16_practice_given_items`, test `app/backend/tests/a16_practice_given_items_test.sql`); local only until pushed.
+  `a16_practice_given_items`, test `app/backend/tests/a16_practice_given_items_test.sql`).
 - Agent rules (owner): no screenshots by default; split slices of more than about 5 modules into steps with fresh
   agents, Sonnet for mechanical steps (CLAUDE.md, frontend-feature skill). `scripts/browser/h7_check.js` removed
   (it tested the autoplay-before-answer that A16 removed).

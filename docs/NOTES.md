@@ -44,8 +44,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - A16 answers (`#/lesson/L0001` as a new learner, miss a few on purpose): every panel is tinted with ✓ / ✗, then Lao,
   sound, meaning, ⓘ left, 🔊 right; "Pick the meaning" is silent until you answer, then plays; one speaker per
   screen; Hint / "Can't listen now" do not move the options. Summary: ✓ mark, 2×2 stats, "You learned" ກ ◌ິ ນ ກິນ
-  once each; "Practise these now" goes straight into a review of the missed items (needs the A16 migration on
-  hosted). `#/try/L0002` style card: tap a row, it gets a check; Enter goes on. `#/try/L0008`: build the sentence
+  once each; "Practise these now" goes straight into a review of the missed items.
+  `#/try/L0002` style card: tap a row, it gets a check; Enter goes on. `#/try/L0008`: build the sentence
   and the conversation gap use the same panel.
 - A15 spaced review (hosted): a word learned today shows as due in Review tomorrow morning, not a week later.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
