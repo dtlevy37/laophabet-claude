@@ -1,7 +1,7 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
 W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,11
 W000002,ດີ,adjective,good,basics,,42
-W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,321
+W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,322
 W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,67
 W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,214
 W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,738
@@ -21,7 +21,7 @@ W000019,ເຂົ້າ,noun,"rice, food",food,W000419,54
 W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,116
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
-W000023,ມີ,verb,have; there is/are,basics,,247
+W000023,ມີ,verb,have; there is/are,basics,,248
 W000024,ໄປ,verb,go,basics,,173
 W000025,ມາ,verb,come,basics,,70
 W000026,ຫຍັງ,particle (interrogative),what; something,questions,,52
@@ -821,7 +821,7 @@ W000819,ພະຍາຍາມ,verb,try; make an effort,verbs,,2
 W000820,ຕັດສິນໃຈ,verb,decide; make up one's mind,verbs,,2
 W000821,ອະທິບາຍ,verb,explain,verbs,,2
 W000822,ສະແດງ,verb,show; display; perform,verbs,,2
-W000823,ບໍ່ມີ,verb phrase,not have; there is no,function,,12
+W000823,ບໍ່ມີ,verb phrase,not have; there is no,function,,11
 W000824,ບໍ່ໄດ້,adverb; verb phrase,cannot; did not; not allowed,function,,4
 W000825,ຍັງບໍ່,adverb,not yet; (question) yet?,function,,3
 W000826,ເພາະວ່າ,conjunction,because,function,,7

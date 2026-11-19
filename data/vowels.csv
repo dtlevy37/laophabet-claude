@@ -10,10 +10,10 @@ V08,◌ຸ,both,short,u,u,ou,u,Short 'oo' as in 'book'.,yes,W000117,SRC-WP-SCRIP
 V09,◌ູ,both,long,uu,uː,ou,uu,Long 'oo' as in 'food'.,yes,W000014,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V10,ເ◌ະ,open,short,e,eʔ,é,e,"Short 'e', cut off.",yes,W000303,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V11,ເ◌ັ◌,closed,short,e,e,é,e,Short 'e' as in 'pet' before a final consonant.,yes,W000027,SRC-WP-SCRIPT;SRC-SEASITE,verified,
-V12,ເ◌,both,long,ee,eː,é,ee,"Long 'ay' as in 'they', without the glide.",yes,W000080,SRC-WP-SCRIPT;SRC-SEASITE,verified,
+V12,ເ◌,both,long,ee,eː,é,ee,"The 'ay' of 'say', held long and steady, without sliding to 'ee'. Not ແ◌ (the 'e' of 'bed' held long), which is wider.",yes,W000080,SRC-WP-SCRIPT;SRC-SEASITE,unverified,2026-11-18: hint rewritten as a contrast with ແ◌ (owner); unverified.
 V13,ແ◌ະ,open,short,ɛ,ɛʔ,è,ae,"Short 'a' as in 'cat', cut off.",yes,W000107,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V14,ແ◌ັ◌,closed,short,ɛ,ɛ,è,ae,Short 'a' as in 'cat' before a final consonant.,reading-only,W000662,SRC-WP-SCRIPT;SRC-SEASITE,verified,Rare
-V15,ແ◌,both,long,ɛɛ,ɛː,è,ae,"The e in 'bed', held long, leaning towards the 'a' in 'say' (but not all the way: that is ເ◌).",yes,W000004,SRC-WP-SCRIPT;SRC-SEASITE,unverified,"A4 2026-11-13: hint revised, owner + formant check."
+V15,ແ◌,both,long,ɛɛ,ɛː,è,ae,"The e in 'bed', held long (like 'air' without the r). Wide open: not the 'ay' of 'say', which is ເ◌.",yes,W000004,SRC-WP-SCRIPT;SRC-SEASITE,unverified,"A4 2026-11-13: hint revised, owner + formant check. | 2026-11-18: hint written as a contrast with ເ◌ (owner; Iowa accent anchors); unverified."
 V16,ໂ◌ະ,open,short,o,oʔ,ô,o,"Short 'o', cut off.",yes,W000119,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V17,◌ົ◌,closed,short,o,o,ô,o,Short 'o' before a final consonant (◌ົ sits above the consonant).,yes,W000040,SRC-WP-SCRIPT;SRC-SEASITE,verified,
 V18,ໂ◌,both,long,oo,oː,ô,oo,"Long 'o' as in 'go', without the glide.",yes,W000010,SRC-WP-SCRIPT;SRC-SEASITE,verified,

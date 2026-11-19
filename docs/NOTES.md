@@ -29,6 +29,16 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- A17 conversations (`#/try/L0010`, desktop then 360px): the 7-line card fits one 1440×900 screen; Mali left,
+  Somphone right, ▶ after the Lao, Reveal on the same row; tap a name or ▶ to hear a line; "Play the conversation"
+  plays every line, the playing bubble marked and kept in view (scroll away: it comes back ~2s after you stop);
+  Space plays the next line, R reveals. The fill-in on a phone shows the gap line at the top, options above the fold.
+- A18 Lao sizes (S10+): sentence cards and conversation lines smaller, a long word prompt such as a 4–5 syllable
+  word never breaks mid-word; Settings "Lao text size" (Smaller / Normal / Larger) changes every Lao size at once.
+- A19 + L6 (hosted): Standard style shows ເຈົ້າ as "jao", ຂ້ອຍ as "khoy", ນ້ອຍ "noy"; the Standard hint reads "Like
+  the consonants on signs and maps…"; `#/read/L0002` R03 and `L0009` R04 new wording; ແ and ເ sound hints contrast;
+  `#/lessons` shows the new titles (1 "Read your first word" … 12 "Is there water?") with a one-line summary on a
+  phone, and the home Continue card shows its summary on a phone too.
 - A7a/A7b large screens (desktop with a mouse, 1280×720 and 1440×900, then 200% zoom): in `#/try/L0001` and
   `L0010` the question sits near the top in a ~640px column, options just under the prompt, Continue right under the
   content (not at the bottom); short meanings in a 2×2 grid, single letters big. At 1024px+ every non-lesson page has a
@@ -106,8 +116,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - A7 inline words (`#/try/L0007`, a sentence card): Lao words underlined; tap → bubble under the sentence (meaning,
   sound, ⓘ); another word moves it; tap elsewhere or Esc closes it. Build-the-sentence: no tappable words until Check.
   Home strip: day streak, letters known, words known. A lesson summary lists "Missed on the first try".
-- S7g conversations (`#/try/L0010`, after ຂ້ອຍກິນເຂົ້າແລ້ວ): one card "Conversation: Are you hungry?" with 7 turns, A left
-  and B right, Lao and ▶ only, Reveal shows a turn's sound and English (Settings: "Show sound and English in
+- S7g conversations (`#/try/L0010`, after ຂ້ອຍກິນເຂົ້າແລ້ວ): one card "Conversation: Are you hungry?" with 7 turns, Mali left
+  and Somphone right, Lao and ▶ only, Reveal shows a turn's sound and English (Settings: "Show sound and English in
   conversations right away" shows them all); then "Complete the conversation" blanks on its lines with the turns
   before shown above. Same in `#/try/L0008` (Hello). `#/read/L0010` shows the card. Play `#/lesson/L0010` for real
   once: the summary must save (no "could not save"). Driver `scripts/browser/s7g_dialogue.js`.
@@ -164,9 +174,11 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   Sentence words: `teach_card.js` `inlineSentence()` (`.word-btn`, `.word-bubble`; countTaps counts `.word-btn`).
   Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js` (frontend on :5500).
 - Conversations (S7g): `session.js` `dialogueBlanks` + the dialogue branch of `planLesson`; `teach_card.js`
-  `dialogueBody` / `dialogueLine`; `fill_blank.js` `spec.dialogue`. Data `data/dialogues.csv`, `dialogue_lines.csv`.
+  `dialogueBody` / `dialogueTurn` (play-through, follow-scroll, Space/R via the `dlg-key` event from `session.js`); `fill_blank.js` `spec.dialogue`. Data `data/dialogues.csv`, `dialogue_lines.csv`.
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
+- Lao sizes: `--lao-scale` (Settings "Lao text size", device-local) multiplies every Lao size; `.lao-in` is the one
+  class for Lao inside English prose; `.glyph.word` for word heroes, `.glyph` alone for single letters.
 - `js/rail.js` the desktop rail (A7b; `app.js` `syncTopbar` shows it on learner non-lesson screens). A7a desktop
   layout: the `(hover: hover) and (pointer: fine)` and `max-height: 560px` blocks at the end of `styles.css`.
 - `js/home.js` home (#/): Continue card and the section tiles. `js/lessons.js` `#/lessons`: the compact path,

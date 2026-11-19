@@ -2,6 +2,22 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 A17 conversations, A18 Lao sizes, A19 romanization and content fixes, L6 lesson titles
+- A17: compact conversation card (▶ inline after the Lao, Reveal on the row, bubbles 75%); speakers "Mali" and
+  "Somphone" (`lo` unverified); the name plays its line; "Play the conversation" plays every line in turn, marks
+  and follows the playing bubble, yields to a manual scroll and returns after ~2s; Space next line, R reveal; per-line
+  ▶ labels; the phone fill-in scrolls the gap line to the top before the answer. `audio.js` `playUntilEnd`,
+  `isPlayingUrl`; a stop icon.
+- A18: smaller Lao on phones (teach sentence 2.2rem, `.dlg-lao` 1.5rem, `.bs-tile .lao` 1.8rem / 52px,
+  `.fb-sentence` clamp with `.long`), `.glyph.word` nowrap for word heroes, one `.lao-in` class for Lao in prose,
+  `.bs-answer` dropped; Settings "Lao text size" (`--lao-scale` 0.9 / 1 / 1.15).
+- A19 (no-answer-needed items): ຈ is "j" in both styles; ◌ອຍ respelled "oy" (words, sentences, 15 pron tips,
+  SCHEMA); Standard hint text; W000019 note Lao-only; R03 and R04 rewritten; `cmp_pair_hiw_kao`; S000002902
+  segmented ບໍ່ + ມີ; "please" on the ແນ່ sentences, S000002878, S000002893, S000002895 English; V12 / V15 (ເ / ແ)
+  hints as a contrasting pair. Items waiting on Q0035–Q0043 stay in PLAN.
+- L6: lesson titles name the payoff (lessons 1–12); summaries shown in one line on `#/lessons` and on phones.
+  Migration `a19_l6_content_fixes` (hosted).
+
 ## 2026-11-18 A7a large screens height first, A7b desktop navigation rail
 - A7a: on mouse devices the lesson frame is centred and capped at 820px tall, content in reading order, questions in a
   640px column with options 24px under the prompt, no empty button slot; short meaning glosses in a 2×2 grid, single

@@ -9,7 +9,7 @@ real sound. Keep hints short and in plain words (an English example word, "a puf
 ## Agreed anchors (taught units)
 | Unit | Hint |
 |---|---|
-| ແ◌ (ແລ້ວ laew "already", ແກ້ວ gaew "glass") | e in "bed", held long, leaning towards the a in "say" |
+| ແ◌ (ແລ້ວ laew "already", ແກ້ວ gaew "glass") | e in "bed", held long (like "air" without the r); not the "ay" of "say" (that is ເ◌) |
 | ◌ໍ, ◌ອ◌ (ບໍ່ bor "not", ຂໍ khor "may I have", ນອນ non "sleep") | "aw" with rounded lips, halfway to "oh" |
 | short ◌ິ (ກິນ gin "eat", ດິນ din "earth", ຫິວ hiw "hungry") | a short "ee", shorter than the ee in "been". IPA /i/, not the /ɪ/ of "bin"; English ears may still hear "gin" because it is short. |
 | ◌ຳ (ດຳ dam "black", ນ້ຳ nam "water") | the o in "Tom" (American), short; same vowel in both |
@@ -31,7 +31,7 @@ real sound. Keep hints short and in plain words (an English example word, "a puf
 | V09 | ◌ູ | uː | 'oo' in 'food' | ok | "Long 'oo' as in 'food', with lips well rounded and pushed forward." (SSB/AusE 'food' is fronted [ʉː].) |
 | V10 | ເ◌ະ | eʔ | "Short 'e', cut off" | ok (vague) | "A short, tight 'e', like the start of 'ay' with no slide, cut off. Not ແ◌ະ (wider)." |
 | V11 | ເ◌ັ◌ | e | 'e' in 'pet' | misleading | "Short 'e' as in 'pet', but tighter (toward 'ay'). Not ແ◌ັ◌ (wider)." In GA/SSB 'pet' [ɛ] is the ແ vowel. |
-| V12 | ເ◌ | eː | 'ay' in 'they', no glide | misleading (AusE) | "Long, steady 'e': like 'ay' in 'say' without sliding to 'ee' (Australian speakers: the e of 'bed', held long). Not ແ◌, which is wider." |
+| V12 | ເ◌ | eː | 'ay' in 'they', no glide | misleading (AusE) | "The 'ay' of 'say', held long and steady, without sliding to 'ee'. Not ແ◌ (the 'e' of 'bed' held long), which is wider." |
 | V13 | ແ◌ະ | ɛʔ | 'a' in 'cat', cut off | **wrong** | "Short 'e' as in 'bed', with the mouth a little wider (toward 'cat'), cut off. Not ເ◌ະ." |
 | V14 | ແ◌ັ◌ | ɛ | 'a' in 'cat' | **wrong** | Same as V13, "before a final consonant". |
 | V16 | ໂ◌ະ | oʔ | "Short 'o', cut off" | ok (vague) | "A short, tight 'oh' with rounded lips, cut off." |

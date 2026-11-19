@@ -9,19 +9,12 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18, from the November app review): A17
-conversations, L5 phase 1, A18 Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later:
+Owner checks of what is built, then (owner 2026-11-18, from the November app review): L5 phase 1, then A10, L3, L4, and A19 rest when Na answers. Later:
 A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
       object in hand; check lesson sentences with this pattern.
-- [ ] **L6 Lesson titles name the payoff** (owner 2026-11-18). Titles approved by the owner 2026-11-18; set
-      `title_en` in `data/lessons.csv` and ship with `db_sql.py`: 1 Read your first word; 2 Have a meal; 3 He's
-      eating; 4 Drink some water; 5 I've eaten already; 6 Water, please; 7 This water is good; 8 Hello, how are
-      you?; 9 Are you hungry?; 10 Your first conversation; 11 A small glass, please; 12 Is there water?. Also show
-      `summary_en` on phones, clamped to one line (hidden at `styles.css:547`).
-      **Done when:** the lesson list shows these titles, with a one-line summary on a 360px phone.
 - [ ] **L3 Teaching tone.** A proper lesson: what tone is, the pitch line legend, tone marks and consonant class in
       plain words, recorded pairs that differ only by tone (ຂາວ khaao "white" vs ລາວ laao; ໃກ້ "near" vs ໄກ "far", to
       verify; ເຂົ້າ "rice" vs ເຂົ່າ "knee" once both are taught), and a hear-and-pick-the-pitch check. Owner 2026-11-17:
@@ -50,55 +43,18 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
-- [ ] **A17 Conversations.**
-      - Compact: ▶ inline after the Lao, Reveal on the same row, bubbles `max-width: 75%`; a 6-line dialogue fits at
-        1440×900 before Reveal.
-      - Speakers get made-up names (owner 2026-11-18), or the recording native's own name if they opted in to be
-        credited (check whether that consent exists; if not, add it).
-      - "Play the conversation" plays each line in turn and highlights the bubble being spoken. It keeps the playing
-        line in view; if the learner scrolls, it does not fight them, and when they let go it returns to the line
-        playing now.
-      - Complete the conversation: draw the completed line like a revealed line; on phones show only the 2 turns
-        before as context and scroll the gap line to the top.
-      - `dialogue_intro`: "Tap the speaker to hear a line". Space plays the next unplayed line, R reveals; each ▶ has
-        its own label ("Play line 3, speaker A").
-      **Done when:** lesson 10's conversation fits one 1440×900 screen before Reveal, plays end to end with the
-      playing line always visible (also after a manual scroll), and its fill-in shows the options above the fold at
-      360×760.
-- [ ] **A18 Lao sizes on phones.** Measured at 360 and 412 in Windows fonts: 4-word sentences already wrap at 360.
-      - Teach sentence 2.6 → 2.2rem; `.dlg-lao` 1.8 → 1.5rem; `.bs-tile .lao` 2 → 1.8rem with min-height 52px.
-      - `.fb-sentence` clamp(1.9rem, 8.5vw, 2.6rem), with a `.long` class (5+ words) at 1.7rem.
-      - `.glyph` for single letters only; a new `.glyph.word` clamp(2.8rem, 15vw, 4.5rem) nowrap (at 22vw,
-        ພາສາອັງກິດ, paa-saa-ang-kit, "English", would break mid-syllable).
-      - Drop the unused `.bs-answer`; one class for Lao inside English prose (1.4em; today four sizes).
-      - A Lao text size setting (`--lao-scale`). Measure again with the self-hosted Noto Sans Lao (non-Windows).
-      **Done when:** on the S10+ a 5-word sentence fits in two lines on its card and no word prompt breaks inside a
-      syllable.
-- [ ] **A19 Romanization and content fixes** (owner 2026-11-18; the Lao items wait for Na's answers, Q0035–Q0043).
-      - ຈ is "j" in both styles (`translit.js:17`): ເຈົ້າ (jao, "you"); the card's "SOUNDS LIKE ch" goes.
-      - ◌ອຍ is "oy": ຂ້ອຍ (khoy, "I"), ນ້ອຍ (noy, "small"); "aw" stays for ◌ໍ and for ◌ອ◌ before other finals.
-        Update SCHEMA "Learner respelling scheme" and the pron tips that say "Close to 'coy'".
-      - The Standard hint's "As on signs, maps and in most books" overclaims for vowels: "Like the consonants on signs
-        and maps: the h means a puff of air: kh, ph, th."
-      - Notes with typed romanization (W000019 shows "gin kao" on a Standard card): make notes Lao-only or mark the
-        romanization for `respell()`; grep `word_notes.csv` and `rules.csv`.
-      - R03 (`db_sql.py change`): "The next vowel, ເ◌ົາ, is written around its consonant: before, above and after it.
-        You still say the consonant first, then the vowel."
-      - R04: "Lao often leaves out 'I', 'you' or 'he/she' when it is clear who is meant. To ເຈົ້າຫິວນ້ຳບໍ່? ('Are you
-        thirsty?') you can simply answer ຫິວນ້ຳ ('I'm thirsty')."
-      - `cmp_pair_hiw_kao`: "“Hungry” is {pair}: ຫິວ plus ເຂົ້າ, “hungry for rice”."
+- [ ] **A19 rest: content fixes waiting on Na** (Q0035–Q0043). The romanization, rule, hint and sentence fixes
+      that needed no answer are built.
       - The ຫິວ note (lesson 9) says bare ຫິວ sounds unfinished, then lesson 10 teaches it: rewrite after Q0043, and
         drop its stale Q0010 reference.
-      - ບໍ່ ມີ is segmented two ways in lesson 12: segment both as ບໍ່ + ມີ (baw mii, "don't have").
-      - Sentence-card English: S000002870 ກິນເຂົ້າ. "To eat (a meal)." (after Q0035); "please" for every ແນ່ (nae)
-        sentence (S000002880 and its siblings); S000002878 "He's already had some water."; S000002901 (after Q0036);
-        S000000047 "He's / She's here." (after Q0037); ສີນີ້ຂາວ. "This one is white."; ສີນີ້ດີ. "This colour is
-        nice."
+      - Sentence-card English: S000002870 ກິນເຂົ້າ. "To eat (a meal)." (after Q0035); S000002901 (after Q0036);
+        S000000047 "He's / She's here." (after Q0037).
       - The ກິນ gloss "eat; (colloquial) drink" → "eat; drink" (after Q0038). The W000001 note: "often said with the
-        palms together and a slight bow, the ນົບ (nop), especially to older people" (after Q0039).
-      - Before ເ◌ is taught, write the ແ and ເ sound hints as a contrasting pair (both point at "say" today).
-      **Done when:** no card shows "ch" for ຈ or "aw" for ◌ອຍ, no note shows English-style romanization on a Standard
-      card, and every item above is applied or waits on a named question.
+        palms together and a slight bow, the ນົບ (nop), especially to older people" (after Q0039); keep its
+        romanization out of Standard cards (W000019's note was made Lao-only).
+      - Owner decision: lesson 12 item 8 teaches ບໍ່ມີ (W000823, "said as one"), but its sentences are now segmented
+        ບໍ່ + ມີ (baw mii, "don't have"), so no lesson 12 sentence uses W000823. Keep it as a word, or replace it?
+      **Done when:** every item above is applied or dropped.
 - [ ] **A10 Notes: grammar, how Lao works, culture** (owner 2026-11-13). A home section that lists every rule card
       (R##) and culture/usage note from lessons the learner has reached, grouped (Reading and writing, Grammar,
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
@@ -194,6 +150,9 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
   nothing (`intake.js:8`); a "Brisk" pace setting; "Thai readers:" notes. Not for now (DESIGN "Who it is for").
 - Lesson side rail (the lesson's words beside the stage on wide screens): scrapped for now (owner 2026-11-18). If it
   comes back: in many activities the Lao is the answer, so it must collapse while a question is unanswered.
+- A18 leftovers: measure the Lao sizes again with the self-hosted Noto Sans Lao (non-Windows); lessons 1–12 have no
+  5-word sentence, so the two-line rule was checked on a synthetic one. The Lao text size setting labels have no `lo`.
+- A17 leftover: "Show earlier lines" on a phone fill-in (the planner already passes only 2 context turns).
 - A7a leftovers at 720×450 (200% zoom): a wrong build-the-sentence with a two-line compare strip, and a fill-in under
   a long conversation (up to 361px of bubbles), still push the prompt off screen; needs a side-by-side layout.
   build_word was not measured.
