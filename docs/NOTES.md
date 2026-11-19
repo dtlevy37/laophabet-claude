@@ -29,7 +29,16 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- S10+ font checklist (before or after the fix): PLAN A13.
+- A13 Lao fonts (S10+, after a hard reload; Standard font): ◌ິ, ◌້ and ◌ໍ sit on their circle on `#/read/L0001/3`,
+  `L0002/5`, `L0006/1`, with a clear gap above the ◌ໍ label; the "dotted circle is not a letter" line and the
+  Settings sample `ກິນເຂົ້າ ◌ິ ◌້`. If still wrong, screenshot each with the browser name, then the same on Plain.
+- A14 quick fixes (360px, then desktop): `#/try/L0009` wrong build: "He/She is hungry." on one line, Your answer /
+  Right answer wraps with no sideways scroll, Lao before the sound, desktop columns still aligned; `#/try/L0010`
+  wrong gap pick: the right word in the gap is not red; `#/practice` has "← Back"; a ກິນເຂົ້າ. sentence card's words
+  are tappable; no empty "Consonant class" row on a tone-mark card; ⚙ Close is plain, radios in the accent colour;
+  `#/lessons` titles wrap and "N more lessons" has ▸.
+- A15 spaced review: agree to push its migration to hosted (`supabase db push --linked`). New words then come back
+  the next day; Review shows more items due.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
   `#/letters` greys unreached tiles; the speaker is an SVG in a tinted button.

@@ -9,19 +9,19 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18, from the November app review): A13 font fix, A14 quick
-fixes, A23 visual polish, A15 spaced-review fix, A16 answer layout and summary, A7a height first, A7b navigation rail, A17
+Owner checks of what is built, then (owner 2026-11-18, from the November app review): A23 visual polish, A16 answer layout and summary, A7a height first, A7b navigation rail, A17
 conversations, L5 phase 1, A18 Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later:
 A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
       object in hand; check lesson sentences with this pattern.
-- [ ] **L6 Lesson titles name the payoff** (owner 2026-11-18): e.g. lesson 9 "Are you hungry?" rather than
-      "Hungry, you". Propose titles for lessons 1–12 to the owner, then change them with `db_sql.py`. Also show
+- [ ] **L6 Lesson titles name the payoff** (owner 2026-11-18). Titles approved by the owner 2026-11-18; set
+      `title_en` in `data/lessons.csv` and ship with `db_sql.py`: 1 Read your first word; 2 Have a meal; 3 He's
+      eating; 4 Drink some water; 5 I've eaten already; 6 Water, please; 7 This water is good; 8 Hello, how are
+      you?; 9 Are you hungry?; 10 Your first conversation; 11 A small glass, please; 12 Is there water?. Also show
       `summary_en` on phones, clamped to one line (hidden at `styles.css:547`).
-      **Done when:** the owner has approved the titles and the lesson list shows them, with a one-line summary on a
-      360px phone.
+      **Done when:** the lesson list shows these titles, with a one-line summary on a 360px phone.
 - [ ] **L3 Teaching tone.** A proper lesson: what tone is, the pitch line legend, tone marks and consonant class in
       plain words, recorded pairs that differ only by tone (ຂາວ khaao "white" vs ລາວ laao; ໃກ້ "near" vs ໄກ "far", to
       verify; ເຂົ້າ "rice" vs ເຂົ່າ "knee" once both are taught), and a hear-and-pick-the-pitch check. Owner 2026-11-17:
@@ -46,56 +46,13 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
 - [~] **H6 More listening.** Audio on more question types as recordings arrive; no transliteration by default.
       Next type (owner 2026-11-18): hear a word with no text shown, pick its meaning (listening comprehension, kept
       apart from reading; see A16).
-- [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log`; waits
-      for data.
+- [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log` (start
+      from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
-- [ ] **A13 Bug: Lao fonts on non-Windows devices.** The owner's S10+ shows a vowel mark beside its circle (◌ິ, and
-      a mark that sits like a hat over the letter); an earlier bug had ◌ໍ touching "LAO VOWEL" on `#/read/L0006/1`.
-      - Cause: the Standard font is `'Leelawadee UI', sans-serif` (`settings.js:34-39`; the same fallback at
-        `styles.css:148,149,617`), and Leelawadee UI exists only on Windows. Elsewhere ◌ and its mark come from
-        system fonts. Two different fonts cannot attach the mark (it lands up and to the right; reproduced in
-        Firefox), and Android's stock Noto Sans Lao v1.03 has no anchor on ◌ (marks float high).
-      - Fix: stacks `'Leelawadee UI', 'Noto Sans Lao', sans-serif`; Looped and Serif fall back to Noto Sans Lao.
-        Self-host the three Lao woff2 subsets with `font-display: block` instead of Google Fonts `display=swap`.
-        Settings font sample `ກິນເຂົ້າ ◌ິ ◌້`.
-      - Headroom: `teach_card.js:228` adds `.mark` only for tone marks; test the content for a mark written above the
-        consonant instead, and keep about 20px padding on short screens.
-      - The ◌ in the "dotted circle is not a letter" line is a tiny body-font glyph: render it as a Lao placeholder,
-        as `build_word.js:413` does.
-      - Owner checklist on the S10+ (one screenshot each): the browser (Samsung Internet, Chrome or Firefox); the Lao
-        font in Settings; the three cards below on Standard, then on Plain; phone Settings → Display → Font style;
-        whether the mark starts wrong and jumps into place.
-      **Done when:** the S10+ shows ◌ິ, ◌້ and ◌ໍ on their circle (`#/read/L0001/3`, `L0002/5`, `L0006/1`) in the
-      Standard font, and the ◌ໍ card has a clear gap above its label.
-- [ ] **A14 Quick fixes** (one slice).
-      - The gap word in fill in the blank and Complete the conversation shows red after a wrong pick
-        (`fill_blank.js:171,177`): always style it right.
-      - The Your answer / Right answer comparison scrolls sideways on phones (`styles.css:415`, `.cmp`): below 560px,
-        labels above the rows, rows wrap, missing words as a dashed `[missing]` chip. Keep the grid on wider screens.
-      - Build-the-sentence feedback leads with romanization: Lao first, then the sound with ▶; left-align "Right
-        answer" with "Your answer".
-      - `#/practice` (the Review time picker) has no way back: add "← Back" or the lesson ✕.
-      - Sentence-card words are not tappable when the sentence has punctuation (`teach_card.js:458-460` strips only
-        spaces, so ກິນເຂົ້າ. never matches its words): strip punctuation too, or compare `lao_spaced`; count the cards
-        it fixes.
-      - The tone-mark card prints an empty "Consonant class" row (`teach_card.js:242`): test
-        `u.letter?.consonant_class`.
-      - Settings sheet: keep ✕, make "Close" secondary or drop it; `accent-color: var(--accent)` on radios and
-        checkboxes.
-      - "He is hungry. / She is hungry." stacks as two bold sentences in prompts: one line, "He/She is hungry."
-      - The "Complete the conversation" heading is clipped under the dry-run pill on desktop feedback.
-      - Lessons list (`#/lessons`) on phones: titles clipped by the Review link (let `.path-name` wrap to 2 lines, or
-        make Review an icon button with an aria-label); "N more lessons" is unstyled blue text (give it a ▸ / ▾
-        disclosure). The emoji 🔒 is replaced in A23's icon set.
-      **Done when:** the right word in a gap is never red; on a 360px phone a wrong build shows the whole right answer
-      without sideways scroll; `#/practice` has a visible exit; ກິນເຂົ້າ. (kin khao, "have a meal") on its sentence
-      card has tappable words.
 - [ ] **A23 Visual polish** (owner 2026-11-18; from a visual-design review whose verdict was "plain but decent, not
       amateur, but a dozen browser-default tells"). CSS and small JS only; no redesign. Before A16, so A16 builds on
       these buttons and icons.
-      - `accent-color: var(--accent)` on `:root` (today only `.session-progress`, `styles.css:176`), so radios and
-        checkboxes everywhere (settings, the L2 card, intake, login) use the palette, not browser blue.
       - Interaction states (today `styles.css` has no `:active` and no `transition`): a shared 120–200ms colour ease and
         a 1px pressed shift on `button`, `a.btn`, `.tile`, `.path-link`, `.word-row`; hover border and pressed tint on
         `.mc-option` and `.bs-tile`; a darker pressed primary. Motion only under `prefers-reduced-motion:
@@ -126,11 +83,6 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       **Done when:** no browser-blue control, underlined button-link or emoji/text-glyph icon is left (grep and one
       screen per page at 360 and 1440); options and buttons visibly react to a press; a phone page reaches the screen
       bottom; `styles.css` font sizes and radii come from the tokens.
-- [ ] **A15 Spaced-review fix** (SQL). `practice_queue`'s box counts every right first ask, so several right answers
-      in one lesson send a new word 7–30 days out and the 1- and 3-day reviews never happen. Count at most one success
-      per item per local day; a hinted right answer is neither a success nor a lapse. Add a small view: per lesson,
-      first-try accuracy on items asked at least a day after their last success (feeds A12).
-      **Done when:** a word answered right three times in its intro lesson is next due in 1 day, then 3 days later.
 - [ ] **A16 One answer layout across activities, and the lesson summary** (owner 2026-11-18).
       - Today the answer's sound and meaning sit in the panel for multiple choice and listening, above the options
         for fill in the blank, and mid-screen for conversations. The speaker is doubled on "What does this word
@@ -209,7 +161,7 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       - `.glyph` for single letters only; a new `.glyph.word` clamp(2.8rem, 15vw, 4.5rem) nowrap (at 22vw,
         ພາສາອັງກິດ, paa-saa-ang-kit, "English", would break mid-syllable).
       - Drop the unused `.bs-answer`; one class for Lao inside English prose (1.4em; today four sizes).
-      - A Lao text size setting (`--lao-scale`). Measure again after A13.
+      - A Lao text size setting (`--lao-scale`). Measure again with the self-hosted Noto Sans Lao (non-Windows).
       **Done when:** on the S10+ a 5-word sentence fits in two lines on its card and no word prompt breaks inside a
       syllable.
 - [ ] **A19 Romanization and content fixes** (owner 2026-11-18; the Lao items wait for Na's answers, Q0035–Q0043).
@@ -304,6 +256,8 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       - Proposed tiers (guesses, to be checked against a simulated schedule; computed at read time, so retunable
         without a migration): learning < 4 days; familiar 4-14; strong 14-30; known 30+ (about 3-5 weeks, 4-5
         successful spaced reviews).
+      - Review timing today (owner 2026-11-18): boxes 1/3/7/14/30 days, due from the start of the learner's local
+        day; a hinted right answer counts for nothing. FSRS may change the timing.
       - Existing learners have no stability: replay `review_log` through the formula, or start from zero.
       - From the November review: today one right tap, even on a replay with the same four options, raises a level
         and counts as "known", and a pick from four is logged as recall (`multiple_choice.js:109`). Decide in the
@@ -316,6 +270,8 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
 - [ ] **S11 Deploy leftovers:** password reset; email sending (built-in mailer is rate-limited).
 
 ## Small fixes and unsliced ideas
+- The "Complete the conversation" heading clipped under the dry-run pill on desktop feedback (November review): not
+  reproduced; check with a 1440px screenshot.
 - `list_lessons` counts a `dialogue` item in `new_items` and gives done lessons an empty `covers` row for it
   (no client reads either yet): filter `item_type <> 'dialogue'` when list_lessons is next touched.
 - Stale notes on W000035 and W001415 still mention W000019 for the "enter" sense.

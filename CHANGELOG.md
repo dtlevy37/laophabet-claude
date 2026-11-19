@@ -2,6 +2,19 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 A13 Lao fonts, A14 quick fixes, A15 spaced-review fix; L6 titles approved
+- A13: the three Lao fonts are self-hosted (`app/frontend/fonts/`, Noto Sans Lao 2.003, Looped 1.002, Serif 2.003,
+  OFL) with `font-display: block` and U+25CC in the range; stacks fall back to Noto Sans Lao, not the system font;
+  above-mark headroom for every mark written above (vowels and tone marks); the dotted-circle line uses a Lao ◌.
+- A14: gap word never red; Your answer / Right answer wraps below 560px; build-the-sentence feedback Lao first;
+  `#/practice` back link; sentence-card words tappable with punctuation (41 of 42 lesson sentences); no empty
+  consonant-class row; Settings Close secondary and `accent-color` on `:root`; "He/She is hungry." merged prompts;
+  lessons-list titles wrap and "N more lessons" has a disclosure. The conversation heading clip was not reproduced.
+- A15: `practice_queue` box counts distinct learner days (at most one success a day), hinted right answers count for
+  nothing, due from the start of the learner's local day (owner); new owner-only view `review_retention_by_lesson`.
+  Test `app/backend/tests/a15_spaced_review_test.sql`.
+- L6: owner approved the lesson titles for lessons 1–12 (listed in PLAN L6).
+
 ## 2026-11-18 Visual-design review (one agent) and PLAN A23
 - A blunt visual-designer agent (new brief `scripts/review/briefs/8_visual_design.md`) judged the app "plain but
   decent, not amateur", held back by browser-default tells: no pressed or hover states, browser-blue radios,
