@@ -37,8 +37,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   wrong gap pick: the right word in the gap is not red; `#/practice` has "← Back"; a ກິນເຂົ້າ. sentence card's words
   are tappable; no empty "Consonant class" row on a tone-mark card; ⚙ Close is plain, radios in the accent colour;
   `#/lessons` titles wrap and "N more lessons" has ▸.
-- A15 spaced review: agree to push its migration to hosted (`supabase db push --linked`). New words then come back
-  the next day; Review shows more items due.
+- A15 spaced review (hosted): a word learned today shows as due in Review tomorrow morning, not a week later.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
   `#/letters` greys unreached tiles; the speaker is an SVG in a tinted button.
