@@ -29,6 +29,10 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- A20 sentence order and progress (`#/lesson/L0011`, 360px): each new sentence plays its card, then fill in the
+  blank, then build, in a row; miss a few: the bar never moves back, and after it is full the line under it reads
+  "Retry missed exercises: 1 of N". ✕ → the dialog says the place is kept for 3 days; leave mid-lesson, come back
+  (another day if you can): it resumes at the same question, and finishing counts for that day's streak.
 - A21a full alphabet (`#/letters`, 360px and desktop): every consonant (27, in order, with class), the 6 ຫ
   combinations, all vowels in short/long pairs and the 4 tone marks; learned ones carry ✓ and an accent edge, "5 of 27
   consonants learned"; any tile opens its page, e.g. ຄ (not taught yet) shows its sound, class and tip.

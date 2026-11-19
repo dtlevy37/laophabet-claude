@@ -9,8 +9,8 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18, from the November app review): L5 phase 1, then A10, L3, L4, and A19 rest when Na answers. Later:
-A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
+Owner checks of what is built, then (owner 2026-11-18): L3 as lesson 13 (ອ moves to 14), then more
+lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
 ## Lessons
 - [ ] **L1d leftover.** "This is white": ນີ້ຂາວ (nee khao) fits a wall's colour, ນີ້ມັນສີຂາວ (nee man sii khao) an
@@ -60,15 +60,6 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       Culture), each opening as its full card; locked ones hidden. Backend first: a `learner_notes()` RPC (rules and
       `word_notes` by intro lesson vs the learner's progress). **Done when:** a learner with lessons 1–9 done sees
       R03, R02, R01, R04 and the ຫິວ note under Notes and can open each; one with only lesson 1 done sees none.
-- [ ] **A20 Lesson length and honest progress (later).** Planned steps L1 14, L8 30, L9 40, L12 45 (DESIGN targets
-      10–25); with misses, L9 reached 73 and L12 96.
-      - Show sentence cards back to back and build them 2–4 steps later; one blank per new word, the same word
-        blanked in at most 2 sentences. Replays stay.
-      - Base the progress bar and "n / total" on planned steps (today `s.steps.length` grows with misses, so the bar
-        slides back); show replays as "Another go: 2 left".
-      - Keep the learner's place for several days, not just the day (`session.js:577`), and say so in `leave_body`.
-      - From L8, a "good place to stop" marker after the last new item's practice.
-      **Done when:** lesson 12 plans at most 30 steps and its progress bar never moves backwards.
 - [ ] **A21 Reference and orientation (later).** A level legend
       on My words (Seen → Recognised → Recalled → Spelled); a text label on home's ⚑; a dismissible banner when a
       phone shows the desktop site (`(pointer: coarse)`, `screen.width < 600`, `innerWidth >= 900`), which shrinks

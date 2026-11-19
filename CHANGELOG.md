@@ -2,6 +2,18 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 A20 sentence order and honest progress
+- Planner: a new sentence plays reading card → fill in the blank → build the sentence in a row (owner 2026-11-18; the
+  blank used to wait for the closing block). The gap is a word already shown; one word is the gap of at most 2 blanks
+  per lesson (`BLANKS_PER_WORD`; `fill_blank` opts `blanked`, `maxBlanks`), a word not yet blanked first.
+- Progress: the bar and "n / total" count planned steps only (`progressParts`), so a miss never moves it back; retries
+  show as "Retry missed exercises: k of n" on a line under the full bar. `REPLAYS_MAX` stays 2 (owner).
+- Resume: a lesson's place is kept for 3 days (`RESUME_DAYS`, `leave_body`); `complete_lesson(p_session,
+  p_local_day)` (migration `a20_complete_lesson_day`) credits the finishing day for the streak; the client falls back
+  to the old call on a DB without it. APP_VERSION `2026.11.19-a20`. Test `tests/a20_complete_lesson_day_test.sql`;
+  `session_test.mjs` A20 checks.
+- Owner decisions: no back-to-back sentence cards, no "good place to stop" marker; ~45 quick steps is fine.
+
 ## 2026-11-18 A21a full alphabet on Letters
 - `#/letters` shows the whole chart (`js/alphabet.js`, RPC `alphabet_chart`): 27 consonants in traditional order with
   class, the 6 ຫ combinations, vowels as short/long pairs, the 4 tone marks; learned ones get ✓ and an accent edge,

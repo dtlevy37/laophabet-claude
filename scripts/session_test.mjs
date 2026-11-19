@@ -32,6 +32,8 @@
 // find the missing piece is one pick (right completes the word, wrong ends it), logged as recognition, and its
 // options are real units, of the missing piece's kind where the pool allows; every new unit keeps its sound -> letter
 // and a shared card its other meaning; piecesFirst puts a missing piece before its build.
+// A20: a new sentence's card, fill in the blank and build come in a row; a word is the gap of at most 2 blanks per
+// lesson; the progress bar counts planned steps and never moves back.
 // Plans use the dry-run levels (a learner who has done the lessons before), as #/try/<id> does.
 import { register } from 'node:module'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
@@ -651,6 +653,45 @@ for (const b of bundles) {
     console.log(`  ${id}: card + ${steps.filter((s) => s.dialogue).length} line blanks (` +
       steps.filter((s) => s.dialogue).map((s) => s.item.detail.lao).join(' ') + `), ${steps.length} steps`)
   }
+}
+// A20: a new sentence (not a conversation line) plays card, then its fill in the blank if it has one, then its build,
+// in a row; no word is the gap of more than 2 blanks in one lesson; the progress bar never moves back.
+{
+  console.log('== A20 sentence order, blank cap, progress')
+  const { progressParts, daysBetween } = await import(js('session.js'))
+  for (const b of bundles) {
+    const id = b.lesson.lesson_id
+    for (let seed = 1; seed <= 20; seed++) {
+      const steps = buildPlan(b, dryLevels(b), seed, []).steps
+      steps.forEach((st, i) => {
+        if (st.activity !== 'teach_card' || st.item?.item_type !== 'sentence' || st.item.role === 'recycle') return
+        const sid = st.item.item_id
+        let j = i + 1
+        if (steps[j]?.activity === 'fill_blank' && !steps[j].dialogue && steps[j].item.item_id === sid) j++
+        const build = steps.findIndex((x) => x.activity === 'build_sentence' && x.item.item_id === sid)
+        if (build >= 0 && build !== j) fail(`A20 ${id} seed ${seed}: ${st.item.detail?.lao} build at ${build}, expected ${j}`)
+        const fbAt = steps.findIndex((x) => x.activity === 'fill_blank' && !x.dialogue && x.item.item_id === sid)
+        if (fbAt >= 0 && fbAt !== i + 1) fail(`A20 ${id} seed ${seed}: ${st.item.detail?.lao} blank at ${fbAt}, not right after its card`)
+      })
+      const gaps = new Map()
+      for (const st of steps) if (st.activity === 'fill_blank') gaps.set(st.answer.id, (gaps.get(st.answer.id) || 0) + 1)
+      for (const [w, n] of gaps) if (n > 2) fail(`A20 ${id} seed ${seed}: ${w} is the gap of ${n} blanks`)
+    }
+  }
+  // 10 planned steps, then misses: the bar's value never drops and its max stays at the planned count
+  let prev = -1
+  let missed = 0
+  for (let i = 0; i < 10 + missed; i++) {
+    if (i === 3 || i === 7 || i === 10) missed++ // a miss queues a retry (the one at 10 is a missed retry)
+    const p = progressParts(10 + missed, missed, i)
+    if (p.max !== 10 || p.value < prev) fail(`A20 progress at ${i}: ${JSON.stringify(p)}`)
+    if ((i >= 10) !== p.retry) fail(`A20 progress at ${i}: retry ${p.retry}`)
+    prev = p.value
+  }
+  const last = progressParts(13, 3, 12)
+  if (last.n !== 3 || last.total !== 3) fail(`A20 retry label ${JSON.stringify(last)}`)
+  if (daysBetween('2026-11-18', '2026-11-21') !== 3 || daysBetween('2026-12-31', '2027-01-01') !== 1 || !Number.isNaN(daysBetween('x', '2026-11-18')))
+    fail('A20 daysBetween')
 }
 // A12: active time counts the gaps between taps, each capped at a minute; only the unsent part is reported.
 {

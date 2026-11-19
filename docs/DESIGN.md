@@ -207,15 +207,16 @@ extra columns.
 | bonus word (S7f) | teach card labelled "Bonus word", then Lao → meaning; nothing in the closing block (recall waits for practice) |
 | new rule / recap | card only |
 | recycled word | no card; one question: build the word if the learner's level is ≥ 2 (S7d), else meaning → Lao at level ≥ 2 when it cannot be built, else Lao → meaning |
-| new sentence | reading card (Lao, meaning, underlined words: tap for a bubble), then build the sentence (from S7a) |
+| new sentence | reading card (Lao, meaning, underlined words: tap for a bubble), then fill in the blank, then build the sentence, in a row (easier to harder; owner 2026-11-18, A20). The gap is a word already shown in this lesson or before; no slot qualifies: card, then build. One word is the gap of at most 2 blanks per lesson (the conversation's blanks count, and are planned first), a word not yet blanked first; a sentence taught before its new words gets no blank |
 | recycled sentence | fill in the blank (from S7e); build the sentence when no slot qualifies or before S7e; before S7a, nothing |
 | conversation (S7g) | conversation card, then fill in the blank on its lines in order (below). A sentence that is a line of the lesson's conversation gets its fill in the blank there instead: a recycled line asks nothing on its own, a new line keeps its card and build the sentence |
 
 - **Closing block:** each new unit and word once more, shuffled, in the other form where there is one (at most 8
   optional ones). Always kept, even past 8: each new unit's sound → letter, a shared card's other meanings, the
   builds of new words, find the missing piece (logged as recognition: a lucky pick never lifts a word to level 3),
-  fill in the blank on new sentences and one listen and pick.
-  Then every question missed on the first try comes back until answered right once (at most twice each).
+  and one listen and pick.
+  Then every question missed on the first try comes back until answered right once (at most twice each; owner
+  2026-11-18: keep 2, revisit with stats).
 - **Questions on words test meaning, never the English-letter spelling** (kao / kaao look alike); questions on
   units test the sound, labelled exactly as on the unit's teach card.
 - **Options:** 4 where the pool allows (3 at least; otherwise the planner skips that question). Wrong options come
@@ -224,14 +225,17 @@ extra columns.
   derive it from letter shapes and sounds) when lessons pass about 10.
 - **Feedback:** right → a short confirmation, then Continue. Wrong → the correct option is marked and shown with
   the item's Lao, sound, meaning and info icon, then Continue. No hearts, timers or fail state.
-- **Length:** about 10–25 first-try answers (lesson 1 about 10, lesson 4 about 25). A progress bar shows steps left.
+- **Length:** about 10–15 uninterrupted minutes (owner 2026-11-18: ~45 quick steps is fine). The progress bar and
+  "n / total" count planned steps only, so a miss never moves the bar back; the retries come after it is full, as
+  "Retry missed exercises: 1 of N". No "good place to stop" marker: stopping is supported, never suggested.
 - **Completed** (user, 2026-11-10) = the learner reached the end and `complete_lesson` ran. No pass mark. The summary
   shows first-try accuracy (`review_log.first_try`); replays do not count against it but can raise a level.
 - **Lesson list:** `done` (tick, date; tap to play again or "Review lesson material", the read-only cards with no questions; user, 2026-11-10), `open` (lesson 1, the lesson after a
   done one, or one already started), `locked`. Playing a done lesson again is a normal session: it counts for the
   streak and levels, and `lesson_progress.completed_at` keeps the first date.
 - **Leaving mid-lesson:** answers already sent stay (levels are kept). From S7b the same device resumes at the same
-  step on the same day; otherwise the lesson starts again. **No offline mode** (unsent answers are retried while
+  step, for 3 days after the day the lesson started (A20; a new release also starts it again); otherwise the lesson
+  starts again. A lesson finished on a later day counts for that day's streak (`complete_lesson`'s `p_local_day`). **No offline mode** (unsent answers are retried while
   the page is open).
 - **Authoring review:** `#/read/L0005` shows any lesson's cards without a session (and from S7b can dry-run the
   questions without recording), so a new lesson can be reviewed after `supabase db reset` without replaying 1–4.

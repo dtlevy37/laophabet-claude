@@ -85,7 +85,8 @@ resent. Teach cards send `{ item_type, item_id, activity: 'teach_card', directio
 Input: the content bundle from `get_lesson` (items, distractor pool, the learner's `levels`). Output: an ordered
 list of specs. The rules are the table in DESIGN "Lesson session":
 - **Lesson:** walk the items in order. New unit or word: teach card, then one check. New rule: card only. Recycled
-  word: one question, no card. Sentences: reading card, then build the sentence (S7a). Then a closing mixed block,
+  word: one question, no card. New sentence: reading card, fill in the blank, build the sentence, in a row (A20).
+  Then a closing mixed block,
   then every question missed on the first try again until right once.
 - **Practice (S8b):** no teach cards and no new items. Due items first, then weak ones, then the oldest seen.
   Favour recall for items at level ≥ 2. Never the same item twice in a row. About 15–20 answers.
