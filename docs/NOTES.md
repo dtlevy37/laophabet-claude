@@ -37,6 +37,16 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   wrong gap pick: the right word in the gap is not red; `#/practice` has "← Back"; a ກິນເຂົ້າ. sentence card's words
   are tappable; no empty "Consonant class" row on a tone-mark card; ⚙ Close is plain, radios in the accent colour;
   `#/lessons` titles wrap and "N more lessons" has ▸.
+- A23 look (360 and desktop, light and dark): login and sign-up show the brand dot and wordmark; a phone page fills
+  the screen; home tiles equal height with "Letters" and a muted Notes line; `#/lessons` lock / ▶ / ✓ icons and a
+  small bordered Review; buttons and options shift and tint when pressed; ✕ in a lesson: Leave and Start over
+  bordered, "Leave and discard progress" red; ⚙ draws as a cog. Lao page titles on native pages are now 1.5rem.
+- A16 answers (`#/lesson/L0001` as a new learner, miss a few on purpose): every panel is tinted with ✓ / ✗, then Lao,
+  sound, meaning, ⓘ left, 🔊 right; "Pick the meaning" is silent until you answer, then plays; one speaker per
+  screen; Hint / "Can't listen now" do not move the options. Summary: ✓ mark, 2×2 stats, "You learned" ກ ◌ິ ນ ກິນ
+  once each; "Practise these now" goes straight into a review of the missed items (needs the A16 migration on
+  hosted). `#/try/L0002` style card: tap a row, it gets a check; Enter goes on. `#/try/L0008`: build the sentence
+  and the conversation gap use the same panel.
 - A15 spaced review (hosted): a word learned today shows as due in Review tomorrow morning, not a week later.
 - Owner feedback round 2026-11-14: build-a-sentence says "Build the sentence in Lao"; the Leave dialog has "Start over"
   and "Leave and discard progress"; build-a-word "= word" does not overlap the green line on short phones;
@@ -147,7 +157,7 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   the report dialog (`send_feedback` with `p_context`); the lesson's context is built in `session.js` from the stage
   (reads `.mc-option`, `.bs-line .bs-tile`, `.feedback-head`: renaming them drops the answer from reports).
   Sentence words: `teach_card.js` `inlineSentence()` (`.word-btn`, `.word-bubble`; countTaps counts `.word-btn`).
-  Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js`, `h7_check.js` (frontend on :5500).
+  Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js` (frontend on :5500).
 - Conversations (S7g): `session.js` `dialogueBlanks` + the dialogue branch of `planLesson`; `teach_card.js`
   `dialogueBody` / `dialogueLine`; `fill_blank.js` `spec.dialogue`. Data `data/dialogues.csv`, `dialogue_lines.csv`.
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.

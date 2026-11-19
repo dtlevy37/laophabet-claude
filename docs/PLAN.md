@@ -9,7 +9,7 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18, from the November app review): A23 visual polish, A16 answer layout and summary, A7a height first, A7b navigation rail, A17
+Owner checks of what is built, then (owner 2026-11-18, from the November app review): A7a height first, A7b navigation rail, A17
 conversations, L5 phase 1, A18 Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later:
 A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
@@ -45,79 +45,11 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       (0.75×, `playbackRate`) on sentence and conversation ▶.
 - [~] **H6 More listening.** Audio on more question types as recordings arrive; no transliteration by default.
       Next type (owner 2026-11-18): hear a word with no text shown, pick its meaning (listening comprehension, kept
-      apart from reading; see A16).
+      apart from reading; see DESIGN "Answer panel").
 - [ ] **A12 analysis.** Views, queries and a one-page report on `learner_sessions.active_ms` and `review_log` (start
       from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
-- [ ] **A23 Visual polish** (owner 2026-11-18; from a visual-design review whose verdict was "plain but decent, not
-      amateur, but a dozen browser-default tells"). CSS and small JS only; no redesign. Before A16, so A16 builds on
-      these buttons and icons.
-      - Interaction states (today `styles.css` has no `:active` and no `transition`): a shared 120–200ms colour ease and
-        a 1px pressed shift on `button`, `a.btn`, `.tile`, `.path-link`, `.word-row`; hover border and pressed tint on
-        `.mc-option` and `.bs-tile`; a darker pressed primary. Motion only under `prefers-reduced-motion:
-        no-preference`.
-      - Phones (≤760px): the page card stops halfway down a grey screen. Let it fill the screen (no top/bottom border,
-        `min-height`, or the body takes `--card`), and drop the `.card.narrow` 48px top margin there.
-      - Buttons: base `button` / `a.btn` get the `--control-border` edge (3:1; secondary buttons look disabled today)
-        and a `--card` fill; a new `button.secondary`. Underlined links only inside running text: "← Back" becomes a
-        chevron icon + label, the Leave dialog's Leave and Start over become secondary buttons and "Leave and discard
-        progress" `button.danger` (`session.js:1222-1230`), lessons-list "Review" a small secondary button.
-      - One icon set: `js/icons.js` with inline SVGs in the speaker's style (24px box, 2px stroke, `currentColor`):
-        close, flag, gear, play, check, x, info, lock, chevron-left. They replace the text glyphs and the emoji
-        (`chrome.js:38,52`, `session.js:1031`, `teach_card.js:601,648,661`, `lessons.js` lock and ▶ / ✓; ⚙ draws
-        like a sun on Windows). Every icon-only control is one `button.icon-btn` (44px circle); the speaker becomes a
-        true 44px circle matching ⓘ.
-      - Tokens: a type scale (`--fs-xs .75rem` … `--fs-2xl 2rem`; today 24 sizes), one page-title style on every page,
-        a 4px spacing grid (`--sp-1` … `--sp-6`), two radii (8px small, 12px cards) plus pill and circle (today six).
-        Map existing values onto them; little visual change per screen. Lao display sizes stay with A18.
-      - Home tiles: equal row heights (`grid-auto-rows: 1fr`), the tile title "Letters"; "Notes (Soon)" as one muted
-        line under the grid until it ships.
-      - Teach card text: keep it left-aligned, cap at about 30em centred, 1rem with line-height 1.6, so it reads as a
-        caption under the glyph.
-      - Dark mode: a slightly deeper fill for primary buttons (e.g. `--accent-fill: #6f97f5`, still ≥4.5:1 with
-        `--on-accent`); `#86abff` stays for text and borders.
-      - Brand: the dot-and-wordmark on login and sign-up too, and a favicon and app icon (none in `index.html`).
-      - Later, if wanted: loading skeletons instead of "Loading…"; a hidden `#/kit` page showing every component in
-        light and dark, so drift does not come back.
-      **Done when:** no browser-blue control, underlined button-link or emoji/text-glyph icon is left (grep and one
-      screen per page at 360 and 1440); options and buttons visibly react to a press; a phone page reaches the screen
-      bottom; `styles.css` font sizes and radii come from the tokens.
-- [ ] **A16 One answer layout across activities, and the lesson summary** (owner 2026-11-18).
-      - Today the answer's sound and meaning sit in the panel for multiple choice and listening, above the options
-        for fill in the blank, and mid-screen for conversations. The speaker is doubled on "What does this word
-        mean?" and "Which word do you hear?" (`multiple_choice.js:208/217/225`) and missing on letter questions; ⓘ
-        moves.
-      - Feedback template: row 1 the head ("Correct" / "Not quite. The answer is:"); row 2 the Lao, then the sound,
-        then the meaning; row 3 ⓘ on the left and 🔊 on the right (the thumb side on phones), fixed. Sentences use the
-        same rows.
-      - One speaker per screen, beside the Lao it plays: in fill in the blank the ▶ sits by the completed sentence.
-      - Lao → meaning questions do not autoplay before the answer, so they test reading; the sound plays right after
-        the answer, every time; ▶ stays available before answering.
-      - When the wrong pick is a taught item, one more line: "'rice, food' is ເຂົ້າ (khao)." (`mc_wrong_picked`).
-      - Prompts, the "Pick the …" set: Pick the meaning / Pick the Lao word / Pick the sound / Pick the letter / Pick
-        the word you hear / Pick the missing word (also for `fb_q_dialogue`); `fb_wrong` "Not quite. The answer is:";
-        `bs_howto` "Tap the words in Lao order. Tap a placed word to take it back."
-      - "Can't listen now" and "Hint" become small outlined buttons in a fixed tool row under the prompt, quieter than
-        the options; the row keeps its height when they go (today the options jump 55px).
-      - Lesson 2's romanization card: make the table the control (columns ກ ຂ; rows Standard k, kh and English-style
-        g, k; the chosen row highlighted with a check; one muted line under each) and drop the radio list.
-      - Sentence ⓘ sheet: drop the word list the bubbles already show; keep notes, rules, Report. Word and letter ⓘ
-        stay as they are.
-      - Panel look (visual review): today a white box with a 6px stripe and a black head (`styles.css:224-227`). Tint
-        `.feedback.ok` / `.miss` with the state colour (about 10%), a full 1px border in that colour instead of the
-        stripe, the head in the state colour with a filled-circle ✓ / ✗ icon (A23 set); the same tint on
-        `.mc-option.right`. Keep the text marks for colour-blind learners.
-      - Summary: ✕ ⚑ ⚙ like the lesson; "You learned" (new letters and words with ▶, plus "You can now read:" with a
-        lesson sentence); count role pairs like C13/C13f as one letter; `summary_words_read` "Lao words read";
-        `summary_missed` "Coming back for practice", each missed item a row (Lao, sound, gloss, 🔊, ⓘ) using the
-        `.word-row` component, no default bullets (`summary.js:80-85`), and a secondary "Practise these now" button.
-        The stats as a 2×2 grid in one box, styled like `.home-stats` (today a 1-2-1 stack on phones). A completion
-        mark: one large ✓ in a filled `--ok` circle above the title, with a short pop under reduced-motion rules; no
-        confetti or characters.
-      **Done when:** every question type shows Lao → sound → meaning in the panel with one 🔊 on the right and ⓘ in
-      the same place (one screen of each type at 360 and 1440); no screen has two speakers for the same Lao; lesson
-      1's summary lists ກ ◌ິ ນ ກິນ once each, with sound.
 - [ ] **A7a Large screens: height first** (replaces the earlier "A7 rest" plan; contract: nav and ✕ belong to the
       runner, never to an activity; new strings in `strings.json`).
       - On mouse devices (`(hover: hover) and (pointer: fine)`): content in reading order, options 24–32px under the
@@ -285,4 +217,8 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
 - Lesson side rail (the lesson's words beside the stage on wide screens): scrapped for now (owner 2026-11-18). If it
   comes back: in many activities the Lao is the answer, so it must collapse while a question is unanswered.
 - With the A7b rail: list + detail side by side on My words and Letters, and two-column Settings.
+- A23 leftovers (if wanted): loading skeletons instead of "Loading…"; a hidden `#/kit` page showing every
+  component in light and dark, so drift does not come back.
+- Lesson summary "New things learned" counts a letter's role pair (C13 / C13f) twice: the stat comes from
+  `session_summary`/`complete_lesson`; count role pairs once there (the summary's list already does).
 - Later: admin role and in-app owner tools, PWA/offline, analytics on drop-off and difficulty, trust scores.

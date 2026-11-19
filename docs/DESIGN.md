@@ -295,6 +295,9 @@ Lessons introduce material; practice sessions make the learner recall what they 
   level-1 items get recognition activities so they can climb. Mixed activity types; never the same item twice in a row.
 - **Length:** about 15–20 answers (about 5 minutes) by default. The learner can stop early and still gets the summary.
 - Practice answers count for levels and scheduling exactly like lesson answers.
+- **Practise these now** (owner 2026-11-18, A16): the lesson summary's missed items (units, words, sentences; not
+  tone marks) can be practised straight away: `start_practice(p_local_day, p_items)` with the summary's `missed`
+  list, no time picker. Without a list, practice picks as above.
 
 ## Stats and encouragement (user, 2026-10-24; definitions confirmed)
 Shown on the home screen and after every lesson or practice session, to keep learners coming back. The DB computes
@@ -346,6 +349,16 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   left under the prompt, with bigger targets; the feedback takes the space under them and moves them up only when
   it does not fit. Continue / Next / Check stays pinned on the right. Keyboard-shortcut hints (the key line, the
   option numbers) show only on a desktop with a mouse and a window at least 561px wide.
+- **Answer panel** (owner 2026-11-18, A16; `js/activities/panel.js` `answerPanel()`, used by every question type).
+  Row 1 the head ("Correct" / "Not quite. The answer is:") with a filled ✓ / ✗ circle in the state colour; row 2 the
+  Lao, then the sound, then the meaning (sentences the same); row 3 ⓘ on the left and 🔊 on the right, fixed. One
+  speaker per screen, beside the Lao it plays. Lao → meaning questions do not autoplay before the answer (they test
+  reading); the sound plays right after the answer. A taught wrong pick adds one line: "'rice, food' is ເຂົ້າ
+  (khao)." Hint and "Can't listen now" are small buttons in a fixed tool row under the prompt.
+- **Look** (A23): type, spacing and radius tokens in `styles.css` (`--fs-*`, `--sp-*`, `--r-*`); one icon set
+  (`js/icons.js`, 24px, 2px stroke, `currentColor`) instead of emoji or text glyphs; icon-only controls are 44px
+  circles (`button.icon-btn`); buttons are primary, `secondary` or `danger`; underlined links only in running text.
+  Motion only under `prefers-reduced-motion: no-preference`.
 - **Rule and recap cards** show their text with the Lao parts enlarged in the Lao font (LESSON_RULES decision 18).
 - **Settings** (`#/settings`, a page linked from the top bar; `js/settings.js`, remembered per browser for now):
   light or dark (System / Light / Dark, `html[data-theme]`; A7 step 1), colours (below), transliteration style, Lao font, spaces
@@ -363,8 +376,8 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   slim navigation rail on non-lesson pages (owner 2026-11-18, PLAN A7b, not built yet). Home is the
   "Next lesson" / Continue card, then a grid of section tiles (2 columns on a phone, 3 on wider screens): **Lessons**
   (`#/lessons`, the lesson path with Back to home; its tile says "5 of 11 done", counted from `list_lessons`) and
-  **Write** are live; **Review**, **Letters and sounds**, **My words** and **Notes** are greyed with "Soon" (not links,
-  not focusable) until built. The slim header shows on home and these pages and is hidden in lessons.
+  **Write** are live; sections not built yet are greyed with "Soon" (not links, not focusable); Notes is one muted
+  "soon" line under the grid until it ships (A23). The slim header shows on home and these pages and is hidden in lessons.
 - **"Read more" links** under "More": Wikipedia pages for the terms used there (aspiration, vowel length, tones,
   IPA for Lao, the Lao script). They open in a new tab.
 - Internal IDs (L0001, W000018) are never shown to learners. A lesson is "Lesson 1" at most (user, 2026-11-09).

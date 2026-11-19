@@ -32,6 +32,10 @@ export default {
 - `render` uses `h()` and `t()` (frontend-feature skill), draws its own Next / Continue button, and after an
   answer (right or wrong) shows the correct one with the item's info icon before calling `done`.
   The runner may call `render` again for the same spec (a settings change redraws the screen).
+- The feedback after an answer is always `answerPanel()` (`activities/panel.js`, A16): head, then Lao → sound →
+  meaning, then ⓘ left and 🔊 right. It is the one speaker on the screen once answered (a ▶ shown before the
+  answer goes). A wrong pick the learner was taught gets `wrongPickedLine()`; `ctx.taught(type, id)` (from the
+  runner) says whether it was. "Hint" and "Can't listen now" go in `toolRow()` (`hint.js`), which keeps its height.
 - The same module serves lessons and practice sessions. It never knows which one it is in.
 
 ## The selector contract (do not rename)

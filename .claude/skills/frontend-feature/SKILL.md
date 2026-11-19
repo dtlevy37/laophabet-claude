@@ -49,5 +49,7 @@ Plain HTML + CSS + ES modules. No framework, npm or build step; `@supabase/supab
 ## Before handing over
 - Run `node scripts/check_frontend.js` (syntax of every module, `t()` keys present in
   strings.json).
+- No screenshots (CLAUDE.md "No screenshots by default"): the owner checks visuals. A text-only Playwright run
+  (DOM counts, console errors) is the most you need.
 - For the owner's browser check, list the routes to open and what each should show, including one error case (for example, stop
   the backend and reload).

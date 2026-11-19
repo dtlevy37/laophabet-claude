@@ -23,13 +23,20 @@ design and the lesson path; the agent builds the app slices and the lessons.
 - **You may do anything inside this folder that the task needs:** edit any file (scripts, `.claude/`, this file),
   run python, node, the supabase CLI, docker and git, and fetch from the web. Stay inside this folder: do not read,
   write or search outside it unless the owner asks (the settings no longer enforce this, so it is on you).
-- **One slice at a time** (`docs/PLAN.md`). Each slice has a "Done when" line; write one if it is missing. Build
+- **One slice at a time** (`docs/PLAN.md`). Each slice has a "Done when" line; write one if it is missing. A slice
+  that touches more than about 5 modules is built in steps of 3–5 files, each by a fresh agent (Sonnet for
+  mechanical steps); big files (`session.js`, `strings.json`) are grepped, never read whole. Build
   backend first (the RPC contract is what the UI codes against), then frontend. Keep to the slice and put anything
   else you notice in NOTES.
 - **Test what you can yourself.** `node scripts/check_frontend.js` for JS syntax and string keys. For SQL, if the
   local Supabase is running (`supabase status` from `app/backend`; it needs Docker Desktop), apply and test the
   migration yourself. If it is not running, hand over a short copy-paste test block instead. `supabase db reset`
   wipes the owner's local test account: prefer `supabase migration up`, and say so when a reset was needed.
+- **No screenshots by default (owner).** Images cost a lot of tokens and the owner checks visuals in the browser.
+  Verify frontend work with `check_frontend.js`, `session_test.mjs`, code reading and, at most, a text-only
+  Playwright run (DOM counts, console errors). Do not write new screenshot scripts. Exceptions: a review whose job
+  is to look (the UX and visual-design briefs in `scripts/review/`), or one specific visual question the owner
+  asks for, in one or two shots. SQL tests cover the contract and security, not every edge case.
 - **The owner tests in a browser.** End a slice with what was built, what you verified and how, and the browser
   steps (route, what to click, what they should see). Say "untested" for anything nobody has run.
 - **Review:** run the `code-reviewer` agent when a slice changes SQL or more than about 150 lines of JS, and

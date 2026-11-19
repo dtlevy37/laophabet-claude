@@ -2,6 +2,23 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 A23 visual polish, A16 answer layout and summary
+- A23: type, spacing and radius tokens; `button.secondary` / `small` / `danger` with the `--control-border` edge;
+  pressed and hover states (motion only without reduced motion); phones fill the screen; one SVG icon set
+  (`js/icons.js`) replacing emoji and text glyphs, icon-only controls as 44px circles; back links as chevron + label;
+  standalone link-buttons became buttons; home tiles equal height, "Letters", Notes as one muted line; brand on login
+  and sign-up; SVG favicon. Skipped (PLAN small fixes): loading skeletons, a `#/kit` page.
+- A16: one answer panel for every question type (`js/activities/panel.js`): head, Lao → sound → meaning, ⓘ left and
+  🔊 right; one speaker per screen; Lao → meaning no longer autoplays before the answer, plays after; taught wrong
+  picks get a "'x' is <Lao>" line; "Pick the …" prompts; Hint / "Can't listen now" in a fixed tool row; lesson 2's
+  style choice is the table; panel tint and border. Summary: ✕ ⚑ ⚙ head, done mark, 2×2 stats, "You learned" and
+  "You can now read:", missed items as rows, and "Practise these now".
+- Backend: `start_practice(p_local_day, p_items jsonb default null)` practises given items (migration
+  `a16_practice_given_items`, test `app/backend/tests/a16_practice_given_items_test.sql`); local only until pushed.
+- Agent rules (owner): no screenshots by default; split slices of more than about 5 modules into steps with fresh
+  agents, Sonnet for mechanical steps (CLAUDE.md, frontend-feature skill). `scripts/browser/h7_check.js` removed
+  (it tested the autoplay-before-answer that A16 removed).
+
 ## 2026-11-18 A13 Lao fonts, A14 quick fixes, A15 spaced-review fix; L6 titles approved
 - A13: the three Lao fonts are self-hosted (`app/frontend/fonts/`, Noto Sans Lao 2.003, Looped 1.002, Serif 2.003,
   OFL) with `font-display: block` and U+25CC in the range; stacks fall back to Noto Sans Lao, not the system font;
