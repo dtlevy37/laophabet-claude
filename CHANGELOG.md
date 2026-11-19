@@ -2,6 +2,13 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Lesson 13 tone cards: one direct comparison per card (owner)
+- R05 shows only ເຂົ້າ rice / ເຂົ່າ knee and its prose names the tone marks (◌້, ◌່); ຂາວ/ລາວ left out. New rule R07
+  (ມາ come / ມ້າ horse, no mark vs ◌້) at position 4, before horse; later items move down one. Migration
+  l13_tone_cards (db_sql change L0013 R05 R07).
+- Tone table: a Tone mark column (the mark on ◌, or a dash) when any row has a mark. Tone pictures: a box around
+  the voice range and a dashed middle line instead of three faint guides. Rule prose is no longer capped at 30em.
+
 ## 2026-11-19 Lessons 14–19 planned: the outing conversation
 - CURRICULUM_PATH: lessons 14–19 build to a second conversation (where are you going, restaurant, where's the
   bathroom, thank you). New letters in order: ອ + ຮ, ປ + ໄ◌, ໃ◌ + final ບ, ຢ + ◌ູ, ງ, final ກ (optional 19).

@@ -168,17 +168,18 @@ L0012,20,sentence,S000002905,new,'This is water.' (composed)
 L0012,21,word,W000090,recycle,earlier word 'small'; used in the next sentence
 L0012,22,sentence,S000002906,new,'I have a small glass.' (composed)
 L0012,23,word,W000630,bonus,'fork'; bonus word with the final ມ; never used in a sentence
-L0013,1,rule,R05,new,"the tone table: what a melody is, ຂາວ/ລາວ recap, the two same-sound pairs this lesson teaches"
+L0013,1,rule,R05,new,"the first tone card: what a melody is, ເຂົ້າ rice / ເຂົ່າ knee, the tone marks called out"
 L0013,2,word,W000724,new,"'knee': same sounds as ເຂົ້າ 'rice', a different melody (tone twin)"
 L0013,3,word,W000019,recycle,earlier word 'rice': the twin of ເຂົ່າ
-L0013,4,word,W000562,new,"'horse': same sounds as ມາ 'come', a different melody (tone twin)"
-L0013,5,word,W000025,recycle,earlier word 'come': the twin of ມ້າ
-L0013,6,rule,R06,new,"recap: one mark ◌້, two melodies (ເຂົ້າ rice, ນ້ຳ water)"
-L0013,7,word,W000011,recycle,earlier word 'water'; used in the next sentence
-L0013,8,word,W000018,recycle,earlier word 'eat; drink'; used in the next sentence
-L0013,9,sentence,S000002908,new,'The horse drinks water.' (composed)
-L0013,10,word,W000020,recycle,earlier word 'already'; used in the next sentence
-L0013,11,sentence,S000002909,new,'The horse has come.' (composed): ມ້າ and ມາ side by side
-L0013,12,word,W000023,recycle,earlier word 'have; there is'; used in the next sentence
-L0013,13,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentence
-L0013,14,sentence,S000002910,new,'Is there a horse?' (composed)
+L0013,4,rule,R07,new,second tone card: ມາ come (no mark) / ມ້າ horse (◌້)
+L0013,5,word,W000562,new,"'horse': same sounds as ມາ 'come', a different melody (tone twin)"
+L0013,6,word,W000025,recycle,earlier word 'come': the twin of ມ້າ
+L0013,7,rule,R06,new,"recap: one mark ◌້, two melodies (ເຂົ້າ rice, ນ້ຳ water)"
+L0013,8,word,W000011,recycle,earlier word 'water'; used in the next sentence
+L0013,9,word,W000018,recycle,earlier word 'eat; drink'; used in the next sentence
+L0013,10,sentence,S000002908,new,'The horse drinks water.' (composed)
+L0013,11,word,W000020,recycle,earlier word 'already'; used in the next sentence
+L0013,12,sentence,S000002909,new,'The horse has come.' (composed): ມ້າ and ມາ side by side
+L0013,13,word,W000023,recycle,earlier word 'have; there is'; used in the next sentence
+L0013,14,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentence
+L0013,15,sentence,S000002910,new,'Is there a horse?' (composed)
