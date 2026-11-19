@@ -29,4 +29,5 @@ or ກັນເອງ as the casual label; ເຈົ້າ (jao) or ທ່ານ
 answers, then delete this paragraph.
 
 **Record and listen** (her take settles it; nothing to answer)
+- Lessons 14–19 (composed, unverified): ເອົານ້ຳ (ao nam, "I'll have water", S000002915), ມີ. (mii, "We do.", S000002914), ໄປໃສມາ? (pai sai maa, "Where have you been?", S000002921), ຢູ່ນີ້ (yuu nii, "Over here.", S000002924; she may say ຢູ່ຫັ້ນ instead: then ask the owner whether to swap it in D0003 line 7), ລາວຢູ່ໂຮງໝໍ (S000000310), and the rest of S000002911–S000002926. If she says one differently, fix the sentence before the lessons are pushed.
 - ເຕ້ຍ (tia, "short in height", W001427) and ລາວເຕ້ຍ (S000002899), ພໍ່ເຕ້ຍ (S000002900): record when they come up.

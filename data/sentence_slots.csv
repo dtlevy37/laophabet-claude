@@ -95,3 +95,30 @@ S000000047,2,action|motion,W000018|W000019|W000023|W000072|W000002|W000512|W0000
 S000002908,1,animal|person|name,W000031|W000058|W000006|W000005|W000025|W000009|W000090|W000538|W000539,SRC-AGENT,unverified,Tagged by the agent; __ ກິນນ້ຳ: people also drink water so pronouns are excluded; ມາກິນນ້ຳ (come and drink) and ຂໍກິນນ້ຳ (may I drink) are real so ມາ and ຂໍ are excluded; ນ້ອຍ / ຂາວ / ດຳ can stand for 'the little / white / black one' so they are excluded
 S000002909,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name,,SRC-AGENT,unverified,Tagged by the agent; __ ມາແລ້ວ: almost anything can have come (ເຂົ້າມາແລ້ວ 'the food has come') and verb + ມາແລ້ວ is real (ກິນມາແລ້ວ) so no option is safe; the blank is skipped on purpose and the sentence is built instead
 S000002910,2,animal|food|drink|object|person|place|body|plant|clothing|name,W000082|W000090|W000538|W000539,SRC-AGENT,unverified,Tagged by the agent; ມີ __ ບໍ່: any thing one can have fits; the wrong options are verbs and qualities; five / small / white / black excluded (ມີຫ້າບໍ່? 'are there five?' / ມີຂາວບໍ່? 'is there a white one?' are real questions)
+S000002911,1,food|drink|person|animal|object|place|action|body,,SRC-AGENT,unverified,Tagged by the agent; body added (ຂາລາວ his leg)
+S000002912,2,place|food|drink|object|animal|person,W000082|W000090|W000538|W000539|W000092,SRC-AGENT,unverified,Tagged by the agent; five / small / white / black / hot excluded (ມີຫ້າບໍ່? is there a hot one?)
+S000002913,2,food|drink|object|place|animal|person,,SRC-AGENT,unverified,Tagged by the agent
+S000002914,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name|function,,SRC-AGENT,unverified,"Tagged by the agent; one-word answer ມີ.: no blank makes sense; skipped on purpose, built instead"
+S000002915,1,action|motion|consume|object|quality|name,W000019|W000562,SRC-AGENT,unverified,"Tagged by the agent; __ ນ້ຳ: verbs fit (ກິນນ້ຳ, ຂໍນ້ຳ, ມີນ້ຳ), ແກ້ວນ້ຳ glass of water, ສີນ້ຳ; ເຂົ້າ excluded (ເຂົ້ານ້ຳ enter the water); ມ້າ excluded (ມ້ານ້ຳ seahorse)"
+S000002916,1,action|motion,W000028,SRC-AGENT,unverified,Tagged by the agent; ອາຫານ excluded (ອາຫານບ້ານ home cooking)
+S000002917,1,action|motion|person|animal|name,,SRC-AGENT,unverified,"Tagged by the agent; the gap is also a subject slot (ລາວກິນເຂົ້າ, ລາວນອນ), so people, animals and names are not options"
+S000002918,1,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+S000002919,2,action|motion|consume|quality,,SRC-AGENT,unverified,"Tagged by the agent; ລາວ __ ແລ້ວ: any verb or state fits (ກິນແລ້ວ, ນອນແລ້ວ, ຫິວແລ້ວ); options are nouns"
+S000002920,1,action|motion|person|animal|name,,SRC-AGENT,unverified,"Tagged by the agent; the gap is also a subject slot (ລາວກິນເຂົ້າ, ລາວນອນ), so people, animals and names are not options"
+S000002921,2,function|place|action,W000052|W000051,SRC-AGENT,unverified,Tagged by the agent; far / near excluded (ໄປໄກ went far)
+S000002922,3,function|place|action,W000052|W000051,SRC-AGENT,unverified,Tagged by the agent; far / near excluded (ໄປໄກ went far)
+S000002923,2,action|motion,W000052|W000051,SRC-AGENT,unverified,Tagged by the agent; far / near excluded (ຂ້ອຍໄກບ້ານ I am far from home)
+S000002924,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name|function,,SRC-AGENT,unverified,"Tagged by the agent; __ ນີ້: almost anything fits (ມານີ້, ເອົານີ້, ຫ້ອງນີ້); blank skipped on purpose, built instead"
+S000000045,2,action|motion|consume|quality,,SRC-AGENT,unverified,"Tagged by the agent; ລາວ __ ໃສ: ໄປໃສ, ຢູ່ໃສ, ກິນໃສ; options are nouns"
+S000002925,2,place|action,W000052|W000051|W000002|W000162,SRC-AGENT,unverified,"Tagged by the agent; far / near excluded (ໄປໄກ), ດີ excluded (ໄປດີ go well, a farewell); ໝໍ excluded (ໄປໝໍ go to the doctor; review 2026-11-19)"
+S000002926,3,person|animal|object|place|food|drink|name,,SRC-AGENT,unverified,Tagged by the agent
+S000000033,2,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+S000000009,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name|function,,SRC-AGENT,unverified,Tagged by the agent; one-word ຂອບໃຈ!: no blank makes sense; skipped on purpose
+S000000016,2,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+S000000044,1,place|object|animal|person|food|drink|body|name|action|consume|motion,,SRC-AGENT,unverified,"Tagged by the agent; name added (a person fits: ນ້ອຍຢູ່ໃສ? Where is Noy?); verbs added (ກິນຢູ່ໃສ? eat where?, ມາຢູ່ນີ້ come stay here, ເອົານີ້ດີ better take this)"
+S000000019,1,place|object|animal|person|food|drink|body|name|action|consume|motion,W000047|W000082,SRC-AGENT,unverified,"Tagged by the agent; name added (a person fits: ນ້ອຍຢູ່ໃສ? Where is Noy?); verbs added (ກິນຢູ່ໃສ? eat where?, ມາຢູ່ນີ້ come stay here, ເອົານີ້ດີ better take this); two / five excluded (ສອງນີ້ດີ these two are good)"
+S000000053,1,place|object|animal|person|food|drink|body|name,,SRC-AGENT,unverified,Tagged by the agent; name added (a person fits: ນ້ອຍຢູ່ໃສ? Where is Noy?)
+S000000013,1,place|object|animal|person|food|drink|body|name|action|consume|motion,,SRC-AGENT,unverified,"Tagged by the agent; name added (a person fits: ນ້ອຍຢູ່ໃສ? Where is Noy?); verbs added (ກິນຢູ່ໃສ? eat where?, ມາຢູ່ນີ້ come stay here, ເອົານີ້ດີ better take this)"
+S000000018,1,place|object|animal|person|food|drink|body|name|action|consume|motion,,SRC-AGENT,unverified,"Tagged by the agent; name added (a person fits: ນ້ອຍຢູ່ໃສ? Where is Noy?); verbs added (ກິນຢູ່ໃສ? eat where?, ມາຢູ່ນີ້ come stay here, ເອົານີ້ດີ better take this)"
+S000000309,1,place|object|animal|person|food|drink|body|name|action|consume|motion,,SRC-AGENT,unverified,"Tagged by the agent; name added (a person fits: ນ້ອຍຢູ່ໃສ? Where is Noy?); verbs added (ກິນຢູ່ໃສ? eat where?, ມາຢູ່ນີ້ come stay here, ເອົານີ້ດີ better take this)"
+S000000310,3,place|action|function|quality,W000162,SRC-AGENT,unverified,"Tagged by the agent; ລາວ ຢູ່ __: a place, ນີ້, or a state (ຢູ່ດີ, ຢູ່ສະບາຍ); ໝໍ excluded (ລາວຢູ່ໝໍ at the doctor's)"

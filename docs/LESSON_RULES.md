@@ -93,10 +93,10 @@ not before (user, 2026-10-19). Phase 7 (growing to 3000 words) stays paused.
 20. **The path is planned backwards from natural sentences and conversations** (user, 2026-11-10). Order:
    letters → words → sentences → conversations and stories. Pick the next thing a person would really say, then
    add the letters it needs; never a forced sentence because its words happen to be readable. **The agreed order
-   for lessons 4–19 is `docs/CURRICULUM_PATH.md`: read it before building any of those lessons and follow it**
+   for lessons 4–20 is `docs/CURRICULUM_PATH.md`: read it before building any of those lessons and follow it**
    (it overrides the brief's ranking and the chain). In short: 5 ແລ້ວ · 6 ບໍ່, ຂໍ, ແນ່ · 7 ດີ, ນີ້ · 8 ສະບາຍດີ ·
    9 ຫິວ, ເຈົ້າ · 10 ຂ້ອຍ, ນອນ + the first full conversation · 11 no new letters (ສີ, ຂາວ, ດຳ, ຂາຍ, ນ້ອຍ).
-   12 ມີ, ມາ · 13 tone · 14–19 the outing conversation (ອາຫານ, ຮ້ານອາຫານ, ໄປ, ໃສ, ຂອບໃຈ, ຢູ່, ຫ້ອງນ້ຳ, ຢາກ),
+   12 ມີ, ມາ · 13 tone · 14–19 the outing conversation (ອາຫານ, ຮ້ານອາຫານ, ໄປ, ໃສ, ຂອບໃຈ, ຢູ່, ຫ້ອງ, ຫ້ອງນ້ຳ, ໂຮງໝໍ), 20 ຢາກ,
    then consonant classes (ຄົນ, ກ ຂ ຄ card) and ordering food (ມັກ, ຫຍັງ, ໃຫຍ່); details in CURRICULUM_PATH.
 21. **Core words and bonus words** (user, 2026-11-10). Core words are used in sentences. A bonus word is readable
    with the letters known, common, shown in the lesson under a "bonus" label (one or two per lesson), never used

@@ -2,6 +2,16 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Lessons 14–19 built: the outing conversation (owner)
+- L0014 ອ + ຮ (food, restaurant, I'll have), L0015 ປ + ໄ◌ (go, home), L0016 ໃ◌ + final ບ (where, thank you),
+  L0017 ຢ + ◌ູ (be at), L0018 ງ (room on its own first, bathroom, bedroom; conversation D0003, 8 lines),
+  L0019 ໝ + ໂ◌ (doctor, hospital; owner: hospital added). ໂຮງ not taught alone (rare alone, homograph 'coffin'):
+  word note on ໂຮງໝໍ says it is a building, not ຫ້ອງ. The planned ຢາກ lesson moves to 20.
+- 16 composed sentences (S000002911–S000002926, unverified); categories for 24 words; slots for 27 sentences,
+  tightened for second valid answers (subject gaps, ໄປໄກ, ໄປດີ, ໄປໝໍ, names Khao/Noy/Dam).
+- Curriculum review of the run: no blockers; V18 card no longer cues 'go'; English of S000000045 and S000000310 split
+  per decision 16. Migrations lesson_l0014 … lesson_l0019, l14_l19_review (local only until the owner agrees).
+
 ## 2026-11-19 Lesson 13 tone cards: one direct comparison per card (owner)
 - R05 shows only ເຂົ້າ rice / ເຂົ່າ knee and its prose names the tone marks (◌້, ◌່); ຂາວ/ລາວ left out. New rule R07
   (ມາ come / ມ້າ horse, no mark vs ◌້) at position 4, before horse; later items move down one. Migration

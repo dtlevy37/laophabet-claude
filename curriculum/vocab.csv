@@ -1,37 +1,37 @@
 word_id,lao,pos,gloss_en,topic,classifier_word_id,sentence_uses
 W000001,ສະບາຍດີ,interjection; verb,hello; to be well,greetings,,11
 W000002,ດີ,adjective,good,basics,,42
-W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,323
-W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,67
+W000003,ບໍ່,particle,no; not; yes/no question marker,basics,,325
+W000004,ແມ່ນ,verb; particle,that's right; to be,basics,,68
 W000005,ເຈົ້າ,pronoun; particle,you (polite); yes (polite),basics,,214
-W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,738
+W000006,ຂ້ອຍ,pronoun,"I, me",pronouns,,739
 W000007,ໃຈ,noun,"heart, mind",basics,,1
 W000008,ຂອບໃຈ,verb; interjection,thank you; to thank,greetings,,9
 W000009,ຂໍ,verb,"ask for, request; may I have",requests,,86
 W000010,ຂໍໂທດ,interjection; verb,"sorry, excuse me",greetings,,5
-W000011,ນ້ຳ,noun,water; liquid,food,W000218,44
+W000011,ນ້ຳ,noun,water; liquid,food,W000218,45
 W000012,ຫ້ອງ,noun; classifier,room,places,W000012,34
 W000013,ຫ້ອງນ້ຳ,noun,"bathroom, toilet",places,W000012,12
-W000014,ຢູ່,verb,"be at, be located; live, stay",places,,361
-W000015,ໃສ,pronoun (interrogative),where,questions,,69
-W000016,ນີ້,pronoun; adverb,this; here,basics,,398
+W000014,ຢູ່,verb,"be at, be located; live, stay",places,,363
+W000015,ໃສ,pronoun (interrogative),where,questions,,71
+W000016,ນີ້,pronoun; adverb,this; here,basics,,399
 W000017,ເທົ່າໃດ,interrogative,"how much, how many",questions,,42
-W000018,ກິນ,verb,eat; (colloquial) drink,food,,125
-W000019,ເຂົ້າ,noun,rice; a meal,food,W000419,54
-W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,117
+W000018,ກິນ,verb,eat; (colloquial) drink,food,,126
+W000019,ເຂົ້າ,noun,rice; a meal,food,W000419,55
+W000020,ແລ້ວ,auxiliary; adverb; verb,"already, done; then",basics,,118
 W000021,ດື່ມ,verb,drink,food,,15
 W000022,ຢາກ,verb,want (to),basics,,70
-W000023,ມີ,verb,have; there is/are,basics,,249
-W000024,ໄປ,verb,go,basics,,173
-W000025,ມາ,verb,come,basics,,71
+W000023,ມີ,verb,have; there is/are,basics,,252
+W000024,ໄປ,verb,go,basics,,181
+W000025,ມາ,verb,come,basics,,72
 W000026,ຫຍັງ,particle (interrogative),what; something,questions,,52
 W000027,ເປັນ,verb,"be, become; be ill",basics,,73
-W000028,ອາຫານ,noun,food,food,W000629,31
+W000028,ອາຫານ,noun,food,food,W000629,33
 W000029,ຮ້ານ,noun; classifier,"shop, store; stall",places,W000029,38
-W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,11
-W000031,ລາວ,pronoun,"he, she",pronouns,,176
+W000030,ຮ້ານອາຫານ,noun,restaurant,places,W000029,13
+W000031,ລາວ,pronoun,"he, she",pronouns,,179
 W000032,ເຮົາ,pronoun,we; (casual) I,pronouns,,96
-W000033,ນອນ,verb,sleep; lie down,home,,20
+W000033,ນອນ,verb,sleep; lie down,home,,21
 W000034,ຫ້ອງນອນ,noun,bedroom,places,W000012,5
 W000035,ເຂົ້າໃຈ,verb,understand,basics,,3
 W000036,ມື້,noun,day,time,W000036,21
@@ -47,7 +47,7 @@ W000045,ໝູ່,noun,friend,people,W000040,16
 W000046,ໃຜ,pronoun (interrogative),who,questions,,10
 W000047,ສອງ,numeral,two,numbers,,76
 W000048,ເຮືອນ,noun,house,home,W000149,46
-W000049,ບ້ານ,noun,home; village,home,W000049,24
+W000049,ບ້ານ,noun,home; village,home,W000049,26
 W000050,ນັ້ນ,pronoun,that,basics,,26
 W000051,ໃກ້,adjective,near,places,,22
 W000052,ໄກ,adjective,far,places,,15
@@ -56,7 +56,7 @@ W000054,ເບິ່ງ,verb,"look at, watch",senses,,26
 W000055,ໄດ້ຍິນ,verb,hear,senses,,2
 W000056,ເວົ້າ,verb,"speak, say",language,,17
 W000057,ພາສາ,noun,language,language,W000057,4
-W000058,ລາວ,proper noun; noun,Laos; Lao (language/person),language,,19
+W000058,ລາວ,proper noun; noun,Laos; Lao (language/person),language,,21
 W000059,ພາສາລາວ,noun,Lao language,language,,23
 W000060,ຮູ້,verb,know,basics,,5
 W000061,ສາມ,numeral,three,numbers,,36
@@ -112,7 +112,7 @@ W000110,ເພາະ,conjunction,because,function,,9
 W000111,ຖ້າ,conjunction,if,function,,6
 W000112,ຫົກ,numeral,six,numbers,,4
 W000113,ໄດ້,verb; auxiliary,can; get; did,basics,,44
-W000114,ເອົາ,verb,take; want (to have),basics,,29
+W000114,ເອົາ,verb,take; want (to have),basics,,30
 W000115,ອັນ,noun; classifier,thing; general classifier,classifiers,W000115,12
 W000116,ອັນນີ້,pronoun,this (one),basics,,20
 W000117,ຢຸດ,verb,stop,basics,,4
@@ -160,7 +160,7 @@ W000158,ທ່ານ,pronoun,you (formal); sir/madam,pronouns,,2
 W000159,ພວກເຮົາ,pronoun,we (plural),pronouns,,7
 W000160,ເຂົາ,pronoun,they,pronouns,,38
 W000161,ພວກເຂົາ,pronoun,they,pronouns,,6
-W000162,ໝໍ,noun,doctor,health,W000040,7
+W000162,ໝໍ,noun,doctor,health,W000040,8
 W000163,ຊາວ,numeral,twenty,numbers,,4
 W000164,ຕາ,noun,eye,body,W000319,3
 W000165,ມື,noun,hand,body,W000319,11
@@ -170,7 +170,7 @@ W000168,ຫູ,noun,ear,body,W000319,2
 W000169,ເຈັບ,verb; adjective,hurt; be sick,health,,23
 W000170,ປ່ວຍ,adjective,sick,health,,4
 W000171,ຢາ,noun,medicine,health,W000705,10
-W000172,ໂຮງໝໍ,noun,hospital,places,W000838,6
+W000172,ໂຮງໝໍ,noun,hospital,places,W000838,7
 W000173,ເມື່ອຍ,adjective,tired,health,,7
 W000174,ຮ້ອຍ,numeral,hundred,numbers,,4
 W000175,ໂຮງຮຽນ,noun,school,places,W000838,17

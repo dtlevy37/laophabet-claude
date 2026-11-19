@@ -1,0 +1,3 @@
+unit_id,teach_en,notes
+C15,"Like the p in 'spy': no puff of air, so to English ears it can sound like a b. Not the same as ບ (the b in 'boy').","From letters.csv C15 pron_tip (verified: unaspirated p, as in 'spy') and SOUND_HINTS C15 (the ບ contrast). Wording by agent."
+V33,"Like 'ai' in 'Thai' (or 'eye'). It is written before the consonant but said after it, like ເ◌ and ແ◌.","From vowels.csv V33 pron_tip (verified: 'ai' as in 'Thai'); SOUND_HINTS V33 keep (or 'eye'). R03 (written first, said second) is known since the ເ◌ົາ / ແ◌ lessons. Wording by agent."

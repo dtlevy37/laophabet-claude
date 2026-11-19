@@ -1,4 +1,4 @@
-# Curriculum path, lessons 1–19 and beyond (agreed by the user, 2026-11-10)
+# Curriculum path, lessons 1–20 and beyond (agreed by the user, 2026-11-10)
 
 This is the lesson order to build. The rules behind it are LESSON_RULES decisions 20–25. Lao sentences here were
 composed by the agent; those used in lessons 1–12 were recorded as natural by the native speaker (verified
@@ -138,8 +138,8 @@ Lao answers "yes" by repeating the verb, so no separate word for "yes" is needed
 No new letters. New words ເຂົ່າ *kao* "knee" and ມ້າ *maa* "horse", each paired with a known word that differs only
 by tone (ເຂົ້າ "rice", ມາ "come"). Built as L0013 "Same sounds, different melody". Lessons 14–19 follow below; consonant classes come after them.
 
-## Lessons 14–19: going out to eat (owner 2026-11-19)
-Builds to the second conversation, which closes section S02 (lessons 11–18, or 19). All the words are in
+## Lessons 14–19: going out to eat (owner 2026-11-19; built as L0014–L0019)
+Builds to the second conversation (D0003, lesson 18), which closes section S02 (lessons 11–19 or 20). All the words are in
 `words.csv` (verified except ເອົາ). The sentences are the agent's own until Na records them.
 
 | Lesson | New letters | Core words | Sentences (candidates) | Bonus |
@@ -148,8 +148,9 @@ Builds to the second conversation, which closes section S02 (lessons 11–18, or
 | 15 | ປ (p), ໄ◌ (ai) | ໄປ *pai* "go", ບ້ານ *baan* "home" (bonus in L6, now core) | ໄປບ້ານ "go home"; ໄປກິນເຂົ້າ "go and eat"; ໄປຮ້ານອາຫານ "go to a restaurant"; ໄປນອນ "go to bed"; ລາວໄປແລ້ວ "He's gone" | ປາ *paa* "fish", ໄກ *kai* "far" |
 | 16 | ໃ◌ (same sound as ໄ◌, one card), final ບ (dead syllable, R01) | ໃສ *sai* "where", ຂອບໃຈ *khop jai* "thank you" | ເຈົ້າໄປໃສ? "Where are you going?" (an everyday greeting); ໄປໃສມາ? "Where have you been?"; ຂອບໃຈ | ໃກ້ *kai* "near" (pairs with ໄກ), ໃຫ້ *hai* "give" |
 | 17 | ຢ (y), ◌ູ (uu) | ຢູ່ *yuu* "be at; live" | ເຈົ້າຢູ່ໃສ? "Where are you? / Where do you live?"; ຂ້ອຍຢູ່ບ້ານ "I'm at home"; ຢູ່ນີ້ "(It's) here" | |
-| 18 | ງ (start and end together, one card like ນ and ມ) | ຫ້ອງ *hawng* "room", ຫ້ອງນ້ຳ *hawng nam* "bathroom" | ຫ້ອງນ້ຳຢູ່ໃສ? "Where's the bathroom?"; ຫ້ອງນອນ "bedroom"; the conversation below | ງາມ *ngaam* "beautiful", ສອງ *sawng* "two" |
-| 19 (optional) | final ກ | ຢາກ *yaak* "want to" | ຂ້ອຍຢາກໄປຫ້ອງນ້ຳ "I want to go to the bathroom"; ຂ້ອຍຢາກກິນອາຫານລາວ "I want to eat Lao food" | |
+| 18 | ງ (start and end together, one card like ນ and ມ) | ຫ້ອງ *hawng* "room" (on its own first, owner 2026-11-19), ຫ້ອງນ້ຳ *hawng nam* "bathroom", ຫ້ອງນອນ *hawng non* "bedroom" | ຫ້ອງນີ້ດີ "This room is good"; ຫ້ອງນ້ຳຢູ່ໃສ? "Where's the bathroom?"; ຫ້ອງນອນຢູ່ນີ້ "The bedroom is here"; the conversation below | ງາມ *ngaam* "beautiful", ສອງ *sawng* "two" |
+| 19 | ໝ (m), ໂ◌ (oo) (owner 2026-11-19) | ໝໍ *mor* "doctor", ໂຮງໝໍ *hoong mor* "hospital" (ໂຮງ is "building", not ຫ້ອງ "room"; explained in a word note, not taught alone) | ລາວແມ່ນໝໍ "She's a doctor"; ໄປໂຮງໝໍ "I'm going to the hospital"; ໂຮງໝໍຢູ່ໃສ? "Where is the hospital?"; ລາວຢູ່ໂຮງໝໍ "She is in the hospital" | ໝາ *maa* "dog", ໂມງ *moong* "hour" |
+| 20 (next) | final ກ | ຢາກ *yaak* "want to" | ຂ້ອຍຢາກໄປຫ້ອງນ້ຳ "I want to go to the bathroom"; ຂ້ອຍຢາກກິນອາຫານລາວ "I want to eat Lao food" | |
 
 Lesson 14 is the first with two h letters (ຫ and ຮ). Show them as "another h" with each word's melody, as in
 lesson 13; the class rule waits for the classes lesson.
@@ -167,8 +168,6 @@ lesson 13; the class rule waits for the classes lesson.
 | C | ຢູ່ນີ້. | yuu nee | Over here. |
 | A | ຂອບໃຈ. | khop jai | Thanks. |
 
-To check with Na when the lessons are built: whether ຢູ່ນີ້ is a natural answer (a native may say ຢູ່ຫັ້ນ
-*yuu han* "over there", which needs ◌ັ), and whether ເອົານ້ຳ is natural for "I'll have water".
 
 ## After the outing conversation (order not fixed yet)
 - **Consonant classes** (owner 2026-11-19: after this run, not before): ຄ, ◌ົ◌ (short "o"), ຄົນ *khon* "person",

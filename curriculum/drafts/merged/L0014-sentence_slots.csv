@@ -1,0 +1,28 @@
+sentence_id,position,accepts,exclude_word_ids,source,confidence,notes
+L0014-S001,1,food|drink|person|animal|object|place|action,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S002,2,place|food|drink|object|animal|person,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S003,2,food|drink|object|place|animal|person,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S004,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name|function,,SRC-AGENT,unverified,"Tagged by the agent; one-word answer ມີ.: no blank makes sense; skipped on purpose, built instead"
+L0014-S005,1,action|motion|consume|object|quality|name,W000019,SRC-AGENT,unverified,"Tagged by the agent; __ ນ້ຳ: verbs fit (ກິນນ້ຳ, ຂໍນ້ຳ, ມີນ້ຳ), ແກ້ວນ້ຳ glass of water, ສີນ້ຳ; ເຂົ້າ excluded (ເຂົ້ານ້ຳ enter the water)"
+L0014-S006,1,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S007,1,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S008,1,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S009,2,action|motion|consume|quality,,SRC-AGENT,unverified,"Tagged by the agent; ລາວ __ ແລ້ວ: any verb or state fits (ກິນແລ້ວ, ນອນແລ້ວ, ຫິວແລ້ວ); options are nouns"
+L0014-S010,1,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S011,2,function|place|action,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S012,3,function|place|action,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S013,2,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S014,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name|function,,SRC-AGENT,unverified,"Tagged by the agent; __ ນີ້: almost anything fits (ມານີ້, ເອົານີ້, ຫ້ອງນີ້); blank skipped on purpose, built instead"
+S000000045,2,action|motion|consume|quality,,SRC-AGENT,unverified,"Tagged by the agent; ລາວ __ ໃສ: ໄປໃສ, ຢູ່ໃສ, ກິນໃສ; options are nouns"
+L0014-S016,2,place|action,,SRC-AGENT,unverified,Tagged by the agent
+L0014-S017,3,person|animal|object|place|food|drink|name,,SRC-AGENT,unverified,Tagged by the agent
+S000000033,2,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+S000000009,1,action|animal|body|clothing|consume|drink|food|motion|number|object|person|place|plant|quality|time|name|function,,SRC-AGENT,unverified,Tagged by the agent; one-word ຂອບໃຈ!: no blank makes sense; skipped on purpose
+S000000016,2,action|motion,,SRC-AGENT,unverified,Tagged by the agent
+S000000044,1,place|object|animal|person|food|drink|body,,SRC-AGENT,unverified,Tagged by the agent
+S000000019,1,place|object|animal|person|food|drink|body,,SRC-AGENT,unverified,Tagged by the agent
+S000000053,1,place|object|animal|person|food|drink|body,,SRC-AGENT,unverified,Tagged by the agent
+S000000013,1,place|object|animal|person|food|drink|body,,SRC-AGENT,unverified,Tagged by the agent
+S000000018,1,place|object|animal|person|food|drink|body,,SRC-AGENT,unverified,Tagged by the agent
+S000000309,1,place|object|animal|person|food|drink|body,,SRC-AGENT,unverified,Tagged by the agent
+S000000310,3,place|action|function|quality,,SRC-AGENT,unverified,"Tagged by the agent; ລາວ ຢູ່ __: a place, ນີ້, or a state (ຢູ່ດີ, ຢູ່ສະບາຍ)"

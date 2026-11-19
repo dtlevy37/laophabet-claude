@@ -5,7 +5,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 `docs/QUESTIONS.md`).
 
 ## State (2026-11-15)
-- **Content:** 1427 words, 2848 sentences, 13 lessons merged (next: 14, ອ + ຮ; lessons 14–19 planned in CURRICULUM_PATH). Pipeline clean (0 errors, the usual 11
+- **Content:** 19 lessons merged (next: 20, ຢາກ; then consonant classes, CURRICULUM_PATH); counts: `bash scripts/pipeline.sh`. Pipeline clean (0 errors, the usual 11
   warnings). Path notes: lessons 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
 - **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); what is applied is `supabase migration list --linked`.
   Netlify serves the frontend;
@@ -23,12 +23,15 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Then lesson 14 (ອ) and the PLAN working order. Owner path notes (lesson 20+) come later.
+3. Then lesson 20 (ຢາກ) and the PLAN working order. Section S02 (lessons 11–19, or 20) still needs its `sections` row
+   (hand-written migration, like `h4_checkpoints`). Owner path notes (lesson 20+) come later.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- Lessons 14–19 (local only; push with `supabase db push --linked` once you agree): play `#/lesson/L0014` … `L0019` on the
+  local app. L0018 ends with the 8-line outing conversation, then fill in the blank on its lines.
 - Lesson 13 tone (`#/lesson/L0013`, 360px and desktop): the first tone card is ເຂົ້າ rice / ເຂົ່າ knee only, with a Tone mark column and the paragraph
   as wide as the table; ມາ come / ມ້າ horse get their own card before horse; tone pictures sit in a box with a
   dashed middle line (low→mid and mid→high now look different). Then after each new word's card 4 pair questions (hear → Lao, hear →

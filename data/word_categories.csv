@@ -50,3 +50,27 @@ W000004,function,SRC-AGENT,unverified,Tagged by the agent
 W000823,function,SRC-AGENT,unverified,Tagged by the agent
 W000630,object,SRC-AGENT,unverified,Tagged by the agent; fork is an eating tool not food
 W000562,animal,SRC-AGENT,unverified,Tagged by the agent; ມ້າ horse
+W000028,food,SRC-AGENT,unverified,Tagged by the agent; ອາຫານ food
+W000030,place,SRC-AGENT,unverified,Tagged by the agent; ຮ້ານອາຫານ restaurant
+W000114,action|consume,SRC-AGENT,unverified,Tagged by the agent; ເອົາ take; I'll have (takes food or drink as object: ເອົານ້ຳ)
+W000153,person,SRC-AGENT,unverified,Tagged by the agent; ອ້າຍ older brother
+W000092,quality,SRC-AGENT,unverified,Tagged by the agent; ຮ້ອນ hot
+W000024,action|motion,SRC-AGENT,unverified,Tagged by the agent; ໄປ go
+W000075,animal|food,SRC-AGENT,unverified,Tagged by the agent; ປາ fish (the animal and the food)
+W000052,quality,SRC-AGENT,unverified,Tagged by the agent; ໄກ far
+W000015,function,SRC-AGENT,unverified,Tagged by the agent; ໃສ where (question word)
+W000008,action,SRC-AGENT,unverified,Tagged by the agent; ຂອບໃຈ thank you; to thank
+W000051,quality,SRC-AGENT,unverified,Tagged by the agent; ໃກ້ near
+W000068,action,SRC-AGENT,unverified,Tagged by the agent; ໃຫ້ give
+W000014,action,SRC-AGENT,unverified,Tagged by the agent; ຢູ່ be at; live
+W000012,place,SRC-AGENT,unverified,Tagged by the agent; ຫ້ອງ room
+W000013,place,SRC-AGENT,unverified,Tagged by the agent; ຫ້ອງນ້ຳ bathroom
+W000034,place,SRC-AGENT,unverified,Tagged by the agent; ຫ້ອງນອນ bedroom
+W000094,quality,SRC-AGENT,unverified,Tagged by the agent; ງາມ beautiful
+W000047,number,SRC-AGENT,unverified,Tagged by the agent; ສອງ two
+W000162,person,SRC-AGENT,unverified,Tagged by the agent; ໝໍ doctor
+W000172,place,SRC-AGENT,unverified,Tagged by the agent; ໂຮງໝໍ hospital
+W000171,object|food,SRC-AGENT,unverified,Tagged by the agent; ຢາ medicine; food too because Lao says ກິນຢາ (take medicine) so it fits a ກິນ __ gap
+W000168,body,SRC-AGENT,unverified,Tagged by the agent; ຫູ ear
+W000095,animal,SRC-AGENT,unverified,Tagged by the agent; ໝາ dog
+W000142,time,SRC-AGENT,unverified,Tagged by the agent; ໂມງ hour; o'clock

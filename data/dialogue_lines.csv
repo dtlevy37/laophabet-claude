@@ -12,3 +12,13 @@ D0002,6,1,B,S000002892,SRC-AGENT:lesson,unverified,"Yes, hungry (repeats the ver
 D0002,6,2,B,S000002887,SRC-AGENT:lesson,unverified,Are you hungry?
 D0002,7,1,A,S000002888,SRC-AGENT:lesson,unverified,Not hungry
 D0002,7,2,A,S000002890,SRC-AGENT:lesson,unverified,I've eaten already
+D0003,1,1,A,S000000001,SRC-AGENT:lesson,unverified,Hello
+D0003,1,2,A,S000000033,SRC-AGENT:lesson,unverified,Where are you going?
+D0003,2,1,B,S000002918,SRC-AGENT:lesson,unverified,To a restaurant
+D0003,2,2,B,S000002887,SRC-AGENT:lesson,unverified,Are you hungry?
+D0003,3,1,A,S000002892,SRC-AGENT:lesson,unverified,"Yes, hungry (repeats the verb)"
+D0003,4,1,B,S000002913,SRC-AGENT:lesson,unverified,(at the restaurant) Do you have Lao food?
+D0003,5,1,C,S000002914,SRC-AGENT:lesson,unverified,We do (repeats the verb)
+D0003,6,1,A,S000000013,SRC-AGENT:lesson,unverified,Where's the bathroom?
+D0003,7,1,C,S000002924,SRC-AGENT:lesson,unverified,Over here
+D0003,8,1,A,S000000009,SRC-AGENT:lesson,unverified,Thanks

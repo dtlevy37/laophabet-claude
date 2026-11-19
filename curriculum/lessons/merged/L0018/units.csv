@@ -1,0 +1,3 @@
+unit_id,teach_en,notes
+C04,"Like the 'ng' in 'singer', but in Lao it can also start a word, as in ງາມ (beautiful). At the end of a syllable, as in ຫ້ອງ, it is the ng of 'song'.","From letters.csv C04 pron_tip (verified: 'ng' of 'singer', can start a word; ipa_initial = ipa_final ŋ). One card for both positions (decision 10). SOUND_HINTS C04 keep. Wording by agent."
+C04f,"At the end of a syllable ງ is the ng of 'song'.","From letters.csv C04 (ipa_final ŋ; verified). Shown with C04 as one card (same-sound pair, like C13/C13f and C20/C20f). Wording by agent."

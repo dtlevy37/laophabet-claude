@@ -183,3 +183,108 @@ L0013,12,sentence,S000002909,new,'The horse has come.' (composed): ມ້າ and
 L0013,13,word,W000023,recycle,earlier word 'have; there is'; used in the next sentence
 L0013,14,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentence
 L0013,15,sentence,S000002910,new,'Is there a horse?' (composed)
+L0014,1,unit,C26,new,silent first letter ອ (carries the vowel)
+L0014,2,word,W000028,new,'food': starts with the silent ອ
+L0014,3,word,W000058,recycle,earlier word 'Lao'; used in the next sentence
+L0014,4,sentence,S000002911,new,'Lao food.' (composed)
+L0014,5,unit,C27,new,"ຮ, another h"
+L0014,6,word,W000030,new,'restaurant': ຮ້ານ 'shop' + ອາຫານ 'food'
+L0014,7,word,W000023,recycle,earlier word 'have; there is'; used in the next sentences
+L0014,8,word,W000003,recycle,earlier word 'not; question marker'; used in the next sentences
+L0014,9,sentence,S000002912,new,'Is there a restaurant?' (composed)
+L0014,10,sentence,S000002913,new,'Do you have Lao food?' (composed; outing conversation line)
+L0014,11,sentence,S000002914,new,"'We do.' (composed; the reply, repeats the verb; outing conversation line)"
+L0014,12,word,W000114,new,'take; I'll have': starts with the silent ອ
+L0014,13,word,W000011,recycle,earlier word 'water'; used in the next sentence
+L0014,14,sentence,S000002915,new,'I'll have water.' (composed)
+L0014,15,word,W000153,bonus,'older brother'; bonus word with the silent ອ; never in a sentence
+L0014,16,word,W000092,bonus,'hot'; bonus word with ຮ; never in a sentence
+L0015,1,unit,C15,new,"ປ, p as in 'spy'"
+L0015,2,unit,V33,new,"vowel ໄ◌ 'ai', written first"
+L0015,3,word,W000024,new,'go': ປ with ໄ◌
+L0015,4,word,W000049,new,"'home' (bonus word in lesson 6, now core)"
+L0015,5,sentence,S000002916,new,'I'm going home.' (composed)
+L0015,6,word,W000018,recycle,earlier word 'eat'; used in the next sentence
+L0015,7,word,W000019,recycle,earlier word 'rice; a meal'; used in the next sentence
+L0015,8,sentence,S000002917,new,'Let's go and eat.' (composed)
+L0015,9,word,W000030,recycle,earlier word 'restaurant' (lesson 14); used in the next sentence
+L0015,10,sentence,S000002918,new,'To a restaurant.' (composed; outing conversation line)
+L0015,11,word,W000033,recycle,earlier word 'sleep'; used in the next sentence
+L0015,12,sentence,S000002920,new,'I'm going to bed.' (composed)
+L0015,13,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0015,14,word,W000020,recycle,earlier word 'already'; used in the next sentence
+L0015,15,sentence,S000002919,new,'He's gone.' (composed)
+L0015,16,word,W000075,bonus,'fish'; bonus word with ປ; never in a sentence
+L0015,17,word,W000052,bonus,'far'; bonus word with ໄ◌; never in a sentence
+L0016,1,unit,V34,new,"vowel ໃ◌, the same 'ai' as ໄ◌"
+L0016,2,word,W000015,new,'where': uses ໃ◌
+L0016,3,word,W000005,recycle,earlier word 'you'; used in the next sentence
+L0016,4,word,W000024,recycle,earlier word 'go' (lesson 15); used in the next sentences
+L0016,5,sentence,S000000033,new,'Where are you going?' (existing; an everyday greeting; outing conversation line)
+L0016,6,word,W000025,recycle,earlier word 'come'; used in the next sentence
+L0016,7,sentence,S000002921,new,'Where have you been?' (composed)
+L0016,8,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0016,9,sentence,S000002922,new,'Where did he go?' (composed)
+L0016,10,unit,C14f,new,"final ບ: a closed p, the syllable stops short"
+L0016,11,word,W000008,new,"'thank you': ຂອບ ends in the closed p, ໃຈ uses ໃ◌"
+L0016,12,sentence,S000000009,new,"'Thank you!' (existing, verified; outing conversation line)"
+L0016,13,word,W000051,bonus,'near' (pairs with ໄກ 'far' from lesson 15); bonus word with ໃ◌; never in a sentence
+L0016,14,word,W000068,bonus,'give'; bonus word with ໃ◌; never in a sentence
+L0017,1,unit,C21,new,"ຢ, y as in 'young'"
+L0017,2,unit,V09,new,"vowel ◌ູ, long 'oo', under the letter"
+L0017,3,word,W000014,new,'be at; live': ຢ with ◌ູ
+L0017,4,word,W000005,recycle,earlier word 'you'; used in the next sentence
+L0017,5,word,W000015,recycle,earlier word 'where' (lesson 16); used in the next sentences
+L0017,6,sentence,S000000016,new,'Where are you?' (existing)
+L0017,7,word,W000006,recycle,earlier word 'I'; used in the next sentence
+L0017,8,word,W000049,recycle,earlier word 'home' (lesson 15); used in the next sentence
+L0017,9,sentence,S000002923,new,'I'm at home.' (composed)
+L0017,10,word,W000031,recycle,earlier word 'he; she'; used in the next sentence
+L0017,11,sentence,S000000045,new,'Where is he?' (existing)
+L0017,12,word,W000030,recycle,earlier word 'restaurant' (lesson 14); used in the next sentence
+L0017,13,sentence,S000000044,new,'Where is the restaurant?' (existing)
+L0017,14,word,W000016,recycle,earlier word 'this; here'; used in the next sentence
+L0017,15,sentence,S000002924,new,'(It's) here.' (composed; the answer; outing conversation line)
+L0017,16,word,W000171,bonus,'medicine'; bonus word with ຢ; never in a sentence
+L0017,17,word,W000168,bonus,'ear'; bonus word with ◌ູ; never in a sentence
+L0018,1,unit,C04,new,initial ງ
+L0018,2,unit,C04f,new,final ◌ງ; shown with C04 as one card (same-sound pair)
+L0018,3,word,W000012,new,'room': ends in ງ; taught on its own before the compounds (owner 2026-11-19)
+L0018,4,word,W000016,recycle,earlier word 'this'; used in the next sentences
+L0018,5,word,W000002,recycle,earlier word 'good'; used in the next sentence
+L0018,6,sentence,S000000019,new,'This room is good.' (existing)
+L0018,7,word,W000013,new,'bathroom': ຫ້ອງ 'room' + ນ້ຳ 'water'
+L0018,8,word,W000014,recycle,earlier word 'be at' (lesson 17); used in the next sentences
+L0018,9,word,W000015,recycle,earlier word 'where' (lesson 16); used in the next sentence
+L0018,10,sentence,S000000013,new,'Where's the bathroom?' (existing; the payoff; conversation line 6)
+L0018,11,word,W000034,new,'bedroom': ຫ້ອງ 'room' + ນອນ 'sleep'
+L0018,12,sentence,S000000018,new,'The bedroom is here.' (existing)
+L0018,13,word,W000001,recycle,earlier word 'hello'; used in the conversation
+L0018,14,word,W000005,recycle,earlier word 'you'; used in the conversation
+L0018,15,word,W000024,recycle,earlier word 'go'; used in the conversation
+L0018,16,word,W000030,recycle,earlier word 'restaurant'; used in the conversation
+L0018,17,word,W000072,recycle,earlier word 'hungry'; used in the conversation
+L0018,18,word,W000019,recycle,earlier word 'rice; a meal'; used in the conversation
+L0018,19,word,W000003,recycle,earlier word 'not; question marker'; used in the conversation
+L0018,20,word,W000023,recycle,earlier word 'have; there is'; used in the conversation
+L0018,21,word,W000028,recycle,earlier word 'food'; used in the conversation
+L0018,22,word,W000058,recycle,earlier word 'Lao'; used in the conversation
+L0018,23,word,W000008,recycle,earlier word 'thank you'; used in the conversation
+L0018,24,dialogue,D0003,new,"the outing conversation (CURRICULUM_PATH lesson 18): 8 lines as one card, then fill in the blank on its lines"
+L0018,25,word,W000094,bonus,'beautiful'; bonus word with ງ at the start; never in a sentence
+L0018,26,word,W000047,bonus,'two'; bonus word with the final ງ; never in a sentence
+L0019,1,unit,C31,new,"ໝ, the same m as ມ"
+L0019,2,word,W000162,new,'doctor': ໝ with the 'aw' vowel you know
+L0019,3,word,W000031,recycle,earlier word 'he; she'; used in the next sentences
+L0019,4,word,W000004,recycle,earlier word 'that's right; to be'; used in the next sentence
+L0019,5,sentence,S000002926,new,'She's a doctor.' (composed)
+L0019,6,unit,V18,new,"vowel ໂ◌, a pure 'oh', written first"
+L0019,7,word,W000172,new,'hospital': ໂຮງ 'building' + ໝໍ 'doctor'; the word note says ໂຮງ is not ຫ້ອງ 'room'
+L0019,8,word,W000024,recycle,earlier word 'go'; used in the next sentence
+L0019,9,sentence,S000002925,new,'I'm going to the hospital.' (composed)
+L0019,10,word,W000014,recycle,earlier word 'be at'; used in the next sentences
+L0019,11,word,W000015,recycle,earlier word 'where'; used in the next sentence
+L0019,12,sentence,S000000309,new,'Where is the hospital?' (existing)
+L0019,13,sentence,S000000310,new,'She is in the hospital.' (existing)
+L0019,14,word,W000095,bonus,"'dog'; bonus word with ໝ (same sounds as ມາ 'come', a different melody); never in a sentence"
+L0019,15,word,W000142,bonus,'hour; o'clock'; bonus word with ໂ◌ and the final ງ; never in a sentence
