@@ -1,4 +1,4 @@
-# Curriculum path, lessons 1–11 and beyond (agreed by the user, 2026-11-10)
+# Curriculum path, lessons 1–19 and beyond (agreed by the user, 2026-11-10)
 
 This is the lesson order to build. The rules behind it are LESSON_RULES decisions 20–25. Lao sentences here were
 composed by the agent; those used in lessons 1–12 were recorded as natural by the native speaker (verified
@@ -136,24 +136,47 @@ Lao answers "yes" by repeating the verb, so no separate word for "yes" is needed
 
 ## Lesson 13: tone (owner 2026-11-18)
 No new letters. New words ເຂົ່າ *kao* "knee" and ມ້າ *maa* "horse", each paired with a known word that differs only
-by tone (ເຂົ້າ "rice", ມາ "come"). Built as L0013 "Same sounds, different melody". ອ (below) moves to lesson 14. Consonant classes come soon
-after as their own lesson, with ຄ (the ເຂົ້າ / ເຂົ່າ / ເຂົາ / ເຄົາ "rice / knee / they / beard" set fits there),
-not straight after lesson 13.
+by tone (ເຂົ້າ "rice", ມາ "come"). Built as L0013 "Same sounds, different melody". Lessons 14–19 follow below; consonant classes come after them.
 
-## After lesson 11 (order not fixed yet)
-Each needs one or two new letters:
+## Lessons 14–19: going out to eat (owner 2026-11-19)
+Builds to the second conversation, which closes section S02 (lessons 11–18, or 19). All the words are in
+`words.csv` (verified except ເອົາ). The sentences are the agent's own until Na records them.
 
-| Target | New letters | Opens |
-|---|---|---|
-| ມີ *mee* "have; there is", ມາ *maa* "come" | ມ (m) | ມີນ້ຳບໍ່? *mee nam bor?* "Is there water?"; ລາວມາແລ້ວ *lao maa leo* "He's arrived" |
-| ອາຫານ *aahaan* "food", ເອົາ *ao* "take; I'll have" | ອ (silent carrier) | ອາຫານລາວ *aahaan lao* "Lao food"; ເອົານ້ຳ *ao nam* "I'll have water" |
-| ຢາກ *yaak* "want to" | ຢ (y), final ກ (k) | ຂ້ອຍຢາກກິນອາຫານລາວ *khoy yaak kin aahaan lao* "I want to eat Lao food" |
-| ມັກ *muk* "like", ກັນ *kan* "together" | ◌ັ◌ (short "a" inside a syllable) | ຂ້ອຍມັກອາຫານລາວ *khoy muk aahaan lao* "I like Lao food" |
-| ຄົນ *khon* "person" + the "three k letters" card (ກ ຂ ຄ) | ຄ (kh), ◌ົ◌ (short "o") | ຄົນລາວ *khon lao* "Lao person"; ຄົນນີ້ *khon nee* "this person"; bonus ລາຄາ *laakhaa* "price" |
-| ໃຫຍ່ *yai* "big" (paired with ນ້ອຍ *noy* "small") | ໃ◌ (ai), ຫຍ (ny) | big / small as a pair |
+| Lesson | New letters | Core words | Sentences (candidates) | Bonus |
+|---|---|---|---|---|
+| 14 | ອ (silent first letter), ຮ (h) | ອາຫານ *aahaan* "food", ຮ້ານອາຫານ *haan aahaan* "restaurant", ເອົາ *ao* "take; I'll have" | ມີອາຫານບໍ່? "Is there food?"; ອາຫານລາວ "Lao food"; ມີຮ້ານອາຫານບໍ່? "Is there a restaurant?"; ເອົານ້ຳ "I'll have water" | ອ້າຍ *aai* "older brother", ຮ້ອນ *hon* "hot" |
+| 15 | ປ (p), ໄ◌ (ai) | ໄປ *pai* "go", ບ້ານ *baan* "home" (bonus in L6, now core) | ໄປບ້ານ "go home"; ໄປກິນເຂົ້າ "go and eat"; ໄປຮ້ານອາຫານ "go to a restaurant"; ໄປນອນ "go to bed"; ລາວໄປແລ້ວ "He's gone" | ປາ *paa* "fish", ໄກ *kai* "far" |
+| 16 | ໃ◌ (same sound as ໄ◌, one card), final ບ (dead syllable, R01) | ໃສ *sai* "where", ຂອບໃຈ *khop jai* "thank you" | ເຈົ້າໄປໃສ? "Where are you going?" (an everyday greeting); ໄປໃສມາ? "Where have you been?"; ຂອບໃຈ | ໃກ້ *kai* "near" (pairs with ໄກ), ໃຫ້ *hai* "give" |
+| 17 | ຢ (y), ◌ູ (uu) | ຢູ່ *yuu* "be at; live" | ເຈົ້າຢູ່ໃສ? "Where are you? / Where do you live?"; ຂ້ອຍຢູ່ບ້ານ "I'm at home"; ຢູ່ນີ້ "(It's) here" | |
+| 18 | ງ (start and end together, one card like ນ and ມ) | ຫ້ອງ *hawng* "room", ຫ້ອງນ້ຳ *hawng nam* "bathroom" | ຫ້ອງນ້ຳຢູ່ໃສ? "Where's the bathroom?"; ຫ້ອງນອນ "bedroom"; the conversation below | ງາມ *ngaam* "beautiful", ສອງ *sawng* "two" |
+| 19 (optional) | final ກ | ຢາກ *yaak* "want to" | ຂ້ອຍຢາກໄປຫ້ອງນ້ຳ "I want to go to the bathroom"; ຂ້ອຍຢາກກິນອາຫານລາວ "I want to eat Lao food" | |
 
-A second conversation target (ordering food: "I'd like…", "Do you have…?", "I like Lao food") fits these words
-well. To be designed when lesson 10 is done.
+Lesson 14 is the first with two h letters (ຫ and ຮ). Show them as "another h" with each word's melody, as in
+lesson 13; the class rule waits for the classes lesson.
+
+### Target conversation (complete in lesson 18)
+
+| | Lao | Sounds like | English |
+|---|---|---|---|
+| A | ສະບາຍດີ! ເຈົ້າໄປໃສ? | sabaidee! jao pai sai? | Hi! Where are you going? |
+| B | ໄປຮ້ານອາຫານ. ເຈົ້າຫິວເຂົ້າບໍ່? | pai haan aahaan. jao hiu khao bor? | To a restaurant. Are you hungry? |
+| A | ຫິວ. | hiu | Yes (hungry). |
+| B | ມີອາຫານລາວບໍ່? | mee aahaan lao bor? | (at the restaurant) Do you have Lao food? |
+| C | ມີ. | mee | We do. |
+| A | ຫ້ອງນ້ຳຢູ່ໃສ? | hawng nam yuu sai? | Where's the bathroom? |
+| C | ຢູ່ນີ້. | yuu nee | Over here. |
+| A | ຂອບໃຈ. | khop jai | Thanks. |
+
+To check with Na when the lessons are built: whether ຢູ່ນີ້ is a natural answer (a native may say ຢູ່ຫັ້ນ
+*yuu han* "over there", which needs ◌ັ), and whether ເອົານ້ຳ is natural for "I'll have water".
+
+## After the outing conversation (order not fixed yet)
+- **Consonant classes** (owner 2026-11-19: after this run, not before): ຄ, ◌ົ◌ (short "o"), ຄົນ *khon* "person",
+  the "three k letters" card (ກ ຂ ຄ), the ເຂົ້າ / ເຂົ່າ / ເຂົາ / ເຄົາ "rice / knee / they / beard" set;
+  ຄົນລາວ "Lao person", ຄົນນີ້ "this person"; bonus ລາຄາ *laakhaa* "price".
+- **Ordering food** (the next conversation): ◌ັ◌ (short "a" inside a syllable) and ຫຍ (ny) open ມັກ *muk* "like",
+  ຫຍັງ *nyang* "what", ກັນ *kan* "together", ຢູ່ຫັ້ນ "over there"; ຂ້ອຍມັກອາຫານລາວ "I like Lao food";
+  ເອົາຫຍັງ? "What will you have?"; ໃຫຍ່ *yai* "big" (ໃ◌ + ຫຍ, paired with ນ້ອຍ *noy* "small").
 
 ## Work this plan still needs
 Conversations are `dialogue` lesson items (D0001 in lesson 8, D0002 in lesson 10; DESIGN "Conversations").

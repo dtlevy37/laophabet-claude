@@ -128,7 +128,6 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
 - Bonus words are tested without a sentence (learning review).
 - "Lock in" a new word (owner): ask each piece's sound before the word's card; the word appears at the end.
 - Respelling hint on meaning → Lao questions (owner): hinted answers count for letters, not for word knowledge.
-- After lesson 12: ອາຫານ, ຢາກ, ມັກ, ຄົນ, ໃຫຍ່ around a second conversation (ordering food).
 - Prior knowledge (on hold, owner 2026-11-18, to talk through): the intake's "speak Lao" / "read Thai" answers change
   nothing (`intake.js:8`); a "Brisk" pace setting; "Thai readers:" notes. Not for now (DESIGN "Who it is for").
 - Lesson side rail (the lesson's words beside the stage on wide screens): scrapped for now (owner 2026-11-18). If it

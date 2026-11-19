@@ -5,7 +5,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 `docs/QUESTIONS.md`).
 
 ## State (2026-11-15)
-- **Content:** 1427 words, 2848 sentences, 13 lessons merged (next: 14, ອ). Pipeline clean (0 errors, the usual 11
+- **Content:** 1427 words, 2848 sentences, 13 lessons merged (next: 14, ອ + ຮ; lessons 14–19 planned in CURRICULUM_PATH). Pipeline clean (0 errors, the usual 11
   warnings). Path notes: lessons 6 and 11 may split, 9 and 10 may swap (after the owner's play-test).
 - **Hosted:** Supabase `nerttltntbwhpvticuwe` (Postgres 17); what is applied is `supabase migration list --linked`.
   Netlify serves the frontend;

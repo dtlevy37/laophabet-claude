@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Lessons 14–19 planned: the outing conversation
+- CURRICULUM_PATH: lessons 14–19 build to a second conversation (where are you going, restaurant, where's the
+  bathroom, thank you). New letters in order: ອ + ຮ, ປ + ໄ◌, ໃ◌ + final ບ, ຢ + ◌ູ, ງ, final ກ (optional 19).
+  ຮ້ານອາຫານ "restaurant" added to lesson 14 (owner). Consonant classes move after this run (owner).
+- LESSON_RULES 20, PLAN and NOTES pointers updated to match.
+
 ## 2026-11-19 Native answers round 2 (Na), her new takes processed, "uses something new" is a warning
 - `lesson_tool.py check`: a new word that uses no new unit or rule is now a warning, not an error (owner: later
   lessons may add words only to build sentences). LESSON_RULES, DESIGN, CLAUDE.md and the runner prompt say so.
