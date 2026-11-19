@@ -9,7 +9,7 @@ verifies the person** (`reviewer_trust.native_verified_at`, set by hand in SQL).
 users cannot write.
 
 ## Working order
-Owner checks of what is built, then (owner 2026-11-18, from the November app review): A7a height first, A7b navigation rail, A17
+Owner checks of what is built, then (owner 2026-11-18, from the November app review): A17
 conversations, L5 phase 1, A18 Lao sizes, A19 romanization and content, L6 lesson titles, then A10, L3, L4. Later:
 A20, A21, A22. On hold until the owner has thought it through: prior-knowledge features (DESIGN "Who it is for").
 
@@ -50,28 +50,6 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
       from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
-- [ ] **A7a Large screens: height first** (replaces the earlier "A7 rest" plan; contract: nav and ✕ belong to the
-      runner, never to an activity; new strings in `strings.json`).
-      - On mouse devices (`(hover: hover) and (pointer: fine)`): content in reading order, options 24–32px under the
-        prompt, feedback under the options, the button right under the content; the lesson frame capped at about
-        820px tall and centred. Phones keep the bottom-anchored layout.
-      - At `max-height: 560px` (laptops, 200% zoom): a smaller hero glyph, no key-hint line, the dry-run chip in the
-        head row, no empty 56px action slot (`styles.css:308`).
-      - Questions use one 600–640px column; 820px only for reading cards and conversations.
-      - A 2×2 grid for meaning options when the glosses fit; single-letter options at about 3rem.
-      **Done when:** at 1280×720 and at 200% zoom on 1440×900, every question and its feedback show the prompt
-      without scrolling, and at 1440×900 the options start within 32px of the prompt.
-- [ ] **A7b Desktop navigation rail** (owner 2026-11-18; DESIGN "Home and navigation").
-      - On wide screens (`min-width: 1024px`, so 200% zoom drops it), every non-lesson page gets a slim left rail:
-        Home, Lessons, Review, Letters, My words, Write, Notes, Settings. Sections not built yet are greyed with
-        "Soon", like the home tiles. The current page is marked (accent colour plus `aria-current="page"`).
-      - Phones and narrow windows keep today's model: home tiles and the slim header, no tab bar.
-      - Lessons show no rail (the runner owns nav and ✕). `<nav aria-label="Sections">` before the main content;
-        new strings in `strings.json`.
-      - The desktop header sits far from the content (brand at x=16, icons at x=1400, content a 720px column): keep
-        the full-width bar but align its contents to the content column (`max-width: var(--content-max)`).
-      **Done when:** at 1440×900 you can go from Letters to My words in one click; at 360px and at 200% zoom on
-      1440×900 no rail shows; a lesson never shows it.
 - [ ] **A17 Conversations.**
       - Compact: ▶ inline after the Lao, Reveal on the same row, bubbles `max-width: 75%`; a 6-line dialogue fits at
         1440×900 before Reveal.
@@ -216,6 +194,10 @@ A20, A21, A22. On hold until the owner has thought it through: prior-knowledge f
   nothing (`intake.js:8`); a "Brisk" pace setting; "Thai readers:" notes. Not for now (DESIGN "Who it is for").
 - Lesson side rail (the lesson's words beside the stage on wide screens): scrapped for now (owner 2026-11-18). If it
   comes back: in many activities the Lao is the answer, so it must collapse while a question is unanswered.
+- A7a leftovers at 720×450 (200% zoom): a wrong build-the-sentence with a two-line compare strip, and a fill-in under
+  a long conversation (up to 361px of bubbles), still push the prompt off screen; needs a side-by-side layout.
+  build_word was not measured.
+- The rail's Review item always links to `#/practice`; the home tile gates it until lesson 1 is done.
 - With the A7b rail: list + detail side by side on My words and Letters, and two-column Settings.
 - A23 leftovers (if wanted): loading skeletons instead of "Loading…"; a hidden `#/kit` page showing every
   component in light and dark, so drift does not come back.

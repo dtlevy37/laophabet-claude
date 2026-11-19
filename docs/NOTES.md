@@ -29,6 +29,11 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
+- A7a/A7b large screens (desktop with a mouse, 1280×720 and 1440×900, then 200% zoom): in `#/try/L0001` and
+  `L0010` the question sits near the top in a ~640px column, options just under the prompt, Continue right under the
+  content (not at the bottom); short meanings in a 2×2 grid, single letters big. At 1024px+ every non-lesson page has a
+  left rail (Home … Settings, Notes greyed "Soon", current page marked); none at 200% zoom, on a phone or in a lesson.
+  Phones unchanged.
 - A13 Lao fonts (S10+, after a hard reload; Standard font): ◌ິ, ◌້ and ◌ໍ sit on their circle on `#/read/L0001/3`,
   `L0002/5`, `L0006/1`, with a clear gap above the ◌ໍ label; the "dotted circle is not a letter" line and the
   Settings sample `ກິນເຂົ້າ ◌ິ ◌້`. If still wrong, screenshot each with the browser name, then the same on Plain.
@@ -162,6 +167,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   `dialogueBody` / `dialogueLine`; `fill_blank.js` `spec.dialogue`. Data `data/dialogues.csv`, `dialogue_lines.csv`.
 - `js/grammar.js` word-order rule notes (test `scripts/grammar_test.mjs`). `js/audio.js` player, report dialog.
   `js/unit_word.js` "Hear it in a word". `js/howto.js` first-time how-tos. `js/bundle.js` `get_lesson` cache.
+- `js/rail.js` the desktop rail (A7b; `app.js` `syncTopbar` shows it on learner non-lesson screens). A7a desktop
+  layout: the `(hover: hover) and (pointer: fine)` and `max-height: 560px` blocks at the end of `styles.css`.
 - `js/home.js` home (#/): Continue card and the section tiles. `js/lessons.js` `#/lessons`: the compact path,
   `nextLesson()` (`session.js` `resumableLesson`; shared with home). Browser check: `scripts/browser/a7_shots.js`.
 - `js/letters.js` (`learner_units`), `js/words.js` (`learner_words`, `learner_word`), home strip one `learner_stats`

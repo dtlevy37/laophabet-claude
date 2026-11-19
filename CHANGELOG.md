@@ -2,6 +2,15 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-18 A7a large screens height first, A7b desktop navigation rail
+- A7a: on mouse devices the lesson frame is centred and capped at 820px tall, content in reading order, questions in a
+  640px column with options 24px under the prompt, no empty button slot; short meaning glosses in a 2×2 grid, single
+  letters at 3rem (`multiple_choice.js` `letters` / `short` hooks); at `max-height: 560px` a smaller glyph, no key
+  hints, the dry-run chip in the head row (`session.js`), tighter feedback, compare strip and bubbles. Leftovers at
+  720×450 in PLAN small fixes.
+- A7b: `js/rail.js`, a left rail from 1024px on learner non-lesson pages (Home, Lessons, Review, Letters, My words,
+  Write, Notes "Soon", Settings; `aria-current`); the desktop header aligned to the content column.
+
 ## 2026-11-18 A23 visual polish, A16 answer layout and summary
 - A23: type, spacing and radius tokens; `button.secondary` / `small` / `danger` with the `--control-border` edge;
   pressed and hover states (motion only without reduced motion); phones fill the screen; one SVG icon set
