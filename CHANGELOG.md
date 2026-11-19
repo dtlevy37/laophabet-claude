@@ -7,7 +7,10 @@ Every change to the project is recorded here, newest first. Update it in the sam
   ສິບ 10 in L16) and letter reinforcers (ແຂນ arm L6, ຈ່າຍ pay L10, ເຂົ້າຈີ່ bread L11, ແມວ cat L13, ອີ່ມ full L14,
   ໄຂ່ egg L15, ແດງ red L18, ໃໝ່ new L19); categories tagged; migration bonus_words_l02_l19, hosted. Rule in
   LESSON_RULES decision 21.
-- docs/REORDER_PROPOSAL.md (Opus review): keep 1–19, re-plan 20–33 as S03 with more word-only lessons; scope open.
+- Path re-planned from lesson 20 (owner, after an Opus review): lessons 1–19 stay; lessons 20–33 are section S03
+  "getting by" (10 symbols in 14 lessons, about half word-only; immediate family first; final ກ without a card;
+  speak-slowly after S03 since it needs ຊ). Written into CURRICULUM_PATH and LESSON_RULES decision 20; the one-off
+  proposal doc was folded in and deleted.
 
 ## 2026-11-19 Section S02, tooth bonus, lessons 14–19 hosted (owner)
 - Section S02 "Going out" = lessons 11–19 (owner: a natural checkpoint after the hospital lesson); migration section_s02.

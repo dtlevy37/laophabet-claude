@@ -23,8 +23,8 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Owner decides the scope in `docs/REORDER_PROPOSAL.md` (lessons 20+); then fold it into CURRICULUM_PATH, delete the
-   proposal, and build lesson 20. Owner path notes (lesson 20+) come later.
+3. Lessons 20–33 (section S03, CURRICULUM_PATH): draft the missing rows, then build lesson 20 (word-only:
+   understand, know).
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 
