@@ -2,6 +2,12 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-19 Section S02, tooth bonus, lessons 14–19 hosted (owner)
+- Section S02 "Going out" = lessons 11–19 (owner: a natural checkpoint after the hospital lesson); migration section_s02.
+- ແຂ້ວ tooth (W000384) is a bonus word in L0005 next to ແລ້ວ already / ແກ້ວ glass (owner). It was first put in L0019
+  by mistake (l19_bonus_tooth) and removed there (l19_drop_tooth, hand-written delete); l05_bonus_tooth adds it.
+- Lessons 14–19 and these fixes pushed to the hosted DB (owner agreed).
+
 ## 2026-11-19 Lessons 14–19 built: the outing conversation (owner)
 - L0014 ອ + ຮ (food, restaurant, I'll have), L0015 ປ + ໄ◌ (go, home), L0016 ໃ◌ + final ບ (where, thank you),
   L0017 ຢ + ◌ູ (be at), L0018 ງ (room on its own first, bathroom, bedroom; conversation D0003, 8 lines),

@@ -9,4 +9,5 @@ position,item_type,item_id,role,notes
 8,sentence,S000002877,new,'he has eaten already'
 9,word,W000011,recycle,earlier word
 10,sentence,S000002878,new,'she has had some water already'
-11,word,W000218,bonus,"'glass'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence"
+11,word,W000218,bonus,'glass'; bonus word (LESSON_RULES decision 21): readable with known letters plus the new vowel; never in a sentence
+12,word,W000384,bonus,"'tooth'; bonus word (owner 2026-11-19): readable with the new vowel, rhymes with ແລ້ວ already and ແກ້ວ glass; never in a sentence"

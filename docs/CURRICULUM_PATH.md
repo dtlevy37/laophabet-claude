@@ -139,7 +139,7 @@ No new letters. New words ເຂົ່າ *kao* "knee" and ມ້າ *maa* "hors
 by tone (ເຂົ້າ "rice", ມາ "come"). Built as L0013 "Same sounds, different melody". Lessons 14–19 follow below; consonant classes come after them.
 
 ## Lessons 14–19: going out to eat (owner 2026-11-19; built as L0014–L0019)
-Builds to the second conversation (D0003, lesson 18), which closes section S02 (lessons 11–19 or 20). All the words are in
+Builds to the second conversation (D0003, lesson 18), which with the hospital lesson closes section S02 (lessons 11–19; owner 2026-11-19). All the words are in
 `words.csv` (verified except ເອົາ). The sentences are the agent's own until Na records them.
 
 | Lesson | New letters | Core words | Sentences (candidates) | Bonus |

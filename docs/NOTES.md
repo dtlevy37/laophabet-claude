@@ -23,15 +23,14 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    `data/open_questions.csv` + `scripts/questions_tool.py`. Natives' browser steps: sign in as a native; `#/` shows the native home (N3); `#/questions`, `#/suggest`, `#/confirm`
    (second native); a learner opening them gets home. Driver `scripts/browser/n1n2_check.js` (local accounts n1a/n1b/n1l@test.local,
    password smoke-test-pass-1).
-3. Then lesson 20 (ຢາກ) and the PLAN working order. Section S02 (lessons 11–19, or 20) still needs its `sections` row
-   (hand-written migration, like `h4_checkpoints`). Owner path notes (lesson 20+) come later.
+3. Then lesson 20 (ຢາກ) and the PLAN working order. Owner path notes (lesson 20+) come later.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 
 ## Waiting on the owner
 Browser tests on the deployed site (a private window shows the first-time hints). **Delete a line when done.**
-- Lessons 14–19 (local only; push with `supabase db push --linked` once you agree): play `#/lesson/L0014` … `L0019` on the
-  local app. L0018 ends with the 8-line outing conversation, then fill in the blank on its lines.
+- Lessons 14–19 on the deployed site: play `#/lesson/L0014` … `L0019`. L0018 ends with the 8-line outing conversation,
+  then fill in the blank on its lines. After L0019 the S02 checkpoint opens. L0005 now has ແຂ້ວ tooth as a second bonus.
 - Lesson 13 tone (`#/lesson/L0013`, 360px and desktop): the first tone card is ເຂົ້າ rice / ເຂົ່າ knee only, with a Tone mark column and the paragraph
   as wide as the table; ມາ come / ມ້າ horse get their own card before horse; tone pictures sit in a box with a
   dashed middle line (low→mid and mid→high now look different). Then after each new word's card 4 pair questions (hear → Lao, hear →

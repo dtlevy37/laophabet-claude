@@ -1,16 +1,16 @@
 position,item_type,item_id,role,notes
 1,unit,C31,new,"ໝ, the same m as ມ"
-2,word,W000162,new,"'doctor': ໝ with the 'aw' vowel you know"
-3,word,W000031,recycle,"earlier word 'he; she'; used in the next sentences"
-4,word,W000004,recycle,"earlier word 'that's right; to be'; used in the next sentence"
-5,sentence,S000002926,new,"'She's a doctor.' (composed)"
+2,word,W000162,new,'doctor': ໝ with the 'aw' vowel you know
+3,word,W000031,recycle,earlier word 'he; she'; used in the next sentences
+4,word,W000004,recycle,earlier word 'that's right; to be'; used in the next sentence
+5,sentence,S000002926,new,'She's a doctor.' (composed)
 6,unit,V18,new,"vowel ໂ◌, a pure 'oh', written first"
-7,word,W000172,new,"'hospital': ໂຮງ 'building' + ໝໍ 'doctor'; the word note says ໂຮງ is not ຫ້ອງ 'room'"
-8,word,W000024,recycle,"earlier word 'go'; used in the next sentence"
-9,sentence,S000002925,new,"'I'm going to the hospital.' (composed)"
-10,word,W000014,recycle,"earlier word 'be at'; used in the next sentences"
-11,word,W000015,recycle,"earlier word 'where'; used in the next sentence"
-12,sentence,S000000309,new,"'Where is the hospital?' (existing)"
-13,sentence,S000000310,new,"'She is in the hospital.' (existing)"
+7,word,W000172,new,'hospital': ໂຮງ 'building' + ໝໍ 'doctor'; the word note says ໂຮງ is not ຫ້ອງ 'room'
+8,word,W000024,recycle,earlier word 'go'; used in the next sentence
+9,sentence,S000002925,new,'I'm going to the hospital.' (composed)
+10,word,W000014,recycle,earlier word 'be at'; used in the next sentences
+11,word,W000015,recycle,earlier word 'where'; used in the next sentence
+12,sentence,S000000309,new,'Where is the hospital?' (existing)
+13,sentence,S000000310,new,'She is in the hospital.' (existing)
 14,word,W000095,bonus,"'dog'; bonus word with ໝ (same sounds as ມາ 'come', a different melody); never in a sentence"
-15,word,W000142,bonus,"'hour; o'clock'; bonus word with ໂ◌ and the final ງ; never in a sentence"
+15,word,W000142,bonus,'hour; o'clock'; bonus word with ໂ◌ and the final ງ; never in a sentence
