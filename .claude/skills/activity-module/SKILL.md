@@ -32,10 +32,16 @@ export default {
 - `render` uses `h()` and `t()` (frontend-feature skill), draws its own Next / Continue button, and after an
   answer (right or wrong) shows the correct one with the item's info icon before calling `done`.
   The runner may call `render` again for the same spec (a settings change redraws the screen).
-- The feedback after an answer is always `answerPanel()` (`activities/panel.js`, A16): head, then Lao → sound →
-  meaning, then ⓘ left and 🔊 right. It is the one speaker on the screen once answered (a ▶ shown before the
-  answer goes). A wrong pick the learner was taught gets `wrongPickedLine()`; `ctx.taught(type, id)` (from the
-  runner) says whether it was. "Hint" and "Can't listen now" go in `toolRow()` (`hint.js`), which keeps its height.
+- The feedback after an answer is always `answerPanel()` (`activities/panel.js`; A16, reworked in U1). Once answered,
+  remove the options and the tool row and put `h('div', {class: 'mc-after'}, answerPanel(...))` in their place; the
+  prompt above stays put (multiple_choice.js is the reference). Right: a "Correct!" toast (the `.feedback-head`,
+  fixed, takes no room) and one answer card. Wrong: pass `pick: {lao, sound, meaning}` (what the learner's pick
+  really is, taught or not) for a "You picked" card above the "Answer" card; listening questions add `audio` to the
+  pick (`wordAudio(bundle, id)`) so both play. `lao: null` when the prompt above already shows the answer's Lao.
+  ⓘ sits by the Lao, 🔊 on the right. "Hint" and "Can't listen now" go in `toolRow()` (`hint.js`) before the answer.
+- Text fits the screen by itself: the runner shrinks a step's `--fit` down to the learner's floor (`dom.js`
+  `fitStage`). Size Lao with `calc(<n>rem * var(--lao-scale, 1))` and English with the `--fs-*` tokens so they follow
+  it; never make the page scroll, and never move the prompt on answer.
 - The same module serves lessons and practice sessions. It never knows which one it is in.
 
 ## The selector contract (do not rename)
@@ -53,7 +59,7 @@ they mark today:
 | `.audio-btn` | a play button (the first one on the stage is Space) | Space, tap count `audio` |
 | `.info-btn`, `.word-btn`, or a button containing `.info-icon` | an info opener (info icon, an inline sentence word) | tap count `info` |
 | `.sentence-words` / `.word-bubble` | a sentence's words as underlined buttons and the bubble under them (`inlineSentence` in teach_card.js; replaces the chip row). Never built for a word hiding the answer before Check. Esc closes the bubble before the leave dialog | tap count `info`, Esc |
-| `.feedback` (`.feedback-head`) | the answer's feedback panel | scrolled into view, first line announced |
+| `.feedback` (`.feedback-head`), `.rc-pick` / `.rc-answer` | the answer's feedback and its cards | first line announced; the report context reads the cards |
 The end screens (`summary.js`) have no stage, so the keys stay out: the runner focuses their `.actions .primary`
 when it draws them, and Enter is the browser's own (A7 steps 3-4 review).
 Nav, ✕, progress and counter belong to the runner, never to an activity; an activity does not know whether it

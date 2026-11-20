@@ -2,6 +2,26 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-20 U1 Fixed-screen lessons on phones
+- A lesson or practice step never scrolls the page: fixed frame (top bar / stage / pinned action bar, safe areas);
+  the step's text shrinks to fit (`dom.js` `fitStage`, `session.js` `watchFit`, `--fit`), never below the new
+  Settings "Smallest text in lessons" floor (Large / Medium / Small; default Medium); past the floor the stage
+  scrolls. Phones start a little smaller (`--base-lao`, `--base-en`).
+- Answer cards (`panel.js`, every question type): the options and tool row give way to the result; right = a
+  "Correct!" toast and one answer card; wrong = "You picked" card (any pick, taught or not) over "Answer";
+  listening questions give the pick its own 🔊. `card_pieces_new` note and `wrongPickedLine` removed.
+- More / ⓘ / Settings as sheets (`sheet.js`; bottom sheet on a phone, ← when stacked, phone Back closes the top
+  sheet); More audited, shows only what the card does not; no More button when empty. Lesson top bar: ✕,
+  progress, counter, ⋯ (Settings, Report a problem). Sentence word bubble is a popover that flips above/below.
+- Polish: steps slide in (none with reduced motion, none on a redraw); optional answer tones (`ui_sound.js`, Web
+  Audio, off by default, unlocked on the first tap for iOS).
+- Conversation blanks: earlier lines stay behind Reveal after the answer (a Reveal tapped before it is kept) and
+  the scroll position is kept, so the line does not jump.
+- Review fixes: ⋯ menu closes on Back; "all settings" link gives the sheet's history entry back first; a queued
+  history.back() no longer closes a newly opened sheet; More on a sentence card crashed (`kids.flat`); vh
+  fallbacks for dvh (iOS < 15.4). Drivers `scripts/browser/u1_fit.js` (now learns answers, walks `practice`,
+  FLOOR reloads) and `u1_chrome.js`.
+
 ## 2026-11-19 Lessons 26–33 and section S03 (hosted with 20–25)
 - Built by sub-agents from a shared brief: L0026 Near or far? (R08 far / near / chicken tone card; conversation
   D0005), L0027 People and pets (ຄ, ◌ົ◌, R09 ຂ/ຄ), L0028 Two, three, four, five (R10 counting people), L0029 Excuse

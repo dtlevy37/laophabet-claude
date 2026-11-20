@@ -60,8 +60,10 @@ A new learner is overwhelmed by text, so a card shows only what it teaches.
   words (common senses together are fine: ກິນ "eat; drink"); at most one sentence of essential context ("Written
   above the consonant, but said after it"); for words, a tone picture per syllable (a pitch line on a 5-level
   scale, `js/tone.js`), not tone names.
-- **Behind "More"** (closed on the card, open in the info dialog): IPA, consonant class, vowel length, role label,
-  tone names in words, part of speech, classifier, the longer pron_tip.
+- **Behind "More"** (in a lesson a "More" button that opens a sheet; inline in the info sheet): only what the front
+  does not say: IPA, consonant class, vowel length, tone names in words, part of speech, classifier, the pron_tip
+  sentences the front hint does not already say, the voice credit and recording report. No role label. A card with
+  nothing more has no button (U1, owner 2026-11-20: "many More panels show what is already visible").
 - **Never shown before it is taught:** a letter's name word (ໄກ່ "chicken" for ກ), example words that come later
   in the lesson, or a lesson title/summary that gives the lesson's word away.
 - units.teach_en / rules.teach_en hold only the front text: one or two short sentences.
@@ -256,7 +258,7 @@ extra columns.
   sound and English in conversations right away" (`convoAids`, default off) shows them at once. A blank's own line
   keeps the hint tiers.
 - **In a lesson:** the card (no autoplay; ▶ per sentence), then fill in the blank per distinct sentence in line
-  order, at most 6, each showing the two turns before it (smaller; English on Reveal or after the answer) and the earlier sentences of the
+  order, at most 6, each showing the two turns before it (smaller; English on Reveal; it stays hidden after the answer so the line does not move, U1) and the earlier sentences of the
   same turn. A line is not blanked where its answer would be a bare gap (a one-word opening line) or sits in the
   context above (B's ສະບາຍດີ under A's); its sentence is blanked at a later line, or keeps its own fill in the blank
   when it never qualifies. These questions are always kept. The card records nothing (`shown: []`).
@@ -352,16 +354,27 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   first letter card ກ, user 2026-11-09), with ກ and its "Sounds like" as the example, so the learner sees "Sounds
   like" change as they choose; it says the choice can be changed in Settings. Other display choices are introduced the same way, on the
   card where they first matter.
-- **Thumb zone** (owner 2026-11-13, A7 step 9): on a question the answer options sit in the middle of the space
-  left under the prompt, with bigger targets; the feedback takes the space under them and moves them up only when
-  it does not fit. Continue / Next / Check stays pinned on the right. Keyboard-shortcut hints (the key line, the
+- **Fixed screen on phones** (owner 2026-11-20, U1): a lesson or practice step never scrolls the page and nothing
+  pushes another element around. The step's text shrinks to fit (`dom.js` `fitStage`, `--fit` on the stage), never
+  below the learner's Settings "Smallest text in lessons" floor (Large / Medium / Small); past the floor the stage
+  scrolls, the last resort (long conversations). Within a step text only shrinks (never grows back), so an answer
+  moves the prompt at most by that shrink (PLAN U1b). Phones start a little smaller than desktop (`--base-lao`, `--base-en`). Lesson chrome: ✕, progress bar,
+  counter, and ⋯ (Settings, Report a problem). Info cards, "More" and Settings open as sheets: a bottom sheet on a
+  phone (85% high, own scroll, ← when stacked, ✕), and the phone's Back closes the top sheet, not the lesson.
+  A new step slides in briefly (reduced motion: none); optional answer tones (Settings, off by default, Web Audio).
+- **Thumb zone** (owner 2026-11-13, A7 step 9): on a question the answer options sit in the space left under the
+  prompt, towards the bottom, with bigger targets. Continue / Next / Check stays pinned on the right. Keyboard-shortcut hints (the key line, the
   option numbers) show only on a desktop with a mouse and a window at least 561px wide.
-- **Answer panel** (owner 2026-11-18, A16; `js/activities/panel.js` `answerPanel()`, used by every question type).
-  Row 1 the head ("Correct" / "Not quite. The answer is:") with a filled ✓ / ✗ circle in the state colour; row 2 the
-  Lao, then the sound, then the meaning (sentences the same); row 3 ⓘ on the left and 🔊 on the right, fixed. One
-  speaker per screen, beside the Lao it plays. Lao → meaning questions do not autoplay before the answer (they test
-  reading); the sound plays right after the answer. A taught wrong pick adds one line: "'rice, food' is ເຂົ້າ
-  (khao)." Hint and "Can't listen now" are small buttons in a fixed tool row under the prompt.
+- **Answer cards** (A16, reworked in U1 2026-11-20; `js/activities/panel.js` `answerPanel()`, every question type).
+  Once answered the options (and the tool row) are removed and the result takes their place; the prompt stays put.
+  Right: a short "Correct!" toast over the top bar (takes no room) and one answer card, the word large: Lao with ⓘ
+  beside it, sound and meaning, 🔊 on the right. Wrong: two stacked cards, ✗ "You picked" (what the pick really is:
+  Lao, sound, meaning, so look-alikes such as ຂ and ລ are compared directly; every pick, taught or not, since
+  options are real Lao) over ✓ "Answer". Listening questions give the pick card its own 🔊 when recorded, so both
+  can be heard (owner 2026-11-20); otherwise the answer card has the one speaker. A card leaves out what the
+  prompt already shows (fill in the blank: the filled-in sentence is the Lao). Lao → meaning questions do not
+  autoplay before the answer (they test reading); the sound plays right after the answer. Hint and "Can't listen
+  now" are small buttons in a tool row under the prompt.
 - **Look** (A23): type, spacing and radius tokens in `styles.css` (`--fs-*`, `--sp-*`, `--r-*`); one icon set
   (`js/icons.js`, 24px, 2px stroke, `currentColor`) instead of emoji or text glyphs; icon-only controls are 44px
   circles (`button.icon-btn`); buttons are primary, `secondary` or `danger`; underlined links only in running text.

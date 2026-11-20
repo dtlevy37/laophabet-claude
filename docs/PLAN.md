@@ -36,6 +36,12 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
+- [ ] **U1b Fixed screen, the last movers** (proposal after U1, owner to decide). At the default floor (Medium):
+      conversation blanks at 360x640 still shift the line up to ~16px when the answer card makes the text shrink,
+      and at 320x568 they and some build-the-sentence answers scroll. Options: fit once for the larger of the
+      question and answer states (measure the answer cards off-screen first), or a smaller answer card in
+      conversations. **Done when:** `node scripts/browser/u1_fit.js … L0018 L0026` shows no "moved" over 5px at
+      360x640.
 - [ ] **A19 rest: content fixes waiting on Na** (Q0037–Q0043). The romanization, rule, hint and sentence fixes
       that needed no answer are built.
       - The ຫິວ note (lesson 9) says bare ຫິວ sounds unfinished, then lesson 10 teaches it: rewrite after Q0043.

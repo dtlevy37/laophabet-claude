@@ -183,14 +183,18 @@ frontend/
                          build_sentence.js (word tiles in order; sentence items, recall)
                          fill_blank.js (one gap, one logical choice; recycled sentences, recall)
                          build_word.js (pieces in spoken order; recycled words, new tone marks)
+                         panel.js (answerPanel: the answer cards that replace the options; wordAudio)
   js/bundle.js           get_lesson cache
   js/settings.js  translit.js  tone.js    learner settings (page #/settings, theme), respelling styles, tone pictures
-  js/chrome.js           U1/U2: ⚑ and ⚙ buttons for the top bar and the lesson chrome; openSettingsSheet(onClose): settings
-                         as a dialog sheet over the current screen (reuses settingsPanel), onClose redraws the screen
+  js/chrome.js           U1/U2: ⚑ and ⚙ buttons for the top bar; lessonMenu(onClose): the lesson's ⋯ (Settings, Report);
+                         openSettingsSheet(onClose): settings as a sheet (reuses settingsPanel), onClose redraws the screen
+  js/sheet.js            openSheet({title, body, cls, onClose}): info card / More / settings sheet (bottom sheet on a
+                         phone; ← when stacked, ✕ closes all; the phone's Back closes the top sheet via a history entry)
+  js/ui_sound.js         answerTone(ok): optional Web Audio tones on answers (Settings, off by default)
   js/report.js           U2: openReport({extra, kind}) dialog -> send_feedback; setReportContext(fn): the screen on top
                          (session.js) supplies lesson/step/item/options/answer; trimmed to 12 KB
   js/howto.js            first-time how-to lines on build the word / build the sentence (L1; per browser)
-  js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en)
+  js/dom.js  i18n.js  supabase.js  strings.json (all UI text, lo + en); dom.js fitStage(stage, floor, cap): U1 fit-to-box
 ```
 
 ### A lesson session (S6c; the questions are untested until the browser gate passes)

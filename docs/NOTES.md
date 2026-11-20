@@ -25,7 +25,7 @@ file in the same commit that finishes it (record in `CHANGELOG.md`; slices in `d
    password smoke-test-pass-1).
 3. Lessons after S03: plan them with the owner from CURRICULUM_PATH "After S03" (not yet laid out lesson by lesson).
 4. `node scripts/session_test.mjs` fails "practice N: only 13–14 answers from 8 items" for N = 18 and most
-   of 21–30 (practice plans come out short as the item pool grows; 18 predates lessons 20–33). Look at `planPractice` or the test's threshold.
+   of 21–32 (practice plans come out short as the item pool grows; 18 predates lessons 20–33). Look at `planPractice` or the test's threshold.
 - Open: `register` is set only where a native tagged it (N3 style row); question text is English (+ Lao only if `label_lao`); the Lao UI
   strings are unreviewed; N2 voice upload is untested.
 
@@ -102,7 +102,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - Settings (`#/settings`): Light or dark and Colours (Lao blue and red / Indigo and saffron / Teal and gold) switch at
   once, persist after reload with no flash, answers stay green/red in every theme. The intro card of a new lesson 1 has
   the sound-spelling choice. Natives' recording header is unchanged.
-- Lesson chrome: no header in a lesson; ✕ top left (Leave dialog), progress bar, "1 / 34"; Esc asks to leave.
+- Lesson chrome: no header in a lesson; ✕ top left (Leave dialog), progress bar, "1 / 34", ⋯ (Settings, Report a
+  problem); Esc asks to leave.
 - Summary (`#/lesson/L0001`): "Lao words read (with repeats)", Back home, Next lesson (blue, right; Enter too).
 - Audio (`#/try/L0002`): on the ເຂົ້າ card More has "Voice: Na" and "⚑ Report a problem" (opens the U2 dialog with
   "audio" chosen); ⓘ sheet has the same; Space plays. First 3 build-the-word questions with a ◌ tile say "◌ is not
@@ -112,8 +113,16 @@ Browser tests on the deployed site (a private window shows the first-time hints)
 - Home `#/`: Continue card and 6 tiles (Lessons, Write, Review, Letters and sounds, My words live; Notes greyed
   "Soon", not focusable). `#/lessons`: the path, the lesson to play now outlined, the next 2 locked, the rest folded.
   Leaving a lesson part-way: home says "Lesson n · in progress". Decide: tile order and wording.
-- Thumb zone (phone 375×667 and 375×812, desktop): answer boxes centred under the prompt, taller; feedback under them;
-  Continue bottom right. Phone: no "Keys: …" line and no small numbers; desktop with a mouse: both shown.
+- Thumb zone (phone 375×667 and 375×812, desktop): answer boxes towards the bottom, taller; Continue bottom right.
+  Phone: no "Keys: …" line and no small numbers; desktop with a mouse: both shown.
+- U1 fixed screen (phone, or desktop devtools at 360×640; `#/try/L0002`, `#/try/L0018`): no step scrolls the page;
+  long text shrinks instead. Right answer: "Correct!" toast at the top, the options give way to one answer card
+  (Lao + ⓘ, sound, meaning, 🔊). Wrong: "You picked" card over "Answer" card (in "Pick the word you hear" both have
+  🔊). A card's "More" opens a bottom sheet (only when it has something new); ⓘ opens one too; the phone's Back
+  closes the sheet, not the lesson. ⋯ → Settings → "Smallest text in lessons" (Large / Medium / Small): Small lets
+  320px phones fit; conversations still scroll. Settings → answer sounds (off by default): a short tone per answer.
+  A new step slides in (none with reduce motion). Conversation blanks: earlier lines stay behind Reveal after the
+  answer. Decide: the toast, the slide, the sizes on your phone. Drivers `scripts/browser/u1_fit.js`, `u1_chrome.js`.
 - A8 `#/letters`: Consonants / Vowels / Tone marks; ນ is one tile for both roles; its page lists start and end sounds,
   examples (tap → My words), "Practice writing". A new learner sees the full chart with nothing marked.
 - A9 `#/words`: search (Lao, respelling, English), All / Needs work / Newest; a word's page: card, ▶, notes, "Right x
@@ -128,13 +137,13 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   view link at the bottom; `#/record`: English under the Lao; Record -> style row (tap again unselects) -> Save and
   next; Save + more details; "I'd say it differently" (box starts with the text); "not sure what it means"; Skip.
   `#/review` opens Record. Driver `scripts/browser/n3_record.js`.
-- U1 ⚙ (top bar and lesson header): Settings opens as a sheet; in `#/try/L0005` mid-question switch the romanization,
-  Close: same question, same counter, new style; Esc closes the sheet, not the lesson. "Account, feedback and all
+- U1 ⚙ (top bar; in a lesson ⋯ → Settings): Settings opens as a sheet; in `#/try/L0005` mid-question switch the
+  romanization, Close: same question, same counter, new style; Esc closes the sheet, not the lesson. "Account, feedback and all
   settings" link opens `#/settings` (the top-bar Settings link is gone). Decide: ⚙ or ☰ (later UI review).
-- U2 ⚑ (top bar and lesson header): pick what is wrong, note optional, Send → "Thank you"; on `#/try/L0010` after a
+- U2 ⚑ (top bar; in a lesson ⋯ → Report a problem): pick what is wrong, note optional, Send → "Thank you"; on `#/try/L0010` after a
   fill-in-the-blank, the `app_feedback.context` column holds lesson, step, item, options and your answer. Phone width.
-- A7 inline words (`#/try/L0007`, a sentence card): Lao words underlined; tap → bubble under the sentence (meaning,
-  sound, ⓘ); another word moves it; tap elsewhere or Esc closes it. Build-the-sentence: no tappable words until Check.
+- A7 inline words (`#/try/L0007`, a sentence card): Lao words underlined; tap → bubble below the word, or above it near the
+  bottom (meaning, sound, ⓘ); another word moves it; tap elsewhere or Esc closes it. Build-the-sentence: no tappable words until Check.
   Home strip: day streak, letters known, words known. A lesson summary lists "Missed on the first try".
 - S7g conversations (`#/try/L0010`, after ຂ້ອຍກິນເຂົ້າແລ້ວ): one card "Conversation: Are you hungry?" with 7 turns, Mali left
   and Somphone right, Lao and ▶ only, Reveal shows a turn's sound and English (Settings: "Show sound and English in
@@ -188,9 +197,12 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   alignment; alternates: `sentence_json.alternates` = another live sentence with the same English minus pronouns only;
   `PAIR_NOTES` word-pair notes), `choice.js`. build_word detail keys: `taps`, `early`, `pieces[].found`; A3 stats must
   not count `found: false` as clean.
-- `js/chrome.js` ⚑ ⚙ buttons and the settings sheet (`openSettingsSheet(onClose)`, redraws on close); `js/report.js`
-  the report dialog (`send_feedback` with `p_context`); the lesson's context is built in `session.js` from the stage
-  (reads `.mc-option`, `.bs-line .bs-tile`, `.feedback-head`: renaming them drops the answer from reports).
+- `js/chrome.js` ⚑ ⚙ top-bar buttons, the lesson ⋯ (`lessonMenu`) and the settings sheet (`openSettingsSheet`);
+  `js/sheet.js` `openSheet` (every sheet: bottom sheet on a phone, Back closes the top one); `js/report.js` the
+  report dialog (`send_feedback` with `p_context`); the lesson's context is built in `session.js` from the stage
+  (reads `.mc-option`, `.bs-line .bs-tile`, `.feedback-head`, `.rc-pick` / `.rc-answer`: renaming them drops the
+  answer from reports). Fixed screen: `dom.js` `fitStage` + `session.js` `watchFit` (`--fit`, floor =
+  settings `textFloor`); answer cards `activities/panel.js` `answerPanel`; `js/ui_sound.js` answer tones.
   Sentence words: `teach_card.js` `inlineSentence()` (`.word-btn`, `.word-bubble`; countTaps counts `.word-btn`).
   Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js` (frontend on :5500).
 - Conversations (S7g): `session.js` `dialogueBlanks` + the dialogue branch of `planLesson`; `teach_card.js`
