@@ -1,9 +1,12 @@
 // U1 fit check (text only, no screenshots): walks dry runs (#/try/<lesson>) at phone sizes and reports, per step kind,
 // how often the stage has to scroll (idle and answered), by how many px at most, horizontal overflow, and whether the
 // prompt moved when the answer came in. Answers alternate wrong / right so both feedback states are measured.
+// Also: whether opening a hint moves the prompt, the tool row or the options ("hint moved"), and every spot the
+// Next / Continue / Check button was seen in (it must be one spot for the whole walk).
 // Setup: playwright in tmp/tools/pw, app/frontend served on :5500, local Supabase, scripts/local_test_user.sh.
 // Run: NODE_PATH=tmp/tools/pw/node_modules node scripts/browser/u1_fit.js a1smoke@test.local smoke-test-pass-1 L0002 L0011 practice
-// Env: SIZES="360x640,320x568" (default), FLOOR=1 sets the "Smallest text" floor to its lowest step first.
+// Env: SIZES="360x640,320x568" (default), FLOOR=1 sets the "Smallest text" floor to its lowest step first,
+// DESKTOP=1 a mouse instead of touch (e.g. SIZES=1366x768,1920x1080 DESKTOP=1).
 const { chromium } = require('playwright')
 const [email, password, ...lessons] = process.argv.slice(2)
 const BASE = process.env.BASE || 'http://127.0.0.1:5500/'
@@ -29,6 +32,9 @@ const measure = (page) =>
       docOver: doc.scrollHeight - window.innerHeight,
       wide: Math.max(0, doc.scrollWidth - window.innerWidth),
       promptTop: prompt ? Math.round(prompt.getBoundingClientRect().top) : null,
+      optTop: (() => { const o = stage.querySelector('.mc-option'); return o ? Math.round(o.getBoundingClientRect().top) : null })(),
+      toolTop: (() => { const o = stage.querySelector('.tool-row'); return o ? Math.round(o.getBoundingClientRect().top) : null })(),
+      btn: (() => { const b = stage.querySelector('.actions button.primary'); if (!b) return null; const r = b.getBoundingClientRect(); return `${Math.round(r.right)},${Math.round(r.bottom)}` })(),
       more: !!stage.querySelector('details.more, button.more-btn'),
     }
   })
@@ -37,7 +43,9 @@ const measure = (page) =>
   const browser = await chromium.launch()
   const fails = []
   for (const [w, hgt] of SIZES) {
-    const page = await browser.newPage({ viewport: { width: w, height: hgt }, hasTouch: true, isMobile: true })
+    const touch = !process.env.DESKTOP
+    const page = await browser.newPage({ viewport: { width: w, height: hgt }, hasTouch: touch, isMobile: touch })
+    const spots = new Map() // button spot -> where first seen
     const errors = []
     page.on('pageerror', (e) => errors.push(String(e)))
     page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
@@ -65,15 +73,28 @@ const measure = (page) =>
       let promptKey = ''
       for (let n = 0; n < 400; n++) {
         if (!(await page.locator('.stage').count())) break
-        await page.waitForTimeout(120)
+        await page.waitForTimeout(240) // past the 180 ms slide-in
         const idle = await measure(page)
         if (!idle) break
-        const k = kinds.get(idle.kind) || { n: 0, idleOver: 0, idleMax: 0, ansOver: 0, ansMax: 0, wide: 0, moved: 0, movedMax: 0, more: 0 }
+        const k = kinds.get(idle.kind) || { n: 0, idleOver: 0, idleMax: 0, ansOver: 0, ansMax: 0, wide: 0, moved: 0, movedMax: 0, more: 0, hints: 0, hintMoved: 0, hintMax: 0 }
         kinds.set(idle.kind, k)
         k.n++
         if (idle.over > 1) k.idleOver++, (k.idleMax = Math.max(k.idleMax, idle.over))
         if (idle.wide > 1 || idle.docOver > 1) k.wide++
         if (idle.more) k.more++
+        const seen = (m) => m?.btn && !spots.has(m.btn) && spots.set(m.btn, `${lesson} ${m.kind}`)
+        seen(idle)
+        // open every hint tier the question has, one at a time, and check nothing moved
+        for (let t = 0; t < 3 && (await page.locator('.stage .tool-row .hint-btn').count()); t++) {
+          const before = await measure(page)
+          await page.locator('.stage .tool-row .hint-btn').click()
+          await page.waitForTimeout(150)
+          const after = await measure(page)
+          k.hints++
+          const d = Math.max(...['promptTop', 'toolTop', 'optTop'].map((f) => (before[f] != null && after[f] != null ? Math.abs(before[f] - after[f]) : 0)))
+          if (d > 1) k.hintMoved++, (k.hintMax = Math.max(k.hintMax, d))
+          if (d > 20 && process.env.DEBUG) console.log('  hint moved', idle.kind, JSON.stringify(before), JSON.stringify(after), await page.evaluate(() => { const st = document.querySelector('.stage'); return `fit=${st.style.getPropertyValue('--fit')} squeeze=${st.dataset.squeeze || ''} scrollTop=${st.firstElementChild.scrollTop}` }))
+        }
         const opts = page.locator('.stage button.mc-option:not([disabled])')
         const tiles = page.locator('.stage .bs-bank > button:not([disabled])')
         let answered = false
@@ -105,6 +126,7 @@ const measure = (page) =>
           wrong = !wrong
           await page.waitForTimeout(200)
           const ans = await measure(page)
+          seen(ans)
           const card = await page.evaluate(() => document.querySelector('.stage .rc-answer')?.textContent || '')
           if (promptKey && card) learned[promptKey] = card
           if (ans) {
@@ -119,11 +141,13 @@ const measure = (page) =>
       }
       console.log(`\n${lesson} @ ${w}x${hgt}`)
       for (const [kind, k] of kinds) {
-        const bad = k.idleOver || k.ansOver || k.wide || k.moved
-        console.log(`${bad ? '!' : ' '} ${kind.padEnd(36)} n=${k.n} scroll idle ${k.idleOver} (max ${k.idleMax}px) answered ${k.ansOver} (max ${k.ansMax}px) overflow ${k.wide} moved ${k.moved}${k.moved ? ` (max ${k.movedMax}px)` : ''}${k.more ? ` more ${k.more}` : ''}`)
+        const bad = k.idleOver || k.ansOver || k.wide || k.moved || k.hintMoved
+        console.log(`${bad ? '!' : ' '} ${kind.padEnd(36)} n=${k.n} scroll idle ${k.idleOver} (max ${k.idleMax}px) answered ${k.ansOver} (max ${k.ansMax}px) overflow ${k.wide} moved ${k.moved}${k.moved ? ` (max ${k.movedMax}px)` : ''}${k.hints ? ` hints ${k.hints} moved ${k.hintMoved}${k.hintMoved ? ` (max ${k.hintMax}px)` : ''}` : ''}${k.more ? ` more ${k.more}` : ''}`)
         if (bad) fails.push(`${lesson} ${w}x${hgt} ${kind}`)
       }
     }
+    console.log(`button spots @ ${w}x${hgt}: ${[...spots].map(([xy, where]) => `${xy} (${where})`).join(' | ')}`)
+    if (spots.size > 1) fails.push(`${w}x${hgt} button in ${spots.size} spots`)
     if (errors.length) console.log('console errors:', [...new Set(errors)].join(' | ')), fails.push(`${w}x${hgt} console errors`)
     await page.close()
   }

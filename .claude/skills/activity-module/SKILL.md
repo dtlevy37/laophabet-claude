@@ -42,6 +42,9 @@ export default {
 - Text fits the screen by itself: the runner shrinks a step's `--fit` down to the learner's floor (`dom.js`
   `fitStage`). Size Lao with `calc(<n>rem * var(--lao-scale, 1))` and English with the `--fs-*` tokens so they follow
   it; never make the page scroll, and never move the prompt on answer.
+- A hint never moves anything: show it in the tool row in place of the Hint button, or draw what it adds (a line,
+  each option's sound or tone picture) from the start through `reserve(el, shown)` (`hint.js`), invisible until it
+  opens. Pass the spec to `fitOptions(grid, spec)` so a one-column grid stays one column on redraw.
 - The same module serves lessons and practice sessions. It never knows which one it is in.
 
 ## The selector contract (do not rename)

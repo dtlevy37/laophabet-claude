@@ -122,7 +122,9 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   closes the sheet, not the lesson. ⋯ → Settings → "Smallest text in lessons" (Large / Medium / Small): Small lets
   320px phones fit; conversations still scroll. Settings → answer sounds (off by default): a short tone per answer.
   A new step slides in (none with reduce motion). Conversation blanks: earlier lines stay behind Reveal after the
-  answer. Decide: the toast, the slide, the sizes on your phone. Drivers `scripts/browser/u1_fit.js`, `u1_chrome.js`.
+  answer. Desktop (mouse) and tablet: the same fixed frame; options low, Next / Continue always bottom right of the
+  lesson column; Hint opens without moving anything (except some conversation blanks: PLAN U1b). Decide: the
+  toast, the slide, the sizes on your phone, the gap between prompt and options on a big monitor. Drivers `scripts/browser/u1_fit.js`, `u1_chrome.js`.
 - A8 `#/letters`: Consonants / Vowels / Tone marks; ນ is one tile for both roles; its page lists start and end sounds,
   examples (tap → My words), "Practice writing". A new learner sees the full chart with nothing marked.
 - A9 `#/words`: search (Lao, respelling, English), All / Needs work / Newest; a word's page: card, ▶, notes, "Right x
@@ -202,7 +204,8 @@ Browser tests on the deployed site (a private window shows the first-time hints)
   report dialog (`send_feedback` with `p_context`); the lesson's context is built in `session.js` from the stage
   (reads `.mc-option`, `.bs-line .bs-tile`, `.feedback-head`, `.rc-pick` / `.rc-answer`: renaming them drops the
   answer from reports). Fixed screen: `dom.js` `fitStage` + `session.js` `watchFit` (`--fit`, floor =
-  settings `textFloor`); answer cards `activities/panel.js` `answerPanel`; `js/ui_sound.js` answer tones.
+  settings `textFloor`; `[data-squeeze]` drops reserved hint room); hint room `activities/hint.js` `reserve`;
+  answer cards `activities/panel.js` `answerPanel`; `js/ui_sound.js` answer tones.
   Sentence words: `teach_card.js` `inlineSentence()` (`.word-btn`, `.word-bubble`; countTaps counts `.word-btn`).
   Drivers: `scripts/browser/u1u2_check.js`, `a7_inline.js` (frontend on :5500).
 - Conversations (S7g): `session.js` `dialogueBlanks` + the dialogue branch of `planLesson`; `teach_card.js`

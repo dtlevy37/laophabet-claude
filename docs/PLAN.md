@@ -36,12 +36,14 @@ lessons; L5 phase 1, A10, L4, and A19 rest when Na answers. Later: A21, A22. On 
       from the view `review_retention_by_lesson`); waits for data.
 
 ## App slices
-- [ ] **U1b Fixed screen, the last movers** (proposal after U1, owner to decide). At the default floor (Medium):
-      conversation blanks at 360x640 still shift the line up to ~16px when the answer card makes the text shrink,
-      and at 320x568 they and some build-the-sentence answers scroll. Options: fit once for the larger of the
-      question and answer states (measure the answer cards off-screen first), or a smaller answer card in
-      conversations. **Done when:** `node scripts/browser/u1_fit.js … L0018 L0026` shows no "moved" over 5px at
-      360x640.
+- [ ] **U1b Fixed screen, the last movers: conversation blanks** (proposal after U1, owner to decide). Every
+      other step is still on phone, tablet and desktop. A conversation blank (earlier turns, the line, two hint
+      tiers, four options) often cannot keep its hint room even at the floor, so opening Hint or answering shifts
+      it (phone up to ~60px; desktop ~1 in 4 blanks, up to ~50px), and at 320x568 some scroll. Options: show one
+      earlier turn instead of two on short screens; or the hint text replaces the Hint button in the tool row (as
+      in "What does this word mean?"); or fit once for the answer state (measure the cards off-screen first).
+      **Done when:** `u1_fit.js … L0018 L0026` shows no "moved" or "hint moved" over 5px at 360x640 and
+      1366x768 (DESKTOP=1).
 - [ ] **A19 rest: content fixes waiting on Na** (Q0037–Q0043). The romanization, rule, hint and sentence fixes
       that needed no answer are built.
       - The ຫິວ note (lesson 9) says bare ຫິວ sounds unfinished, then lesson 10 teaches it: rewrite after Q0043.

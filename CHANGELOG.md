@@ -2,6 +2,17 @@
 
 Every change to the project is recorded here, newest first. Update it in the same commit as the change.
 
+## 2026-11-20 U1 on every device: nothing moves on desktop or tablet either (owner)
+- Desktop (mouse) uses the phone's fixed frame: centred, 820 wide, at most 760 tall; options low above the button
+  (owner's choice); Next / Continue / Check always in the lesson column's bottom right, its slot kept when absent
+  (also on short windows). Tablets were already on it.
+- Hints open without moving anything: "What does this word mean?" shows the sound where the Hint button was; the
+  per-option sound and tone-picture hints and fill-in-the-blank's English / sound lines keep invisible room from
+  the start (`hint.js` `reserve`), dropped only when a step cannot fit at the floor (`dom.js` `fitStage`,
+  `[data-squeeze]`). Fill-in-the-blank tiers sit under the Hint button, in opening order.
+- Fixes: a one-column options grid flipped back to two columns on redraw (`fitOptions(grid, spec)` remembers);
+  conversation blanks re-scrolled on every redraw. `u1_fit.js`: DESKTOP=1, hint-move and button-spot checks.
+
 ## 2026-11-20 U1 Fixed-screen lessons on phones
 - A lesson or practice step never scrolls the page: fixed frame (top bar / stage / pinned action bar, safe areas);
   the step's text shrinks to fit (`dom.js` `fitStage`, `session.js` `watchFit`, `--fit`), never below the new

@@ -354,13 +354,18 @@ had at level ≥ 1). Sessions store time zone, app version and settings (`set_se
   first letter card ກ, user 2026-11-09), with ກ and its "Sounds like" as the example, so the learner sees "Sounds
   like" change as they choose; it says the choice can be changed in Settings. Other display choices are introduced the same way, on the
   card where they first matter.
-- **Fixed screen on phones** (owner 2026-11-20, U1): a lesson or practice step never scrolls the page and nothing
-  pushes another element around. The step's text shrinks to fit (`dom.js` `fitStage`, `--fit` on the stage), never
+- **Fixed screen on every device** (owner 2026-11-20, U1; phones, tablets and desktop alike): a lesson or practice
+  step never scrolls the page and nothing pushes another element around. One frame everywhere: top bar, the step
+  (prompt at the top, options low, hints and answer cards in the room between), and the button always in the
+  frame's bottom right corner, its slot kept while it is absent. On a desktop with a mouse the frame is centred,
+  820px wide and at most 760px tall. A hint shows where the Hint button was or in the room under it; a hint that
+  adds to each option (sound, tone picture) or a line (fill in the blank) keeps its room, invisible, from the start
+  (`hint.js` `reserve`), and gives it up only when the step cannot fit even at the floor. The step's text shrinks to fit (`dom.js` `fitStage`, `--fit` on the stage), never
   below the learner's Settings "Smallest text in lessons" floor (Large / Medium / Small); past the floor the stage
   scrolls, the last resort (long conversations). Within a step text only shrinks (never grows back), so an answer
   moves the prompt at most by that shrink (PLAN U1b). Phones start a little smaller than desktop (`--base-lao`, `--base-en`). Lesson chrome: ✕, progress bar,
   counter, and ⋯ (Settings, Report a problem). Info cards, "More" and Settings open as sheets: a bottom sheet on a
-  phone (85% high, own scroll, ← when stacked, ✕), and the phone's Back closes the top sheet, not the lesson.
+  phone (85% high, own scroll, ← when stacked, ✕; a centred dialog on wider screens), and the phone's Back closes the top sheet, not the lesson.
   A new step slides in briefly (reduced motion: none); optional answer tones (Settings, off by default, Web Audio).
 - **Thumb zone** (owner 2026-11-13, A7 step 9): on a question the answer options sit in the space left under the
   prompt, towards the bottom, with bigger targets. Continue / Next / Check stays pinned on the right. Keyboard-shortcut hints (the key line, the
